@@ -2,10 +2,1391 @@
 <html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=latest/">
-    <title>דירוג ערים — מחקר אלכסון</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>דירוג ערים — ציון משולב</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: #f5f5f8;
+            color: #222;
+            direction: rtl;
+            line-height: 1.5;
+            overflow-wrap: break-word;
+        }
+
+        /* ── Top Navigation ── */
+        .top-nav {
+            background: #1a1a2e; color: #fff; padding: 0;
+            position: sticky; top: 0; z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        .nav-inner {
+            max-width: 1200px; margin: 0 auto;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 20px;
+        }
+        .nav-title {
+            font-size: 1.1em; font-weight: 700; padding: 12px 0;
+            white-space: nowrap;
+        }
+        .nav-tabs {
+            display: flex; gap: 0; margin: 0;
+        }
+        .nav-tab {
+            padding: 14px 18px; cursor: pointer; font-size: 0.85em;
+            border-bottom: 3px solid transparent; transition: all 0.2s;
+            color: #aab; white-space: nowrap;
+        }
+        .nav-tab:hover { color: #fff; background: rgba(255,255,255,0.05); }
+        .nav-tab.active { color: #fff; border-bottom-color: #ff8800; font-weight: 600; }
+
+        .main-content { padding: 20px; max-width: 1200px; margin: 0 auto; }
+
+        h1 { text-align: center; margin: 20px 0 5px; font-size: 1.8em; color: #1a1a2e; }
+        .subtitle { text-align: center; color: #666; margin-bottom: 25px; font-size: 0.95em; }
+
+        /* ── Search bar ── */
+        .search-bar {
+            max-width: 500px; margin: 0 auto 20px; position: relative;
+        }
+        .search-bar input {
+            width: 100%; padding: 10px 16px 10px 40px; border: 2px solid #ddd;
+            border-radius: 8px; font-size: 0.95em; direction: rtl;
+            transition: border-color 0.2s;
+        }
+        .search-bar input:focus { outline: none; border-color: #2a5a8a; }
+        .search-icon {
+            position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
+            color: #999; font-size: 1.1em;
+        }
+
+        .method-box {
+            background: #fff; border: 1px solid #ddd; border-radius: 8px;
+            padding: 20px; margin: 0 auto 25px; max-width: 900px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        .method-box h3 { color: #2a5a8a; margin-bottom: 10px; }
+        .method-box ul { list-style: none; padding: 0; }
+        .method-box li { padding: 4px 0; color: #555; }
+        .method-box li strong { color: #222; }
+        .weight {
+            display: inline-block; background: #e8f0f8; padding: 2px 8px;
+            border-radius: 4px; font-size: 0.85em; color: #2a5a8a; margin-left: 8px;
+        }
+
+        table { width: 100%; max-width: 1100px; margin: 0 auto 40px; border-collapse: collapse; }
+        th {
+            background: #2a5a8a; color: #fff; padding: 12px 8px;
+            text-align: center; font-weight: 600; border-bottom: 2px solid #1a4a7a; font-size: 0.85em;
+            cursor: pointer; user-select: none; position: relative;
+        }
+        th:hover { background: #345f8a; }
+        th .sort-arrow { margin-right: 4px; font-size: 0.7em; opacity: 0.5; }
+        th.sorted .sort-arrow { opacity: 1; }
+        td { padding: 10px 8px; text-align: center; border-bottom: 1px solid #e0e0e0; }
+        .city-row { cursor: pointer; transition: background 0.15s; background: #fff; }
+        .city-row:hover { background: #e8f0f8; }
+        .city-row.active { background: #dde8f4; }
+        .city { text-align: right; font-weight: 600; color: #1a1a2e; }
+        .rank { font-size: 1.2em; color: #2a5a8a; }
+        .score { font-size: 1.1em; }
+        .dim { color: #999; font-size: 0.85em; }
+        .partial td { color: #888; }
+        .partial td::after { content: ''; }
+        .partial .city::after { content: ' (חלקי)'; font-size: 0.75em; color: #aaa; font-weight: normal; }
+
+        .legend { display: flex; justify-content: center; gap: 20px; margin: 10px 0 25px; font-size: 0.85em; }
+        .legend span { display: flex; align-items: center; gap: 5px; }
+        .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+
+        /* ── Drill-down panel ── */
+        .detail-row { display: none; }
+        .detail-row.visible { display: table-row; }
+        .detail-cell {
+            background: #f0f2f5; padding: 20px; text-align: right; border-bottom: 2px solid #ddd;
+        }
+        .detail-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 1000px;
+        }
+        .detail-section {
+            background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 15px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .detail-section h4 { color: #2a5a8a; margin-bottom: 10px; font-size: 0.95em; }
+        .kw-list { list-style: none; padding: 0; }
+        .kw-list li {
+            display: inline-block; background: #e8f0f8; padding: 3px 10px;
+            border-radius: 12px; margin: 3px; font-size: 0.8em; color: #333;
+        }
+        .kw-list li .count { color: #2a5a8a; margin-right: 4px; font-weight: 600; }
+
+        /* ── Program cards ── */
+        .program-list { list-style: none; padding: 0; }
+        .program-card {
+            background: #fff; border: 1px solid #e0e0e0; border-radius: 6px;
+            padding: 10px 14px; margin: 6px 0; cursor: pointer; transition: border-color 0.15s;
+        }
+        .program-card:hover { border-color: #2a5a8a; }
+        .program-card.expanded { border-color: #ff8800; }
+        .prog-header { display: flex; justify-content: space-between; align-items: center; }
+        .prog-name { font-weight: 600; font-size: 0.9em; }
+        .prog-rating {
+            display: inline-block; padding: 2px 8px; border-radius: 4px;
+            font-size: 0.8em; font-weight: 700;
+        }
+        .r5 { background: #ff4444; color: #fff; }
+        .r4 { background: #ff8800; color: #fff; }
+        .r3 { background: #ffcc00; color: #000; }
+        .r2 { background: #88aa44; color: #fff; }
+        .r1 { background: #aaa; color: #fff; }
+        .prog-meta { color: #777; font-size: 0.8em; margin-top: 4px; }
+        .research-badge {
+            display: inline-block; background: #2a5a8a; color: #fff; padding: 1px 6px;
+            border-radius: 3px; font-size: 0.7em; vertical-align: middle; margin-right: 4px;
+        }
+        .cluster-badge {
+            display: inline-block; background: #8b0000; color: #fff; padding: 2px 8px;
+            border-radius: 3px; font-size: 0.7em; vertical-align: middle; margin-right: 4px;
+        }
+        .research-comment {
+            background: #f0f5fa; border-right: 3px solid #2a5a8a; padding: 8px 12px;
+            margin-bottom: 8px; border-radius: 0 4px 4px 0;
+        }
+        .prog-detail {
+            display: none; margin-top: 10px; padding-top: 10px;
+            border-top: 1px solid #e0e0e0; font-size: 0.85em; color: #444; line-height: 1.6;
+        }
+        .prog-detail.visible { display: block; }
+
+        /* ── Research panel inside program detail ── */
+        .research-panel {
+            background: #fff5f5; border: 1px solid #e8aaaa; border-radius: 6px;
+            padding: 12px; margin-top: 10px;
+        }
+        .research-panel h5 {
+            color: #8b0000; margin-bottom: 8px; font-size: 0.95em;
+            display: flex; align-items: center; gap: 6px;
+        }
+        .research-panel .risk-badge {
+            display: inline-block; padding: 2px 8px; border-radius: 4px;
+            font-size: 0.75em; font-weight: 700; color: #fff;
+        }
+        .risk-high { background: #cc0000; }
+        .risk-medium-high { background: #ff6600; }
+        .risk-medium { background: #dd9900; }
+        .risk-low { background: #66aa44; }
+        .finding-list { list-style: none; padding: 0; margin: 8px 0; }
+        .finding-list li {
+            padding: 4px 0; font-size: 0.85em; color: #444;
+            border-bottom: 1px solid #f0e0e0;
+        }
+        .finding-list li:before { content: ''; color: #cc0000; margin-left: 6px; }
+        .report-link {
+            display: inline-block; margin-top: 8px; padding: 4px 12px;
+            background: #8b0000; color: #fff; border-radius: 4px;
+            text-decoration: none; font-size: 0.8em;
+        }
+        .report-link:hover { background: #a00; }
+
+        /* ── Pole bars ── */
+        .pole-bar-container { margin: 8px 0; }
+        .pole-bar-label { font-size: 0.8em; color: #777; margin-bottom: 3px; }
+        .pole-bar-bg {
+            background: #e8e8e8; border-radius: 4px; height: 18px; position: relative; overflow: hidden;
+        }
+        .pole-bar-fill { height: 100%; border-radius: 4px; transition: width 0.3s; min-width: 2px; }
+        .pole-bar-value {
+            position: absolute; left: 8px; top: 0; line-height: 18px;
+            font-size: 0.75em; color: #fff; font-weight: 600;
+        }
+
+        /* ── Research clusters section ── */
+        .clusters-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 16px; max-width: 1100px; margin: 20px auto;
+        }
+        .cluster-card {
+            background: #fff; border: 1px solid #e0e0e0; border-radius: 8px;
+            padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            border-right: 4px solid #cc0000;
+        }
+        .cluster-card h4 { color: #1a1a2e; margin-bottom: 8px; }
+        .cluster-orgs { color: #666; font-size: 0.8em; margin-bottom: 8px; }
+        .cluster-summary { font-size: 0.85em; color: #444; line-height: 1.5; margin-bottom: 10px; }
+        .cluster-findings { list-style: none; padding: 0; }
+        .cluster-findings li {
+            padding: 3px 0; font-size: 0.8em; color: #555;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .cluster-findings li:before { content: ''; color: #cc0000; margin-left: 4px; }
+
+        .links { text-align: center; margin: 30px 0; }
+        .links a { color: #2a5a8a; text-decoration: none; margin: 0 15px; font-weight: 500; }
+        .links a:hover { text-decoration: underline; }
+
+        /* ── Hero section ── */
+        .hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #2a3a5e 100%);
+            color: #fff; border-radius: 12px; padding: 28px 30px 24px;
+            margin: 0 auto 24px; max-width: 900px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+        }
+        .hero-headline {
+            font-size: 1.15em; line-height: 1.6; margin-bottom: 18px; color: #e8eaf0;
+        }
+        .hero-headline strong { color: #ff8800; }
+        .hero-stats {
+            display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;
+        }
+        .hero-stat {
+            background: rgba(255,255,255,0.1); border-radius: 8px;
+            padding: 10px 18px; text-align: center; min-width: 100px;
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+        .hero-stat .val { font-size: 1.6em; font-weight: 800; color: #ff8800; }
+        .hero-stat .lbl { font-size: 0.75em; color: #aab8d0; margin-top: 2px; }
+
+        /* ── Collapsible method-box ── */
+        .method-toggle {
+            cursor: pointer; display: flex; justify-content: space-between;
+            align-items: center; user-select: none;
+        }
+        .method-toggle .arrow { transition: transform 0.2s; font-size: 0.8em; color: #888; }
+        .method-toggle.open .arrow { transform: rotate(180deg); }
+        .method-body { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .method-body.open { max-height: 400px; }
+
+        /* ── About section ── */
+        .about-section {
+            background: #fff; border: 1px solid #ddd; border-radius: 8px;
+            padding: 20px 24px; margin: 30px auto 0; max-width: 900px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .about-section h3 { color: #2a5a8a; margin-bottom: 10px; font-size: 1em; }
+        .about-section p { font-size: 0.85em; color: #555; line-height: 1.6; margin-bottom: 8px; }
+        .about-section .data-sources {
+            display: flex; gap: 16px; flex-wrap: wrap; margin-top: 10px;
+        }
+        .about-section .source-tag {
+            background: #e8f0f8; padding: 4px 12px; border-radius: 4px;
+            font-size: 0.8em; color: #2a5a8a;
+        }
+
+        footer {
+            text-align: center; color: #999; font-size: 0.8em;
+            margin-top: 20px; padding: 20px 0; border-top: 1px solid #ddd;
+        }
+
+        /* ── Sections (tabs) ── */
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+
+        /* ── Stats bar ── */
+        .stats-bar {
+            display: flex; justify-content: center; gap: 30px; margin: 15px 0 20px;
+            flex-wrap: wrap;
+        }
+        .stat-item {
+            text-align: center; padding: 10px 20px;
+            background: #fff; border-radius: 8px; border: 1px solid #ddd;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            min-width: 120px;
+        }
+        .stat-value { font-size: 1.5em; font-weight: 700; color: #2a5a8a; }
+        .stat-label { font-size: 0.75em; color: #888; margin-top: 2px; }
+
+        .table-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+        /* ── Protocol browser ── */
+        .proto-browser-header {
+            max-width: 1000px; margin: 30px auto 10px;
+            border-top: 2px solid #ddd; padding-top: 20px;
+        }
+        .proto-browser-header h2 {
+            color: #1a1a2e; font-size: 1.15em; margin-bottom: 6px;
+        }
+        .proto-filter-bar {
+            display: flex; gap: 12px; align-items: center; flex-wrap: wrap;
+            max-width: 1000px; margin: 10px auto 16px;
+        }
+        .proto-filter-bar select {
+            padding: 8px 12px; border: 2px solid #ddd; border-radius: 8px;
+            font-size: 0.9em; direction: rtl; background: #fff;
+        }
+        .proto-filter-bar select:focus { outline: none; border-color: #2a5a8a; }
+        .proto-filter-bar .proto-count { color: #888; font-size: 0.85em; }
+
+        .proto-card {
+            background: #fff; border: 1px solid #e0e0e0; border-radius: 8px;
+            padding: 14px 18px; margin: 8px auto; max-width: 1000px;
+            cursor: pointer; transition: border-color 0.15s;
+        }
+        .proto-card:hover { border-color: #2a5a8a; }
+        .proto-card.expanded { border-color: #ff8800; }
+        .proto-card-header {
+            display: flex; justify-content: space-between; align-items: center;
+            flex-wrap: wrap; gap: 6px;
+        }
+        .proto-card-title { font-weight: 600; font-size: 0.9em; color: #1a1a2e; }
+        .proto-card-meta { font-size: 0.8em; color: #888; }
+        .proto-card-badges { display: flex; gap: 6px; align-items: center; }
+        .proto-hit-badge {
+            display: inline-block; padding: 2px 8px; border-radius: 4px;
+            font-size: 0.75em; font-weight: 700; color: #fff;
+        }
+        .proto-hit-high { background: #cc0000; }
+        .proto-hit-medium { background: #ff8800; }
+        .proto-hit-low { background: #88aa44; }
+        .proto-hit-none { background: #ccc; }
+        .proto-card-text {
+            display: none; margin-top: 12px; padding-top: 12px;
+            border-top: 1px solid #e0e0e0;
+            font-size: 0.85em; color: #333; line-height: 1.8;
+            max-height: 500px; overflow-y: auto;
+            white-space: pre-wrap; direction: rtl;
+        }
+        .proto-card-text.visible { display: block; }
+        .proto-card-text mark.pole-b {
+            background: #fff3cd; padding: 1px 3px; border-radius: 2px;
+        }
+        .proto-card-text mark.red-flag {
+            background: #ffcccc; padding: 1px 3px; border-radius: 2px;
+            font-weight: 600;
+        }
+        .proto-kw-summary {
+            display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px;
+        }
+        .proto-kw-pill {
+            display: inline-block; background: #e8f0f8; padding: 2px 8px;
+            border-radius: 10px; font-size: 0.75em; color: #333;
+        }
+        .proto-kw-pill.red { background: #ffe0e0; color: #8b0000; }
+        .proto-view-link {
+            display: inline-block; margin-top: 6px; padding: 4px 12px;
+            background: #2a5a8a; color: #fff; border-radius: 4px;
+            text-decoration: none; font-size: 0.8em; cursor: pointer;
+        }
+        .proto-view-link:hover { background: #345f8a; }
+
+        @media (max-width: 768px) {
+            .main-content { padding: 10px; }
+            th, td { padding: 8px 4px; font-size: 0.8em; }
+            h1 { font-size: 1.3em; }
+            .detail-grid { grid-template-columns: 1fr; }
+            .nav-inner { flex-direction: column; padding: 8px; }
+            .nav-tabs { flex-wrap: wrap; justify-content: center; }
+            .nav-tab { padding: 8px 12px; font-size: 0.8em; min-height: 40px; display: flex; align-items: center; }
+            .clusters-grid { grid-template-columns: 1fr; }
+            .hero { padding: 20px 16px; }
+            .hero-headline { font-size: 1em; }
+            .hero-stat { min-width: 70px; padding: 8px 10px; }
+            .hero-stat .val { font-size: 1.2em; }
+            .about-section { padding: 14px 16px; }
+            .stats-bar { gap: 10px; }
+            .stat-item { min-width: 80px; padding: 8px 12px; }
+            .stat-value { font-size: 1.2em; }
+            /* Hide low-priority columns on tablet */
+            th:nth-child(5), td:nth-child(5),
+            th:nth-child(8), td:nth-child(8),
+            th:nth-child(9), td:nth-child(9) { display: none; }
+            .detail-cell { padding: 12px; }
+            .detail-section { padding: 10px; }
+            .report-link { padding: 10px 16px; }
+            .links a { display: inline-block; padding: 10px 14px; }
+            .prog-header { flex-wrap: wrap; gap: 4px; }
+            .prog-name { word-break: break-word; }
+        }
+
+        @media (max-width: 480px) {
+            .nav-tab { padding: 6px 8px; font-size: 0.75em; }
+            .nav-title { font-size: 0.9em; }
+            th, td { padding: 6px 3px; font-size: 0.75em; }
+            /* Also hide red_flag column on small phones */
+            th:nth-child(7), td:nth-child(7) { display: none; }
+        }
+    </style>
 </head>
 <body>
-    <p>מעביר לגרסה העדכנית... <a href="latest/">לחצו כאן</a></p>
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+        <div class="nav-inner">
+            <span class="nav-title">דירוג ערים</span>
+            <div class="nav-tabs">
+                <div class="nav-tab active" onclick="switchTab('ranking',this)">דירוג משולב</div>
+                <div class="nav-tab" onclick="switchTab('education',this)">תוכניות חינוך</div>
+                <div class="nav-tab" onclick="switchTab('protocols',this)">פרוטוקולים</div>
+                <div class="nav-tab" onclick="switchTab('redflags',this)">דגלים אדומים</div>
+                <div class="nav-tab" onclick="switchTab('research',this)">מחקר מעמיק</div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-content">
+
+    <!-- ═══ TAB: RANKING (default) ═══ -->
+    <div id="tab-ranking" class="tab-content active">
+        <h1>דירוג ערים — ציון משולב</h1>
+        <p class="subtitle">לחצו על עיר לפרטים</p>
+
+        <!-- Hero summary -->
+        <div class="hero" id="hero-section">
+            <div class="hero-headline">
+                ניתוח חוצה מקורות של <strong>חדירה אידיאולוגית</strong> למערכת החינוך העירונית.
+                שילוב נתוני תוכניות גפ"ן, פרוטוקולי מועצות עיר, ומחקר מעמיק על <strong>7 אשכולות ארגוניים</strong> חשודים.
+            </div>
+            <div class="hero-stats" id="hero-stats"></div>
+        </div>
+
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="חפש עיר..." oninput="filterTable()">
+            <span class="search-icon">&#128269;</span>
+        </div>
+
+        <div class="method-box">
+            <div class="method-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+                <h3>שיטת החישוב</h3>
+                <span class="arrow">&#9660;</span>
+            </div>
+            <div class="method-body">
+                <ul style="margin-top:10px">
+                    <li><strong>ציון משולב</strong> = שקלול של שלושה מקורות מידע:</li>
+                    <li>• חשיפה חינוכית (תוכניות גפ"ן) <span class="weight">50%</span></li>
+                    <li>• אותות פרוגרסיביים בפרוטוקולים (ציר ב') <span class="weight">30%</span></li>
+                    <li>• דגלים אדומים — שיתוף UNESCO, יועצים חיצוניים <span class="weight">20%</span></li>
+                    <li class="dim" style="margin-top:8px">ציר א' (זהות יהודית/ציונית) מוצג לעיון בלבד ואינו נכלל בציון המשולב</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="legend">
+            <span><span class="dot" style="background:#ff4444"></span> 50+ קריטי</span>
+            <span><span class="dot" style="background:#ff8800"></span> 30-49 גבוה</span>
+            <span><span class="dot" style="background:#cc9900"></span> 15-29 בינוני</span>
+            <span><span class="dot" style="background:#44cc44"></span> &lt;15 נמוך</span>
+        </div>
+
+        <div class="table-wrapper">
+        <table id="main-table">
+            <thead>
+                <tr>
+                    <th data-col="rank" data-type="num"># <span class="sort-arrow">&#9660;</span></th>
+                    <th data-col="city" data-type="str">עיר <span class="sort-arrow">&#9660;</span></th>
+                    <th data-col="combined_score" data-type="num">ציון משולב <span class="sort-arrow">&#9660;</span></th>
+                    <th data-col="exposure_score" data-type="num">חשיפה חינוכית <span class="sort-arrow">&#9660;</span></th>
+                    <th data-col="subversive_ratio" data-type="num">% תקציב מסומן <span class="sort-arrow">&#9660;</span></th>
+                    <th data-col="pole_b" data-type="num">ציר ב' <span class="sort-arrow">&#9660;</span></th>
+                    <th data-col="red_flag" data-type="num">דגלים אדומים <span class="sort-arrow">&#9660;</span></th>
+                    <th data-col="pole_a" data-type="num">ציר א' (זהות) <span class="sort-arrow">&#9660;</span></th>
+                    <th data-col="protocol_coverage" data-type="str">כיסוי <span class="sort-arrow">&#9660;</span></th>
+                </tr>
+            </thead>
+            <tbody id="table-body"></tbody>
+        </table>
+        </div>
+    </div>
+
+    <!-- ═══ TAB: EDUCATION ═══ -->
+    <div id="tab-education" class="tab-content">
+        <h1>תוכניות חינוך — ניתוח גפ"ן</h1>
+        <p class="subtitle">תוכניות חינוך מסומנות ב-20 ערים | מיון לפי רמת חשיפה חינוכית</p>
+
+        <div class="stats-bar" id="edu-stats"></div>
+
+        <div class="search-bar">
+            <input type="text" id="edu-search" placeholder="חפש תוכנית או ארגון..." oninput="filterEducation()">
+            <span class="search-icon">&#128269;</span>
+        </div>
+
+        <div id="edu-programs-list"></div>
+    </div>
+
+    <!-- ═══ TAB: PROTOCOLS ═══ -->
+    <div id="tab-protocols" class="tab-content">
+        <h1>פרוטוקולים עירוניים</h1>
+        <p class="subtitle">ניתוח מילות מפתח בפרוטוקולי מועצות עיר | 15 ערים</p>
+
+        <div class="stats-bar" id="proto-stats"></div>
+
+        <div id="proto-details-list"></div>
+
+        <!-- Protocol Browser -->
+        <div class="proto-browser-header">
+            <h2>רשימת פרוטוקולים — טקסט מלא עם הדגשת מילות מפתח</h2>
+            <p class="subtitle" style="text-align:right">53 פרוטוקולים שנבחרו מ-5 ערים עם האותות החזקים ביותר | לחצו לפתיחת הטקסט</p>
+        </div>
+        <div class="proto-filter-bar">
+            <select id="proto-city-filter" onchange="renderProtocolBrowser()">
+                <option value="all">כל הערים</option>
+            </select>
+            <span class="proto-count" id="proto-browser-count"></span>
+        </div>
+        <div id="proto-browser-list"></div>
+    </div>
+
+    <!-- ═══ TAB: RED FLAGS ═══ -->
+    <div id="tab-redflags" class="tab-content">
+        <h1>דגלים אדומים — אותות לכידה מוסדית</h1>
+        <p class="subtitle">זיהוי אינדיקטורים מוסדיים בפרוטוקולי מועצות עיר המצביעים על חדירה אידיאולוגית חיצונית</p>
+
+        <!-- Intro explainer -->
+        <div class="method-box" style="max-width:900px;margin:20px auto">
+            <div class="method-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+                <h3>מה הם דגלים אדומים ולמה הם חשובים?</h3>
+                <span class="arrow">&#9660;</span>
+            </div>
+            <div class="method-body open" style="max-height:800px">
+                <div style="margin-top:12px;line-height:1.8;color:#444;font-size:0.9em">
+                    <p style="margin-bottom:10px">
+                        <strong>דגלים אדומים</strong> הם אינדיקטורים שזוהו בפרוטוקולי מועצות עיר, המצביעים על דפוסים של
+                        <strong>לכידה מוסדית</strong> (institutional capture) — מצב שבו גורמים חיצוניים מצליחים להשפיע על
+                        מדיניות עירונית דרך מנגנונים שאינם שקופים לציבור.
+                    </p>
+                    <p style="margin-bottom:10px">
+                        ניתוח הפרוטוקולים מזהה שלוש קטגוריות עיקריות של דגלים, המבוססות על
+                        <a href="https://newdiscourses.com/translations/social-justice-encyclopedia/" target="_blank" style="color:#2a5a8a">מסגרת הניתוח של New Discourses</a>
+                        ועל מחקר על
+                        <a href="https://www.ngo-monitor.org/reports/breaking-the-impasse/" target="_blank" style="color:#2a5a8a">מימון זר בחינוך הישראלי (NGO Monitor)</a>:
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category cards -->
+        <div style="max-width:900px;margin:0 auto 20px">
+            <div class="detail-section" style="margin-bottom:16px;border-right:4px solid #cc0000;background:#fff5f5">
+                <h4 style="color:#cc0000">1. שיתוף פעולה עם UNESCO / רשתות בינלאומיות</h4>
+                <div style="font-size:0.88em;color:#444;line-height:1.7;margin:8px 0">
+                    <p><strong>מילות מפתח:</strong> "רשת ערים", "פיתוח בר-קיימא"</p>
+                    <p style="margin-top:6px"><strong>למה זה דגל אדום?</strong></p>
+                    <ul style="list-style:disc;padding-right:20px;margin:6px 0">
+                        <li><strong>SDGs כמנוף אידיאולוגי</strong> — יעדי הפיתוח בר-קיימא (SDGs) של האו"ם משמשים כמסגרת "ניטרלית" להכנסת תכנים בנושאי מגדר, צדק חברתי ואקלים לתוכניות לימוד עירוניות.</li>
+                        <li><strong>חד-כיווניות</strong> — רשתות ערים בינלאומיות (כמו UNESCO Global Network of Learning Cities) מחילות תקנים ערכיים אחידים שעלולים להתנגש עם ערכי הקהילה המקומית.</li>
+                        <li><strong>מנגנון עוקף דמוקרטיה</strong> — החלטות שמתקבלות ברמה בינלאומית "יורדות" לעיריות ללא שיח ציבורי מקומי.</li>
+                    </ul>
+                    <p style="margin-top:6px;font-size:0.85em;color:#666">
+                        <strong>מקורות:</strong>
+                        <a href="https://uil.unesco.org/lifelong-learning/learning-cities" target="_blank" style="color:#2a5a8a">UNESCO Learning Cities</a> |
+                        <a href="https://sdgs.un.org/goals" target="_blank" style="color:#2a5a8a">UN SDGs</a> |
+                        <a href="https://www.ngo-monitor.org/key-issues/united-nations/un-human-rights-council/" target="_blank" style="color:#2a5a8a">NGO Monitor: UN frameworks</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="detail-section" style="margin-bottom:16px;border-right:4px solid #ff6600;background:#fff8f0">
+                <h4 style="color:#ff6600">2. יועצים חיצוניים ומתווכי ידע</h4>
+                <div style="font-size:0.88em;color:#444;line-height:1.7;margin:8px 0">
+                    <p><strong>מילות מפתח:</strong> "יועץ חיצוני"</p>
+                    <p style="margin-top:6px"><strong>למה זה דגל אדום?</strong></p>
+                    <ul style="list-style:disc;padding-right:20px;margin:6px 0">
+                        <li><strong>צינור השפעה</strong> — יועצים חיצוניים מקצועיים יכולים לשמש כ"מתווכי ידע" (knowledge brokers) המכניסים שפה ומסגרות אידיאולוגיות לתוך שיח עירוני, תחת מעטה מקצועי.</li>
+                        <li><strong>חוסר שקיפות</strong> — פרוטוקולים לעיתים אינם מפרטים את הגורם השולח, שיוכו הארגוני, או מקור המימון של היועץ.</li>
+                        <li><strong>דפוס חוזר</strong> — ארגונים כמו דרור ישראל, מכון הרטמן ואחרים שולחים "מומחים" לרשויות מקומיות — מה שנראה כשירות מקצועי אך למעשה הוא ערוץ לקידום אג'נדה.</li>
+                    </ul>
+                    <p style="margin-top:6px;font-size:0.85em;color:#666">
+                        <strong>מקורות:</strong>
+                        ראו דוחות מחקר מעמיק בטאב "מחקר מעמיק" — במיוחד:
+                        <span style="background:#e8f0f8;padding:2px 6px;border-radius:3px;cursor:pointer" onclick="switchTab('research',document.querySelector('[data-tab=research]')||document.querySelectorAll('.nav-tab')[4])">רשת דרור ישראל</span>,
+                        <span style="background:#e8f0f8;padding:2px 6px;border-radius:3px;cursor:pointer" onclick="switchTab('research',document.querySelector('[data-tab=research]')||document.querySelectorAll('.nav-tab')[4])">רשת מכון הרטמן</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="detail-section" style="margin-bottom:16px;border-right:4px solid #8b0000;background:#faf0f0">
+                <h4 style="color:#8b0000">3. רציונל מחקרי — מדוע דגלים אלה חשובים?</h4>
+                <div style="font-size:0.88em;color:#444;line-height:1.7;margin:8px 0">
+                    <p>המסגרת הקונספטואלית מבוססת על שלושה מקורות מחקריים:</p>
+                    <ul style="list-style:disc;padding-right:20px;margin:8px 0">
+                        <li><strong>James Lindsay (New Discourses)</strong> — תיעוד שיטתי של חדירת "צדק חברתי" (Critical Social Justice) למוסדות דרך שפה מקצועית ניטרלית. הגדרת "institutional capture" כתהליך שבו אידיאולוגיה מחליפה מומחיות.</li>
+                        <li><strong>NGO Monitor</strong> — מחקר על מימון זר בחינוך הישראלי: NIF, Ford Foundation, EU ועוד — מיפוי של ערוצי השפעה דרך עמותות → יועצים → רשויות מקומיות.</li>
+                        <li><strong>Christopher Rufo</strong> — תיאור מנגנוני DEI/ESG כערוצי החדרה אידיאולוגית למוסדות ציבוריים, כולל מערכות חינוך עירוניות.</li>
+                    </ul>
+                    <p style="margin-top:8px"><strong>השיטה:</strong> סריקה אוטומטית של מילות מפתח בפרוטוקולי מועצות עיר, נורמליזציה לפי אורך הטקסט (לכל 10,000 תווים), ומיון ערים לפי צפיפות אינדיקטורים. הציון משתתף ב-<strong>20%</strong> מהציון המשולב.</p>
+                    <p style="font-size:0.85em;color:#666;margin-top:6px">
+                        <strong>מקורות נוספים:</strong>
+                        <a href="data/research_lens.json" download style="color:#2a5a8a">מסגרת המחקר (JSON)</a> |
+                        <a href="data/methodology_computations.json" download style="color:#2a5a8a">חישובים סטטיסטיים</a> |
+                        <a href="docs/METHODOLOGY.md" download style="color:#2a5a8a">מתודולוגיה מלאה</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <h2 style="text-align:center;color:#1a1a2e;margin:30px 0 15px;font-size:1.2em">ממצאים לפי עיר</h2>
+        <p class="subtitle">ערים ממוינות לפי צפיפות דגלים אדומים בפרוטוקולים</p>
+        <div id="redflags-list"></div>
+    </div>
+
+    <!-- ═══ TAB: RESEARCH ═══ -->
+    <div id="tab-research" class="tab-content">
+        <h1>מחקר מעמיק — ניתוח ארגונים חשודים</h1>
+        <p class="subtitle">מחקר בסגנון 9 פרקים (עדשה אידיאולוגית-ערכית) | 7 אשכולות ארגוניים</p>
+
+        <div class="clusters-grid" id="clusters-grid"></div>
+    </div>
+
+    <div class="links">
+        <a href="data.js" download="data.js">&#11015; הורד נתונים</a>
+        <a href="https://aosshalem-dev.github.io/educational-programs/">&#128202; ניתוח תוכניות חינוך</a>
+        <a href="research/" target="_blank">&#128196; דוחות מחקר מלאים</a>
+    </div>
+
+    <div class="about-section">
+        <h3>אודות הפרויקט</h3>
+        <p>
+            <strong>פרויקט אלכסון — דירוג ערים</strong> הוא כלי מחקר ייעודי לניתוח חדירה אידיאולוגית-ערכית
+            למערכת החינוך העירונית בישראל. הפרויקט משלב שלושה מקורות נתונים עצמאיים לבניית תמונה חוצת-מקורות.
+        </p>
+        <p>
+            הדירוג אינו מייצג עמדה פוליטית אלא מבוסס על ניתוח כמותי של תוכניות חינוך, מילות מפתח בפרוטוקולים,
+            ומחקר מעמיק על ארגונים הפועלים במערכת. כל ממצא מגובה במקור ציבורי הזמין לבדיקה.
+        </p>
+        <div class="data-sources">
+            <span class="source-tag">מערכת גפ"ן — משרד החינוך</span>
+            <span class="source-tag">פרוטוקולי מועצות עיר</span>
+            <span class="source-tag">GuideStar — רשם העמותות</span>
+            <span class="source-tag">NGO Monitor</span>
+            <span class="source-tag">דוחות כספיים ציבוריים</span>
+        </div>
+    </div>
+
+    <footer>
+        פרויקט אלכסון — דירוג ערים | עדכון אחרון: פברואר 2026<br>
+        מקורות: פרוטוקולים עירוניים (15 ערים) + תוכניות גפ"ן (20 ערים) + 7 דוחות מחקר מעמיק
+    </footer>
+
+    </div><!-- .main-content -->
+
+    <script src="data.js?v=10"></script>
+    <script src="research_data.js?v=10"></script>
+    <script src="protocols_data.js?v=10"></script>
+    <script>
+    // ── Tab switching ──
+    function switchTab(tab, el) {
+        document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+        document.getElementById('tab-' + tab).classList.add('active');
+        if (el) el.classList.add('active');
+
+        // Lazy-render tab content
+        if (tab === 'education' && !document.getElementById('edu-programs-list').innerHTML) renderEducation();
+        if (tab === 'protocols' && !document.getElementById('proto-details-list').innerHTML) {
+            renderProtocols();
+            renderProtocolBrowser();
+        }
+        if (tab === 'redflags' && !document.getElementById('redflags-list').innerHTML) renderRedFlags();
+        if (tab === 'research' && !document.getElementById('clusters-grid').innerHTML) renderResearch();
+    }
+
+    // ── City name -> protocol key mapping ──
+    const CITY_KEY_MAP = {
+        'אריאל': 'ariel', 'באר שבע': 'BEER_SHEVA', 'אפרת': 'EFRAT',
+        'עמנואל': 'EMANUEL', 'גבעת שמואל': 'GIVAT_SHMUEL', 'גבעתיים': 'GIVATAYIM',
+        'חיפה': 'HAIFA', 'הרצליה': 'HERZLIYA', 'הוד השרון': 'HOD_HASHARON',
+        'כרמיאל': 'KARMIEL', 'קרית גת': 'KIRYAT_GAT', 'קרית אונו': 'KIRYAT_ONO',
+        'נתיבות': 'NETIVOT', 'רעננה': 'RAANANA', 'ראש העין': 'ROSH_HAAYIN',
+    };
+
+    function scoreColor(score) {
+        if (score >= 50) return '#ff4444';
+        if (score >= 30) return '#ff8800';
+        if (score >= 15) return '#b89900';
+        return '#44aa44';
+    }
+
+    function ratingClass(r) {
+        if (r >= 5) return 'r5';
+        if (r >= 4) return 'r4';
+        if (r >= 3) return 'r3';
+        return 'r2';
+    }
+
+    function riskBadgeClass(score) {
+        if (score >= 5) return 'risk-high';
+        if (score >= 4) return 'risk-medium-high';
+        if (score >= 3) return 'risk-medium';
+        return 'risk-low';
+    }
+
+    function buildPoleBar(label, value, max, color) {
+        const pct = Math.min((value / max) * 100, 100);
+        return `<div class="pole-bar-container">
+            <div class="pole-bar-label">${label}</div>
+            <div class="pole-bar-bg">
+                <div class="pole-bar-fill" style="width:${pct}%;background:${color}"></div>
+                <div class="pole-bar-value">${value}</div>
+            </div>
+        </div>`;
+    }
+
+    function buildKeywordPills(details) {
+        if (!details || typeof details !== 'object') return '';
+        let pills = [];
+        for (const [cat, keywords] of Object.entries(details)) {
+            if (typeof keywords !== 'object') continue;
+            for (const [word, count] of Object.entries(keywords)) {
+                pills.push({word, count});
+            }
+        }
+        pills.sort((a, b) => b.count - a.count);
+        return pills.slice(0, 20).map(p =>
+            `<li><span class="count">${p.count}</span>${p.word}</li>`
+        ).join('');
+    }
+
+    // ── Find research cluster for a program ──
+    function findCluster(prog) {
+        if (typeof RESEARCH === 'undefined') return null;
+        // Check direct ID mapping
+        const cid = RESEARCH.program_cluster_map[prog.id];
+        if (cid) return RESEARCH.clusters[cid];
+        // Check name patterns
+        for (const [pattern, clusterId] of Object.entries(RESEARCH.program_name_patterns)) {
+            if (prog.name && prog.name.includes(pattern)) {
+                return RESEARCH.clusters[clusterId];
+            }
+        }
+        return null;
+    }
+
+    function buildResearchPanel(cluster) {
+        if (!cluster) return '';
+        const findings = (cluster.key_findings || []).slice(0, 5);
+        const summary = cluster.summary.length > 200 ? cluster.summary.slice(0, 200) + '...' : cluster.summary;
+        return `<div class="research-panel">
+            <h5>
+                &#128270; מחקר מעמיק: ${cluster.name_he}
+                <span class="risk-badge ${riskBadgeClass(cluster.risk_score)}">סיכון: ${cluster.risk_level}</span>
+            </h5>
+            <div style="font-size:0.85em;color:#555;margin-bottom:8px">${summary}</div>
+            ${findings.length > 0 ? `
+                <ul class="finding-list">
+                    ${findings.map(f => `<li>${f}</li>`).join('')}
+                </ul>` : ''}
+            ${cluster.report_url ? `<a class="report-link" href="${cluster.report_url}" target="_blank">&#128196; קרא דוח מלא</a>` : ''}
+        </div>`;
+    }
+
+    let _cardIdx = 0;
+    function buildProgramCard(prog) {
+        const uid = _cardIdx++;
+        const info = DATA.program_info[prog.id] || {};
+        const summary = info.summary || '';
+        const rDesc = info.research_desc || prog.research_desc || '';
+        const rNotes = info.research_notes || prog.research_notes || '';
+        const cluster = findCluster(prog);
+
+        let detailParts = [];
+        if (rDesc) detailParts.push(`<div class="research-comment"><strong>תיאור מחקרי:</strong> ${rDesc}</div>`);
+        if (rNotes) detailParts.push(`<div class="research-comment"><strong>הערות סוכנים:</strong> ${rNotes}</div>`);
+        if (summary) detailParts.push(`<div><strong>תקציר תוכנית:</strong> ${summary}</div>`);
+        detailParts.push(`<div><strong>ארגון:</strong> ${info.org || prog.institution || '\u2014'}</div>`);
+        if (info.field) detailParts.push(`<div><strong>תחום:</strong> ${info.field}</div>`);
+        if (info.schools) detailParts.push(`<div><strong>בתי ספר:</strong> ${info.schools} &nbsp;|&nbsp; <strong>ערים:</strong> ${info.num_cities || '\u2014'}</div>`);
+        detailParts.push(`<div><strong>מקור דירוג:</strong> ${prog.source || '\u2014'}</div>`);
+
+        // Add research panel if cluster exists
+        if (cluster) {
+            detailParts.push(buildResearchPanel(cluster));
+        }
+
+        const hasResearch = rDesc || rNotes;
+        const researchBadge = hasResearch ? '<span class="research-badge">מחקר</span>' : '';
+        const clusterBadge = cluster ? `<span class="cluster-badge">${cluster.name_he}</span>` : '';
+
+        return `<div class="program-card" onclick="toggleProg('pc-${uid}')">
+            <div class="prog-header">
+                <span class="prog-name">${prog.name} ${clusterBadge} ${researchBadge}</span>
+                <span class="prog-rating ${ratingClass(prog.rating)}">${prog.rating}</span>
+            </div>
+            <div class="prog-meta">
+                תקציב: \u20AA${Math.round(prog.budget).toLocaleString()} &nbsp;|&nbsp; ${prog.institution || ''}
+            </div>
+            <div class="prog-detail" id="pc-${uid}">
+                ${detailParts.join('')}
+            </div>
+        </div>`;
+    }
+
+    function buildDetailPanel(entry) {
+        const key = entry.protocol_key || CITY_KEY_MAP[entry.city];
+        const proto = key ? DATA.protocol_details[key] : null;
+        const worst = DATA.worst_programs[entry.city] || [];
+
+        let leftPanel = '';
+        if (proto) {
+            leftPanel = `
+                <div class="detail-section">
+                    <h4>ציר א' \u2014 זהות יהודית/ציונית (${entry.pole_a || '\u2014'})</h4>
+                    ${buildPoleBar('ציון', entry.pole_a || 0, 10, '#4488cc')}
+                    <ul class="kw-list">${buildKeywordPills(proto.pole_a_details)}</ul>
+                </div>
+                <div class="detail-section">
+                    <h4>ציר ב' \u2014 אותות פרוגרסיביים (${entry.pole_b || '\u2014'})</h4>
+                    ${buildPoleBar('ציון', entry.pole_b || 0, 3, '#ff8800')}
+                    <ul class="kw-list">${buildKeywordPills(proto.pole_b_details)}</ul>
+                </div>
+                ${Object.keys(proto.red_flag_details || {}).length > 0 ? `
+                <div class="detail-section">
+                    <h4>דגלים אדומים (${entry.red_flag || '\u2014'})</h4>
+                    <ul class="kw-list">${buildKeywordPills(proto.red_flag_details)}</ul>
+                </div>` : ''}`;
+        }
+
+        let rightPanel = '';
+        if (worst.length > 0) {
+            rightPanel = `
+                <div class="detail-section" style="grid-column: ${proto ? 'auto' : '1 / -1'}">
+                    <h4>תוכניות חינוך בעייתיות (${worst.length} מובילות)</h4>
+                    <div class="program-list">
+                        ${worst.map(p => buildProgramCard(p)).join('')}
+                    </div>
+                </div>`;
+        }
+
+        if (!proto && worst.length === 0) {
+            return '<div class="detail-section"><h4>אין נתונים מפורטים זמינים</h4></div>';
+        }
+
+        return `<div class="detail-grid">${leftPanel}${rightPanel}</div>`;
+    }
+
+    function toggleCity(idx) {
+        const row = document.getElementById(`detail-${idx}`);
+        const cityRow = document.getElementById(`city-${idx}`);
+        const wasVisible = row.classList.contains('visible');
+
+        document.querySelectorAll('.detail-row').forEach(r => r.classList.remove('visible'));
+        document.querySelectorAll('.city-row').forEach(r => r.classList.remove('active'));
+
+        if (!wasVisible) {
+            row.classList.add('visible');
+            cityRow.classList.add('active');
+        }
+    }
+
+    function toggleProg(id) {
+        const el = document.getElementById(id);
+        if (el) {
+            el.classList.toggle('visible');
+            el.closest('.program-card').classList.toggle('expanded');
+        }
+    }
+
+    // ── Search filter ──
+    let searchTerm = '';
+    function filterTable() {
+        searchTerm = document.getElementById('search-input').value.trim();
+        render();
+    }
+
+    // ── Sorting ──
+    let sortCol = 'combined_score';
+    let sortDir = -1;
+
+    function getAllEntries() {
+        const ranked = (DATA.rankings || []).map(e => ({...e, _group: 'ranked'}));
+        const partials = [
+            ...(DATA.protocols_only || []).map(e => ({...e, _group: 'partial'})),
+            ...(DATA.education_only || []).map(e => ({...e, _group: 'partial'})),
+        ];
+        return [...ranked, ...partials];
+    }
+
+    function sortEntries(entries) {
+        const th = document.querySelector(`th[data-col="${sortCol}"]`);
+        const type = th ? th.dataset.type : 'num';
+
+        return entries.slice().sort((a, b) => {
+            let va = a[sortCol];
+            let vb = b[sortCol];
+            if (va == null && vb == null) return 0;
+            if (va == null) return 1;
+            if (vb == null) return -1;
+            if (type === 'num') {
+                va = parseFloat(va) || 0;
+                vb = parseFloat(vb) || 0;
+                return (va - vb) * sortDir;
+            } else {
+                return String(va).localeCompare(String(vb), 'he') * sortDir;
+            }
+        });
+    }
+
+    function updateSortUI() {
+        document.querySelectorAll('th[data-col]').forEach(th => {
+            const arrow = th.querySelector('.sort-arrow');
+            if (th.dataset.col === sortCol) {
+                th.classList.add('sorted');
+                arrow.textContent = sortDir === -1 ? '\u25BC' : '\u25B2';
+            } else {
+                th.classList.remove('sorted');
+                arrow.textContent = '\u25BC';
+            }
+        });
+    }
+
+    document.querySelector('thead').addEventListener('click', function(e) {
+        const th = e.target.closest('th[data-col]');
+        if (!th) return;
+        const col = th.dataset.col;
+        if (sortCol === col) {
+            sortDir *= -1;
+        } else {
+            sortCol = col;
+            sortDir = col === 'city' ? 1 : -1;
+        }
+        updateSortUI();
+        render();
+    });
+
+    // ── Main table render ──
+    function render() {
+        const tbody = document.getElementById('table-body');
+        let all = sortEntries(getAllEntries());
+
+        // Apply search filter
+        if (searchTerm) {
+            all = all.filter(e => e.city && e.city.includes(searchTerm));
+        }
+
+        let html = '';
+        all.forEach((e, i) => {
+            const isPartial = e._group === 'partial';
+            const color = e.combined_score != null ? scoreColor(e.combined_score) : '#888';
+            const src = isPartial ? (e.data_sources === 'protocols_only' ? 'פרוטוקולים' : 'חינוך') : '';
+
+            html += `<tr class="city-row ${isPartial ? 'partial' : ''}" id="city-${i}" onclick="toggleCity(${i})">
+                <td class="rank">${isPartial ? '\u2014' : (e.rank || i+1)}</td>
+                <td class="city">${e.city} \u25BE ${isPartial ? '<span class="dim">(' + src + ')</span>' : ''}</td>
+                <td class="score" style="color:${color};font-weight:bold">${e.combined_score ?? '\u2014'}</td>
+                <td>${e.exposure_score != null ? e.exposure_score + '%' : '\u2014'}</td>
+                <td>${e.subversive_ratio != null ? e.subversive_ratio + '%' : '\u2014'}</td>
+                <td>${e.pole_b ?? '\u2014'}</td>
+                <td>${e.red_flag ?? '\u2014'}</td>
+                <td>${e.pole_a ?? '\u2014'}</td>
+                <td class="dim">${e.protocol_coverage || '\u2014'}</td>
+            </tr>
+            <tr class="detail-row" id="detail-${i}">
+                <td colspan="9" class="detail-cell">${buildDetailPanel(e)}</td>
+            </tr>`;
+        });
+
+        tbody.innerHTML = html;
+    }
+
+    // ── Education tab ──
+    function renderEducation() {
+        // Collect and dedup programs first, then compute stats
+        const allProgs = [];
+        for (const [city, progs] of Object.entries(DATA.worst_programs || {})) {
+            for (const p of progs) {
+                allProgs.push({...p, city});
+            }
+        }
+
+        // Sort by rating desc, then budget desc
+        allProgs.sort((a, b) => (b.rating - a.rating) || (b.budget - a.budget));
+
+        // Deduplicate by id
+        const seen = new Set();
+        const unique = allProgs.filter(p => {
+            if (seen.has(p.id)) return false;
+            seen.add(p.id);
+            return true;
+        });
+
+        // Compute budget from unique programs only
+        let totalBudget = 0;
+        for (const p of unique) totalBudget += p.budget || 0;
+
+        const cityCount = Object.keys(DATA.worst_programs || {}).length;
+        const highRisk = unique.filter(p => p.rating >= 4).length;
+
+        document.getElementById('edu-stats').innerHTML = `
+            <div class="stat-item"><div class="stat-value">${cityCount}</div><div class="stat-label">ערים</div></div>
+            <div class="stat-item"><div class="stat-value">${unique.length}</div><div class="stat-label">תוכניות ייחודיות</div></div>
+            <div class="stat-item"><div class="stat-value">${highRisk}</div><div class="stat-label">סיכון גבוה (4-5)</div></div>
+            <div class="stat-item"><div class="stat-value">\u20AA${(totalBudget/1000000).toFixed(1)} מיליון</div><div class="stat-label">תקציב כולל</div></div>
+        `;
+
+        const container = document.getElementById('edu-programs-list');
+        container.innerHTML = `<div style="max-width:900px;margin:0 auto">
+            <div class="program-list" id="edu-prog-cards">
+                ${unique.slice(0, 100).map(p => buildProgramCard(p)).join('')}
+            </div>
+            ${unique.length > 100 ? `<p class="dim" style="text-align:center;margin-top:15px">מציג 100 מתוך ${unique.length} תוכניות. השתמש בחיפוש לסינון.</p>` : ''}
+        </div>`;
+    }
+
+    function filterEducation() {
+        const term = document.getElementById('edu-search').value.trim();
+        const cards = document.querySelectorAll('#edu-prog-cards .program-card');
+        cards.forEach(card => {
+            const text = card.textContent;
+            card.style.display = (!term || text.includes(term)) ? '' : 'none';
+        });
+    }
+
+    // ── Protocols tab ──
+    function renderProtocols() {
+        const proto = DATA.protocol_details || {};
+        const cities = Object.keys(proto);
+        const allEntries = getAllEntries();
+
+        // Compute aggregate stats
+        const protoEntries = allEntries.filter(e => e.pole_b != null);
+        const avgPoleB = protoEntries.length > 0 ? (protoEntries.reduce((s, e) => s + (e.pole_b || 0), 0) / protoEntries.length).toFixed(2) : '—';
+        const redFlagCities = protoEntries.filter(e => e.red_flag > 0).length;
+
+        document.getElementById('proto-stats').innerHTML = `
+            <div class="stat-item"><div class="stat-value">${cities.length}</div><div class="stat-label">ערים עם פרוטוקולים</div></div>
+            <div class="stat-item"><div class="stat-value">${avgPoleB}</div><div class="stat-label">ממוצע ציר ב'</div></div>
+            <div class="stat-item"><div class="stat-value">${redFlagCities}</div><div class="stat-label">ערים עם דגלים אדומים</div></div>
+        `;
+
+        // Find city name for each key
+        const keyToCity = {};
+        for (const [name, key] of Object.entries(CITY_KEY_MAP)) {
+            keyToCity[key] = name;
+        }
+
+        let html = '<div style="max-width:1000px;margin:0 auto">';
+        for (const [key, details] of Object.entries(proto)) {
+            const cityName = keyToCity[key] || key;
+            // Find the ranking entry for pole scores
+            const entry = getAllEntries().find(e => (e.protocol_key || CITY_KEY_MAP[e.city]) === key) || {};
+
+            html += `<div class="detail-section" style="margin-bottom:16px">
+                <h4>${cityName}</h4>
+                <div class="detail-grid" style="margin-top:10px">
+                    <div>
+                        <strong>ציר א' \u2014 זהות יהודית/ציונית (${entry.pole_a || '\u2014'})</strong>
+                        ${buildPoleBar('ציון', entry.pole_a || 0, 10, '#4488cc')}
+                        <ul class="kw-list">${buildKeywordPills(details.pole_a_details)}</ul>
+                    </div>
+                    <div>
+                        <strong>ציר ב' \u2014 אותות פרוגרסיביים (${entry.pole_b || '\u2014'})</strong>
+                        ${buildPoleBar('ציון', entry.pole_b || 0, 3, '#ff8800')}
+                        <ul class="kw-list">${buildKeywordPills(details.pole_b_details)}</ul>
+                    </div>
+                </div>
+            </div>`;
+        }
+        html += '</div>';
+        document.getElementById('proto-details-list').innerHTML = html;
+    }
+
+    // ── Red Flags tab ──
+    const RF_CATEGORY_INFO = {
+        'unesco_cooperation': {
+            label: 'שיתוף UNESCO / רשתות בינלאומיות',
+            icon: '\uD83C\uDF10',
+            color: '#cc0000',
+            explanation: 'הופעת מונחים המצביעים על השתלבות ברשתות בינלאומיות (רשת ערים לומדות, פיתוח בר-קיימא). מנגנון להחלת מדיניות ערכית אחידה על רשויות מקומיות.',
+        },
+        'external_consultants': {
+            label: 'יועצים חיצוניים',
+            icon: '\uD83D\uDC64',
+            color: '#ff6600',
+            explanation: 'אזכור יועצים חיצוניים בפרוטוקולים. עלול להצביע על ערוץ השפעה אידיאולוגי דרך "מומחיות" מקצועית ללא שקיפות לגבי הגורם השולח.',
+        },
+    };
+
+    function renderRedFlags() {
+        const proto = DATA.protocol_details || {};
+        const allEntries = getAllEntries();
+        const entries = allEntries.filter(e => e.red_flag > 0).sort((a, b) => (b.red_flag || 0) - (a.red_flag || 0));
+
+        // Aggregate stats
+        const totalFlags = entries.reduce((s, e) => s + (e.red_flag || 0), 0);
+        const citiesWithFlags = entries.length;
+        const totalCities = new Set(allEntries.map(e => e.city)).size;
+
+        let html = '<div style="max-width:900px;margin:0 auto">';
+
+        // Stats bar
+        html += `<div class="stats-bar" style="margin-bottom:20px">
+            <div class="stat-item"><div class="stat-value" style="color:#cc0000">${citiesWithFlags}</div><div class="stat-label">ערים עם דגלים</div></div>
+            <div class="stat-item"><div class="stat-value">${totalCities - citiesWithFlags}</div><div class="stat-label">ערים ללא דגלים</div></div>
+            <div class="stat-item"><div class="stat-value">20%</div><div class="stat-label">משקל בציון המשולב</div></div>
+        </div>`;
+
+        if (entries.length === 0) {
+            html += '<p style="text-align:center;color:#888;padding:20px">אין דגלים אדומים בנתונים הנוכחיים</p>';
+        }
+
+        for (const entry of entries) {
+            const key = entry.protocol_key || CITY_KEY_MAP[entry.city];
+            const details = key ? (proto[key] || {}) : {};
+            const rfDetails = details.red_flag_details || {};
+
+            if (Object.keys(rfDetails).length === 0) continue;
+
+            // Build category breakdown
+            let categoryHtml = '';
+            for (const [catKey, keywords] of Object.entries(rfDetails)) {
+                const catInfo = RF_CATEGORY_INFO[catKey] || { label: catKey, icon: '\u26A0', color: '#888', explanation: '' };
+                const kwEntries = Object.entries(keywords);
+                const totalCount = kwEntries.reduce((s, [, c]) => s + c, 0);
+
+                categoryHtml += `
+                    <div style="background:#fafafa;border:1px solid #e8e0e0;border-radius:6px;padding:10px 14px;margin:8px 0">
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+                            <strong style="color:${catInfo.color}">${catInfo.icon} ${catInfo.label}</strong>
+                            <span style="background:${catInfo.color};color:#fff;padding:2px 8px;border-radius:4px;font-size:0.75em">${totalCount} אזכורים</span>
+                        </div>
+                        <div style="font-size:0.82em;color:#666;margin-bottom:6px">${catInfo.explanation}</div>
+                        <ul class="kw-list" style="margin:4px 0 0">
+                            ${kwEntries.map(([word, count]) => `<li><span class="count">${count}</span>${word}</li>`).join('')}
+                        </ul>
+                    </div>`;
+            }
+
+            // Coverage info
+            const coverage = entry.protocol_coverage || '\u2014';
+
+            html += `<div class="detail-section" style="margin-bottom:16px;border-right:4px solid #ff4444">
+                <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
+                    <h4 style="margin:0">${entry.city}</h4>
+                    <div style="display:flex;gap:10px;align-items:center;font-size:0.8em;color:#888">
+                        <span>ציון דגלים: <strong style="color:#cc0000">${entry.red_flag}</strong></span>
+                        <span>כיסוי פרוטוקולים: ${coverage}</span>
+                    </div>
+                </div>
+                ${categoryHtml}
+                <div style="font-size:0.78em;color:#999;margin-top:8px;border-top:1px solid #eee;padding-top:6px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px">
+                    <span>הציון מנורמל לפי אורך הטקסט (אזכורים ל-10,000 תווים) ותורם 20% לציון המשולב.
+                    <span style="cursor:pointer;color:#2a5a8a" onclick="switchTab('ranking',document.querySelector('.nav-tab'))">צפה בדירוג \u25B8</span></span>
+                    ${typeof PROTOCOLS !== 'undefined' && PROTOCOLS[key] ? '<span class="proto-view-link" onclick="event.stopPropagation();showCityProtocols(\'' + key + '\')">צפה בפרוטוקולים \u25B8</span>' : ''}
+                </div>
+            </div>`;
+        }
+
+        // Add "clean cities" summary
+        const cleanCities = allEntries.filter(e => e.pole_b != null && (!e.red_flag || e.red_flag === 0)).map(e => e.city);
+        if (cleanCities.length > 0) {
+            html += `<div class="detail-section" style="margin-bottom:16px;border-right:4px solid #44aa44;background:#f5fff5">
+                <h4 style="color:#44aa44">ערים ללא דגלים אדומים (${cleanCities.length})</h4>
+                <div style="font-size:0.88em;color:#555;margin:8px 0">בערים אלה לא נמצאו אינדיקטורים של לכידה מוסדית בפרוטוקולים שנסרקו:</div>
+                <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:8px">
+                    ${cleanCities.map(c => `<span style="background:#e8f8e8;padding:4px 12px;border-radius:4px;font-size:0.85em;color:#2a6a2a">${c}</span>`).join('')}
+                </div>
+            </div>`;
+        }
+
+        html += '</div>';
+        document.getElementById('redflags-list').innerHTML = html;
+    }
+
+    // ── Research tab ──
+    function renderResearch() {
+        if (typeof RESEARCH === 'undefined') {
+            document.getElementById('clusters-grid').innerHTML = '<p style="text-align:center;color:#888">נתוני מחקר לא נטענו</p>';
+            return;
+        }
+
+        const grid = document.getElementById('clusters-grid');
+        let html = '';
+        for (const [id, cluster] of Object.entries(RESEARCH.clusters)) {
+            const findings = (cluster.key_findings || []).slice(0, 4);
+            html += `<div class="cluster-card">
+                <h4>${cluster.name_he}
+                    <span class="risk-badge ${riskBadgeClass(cluster.risk_score)}" style="font-size:0.7em;margin-right:8px">
+                        סיכון: ${cluster.risk_level}
+                    </span>
+                </h4>
+                <div class="cluster-orgs">ארגונים: ${cluster.orgs.join(', ')}</div>
+                <div class="cluster-summary">${cluster.summary}</div>
+                ${findings.length > 0 ? `
+                    <ul class="cluster-findings">
+                        ${findings.map(f => `<li>${f}</li>`).join('')}
+                    </ul>` : ''}
+                ${cluster.report_url ? `<a class="report-link" href="${cluster.report_url}" target="_blank">&#128196; קרא דוח מלא</a>` : ''}
+            </div>`;
+        }
+        grid.innerHTML = html;
+    }
+
+    // ── Hero stats ──
+    function renderHeroStats() {
+        const all = getAllEntries();
+        const totalCities = new Set(all.map(e => e.city)).size;
+
+        // Deduplicated program count and budget
+        const seenIds = new Set();
+        let totalProgs = 0, totalBudget = 0;
+        for (const progs of Object.values(DATA.worst_programs || {})) {
+            for (const p of progs) {
+                if (!seenIds.has(p.id)) {
+                    seenIds.add(p.id);
+                    totalProgs++;
+                    totalBudget += p.budget || 0;
+                }
+            }
+        }
+        const protoCities = Object.keys(DATA.protocol_details || {}).length;
+        const clusterCount = typeof RESEARCH !== 'undefined' ? Object.keys(RESEARCH.clusters).length : 0;
+
+        document.getElementById('hero-stats').innerHTML = `
+            <div class="hero-stat"><div class="val">${totalCities}</div><div class="lbl">ערים בדירוג</div></div>
+            <div class="hero-stat"><div class="val">${totalProgs.toLocaleString()}</div><div class="lbl">תוכניות נותחו</div></div>
+            <div class="hero-stat"><div class="val">\u20AA${Math.round(totalBudget/1000000)} מיליון</div><div class="lbl">תקציב מסומן</div></div>
+            <div class="hero-stat"><div class="val">${protoCities}</div><div class="lbl">ערים עם פרוטוקולים</div></div>
+            <div class="hero-stat"><div class="val">${clusterCount}</div><div class="lbl">אשכולות ארגוניים</div></div>
+        `;
+    }
+
+    // ── Protocol Browser ──
+    function highlightKeywords(text) {
+        if (typeof HIGHLIGHT_KEYWORDS === 'undefined') return text.replace(/</g, '&lt;');
+        let escaped = text.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        // Build regex from all keywords — red flags first (higher priority)
+        const rfKws = (HIGHLIGHT_KEYWORDS.red_flag || []).filter(k => k.length > 0);
+        const pbKws = (HIGHLIGHT_KEYWORDS.pole_b || []).filter(k => k.length > 0);
+        // Red flags
+        if (rfKws.length > 0) {
+            const rfPattern = rfKws.map(k => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
+            escaped = escaped.replace(new RegExp(rfPattern, 'gi'), m => `<mark class="red-flag">${m}</mark>`);
+        }
+        // Pole B keywords
+        if (pbKws.length > 0) {
+            const pbPattern = pbKws.map(k => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
+            escaped = escaped.replace(new RegExp(pbPattern, 'gi'), m => {
+                // Don't double-highlight if already inside a mark tag
+                return `<mark class="pole-b">${m}</mark>`;
+            });
+        }
+        return escaped;
+    }
+
+    function hitBadgeClass(count) {
+        if (count >= 5) return 'proto-hit-high';
+        if (count >= 2) return 'proto-hit-medium';
+        if (count >= 1) return 'proto-hit-low';
+        return 'proto-hit-none';
+    }
+
+    let _protoIdx = 0;
+    function renderProtocolBrowser() {
+        if (typeof PROTOCOLS === 'undefined') {
+            document.getElementById('proto-browser-list').innerHTML =
+                '<p style="text-align:center;color:#888;padding:20px">נתוני פרוטוקולים לא נטענו</p>';
+            return;
+        }
+
+        const filter = document.getElementById('proto-city-filter').value;
+        const container = document.getElementById('proto-browser-list');
+
+        // Populate filter dropdown (once)
+        const select = document.getElementById('proto-city-filter');
+        if (select.options.length <= 1) {
+            for (const [key, cityData] of Object.entries(PROTOCOLS)) {
+                const opt = document.createElement('option');
+                opt.value = key;
+                opt.textContent = cityData.city_name + ' (' + cityData.extracted_count + ')';
+                select.appendChild(opt);
+            }
+        }
+
+        // Collect protocols to show
+        let allProtos = [];
+        for (const [key, cityData] of Object.entries(PROTOCOLS)) {
+            if (filter !== 'all' && filter !== key) continue;
+            for (const p of cityData.protocols) {
+                allProtos.push({...p, city_key: key, city_name: cityData.city_name});
+            }
+        }
+
+        // Sort by hit count desc
+        allProtos.sort((a, b) => b.hit_count - a.hit_count);
+
+        document.getElementById('proto-browser-count').textContent =
+            allProtos.length + ' פרוטוקולים' + (allProtos.filter(p => p.hit_count > 0).length
+                ? ' | ' + allProtos.filter(p => p.hit_count > 0).length + ' עם מילות מפתח'
+                : '');
+
+        let html = '';
+        for (const p of allProtos) {
+            const uid = 'pbr-' + (_protoIdx++);
+            const dateStr = p.date && p.date !== 'UNDATED' ? p.date : 'ללא תאריך';
+            const kwHits = p.keyword_hits || {};
+            const kwPills = Object.entries(kwHits)
+                .sort((a, b) => b[1] - a[1])
+                .slice(0, 10)
+                .map(([kw, c]) => {
+                    const isRed = (HIGHLIGHT_KEYWORDS.red_flag || []).includes(kw);
+                    return '<span class="proto-kw-pill' + (isRed ? ' red' : '') + '">' + c + '× ' + kw + '</span>';
+                }).join('');
+
+            html += '<div class="proto-card" onclick="toggleProtoCard(\'' + uid + '\',this)">' +
+                '<div class="proto-card-header">' +
+                    '<div>' +
+                        '<div class="proto-card-title">' + p.city_name + ' — ' + p.filename.replace(/\.pdf$/, '') + '</div>' +
+                        '<div class="proto-card-meta">' + dateStr + ' | ' + (p.text_length || 0).toLocaleString() + ' תווים</div>' +
+                    '</div>' +
+                    '<div class="proto-card-badges">' +
+                        '<span class="proto-hit-badge ' + hitBadgeClass(p.hit_count) + '">' +
+                            p.hit_count + ' מילות מפתח' +
+                        '</span>' +
+                    '</div>' +
+                '</div>' +
+                (kwPills ? '<div class="proto-kw-summary">' + kwPills + '</div>' : '') +
+                '<div class="proto-card-text" id="' + uid + '"></div>' +
+            '</div>';
+        }
+
+        container.innerHTML = html;
+
+        // Store protocol data for lazy rendering
+        container._protocols = allProtos;
+    }
+
+    function toggleProtoCard(uid, card) {
+        const el = document.getElementById(uid);
+        if (!el) return;
+        const wasVisible = el.classList.contains('visible');
+        el.classList.toggle('visible');
+        card.classList.toggle('expanded');
+
+        // Lazy-render text with highlighting on first open
+        if (!wasVisible && !el.dataset.rendered) {
+            const container = document.getElementById('proto-browser-list');
+            const idx = parseInt(uid.replace('pbr-', ''));
+            // Find protocol by matching uid offset
+            const cards = container.querySelectorAll('.proto-card');
+            let cardIdx = 0;
+            for (let i = 0; i < cards.length; i++) {
+                if (cards[i] === card) { cardIdx = i; break; }
+            }
+            const protos = container._protocols;
+            if (protos && protos[cardIdx]) {
+                el.innerHTML = highlightKeywords(protos[cardIdx].text);
+            }
+            el.dataset.rendered = '1';
+        }
+    }
+
+    // Switch to protocols tab filtered to a specific city
+    function showCityProtocols(cityKey) {
+        switchTab('protocols', document.querySelectorAll('.nav-tab')[2]);
+        // Wait for DOM to settle, then set filter
+        setTimeout(() => {
+            const select = document.getElementById('proto-city-filter');
+            if (select) {
+                select.value = cityKey;
+                renderProtocolBrowser();
+                // Scroll to protocol browser
+                const header = document.querySelector('.proto-browser-header');
+                if (header) header.scrollIntoView({behavior: 'smooth'});
+            }
+        }, 100);
+    }
+
+    // ── Initial render ──
+    renderHeroStats();
+    render();
+    updateSortUI();
+    </script>
 </body>
 </html>
