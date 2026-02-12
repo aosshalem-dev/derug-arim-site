@@ -1,0 +1,32 @@
+We have a web page. Determine ideological relevance in municipal education/culture context.
+You MUST NOT guess. If insufficient evidence → rating=null.
+
+Page URL: {URL}
+Title: {TITLE}
+Meta description: {META_DESCRIPTION}
+Extracted text (may be partial): {TEXT}
+
+Return JSON ONLY with this schema:
+{
+  "rating": 1|2|3|4|5|null,
+  "confidence": "high"|"medium"|"low",
+  "signals": [ "short bullet strings, max 6" ],
+  "reason": "max 160 chars"
+}
+
+Rules:
+- rating is 5 only if strong explicit identity-related content OR multiple strong keyword/theme signals.
+- rating is 4 if clear program/policy framing around the keyword cluster but less explicit identity.
+- rating is 3 if mild/indirect relevance.
+- rating is 1–2 if clearly unrelated (only if confident).
+- If confidence is medium/low → set rating=null.
+
+High score triggers:
+A) Directly related to identity / Zionism / Jewish identity / national identity / ערכים לאומיים / ציונות / יהדות / "זהות" / "שייכות" / "מורשת"
+B) Strong signals via keywords: "סובלנות", "הכלה", "מגוון", "מוגנות", "שוויון מגדרי", "להטב", "אקלים", "קיימות", "צדק חברתי", "שוויון", "אקטיביזם", "SEL/למידה רגשית-חברתית", "דמוקרטיה", "דו-קיום", "אזרחות גלובלית", "חוסן קהילתי", "מניעת גזענות", "הטיות", "פריבילגיה", "הדרה"
+
+Low score: Clearly unrelated (e.g., plumbing tender, road work, pure sports results) → rating 1–2 only if confident.
+
+
+
+

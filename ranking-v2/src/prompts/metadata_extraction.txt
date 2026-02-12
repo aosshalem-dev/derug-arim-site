@@ -1,0 +1,57 @@
+אתה עוזר מקצועי לחילוץ מטא-דאטה תיאורית ממסמכים ומקורות מידע.
+
+קישור לניתוח:
+URL מלא: {URL}
+דומיין: {DOMAIN}
+נתיב: {PATH}
+
+{CONTENT_SECTION}
+
+אנא חלץ את כל השדות הבאים בפורמט JSON. חשוב: השתמש בתיאורים אובייקטיביים בלבד, לא בהערכות שיפוטיות.
+
+שדות בסיסיים:
+- source_type: סוג המקור (municipality, government_agency, media, educational_institution, ngo, research_institution, other)
+- year: שנה רלוונטית (מספר שלם או null)
+
+הקשר מוסדי (Institutional Context):
+- organization_type: סוג הארגון (municipality, government_agency, media, educational_institution, ngo, research_institution, other)
+- jurisdiction_level: רמת סמכות שיפוט (local, regional, national, international)
+- geographic_scope: היקף גיאוגרפי - שם עיר/אזור (מחרוזת או null)
+
+תחום תוכן (Content Domain):
+- topic_category: קטגוריית נושא (education, culture, policy, news, research, heritage, community, other)
+- document_type: סוג מסמך (report, article, policy_document, curriculum, announcement, protocol, plan, other)
+- target_audience: קהל יעד (general_public, educators, students, policymakers, researchers, community_leaders, other)
+- content_type: סוג תוכן ספציפי (מחרוזת תיאורית, למשל: "תכנית חינוכית", "פרוטוקול ישיבה", "דוח שנתי")
+
+{EXISTING_CONTENT_TYPES_SECTION}
+
+אינדיקטורים אידיאולוגיים (תיאוריים בלבד):
+- values_orientation: מערך ערכים המופיעים בתוכן (למשל: ["collective_identity", "tradition", "innovation"] או [])
+- cultural_focus: מוקד תרבותי (hebrew_culture, jewish_heritage, israeli_identity, multicultural, universal, mixed, unclear)
+
+זהות וציונות (תיאור נוכחות, לא הערכה):
+- zionism_references: התייחסויות לציונות (explicit, implicit, none, unclear)
+- identity_theme: נושאי זהות המופיעים (מערך, למשל: ["national_identity", "cultural_identity"] או [])
+- historical_periods: תקופות היסטוריות המוזכרות (מערך, למשל: ["pre-state", "independence"] או [])
+
+שקיפות ושפה:
+- language: שפת התוכן (hebrew, english, arabic, mixed, other)
+- accessibility_level: רמת נגישות (public, restricted, unclear)
+- publication_format: פורמט פרסום (pdf, html, text, image, video, other)
+
+סמנים זמניים/היסטוריים:
+- period_referenced: תקופה מוזכרת (מחרוזת, למשל: "2000s", "pre-state" או null)
+- temporal_scope: היקף זמני (current, historical, future, mixed)
+
+איכות מקור:
+- completeness: שלמות (full_document, excerpt, summary, unclear)
+- reliability_indicators: אינדיקטורי אמינות (מערך, למשל: ["official_source", "archived"] או [])
+
+השב בפורמט JSON בלבד עם כל השדות לעיל.
+השתמש ב-null עבור שדות שלא ניתן לזהות.
+לשדות מערך (JSON arrays), החזר מערך ריק [] אם אין מידע.
+
+
+
+

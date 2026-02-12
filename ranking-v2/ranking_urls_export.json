@@ -1,0 +1,5188 @@
+{
+    "export_info": {
+        "exported_at": "2026-01-16 07:25:38",
+        "total_records": 114,
+        "filters": {
+            "status": "all",
+            "limit": "all"
+        }
+    },
+    "schema": {
+        "basic": {
+            "id": "INT - מזהה ייחודי",
+            "url": "VARCHAR(2048) - כתובת הקישור",
+            "created_at": "TIMESTAMP - תאריך יצירה"
+        },
+        "institutional_context": {
+            "source_type": "VARCHAR(100) - סוג המקור",
+            "organization_type": "ENUM - סוג הארגון",
+            "jurisdiction_level": "ENUM - רמת סמכות שיפוט",
+            "geographic_scope": "VARCHAR(200) - היקף גיאוגרפי"
+        },
+        "content_domain": {
+            "topic_category": "ENUM - קטגוריית נושא",
+            "document_type": "ENUM - סוג מסמך",
+            "target_audience": "ENUM - קהל יעד",
+            "content_type": "VARCHAR(200) - סוג תוכן ספציפי (משותף בין רשומות דומות)"
+        },
+        "ideological_indicators": {
+            "values_orientation": "JSON - מערך ערכים",
+            "cultural_focus": "ENUM - מוקד תרבותי"
+        },
+        "identity_zionism": {
+            "zionism_references": "ENUM - התייחסויות לציונות",
+            "identity_theme": "JSON - נושאי זהות",
+            "historical_periods": "JSON - תקופות היסטוריות"
+        },
+        "transparency_language": {
+            "language": "ENUM - שפת התוכן",
+            "accessibility_level": "ENUM - רמת נגישות",
+            "publication_format": "ENUM - פורמט פרסום"
+        },
+        "temporal": {
+            "year": "INT - שנה",
+            "period_referenced": "VARCHAR(100) - תקופה מוזכרת",
+            "temporal_scope": "ENUM - היקף זמני"
+        },
+        "source_quality": {
+            "completeness": "ENUM - שלמות",
+            "reliability_indicators": "JSON - אינדיקטורי אמינות"
+        },
+        "metadata": {
+            "metadata_extracted_at": "TIMESTAMP - מתי חולץ",
+            "metadata_status": "ENUM - סטטוס חילוץ"
+        }
+    },
+    "records": [
+        {
+            "id": 1,
+            "url": "http://gnostocracy.com/documents/%D7%A8%D7%A2%D7%A0%D7%A0%D7%94%20%D7%AA%D7%A7%D7%A6%D7%99%D7%91%20%D7%A4%D7%99%D7%AA%D7%95%D7%97%20%D7%9C%D7%A9%D7%A0%D7%AA%202026.pdf",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "other",
+                "organization_type": "עירייה",
+                "jurisdiction_level": "local",
+                "geographic_scope": "רעננה"
+            },
+            "content_domain": {
+                "topic_category": "תקציב",
+                "document_type": "other",
+                "target_audience": "other",
+                "content_type": "תכנית חינוכית"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "unclear"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "pdf"
+            },
+            "temporal": {
+                "year": 2026,
+                "period_referenced": null,
+                "temporal_scope": "future"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:25:44",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 2,
+            "url": "https://90fm.co.il/hrtslyh-narkt-lshnt-hlymvdym-tshpv-hshkah-shl-mal-50-mylyvn-%E2%82%AA-bshdrvg-mvsdvt-hkhynvk/",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "media",
+                "organization_type": "עירייה",
+                "jurisdiction_level": "local",
+                "geographic_scope": "הרצליה"
+            },
+            "content_domain": {
+                "topic_category": "news",
+                "document_type": "article",
+                "target_audience": "general_public",
+                "content_type": "מאמר חדשותי"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "hebrew_culture"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": 2025,
+                "period_referenced": null,
+                "temporal_scope": null
+            },
+            "source_quality": {
+                "completeness": null,
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:25:52",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 4,
+            "url": "https://afula.muni.il/uploads/n/1664691611.8410.pdf",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "municipality",
+                "organization_type": "municipality",
+                "jurisdiction_level": "local",
+                "geographic_scope": "Afula"
+            },
+            "content_domain": {
+                "topic_category": "other",
+                "document_type": "other",
+                "target_audience": "general_public",
+                "content_type": "null"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "unclear"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "pdf"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "unclear",
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:26:04",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 5,
+            "url": "https://archive.nyu.edu/handle/2451/66189?mode=full",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "municipality",
+                "organization_type": "government_agency",
+                "jurisdiction_level": "local",
+                "geographic_scope": "עמנואל"
+            },
+            "content_domain": {
+                "topic_category": "policy",
+                "document_type": "protocol",
+                "target_audience": "community_leaders",
+                "content_type": "פרוטוקול ישיבה"
+            },
+            "ideological_indicators": {
+                "values_orientation": [],
+                "cultural_focus": "hebrew_culture"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "pdf"
+            },
+            "temporal": {
+                "year": 1985,
+                "period_referenced": null,
+                "temporal_scope": "historical"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": [
+                    "official_source",
+                    "archived"
+                ]
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:26:10",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 6,
+            "url": "https://beersheva.mynet.co.il/local_news/article/hjyysgjjjx",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "media",
+                "organization_type": "media",
+                "jurisdiction_level": "local",
+                "geographic_scope": "באר שבע"
+            },
+            "content_domain": {
+                "topic_category": "news",
+                "document_type": "article",
+                "target_audience": "general_public",
+                "content_type": "מאמר חדשותי"
+            },
+            "ideological_indicators": {
+                "values_orientation": [],
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": 2024,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": []
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:26:15",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 7,
+            "url": "https://beersheva.mynet.co.il/local_news/article/m_218304",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "media",
+                "organization_type": "media",
+                "jurisdiction_level": "local",
+                "geographic_scope": "באר שבע"
+            },
+            "content_domain": {
+                "topic_category": "news",
+                "document_type": "article",
+                "target_audience": "general_public",
+                "content_type": "מאמר חדשותי"
+            },
+            "ideological_indicators": {
+                "values_orientation": [],
+                "cultural_focus": "hebrew_culture"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": 2010,
+                "period_referenced": "2010s",
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": [
+                    "official_source"
+                ]
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:26:20",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 14,
+            "url": "https://civix.org.il/wp-content/uploads/2025/01/%D7%97%D7%95%D7%A1%D7%9F-%D7%92%D7%91%D7%A2%D7%AA%D7%99%D7%99%D7%9D.pdf",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "other",
+                "organization_type": "עירייה",
+                "jurisdiction_level": null,
+                "geographic_scope": null
+            },
+            "content_domain": {
+                "topic_category": "other",
+                "document_type": "report",
+                "target_audience": null,
+                "content_type": "דוח"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": null
+            },
+            "identity_zionism": {
+                "zionism_references": null,
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "pdf"
+            },
+            "temporal": {
+                "year": 2025,
+                "period_referenced": null,
+                "temporal_scope": null
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:27:09",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 15,
+            "url": "https://datumedina.reform.org.il/lgbtq/%D7%94%D7%91%D7%99%D7%AA-%D7%94%D7%A4%D7%AA%D7%95%D7%97-%D7%95%D7%9E%D7%A6%D7%A2%D7%93-%D7%94%D7%92%D7%90%D7%95%D7%95%D7%94/",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "ngo",
+                "organization_type": "ngo",
+                "jurisdiction_level": "national",
+                "geographic_scope": null
+            },
+            "content_domain": {
+                "topic_category": "community",
+                "document_type": "article",
+                "target_audience": "general_public",
+                "content_type": "מאמר חדשותי"
+            },
+            "ideological_indicators": {
+                "values_orientation": [
+                    "collective_identity"
+                ],
+                "cultural_focus": "jewish_heritage"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": 2023,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:27:17",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 16,
+            "url": "https://dev.hod-hasharon.muni.il/bids/377/",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "municipality",
+                "organization_type": "municipality",
+                "jurisdiction_level": "local",
+                "geographic_scope": "הוד השרון"
+            },
+            "content_domain": {
+                "topic_category": "community",
+                "document_type": "announcement",
+                "target_audience": "general_public",
+                "content_type": "קול קורא לתושבי העיר להגשת הצעות למיזמים בנושאי קיימות קהילה וסביבה"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": 2020,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": [
+                    "official_source"
+                ]
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:27:22",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 18,
+            "url": "https://emekshaveh.org/he/%D7%90%D7%AA%D7%A8%D7%99-%D7%A2%D7%AA%D7%99%D7%A7%D7%95%D7%AA-%D7%91%D7%AA%D7%97%D7%95%D7%9D-%D7%94%D7%A9%D7%A4%D7%A2%D7%AA-%D7%A2%D7%9E%D7%95%D7%AA%D7%AA-%D7%90%D7%9C%D7%A2%D7%93-%D7%91%D7%9E%D7%96/",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "ngo",
+                "organization_type": "ngo",
+                "jurisdiction_level": "local",
+                "geographic_scope": "מזרח ירושלים"
+            },
+            "content_domain": {
+                "topic_category": "heritage",
+                "document_type": "article",
+                "target_audience": "general_public",
+                "content_type": "מאמר חדשותי"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "jewish_heritage"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": 2012,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:27:29",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 19,
+            "url": "https://givat-shmuel.muni.il/protocols/",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "municipality",
+                "organization_type": "municipality",
+                "jurisdiction_level": "local",
+                "geographic_scope": "גבעת שמואל"
+            },
+            "content_domain": {
+                "topic_category": "פרוטוקול",
+                "document_type": "protocol",
+                "target_audience": "general_public",
+                "content_type": "פרוטוקול ישיבה"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:27:34",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 21,
+            "url": "https://givatayim-web-public.s3.il-central-1.amazonaws.com/uploads/n/tt67.pdf",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "other",
+                "organization_type": "other",
+                "jurisdiction_level": null,
+                "geographic_scope": null
+            },
+            "content_domain": {
+                "topic_category": "other",
+                "document_type": "other",
+                "target_audience": null,
+                "content_type": "unknown"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": null
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": null,
+                "accessibility_level": "restricted",
+                "publication_format": "pdf"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": null
+            },
+            "source_quality": {
+                "completeness": null,
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:27:43",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 24,
+            "url": "https://he.wikipedia.org/wiki/%D7%91%D7%99%D7%AA_%D7%94%D7%92%D7%A4%D7%9F",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "other",
+                "organization_type": "other",
+                "jurisdiction_level": "local",
+                "geographic_scope": "חיפה"
+            },
+            "content_domain": {
+                "topic_category": "culture",
+                "document_type": "article",
+                "target_audience": "general_public",
+                "content_type": "תוכן לא מוגדר"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:29:51",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 25,
+            "url": "https://he.wikipedia.org/wiki/%D7%92%D7%91%D7%A2%D7%AA_%D7%A9%D7%9E%D7%95%D7%90%D7%9C",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "other",
+                "organization_type": "other",
+                "jurisdiction_level": "national",
+                "geographic_scope": "גבעת שמואל"
+            },
+            "content_domain": {
+                "topic_category": "culture",
+                "document_type": "article",
+                "target_audience": "general_public",
+                "content_type": "תוכן לא מוגדר"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "hebrew_culture"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:30:00",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 28,
+            "url": "https://he.wikipedia.org/wiki/%D7%A8%D7%90%D7%A9_%D7%94%D7%A2%D7%99%D7%9F",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "other",
+                "organization_type": "other",
+                "jurisdiction_level": "local",
+                "geographic_scope": "ראש העין"
+            },
+            "content_domain": {
+                "topic_category": "",
+                "document_type": "article",
+                "target_audience": "general_public",
+                "content_type": "תוכן לא מוגדר"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "israeli_identity"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:30:23",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 29,
+            "url": "https://hm-news.co.il/438544/",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "media",
+                "organization_type": "media",
+                "jurisdiction_level": "national",
+                "geographic_scope": null
+            },
+            "content_domain": {
+                "topic_category": "news",
+                "document_type": "article",
+                "target_audience": "general_public",
+                "content_type": "מאמר חדשותי"
+            },
+            "ideological_indicators": {
+                "values_orientation": [],
+                "cultural_focus": "jewish_heritage"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": 2024,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": []
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:30:31",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 30,
+            "url": "https://hodhasharon.mynet.co.il/elections_2018/article/m_318511",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "media",
+                "organization_type": "media",
+                "jurisdiction_level": "local",
+                "geographic_scope": "הוד השרון"
+            },
+            "content_domain": {
+                "topic_category": "news",
+                "document_type": "article",
+                "target_audience": "general_public",
+                "content_type": "מאמר חדשותי"
+            },
+            "ideological_indicators": {
+                "values_orientation": [],
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": 2018,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": []
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:30:38",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 31,
+            "url": "https://jervaadotgen.jerusalem.muni.il/Pages/pCommisionData.aspx?councilID=23&CommissionType=86",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "municipality",
+                "organization_type": "municipality",
+                "jurisdiction_level": "local",
+                "geographic_scope": "ירושלים"
+            },
+            "content_domain": {
+                "topic_category": "policy",
+                "document_type": "protocol",
+                "target_audience": "general_public",
+                "content_type": "פרוטוקול ישיבה"
+            },
+            "ideological_indicators": {
+                "values_orientation": [],
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": [
+                    "official_source"
+                ]
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:30:45",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 32,
+            "url": "https://kivunim7.co.il/%D7%A6%D7%A2%D7%99%D7%A8%D7%95%D7%AA-%D7%95%D7%A7%D7%A8%D7%99%D7%99%D7%A8%D7%94/%D7%A1%D7%98%D7%90%D7%A8%D7%98-%D7%90%D7%A4/",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "other",
+                "organization_type": "other",
+                "jurisdiction_level": "national",
+                "geographic_scope": null
+            },
+            "content_domain": {
+                "topic_category": "other",
+                "document_type": "other",
+                "target_audience": "general_public",
+                "content_type": "תוכן לא מוגדר"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": 2014,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:30:52",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 33,
+            "url": "https://library.mevaker.gov.il/sites/DigitalLibrary/Documents/igudim/2002-ShiltonIgudim/2002-Shilton-106-Mipuy.pdf",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "other",
+                "organization_type": "other",
+                "jurisdiction_level": "national",
+                "geographic_scope": null
+            },
+            "content_domain": {
+                "topic_category": "",
+                "document_type": "report",
+                "target_audience": "general_public",
+                "content_type": "unknown"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "unclear"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "pdf"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:30:58",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 34,
+            "url": "https://library.mevaker.gov.il/sites/DigitalLibrary/Pages/Reports/203-13.aspx",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "municipality",
+                "organization_type": "municipality",
+                "jurisdiction_level": "local",
+                "geographic_scope": "קריית גת"
+            },
+            "content_domain": {
+                "topic_category": "policy",
+                "document_type": "report",
+                "target_audience": "general_public",
+                "content_type": "דוח"
+            },
+            "ideological_indicators": {
+                "values_orientation": [],
+                "cultural_focus": "unclear"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": [
+                    "official_source"
+                ]
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:31:05",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 35,
+            "url": "https://madad.israelhofsheet.org.il/years/2021",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "other",
+                "organization_type": "other",
+                "jurisdiction_level": "national",
+                "geographic_scope": null
+            },
+            "content_domain": {
+                "topic_category": "policy",
+                "document_type": "report",
+                "target_audience": "general_public",
+                "content_type": "סקירה עירונית"
+            },
+            "ideological_indicators": {
+                "values_orientation": [],
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": 2021,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": []
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:31:10",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 36,
+            "url": "https://mashav.tv/episode/ran-kunik/",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "media",
+                "organization_type": "media",
+                "jurisdiction_level": "national",
+                "geographic_scope": null
+            },
+            "content_domain": {
+                "topic_category": "news",
+                "document_type": "article",
+                "target_audience": "general_public",
+                "content_type": "תוכן לא מוגדר"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:31:15",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 37,
+            "url": "https://mekomi.walla.co.il/item/3775525",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "media",
+                "organization_type": "media",
+                "jurisdiction_level": "local",
+                "geographic_scope": "תל אביב"
+            },
+            "content_domain": {
+                "topic_category": "news",
+                "document_type": "article",
+                "target_audience": "general_public",
+                "content_type": "מאמר חדשותי"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": 2025,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:31:20",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 38,
+            "url": "https://meyda.education.gov.il",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "government_agency",
+                "organization_type": "government_agency",
+                "jurisdiction_level": "national",
+                "geographic_scope": null
+            },
+            "content_domain": {
+                "topic_category": "other",
+                "document_type": "other",
+                "target_audience": "general_public",
+                "content_type": "תוכן לא מוגדר"
+            },
+            "ideological_indicators": {
+                "values_orientation": [],
+                "cultural_focus": "unclear"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "unclear",
+                "reliability_indicators": []
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:31:25",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 39,
+            "url": "https://moreshet.raanana.muni.il/Web/LearningCenter/TeachingPlans/Default.aspx",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "municipality",
+                "organization_type": "municipality",
+                "jurisdiction_level": "local",
+                "geographic_scope": "רעננה"
+            },
+            "content_domain": {
+                "topic_category": "education",
+                "document_type": "curriculum",
+                "target_audience": "",
+                "content_type": "תכנית חינוכית"
+            },
+            "ideological_indicators": {
+                "values_orientation": [
+                    "community",
+                    "education"
+                ],
+                "cultural_focus": "hebrew_culture"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": [
+                    "official_source"
+                ]
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:31:31",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 40,
+            "url": "https://mr.gov.il/ilgstorefront/he/p/4000587313",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "government_agency",
+                "organization_type": "government_agency",
+                "jurisdiction_level": "national",
+                "geographic_scope": null
+            },
+            "content_domain": {
+                "topic_category": "community",
+                "document_type": "announcement",
+                "target_audience": "general_public",
+                "content_type": "קול קורא לתושבי העיר להגשת הצעות למיזמים בנושאי קיימות קהילה וסביבה"
+            },
+            "ideological_indicators": {
+                "values_orientation": [
+                    "collective_identity",
+                    "tradition"
+                ],
+                "cultural_focus": "jewish_heritage"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": 2024,
+                "period_referenced": null,
+                "temporal_scope": "future"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": [
+                    "official_source"
+                ]
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:31:36",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 41,
+            "url": "https://netivot.muni.il/uploads/n/1540282641.1004.pdf",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "municipality",
+                "organization_type": "municipality",
+                "jurisdiction_level": "local",
+                "geographic_scope": "נתיבות"
+            },
+            "content_domain": {
+                "topic_category": "other",
+                "document_type": "report",
+                "target_audience": "general_public",
+                "content_type": "תוכן לא מוגדר"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "unclear"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "pdf"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": [
+                    "official_source"
+                ]
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:31:42",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 42,
+            "url": "https://news.walla.co.il/item/1832884",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "media",
+                "organization_type": "media",
+                "jurisdiction_level": "national",
+                "geographic_scope": null
+            },
+            "content_domain": {
+                "topic_category": "news",
+                "document_type": "article",
+                "target_audience": "general_public",
+                "content_type": "מאמר חדשותי"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "hebrew_culture"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": 2011,
+                "period_referenced": null,
+                "temporal_scope": "historical"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:31:47",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 43,
+            "url": "https://news.walla.co.il/item/3050960",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "media",
+                "organization_type": "media",
+                "jurisdiction_level": "national",
+                "geographic_scope": null
+            },
+            "content_domain": {
+                "topic_category": "news",
+                "document_type": "article",
+                "target_audience": "general_public",
+                "content_type": "מאמר חדשותי"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": 2017,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": [
+                    "official_source"
+                ]
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:31:52",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 45,
+            "url": "https://ononews.co.il/news-givat-shmuel/entertainment-givat-shmuel/%D7%94%D7%99%D7%A1%D7%98%D7%95%D7%A8%D7%99%D7%94-%D7%91%D7%92%D7%91%D7%A2%D7%AA-%D7%A9%D7%9E%D7%95%D7%90%D7%9C-%D7%90%D7%99%D7%A8%D7%95%D7%A2-%D7%9C%D7%A7%D7%94%D7%99%D7%9C%D7%94-%D7%94%D7%94%D7%95/",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "media",
+                "organization_type": "media",
+                "jurisdiction_level": "local",
+                "geographic_scope": "גבעת שמואל"
+            },
+            "content_domain": {
+                "topic_category": "news",
+                "document_type": "article",
+                "target_audience": "general_public",
+                "content_type": "מאמר חדשותי"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": 2019,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:32:00",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 47,
+            "url": "https://peacenow.org.il/elad-history",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "ngo",
+                "organization_type": "ngo",
+                "jurisdiction_level": "national",
+                "geographic_scope": null
+            },
+            "content_domain": {
+                "topic_category": "news",
+                "document_type": "article",
+                "target_audience": "general_public",
+                "content_type": "מאמר חדשותי"
+            },
+            "ideological_indicators": {
+                "values_orientation": [],
+                "cultural_focus": "israeli_identity"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": 2017,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": []
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:32:07",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 48,
+            "url": "https://pob.education.gov.il",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "government_agency",
+                "organization_type": "government_agency",
+                "jurisdiction_level": "national",
+                "geographic_scope": null
+            },
+            "content_domain": {
+                "topic_category": "education",
+                "document_type": "announcement",
+                "target_audience": "general_public",
+                "content_type": "תוכן לא מוגדר"
+            },
+            "ideological_indicators": {
+                "values_orientation": [],
+                "cultural_focus": "unclear"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": [
+                    "official_source"
+                ]
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:32:15",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 49,
+            "url": "https://raanana.mynet.co.il/local_news/article/b1yx4lbfge",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "media",
+                "organization_type": "media",
+                "jurisdiction_level": "local",
+                "geographic_scope": "רעננה"
+            },
+            "content_domain": {
+                "topic_category": "news",
+                "document_type": "article",
+                "target_audience": "general_public",
+                "content_type": "מאמר חדשותי"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": 2025,
+                "period_referenced": null,
+                "temporal_scope": "future"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:32:23",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 50,
+            "url": "https://shatil.org.il/funds/%D7%99%D7%93-%D7%94%D7%A0%D7%93%D7%99%D7%91-%D7%A7%D7%A8%D7%9F-%D7%A8%D7%95%D7%98%D7%A9%D7%99%D7%9C%D7%93-yad-hanadiv-the-rothschild-foundation/",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "ngo",
+                "organization_type": "ngo",
+                "jurisdiction_level": "national",
+                "geographic_scope": null
+            },
+            "content_domain": {
+                "topic_category": "other",
+                "document_type": "article",
+                "target_audience": "general_public",
+                "content_type": "תוכן לא מוגדר"
+            },
+            "ideological_indicators": {
+                "values_orientation": [],
+                "cultural_focus": "hebrew_culture"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": 2022,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": []
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:32:28",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 51,
+            "url": "https://shatil.org.il/kol/%D7%A7%D7%95%D7%9C-%D7%A7%D7%95%D7%A8%D7%90-%D7%A9%D7%9C-%D7%A2%D7%99%D7%A8%D7%99%D7%99%D7%AA-%D7%91%D7%90%D7%A8-%D7%A9%D7%91%D7%A2/",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "municipality",
+                "organization_type": "municipality",
+                "jurisdiction_level": "local",
+                "geographic_scope": "באר שבע"
+            },
+            "content_domain": {
+                "topic_category": "community",
+                "document_type": "announcement",
+                "target_audience": "general_public",
+                "content_type": "קול קורא לתושבי העיר להגשת הצעות למיזמים בנושאי קיימות קהילה וסביבה"
+            },
+            "ideological_indicators": {
+                "values_orientation": [],
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": 2025,
+                "period_referenced": null,
+                "temporal_scope": "future"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": [
+                    "official_source"
+                ]
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:32:37",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 52,
+            "url": "https://sheva7.walla.co.il/item/3719796",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "media",
+                "organization_type": "media",
+                "jurisdiction_level": "national",
+                "geographic_scope": "באר שבע"
+            },
+            "content_domain": {
+                "topic_category": "education",
+                "document_type": "article",
+                "target_audience": "general_public",
+                "content_type": "מאמר חדשותי"
+            },
+            "ideological_indicators": {
+                "values_orientation": [
+                    "innovation"
+                ],
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": 2025,
+                "period_referenced": null,
+                "temporal_scope": "future"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:32:42",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 53,
+            "url": "https://sheva7.walla.co.il/item/3753107",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "media",
+                "organization_type": "media",
+                "jurisdiction_level": "national",
+                "geographic_scope": "באר שבע"
+            },
+            "content_domain": {
+                "topic_category": "news",
+                "document_type": "article",
+                "target_audience": "general_public",
+                "content_type": "מאמר חדשותי"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": 2025,
+                "period_referenced": null,
+                "temporal_scope": "future"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:32:47",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 54,
+            "url": "https://sites.google.com/edu-herzliya.org.il/each-glilyam/%D7%93%D7%A3-%D7%94%D7%91%D7%99%D7%AA",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "educational_institution",
+                "organization_type": "educational_institution",
+                "jurisdiction_level": "local",
+                "geographic_scope": "הרצליה"
+            },
+            "content_domain": {
+                "topic_category": "education",
+                "document_type": "other",
+                "target_audience": "general_public",
+                "content_type": "תוכן לא מוגדר"
+            },
+            "ideological_indicators": {
+                "values_orientation": [
+                    "innovation"
+                ],
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:32:52",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 56,
+            "url": "https://www.ariel.muni.il/%D7%9E%D7%95%D7%A2%D7%A6%D7%AA-%D7%94%D7%A2%D7%99%D7%A8/?utm_source=chatgpt.com",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "municipality",
+                "organization_type": "municipality",
+                "jurisdiction_level": "local",
+                "geographic_scope": "אריאל"
+            },
+            "content_domain": {
+                "topic_category": "",
+                "document_type": "",
+                "target_audience": "general_public",
+                "content_type": "תוכן לא מוגדר"
+            },
+            "ideological_indicators": {
+                "values_orientation": [],
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": [
+                    "official_source"
+                ]
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:33:01",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 57,
+            "url": "https://www.ariel.muni.il/articles/edu/",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "municipality",
+                "organization_type": "municipality",
+                "jurisdiction_level": "local",
+                "geographic_scope": "אriel"
+            },
+            "content_domain": {
+                "topic_category": "education",
+                "document_type": "",
+                "target_audience": "general_public",
+                "content_type": "תוכן לא מוגדר"
+            },
+            "ideological_indicators": {
+                "values_orientation": [],
+                "cultural_focus": "unclear"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": [
+                    "official_source"
+                ]
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:33:05",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 58,
+            "url": "https://www.b7net.co.il/%D7%97%D7%93%D7%A9%D7%95%D7%AA/%D7%91%D7%A9%D7%91%D7%95%D7%A2-%D7%94%D7%91%D7%90-%D7%A2%D7%A9%D7%A8%D7%95%D7%AA-%D7%90%D7%9C%D7%A4%D7%99-%D7%AA%D7%9C%D7%9E%D7%99%D7%93%D7%99%D7%9D-%D7%99%D7%99%D7%A4%D7%AA%D7%97%D7%95-%D7%90%D7%AA-%D7%94%D7%A9%D7%A0%D7%94-%D7%91%D7%91%D7%90%D7%A8-%D7%A9%D7%91%D7%A2-596098",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "media",
+                "organization_type": "media",
+                "jurisdiction_level": "local",
+                "geographic_scope": "באר שבע"
+            },
+            "content_domain": {
+                "topic_category": "education",
+                "document_type": "article",
+                "target_audience": "general_public",
+                "content_type": "מאמר חדשותי"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": 2024,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:33:10",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 59,
+            "url": "https://www.be106.net/238/101798",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "media",
+                "organization_type": "municipality",
+                "jurisdiction_level": "local",
+                "geographic_scope": "רמת גן"
+            },
+            "content_domain": {
+                "topic_category": "news",
+                "document_type": "announcement",
+                "target_audience": "general_public",
+                "content_type": "תוכן לא מוגדר"
+            },
+            "ideological_indicators": {
+                "values_orientation": [
+                    "innovation"
+                ],
+                "cultural_focus": "hebrew_culture"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": 2025,
+                "period_referenced": null,
+                "temporal_scope": "future"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": [
+                    "official_source"
+                ]
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:33:16",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 63,
+            "url": "https://www.beer-sheva.muni.il/City/FreeInfo/Protocols/Pages/default.aspx?utm_source=chatgpt.com",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "municipality",
+                "organization_type": "municipality",
+                "jurisdiction_level": "local",
+                "geographic_scope": "באר שבע"
+            },
+            "content_domain": {
+                "topic_category": "community",
+                "document_type": "protocol",
+                "target_audience": "general_public",
+                "content_type": "פרוטוקול ישיבה"
+            },
+            "ideological_indicators": {
+                "values_orientation": [],
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": [
+                    "official_source"
+                ]
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:33:24",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 64,
+            "url": "https://www.beer-sheva.muni.il/Lists/List1/DispForm.aspx?ID=3385",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "municipality",
+                "organization_type": "municipality",
+                "jurisdiction_level": "local",
+                "geographic_scope": "באר שבע"
+            },
+            "content_domain": {
+                "topic_category": "education",
+                "document_type": "announcement",
+                "target_audience": "general_public",
+                "content_type": "תכנית חינוכית"
+            },
+            "ideological_indicators": {
+                "values_orientation": [],
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": [
+                    "official_source"
+                ]
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:33:30",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 67,
+            "url": "https://www.colbonews.co.il/education/164745/",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "media",
+                "organization_type": "media",
+                "jurisdiction_level": "local",
+                "geographic_scope": "חיפה"
+            },
+            "content_domain": {
+                "topic_category": "education",
+                "document_type": "article",
+                "target_audience": "general_public",
+                "content_type": "מאמר חדשותי"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:33:43",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 68,
+            "url": "https://www.digi-catalogue.co.il/catalog/roshhaayinhighschool/41/",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "municipality",
+                "organization_type": "municipality",
+                "jurisdiction_level": "local",
+                "geographic_scope": "ראש העין"
+            },
+            "content_domain": {
+                "topic_category": "education",
+                "document_type": "curriculum",
+                "target_audience": "students",
+                "content_type": "תכנית חינוכית"
+            },
+            "ideological_indicators": {
+                "values_orientation": [],
+                "cultural_focus": "hebrew_culture"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": 2025,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": [
+                    "official_source"
+                ]
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:33:48",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 70,
+            "url": "https://www.efrat.muni.il/he/0-1595487834-%D7%97%D7%99%D7%A0%D7%95%D7%9A/",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "municipality",
+                "organization_type": "municipality",
+                "jurisdiction_level": "local",
+                "geographic_scope": "אפרת"
+            },
+            "content_domain": {
+                "topic_category": "education",
+                "document_type": "announcement",
+                "target_audience": "general_public",
+                "content_type": "תוכן לא מוגדר"
+            },
+            "ideological_indicators": {
+                "values_orientation": [],
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": [
+                    "official_source"
+                ]
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:34:04",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 71,
+            "url": "https://www.efrat.muni.il/uploads/n/1762678910.1745.pdf",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "municipality",
+                "organization_type": "municipality",
+                "jurisdiction_level": "local",
+                "geographic_scope": "null"
+            },
+            "content_domain": {
+                "topic_category": "",
+                "document_type": "report",
+                "target_audience": "general_public",
+                "content_type": "unknown"
+            },
+            "ideological_indicators": {
+                "values_orientation": [],
+                "cultural_focus": "unclear"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "pdf"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": []
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:34:08",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 73,
+            "url": "https://www.emanuel.muni.il/bids/?archive=1",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "municipality",
+                "organization_type": "municipality",
+                "jurisdiction_level": "local",
+                "geographic_scope": "עמנואל"
+            },
+            "content_domain": {
+                "topic_category": "other",
+                "document_type": "announcement",
+                "target_audience": "general_public",
+                "content_type": "תוכן לא מוגדר"
+            },
+            "ideological_indicators": {
+                "values_orientation": [],
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": [
+                    "official_source"
+                ]
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:34:15",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 74,
+            "url": "https://www.facebook.com/61558575060568/videos/%D7%A8%D7%9E%D7%AA-%D7%92%D7%9F-%D7%9E%D7%A9%D7%A4%D7%97%D7%95%D7%AA-%D7%9E%D7%92%D7%95%D7%95%D7%A0%D7%95%D7%AA/873150761739956/",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "other",
+                "organization_type": "media",
+                "jurisdiction_level": "national",
+                "geographic_scope": null
+            },
+            "content_domain": {
+                "topic_category": "news",
+                "document_type": "",
+                "target_audience": "general_public",
+                "content_type": "תוכן לא מוגדר"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "video"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:34:22",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 75,
+            "url": "https://www.facebook.com/HerzliyaCity/photos/2745533322138178/",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "other",
+                "organization_type": "other",
+                "jurisdiction_level": "local",
+                "geographic_scope": "Herzliya"
+            },
+            "content_domain": {
+                "topic_category": "news",
+                "document_type": "announcement",
+                "target_audience": "general_public",
+                "content_type": "תוכן לא מוגדר"
+            },
+            "ideological_indicators": {
+                "values_orientation": [],
+                "cultural_focus": "unclear"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "image"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": []
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:34:28",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 76,
+            "url": "https://www.facebook.com/RaananaMunicipality/videos/570748348065195/",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "municipality",
+                "organization_type": null,
+                "jurisdiction_level": null,
+                "geographic_scope": null
+            },
+            "content_domain": {
+                "topic_category": null,
+                "document_type": null,
+                "target_audience": null,
+                "content_type": null
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": null
+            },
+            "identity_zionism": {
+                "zionism_references": null,
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": null,
+                "accessibility_level": null,
+                "publication_format": null
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": null
+            },
+            "source_quality": {
+                "completeness": null,
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:34:36",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 77,
+            "url": "https://www.facebook.com/ariel.municipality/photos/%D7%97%D7%99%D7%A0%D7%95%D7%9A-%D7%95%D7%A2%D7%A8%D7%9B%D7%99%D7%9D-%D7%94%D7%9B%D7%95%D7%9C%D7%9C/1268437905322460/",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "municipality",
+                "organization_type": "municipality",
+                "jurisdiction_level": "local",
+                "geographic_scope": "Ariel"
+            },
+            "content_domain": {
+                "topic_category": "education",
+                "document_type": "announcement",
+                "target_audience": "general_public",
+                "content_type": "קול קורא לתושבי העיר להגשת הצעות למיזמים בנושאי קיימות קהילה וסביבה"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "image"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": [
+                    "official_source"
+                ]
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:34:42",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 78,
+            "url": "https://www.facebook.com/forum.hiloni/photos/%D7%92%D7%91%D7%A2%D7%AA%D7%99%D7%99%D7%9D-%D7%A0%D7%97%D7%A9%D7%91%D7%AA-%D7%9C%D7%A2%D7%99%D7%A8-%D7%97%D7%99%D7%9C%D7%95%D7%A0%D7%99%D7%AA-%D7%9C%D7%99%D7%91%D7%A8%D7%9C%D7%99%D7%AA%D7%90%D7%91%D7%9C-%D7%A8%D7%90%D7%A9-%D7%94%D7%A2%D7%99%D7%A8-%D7%A9%D7%9C%D7%94-%D7%9E%D7%A6%D7%93%D7%99%D7%A7-%D7%90%D7%AA-%D7%A7%D7%99%D7%95%D7%9E%D7%95-%D7%A9%D7%9C-%D7%93%D7%95%D7%9B%D7%9F-%D7%94%D7%A0%D7%97%D7%AA-%D7%AA/1257404256412558/",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "other",
+                "organization_type": "other",
+                "jurisdiction_level": "local",
+                "geographic_scope": null
+            },
+            "content_domain": {
+                "topic_category": "news",
+                "document_type": "article",
+                "target_audience": "general_public",
+                "content_type": "מאמר חדשותי"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:34:50",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 79,
+            "url": "https://www.facebook.com/kiryat.ono/posts/%D7%91%D7%A9%D7%91%D7%95%D7%A2-%D7%A9%D7%A2%D7%91%D7%A8-%D7%94%D7%AA%D7%A7%D7%99%D7%99%D7%9D-%D7%9C%D7%A8%D7%90%D7%A9%D7%95%D7%A0%D7%94-%D7%91%D7%A7%D7%A8%D7%99%D7%99%D7%AA-%D7%90%D7%95%D7%A0%D7%95-%D7%99%D7%95%D7%9D-%D7%A2%D7%99%D7%95%D7%9F-%D7%9C%D7%98%D7%99%D7%A4%D7%95%D7%9C-%D7%91%D7%94%D7%AA%D7%9E%D7%9B%D7%A8%D7%95%D7%99%D7%95%D7%AA-%D7%91%D7%A7%D7%A8%D7%91-%D7%90%D7%95%D7%9B%D7%9C%D7%95%D7%A1%D7%99%D7%95%D7%AA-/820976296710968/",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "other",
+                "organization_type": "other",
+                "jurisdiction_level": "local",
+                "geographic_scope": "קריית אונו"
+            },
+            "content_domain": {
+                "topic_category": "community",
+                "document_type": "announcement",
+                "target_audience": "general_public",
+                "content_type": "קול קורא לתושבי העיר להגשת הצעות למיזמים בנושאי קיימות קהילה וסביבה"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "excerpt",
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:34:57",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 80,
+            "url": "https://www.facebook.com/photo.php?fbid=1145084944503740&set=a.388273326851576&id=100070067355878",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "other",
+                "organization_type": "other",
+                "jurisdiction_level": "international",
+                "geographic_scope": null
+            },
+            "content_domain": {
+                "topic_category": "",
+                "document_type": "",
+                "target_audience": "general_public",
+                "content_type": "תוכן לא מוגדר"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "unclear"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "mixed",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "unclear",
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:35:03",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 81,
+            "url": "https://www.facebook.com/ramathsaronmunicipality/photos/%D7%A2%D7%99%D7%A8%D7%99%D7%99%D7%AA-%D7%A8%D7%9E%D7%AA-%D7%94%D7%A9%D7%A8%D7%95%D7%9F-%D7%92%D7%90%D7%94-%D7%9C%D7%A4%D7%AA%D7%95%D7%97-%D7%90%D7%AA-%D7%97%D7%95%D7%93%D7%A9-%D7%92%D7%90%D7%95%D7%95%D7%94-%D7%92%D7%9D-%D7%91%D7%99%D7%9E%D7%99%D7%9D-%D7%90%D7%9C%D7%94-%D7%90%D7%A0%D7%97%D7%A0%D7%95-%D7%9C%D7%90-%D7%A9%D7%95%D7%9B%D7%97%D7%99%D7%9D-%D7%A9%D7%94%D7%9E%D7%90%D7%91%D7%A7-%D7%9C%D7%A1%D7%95/1117702660404442/",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "municipality",
+                "organization_type": "municipality",
+                "jurisdiction_level": "local",
+                "geographic_scope": "רמת השרון"
+            },
+            "content_domain": {
+                "topic_category": "community",
+                "document_type": "announcement",
+                "target_audience": "general_public",
+                "content_type": "קול קורא לתושבי העיר להגשת הצעות למיזמים בנושאי קיימות קהילה וסביבה"
+            },
+            "ideological_indicators": {
+                "values_orientation": [],
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "image"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": []
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:35:09",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 82,
+            "url": "https://www.facebook.com/telaviveducation/videos/759687740477697/",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "other",
+                "organization_type": "other",
+                "jurisdiction_level": "national",
+                "geographic_scope": null
+            },
+            "content_domain": {
+                "topic_category": "other",
+                "document_type": "",
+                "target_audience": "general_public",
+                "content_type": "תוכן לא מוגדר"
+            },
+            "ideological_indicators": {
+                "values_orientation": [],
+                "cultural_focus": "unclear"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "video"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": []
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:35:16",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 83,
+            "url": "https://www.givatayim.muni.il/1460/",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "municipality",
+                "organization_type": "municipality",
+                "jurisdiction_level": "local",
+                "geographic_scope": "גבעתיים"
+            },
+            "content_domain": {
+                "topic_category": "community",
+                "document_type": "announcement",
+                "target_audience": "general_public",
+                "content_type": "תוכן לא מוגדר"
+            },
+            "ideological_indicators": {
+                "values_orientation": [],
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": []
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:35:22",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 84,
+            "url": "https://www.givatayim.muni.il/articles/item/382/",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "municipality",
+                "organization_type": "municipality",
+                "jurisdiction_level": "local",
+                "geographic_scope": "גבעתיים"
+            },
+            "content_domain": {
+                "topic_category": "education",
+                "document_type": "announcement",
+                "target_audience": "general_public",
+                "content_type": "תוכן לא מוגדר"
+            },
+            "ideological_indicators": {
+                "values_orientation": [
+                    "innovation",
+                    "community"
+                ],
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": 2025,
+                "period_referenced": null,
+                "temporal_scope": "future"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": [
+                    "official_source"
+                ]
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:35:27",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 85,
+            "url": "https://www.givatayim.muni.il/uploads/n/p1.pdf",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "municipality",
+                "organization_type": "municipality",
+                "jurisdiction_level": "local",
+                "geographic_scope": "גבעתיים"
+            },
+            "content_domain": {
+                "topic_category": "",
+                "document_type": "",
+                "target_audience": "general_public",
+                "content_type": "unknown"
+            },
+            "ideological_indicators": {
+                "values_orientation": [],
+                "cultural_focus": "unclear"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "pdf"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": []
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:35:32",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 86,
+            "url": "https://www.globes.co.il/news/article.aspx?did=1001065173",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "media",
+                "organization_type": "media",
+                "jurisdiction_level": "national",
+                "geographic_scope": null
+            },
+            "content_domain": {
+                "topic_category": "news",
+                "document_type": "article",
+                "target_audience": "general_public",
+                "content_type": "מאמר חדשותי"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:35:40",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 88,
+            "url": "https://www.gov.il/BlobFolder/generalpage/information-project010126/he/plan080525.xlsx",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": null,
+                "organization_type": null,
+                "jurisdiction_level": null,
+                "geographic_scope": null
+            },
+            "content_domain": {
+                "topic_category": null,
+                "document_type": null,
+                "target_audience": null,
+                "content_type": null
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": null
+            },
+            "identity_zionism": {
+                "zionism_references": null,
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": null,
+                "accessibility_level": null,
+                "publication_format": null
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": null
+            },
+            "source_quality": {
+                "completeness": null,
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:35:41",
+                "metadata_status": "failed"
+            }
+        },
+        {
+            "id": 91,
+            "url": "https://www.gov.il/he/pages/information-project010126",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": null,
+                "organization_type": null,
+                "jurisdiction_level": null,
+                "geographic_scope": null
+            },
+            "content_domain": {
+                "topic_category": null,
+                "document_type": null,
+                "target_audience": null,
+                "content_type": null
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": null
+            },
+            "identity_zionism": {
+                "zionism_references": null,
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": null,
+                "accessibility_level": null,
+                "publication_format": null
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": null
+            },
+            "source_quality": {
+                "completeness": null,
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:35:42",
+                "metadata_status": "failed"
+            }
+        },
+        {
+            "id": 93,
+            "url": "https://www.guidestar.org.il/announcements/YTFNMDgwMDAwME5TVFdBRUE1",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "other",
+                "organization_type": "other",
+                "jurisdiction_level": "national",
+                "geographic_scope": null
+            },
+            "content_domain": {
+                "topic_category": null,
+                "document_type": "announcement",
+                "target_audience": "general_public",
+                "content_type": "תוכן לא מוגדר"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "unclear"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:35:51",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 94,
+            "url": "https://www.guidestar.org.il/organization/580472405",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "ngo",
+                "organization_type": "עירייה",
+                "jurisdiction_level": "national",
+                "geographic_scope": null
+            },
+            "content_domain": {
+                "topic_category": "community",
+                "document_type": "report",
+                "target_audience": "general_public",
+                "content_type": "תוכן לא מוגדר"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:36:01",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 95,
+            "url": "https://www.haaretz.co.il/news/education/2010-04-19/ty-article/0000017f-ed45-d4a6-af7f-ffc74c1a0000",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "media",
+                "organization_type": "media",
+                "jurisdiction_level": "national",
+                "geographic_scope": null
+            },
+            "content_domain": {
+                "topic_category": "education",
+                "document_type": "article",
+                "target_audience": "general_public",
+                "content_type": "מאמר חדשותי"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": 2010,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:36:08",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 96,
+            "url": "https://www.haifa.muni.il/education/kinder-gardens/unique-programs/",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "municipality",
+                "organization_type": "municipality",
+                "jurisdiction_level": "local",
+                "geographic_scope": "חיפה"
+            },
+            "content_domain": {
+                "topic_category": "education",
+                "document_type": "announcement",
+                "target_audience": "general_public",
+                "content_type": "תכנית חינוכית"
+            },
+            "ideological_indicators": {
+                "values_orientation": [],
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": 2021,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": [
+                    "official_source"
+                ]
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:36:14",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 97,
+            "url": "https://www.hayadan.org.il/science-kindergarden-in-beer-sheva",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "media",
+                "organization_type": "media",
+                "jurisdiction_level": "national",
+                "geographic_scope": null
+            },
+            "content_domain": {
+                "topic_category": "news",
+                "document_type": "article",
+                "target_audience": "general_public",
+                "content_type": "מאמר חדשותי"
+            },
+            "ideological_indicators": {
+                "values_orientation": [],
+                "cultural_focus": "unclear"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": []
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:36:20",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 98,
+            "url": "https://www.herzliya.muni.il/112/?utm_source=chatgpt.com",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "municipality",
+                "organization_type": null,
+                "jurisdiction_level": null,
+                "geographic_scope": null
+            },
+            "content_domain": {
+                "topic_category": null,
+                "document_type": null,
+                "target_audience": null,
+                "content_type": null
+            },
+            "ideological_indicators": {
+                "values_orientation": [],
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": [
+                    "official_source"
+                ]
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:36:25",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 99,
+            "url": "https://www.herzliya.muni.il/news/item/5988/",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "municipality",
+                "organization_type": "municipality",
+                "jurisdiction_level": "local",
+                "geographic_scope": "הרצליה"
+            },
+            "content_domain": {
+                "topic_category": "news",
+                "document_type": "announcement",
+                "target_audience": "general_public",
+                "content_type": "תוכן לא מוגדר"
+            },
+            "ideological_indicators": {
+                "values_orientation": [],
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": [
+                    "official_source"
+                ]
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:36:30",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 100,
+            "url": "https://www.herzliya.muni.il/uploads/n/1634190945.8635.pdf",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "municipality",
+                "organization_type": "municipality",
+                "jurisdiction_level": "local",
+                "geographic_scope": "הרצליה"
+            },
+            "content_domain": {
+                "topic_category": "",
+                "document_type": "",
+                "target_audience": "general_public",
+                "content_type": "unknown"
+            },
+            "ideological_indicators": {
+                "values_orientation": [],
+                "cultural_focus": "unclear"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "pdf"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": []
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:36:35",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 101,
+            "url": "https://www.hod-hasharon.muni.il/bids/?archive=1&category=4",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "municipality",
+                "organization_type": "municipality",
+                "jurisdiction_level": "local",
+                "geographic_scope": "הוד השרון"
+            },
+            "content_domain": {
+                "topic_category": "other",
+                "document_type": "announcement",
+                "target_audience": "general_public",
+                "content_type": "תוכן לא מוגדר"
+            },
+            "ideological_indicators": {
+                "values_orientation": [],
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": [
+                    "official_source"
+                ]
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:36:41",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 102,
+            "url": "https://www.hod-hasharon.muni.il/protocols/?utm_source=chatgpt.com",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "municipality",
+                "organization_type": "municipality",
+                "jurisdiction_level": "local",
+                "geographic_scope": "הוד השרון"
+            },
+            "content_domain": {
+                "topic_category": "policy",
+                "document_type": "protocol",
+                "target_audience": "general_public",
+                "content_type": "פרוטוקול ישיבה"
+            },
+            "ideological_indicators": {
+                "values_orientation": [],
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": [
+                    "official_source"
+                ]
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:36:45",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 105,
+            "url": "https://www.inn.co.il/news/564197",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "media",
+                "organization_type": "media",
+                "jurisdiction_level": "national",
+                "geographic_scope": null
+            },
+            "content_domain": {
+                "topic_category": "news",
+                "document_type": "article",
+                "target_audience": "general_public",
+                "content_type": "מאמר חדשותי"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:37:04",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 107,
+            "url": "https://www.instagram.com/reel/DRe2c30DOOp/",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "other",
+                "organization_type": "other",
+                "jurisdiction_level": "international",
+                "geographic_scope": null
+            },
+            "content_domain": {
+                "topic_category": "other",
+                "document_type": null,
+                "target_audience": "general_public",
+                "content_type": "תוכן לא מוגדר"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "unclear"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "mixed",
+                "accessibility_level": "public",
+                "publication_format": "video"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": null
+            },
+            "source_quality": {
+                "completeness": null,
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:37:18",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 108,
+            "url": "https://www.israelhayom.co.il/article/600339",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "media",
+                "organization_type": "media",
+                "jurisdiction_level": "national",
+                "geographic_scope": null
+            },
+            "content_domain": {
+                "topic_category": "news",
+                "document_type": "article",
+                "target_audience": "general_public",
+                "content_type": "מאמר חדשותי"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "unclear"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:37:23",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 109,
+            "url": "https://www.jerusalem.muni.il/he/City/Council/CommitteesMeetings",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": null,
+                "organization_type": null,
+                "jurisdiction_level": null,
+                "geographic_scope": null
+            },
+            "content_domain": {
+                "topic_category": null,
+                "document_type": null,
+                "target_audience": null,
+                "content_type": null
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": null
+            },
+            "identity_zionism": {
+                "zionism_references": null,
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": null,
+                "accessibility_level": null,
+                "publication_format": null
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": null
+            },
+            "source_quality": {
+                "completeness": null,
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:37:24",
+                "metadata_status": "failed"
+            }
+        },
+        {
+            "id": 110,
+            "url": "https://www.jewishagency.org/il/sovev-kinneret-project/",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "ngo",
+                "organization_type": "ngo",
+                "jurisdiction_level": "national",
+                "geographic_scope": null
+            },
+            "content_domain": {
+                "topic_category": "community",
+                "document_type": "announcement",
+                "target_audience": "general_public",
+                "content_type": "קול קורא לתושבי העיר להגשת הצעות למיזמים בנושאי קיימות קהילה וסביבה"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "jewish_heritage"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": 2024,
+                "period_referenced": null,
+                "temporal_scope": "future"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:37:30",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 111,
+            "url": "https://www.k-8.co.il/he/bids/",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "municipality",
+                "organization_type": "municipality",
+                "jurisdiction_level": "local",
+                "geographic_scope": "קריית שמונה"
+            },
+            "content_domain": {
+                "topic_category": "other",
+                "document_type": "",
+                "target_audience": "general_public",
+                "content_type": "תוכן לא מוגדר"
+            },
+            "ideological_indicators": {
+                "values_orientation": [],
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": [
+                    "official_source"
+                ]
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:37:35",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 112,
+            "url": "https://www.kan.org.il/content/kan-news/local/320968/",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": null,
+                "organization_type": null,
+                "jurisdiction_level": null,
+                "geographic_scope": null
+            },
+            "content_domain": {
+                "topic_category": null,
+                "document_type": null,
+                "target_audience": null,
+                "content_type": null
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": null
+            },
+            "identity_zionism": {
+                "zionism_references": null,
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": null,
+                "accessibility_level": null,
+                "publication_format": null
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": null
+            },
+            "source_quality": {
+                "completeness": null,
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:37:36",
+                "metadata_status": "failed"
+            }
+        },
+        {
+            "id": 114,
+            "url": "https://www.karmiel.muni.il/gd_bids/%D7%A7%D7%95%D7%9C-%D7%A7%D7%95%D7%A8%D7%90-%D7%A7%D7%A8%D7%99%D7%90%D7%94-%D7%9C%D7%A2%D7%99%D7%93%D7%95%D7%93-%D7%95%D7%AA%D7%9E%D7%99%D7%9B%D7%94-%D7%91%D7%A4%D7%A8%D7%95%D7%99%D7%99%D7%A7%D7%98/",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "municipality",
+                "organization_type": "municipality",
+                "jurisdiction_level": "local",
+                "geographic_scope": "כרמיאל"
+            },
+            "content_domain": {
+                "topic_category": "community",
+                "document_type": "announcement",
+                "target_audience": "general_public",
+                "content_type": "קול קורא לתושבי העיר להגשת הצעות למיזמים בנושאי קיימות קהילה וסביבה"
+            },
+            "ideological_indicators": {
+                "values_orientation": [],
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": []
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:37:42",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 116,
+            "url": "https://www.kikar.co.il/haredim-news/408920",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "media",
+                "organization_type": "media",
+                "jurisdiction_level": "national",
+                "geographic_scope": "נתיבות"
+            },
+            "content_domain": {
+                "topic_category": "news",
+                "document_type": "article",
+                "target_audience": "general_public",
+                "content_type": "מאמר חדשותי"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "jewish_heritage"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": 2021,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": [
+                    "official_source"
+                ]
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:37:55",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 117,
+            "url": "https://www.kipa.co.il/%D7%97%D7%93%D7%A9%D7%95%D7%AA/1105673-%D7%91%D7%92%D7%91%D7%A2%D7%AA-%D7%A9%D7%9E%D7%95%D7%90%D7%9C-%D7%9C%D7%90-%D7%9E%D7%97%D7%9B%D7%99%D7%9D-%D7%98%D7%A4%D7%A1%D7%99-%D7%94%D7%A8%D7%99%D7%A9%D7%95%D7%9D-%D7%9C%D7%9E%D7%95%D7%A1%D7%93%D7%95%D7%AA-%D7%97%D7%99%D7%A0%D7%95%D7%9A-%D7%9B%D7%91%D7%A8-%D7%94%D7%95%D7%97%D7%9C%D7%A4%D7%95-%D7%9C/",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "media",
+                "organization_type": "media",
+                "jurisdiction_level": "national",
+                "geographic_scope": null
+            },
+            "content_domain": {
+                "topic_category": "news",
+                "document_type": "article",
+                "target_audience": "general_public",
+                "content_type": "מאמר חדשותי"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "jewish_heritage"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": 2023,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:38:01",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 118,
+            "url": "https://www.kipa.co.il/%D7%97%D7%93%D7%A9%D7%95%D7%AA/952063-%D7%97%D7%91%D7%95%D7%A8%D7%94-%D7%A6%D7%99%D7%91%D7%95%D7%A8/",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "media",
+                "organization_type": "media",
+                "jurisdiction_level": "national",
+                "geographic_scope": null
+            },
+            "content_domain": {
+                "topic_category": "news",
+                "document_type": "article",
+                "target_audience": "general_public",
+                "content_type": "מאמר חדשותי"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "jewish_heritage"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": 2023,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:38:09",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 119,
+            "url": "https://www.kiryatono.muni.il/%D7%97%D7%95%D7%93%D7%A9-%D7%94%D7%92%D7%90%D7%95%D7%95%D7%94-2025/",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "municipality",
+                "organization_type": "municipality",
+                "jurisdiction_level": "local",
+                "geographic_scope": "קריית אונו"
+            },
+            "content_domain": {
+                "topic_category": "culture",
+                "document_type": "announcement",
+                "target_audience": "general_public",
+                "content_type": "תוכן לא מוגדר"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "hebrew_culture"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": 2025,
+                "period_referenced": null,
+                "temporal_scope": "future"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": [
+                    "official_source"
+                ]
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:38:14",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 120,
+            "url": "https://www.kiryatono.muni.il/%D7%9C%D7%94%D7%98-%D7%91/",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "municipality",
+                "organization_type": "municipality",
+                "jurisdiction_level": "local",
+                "geographic_scope": "קריית אונו"
+            },
+            "content_domain": {
+                "topic_category": "community",
+                "document_type": "announcement",
+                "target_audience": "general_public",
+                "content_type": "תוכן לא מוגדר"
+            },
+            "ideological_indicators": {
+                "values_orientation": [],
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": [
+                    "official_source"
+                ]
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:38:24",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 121,
+            "url": "https://www.kiryatono.muni.il/protocols/?utm_source=chatgpt.com",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "municipality",
+                "organization_type": "municipality",
+                "jurisdiction_level": "local",
+                "geographic_scope": "קריית אונו"
+            },
+            "content_domain": {
+                "topic_category": "other",
+                "document_type": "protocol",
+                "target_audience": "general_public",
+                "content_type": "פרוטוקול ישיבה"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": [
+                    "official_source"
+                ]
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:38:29",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 124,
+            "url": "https://www.levinsky.ac.il/program/%D7%94%D7%A1%D7%91%D7%94-%D7%A2%D7%99%D7%A8%D7%99%D7%99%D7%AA-%D7%94%D7%A8%D7%A6%D7%9C%D7%99%D7%94/",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "educational_institution",
+                "organization_type": "educational_institution",
+                "jurisdiction_level": "local",
+                "geographic_scope": "הרצליה"
+            },
+            "content_domain": {
+                "topic_category": "education",
+                "document_type": "curriculum",
+                "target_audience": "educators",
+                "content_type": "תכנית חינוכית"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": 2022,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": [
+                    "official_source"
+                ]
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:38:37",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 125,
+            "url": "https://www.linkedin.com/posts/herzliya-municipality_%D7%97%D7%95%D7%A4%D7%A9%D7%99-%D7%A4%D7%94-%D7%94%D7%A8%D7%A6%D7%9C%D7%99%D7%94-%D7%91%D7%9E%D7%A7%D7%95%D7%9D-%D7%94%D7%A9%D7%A0%D7%99-%D7%91%D7%90%D7%A8%D7%A5-%D7%91%D7%9E%D7%93%D7%93-activity-7271508016447848449-4yey",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "municipality",
+                "organization_type": "municipality",
+                "jurisdiction_level": "local",
+                "geographic_scope": "הרצליה"
+            },
+            "content_domain": {
+                "topic_category": "news",
+                "document_type": "announcement",
+                "target_audience": "general_public",
+                "content_type": "סקירה עירונית"
+            },
+            "ideological_indicators": {
+                "values_orientation": [
+                    "innovation"
+                ],
+                "cultural_focus": "israeli_identity"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": 2024,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": [
+                    "official_source"
+                ]
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:38:43",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 127,
+            "url": "https://www.mako.co.il/pride-news/local/Article-9760a7aa5008671027.htm",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "media",
+                "organization_type": "media",
+                "jurisdiction_level": "national",
+                "geographic_scope": null
+            },
+            "content_domain": {
+                "topic_category": "news",
+                "document_type": "article",
+                "target_audience": "general_public",
+                "content_type": "מאמר חדשותי"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "unclear"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:38:54",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 128,
+            "url": "https://www.makorrishon.co.il/news/education/article/181451",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "media",
+                "organization_type": "media",
+                "jurisdiction_level": "national",
+                "geographic_scope": "אריאל"
+            },
+            "content_domain": {
+                "topic_category": "news",
+                "document_type": "article",
+                "target_audience": "general_public",
+                "content_type": "מאמר חדשותי"
+            },
+            "ideological_indicators": {
+                "values_orientation": [
+                    "innovation"
+                ],
+                "cultural_focus": "israeli_identity"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": 2025,
+                "period_referenced": null,
+                "temporal_scope": "future"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": [
+                    "official_source"
+                ]
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:39:00",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 129,
+            "url": "https://www.makorrishon.co.il/news/yoman/801946/",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "media",
+                "organization_type": "media",
+                "jurisdiction_level": "national",
+                "geographic_scope": null
+            },
+            "content_domain": {
+                "topic_category": "news",
+                "document_type": "article",
+                "target_audience": "general_public",
+                "content_type": "מאמר חדשותי"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "hebrew_culture"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": 2024,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:39:07",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 130,
+            "url": "https://www.migvanim.com/html5/?_id=12548&did=4455&sm=12548&title=%F9%E0%EC%E5%FA%20%F0%F4%E5%F6%E5%FA",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "other",
+                "organization_type": "other",
+                "jurisdiction_level": "",
+                "geographic_scope": null
+            },
+            "content_domain": {
+                "topic_category": "",
+                "document_type": "other",
+                "target_audience": "",
+                "content_type": "unknown"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "unclear"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "",
+                "accessibility_level": "restricted",
+                "publication_format": "pdf"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": ""
+            },
+            "source_quality": {
+                "completeness": "unclear",
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:39:14",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 131,
+            "url": "https://www.molad.org/images/upload/files/GarinimToraniim.pdf",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "other",
+                "organization_type": "other",
+                "jurisdiction_level": null,
+                "geographic_scope": null
+            },
+            "content_domain": {
+                "topic_category": "",
+                "document_type": "",
+                "target_audience": null,
+                "content_type": "unknown"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "unclear"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "pdf"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:39:19",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 132,
+            "url": "https://www.mypisga.org/each",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "other",
+                "organization_type": "other",
+                "jurisdiction_level": "national",
+                "geographic_scope": null
+            },
+            "content_domain": {
+                "topic_category": null,
+                "document_type": "other",
+                "target_audience": "general_public",
+                "content_type": "תוכן לא מוגדר"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "unclear"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": null
+            },
+            "source_quality": {
+                "completeness": null,
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:39:25",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 133,
+            "url": "https://www.netivot.muni.il/protocols/?utm_source=chatgpt.com",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "municipality",
+                "organization_type": "municipality",
+                "jurisdiction_level": "local",
+                "geographic_scope": "נתיבות"
+            },
+            "content_domain": {
+                "topic_category": "education",
+                "document_type": "protocol",
+                "target_audience": "general_public",
+                "content_type": "פרוטוקול ישיבה"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": [
+                    "official_source"
+                ]
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:39:33",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 134,
+            "url": "https://www.netivot.muni.il/uploads/n/1540284245.4443.pdf",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "municipality",
+                "organization_type": "municipality",
+                "jurisdiction_level": "local",
+                "geographic_scope": "נתיבות"
+            },
+            "content_domain": {
+                "topic_category": "other",
+                "document_type": "report",
+                "target_audience": "general_public",
+                "content_type": "תוכן לא מוגדר"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "pdf"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": [
+                    "official_source"
+                ]
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:39:40",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 140,
+            "url": "https://www.raanana.muni.il/cityhall/city-council-members/city-council-minutes/?utm_source=chatgpt.com",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "municipality",
+                "organization_type": "municipality",
+                "jurisdiction_level": "local",
+                "geographic_scope": "רעננה"
+            },
+            "content_domain": {
+                "topic_category": "policy",
+                "document_type": "protocol",
+                "target_audience": "general_public",
+                "content_type": "פרוטוקול ישיבה"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": [
+                    "official_source"
+                ]
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:39:57",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 143,
+            "url": "https://www.raanana.muni.il/wp-content/uploads/2025/11/%D7%A7%D7%95%D7%9C-%D7%A7%D7%95%D7%A8%D7%90-%D7%9E%D7%A8%D7%9B%D7%96%D7%99%D7%9D-%D7%A7%D7%94%D7%99%D7%9C%D7%AA%D7%99%D7%99%D7%9D-%D7%AA%D7%A9%D7%A4%D7%94-2025-2026.pdf",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "municipality",
+                "organization_type": "municipality",
+                "jurisdiction_level": "local",
+                "geographic_scope": "רעננה"
+            },
+            "content_domain": {
+                "topic_category": "community",
+                "document_type": "announcement",
+                "target_audience": "general_public",
+                "content_type": "קול קורא לתושבי העיר להגשת הצעות למיזמים בנושאי קיימות קהילה וסביבה"
+            },
+            "ideological_indicators": {
+                "values_orientation": [],
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "pdf"
+            },
+            "temporal": {
+                "year": 2025,
+                "period_referenced": null,
+                "temporal_scope": "future"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": [
+                    "official_source"
+                ]
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:40:09",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 144,
+            "url": "https://www.ramat-gan.muni.il/city-council/?utm_source=chatgpt.com",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "municipality",
+                "organization_type": "municipality",
+                "jurisdiction_level": "local",
+                "geographic_scope": "רמת גן"
+            },
+            "content_domain": {
+                "topic_category": "other",
+                "document_type": "other",
+                "target_audience": "general_public",
+                "content_type": "תוכן לא מוגדר"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": [
+                    "official_source"
+                ]
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:40:15",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 145,
+            "url": "https://www.ramat-gan.muni.il/department-social-services/content-pages/proud-community-marriage-certificate",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "municipality",
+                "organization_type": "municipality",
+                "jurisdiction_level": "local",
+                "geographic_scope": "רמת גן"
+            },
+            "content_domain": {
+                "topic_category": "community",
+                "document_type": "announcement",
+                "target_audience": "general_public",
+                "content_type": "קול קורא לתושבי העיר להגשת הצעות למיזמים בנושאי קיימות קהילה וסביבה"
+            },
+            "ideological_indicators": {
+                "values_orientation": [],
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": [
+                    "official_source"
+                ]
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:40:22",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 146,
+            "url": "https://www.ramat-gan.muni.il/education-elementary-schools/content-pages/urban-plans/",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "municipality",
+                "organization_type": "municipality",
+                "jurisdiction_level": "local",
+                "geographic_scope": "רמת גן"
+            },
+            "content_domain": {
+                "topic_category": "education",
+                "document_type": "plan",
+                "target_audience": "general_public",
+                "content_type": "תוכן לא מוגדר"
+            },
+            "ideological_indicators": {
+                "values_orientation": [],
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": [
+                    "official_source"
+                ]
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:40:27",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 151,
+            "url": "https://www.rosh-haayin.muni.il/bids/",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "municipality",
+                "organization_type": "municipality",
+                "jurisdiction_level": "local",
+                "geographic_scope": "ראש העין"
+            },
+            "content_domain": {
+                "topic_category": "other",
+                "document_type": "announcement",
+                "target_audience": "general_public",
+                "content_type": "תוכן לא מוגדר"
+            },
+            "ideological_indicators": {
+                "values_orientation": [],
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": [
+                    "official_source"
+                ]
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:40:38",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 152,
+            "url": "https://www.rosh-haayin.muni.il/protocols/?utm_source=chatgpt.com",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "municipality",
+                "organization_type": "municipality",
+                "jurisdiction_level": "local",
+                "geographic_scope": "ראש העין"
+            },
+            "content_domain": {
+                "topic_category": "policy",
+                "document_type": "protocol",
+                "target_audience": "general_public",
+                "content_type": "פרוטוקול ישיבה"
+            },
+            "ideological_indicators": {
+                "values_orientation": [],
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": [
+                    "official_source"
+                ]
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:40:44",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 153,
+            "url": "https://www.tel-aviv.gov.il/About/Pages/Protocols.aspx",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "municipality",
+                "organization_type": "municipality",
+                "jurisdiction_level": "local",
+                "geographic_scope": "תל אביב-יפו"
+            },
+            "content_domain": {
+                "topic_category": "policy",
+                "document_type": "protocol",
+                "target_audience": "general_public",
+                "content_type": "פרוטוקול ישיבה"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": [
+                    "official_source"
+                ]
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:40:49",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 154,
+            "url": "https://www.tel-aviv.gov.il/Residents/Education/Pages/KProjects.aspx",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "municipality",
+                "organization_type": "municipality",
+                "jurisdiction_level": "local",
+                "geographic_scope": "תל אביב-יפו"
+            },
+            "content_domain": {
+                "topic_category": "education",
+                "document_type": "announcement",
+                "target_audience": "general_public",
+                "content_type": "קול קורא לתושבי העיר להגשת הצעות למיזמים בנושאי קיימות קהילה וסביבה"
+            },
+            "ideological_indicators": {
+                "values_orientation": [],
+                "cultural_focus": "unclear"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": [
+                    "official_source"
+                ]
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:40:57",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 155,
+            "url": "https://www.thejoint.org.il/wp-content/uploads/2025/01/%D7%A7%D7%95%D7%9C-%D7%A7%D7%95%D7%A8%D7%90-%D7%9C%D7%9E%D7%A2%D7%A0%D7%99%D7%9D_%D7%9E%D7%99%D7%96%D7%9D-%D7%97%D7%95%D7%A1%D7%9F-%D7%95%D7%91%D7%A8%D7%99%D7%90%D7%95%D7%AA-%D7%A0%D7%A4%D7%A9%D7%99%D7%AA-%D7%95%D7%A4%D7%99%D7%A1%D7%99%D7%AA-%D7%91%D7%A7%D7%94%D7%99%D7%9C%D7%94.pdf",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "other",
+                "organization_type": "other",
+                "jurisdiction_level": "national",
+                "geographic_scope": null
+            },
+            "content_domain": {
+                "topic_category": "other",
+                "document_type": "other",
+                "target_audience": "general_public",
+                "content_type": "קול קורא לתושבי העיר להגשת הצעות למיזמים בנושאי קיימות קהילה וסביבה"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": null
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "pdf"
+            },
+            "temporal": {
+                "year": 2025,
+                "period_referenced": null,
+                "temporal_scope": "future"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:41:02",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 156,
+            "url": "https://www.themarker.com/news/politics/2024-06-27/ty-article/.premium/00000190-554c-d31c-afb9-dd5f63b50000",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "media",
+                "organization_type": "media",
+                "jurisdiction_level": "national",
+                "geographic_scope": null
+            },
+            "content_domain": {
+                "topic_category": "news",
+                "document_type": "article",
+                "target_audience": "general_public",
+                "content_type": "מאמר חדשותי"
+            },
+            "ideological_indicators": {
+                "values_orientation": [],
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": [],
+                "historical_periods": []
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": 2024,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": []
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:41:08",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 157,
+            "url": "https://www.themarker.com/realestate/2023-03-03/ty-article/.premium/00000186-a6ef-d3d5-a7e7-aeef6f800000",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "media",
+                "organization_type": "media",
+                "jurisdiction_level": "national",
+                "geographic_scope": "הרצליה"
+            },
+            "content_domain": {
+                "topic_category": "news",
+                "document_type": "article",
+                "target_audience": "general_public",
+                "content_type": "מאמר חדשותי"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": 2023,
+                "period_referenced": null,
+                "temporal_scope": null
+            },
+            "source_quality": {
+                "completeness": null,
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:41:13",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 158,
+            "url": "https://www.ynet.co.il/articles/0,7340,L-5526468,00.html",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "media",
+                "organization_type": "media",
+                "jurisdiction_level": "national",
+                "geographic_scope": null
+            },
+            "content_domain": {
+                "topic_category": "news",
+                "document_type": "article",
+                "target_audience": "general_public",
+                "content_type": "מאמר חדשותי"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": 2019,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": [
+                    "official_source"
+                ]
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:41:19",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 159,
+            "url": "https://www.ynet.co.il/economy/article/bjpuqep11eg",
+            "created_at": "2026-01-07 14:18:18",
+            "institutional_context": {
+                "source_type": "media",
+                "organization_type": "media",
+                "jurisdiction_level": "national",
+                "geographic_scope": null
+            },
+            "content_domain": {
+                "topic_category": "news",
+                "document_type": "article",
+                "target_audience": "general_public",
+                "content_type": "מאמר חדשותי"
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": "mixed"
+            },
+            "identity_zionism": {
+                "zionism_references": "none",
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": "hebrew",
+                "accessibility_level": "public",
+                "publication_format": "html"
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": "current"
+            },
+            "source_quality": {
+                "completeness": "full_document",
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": "2026-01-08 00:41:24",
+                "metadata_status": "extracted"
+            }
+        },
+        {
+            "id": 162,
+            "url": "https://givat-shmuel.muni.il/uploads/n/1767435248.5411.pdf",
+            "created_at": "2026-01-10 21:47:23",
+            "institutional_context": {
+                "source_type": "פרוטוקול",
+                "organization_type": "municipality",
+                "jurisdiction_level": null,
+                "geographic_scope": null
+            },
+            "content_domain": {
+                "topic_category": null,
+                "document_type": null,
+                "target_audience": null,
+                "content_type": null
+            },
+            "ideological_indicators": {
+                "values_orientation": null,
+                "cultural_focus": null
+            },
+            "identity_zionism": {
+                "zionism_references": null,
+                "identity_theme": null,
+                "historical_periods": null
+            },
+            "transparency_language": {
+                "language": null,
+                "accessibility_level": null,
+                "publication_format": null
+            },
+            "temporal": {
+                "year": null,
+                "period_referenced": null,
+                "temporal_scope": null
+            },
+            "source_quality": {
+                "completeness": null,
+                "reliability_indicators": null
+            },
+            "metadata": {
+                "metadata_extracted_at": null,
+                "metadata_status": "pending"
+            }
+        }
+    ]
+}

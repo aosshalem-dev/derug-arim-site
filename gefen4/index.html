@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>גפ"ן תשפ"ד — טבלת תוכניות</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+            color: #333;
+            padding: 16px;
+            direction: rtl;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 16px;
+            font-size: 24px;
+        }
+
+        /* ---- Toolbar ---- */
+        .toolbar {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+            padding: 12px 16px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .toolbar .search-box {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .toolbar .search-box input {
+            width: 100%;
+            padding: 10px 14px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            direction: rtl;
+        }
+
+        .toolbar .search-box input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .toolbar .toggle-wrap {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .toolbar .toggle-wrap label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #2c3e50;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .toolbar .toggle-wrap input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: #667eea;
+        }
+
+        .stats-bar {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 12px;
+            padding: 10px 16px;
+            background: #e8f4f8;
+            border-radius: 6px;
+            font-size: 13px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .stats-bar .stat { font-weight: 600; color: #2c3e50; }
+        .stats-bar .stat span { color: #667eea; }
+
+        /* ---- Table ---- */
+        .table-wrap {
+            overflow-x: scroll;
+            margin-top: 8px;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .table-wrap::-webkit-scrollbar {
+            height: 14px;
+            background: #f1f5f9;
+        }
+        .table-wrap::-webkit-scrollbar-thumb {
+            background: #94a3b8;
+            border-radius: 7px;
+            border: 3px solid #f1f5f9;
+        }
+        .table-wrap::-webkit-scrollbar-thumb:hover {
+            background: #667eea;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            min-width: 1500px;
+        }
+
+        thead {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        thead th {
+            background: #667eea;
+            color: white;
+            padding: 10px 8px;
+            text-align: right;
+            font-weight: 600;
+            white-space: nowrap;
+            border-bottom: 2px solid #5568d3;
+            user-select: none;
+        }
+
+        thead th.sortable { cursor: pointer; }
+        thead th.sortable:hover { background: #5568d3; }
+
+        thead th .sort-arrow {
+            font-size: 11px;
+            margin-right: 4px;
+            opacity: 0.7;
+        }
+
+        thead th.sorted .sort-arrow { opacity: 1; }
+
+        tbody tr {
+            border-bottom: 1px solid #e8eaf0;
+            transition: background 0.15s;
+        }
+
+        tbody tr:hover { background: #f8faff; }
+        tbody tr.has-changes { background: #fffde7; }
+
+        tbody td {
+            padding: 8px;
+            vertical-align: top;
+        }
+
+        td.num-cell {
+            text-align: center;
+            color: #999;
+            font-size: 12px;
+            width: 36px;
+        }
+
+        td.program-name {
+            max-width: 250px;
+            word-wrap: break-word;
+        }
+
+        td.program-name .name { font-weight: 600; color: #2c3e50; }
+        td.program-name .id { font-size: 11px; color: #667eea; margin-top: 2px; }
+        td.program-name .org { font-size: 11px; color: #666; margin-top: 2px; }
+
+        td.budget-cell, td.schools-cell, td.bps-cell {
+            text-align: center;
+            white-space: nowrap;
+            font-variant-numeric: tabular-nums;
+        }
+
+        td.field-cell {
+            max-width: 130px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        td.summary-cell {
+            max-width: 350px;
+            font-size: 12px;
+            line-height: 1.4;
+            color: #444;
+        }
+
+        td.org-type-cell {
+            max-width: 110px;
+            white-space: nowrap;
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        /* Editable cells */
+        td.edit-cell textarea {
+            width: 100%;
+            min-height: 50px;
+            padding: 6px 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 12px;
+            font-family: inherit;
+            resize: vertical;
+            direction: rtl;
+            line-height: 1.4;
+        }
+
+        td.edit-cell textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.15);
+        }
+
+        td.edit-cell select {
+            padding: 6px 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 13px;
+            background: white;
+            width: 100%;
+        }
+
+        td.edit-cell select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        td.save-cell {
+            text-align: center;
+            width: 80px;
+        }
+
+        .btn-save {
+            padding: 6px 14px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            display: none;
+        }
+
+        .btn-save.visible { display: inline-block; }
+        .btn-save:hover { background: #5568d3; }
+        .btn-save:disabled { background: #ccc; cursor: not-allowed; }
+
+        .save-status { font-size: 11px; margin-top: 4px; }
+        .save-status.success { color: #22c55e; }
+        .save-status.error { color: #ef4444; }
+
+        /* Loading */
+        .loading {
+            text-align: center;
+            padding: 60px 20px;
+            color: #667eea;
+            font-size: 18px;
+        }
+
+        .loading .spinner {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(102,126,234,0.2);
+            border-top-color: #667eea;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin-bottom: 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .progress-bar {
+            width: 300px;
+            height: 6px;
+            background: #e2e8f0;
+            border-radius: 3px;
+            margin: 12px auto 0;
+            overflow: hidden;
+        }
+
+        .progress-bar .fill {
+            height: 100%;
+            background: #667eea;
+            border-radius: 3px;
+            transition: width 0.3s;
+            width: 0%;
+        }
+
+        /* Toast */
+        .toast {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            z-index: 1000;
+            display: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .toast.success { background: #22c55e; color: white; }
+        .toast.error { background: #ef4444; color: white; }
+        .toast.show { display: block; }
+
+        /* Drag handle for horizontal scroll - fixed to bottom of viewport */
+        .drag-handle {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 32px;
+            max-width: 1600px;
+            width: calc(100% - 32px);
+            background: linear-gradient(180deg, #e2e8f0 0%, #cbd5e1 100%);
+            border-top: 1px solid #94a3b8;
+            cursor: grab;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            user-select: none;
+            z-index: 20;
+            border-radius: 6px 6px 0 0;
+            box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+        }
+
+        .drag-handle.visible {
+            display: flex;
+        }
+
+        .drag-handle:active {
+            cursor: grabbing;
+            background: linear-gradient(180deg, #cbd5e1 0%, #94a3b8 100%);
+        }
+
+        .drag-handle .grip {
+            width: 4px;
+            height: 4px;
+            background: #64748b;
+            border-radius: 50%;
+        }
+
+        .drag-handle .grip-label {
+            font-size: 11px;
+            color: #475569;
+            margin: 0 6px;
+            font-weight: 500;
+        }
+
+        .table-wrap.dragging {
+            cursor: grabbing;
+        }
+
+        .table-wrap.dragging * {
+            cursor: grabbing !important;
+            user-select: none !important;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body { padding: 8px; }
+            .container { padding: 12px; }
+            h1 { font-size: 20px; }
+            table { font-size: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>גפ"ן תשפ"ד — טבלת תוכניות</h1>
+
+    <div class="toolbar">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="חיפוש לפי שם תוכנית, מספר מענה, ארגון..." autocomplete="off">
+        </div>
+        <div class="toggle-wrap">
+            <input type="checkbox" id="citiesToggle" checked>
+            <label for="citiesToggle">20 ערים בלבד</label>
+        </div>
+    </div>
+
+    <div class="stats-bar">
+        <div class="stat">סה"כ תוכניות: <span id="statTotal">-</span></div>
+        <div class="stat">מוצגות: <span id="statFiltered">-</span></div>
+        <div class="stat">עם מטא-דאטה: <span id="statMeta">-</span></div>
+    </div>
+
+    <div id="loadingDiv" class="loading">
+        <div class="spinner"></div>
+        <div id="loadingText">טוען נתונים...</div>
+        <div class="progress-bar"><div class="fill" id="progressFill"></div></div>
+    </div>
+
+    <div class="table-wrap" id="tableWrap" style="display: none;">
+        <table>
+            <thead id="tableHead">
+                <tr>
+                    <th style="width:36px;">#</th>
+                    <th>שם תוכנית</th>
+                    <th class="sortable" data-sort="budget">סה"כ תקציב <span class="sort-arrow"></span></th>
+                    <th class="sortable" data-sort="schools">בתי ספר <span class="sort-arrow"></span></th>
+                    <th class="sortable" data-sort="bps">תקציב/ביה"ס <span class="sort-arrow"></span></th>
+                    <th>פעיל בערים</th>
+                    <th>תחום מרכזי</th>
+                    <th style="min-width:300px;">תמצית התוכנית</th>
+                    <th>סוג ארגון</th>
+                    <th style="min-width:200px;">תיאור</th>
+                    <th class="sortable" data-sort="score" style="width:110px;">דירוג (1-5) <span class="sort-arrow"></span></th>
+                    <th style="min-width:200px;">הערות</th>
+                    <th style="width:80px;">שמירה</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+        </table>
+    </div>
+</div>
+
+<div class="drag-handle" id="dragHandle">
+    <span class="grip"></span>
+    <span class="grip"></span>
+    <span class="grip-label">⟷ גרור לגלילה אופקית</span>
+    <span class="grip"></span>
+    <span class="grip"></span>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+(function() {
+    'use strict';
+
+    // ---- CONFIG ----
+    const API_BASE = '../gefen_test/';
+    const DATA_API = API_BASE + 'programs_data_api.php';
+    const META_API = API_BASE + 'programs_metadata_api.php';
+    const EXCEL_FILE = API_BASE + 'gefen_programs_excel.json';
+    const BATCH_SIZE = 500;
+    const RENDER_CHUNK = 200;
+
+    const TARGET_CITIES = [
+        "באר שבע", "גבעת שמואל", "אריאל", "רמת גן", "עמנואל",
+        "גבעתיים", "ירושלים", "אפרת", "רעננה", "תל אביב-יפו",
+        "הרצליה", "חיפה", "ראש העין", "רמת השרון", "הוד השרון",
+        "כרמיאל", "קרית גת", "קרית אונו", "קרית שמונה", "נתיבות"
+    ];
+    const TARGET_SET = new Set(TARGET_CITIES);
+
+    // ---- COLOR PALETTES (from gefen3) ----
+    const MAIN_FIELD_PALETTE = [
+        '#fef9c3', '#dbeafe', '#dcfce7', '#ffe4e6', '#fce7f3',
+        '#e9d5ff', '#cffafe', '#ffedd5', '#e2e8f0', '#d1fae5'
+    ];
+    const MAIN_FIELD_OVERRIDES = { 'לימודי': '#dcfce7' };
+    const ORG_TYPE_PALETTE = [
+        '#dbeafe', '#dcfce7', '#fce7f3', '#ffedd5',
+        '#e9d5ff', '#cffafe', '#fef3c7', '#e2e8f0'
+    ];
+
+    function hashStr(str) {
+        const s = String(str || '');
+        let h = 2166136261;
+        for (let i = 0; i < s.length; i++) {
+            h ^= s.charCodeAt(i);
+            h = Math.imul(h, 16777619);
+        }
+        return h >>> 0;
+    }
+
+    function categoryBg(value, palette, overrides) {
+        const s = String(value || '').trim();
+        if (!s || s === '-') return '';
+        if (overrides && overrides[s]) return 'background:' + overrides[s];
+        return 'background:' + palette[hashStr(s) % palette.length];
+    }
+
+    function blueHeat(value, maxVal) {
+        const v = typeof value === 'number' ? value : parseFloat(value) || 0;
+        const max = Math.max(1, maxVal);
+        const r = Math.max(0, Math.min(1, v / max));
+        const a = 0.05 + 0.30 * r;
+        const bg = `background-color:rgba(37,99,235,${a.toFixed(3)})`;
+        return r > 0.75 ? bg + ';color:#fff' : bg;
+    }
+
+    // ---- STATE ----
+    let allPrograms = [];
+    let filteredPrograms = [];
+    let metadataMap = {};
+    let excelData = {};
+    let pendingChanges = {};
+    let currentSort = { field: null, direction: 'desc' };
+    let renderedCount = 0;
+    let searchTerm = '';
+    let citiesOnly = true;
+
+    // ---- HELPERS ----
+    function esc(str) {
+        if (!str) return '';
+        const d = document.createElement('div');
+        d.textContent = String(str);
+        return d.innerHTML;
+    }
+
+    function formatCurrency(n) {
+        if (!n || n === 0) return '-';
+        return Math.round(n).toLocaleString('he-IL') + ' ₪';
+    }
+
+    function showToast(msg, type) {
+        const t = document.getElementById('toast');
+        t.textContent = msg;
+        t.className = 'toast ' + type + ' show';
+        setTimeout(() => t.className = 'toast', 3000);
+    }
+
+    function setProgress(pct) {
+        document.getElementById('progressFill').style.width = pct + '%';
+    }
+
+    // ---- DATA LOADING ----
+    async function loadMetadata() {
+        try {
+            const fd = new FormData();
+            fd.append('action', 'get_all');
+            const res = await fetch(META_API, { method: 'POST', body: fd });
+            if (!res.ok) return;
+            const text = await res.text();
+            if (!text.trim()) return;
+            const result = JSON.parse(text);
+            if (result.success && result.data) {
+                result.data.forEach(m => {
+                    metadataMap[String(m.program_number)] = m;
+                });
+            }
+        } catch (e) {
+            console.warn('Metadata load error:', e);
+        }
+    }
+
+    async function loadExcelData() {
+        try {
+            const res = await fetch(EXCEL_FILE);
+            if (!res.ok) return;
+            const data = await res.json();
+            if (data.programs) excelData = data.programs;
+        } catch (e) {
+            console.warn('Excel data load error:', e);
+        }
+    }
+
+    async function loadPrograms() {
+        let offset = 0;
+        let total = 0;
+        let hasMore = true;
+        const loaded = new Set();
+
+        while (hasMore) {
+            const url = `${DATA_API}?action=list&offset=${offset}&limit=${BATCH_SIZE}`;
+            const res = await fetch(url);
+            if (!res.ok) throw new Error('API error: ' + res.status);
+            const data = await res.json();
+            if (!data.success) throw new Error(data.error || 'API error');
+
+            const programs = data.programs || [];
+            if (total === 0) total = data.total || 0;
+
+            programs.forEach(p => {
+                const id = String(p.מספר_מענה || '');
+                if (loaded.has(id)) return;
+                loaded.add(id);
+                allPrograms.push({
+                    id: id,
+                    name: p.שם_מענה || '',
+                    budget: p.total_budget || 0,
+                    schools: Number(p.total_schools) || 0,
+                    field: p.תחום_מרכזי || '',
+                    summary: p.תמצית_התוכנית || '',
+                    orgType: p.סוג_ארגון || '',
+                    orgName: p.שם_הארגון || '',
+                    cities: p._active_cities || []
+                });
+            });
+
+            offset += programs.length;
+            hasMore = programs.length === BATCH_SIZE && offset < total;
+
+            const pct = total > 0 ? Math.round((allPrograms.length / total) * 100) : 0;
+            setProgress(pct);
+            document.getElementById('loadingText').textContent =
+                `טוען נתונים... ${allPrograms.length.toLocaleString('he-IL')} / ${total.toLocaleString('he-IL')}`;
+
+            if (hasMore) await new Promise(r => setTimeout(r, 800));
+        }
+    }
+
+    function getExcelField(progId, field) {
+        const d = excelData[progId] || excelData[String(progId)] || excelData[String(progId).trim()];
+        if (!d) return '';
+        return d[field] || '';
+    }
+
+    // ---- SORTING ----
+    function sortPrograms() {
+        const { field, direction } = currentSort;
+        if (!field) return;
+        const dir = direction === 'asc' ? 1 : -1;
+
+        filteredPrograms.sort((a, b) => {
+            let va, vb;
+            switch (field) {
+                case 'budget': va = a.budget; vb = b.budget; break;
+                case 'schools': va = a.schools; vb = b.schools; break;
+                case 'bps':
+                    va = a.schools > 0 ? a.budget / a.schools : 0;
+                    vb = b.schools > 0 ? b.budget / b.schools : 0;
+                    break;
+                case 'score':
+                    va = parseInt(metadataMap[a.id]?.score) || 0;
+                    vb = parseInt(metadataMap[b.id]?.score) || 0;
+                    break;
+                default: return 0;
+            }
+            return (va - vb) * dir;
+        });
+    }
+
+    function onHeaderClick(e) {
+        const th = e.target.closest('th.sortable');
+        if (!th) return;
+        const field = th.dataset.sort;
+
+        if (currentSort.field === field) {
+            currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
+        } else {
+            currentSort.field = field;
+            currentSort.direction = 'desc';
+        }
+
+        updateHeaderArrows();
+        applyFiltersAndRender();
+    }
+
+    function updateHeaderArrows() {
+        document.querySelectorAll('#tableHead th.sortable').forEach(th => {
+            const arrow = th.querySelector('.sort-arrow');
+            th.classList.remove('sorted');
+            if (th.dataset.sort === currentSort.field) {
+                th.classList.add('sorted');
+                arrow.textContent = currentSort.direction === 'asc' ? ' ▲' : ' ▼';
+            } else {
+                arrow.textContent = '';
+            }
+        });
+    }
+
+    // ---- FILTERING ----
+    function programInTargetCities(p) {
+        if (!p.cities || p.cities.length === 0) return false;
+        return p.cities.some(c => TARGET_SET.has(c));
+    }
+
+    function applyFiltersAndRender() {
+        const term = searchTerm.trim().toLowerCase();
+        filteredPrograms = allPrograms.filter(p => {
+            // Cities filter
+            if (citiesOnly && !programInTargetCities(p)) return false;
+            // Text search
+            if (term) {
+                return p.name.toLowerCase().includes(term) ||
+                       p.id.includes(term) ||
+                       p.orgName.toLowerCase().includes(term) ||
+                       p.field.toLowerCase().includes(term) ||
+                       p.summary.toLowerCase().includes(term);
+            }
+            return true;
+        });
+
+        sortPrograms();
+
+        document.getElementById('statFiltered').textContent = filteredPrograms.length.toLocaleString('he-IL');
+        renderTable(true);
+    }
+
+    // ---- RENDERING ----
+    function renderTable(reset) {
+        const tbody = document.getElementById('tableBody');
+        if (reset) {
+            tbody.innerHTML = '';
+            renderedCount = 0;
+        }
+
+        const chunk = filteredPrograms.slice(renderedCount, renderedCount + RENDER_CHUNK);
+        if (chunk.length === 0) return;
+        renderedCount += chunk.length;
+
+        const html = chunk.map((p, i) => {
+            const num = renderedCount - chunk.length + i + 1;
+            const meta = metadataMap[p.id] || {};
+            const bps = p.schools > 0 ? p.budget / p.schools : 0;
+            const hasPending = pendingChanges[p.id] && Object.keys(pendingChanges[p.id]).length > 0;
+
+            const mainField = p.field || getExcelField(p.id, 'תחום מרכזי') || '-';
+            let summary = p.summary || getExcelField(p.id, 'תמצית התוכנית') || getExcelField(p.id, 'תיאור התוכנית') || '';
+            if (!summary || summary === 'nan' || summary === 'None') summary = '-';
+            const orgType = p.orgType || getExcelField(p.id, 'סוג ארגון') || '-';
+
+            // Active cities display (show only target cities, max 5)
+            let citiesDisplay = '-';
+            if (p.cities && p.cities.length > 0) {
+                const targetOnly = p.cities.filter(c => TARGET_SET.has(c));
+                const show = citiesOnly ? targetOnly : p.cities;
+                if (show.length > 5) {
+                    citiesDisplay = show.slice(0, 5).join(', ') + ' (+' + (show.length - 5) + ')';
+                } else if (show.length > 0) {
+                    citiesDisplay = show.join(', ');
+                }
+            }
+
+            return `
+            <tr class="${hasPending ? 'has-changes' : ''}" data-pid="${p.id}">
+                <td class="num-cell">${num}</td>
+                <td class="program-name">
+                    <div class="name">${esc(p.name)}</div>
+                    <div class="id">מענה: ${esc(p.id)}</div>
+                    ${p.orgName && p.orgName !== '-' ? '<div class="org">' + esc(p.orgName) + '</div>' : ''}
+                </td>
+                <td class="budget-cell" style="${blueHeat(p.budget, 200000)}">${formatCurrency(p.budget)}</td>
+                <td class="schools-cell" style="${blueHeat(p.schools, 200)}">${p.schools > 0 ? p.schools.toLocaleString('he-IL') : '-'}</td>
+                <td class="bps-cell" style="${blueHeat(bps, 200000)}">${bps > 0 ? formatCurrency(bps) : '-'}</td>
+                <td style="max-width:180px; font-size:11px; white-space:normal; word-wrap:break-word; color:#555;" title="${esc(p.cities ? p.cities.join(', ') : '')}">${esc(citiesDisplay)}</td>
+                <td class="field-cell" style="${categoryBg(mainField, MAIN_FIELD_PALETTE, MAIN_FIELD_OVERRIDES)}" title="${esc(mainField)}">${esc(mainField)}</td>
+                <td class="summary-cell" title="${esc(summary)}">${esc(summary)}</td>
+                <td class="org-type-cell" style="${categoryBg(orgType, ORG_TYPE_PALETTE)}" title="${esc(orgType)}">${esc(orgType)}</td>
+                <td class="edit-cell" style="min-width:200px;">
+                    <textarea data-field="description" data-pid="${p.id}"
+                        placeholder="תיאור...">${esc(meta.description || '')}</textarea>
+                </td>
+                <td class="edit-cell">
+                    <select data-field="score" data-pid="${p.id}">
+                        <option value="">-</option>
+                        <option value="1" ${meta.score == 1 ? 'selected' : ''}>1 ★</option>
+                        <option value="2" ${meta.score == 2 ? 'selected' : ''}>2 ★★</option>
+                        <option value="3" ${meta.score == 3 ? 'selected' : ''}>3 ★★★</option>
+                        <option value="4" ${meta.score == 4 ? 'selected' : ''}>4 ★★★★</option>
+                        <option value="5" ${meta.score == 5 ? 'selected' : ''}>5 ★★★★★</option>
+                    </select>
+                </td>
+                <td class="edit-cell" style="min-width:200px;">
+                    <textarea data-field="notes" data-pid="${p.id}"
+                        placeholder="הערות...">${esc(meta.notes || '')}</textarea>
+                </td>
+                <td class="save-cell">
+                    <button class="btn-save ${hasPending ? 'visible' : ''}" data-pid="${p.id}" onclick="saveRow('${p.id}')">שמור</button>
+                    <div class="save-status" id="status-${p.id}"></div>
+                </td>
+            </tr>`;
+        }).join('');
+
+        tbody.insertAdjacentHTML('beforeend', html);
+
+        // Auto-resize textareas
+        tbody.querySelectorAll('textarea').forEach(ta => {
+            ta.style.height = 'auto';
+            ta.style.height = Math.max(50, ta.scrollHeight) + 'px';
+        });
+    }
+
+    // ---- INFINITE SCROLL ----
+    function setupScrollLoad() {
+        window.addEventListener('scroll', () => {
+            if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 300) {
+                if (renderedCount < filteredPrograms.length) renderTable(false);
+            }
+        });
+    }
+
+    // ---- CHANGE TRACKING ----
+    function onFieldChange(e) {
+        const el = e.target;
+        const field = el.dataset.field;
+        const pid = el.dataset.pid;
+        if (!field || !pid) return;
+
+        const val = el.value;
+        const meta = metadataMap[pid] || {};
+        const original = meta[field] || '';
+
+        if (val !== original) {
+            if (!pendingChanges[pid]) pendingChanges[pid] = {};
+            pendingChanges[pid][field] = val;
+        } else {
+            if (pendingChanges[pid]) {
+                delete pendingChanges[pid][field];
+                if (Object.keys(pendingChanges[pid]).length === 0) delete pendingChanges[pid];
+            }
+        }
+
+        const row = el.closest('tr');
+        const hasPending = pendingChanges[pid] && Object.keys(pendingChanges[pid]).length > 0;
+        row.classList.toggle('has-changes', hasPending);
+        const btn = row.querySelector('.btn-save');
+        if (btn) btn.classList.toggle('visible', hasPending);
+
+        try {
+            if (hasPending) {
+                localStorage.setItem('gefen4_' + pid, JSON.stringify({ pid, changes: pendingChanges[pid], t: Date.now() }));
+            } else {
+                localStorage.removeItem('gefen4_' + pid);
+            }
+        } catch (_) {}
+    }
+
+    // ---- SAVE ----
+    window.saveRow = async function(pid) {
+        const row = document.querySelector(`tr[data-pid="${pid}"]`);
+        if (!row) return;
+
+        const btn = row.querySelector('.btn-save');
+        const status = document.getElementById('status-' + pid);
+        const desc = row.querySelector('textarea[data-field="description"]')?.value || '';
+        const score = row.querySelector('select[data-field="score"]')?.value || '';
+        const notes = row.querySelector('textarea[data-field="notes"]')?.value || '';
+        const prog = allPrograms.find(p => p.id === pid);
+
+        btn.disabled = true;
+        status.textContent = 'שומר...';
+        status.className = 'save-status';
+
+        try {
+            const fd = new FormData();
+            fd.append('action', 'upsert');
+            fd.append('program_number', pid);
+            fd.append('program_name', prog?.name || '');
+            fd.append('description', desc);
+            fd.append('score', score);
+            fd.append('notes', notes);
+
+            let res = await fetch(META_API, { method: 'POST', body: fd });
+            if (res.status === 403) {
+                await new Promise(r => setTimeout(r, 2000));
+                res = await fetch(META_API, { method: 'POST', body: fd });
+            }
+            if (!res.ok) throw new Error('שגיאה ' + res.status);
+            const result = await res.json();
+            if (!result.success) throw new Error(result.message || 'שגיאה');
+
+            if (!metadataMap[pid]) metadataMap[pid] = {};
+            metadataMap[pid].description = desc;
+            metadataMap[pid].score = score;
+            metadataMap[pid].notes = notes;
+
+            delete pendingChanges[pid];
+            try { localStorage.removeItem('gefen4_' + pid); } catch (_) {}
+
+            row.classList.remove('has-changes');
+            btn.classList.remove('visible');
+            status.textContent = '✓ נשמר';
+            status.className = 'save-status success';
+            setTimeout(() => { status.textContent = ''; }, 3000);
+            showToast('נשמר בהצלחה', 'success');
+        } catch (err) {
+            status.textContent = '✗ ' + err.message;
+            status.className = 'save-status error';
+            showToast('שגיאה בשמירה: ' + err.message, 'error');
+        } finally {
+            btn.disabled = false;
+        }
+    };
+
+    // ---- RESTORE UNSAVED ----
+    function restoreUnsaved() {
+        let count = 0;
+        for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            if (key && key.startsWith('gefen4_')) {
+                try {
+                    const data = JSON.parse(localStorage.getItem(key));
+                    if (data && data.pid && data.changes) {
+                        pendingChanges[data.pid] = data.changes;
+                        count++;
+                    }
+                } catch (_) {}
+            }
+        }
+        if (count > 0) showToast(`שוחזרו ${count} שינויים שלא נשמרו`, 'error');
+    }
+
+    // ---- INIT ----
+    async function init() {
+        try {
+            await Promise.all([loadMetadata(), loadExcelData()]);
+            document.getElementById('statMeta').textContent = Object.keys(metadataMap).length.toLocaleString('he-IL');
+            restoreUnsaved();
+
+            await loadPrograms();
+            document.getElementById('statTotal').textContent = allPrograms.length.toLocaleString('he-IL');
+
+            document.getElementById('loadingDiv').style.display = 'none';
+            document.getElementById('tableWrap').style.display = 'block';
+            document.getElementById('dragHandle').classList.add('visible');
+
+            applyFiltersAndRender();
+            setupScrollLoad();
+        } catch (err) {
+            document.getElementById('loadingText').textContent = 'שגיאה בטעינה: ' + err.message;
+            console.error(err);
+        }
+    }
+
+    // ---- EVENT LISTENERS ----
+    document.getElementById('tableHead').addEventListener('click', onHeaderClick);
+
+    document.getElementById('tableBody').addEventListener('input', function(e) {
+        if (e.target.matches('textarea, select')) {
+            onFieldChange(e);
+            if (e.target.tagName === 'TEXTAREA') {
+                e.target.style.height = 'auto';
+                e.target.style.height = Math.max(50, e.target.scrollHeight) + 'px';
+            }
+        }
+    });
+
+    let searchTimeout;
+    document.getElementById('searchInput').addEventListener('input', function(e) {
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(() => {
+            searchTerm = e.target.value;
+            applyFiltersAndRender();
+        }, 300);
+    });
+
+    document.getElementById('citiesToggle').addEventListener('change', function(e) {
+        citiesOnly = e.target.checked;
+        applyFiltersAndRender();
+    });
+
+    document.addEventListener('DOMContentLoaded', init);
+
+    // ---- DRAG-TO-SCROLL ----
+    (function setupDragScroll() {
+        const wrap = document.getElementById('tableWrap');
+        const handle = document.getElementById('dragHandle');
+        if (!wrap || !handle) return;
+
+        let isDragging = false;
+        let startX = 0;
+        let scrollStart = 0;
+
+        function onDown(e) {
+            isDragging = true;
+            startX = e.clientX || (e.touches && e.touches[0].clientX) || 0;
+            scrollStart = wrap.scrollLeft;
+            wrap.classList.add('dragging');
+            e.preventDefault();
+        }
+
+        function onMove(e) {
+            if (!isDragging) return;
+            const x = e.clientX || (e.touches && e.touches[0].clientX) || 0;
+            const dx = x - startX;
+            // RTL: dragging right = scroll decreases (more negative or less positive)
+            wrap.scrollLeft = scrollStart - dx;
+            e.preventDefault();
+        }
+
+        function onUp() {
+            if (!isDragging) return;
+            isDragging = false;
+            wrap.classList.remove('dragging');
+        }
+
+        // Handle events on the drag handle
+        handle.addEventListener('mousedown', onDown);
+        handle.addEventListener('touchstart', onDown, { passive: false });
+
+        // Also allow drag from anywhere in the table wrap (middle-mouse or touch)
+        wrap.addEventListener('touchstart', function(e) {
+            if (e.target.closest('textarea, select, button, input, a')) return;
+            onDown(e);
+        }, { passive: false });
+
+        document.addEventListener('mousemove', onMove);
+        document.addEventListener('touchmove', onMove, { passive: false });
+        document.addEventListener('mouseup', onUp);
+        document.addEventListener('touchend', onUp);
+    })();
+
+})();
+</script>
+
+</body>
+</html>

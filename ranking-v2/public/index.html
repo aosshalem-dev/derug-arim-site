@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מערכת ניהול נתונים - דירוג ציונות</title>
+    <link rel="stylesheet" href="assets/css/main.css?v=2025011006">
+    <link rel="stylesheet" href="assets/css/components.css?v=2025011006">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>מערכת ניהול נתונים - דירוג ציונות</h1>
+            <div class="header-actions">
+                <button class="btn btn-primary" onclick="window.modals.openAddModal()">
+                    <span>+</span> הוסף רשומה חדשה
+                </button>
+                <a href="control_panel.php" class="btn btn-secondary" id="controlPanelBtn" style="text-decoration: none; display: none;">
+                    <span>🎛️</span> לוח בקרה
+                </a>
+                <button class="btn btn-secondary" onclick="window.App.exportData()">
+                    <span>📥</span> ייצא ל-JSON
+                </button>
+            </div>
+        </header>
+
+        <!-- Tabs Navigation -->
+        <section class="tabs-section" style="margin-bottom: 20px; border-bottom: 2px solid #667eea;">
+            <div class="tabs" style="display: flex; gap: 10px;">
+                <button class="tab-btn active" onclick="window.switchTab('urls')" id="tab-urls" style="padding: 12px 24px; background: #667eea; color: white; border: none; border-radius: 8px 8px 0 0; cursor: pointer; font-weight: bold;">
+                    📋 URLs
+                </button>
+                <button class="tab-btn" onclick="window.switchTab('organizations')" id="tab-organizations" style="padding: 12px 24px; background: #e0e0e0; color: #666; border: none; border-radius: 8px 8px 0 0; cursor: pointer; font-weight: bold;">
+                    🏢 ארגונים
+                </button>
+                <button class="tab-btn" onclick="window.switchTab('programs')" id="tab-programs" style="padding: 12px 24px; background: #e0e0e0; color: #666; border: none; border-radius: 8px 8px 0 0; cursor: pointer; font-weight: bold;">
+                    🎓 תוכניות חינוכיות
+                </button>
+            </div>
+        </section>
+
+        <!-- Filters Section -->
+        <section class="filters-section">
+            <div class="filters-grid">
+                <div class="filter-group">
+                    <label>חיפוש URL:</label>
+                    <input type="text" id="searchUrl" placeholder="חפש לפי URL..." onkeyup="window.table.applyFilters()">
+                </div>
+                <div class="filter-group">
+                    <label>סטטוס מטא-דאטה:</label>
+                    <select id="filterStatus" onchange="window.table.applyFilters()">
+                        <option value="">הכל</option>
+                        <option value="pending">ממתין</option>
+                        <option value="extracted">חולץ</option>
+                        <option value="failed">נכשל</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>סוג ארגון:</label>
+                    <select id="filterOrgType" onchange="window.table.applyFilters()">
+                        <option value="">הכל</option>
+                        <option value="municipality">רשות מקומית</option>
+                        <option value="government_agency">סוכנות ממשלתית</option>
+                        <option value="media">תקשורת</option>
+                        <option value="educational_institution">מוסד חינוכי</option>
+                        <option value="ngo">עמותה</option>
+                        <option value="research_institution">מוסד מחקר</option>
+                        <option value="other">אחר</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>קטגוריית נושא:</label>
+                    <select id="filterTopic" onchange="window.table.applyFilters()">
+                        <option value="">הכל</option>
+                        <option value="education">חינוך</option>
+                        <option value="culture">תרבות</option>
+                        <option value="policy">מדיניות</option>
+                        <option value="news">חדשות</option>
+                        <option value="research">מחקר</option>
+                        <option value="heritage">מורשת</option>
+                        <option value="community">קהילה</option>
+                        <option value="other">אחר</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>שנה:</label>
+                    <input type="number" id="filterYear" placeholder="שנה..." onchange="window.table.applyFilters()">
+                </div>
+                <div class="filter-group">
+                    <label>דירוג AI מינימלי:</label>
+                    <select id="filterAIRelevance" onchange="window.table.applyFilters()">
+                        <option value="">הכל</option>
+                        <option value="4">4 ומעלה</option>
+                        <option value="5">5 בלבד</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>
+                        <input type="checkbox" id="filterUnrated" onchange="window.table.applyFilters()">
+                        רק לא דורגו
+                    </label>
+                </div>
+                <div class="filter-group">
+                    <button class="btn btn-secondary" onclick="window.table.clearFilters()">נקה מסננים</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Bar -->
+        <section class="stats-bar">
+            <div class="stat-item">
+                <span class="stat-label">סה"כ רשומות:</span>
+                <span class="stat-value" id="totalRecords">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">מוצגות:</span>
+                <span class="stat-value" id="displayedRecords">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">ממתין לחילוץ:</span>
+                <span class="stat-value" id="pendingRecords">0</span>
+            </div>
+        </section>
+
+        <!-- Data Table -->
+        <section class="table-section" id="table-section-urls" style="display: block;">
+            <div class="table-controls">
+                <div class="sort-controls">
+                    <label>מיין לפי:</label>
+                    <select id="sortBy" onchange="window.table.applyFilters()">
+                        <option value="id">מזהה</option>
+                        <option value="url">URL</option>
+                        <option value="created_at">תאריך יצירה</option>
+                        <option value="year">שנה</option>
+                        <option value="organization_name">שם גוף</option>
+                        <option value="organization_type">סוג ארגון</option>
+                        <option value="topic_category">קטגוריה</option>
+                        <option value="relevance_level">רלוונטיות</option>
+                        <option value="ai_relevance_score">דירוג AI</option>
+                    </select>
+                    <select id="sortOrder" onchange="window.table.applyFilters()">
+                        <option value="DESC">יורד</option>
+                        <option value="ASC">עולה</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- AI Rating Progress -->
+            <div id="aiRatingProgress" style="display: none; margin-bottom: 20px; padding: 15px; background: #f0f0f0; border-radius: 8px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                    <div>
+                        <strong>דירוג AI בתהליך:</strong>
+                        <span id="aiProgressText">0/0</span>
+                    </div>
+                    <button class="btn btn-danger" onclick="window.App.cancelAIRating()" id="cancelAIRatingBtn">
+                        עצור
+                    </button>
+                </div>
+                <div style="background: white; padding: 10px; border-radius: 4px; max-height: 150px; overflow-y: auto; font-family: monospace; font-size: 12px;" id="aiProgressLog">
+                    ממתין להתחלה...
+                </div>
+            </div>
+
+            <div class="table-wrapper">
+                <table class="data-table" id="dataTable">
+                    <thead>
+                        <tr>
+                            <th class="sortable-header" data-sort="id" onclick="window.App.sortByColumn('id')" style="cursor: pointer; user-select: none;">
+                                מזהה <span class="sort-indicator"></span>
+                            </th>
+                            <th class="sortable-header" data-sort="url" onclick="window.App.sortByColumn('url')" style="cursor: pointer; user-select: none;">
+                                URL <span class="sort-indicator"></span>
+                            </th>
+                            <th class="sortable-header" data-sort="organization_name" onclick="window.App.sortByColumn('organization_name')" style="cursor: pointer; user-select: none;">
+                                שם גוף <span class="sort-indicator"></span>
+                            </th>
+                            <th class="sortable-header" data-sort="organization_type" onclick="window.App.sortByColumn('organization_type')" style="cursor: pointer; user-select: none;">
+                                סוג ארגון <span class="sort-indicator"></span>
+                            </th>
+                            <th class="sortable-header" data-sort="topic_category" onclick="window.App.sortByColumn('topic_category')" style="cursor: pointer; user-select: none;">
+                                קטגוריה <span class="sort-indicator"></span>
+                            </th>
+                            <th class="sortable-header" data-sort="year" onclick="window.App.sortByColumn('year')" style="cursor: pointer; user-select: none;">
+                                שנה <span class="sort-indicator"></span>
+                            </th>
+                            <th class="sortable-header" data-sort="relevance_level" onclick="window.App.sortByColumn('relevance_level')" style="cursor: pointer; user-select: none;">
+                                רלוונטיות <span class="sort-indicator"></span>
+                            </th>
+                            <th class="sortable-header" data-sort="ai_relevance_score" onclick="window.App.sortByColumn('ai_relevance_score')" style="cursor: pointer; user-select: none;">
+                                דירוג AI <span class="sort-indicator"></span>
+                            </th>
+                            <th>סיכום</th>
+                            <th>פעולות</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <tr>
+                            <td colspan="10" class="loading">טוען נתונים...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Organizations Table Section -->
+        <section class="table-section" id="table-section-organizations" style="display: none;">
+            <div class="table-controls">
+                <div class="filter-group">
+                    <label>חיפוש:</label>
+                    <input type="text" id="searchOrganizations" placeholder="חפש ארגון..." onkeyup="window.App.loadOrganizations()" style="padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                </div>
+                <div class="filter-group">
+                    <label>סוג ארגון:</label>
+                    <select id="filterOrgTypeTable" onchange="window.App.loadOrganizations()">
+                        <option value="">הכל</option>
+                        <option value="municipality">רשות מקומית</option>
+                        <option value="ministry">משרד</option>
+                        <option value="NGO">עמותה</option>
+                        <option value="academic">אקדמי</option>
+                        <option value="foundation">קרן</option>
+                        <option value="private">פרטי</option>
+                        <option value="international">בינלאומי</option>
+                        <option value="media">תקשורת</option>
+                        <option value="other">אחר</option>
+                    </select>
+                </div>
+            </div>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>שם ארגון</th>
+                        <th>סוג</th>
+                        <th>מדינה</th>
+                        <th>עיר</th>
+                        <th>תחום אידיאולוגי</th>
+                        <th>מספר URLs</th>
+                        <th>הערות</th>
+                    </tr>
+                </thead>
+                <tbody id="organizationsTableBody">
+                    <!-- Organizations will be loaded here -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Educational Programs Table Section -->
+        <section class="table-section" id="table-section-programs" style="display: none;">
+            <div class="table-controls">
+                <div class="filter-group">
+                    <label>חיפוש:</label>
+                    <input type="text" id="searchPrograms" placeholder="חפש תוכנית..." onkeyup="window.App.loadEducationalPrograms()" style="padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                </div>
+                <div class="filter-group">
+                    <label>סוג תוכנית:</label>
+                    <select id="filterProgramType" onchange="window.App.loadEducationalPrograms()">
+                        <option value="">הכל</option>
+                        <option value="curriculum">תכנית לימודים</option>
+                        <option value="workshop">סדנה</option>
+                        <option value="course">קורס</option>
+                        <option value="seminar">סמינר</option>
+                        <option value="event">אירוע</option>
+                        <option value="resource">משאב</option>
+                        <option value="initiative">יוזמה</option>
+                        <option value="other">אחר</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>קטגוריה:</label>
+                    <select id="filterProgramCategory" onchange="window.App.loadEducationalPrograms()">
+                        <option value="">הכל</option>
+                        <option value="education">חינוך</option>
+                        <option value="culture">תרבות</option>
+                        <option value="policy">מדיניות</option>
+                    </select>
+                </div>
+            </div>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>שם תוכנית</th>
+                        <th>תיאור</th>
+                        <th>ארגון</th>
+                        <th>קטגוריה</th>
+                        <th>קהל יעד</th>
+                        <th>טווח גילאים</th>
+                        <th>משך</th>
+                        <th>סוג</th>
+                        <th>מילות מפתח</th>
+                        <th>URL</th>
+                    </tr>
+                </thead>
+                <tbody id="programsTableBody">
+                    <!-- Programs will be loaded here -->
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <!-- Add/Edit Modal -->
+    <div id="recordModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">הוסף רשומה חדשה</h2>
+                <span class="close" onclick="window.modals.closeModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="recordForm">
+                    <input type="hidden" id="recordId">
+                    
+                    <div class="form-section">
+                        <h3>פרטים בסיסיים</h3>
+                        <div class="form-group">
+                            <label>URL *</label>
+                            <input type="url" id="url" required>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>הקשר מוסדי</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>שם גוף</label>
+                                <input type="text" id="organizationName" placeholder="שם העירייה / הארגון (למשל: הוד השרון)">
+                            </div>
+                            <div class="form-group">
+                                <label>סוג מקור</label>
+                                <input type="text" id="sourceType" placeholder="municipality, government, news...">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>סוג ארגון</label>
+                                <select id="organizationType">
+                                    <option value="">בחר...</option>
+                                    <option value="municipality">רשות מקומית</option>
+                                    <option value="government_agency">סוכנות ממשלתית</option>
+                                    <option value="media">תקשורת</option>
+                                    <option value="educational_institution">מוסד חינוכי</option>
+                                    <option value="ngo">עמותה</option>
+                                    <option value="research_institution">מוסד מחקר</option>
+                                    <option value="other">אחר</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>היקף גיאוגרפי</label>
+                                <input type="text" id="geographicScope" placeholder="שם עיר, אזור...">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>רמת סמכות שיפוט</label>
+                                <select id="jurisdictionLevel">
+                                    <option value="">בחר...</option>
+                                    <option value="local">מקומי</option>
+                                    <option value="regional">אזורי</option>
+                                    <option value="national">לאומי</option>
+                                    <option value="international">בינלאומי</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>תחום תוכן</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>קטגוריית נושא</label>
+                                <select id="topicCategory">
+                                    <option value="">בחר...</option>
+                                    <option value="education">חינוך</option>
+                                    <option value="culture">תרבות</option>
+                                    <option value="policy">מדיניות</option>
+                                    <option value="news">חדשות</option>
+                                    <option value="research">מחקר</option>
+                                    <option value="heritage">מורשת</option>
+                                    <option value="community">קהילה</option>
+                                    <option value="other">אחר</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>סוג מסמך</label>
+                                <select id="documentType">
+                                    <option value="">בחר...</option>
+                                    <option value="report">דוח</option>
+                                    <option value="article">מאמר</option>
+                                    <option value="policy_document">מסמך מדיניות</option>
+                                    <option value="curriculum">תכנית לימודים</option>
+                                    <option value="announcement">הודעה</option>
+                                    <option value="protocol">פרוטוקול</option>
+                                    <option value="plan">תכנית</option>
+                                    <option value="other">אחר</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>קהל יעד</label>
+                                <select id="targetAudience">
+                                    <option value="">בחר...</option>
+                                    <option value="general_public">ציבור כללי</option>
+                                    <option value="educators">מחנכים</option>
+                                    <option value="students">תלמידים</option>
+                                    <option value="policymakers">קובעי מדיניות</option>
+                                    <option value="researchers">חוקרים</option>
+                                    <option value="community_leaders">מנהיגי קהילה</option>
+                                    <option value="other">אחר</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>שנה</label>
+                                <input type="number" id="year" placeholder="שנה...">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>אינדיקטורים אידיאולוגיים</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>מוקד תרבותי</label>
+                                <select id="culturalFocus">
+                                    <option value="">בחר...</option>
+                                    <option value="hebrew_culture">תרבות עברית</option>
+                                    <option value="jewish_heritage">מורשת יהודית</option>
+                                    <option value="israeli_identity">זהות ישראלית</option>
+                                    <option value="multicultural">רב-תרבותי</option>
+                                    <option value="universal">אוניברסלי</option>
+                                    <option value="mixed">מעורב</option>
+                                    <option value="unclear">לא ברור</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>התייחסויות לציונות</label>
+                                <select id="zionismReferences">
+                                    <option value="">בחר...</option>
+                                    <option value="explicit">מפורש</option>
+                                    <option value="implicit">מרומז</option>
+                                    <option value="none">אין</option>
+                                    <option value="unclear">לא ברור</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>אוריינטציית ערכים (JSON)</label>
+                            <textarea id="valuesOrientation" placeholder='["collective_identity", "individual_rights", ...]'></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>נושאי זהות (JSON)</label>
+                            <textarea id="identityTheme" placeholder='["national_identity", "religious_identity", ...]'></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>שקיפות ושפה</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>שפה</label>
+                                <select id="language">
+                                    <option value="">בחר...</option>
+                                    <option value="hebrew">עברית</option>
+                                    <option value="english">אנגלית</option>
+                                    <option value="arabic">ערבית</option>
+                                    <option value="mixed">מעורב</option>
+                                    <option value="other">אחר</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>רמת נגישות</label>
+                                <select id="accessibilityLevel">
+                                    <option value="">בחר...</option>
+                                    <option value="public">ציבורי</option>
+                                    <option value="restricted">מוגבל</option>
+                                    <option value="unclear">לא ברור</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>פורמט פרסום</label>
+                            <select id="publicationFormat">
+                                <option value="">בחר...</option>
+                                <option value="pdf">PDF</option>
+                                <option value="html">HTML</option>
+                                <option value="text">טקסט</option>
+                                <option value="image">תמונה</option>
+                                <option value="video">וידאו</option>
+                                <option value="other">אחר</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>סיכום</h3>
+                        <div class="form-group">
+                            <label>סיכום ידני</label>
+                            <textarea id="manualSummary" rows="4" placeholder="סיכום ידני שלך (אופציונלי)"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>סיכום קצר (AI)</label>
+                            <textarea id="shortSummary" rows="4" placeholder="סיכום קצר של הרשומה (2-3 משפטים) - נוצר אוטומטית"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>דירוג</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>רמת רלוונטיות (1-5)</label>
+                                <select id="relevanceLevel">
+                                    <option value="">בחר...</option>
+                                    <option value="1">1 - נמוך מאוד</option>
+                                    <option value="2">2 - נמוך</option>
+                                    <option value="3">3 - בינוני</option>
+                                    <option value="4">4 - גבוה</option>
+                                    <option value="5">5 - גבוה מאוד</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>דירוג AI (1-5)</label>
+                                <select id="aiRelevanceScore">
+                                    <option value="">בחר...</option>
+                                    <option value="1">1 - נמוך מאוד</option>
+                                    <option value="2">2 - נמוך</option>
+                                    <option value="3">3 - בינוני</option>
+                                    <option value="4">4 - גבוה</option>
+                                    <option value="5">5 - גבוה מאוד</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>סיבת דירוג AI</label>
+                            <input type="text" id="aiRelevanceReason" placeholder="סיבה לדירוג או למה לא דורג (אופציונלי)" maxlength="255">
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>מטא-דאטה</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>סטטוס מטא-דאטה</label>
+                                <select id="metadataStatus">
+                                    <option value="pending">ממתין</option>
+                                    <option value="extracted">חולץ</option>
+                                    <option value="failed">נכשל</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" onclick="window.modals.closeModal()">ביטול</button>
+                        <button type="submit" class="btn btn-primary">שמור</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- View Details Modal -->
+    <div id="viewModal" class="modal">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h2>פרטי רשומה</h2>
+                <span class="close" onclick="window.modals.closeViewModal()">&times;</span>
+            </div>
+            <div class="modal-body" id="viewModalContent">
+                <!-- Content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- View Summary Modal -->
+    <div id="viewSummaryModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>סיכום</h2>
+                <span class="close" onclick="window.modals.closeViewSummaryModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="viewSummaryContent" style="padding: 20px; background: #f8f9fa; border-radius: 6px; line-height: 1.6; white-space: pre-wrap; word-wrap: break-word;"></div>
+                <div class="form-actions" style="margin-top: 20px;">
+                        <button type="button" class="btn btn-secondary" onclick="window.modals.closeViewSummaryModal()">סגור</button>
+                        <button type="button" class="btn btn-primary" onclick="window.modals.openEditSummaryFromView()">ערוך</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Summary Modal -->
+    <div id="editSummaryModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>ערוך סיכום</h2>
+                <span class="close" onclick="window.modals.closeEditSummaryModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="editSummaryForm">
+                    <input type="hidden" id="editSummaryRecordId">
+                    <div class="form-group">
+                        <label>סיכום:</label>
+                        <textarea id="editSummaryText" rows="8" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px; font-family: inherit;"></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" onclick="window.modals.closeEditSummaryModal()">ביטול</button>
+                        <button type="submit" class="btn btn-primary">שמור סיכום</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load modules in correct order -->
+    <script src="assets/js/api.js?v=2025011006"></script>
+    <script src="assets/js/table.js?v=2025011006"></script>
+    <script src="assets/js/inline-edit.js?v=2025011006"></script>
+    <script src="assets/js/modals.js?v=2025011006"></script>
+    <script src="assets/js/app.js?v=2025011006"></script>
+    
+    <!-- Check URL parameter for control panel button -->
+    <script>
+        (function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('z') === '1') {
+                const controlPanelBtn = document.getElementById('controlPanelBtn');
+                if (controlPanelBtn) {
+                    controlPanelBtn.style.display = 'inline-block';
+                }
+            }
+        })();
+    </script>
+</body>
+</html>
+
