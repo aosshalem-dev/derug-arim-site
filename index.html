@@ -1294,7 +1294,7 @@
         for (const [key, cityData] of Object.entries(PROTOCOLS)) {
             if (filter !== 'all' && filter !== key) continue;
             for (const p of cityData.protocols) {
-                allProtos.push({...p, city_key: key, city_name: cityData.city_name});
+                allProtos.push({...p, city_key: key, city_name: cityData.city_name, source_url: cityData.source_url || ''});
             }
         }
 
@@ -1319,11 +1319,15 @@
                     return '<span class="proto-kw-pill' + (isRed ? ' red' : '') + '">' + c + '× ' + kw + '</span>';
                 }).join('');
 
+            const sourceLink = p.source_url
+                ? '<a href="' + p.source_url + '" target="_blank" onclick="event.stopPropagation()" style="color:#2a5a8a;font-size:0.8em;text-decoration:none">&#128279; מקור</a>'
+                : '';
+
             html += '<div class="proto-card" onclick="toggleProtoCard(\'' + uid + '\',this)">' +
                 '<div class="proto-card-header">' +
                     '<div>' +
                         '<div class="proto-card-title">' + p.city_name + ' — ' + p.filename.replace(/\.pdf$/, '') + '</div>' +
-                        '<div class="proto-card-meta">' + dateStr + ' | ' + (p.text_length || 0).toLocaleString() + ' תווים</div>' +
+                        '<div class="proto-card-meta">' + dateStr + ' | ' + (p.text_length || 0).toLocaleString() + ' תווים ' + sourceLink + '</div>' +
                     '</div>' +
                     '<div class="proto-card-badges">' +
                         '<span class="proto-hit-badge ' + hitBadgeClass(p.hit_count) + '">' +
