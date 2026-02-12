@@ -1,0 +1,245 @@
+{
+  "organization_name": "אפשר אחרת (A New Way)",
+  "legal_name": "אפשר אחרת (ע\"ר)",
+  "registration_number": "580316297",
+  "research_date": "2026-02-12",
+  "note_on_registration_number": "The user provided registration number 580309995, but searches consistently showed 580316297 as the actual registration number for אפשר אחרת. This discrepancy should be verified.",
+
+  "basic_information": {
+    "address": "רח' סוקולוב 68, רמת השרון, 4723530",
+    "phone": "03-549-3859",
+    "email": "itay@anewway.org.il",
+    "website": "https://www.anewway.org.il",
+    "mission": "תורמת לחברה הישראלית באמצעות פעילות חינוכית, תרבותית ורווחתית, במטרה להעמיק את הקשרים בין קבוצות אוכלוסייה שונות",
+    "english_mission": "Contributing to Israeli society through educational, cultural, and welfare activities, with the purpose of deepening relationships between different population groups"
+  },
+
+  "leadership": {
+    "ceo": {
+      "name": "ד\"ר תקוה ברכה",
+      "name_english": "Dr. Tiqva Baraka/Bracha",
+      "title": "מנכ\"לית",
+      "title_english": "CEO",
+      "notes": "Multiple search results confirm Dr. Tiqva Baraka as CEO. Also described as one of the organization's founders.",
+      "sources": [
+        "https://www.anewway.org.il/en/הצוות-שלנו",
+        "Search results mentioning her as CEO and chairwoman"
+      ]
+    },
+    "additional_leadership_mentioned": {
+      "dorit_bliman": {
+        "name": "דורית בלימן",
+        "name_english": "Dorit Bliman",
+        "title": "מנהלת כללית / יועצת ארגונית ועסקית",
+        "title_english": "General Manager / Organizational and Business Consultant",
+        "education": "תואר שני בניהול - ייעוץ ארגוני ותואר בפסיכולוגיה, חינוך ומדעי החברה",
+        "education_english": "Master's degree in Management - Organizational Consulting and a degree in Psychology, Education, and Social Sciences",
+        "notes": "One source mentioned Dorit Bliman in connection with the organization. Unclear if current or past role.",
+        "potential_co_founder": "One search result mentioned Naama Ben Shoshana and Dorit Bliman as founders, but this was not confirmed by other sources."
+      }
+    },
+    "board_members": "NOT FOUND - GuideStar profile and organization website did not provide accessible information about board members (ועד מנהל)",
+    "audit_committee": "NOT FOUND"
+  },
+
+  "financial_information": {
+    "budget_2024": {
+      "total": "1,876,658 ₪",
+      "foreign_funding": "356,175 ₪",
+      "foreign_funding_percentage": "~19%",
+      "source": "User provided this data - specific foreign funders NOT identified in research"
+    },
+    "sources_researched": {
+      "guidestar_accessible": false,
+      "guidestar_note": "Profile exists at https://www.guidestar.org.il/organization/580316297 but detailed financial data and board member information requires login or direct access",
+      "annual_reports": "NOT FOUND - No publicly accessible annual reports for 2023-2024 were located",
+      "registrar_of_associations": "Data not accessible through web search"
+    },
+    "potential_foreign_funders": {
+      "new_israel_fund": {
+        "name": "הקרן החדשה לישראל (New Israel Fund - NIF)",
+        "connection": "POSSIBLE - NIF is mentioned as the largest foreign donor to progressive causes in Israel. אפשר אחרת fits the profile of organizations NIF typically supports (coexistence, education, shared society), but no direct confirmation of funding relationship was found.",
+        "sources": [
+          "https://he.wikipedia.org/wiki/הקרן_החדשה_לישראל",
+          "https://nif.org.il/"
+        ]
+      },
+      "ford_foundation": {
+        "name": "קרן פורד (Ford Foundation)",
+        "connection": "POSSIBLE - Ford Foundation historically funded coexistence and civil society organizations in Israel until ~2011. No current confirmation of funding for אפשר אחרת.",
+        "notes": "Ford Foundation announced in 2011 that it was concluding its Israel funding initiative after contributing over $70 million since 1948.",
+        "sources": [
+          "https://www.globes.co.il/news/article.aspx?did=1000636859",
+          "https://he.wikipedia.org/wiki/קרן_פורד"
+        ]
+      },
+      "european_union": {
+        "connection": "NOT CONFIRMED - No search results linked אפשר אחרת to EU funding"
+      },
+      "german_foundations": {
+        "connection": "NOT CONFIRMED - No search results linked אפשר אחרת to German foundation funding"
+      },
+      "us_foundations": {
+        "connection": "POSSIBLE - Given the profile of the organization and foreign funding mentioned by user, US-based foundations supporting coexistence work are potential sources, but none were specifically confirmed"
+      }
+    }
+  },
+
+  "programs_and_activities": {
+    "ministry_of_education_approval": {
+      "status": "APPROVED",
+      "description": "תוכנית ההכשרה לצוותי חינוך והוראה לעבודה רב-תרבותית מאושרת ע\"י משרד החינוך ומוכרת כהשתלמות מקצועית",
+      "description_english": "The program for training education and teaching teams for multicultural work is approved by the Ministry of Education and recognized as professional development training",
+      "partnership": "פועלת בשיתוף המטה לחינוך אזרחי וחיים משותפים במשרד החינוך",
+      "partnership_english": "Operates in partnership with the Headquarters for Civic Education and Shared Living at the Ministry of Education"
+    },
+    "teacher_training": {
+      "launched": "2016",
+      "model": "תוכנית הכשרה לצוותי מורים המעודדת אותם ליזום פעילות רב תרבותית בין יהודים וערבים",
+      "model_english": "Training program for teaching teams encouraging them to initiate multicultural activities between Jews and Arabs",
+      "approach": "בנויה על בסיס מודל בר קימא וכוללת שיעורים משותפים ויוזמות חינוכיות בקהילה",
+      "approach_english": "Built on a sustainable model and includes shared lessons and educational initiatives in the community"
+    },
+    "scope": {
+      "participants": "Over 100,000 students, parents and educators impacted",
+      "geographic_reach": "Throughout the country (ארצי)",
+      "target_audiences": [
+        "קהילות (Communities)",
+        "נשים (Women)",
+        "ילדים ונוער (Youth and children)"
+      ]
+    },
+    "activities": {
+      "formal_education": "חינוך פורמלי",
+      "non_formal_education": "חינוך בלתי-פורמלי",
+      "experiential_activities": "פעילות חווייתית",
+      "conferences": "כנסי חינוך לחיים משותפים (Educational conferences for shared living)"
+    }
+  },
+
+  "organizational_network": {
+    "listed_on_dialogtogether": {
+      "url": "https://dialogtogether.com/en/organisations/a-new-way/",
+      "platform": "אתר חיים משותפים (Shared Life Website)",
+      "description": "dialogtogether.com is a comprehensive database of organizations, programs and initiatives related to shared living (חיים משותפים) between Jews and Arabs in Israel",
+      "organization_map": "https://dialogtogether.com/en/organisations-map/"
+    },
+    "similar_organizations_in_network": [
+      {
+        "name": "סיכוי-אופוק (Sikkuy-Aufoq)",
+        "focus": "Advocacy for Arab-Jewish equality",
+        "relationship": "UNCLEAR - Both work in coexistence field"
+      },
+      {
+        "name": "דרור ישראל (Dror Israel)",
+        "founded": "2006",
+        "focus": "Urban kibbutzim for educators, social solidarity",
+        "relationship": "UNCLEAR - Both focus on education and social change"
+      },
+      {
+        "name": "Hand in Hand",
+        "focus": "Bilingual Jewish-Arab schools",
+        "relationship": "UNCLEAR - Both work in education for coexistence"
+      },
+      {
+        "name": "המכון הישראלי לדמוקרטיה (Israel Democracy Institute)",
+        "connection": "Published research on 'Education for Shared Life' (חינוך לחיים משותפים) in 2020",
+        "report_url": "https://www.idi.org.il/media/15055/education-for-a-shared-life-or-education-for-shared-society.pdf",
+        "relationship": "Research institution studying the field where אפשר אחרת operates"
+      }
+    ],
+    "leadership_overlap": "NOT CONFIRMED - No evidence found of board members or leadership serving on multiple coexistence organizations, though this is common in the sector"
+  },
+
+  "entity_distinction": {
+    "main_organization": {
+      "name": "אפשר אחרת - חינוך לחיים משותפים",
+      "registration": "ע\"ר 580316297",
+      "type": "Registered nonprofit organization (עמותה רשומה)",
+      "website": "https://www.anewway.org.il",
+      "english_name": "A New Way - Education for Shared Living"
+    },
+    "separate_program": {
+      "name": "אפשר גם אחרת",
+      "english_name": "It's Also Possible Otherwise / Another Way is Possible Too",
+      "creator": "מיקי אלון (Miki Alon)",
+      "type": "Educational enrichment program",
+      "focus": [
+        "מניעת אלימות (Violence prevention)",
+        "כישורי חיים (Life skills)",
+        "יצירת הצלחות חברתיות (Creating social successes)",
+        "שפה חיובית ומחזקת (Positive and empowering language)",
+        "התמודדות עם אתגרים ותסכולים (Coping with challenges and frustrations)"
+      ],
+      "website": "https://efshargamacheret.co.il",
+      "additional_use": "Also used as a brand name for mathematics textbooks for middle school approved by the Ministry of Education",
+      "relationship_to_main_org": "SEPARATE ENTITY - 'אפשר גם אחרת' by Miki Alon is a separate educational program/business, not affiliated with the nonprofit 'אפשר אחרת' (ע\"ר 580316297). The similar names appear to be coincidental.",
+      "clarification": "There is NO organizational relationship between the two entities despite similar names"
+    }
+  },
+
+  "political_activism_history": {
+    "leadership": {
+      "dr_tiqva_baraka": "NO POLITICAL ACTIVISM HISTORY FOUND in searches",
+      "dorit_bliman": "NO POLITICAL ACTIVISM HISTORY FOUND in searches"
+    },
+    "organizational_positioning": {
+      "field": "Coexistence education / shared living (חיים משותפים)",
+      "political_context": "Organizations working in Jewish-Arab coexistence are often viewed through a political lens in Israel. The field itself is contentious, with supporters viewing it as essential for democracy and critics viewing it as politically aligned with the left.",
+      "ministry_approval": "Ministry of Education approval indicates mainstream acceptance of educational programming",
+      "controversy_level": "MODERATE - Working in coexistence education is inherently political in the Israeli context, but no specific controversies or scandals were found"
+    }
+  },
+
+  "data_gaps": {
+    "critical_missing_information": [
+      "Detailed board member list (ועד מנהל)",
+      "Audit committee members (ועדת ביקורת)",
+      "Complete founding team and founding date",
+      "Specific identity of foreign funders contributing the 356,175 ₪",
+      "Annual financial reports for 2023-2024",
+      "Organizational budget breakdown by program/expense category",
+      "Full staff list beyond CEO"
+    ],
+    "verification_needed": [
+      "Correct registration number (580309995 vs 580316297)",
+      "Role and current status of Dorit Bliman",
+      "Founders list (multiple sources needed)",
+      "Foreign funding sources"
+    ],
+    "access_limitations": [
+      "GuideStar full profile requires login/subscription",
+      "Israeli Registrar of Associations database not fully accessible via web search",
+      "Organization website (anewway.org.il) built on Wix platform with limited content extraction",
+      "Annual reports not published on website or not publicly accessible"
+    ]
+  },
+
+  "sources": {
+    "primary": [
+      "https://www.guidestar.org.il/organization/580316297",
+      "https://www.anewway.org.il",
+      "https://dialogtogether.com/en/organisations/a-new-way/",
+      "https://next.obudget.org/i/org/association/580316297"
+    ],
+    "secondary": [
+      "https://he.wikipedia.org/wiki/אפשר_אחרת",
+      "https://www.idi.org.il/media/15055/education-for-a-shared-life-or-education-for-shared-society.pdf",
+      "https://he.wikipedia.org/wiki/הקרן_החדשה_לישראל",
+      "https://he.wikipedia.org/wiki/קרן_פורד",
+      "https://efshargamacheret.co.il"
+    ]
+  },
+
+  "research_notes": {
+    "methodology": "Web search using multiple Hebrew and English search terms, attempts to access GuideStar profile, organization website, dialogtogether.com database, and relevant research publications",
+    "limitations": "Unable to access detailed financial records, board member information restricted behind login walls, organization website built on Wix with limited extractable content, no published annual reports found",
+    "confidence_level": {
+      "basic_org_info": "HIGH - Registration number, address, mission confirmed across multiple sources",
+      "leadership": "MEDIUM - CEO confirmed, but full leadership team not accessible",
+      "financial_data": "LOW - Only user-provided budget data available, no verification possible",
+      "foreign_funders": "VERY LOW - No specific funders identified despite 19% foreign funding",
+      "network_analysis": "MEDIUM - Organization clearly part of coexistence education network, but specific overlaps unconfirmed"
+    }
+  }
+}

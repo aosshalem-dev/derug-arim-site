@@ -1,0 +1,249 @@
+{
+  "name": "דירוג ערים — Ideological-Analytical Lens",
+  "description": "Framework extracted from the Dror Israel deep-dive (ניתוח עמותת דרור ישראל ערכית.docx). Every suspect org/program gets analyzed through these 9 chapters.",
+  "source_document": "~/Downloads/ניתוח עמותת דרור ישראל ערכית.docx",
+  "chapters": [
+    {
+      "id": 1,
+      "title_he": "זהות ארגונית, רשת עמותות ומבנה שליטה",
+      "title_en": "Organizational identity, NGO network & control structure",
+      "questions": [
+        "Is this a single legal entity or a network of affiliated NGOs/companies?",
+        "Who controls the network — is power centralized in a few people?",
+        "Do the same people rotate across roles in different entities?",
+        "Does the org operate a closed community model (urban kibbutz, communes, etc.)?"
+      ],
+      "data_sources": [
+        "GuideStar Israel (guidestar.org.il)",
+        "Companies registrar (ica.justice.gov.il)",
+        "NGO registrar"
+      ]
+    },
+    {
+      "id": 2,
+      "title_he": "ניתוח הנהגה וקשרים פוליטיים",
+      "title_en": "Leadership analysis & political connections",
+      "questions": [
+        "Who are the key people (founders, CEO, board)?",
+        "Do leaders have explicit political affiliations or activism history?",
+        "Has the org or its leaders been involved in political campaigns?",
+        "Any SLAPP lawsuits (defamation suits to silence critics)?"
+      ],
+      "data_sources": [
+        "LinkedIn",
+        "news archives",
+        "court records",
+        "political party records"
+      ]
+    },
+    {
+      "id": 3,
+      "title_he": "ניתוח כספי ומקורות מימון",
+      "title_en": "Financial analysis & funding sources",
+      "questions": [
+        "What is the annual budget? What % comes from government vs foreign donors?",
+        "Are there connections to politically-oriented foreign foundations (NIF, Ford Foundation, etc.)?",
+        "Is emergency/crisis funding used to bypass normal channels?",
+        "Any financial irregularities, audit findings, or unexplained budget gaps?"
+      ],
+      "data_sources": [
+        "GuideStar financials",
+        "gov.il open data (takziv.gov.il)",
+        "NGO Monitor",
+        "IRS 990 (for US friends-of orgs)",
+        "Instrumentl"
+      ]
+    },
+    {
+      "id": 4,
+      "title_he": "אידיאולוגיה ופדגוגיה — חדירת הפדגוגיה הביקורתית",
+      "title_en": "Ideology & pedagogy — critical pedagogy infiltration",
+      "questions": [
+        "Does the org use critical pedagogy (Paulo Freire, bell hooks, etc.)?",
+        "Is there 'semantic shifting' — using traditional terms (Zionism, Judaism) but loading them with progressive content?",
+        "Does the pedagogy frame existing society as a system of oppression to be dismantled?",
+        "Are concepts like 'social justice', 'equity', 'decolonization' central to the curriculum?"
+      ],
+      "red_flag_terms": [
+        "פדגוגיה ביקורתית",
+        "חינוך ביקורתי",
+        "צדק חברתי",
+        "הון חברתי",
+        "דה-קולוניזציה",
+        "פוסט-לאומי",
+        "מדינת כל אזרחיה",
+        "שוויון מגדרי",
+        "זהות מגדרית",
+        "פירוק מבנים",
+        "critical pedagogy",
+        "social justice",
+        "equity",
+        "decolonization"
+      ]
+    },
+    {
+      "id": 5,
+      "title_he": "תכנים בעייתיים והשפעה על חינוך וערכים",
+      "title_en": "Problematic content & impact on education/values",
+      "questions": [
+        "Does the program introduce sexual/gender content to minors without adequate parental consent?",
+        "Is there content that undermines family structure, national identity, or religious tradition?",
+        "Are facilitators trained in ideology rather than child psychology?",
+        "Does the org use national memory/trauma (e.g. Rabin assassination) for political framing?"
+      ]
+    },
+    {
+      "id": 6,
+      "title_he": "פרשות, חשדות ואי-סדרים",
+      "title_en": "Scandals, suspicions & irregularities",
+      "questions": [
+        "Any media investigations or exposés?",
+        "Any financial scandals, embezzlement allegations?",
+        "Has the org silenced critics through legal threats?",
+        "Any complaints from parents, teachers, or former members?"
+      ],
+      "data_sources": [
+        "news archives (ha-makom, makor rishon, channel 14)",
+        "court records"
+      ]
+    },
+    {
+      "id": 7,
+      "title_he": "השפעה על מדיניות ציבורית וקשרים עם הממשל",
+      "title_en": "Influence on public policy & government relations",
+      "questions": [
+        "Does the org have no-bid contracts with government ministries?",
+        "Does it position itself as essential during crises (wars, COVID)?",
+        "Are org alumni embedded in Ministry of Education or local government?",
+        "Does the org influence curriculum or teacher training at scale?"
+      ]
+    },
+    {
+      "id": 8,
+      "title_he": "ניתוח לפי עולם הערכים — התאמה וסתירה",
+      "title_en": "Values alignment analysis — compatibility & contradiction",
+      "value_axes": [
+        {
+          "axis": "Jewish identity & heritage",
+          "spectrum": "strengthens ↔ weakens/universalizes"
+        },
+        {
+          "axis": "Zionist national identity",
+          "spectrum": "affirms ↔ post-national/critical"
+        },
+        {
+          "axis": "Family & community structure",
+          "spectrum": "supports ↔ deconstructs"
+        },
+        {
+          "axis": "IDF & national service",
+          "spectrum": "supports ↔ critical/conscientious objection"
+        },
+        {
+          "axis": "Democratic values",
+          "spectrum": "liberal democracy ↔ radical democracy/activism"
+        },
+        {
+          "axis": "Economic orientation",
+          "spectrum": "free market ↔ socialist/collectivist"
+        },
+        {
+          "axis": "Gender & sexuality",
+          "spectrum": "traditional ↔ radical gender theory"
+        },
+        {
+          "axis": "Foreign influence",
+          "spectrum": "independent ↔ foreign-funded agenda"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title_he": "סיכום ומסקנות — מפת הסיכונים",
+      "title_en": "Summary & conclusions — risk map",
+      "output": [
+        "Overall risk score (1-5) with justification",
+        "Key risks bullet list",
+        "Recommended follow-up investigations",
+        "Connections to other suspect orgs in the dataset"
+      ]
+    }
+  ],
+  "suspect_clusters": [
+    {
+      "cluster": "דרור ישראל network",
+      "orgs": [
+        "דרור ישראל",
+        "יסודות לצמיחה דרור",
+        "דרור בתי חינוך",
+        "הנוער העובד והלומד",
+        "המעורר"
+      ],
+      "status": "DONE — full report exists",
+      "report_path": "~/Downloads/ניתוח עמותת דרור ישראל ערכית.docx"
+    },
+    {
+      "cluster": "Gender/sexuality education providers",
+      "orgs": [
+        "מידע אמין על מין",
+        "מגע בתיאום",
+        "חוש\"ן",
+        "סדנאות מיניות ומוגנות",
+        "תמורות",
+        "דפנה פייזר",
+        "ליטל סינקלר"
+      ],
+      "status": "DONE",
+      "report_path": "research_reports/Gender_sexuality_education_providers.md"
+    },
+    {
+      "cluster": "Political-activist orgs in education",
+      "orgs": [
+        "האגודה לזכויות האזרח",
+        "להוביל לשינוי",
+        "מחנכים לשינוי",
+        "אפשר אחרת"
+      ],
+      "status": "PENDING"
+    },
+    {
+      "cluster": "Hartman Institute network",
+      "orgs": [
+        "מכון שלום הרטמן",
+        "בשבילנו"
+      ],
+      "status": "PENDING"
+    },
+    {
+      "cluster": "Foreign-funded coexistence/pluralism",
+      "orgs": [
+        "בארי",
+        "פרויקט מרחבים",
+        "מסע לקשר"
+      ],
+      "status": "PENDING"
+    },
+    {
+      "cluster": "Feminist/gender-agenda orgs",
+      "orgs": [
+        "בועטות",
+        "שער שוויון",
+        "סודקות את תקרת הזכוכית",
+        "המרכז לשוויון מגדרי"
+      ],
+      "status": "DONE",
+      "report_path": "research_reports/Feminist_gender-agenda_orgs.md"
+    },
+    {
+      "cluster": "Child protection with ideological overlay",
+      "orgs": [
+        "לתת פה",
+        "אל\"י האגודה להגנת הילד",
+        "מצמיחים",
+        "SafeSchool Analytics"
+      ],
+      "status": "DONE",
+      "report_path": "research_reports/Child_protection_with_ideological_overlay.md"
+    }
+  ]
+}

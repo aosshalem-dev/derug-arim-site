@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>פרויקט אלכסון — דירוג ערים | פורטל מחקר</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: #f5f5f8;
+            color: #222;
+            direction: rtl;
+            line-height: 1.6;
+            overflow-wrap: break-word;
+        }
+
+        /* ── Top Navigation ── */
+        .top-nav {
+            background: #1a1a2e;
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+        }
+        .nav-inner {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 0;
+        }
+        .nav-logo {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #ff8800, #ff4444);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1.1em;
+            color: #fff;
+        }
+        .nav-title {
+            font-size: 1.05em;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+        .nav-subtitle {
+            font-size: 0.7em;
+            color: #8899bb;
+            font-weight: 400;
+        }
+        .nav-tabs {
+            display: flex;
+            gap: 0;
+        }
+        .nav-tab {
+            padding: 16px 16px;
+            cursor: pointer;
+            font-size: 0.82em;
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s;
+            color: #8899bb;
+            white-space: nowrap;
+            user-select: none;
+        }
+        .nav-tab:hover {
+            color: #fff;
+            background: rgba(255,255,255,0.05);
+        }
+        .nav-tab.active {
+            color: #fff;
+            border-bottom-color: #ff8800;
+            font-weight: 600;
+        }
+
+        /* ── Tab Content ── */
+        .tab-panel { display: none; }
+        .tab-panel.active { display: block; }
+
+        /* Dashboard iframe */
+        .dashboard-frame {
+            width: 100%;
+            height: calc(100vh - 54px);
+            border: none;
+            display: block;
+        }
+
+        /* ── Content sections ── */
+        .content-wrap {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 30px 20px 60px;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .page-header h1 {
+            font-size: 1.8em;
+            color: #1a1a2e;
+            margin-bottom: 6px;
+        }
+        .page-header .lead {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        /* ── Methodology ── */
+        .methodology-content {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 36px 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            line-height: 1.75;
+        }
+        .methodology-content h1 {
+            font-size: 1.6em;
+            color: #1a1a2e;
+            margin-bottom: 8px;
+            border-bottom: 3px solid #ff8800;
+            padding-bottom: 10px;
+        }
+        .methodology-content h2 {
+            font-size: 1.25em;
+            color: #2a5a8a;
+            margin-top: 32px;
+            margin-bottom: 12px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid #e0e8f0;
+        }
+        .methodology-content h3 {
+            font-size: 1.05em;
+            color: #3a6a9a;
+            margin-top: 24px;
+            margin-bottom: 10px;
+        }
+        .methodology-content p {
+            margin-bottom: 12px;
+            color: #333;
+        }
+        .methodology-content ul, .methodology-content ol {
+            margin: 10px 20px 16px;
+            color: #444;
+        }
+        .methodology-content li {
+            margin-bottom: 4px;
+        }
+        .methodology-content code {
+            background: #f0f4f8;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.9em;
+            color: #2a5a8a;
+        }
+        .methodology-content .formula-box {
+            background: linear-gradient(135deg, #f8f0e0, #fff8f0);
+            border: 1px solid #e8d8c0;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin: 16px 0;
+            font-weight: 600;
+            font-size: 1.05em;
+            text-align: center;
+            color: #1a1a2e;
+        }
+        .methodology-content .note-box {
+            background: #f0f4fa;
+            border-right: 4px solid #2a5a8a;
+            padding: 12px 16px;
+            margin: 16px 0;
+            border-radius: 0 6px 6px 0;
+            font-size: 0.9em;
+            color: #444;
+        }
+
+        /* ── Tables in methodology ── */
+        .methodology-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 24px;
+            font-size: 0.88em;
+        }
+        .methodology-content th {
+            background: #2a5a8a;
+            color: #fff;
+            padding: 10px 12px;
+            text-align: right;
+            font-weight: 600;
+        }
+        .methodology-content td {
+            padding: 8px 12px;
+            border-bottom: 1px solid #e0e0e0;
+            color: #333;
+        }
+        .methodology-content tr:nth-child(even) td {
+            background: #f8f9fb;
+        }
+        .methodology-content tr:hover td {
+            background: #e8f0f8;
+        }
+
+        /* ── Data cards grid ── */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 16px;
+        }
+        .data-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            transition: all 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+        .data-card:hover {
+            border-color: #2a5a8a;
+            box-shadow: 0 4px 12px rgba(42,90,138,0.12);
+            transform: translateY(-2px);
+        }
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3em;
+            margin-bottom: 12px;
+            flex-shrink: 0;
+        }
+        .icon-json { background: #e8f4e8; color: #2a8a2a; }
+        .icon-js { background: #fff3e0; color: #ff8800; }
+        .icon-py { background: #e8e8f8; color: #4444cc; }
+        .icon-doc { background: #f0e8f8; color: #8844cc; }
+        .card-title {
+            font-weight: 700;
+            font-size: 0.95em;
+            color: #1a1a2e;
+            margin-bottom: 6px;
+        }
+        .card-filename {
+            font-family: 'SF Mono', Monaco, Consolas, monospace;
+            font-size: 0.78em;
+            color: #2a5a8a;
+            background: #f0f4f8;
+            padding: 2px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 8px;
+            direction: ltr;
+            text-align: left;
+        }
+        .card-desc {
+            font-size: 0.85em;
+            color: #666;
+            flex-grow: 1;
+            margin-bottom: 12px;
+        }
+        .card-size {
+            font-size: 0.75em;
+            color: #999;
+            margin-bottom: 10px;
+        }
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            background: #2a5a8a;
+            color: #fff;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.82em;
+            font-weight: 600;
+            transition: background 0.2s;
+            align-self: flex-start;
+        }
+        .download-btn:hover {
+            background: #1a4a7a;
+        }
+        .download-btn-orange {
+            background: #e67700;
+        }
+        .download-btn-orange:hover {
+            background: #cc6600;
+        }
+
+        /* ── Research report cards ── */
+        .report-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            transition: all 0.2s;
+            border-right: 5px solid #cc0000;
+        }
+        .report-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+        .report-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+            gap: 12px;
+        }
+        .report-title {
+            font-weight: 700;
+            font-size: 1em;
+            color: #1a1a2e;
+        }
+        .risk-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.78em;
+            font-weight: 700;
+            color: #fff;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .risk-5 { background: #cc0000; }
+        .risk-4 { background: #e67700; }
+        .risk-3 { background: #cc9900; }
+        .risk-2 { background: #66aa44; }
+        .risk-1 { background: #888; }
+        .report-orgs {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .report-actions {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .report-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 6px 14px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.8em;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        .btn-primary {
+            background: #8b0000;
+            color: #fff;
+        }
+        .btn-primary:hover { background: #aa0000; }
+        .btn-outline {
+            background: #fff;
+            color: #8b0000;
+            border: 1px solid #8b0000;
+        }
+        .btn-outline:hover {
+            background: #8b0000;
+            color: #fff;
+        }
+
+        /* ── Script cards ── */
+        .script-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            border-right: 4px solid #4444cc;
+        }
+        .script-name {
+            font-family: 'SF Mono', Monaco, Consolas, monospace;
+            font-size: 0.9em;
+            color: #4444cc;
+            font-weight: 700;
+            margin-bottom: 6px;
+            direction: ltr;
+            text-align: left;
+        }
+        .script-desc {
+            font-size: 0.88em;
+            color: #555;
+            margin-bottom: 12px;
+        }
+
+        /* ── About section ── */
+        .about-box {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 32px 36px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .about-box h2 {
+            color: #1a1a2e;
+            font-size: 1.3em;
+            margin-bottom: 16px;
+            border-bottom: 3px solid #ff8800;
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+        .about-box p {
+            color: #444;
+            margin-bottom: 14px;
+            font-size: 0.95em;
+        }
+        .source-tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 16px;
+        }
+        .source-tag {
+            background: #e8f0f8;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.82em;
+            color: #2a5a8a;
+            font-weight: 500;
+        }
+        .stats-hero {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+        .stat-card {
+            background: linear-gradient(135deg, #1a1a2e, #2a3a5e);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+        }
+        .stat-card .val {
+            font-size: 1.8em;
+            font-weight: 800;
+            color: #ff8800;
+        }
+        .stat-card .lbl {
+            font-size: 0.78em;
+            color: #8899bb;
+            margin-top: 4px;
+        }
+
+        /* ── Data Manifest ── */
+        .manifest-content {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 36px 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            line-height: 1.75;
+        }
+        .manifest-content h1 {
+            font-size: 1.5em;
+            color: #1a1a2e;
+            border-bottom: 3px solid #2a5a8a;
+            padding-bottom: 10px;
+            margin-bottom: 8px;
+        }
+        .manifest-content h2 {
+            font-size: 1.15em;
+            color: #2a5a8a;
+            margin-top: 28px;
+            margin-bottom: 10px;
+        }
+        .manifest-content h3 {
+            font-size: 1em;
+            color: #3a6a9a;
+            margin-top: 20px;
+            margin-bottom: 8px;
+        }
+        .manifest-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0 20px;
+            font-size: 0.85em;
+        }
+        .manifest-content th {
+            background: #2a5a8a;
+            color: #fff;
+            padding: 8px 10px;
+            text-align: right;
+            font-weight: 600;
+        }
+        .manifest-content td {
+            padding: 6px 10px;
+            border-bottom: 1px solid #e0e0e0;
+            color: #333;
+        }
+        .manifest-content tr:nth-child(even) td {
+            background: #f8f9fb;
+        }
+        .manifest-content code {
+            background: #f0f4f8;
+            padding: 1px 5px;
+            border-radius: 3px;
+            font-size: 0.88em;
+            color: #2a5a8a;
+            direction: ltr;
+            unicode-bidi: embed;
+        }
+        .manifest-content p {
+            margin-bottom: 10px;
+            color: #444;
+        }
+
+        /* ── Section dividers ── */
+        .section-divider {
+            margin: 32px 0 24px;
+            border: none;
+            border-top: 2px solid #e0e8f0;
+        }
+
+        /* ── Footer ── */
+        footer {
+            text-align: center;
+            color: #888;
+            font-size: 0.82em;
+            padding: 24px 20px;
+            border-top: 1px solid #ddd;
+            background: #fff;
+            margin-top: 40px;
+        }
+        footer strong {
+            color: #1a1a2e;
+        }
+
+        /* ── Mobile ── */
+        @media (max-width: 768px) {
+            .nav-inner {
+                flex-direction: column;
+                padding: 6px 12px;
+            }
+            .nav-tabs {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .nav-tab {
+                padding: 10px 10px;
+                font-size: 0.75em;
+            }
+            .nav-brand {
+                padding: 8px 0 4px;
+            }
+            .content-wrap {
+                padding: 20px 12px 40px;
+            }
+            .page-header h1 {
+                font-size: 1.4em;
+            }
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+            .methodology-content,
+            .manifest-content,
+            .about-box {
+                padding: 20px 16px;
+            }
+            .methodology-content table,
+            .manifest-content table {
+                font-size: 0.78em;
+                display: block;
+                overflow-x: auto;
+            }
+            .stats-hero {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .dashboard-frame {
+                height: calc(100vh - 80px);
+            }
+            .report-header {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-tab {
+                padding: 8px 7px;
+                font-size: 0.7em;
+            }
+            .stats-hero {
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
+            }
+            .stat-card {
+                padding: 14px 10px;
+            }
+            .stat-card .val {
+                font-size: 1.4em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ═══════════════ TOP NAVIGATION ═══════════════ -->
+<nav class="top-nav">
+    <div class="nav-inner">
+        <div class="nav-brand">
+            <div class="nav-logo">A</div>
+            <div>
+                <div class="nav-title">פרויקט אלכסון — דירוג ערים</div>
+                <div class="nav-subtitle">פורטל מחקר מלא | פברואר 2026</div>
+            </div>
+        </div>
+        <div class="nav-tabs">
+            <div class="nav-tab active" data-tab="dashboard">דירוג משולב</div>
+            <div class="nav-tab" data-tab="methodology">מתודולוגיה</div>
+            <div class="nav-tab" data-tab="data">נתונים</div>
+            <div class="nav-tab" data-tab="reports">דוחות מחקר</div>
+            <div class="nav-tab" data-tab="scripts">סקריפטים</div>
+            <div class="nav-tab" data-tab="about">אודות</div>
+        </div>
+    </div>
+</nav>
+
+<!-- ═══════════════ TAB: DASHBOARD ═══════════════ -->
+<div id="panel-dashboard" class="tab-panel active">
+    <iframe src="dashboard.html" class="dashboard-frame" title="דשבורד דירוג ערים"></iframe>
+</div>
+
+<!-- ═══════════════ TAB: METHODOLOGY ═══════════════ -->
+<div id="panel-methodology" class="tab-panel">
+    <div class="content-wrap">
+        <div class="page-header">
+            <h1>מתודולוגיה</h1>
+            <p class="lead">שיטת הניתוח, משקלות, מדדים וולידציה סטטיסטית</p>
+        </div>
+
+        <div class="methodology-content">
+
+            <h1>Methodology &mdash; דירוג ערים</h1>
+
+            <h2>1. סקירת ניתוח כללית</h2>
+            <p>
+                הפרויקט מודד חדירה אידיאולוגית למערכות חינוך עירוניות בישראל באמצעות שלושה זרמי נתונים עצמאיים המשולבים לציון עירוני יחיד 0-100.
+            </p>
+            <div class="formula-box">
+                ציון משולב = חשיפה חינוכית (50%) + אותות ציר ב' (30%) + דגלים אדומים (20%)
+            </div>
+            <div class="note-box">
+                <strong>שתי שכבות ניתוח:</strong><br>
+                <strong>כמותית:</strong> ציון אוטומטי (תדירות מילות מפתח, יחסי תקציב)<br>
+                <strong>איכותית:</strong> מחקר מעמיק על ארגונים לפי מסגרת 9 פרקים
+            </div>
+
+            <h2>2. ניתוח כמותי</h2>
+
+            <h3>2.1 ציון משולב עירוני (0-100)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>רכיב</th>
+                        <th>משקל</th>
+                        <th>מדד גולמי</th>
+                        <th>נורמליזציה</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>חשיפה חינוכית</td>
+                        <td>50%</td>
+                        <td>יחס תוכניות בעייתיות משוקלל בתקציב</td>
+                        <td>כבר 0-100</td>
+                    </tr>
+                    <tr>
+                        <td>ציר ב' (אותות פרוגרסיביים)</td>
+                        <td>30%</td>
+                        <td>מילות מפתח ל-10K תווים בפרוטוקולים</td>
+                        <td>min(raw / 3.0, 1.0) &times; 100</td>
+                    </tr>
+                    <tr>
+                        <td>דגלים אדומים (שבי מוסדי)</td>
+                        <td>20%</td>
+                        <td>מדדים ל-10K תווים</td>
+                        <td>min(raw / 0.15, 1.0) &times; 100</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                <strong>קידוד צבעוני:</strong>
+                <span style="color:#ff4444;font-weight:700">50+ קריטי (אדום)</span> |
+                <span style="color:#ff8800;font-weight:700">30-49 גבוה (כתום)</span> |
+                <span style="color:#cc9900;font-weight:700">15-29 בינוני (צהוב)</span> |
+                <span style="color:#44aa44;font-weight:700">&lt;15 נמוך (ירוק)</span>
+            </p>
+
+            <h3>2.2 דירוג סיכון תוכניות (סולם 1-5)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>דירוג</th>
+                        <th>תווית</th>
+                        <th>קריטריונים</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>סיכון מינימלי</td>
+                        <td>תוכניות אקדמיות/STEM סטנדרטיות</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>סיכון נמוך</td>
+                        <td>תוכניות חברתיות-ערכיות עם תוכן שפיר</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>סיכון בינוני</td>
+                        <td>סמנים אידיאולוגיים: מסגור זכויותי, פלורליזם ליברלי</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>סיכון גבוה</td>
+                        <td>תוכן מגדרי/מיני מפורש, אג'נדה פמיניסטית, דו-קיום במימון זר</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>סיכון קריטי</td>
+                        <td>אקטיביזם פוליטי בכיתות, פדגוגיה ביקורתית, אג'נדה פוסט-לאומית</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="note-box">
+                <strong>שיטת דירוג:</strong> קונסנסוס דו-סוכני. שני סוכני AI מדרגים בעצמאית. הציון הסופי = ממוצע מעוגל.
+            </div>
+
+            <h3>2.3 מילות מפתח ציר א' / ציר ב'</h3>
+            <p><strong>ציר א' &mdash; זהות יהודית/ציונית:</strong> תורה, ציונות, שבת, צה"ל, הקמת המדינה, מורשת, יהדות</p>
+            <p><strong>ציר ב' &mdash; פרוגרסיבי/ביקורתי:</strong> פדגוגיה ביקורתית, צדק חברתי, דה-קולוניזציה, פוסט-לאומי, שוויון מגדרי, זהות מגדרית</p>
+            <p><strong>דגלים אדומים:</strong> שותפויות UNESCO, יועצים חיצוניים, מעורבות NGO זר</p>
+
+            <h3>2.4 ולידציה סטטיסטית</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>מדד</th>
+                        <th>ערך</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>מהימנות בין-מדרגים (Pearson r)</td><td>0.6748</td></tr>
+                    <tr><td>Cohen's weighted kappa</td><td>0.6283</td></tr>
+                    <tr><td>התאמה מדויקת</td><td>58%</td></tr>
+                    <tr><td>התאמה בטווח נקודה אחת</td><td>91%</td></tr>
+                    <tr><td>תקרת נורמליזציה ציר ב' (P95&times;1.5)</td><td>1.947 (vs. 3.0 בפועל)</td></tr>
+                    <tr><td>תקרת נורמליזציה דגלים אדומים (P95&times;1.5)</td><td>0.149 (vs. 0.15 בפועל)</td></tr>
+                    <tr><td>רגישות דירוג</td><td>אף עיר לא זזה יותר מ-2 מקומות ב-4 סכימות משקלות</td></tr>
+                </tbody>
+            </table>
+
+            <h2>3. ניתוח איכותי &mdash; מסגרת 9 פרקים</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>פרק</th>
+                        <th>כותרת</th>
+                        <th>שאלות מפתח</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>זהות ארגונית ורשת</td><td>ישות בודדת או רשת NGO? ריכוז כוח?</td></tr>
+                    <tr><td>2</td><td>הנהגה וקשרים פוליטיים</td><td>אנשי מפתח, זיקות פוליטיות?</td></tr>
+                    <tr><td>3</td><td>ניתוח פיננסי ומימון</td><td>פירוט תקציב, תורמים זרים?</td></tr>
+                    <tr><td>4</td><td>אידיאולוגיה ופדגוגיה</td><td>פדגוגיה ביקורתית? הסטה סמנטית?</td></tr>
+                    <tr><td>5</td><td>תוכן בעייתי</td><td>תוכן מיני/מגדרי לקטינים?</td></tr>
+                    <tr><td>6</td><td>שערוריות וחריגות</td><td>חשיפות תקשורתיות? שערוריות כספיות?</td></tr>
+                    <tr><td>7</td><td>השפעה על מדיניות</td><td>חוזים ללא מכרז? בוגרים במשרד החינוך?</td></tr>
+                    <tr><td>8</td><td>התאמה ערכית (8 צירים)</td><td>מיקום על 8 ספקטרומים אידיאולוגיים</td></tr>
+                    <tr><td>9</td><td>מפת סיכון ומסקנות</td><td>ציון כולל 1-5, סיכונים עיקריים</td></tr>
+                </tbody>
+            </table>
+
+            <h3>ספקטרום ערכי 8 צירים</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>ציר</th>
+                        <th>קוטב שמרני</th>
+                        <th>קוטב פרוגרסיבי</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>זהות יהודית ומורשת</td><td>מחזק</td><td>מחליש/מאחד</td></tr>
+                    <tr><td>2</td><td>זהות לאומית ציונית</td><td>מאשר</td><td>פוסט-לאומי/ביקורתי</td></tr>
+                    <tr><td>3</td><td>משפחה ומבנה קהילתי</td><td>תומך</td><td>מפרק</td></tr>
+                    <tr><td>4</td><td>צה"ל ושירות לאומי</td><td>תומך</td><td>ביקורתי/סרבנות</td></tr>
+                    <tr><td>5</td><td>ערכים דמוקרטיים</td><td>דמוקרטיה ליברלית</td><td>דמוקרטיה רדיקלית/אקטיביזם</td></tr>
+                    <tr><td>6</td><td>אוריינטציה כלכלית</td><td>שוק חופשי</td><td>סוציאליסטי/קולקטיביסטי</td></tr>
+                    <tr><td>7</td><td>מגדר ומיניות</td><td>מסורתי</td><td>תאוריה מגדרית רדיקלית</td></tr>
+                    <tr><td>8</td><td>השפעה זרה</td><td>עצמאי</td><td>אג'נדה במימון זר</td></tr>
+                </tbody>
+            </table>
+
+            <h2>4. צינור ניתוח</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>שכבה</th>
+                        <th>תיאור</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>שכבה 1: איסוף נתונים</strong></td><td>PDF-י רשויות, API גפ"ן, מקורות חיצוניים</td></tr>
+                    <tr><td><strong>שכבה 2: עיבוד מקדים</strong></td><td>חילוץ PDF, סינון דו-סוכני, העשרת מטאדאטה</td></tr>
+                    <tr><td><strong>שכבה 3: ניתוח</strong></td><td>כמותי (מילות מפתח, ציון, דירוג) + איכותי (9 פרקים מעמיקים)</td></tr>
+                    <tr><td><strong>שכבה 4: הפצה</strong></td><td>אתר סטטי ב-GitHub Pages</td></tr>
+                </tbody>
+            </table>
+
+            <h2>5. פערים ידועים</h2>
+            <ul>
+                <li><strong>הצדקת משקלות:</strong> מדוע 50/30/20? טרם בוצע ניתוח רגישות מלא לבחירת המשקלות.</li>
+                <li><strong>מילות מפתח ללא הקשר:</strong> אין שכבת NLP/סנטימנט &mdash; מילים נספרות ללא ניתוח ההקשר שלהן.</li>
+                <li><strong>הטיית כיסוי פרוטוקולים:</strong> כיסוי 9%-42% בין הערים, ללא תיקון סטטיסטי.</li>
+                <li><strong>ללא השוואה לאמת שטח:</strong> אין פאנל מומחים חיצוני או ground truth לולידציה.</li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════ TAB: DATA ═══════════════ -->
+<div id="panel-data" class="tab-panel">
+    <div class="content-wrap">
+        <div class="page-header">
+            <h1>נתונים להורדה</h1>
+            <p class="lead">כל קבצי הנתונים של הפרויקט &mdash; JSON, JS &mdash; זמינים להורדה ישירה</p>
+        </div>
+
+        <h2 style="color:#2a5a8a;margin-bottom:16px;font-size:1.1em;">קבצי דירוג ומטאדאטה</h2>
+        <div class="cards-grid" style="margin-bottom:32px">
+
+            <div class="data-card">
+                <div class="card-icon icon-json">{ }</div>
+                <div class="card-title">דירוג משולב &mdash; 15 ערים</div>
+                <div class="card-filename">merged_city_ranking.json</div>
+                <div class="card-desc">טבלת דירוג סופית. כל עיר עם ציון משולב, חשיפה חינוכית, ציר א'/ב', דגלים אדומים וכיסוי פרוטוקולים.</div>
+                <a href="data/merged_city_ranking.json" download class="download-btn">הורד JSON</a>
+            </div>
+
+            <div class="data-card">
+                <div class="card-icon icon-json">{ }</div>
+                <div class="card-title">פירוט פרוטוקולים עירוניים</div>
+                <div class="card-filename">city_details.json</div>
+                <div class="card-desc">ניתוח מילות מפתח מפורט לכל עיר &mdash; ציר א', ציר ב', דגלים אדומים עם שכיחויות מלאות.</div>
+                <a href="data/city_details.json" download class="download-btn">הורד JSON</a>
+            </div>
+
+            <div class="data-card">
+                <div class="card-icon icon-json">{ }</div>
+                <div class="card-title">173 תוכניות מדורגות 1-5</div>
+                <div class="card-filename">manual_metadata.json</div>
+                <div class="card-desc">דירוג דו-סוכני של 173 תוכניות חינוך על סולם 1-5. כולל תיאור מחקרי, הערות סוכנים, ותחומי תוכן.</div>
+                <a href="data/manual_metadata.json" download class="download-btn">הורד JSON</a>
+            </div>
+
+            <div class="data-card">
+                <div class="card-icon icon-json">{ }</div>
+                <div class="card-title">מטאדאטה גפ"ן &mdash; סיכומי תוכניות</div>
+                <div class="card-filename">gefen_metadata.json</div>
+                <div class="card-desc">4.8 MB של סיכומים שנוצרו ע"י AI (Gemini) ל-26,619 תוכניות ממערכת גפ"ן של משרד החינוך.</div>
+                <div class="card-size">4.8 MB</div>
+                <a href="data/gefen_metadata.json" download class="download-btn">הורד JSON</a>
+            </div>
+
+            <div class="data-card">
+                <div class="card-icon icon-json">{ }</div>
+                <div class="card-title">25 תוכניות מוצגות &mdash; נתונים עשירים</div>
+                <div class="card-filename">programs_subset.json</div>
+                <div class="card-desc">25 תוכניות נבחרות עם נתונים מעמיקים: תקציב, בתי ספר, ארגון מפעיל, ציון סיכון, ותיאור מחקרי.</div>
+                <a href="data/programs_subset.json" download class="download-btn">הורד JSON</a>
+            </div>
+
+            <div class="data-card">
+                <div class="card-icon icon-json">{ }</div>
+                <div class="card-title">אינדקס תוכנית &rarr; עיר &rarr; בי"ס &rarr; תקציב</div>
+                <div class="card-filename">program_lookup.json</div>
+                <div class="card-desc">906 KB. מיפוי מלא של כל תוכנית לערים, בתי ספר ותקציבים. 200 תוכניות ב-20 ערים.</div>
+                <div class="card-size">906 KB</div>
+                <a href="data/program_lookup.json" download class="download-btn">הורד JSON</a>
+            </div>
+
+        </div>
+
+        <h2 style="color:#2a5a8a;margin-bottom:16px;font-size:1.1em;">מחקר ארגוני</h2>
+        <div class="cards-grid" style="margin-bottom:32px">
+
+            <div class="data-card">
+                <div class="card-icon icon-json">{ }</div>
+                <div class="card-title">מחקר ACRI &mdash; מימון, הנהגה</div>
+                <div class="card-filename">acri_research.json</div>
+                <div class="card-desc">מחקר מעמיק על עמותת ACRI (האגודה לזכויות האזרח): מימון זר, הנהגה, קשרים פוליטיים.</div>
+                <a href="data/acri_research.json" download class="download-btn">הורד JSON</a>
+            </div>
+
+            <div class="data-card">
+                <div class="card-icon icon-json">{ }</div>
+                <div class="card-title">מחקר אפשר אחרת</div>
+                <div class="card-filename">research_efshar_acheret.json</div>
+                <div class="card-desc">מחקר מעמיק על ארגון "אפשר אחרת" &mdash; פעילות, מימון, וקשרים למערכת החינוך.</div>
+                <a href="data/research_efshar_acheret.json" download class="download-btn">הורד JSON</a>
+            </div>
+
+            <div class="data-card">
+                <div class="card-icon icon-json">{ }</div>
+                <div class="card-title">מסגרת 9 פרקים + 7 אשכולות חשודים</div>
+                <div class="card-filename">research_lens.json</div>
+                <div class="card-desc">הגדרת מסגרת המחקר: 9 פרקי ניתוח, שאלות מפתח לכל פרק, ו-7 אשכולות ארגוניים שזוהו כחשודים.</div>
+                <a href="data/research_lens.json" download class="download-btn">הורד JSON</a>
+            </div>
+
+            <div class="data-card">
+                <div class="card-icon icon-json">{ }</div>
+                <div class="card-title">חישובים סטטיסטיים &mdash; IRR, נורמליזציה</div>
+                <div class="card-filename">methodology_computations.json</div>
+                <div class="card-desc">כל החישובים הסטטיסטיים: מהימנות בין-מדרגים, תקרות נורמליזציה, ניתוח רגישות.</div>
+                <a href="data/methodology_computations.json" download class="download-btn">הורד JSON</a>
+            </div>
+
+        </div>
+
+        <h2 style="color:#2a5a8a;margin-bottom:16px;font-size:1.1em;">נתוני דשבורד (JS)</h2>
+        <div class="cards-grid">
+
+            <div class="data-card">
+                <div class="card-icon icon-js">JS</div>
+                <div class="card-title">נתוני דשבורד &mdash; דירוגים + 46 תוכניות</div>
+                <div class="card-filename">data.js</div>
+                <div class="card-desc">קובץ ה-JavaScript שמזין את הדשבורד האינטראקטיבי. כולל דירוגים, תוכניות חינוך, פרטי פרוטוקולים.</div>
+                <a href="data.js" download class="download-btn download-btn-orange">הורד JS</a>
+            </div>
+
+            <div class="data-card">
+                <div class="card-icon icon-js">JS</div>
+                <div class="card-title">נתוני מחקר &mdash; 7 אשכולות</div>
+                <div class="card-filename">research_data.js</div>
+                <div class="card-desc">נתוני 7 אשכולות ארגוניים חשודים עם ממצאים, ציוני סיכון, ומיפוי תוכניות-לאשכולות.</div>
+                <a href="research_data.js" download class="download-btn download-btn-orange">הורד JS</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════ TAB: REPORTS ═══════════════ -->
+<div id="panel-reports" class="tab-panel">
+    <div class="content-wrap">
+        <div class="page-header">
+            <h1>דוחות מחקר מעמיק</h1>
+            <p class="lead">7 דוחות על אשכולות ארגוניים חשודים &mdash; ניתוח 9 פרקים לכל אשכול</p>
+        </div>
+
+        <div class="cards-grid">
+
+            <div class="report-card">
+                <div class="report-header">
+                    <div class="report-title">רשת דרור ישראל</div>
+                    <span class="risk-badge risk-5">סיכון 5/5</span>
+                </div>
+                <div class="report-orgs">דרור ישראל, הנוער העובד והלומד, מחנות הקיץ, קהילות צעירות</div>
+                <div class="report-actions">
+                    <a href="research/Dror_Israel_network.md" download class="report-btn btn-primary">הורד דוח (MD)</a>
+                    <a href="research/" class="report-btn btn-outline">כל הדוחות</a>
+                </div>
+            </div>
+
+            <div class="report-card">
+                <div class="report-header">
+                    <div class="report-title">ספקי חינוך מגדרי/מיני</div>
+                    <span class="risk-badge risk-4">סיכון 4/5</span>
+                </div>
+                <div class="report-orgs">עמותת מרחב, חברה מכילה, תל"מ &mdash; תוכנית למניעת אלימות מינית</div>
+                <div class="report-actions">
+                    <a href="research/Gender_sexuality_education_providers.md" download class="report-btn btn-primary">הורד דוח (MD)</a>
+                    <a href="research/" class="report-btn btn-outline">כל הדוחות</a>
+                </div>
+            </div>
+
+            <div class="report-card">
+                <div class="report-header">
+                    <div class="report-title">ארגונים פוליטיים-אקטיביסטיים בחינוך</div>
+                    <span class="risk-badge risk-5">סיכון 5/5</span>
+                </div>
+                <div class="report-orgs">שוברים שתיקה, בצלם, עדאלה, אנחנו לא מספרים</div>
+                <div class="report-actions">
+                    <a href="research/Political-activist_orgs_in_education.md" download class="report-btn btn-primary">הורד דוח (MD)</a>
+                    <a href="research/" class="report-btn btn-outline">כל הדוחות</a>
+                </div>
+            </div>
+
+            <div class="report-card">
+                <div class="report-header">
+                    <div class="report-title">רשת מכון הרטמן</div>
+                    <span class="risk-badge risk-3">סיכון 3/5</span>
+                </div>
+                <div class="report-orgs">מכון הרטמן, Be Atzmi, מנדל, ברנקו וייס</div>
+                <div class="report-actions">
+                    <a href="research/Hartman_Institute_network.md" download class="report-btn btn-primary">הורד דוח (MD)</a>
+                    <a href="research/" class="report-btn btn-outline">כל הדוחות</a>
+                </div>
+            </div>
+
+            <div class="report-card">
+                <div class="report-header">
+                    <div class="report-title">דו-קיום/פלורליזם במימון זר</div>
+                    <span class="risk-badge risk-4">סיכון 4/5</span>
+                </div>
+                <div class="report-orgs">יד ביד, אברהם יוזמות, מכון ון ליר, קרן פרידריך אברט</div>
+                <div class="report-actions">
+                    <a href="research/Foreign-funded_coexistence_pluralism.md" download class="report-btn btn-primary">הורד דוח (MD)</a>
+                    <a href="research/" class="report-btn btn-outline">כל הדוחות</a>
+                </div>
+            </div>
+
+            <div class="report-card">
+                <div class="report-header">
+                    <div class="report-title">ארגוני אג'נדה פמיניסטית/מגדרית</div>
+                    <span class="risk-badge risk-5">סיכון 5/5</span>
+                </div>
+                <div class="report-orgs">שדולת הנשים, איתך-מעכי, קו לעובדת, משלב</div>
+                <div class="report-actions">
+                    <a href="research/Feminist_gender-agenda_orgs.md" download class="report-btn btn-primary">הורד דוח (MD)</a>
+                    <a href="research/" class="report-btn btn-outline">כל הדוחות</a>
+                </div>
+            </div>
+
+            <div class="report-card">
+                <div class="report-header">
+                    <div class="report-title">הגנת ילד עם שכבה אידיאולוגית</div>
+                    <span class="risk-badge risk-4">סיכון 4/5</span>
+                </div>
+                <div class="report-orgs">עמותת אלה, אלמ"ב, מועצת הילד, זכויות הילד בישראל</div>
+                <div class="report-actions">
+                    <a href="research/Child_protection_with_ideological_overlay.md" download class="report-btn btn-primary">הורד דוח (MD)</a>
+                    <a href="research/" class="report-btn btn-outline">כל הדוחות</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════ TAB: SCRIPTS ═══════════════ -->
+<div id="panel-scripts" class="tab-panel">
+    <div class="content-wrap">
+        <div class="page-header">
+            <h1>סקריפטי ניתוח</h1>
+            <p class="lead">סקריפטי Python ששימשו לעיבוד, ניתוח ובניית הנתונים</p>
+        </div>
+
+        <div class="cards-grid">
+
+            <div class="script-card">
+                <div class="card-icon icon-py" style="margin-bottom:12px">Py</div>
+                <div class="script-name">merge_scores.py</div>
+                <div class="script-desc">
+                    שילוב ניתוח פרוטוקולים + חשיפה חינוכית לדירוג משולב. קורא נתוני ציר א'/ב', דגלים אדומים, וחשיפת גפ"ן, ומייצר דירוג סופי ל-15 ערים.
+                </div>
+                <a href="scripts/merge_scores.py" download class="download-btn">הורד סקריפט</a>
+            </div>
+
+            <div class="script-card">
+                <div class="card-icon icon-py" style="margin-bottom:12px">Py</div>
+                <div class="script-name">build_research_data.py</div>
+                <div class="script-desc">
+                    חילוץ ממצאים מדוחות מחקר (Markdown) והמרה לנתוני JavaScript. מפרש את 7 הדוחות ומייצר את research_data.js.
+                </div>
+                <a href="scripts/build_research_data.py" download class="download-btn">הורד סקריפט</a>
+            </div>
+
+            <div class="script-card">
+                <div class="card-icon icon-py" style="margin-bottom:12px">Py</div>
+                <div class="script-name">research_suspicious.py</div>
+                <div class="script-desc">
+                    מחקר מעמיק על ארגונים חשודים לפי מסגרת 9 הפרקים. מפעיל סוכני AI (Sonnet) שמבצעים מחקר עצמאי ומפיקים דוחות מלאים.
+                </div>
+                <a href="scripts/research_suspicious.py" download class="download-btn">הורד סקריפט</a>
+            </div>
+
+            <div class="script-card">
+                <div class="card-icon icon-py" style="margin-bottom:12px">Py</div>
+                <div class="script-name">values_analysis_agent.py</div>
+                <div class="script-desc">
+                    ניתוח ערכים על 8 צירים אידיאולוגיים. מקבל שם ארגון ומחזיר מיקום על הספקטרום עבור כל אחד מ-8 הצירים הערכיים.
+                </div>
+                <a href="scripts/values_analysis_agent.py" download class="download-btn">הורד סקריפט</a>
+            </div>
+
+        </div>
+
+        <hr class="section-divider">
+
+        <h2 style="color:#2a5a8a;margin-bottom:16px;font-size:1.1em;">תיעוד טכני</h2>
+        <div class="cards-grid">
+
+            <div class="data-card">
+                <div class="card-icon icon-doc">D</div>
+                <div class="card-title">מתודולוגיה (Markdown)</div>
+                <div class="card-filename">METHODOLOGY.md</div>
+                <div class="card-desc">תיעוד מלא של שיטת הניתוח, משקלות, ולידציה סטטיסטית.</div>
+                <a href="docs/METHODOLOGY.md" download class="download-btn">הורד MD</a>
+            </div>
+
+            <div class="data-card">
+                <div class="card-icon icon-doc">D</div>
+                <div class="card-title">מניפסט נתונים</div>
+                <div class="card-filename">DATA_MANIFEST.md</div>
+                <div class="card-desc">מפת כל קבצי הנתונים, מקורותיהם, וסטטוס העיבוד.</div>
+                <a href="docs/DATA_MANIFEST.md" download class="download-btn">הורד MD</a>
+            </div>
+
+            <div class="data-card">
+                <div class="card-icon icon-doc">D</div>
+                <div class="card-title">מצב סשן</div>
+                <div class="card-filename">SESSION_STATE.md</div>
+                <div class="card-desc">סטטוס נוכחי של הפרויקט: מה הושלם, מה בתהליך, מה בהמתנה.</div>
+                <a href="docs/SESSION_STATE.md" download class="download-btn">הורד MD</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════ TAB: ABOUT ═══════════════ -->
+<div id="panel-about" class="tab-panel">
+    <div class="content-wrap">
+        <div class="page-header">
+            <h1>אודות הפרויקט</h1>
+            <p class="lead">רקע, מקורות נתונים, ומטרות</p>
+        </div>
+
+        <div class="about-box">
+            <h2>פרויקט אלכסון &mdash; דירוג ערים</h2>
+
+            <p>
+                <strong>פרויקט אלכסון &mdash; דירוג ערים</strong> הוא כלי מחקר ייעודי לניתוח חדירה אידיאולוגית-ערכית
+                למערכת החינוך העירונית בישראל. הפרויקט משלב שלושה מקורות נתונים עצמאיים לבניית תמונה חוצת-מקורות
+                המאפשרת הערכה אובייקטיבית של מידת החשיפה האידיאולוגית בכל עיר.
+            </p>
+
+            <p>
+                הדירוג אינו מייצג עמדה פוליטית אלא מבוסס על ניתוח כמותי של תוכניות חינוך, מילות מפתח בפרוטוקולי מועצות עיר,
+                ומחקר מעמיק על ארגונים הפועלים במערכת. כל ממצא מגובה במקור ציבורי הזמין לבדיקה.
+            </p>
+
+            <p>
+                המחקר כולל ניתוח של <strong>15 ערים</strong> עם נתוני פרוטוקולים וחינוך משולבים, <strong>20 ערים</strong> עם
+                נתוני חשיפה חינוכית, <strong>173 תוכניות חינוך</strong> שדורגו על סולם 1-5, ו-<strong>7 דוחות מחקר מעמיק</strong>
+                על אשכולות ארגוניים חשודים.
+            </p>
+
+            <div class="stats-hero">
+                <div class="stat-card">
+                    <div class="val">15</div>
+                    <div class="lbl">ערים בדירוג משולב</div>
+                </div>
+                <div class="stat-card">
+                    <div class="val">173</div>
+                    <div class="lbl">תוכניות מדורגות</div>
+                </div>
+                <div class="stat-card">
+                    <div class="val">7</div>
+                    <div class="lbl">דוחות מחקר מעמיק</div>
+                </div>
+                <div class="stat-card">
+                    <div class="val">9</div>
+                    <div class="lbl">פרקי ניתוח לכל ארגון</div>
+                </div>
+                <div class="stat-card">
+                    <div class="val">8</div>
+                    <div class="lbl">צירים אידיאולוגיים</div>
+                </div>
+                <div class="stat-card">
+                    <div class="val">26K+</div>
+                    <div class="lbl">תוכניות גפ"ן נסרקו</div>
+                </div>
+            </div>
+
+            <h2>מקורות נתונים</h2>
+            <div class="source-tags">
+                <span class="source-tag">מערכת גפ"ן &mdash; משרד החינוך</span>
+                <span class="source-tag">פרוטוקולי מועצות עיר (15 ערים)</span>
+                <span class="source-tag">GuideStar &mdash; רשם העמותות</span>
+                <span class="source-tag">NGO Monitor</span>
+                <span class="source-tag">דוחות כספיים ציבוריים</span>
+                <span class="source-tag">תקציבי חינוך עירוניים</span>
+                <span class="source-tag">מידע ציבורי על ארגונים</span>
+            </div>
+
+            <hr class="section-divider">
+
+            <h2>מבנה האתר</h2>
+            <p>
+                אתר זה משמש כפורטל מחקר מלא לפרויקט דירוג ערים. הוא כולל:
+            </p>
+            <ul style="margin:10px 20px;color:#555">
+                <li><strong>דירוג משולב</strong> &mdash; דשבורד אינטראקטיבי עם טבלאות, מיונים, וחקירת נתונים</li>
+                <li><strong>מתודולוגיה</strong> &mdash; תיעוד מלא של שיטת המחקר</li>
+                <li><strong>נתונים</strong> &mdash; כל קבצי הנתונים להורדה ישירה</li>
+                <li><strong>דוחות מחקר</strong> &mdash; 7 דוחות מעמיקים על אשכולות ארגוניים</li>
+                <li><strong>סקריפטים</strong> &mdash; קוד הניתוח המלא בפייתון</li>
+            </ul>
+
+            <hr class="section-divider">
+
+            <h2>שימוש במחקר</h2>
+            <p>
+                כל הנתונים, הסקריפטים והדוחות בפרויקט זה מבוססים על מקורות ציבוריים בלבד.
+                המחקר נועד לספק כלי אנליטי לקובעי מדיניות, הורים, ואזרחים המעוניינים להבין
+                את ההרכב האידיאולוגי של תוכניות החינוך ברשותם המקומית.
+            </p>
+            <p>
+                הנתונים מעודכנים לפברואר 2026. ייתכנו שינויים בתוכניות חינוך, ארגונים, או מדיניות
+                עירונית שלא באו לידי ביטוי בנתונים.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer id="main-footer">
+    <strong>פרויקט אלכסון &mdash; דירוג ערים</strong> | עדכון אחרון: פברואר 2026 | כל הנתונים מבוססים על מקורות ציבוריים
+</footer>
+
+<!-- ═══════════════ TAB SWITCHING SCRIPT ═══════════════ -->
+<script>
+(function() {
+    const tabs = document.querySelectorAll('.nav-tab');
+    const panels = document.querySelectorAll('.tab-panel');
+    const footer = document.getElementById('main-footer');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            const target = this.dataset.tab;
+
+            // Update tab active state
+            tabs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+
+            // Update panel visibility
+            panels.forEach(p => p.classList.remove('active'));
+            document.getElementById('panel-' + target).classList.add('active');
+
+            // Hide footer on dashboard tab (iframe takes full height)
+            footer.style.display = (target === 'dashboard') ? 'none' : 'block';
+
+            // Scroll to top when switching tabs
+            window.scrollTo(0, 0);
+        });
+    });
+
+    // Initially hide footer on dashboard
+    footer.style.display = 'none';
+})();
+</script>
+
+</body>
+</html>
