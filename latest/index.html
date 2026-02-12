@@ -298,6 +298,77 @@
 
         .table-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 
+        /* ── Protocol browser ── */
+        .proto-browser-header {
+            max-width: 1000px; margin: 30px auto 10px;
+            border-top: 2px solid #ddd; padding-top: 20px;
+        }
+        .proto-browser-header h2 {
+            color: #1a1a2e; font-size: 1.15em; margin-bottom: 6px;
+        }
+        .proto-filter-bar {
+            display: flex; gap: 12px; align-items: center; flex-wrap: wrap;
+            max-width: 1000px; margin: 10px auto 16px;
+        }
+        .proto-filter-bar select {
+            padding: 8px 12px; border: 2px solid #ddd; border-radius: 8px;
+            font-size: 0.9em; direction: rtl; background: #fff;
+        }
+        .proto-filter-bar select:focus { outline: none; border-color: #2a5a8a; }
+        .proto-filter-bar .proto-count { color: #888; font-size: 0.85em; }
+
+        .proto-card {
+            background: #fff; border: 1px solid #e0e0e0; border-radius: 8px;
+            padding: 14px 18px; margin: 8px auto; max-width: 1000px;
+            cursor: pointer; transition: border-color 0.15s;
+        }
+        .proto-card:hover { border-color: #2a5a8a; }
+        .proto-card.expanded { border-color: #ff8800; }
+        .proto-card-header {
+            display: flex; justify-content: space-between; align-items: center;
+            flex-wrap: wrap; gap: 6px;
+        }
+        .proto-card-title { font-weight: 600; font-size: 0.9em; color: #1a1a2e; }
+        .proto-card-meta { font-size: 0.8em; color: #888; }
+        .proto-card-badges { display: flex; gap: 6px; align-items: center; }
+        .proto-hit-badge {
+            display: inline-block; padding: 2px 8px; border-radius: 4px;
+            font-size: 0.75em; font-weight: 700; color: #fff;
+        }
+        .proto-hit-high { background: #cc0000; }
+        .proto-hit-medium { background: #ff8800; }
+        .proto-hit-low { background: #88aa44; }
+        .proto-hit-none { background: #ccc; }
+        .proto-card-text {
+            display: none; margin-top: 12px; padding-top: 12px;
+            border-top: 1px solid #e0e0e0;
+            font-size: 0.85em; color: #333; line-height: 1.8;
+            max-height: 500px; overflow-y: auto;
+            white-space: pre-wrap; direction: rtl;
+        }
+        .proto-card-text.visible { display: block; }
+        .proto-card-text mark.pole-b {
+            background: #fff3cd; padding: 1px 3px; border-radius: 2px;
+        }
+        .proto-card-text mark.red-flag {
+            background: #ffcccc; padding: 1px 3px; border-radius: 2px;
+            font-weight: 600;
+        }
+        .proto-kw-summary {
+            display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px;
+        }
+        .proto-kw-pill {
+            display: inline-block; background: #e8f0f8; padding: 2px 8px;
+            border-radius: 10px; font-size: 0.75em; color: #333;
+        }
+        .proto-kw-pill.red { background: #ffe0e0; color: #8b0000; }
+        .proto-view-link {
+            display: inline-block; margin-top: 6px; padding: 4px 12px;
+            background: #2a5a8a; color: #fff; border-radius: 4px;
+            text-decoration: none; font-size: 0.8em; cursor: pointer;
+        }
+        .proto-view-link:hover { background: #345f8a; }
+
         @media (max-width: 768px) {
             .main-content { padding: 10px; }
             th, td { padding: 8px 4px; font-size: 0.8em; }
@@ -438,6 +509,19 @@
         <div class="stats-bar" id="proto-stats"></div>
 
         <div id="proto-details-list"></div>
+
+        <!-- Protocol Browser -->
+        <div class="proto-browser-header">
+            <h2>רשימת פרוטוקולים — טקסט מלא עם הדגשת מילות מפתח</h2>
+            <p class="subtitle" style="text-align:right">53 פרוטוקולים שנבחרו מ-5 ערים עם האותות החזקים ביותר | לחצו לפתיחת הטקסט</p>
+        </div>
+        <div class="proto-filter-bar">
+            <select id="proto-city-filter" onchange="renderProtocolBrowser()">
+                <option value="all">כל הערים</option>
+            </select>
+            <span class="proto-count" id="proto-browser-count"></span>
+        </div>
+        <div id="proto-browser-list"></div>
     </div>
 
     <!-- ═══ TAB: RED FLAGS ═══ -->
@@ -573,8 +657,9 @@
 
     </div><!-- .main-content -->
 
-    <script src="data.js?v=9"></script>
-    <script src="research_data.js?v=9"></script>
+    <script src="data.js?v=10"></script>
+    <script src="research_data.js?v=10"></script>
+    <script src="protocols_data.js?v=10"></script>
     <script>
     // ── Tab switching ──
     function switchTab(tab, el) {
@@ -585,7 +670,10 @@
 
         // Lazy-render tab content
         if (tab === 'education' && !document.getElementById('edu-programs-list').innerHTML) renderEducation();
-        if (tab === 'protocols' && !document.getElementById('proto-details-list').innerHTML) renderProtocols();
+        if (tab === 'protocols' && !document.getElementById('proto-details-list').innerHTML) {
+            renderProtocols();
+            renderProtocolBrowser();
+        }
         if (tab === 'redflags' && !document.getElementById('redflags-list').innerHTML) renderRedFlags();
         if (tab === 'research' && !document.getElementById('clusters-grid').innerHTML) renderResearch();
     }
@@ -1067,9 +1155,10 @@
                     </div>
                 </div>
                 ${categoryHtml}
-                <div style="font-size:0.78em;color:#999;margin-top:8px;border-top:1px solid #eee;padding-top:6px">
-                    הציון מנורמל לפי אורך הטקסט (אזכורים ל-10,000 תווים) ותורם 20% לציון המשולב.
-                    <span style="cursor:pointer;color:#2a5a8a" onclick="switchTab('ranking',document.querySelector('.nav-tab'))">צפה בדירוג \u25B8</span>
+                <div style="font-size:0.78em;color:#999;margin-top:8px;border-top:1px solid #eee;padding-top:6px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px">
+                    <span>הציון מנורמל לפי אורך הטקסט (אזכורים ל-10,000 תווים) ותורם 20% לציון המשולב.
+                    <span style="cursor:pointer;color:#2a5a8a" onclick="switchTab('ranking',document.querySelector('.nav-tab'))">צפה בדירוג \u25B8</span></span>
+                    ${typeof PROTOCOLS !== 'undefined' && PROTOCOLS[key] ? '<span class="proto-view-link" onclick="event.stopPropagation();showCityProtocols(\'' + key + '\')">צפה בפרוטוקולים \u25B8</span>' : ''}
                 </div>
             </div>`;
         }
@@ -1146,6 +1235,152 @@
             <div class="hero-stat"><div class="val">${protoCities}</div><div class="lbl">ערים עם פרוטוקולים</div></div>
             <div class="hero-stat"><div class="val">${clusterCount}</div><div class="lbl">אשכולות ארגוניים</div></div>
         `;
+    }
+
+    // ── Protocol Browser ──
+    function highlightKeywords(text) {
+        if (typeof HIGHLIGHT_KEYWORDS === 'undefined') return text.replace(/</g, '&lt;');
+        let escaped = text.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        // Build regex from all keywords — red flags first (higher priority)
+        const rfKws = (HIGHLIGHT_KEYWORDS.red_flag || []).filter(k => k.length > 0);
+        const pbKws = (HIGHLIGHT_KEYWORDS.pole_b || []).filter(k => k.length > 0);
+        // Red flags
+        if (rfKws.length > 0) {
+            const rfPattern = rfKws.map(k => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
+            escaped = escaped.replace(new RegExp(rfPattern, 'gi'), m => `<mark class="red-flag">${m}</mark>`);
+        }
+        // Pole B keywords
+        if (pbKws.length > 0) {
+            const pbPattern = pbKws.map(k => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
+            escaped = escaped.replace(new RegExp(pbPattern, 'gi'), m => {
+                // Don't double-highlight if already inside a mark tag
+                return `<mark class="pole-b">${m}</mark>`;
+            });
+        }
+        return escaped;
+    }
+
+    function hitBadgeClass(count) {
+        if (count >= 5) return 'proto-hit-high';
+        if (count >= 2) return 'proto-hit-medium';
+        if (count >= 1) return 'proto-hit-low';
+        return 'proto-hit-none';
+    }
+
+    let _protoIdx = 0;
+    function renderProtocolBrowser() {
+        if (typeof PROTOCOLS === 'undefined') {
+            document.getElementById('proto-browser-list').innerHTML =
+                '<p style="text-align:center;color:#888;padding:20px">נתוני פרוטוקולים לא נטענו</p>';
+            return;
+        }
+
+        const filter = document.getElementById('proto-city-filter').value;
+        const container = document.getElementById('proto-browser-list');
+
+        // Populate filter dropdown (once)
+        const select = document.getElementById('proto-city-filter');
+        if (select.options.length <= 1) {
+            for (const [key, cityData] of Object.entries(PROTOCOLS)) {
+                const opt = document.createElement('option');
+                opt.value = key;
+                opt.textContent = cityData.city_name + ' (' + cityData.extracted_count + ')';
+                select.appendChild(opt);
+            }
+        }
+
+        // Collect protocols to show
+        let allProtos = [];
+        for (const [key, cityData] of Object.entries(PROTOCOLS)) {
+            if (filter !== 'all' && filter !== key) continue;
+            for (const p of cityData.protocols) {
+                allProtos.push({...p, city_key: key, city_name: cityData.city_name});
+            }
+        }
+
+        // Sort by hit count desc
+        allProtos.sort((a, b) => b.hit_count - a.hit_count);
+
+        document.getElementById('proto-browser-count').textContent =
+            allProtos.length + ' פרוטוקולים' + (allProtos.filter(p => p.hit_count > 0).length
+                ? ' | ' + allProtos.filter(p => p.hit_count > 0).length + ' עם מילות מפתח'
+                : '');
+
+        let html = '';
+        for (const p of allProtos) {
+            const uid = 'pbr-' + (_protoIdx++);
+            const dateStr = p.date && p.date !== 'UNDATED' ? p.date : 'ללא תאריך';
+            const kwHits = p.keyword_hits || {};
+            const kwPills = Object.entries(kwHits)
+                .sort((a, b) => b[1] - a[1])
+                .slice(0, 10)
+                .map(([kw, c]) => {
+                    const isRed = (HIGHLIGHT_KEYWORDS.red_flag || []).includes(kw);
+                    return '<span class="proto-kw-pill' + (isRed ? ' red' : '') + '">' + c + '× ' + kw + '</span>';
+                }).join('');
+
+            html += '<div class="proto-card" onclick="toggleProtoCard(\'' + uid + '\',this)">' +
+                '<div class="proto-card-header">' +
+                    '<div>' +
+                        '<div class="proto-card-title">' + p.city_name + ' — ' + p.filename.replace(/\.pdf$/, '') + '</div>' +
+                        '<div class="proto-card-meta">' + dateStr + ' | ' + (p.text_length || 0).toLocaleString() + ' תווים</div>' +
+                    '</div>' +
+                    '<div class="proto-card-badges">' +
+                        '<span class="proto-hit-badge ' + hitBadgeClass(p.hit_count) + '">' +
+                            p.hit_count + ' מילות מפתח' +
+                        '</span>' +
+                    '</div>' +
+                '</div>' +
+                (kwPills ? '<div class="proto-kw-summary">' + kwPills + '</div>' : '') +
+                '<div class="proto-card-text" id="' + uid + '"></div>' +
+            '</div>';
+        }
+
+        container.innerHTML = html;
+
+        // Store protocol data for lazy rendering
+        container._protocols = allProtos;
+    }
+
+    function toggleProtoCard(uid, card) {
+        const el = document.getElementById(uid);
+        if (!el) return;
+        const wasVisible = el.classList.contains('visible');
+        el.classList.toggle('visible');
+        card.classList.toggle('expanded');
+
+        // Lazy-render text with highlighting on first open
+        if (!wasVisible && !el.dataset.rendered) {
+            const container = document.getElementById('proto-browser-list');
+            const idx = parseInt(uid.replace('pbr-', ''));
+            // Find protocol by matching uid offset
+            const cards = container.querySelectorAll('.proto-card');
+            let cardIdx = 0;
+            for (let i = 0; i < cards.length; i++) {
+                if (cards[i] === card) { cardIdx = i; break; }
+            }
+            const protos = container._protocols;
+            if (protos && protos[cardIdx]) {
+                el.innerHTML = highlightKeywords(protos[cardIdx].text);
+            }
+            el.dataset.rendered = '1';
+        }
+    }
+
+    // Switch to protocols tab filtered to a specific city
+    function showCityProtocols(cityKey) {
+        switchTab('protocols', document.querySelectorAll('.nav-tab')[2]);
+        // Wait for DOM to settle, then set filter
+        setTimeout(() => {
+            const select = document.getElementById('proto-city-filter');
+            if (select) {
+                select.value = cityKey;
+                renderProtocolBrowser();
+                // Scroll to protocol browser
+                const header = document.querySelector('.proto-browser-header');
+                if (header) header.scrollIntoView({behavior: 'smooth'});
+            }
+        }, 100);
     }
 
     // ── Initial render ──
