@@ -1,8 +1,8 @@
 /**
- * research_orgs.js — Deep research profiles for 14 investigated organizations
+ * research_orgs.js — Deep research profiles for 29 investigated organizations
  * Generated from deep_research_*.md files (2026-02-16)
  * Cross-referenced with org_city_chalatz_mapping.json (1820 orgs × 20 cities)
- * Batch 1: 7 orgs | Batch 2: 7 orgs
+ * Batch 1: 7 orgs | Batch 2: 7 orgs | Batch 3: 15 orgs
  *
  * Source data: https://github.com/aosshalem-dev/derug-arim-site
  * Methodology: Multi-agent deep research (4-6 parallel agents per org)
@@ -482,28 +482,471 @@ const RESEARCH_ORGS = {
       ]
     }
   },
+    "AIDS_Task_Force": {
+      "name_he": "הוועד למלחמה באיידס (ע\"ר)",
+      "name_en": "Israel AIDS Task Force (IATF)",
+      "reg": "580104545",
+      "entity_type": "עמותה",
+      "founded": 1985,
+      "revenue_nis": 3816413,
+      "gov_pct": 0.03,
+      "staff": 14,
+      "neutrality": 2,
+      "transparency": 3,
+      "ideology_detected": true,
+      "cities": ["תל אביב-יפו", "הרצליה", "חיפה", "ירושלים", "באר שבע"],
+      "thesis": "ארגון בריאות שהתפתח מעבר למנדט HIV/איידס ל'מיניות בריאה' ותעמולת להט\"ב. מימון NIF מאז הייסוד, ניגוד עניינים עם גלעד סיינסס.",
+      "key_findings": [
+        "מונופול לאומי — הגוף הלא-ממשלתי היחיד בתחום האיידס",
+        "מימון NIF מאז 1985, מיזוג עם 'בלה דואגת' (2002) הטמיע להט\"ב מוסדית",
+        "פיבוט אסטרטגי 2019 מ-HIV ל'מיניות בריאה' — סחיפת משימה",
+        "ניגוד עניינים: מימון מגלעד (יצרנית PrEP) תוך קידום נגישות PrEP",
+        "תוכנית גפ\"ן #1102 (37K ₪) = נקודת גישה, לא מקור הכנסה"
+      ],
+      "risk": "medium",
+      "funding_sources": "תרומות (55%), קרנות (12%), גלעד סיינסס, NIF ארוך-שנים",
+      "report_url": "research/deep_AIDS_Task_Force.md",
+      "source_links": [
+        {"label": "GuideStar IL", "url": "https://www.guidestar.org.il/organization/580104545"},
+        {"label": "obudget.org", "url": "https://next.obudget.org/i/org/association/580104545"},
+        {"label": "אתר רשמי", "url": "https://www.aidsisrael.org.il/"}
+      ]
+    },
+    "Yesod": {
+      "name_he": "יסוד — העמותה לקידום זכויות יסוד ודמוקרטיה",
+      "name_en": "Yesod — Basic Rights & Democracy",
+      "reg": "580558997",
+      "entity_type": "עמותה",
+      "founded": 2012,
+      "revenue_nis": 1778412,
+      "gov_pct": 0,
+      "staff": 5,
+      "neutrality": 2,
+      "transparency": 3,
+      "ideology_detected": true,
+      "cities": ["תל אביב-יפו", "הרצליה"],
+      "thesis": "ארגון חינוך אזרחי ממומן ע\"י משה ינאי (פשט רגל 10/2025). ועדת היגוי ליברלית לחלוטין — דן מרידור, קולט אביטל, גבריאלה שלו.",
+      "key_findings": [
+        "סיכון קיומי: המממן העיקרי משה ינאי פשט רגל עם חובות 120M$+",
+        "ועדת היגוי ליברלית: דן מרידור, קולט אביטל, גבריאלה שלו — אין ייצוג ימני",
+        "5 עובדים בלבד אך טוען ל-76,000 תלמידים ב-250 בתי ספר",
+        "אפס מימון NIF, EU או זר — פרויקט פילנתרופיה אישי"
+      ],
+      "risk": "medium",
+      "funding_sources": "משה ינאי (פושט רגל). אפס מימון ממשלתי או זר.",
+      "report_url": "research/deep_Yesod.md",
+      "source_links": [
+        {"label": "GuideStar IL", "url": "https://www.guidestar.org.il/organization/580558997"},
+        {"label": "obudget.org", "url": "https://next.obudget.org/i/org/association/580558997"},
+        {"label": "אתר רשמי", "url": "https://www.yesod.ngo/"}
+      ]
+    },
+    "Rossing_Center": {
+      "name_he": "מרכז רוסינג לחינוך ודיאלוג",
+      "name_en": "Rossing Center for Education and Dialogue",
+      "reg": "513816421",
+      "entity_type": "חל\"צ",
+      "founded": 2004,
+      "revenue_nis": null,
+      "gov_pct": null,
+      "staff": null,
+      "neutrality": 4,
+      "transparency": 3,
+      "ideology_detected": false,
+      "cities": ["ירושלים"],
+      "thesis": "ארגון דו-דתי ירושלמי. 'מחנכים לשינוי' = הכשרת מורים לדיאלוג, לא תאוריה ביקורתית של גזע. מימון כנסייתי אירופי, לא NIF.",
+      "key_findings": [
+        "מייסד למד בסמינר לותרני — DNA של דיאלוג נוצרי-יהודי",
+        "מימון מכנסיות: Misereor (קתולי גרמני), DVHL, כנסיית שוודיה",
+        "לא NIF — יוצא דופן לארגון בתחום הדו-קיום",
+        "לא מופיע ב-NGO Monitor — פרופיל מחלוקת נמוך",
+        "דוח 2024: 111 מקרי אלימות נגד נוצרים בישראל"
+      ],
+      "risk": "low-moderate",
+      "funding_sources": "כנסיות אירופיות (Misereor, DVHL, שוודיה), שגרירות ארה\"ב ($8K), PEF Israel",
+      "report_url": "research/deep_Rossing_Center.md",
+      "source_links": [
+        {"label": "GuideStar IL", "url": "https://www.guidestar.org.il/organization/513816421"},
+        {"label": "אתר רשמי", "url": "https://rossingcenter.org/"}
+      ]
+    },
+    "Ladaat": {
+      "name_he": "לדעת — לבחור נכון",
+      "name_en": "Ladaat — Choose Well",
+      "reg": "580055911",
+      "entity_type": "עמותה",
+      "founded": 1976,
+      "revenue_nis": 1345480,
+      "gov_pct": 0,
+      "staff": 30,
+      "neutrality": 2,
+      "transparency": 4,
+      "ideology_detected": true,
+      "cities": ["ירושלים"],
+      "thesis": "ארגון חינוך מיני ותיק (1976). שקוף כעמותה, אך מנכ\"לית מובילה 'פורום 21' לביטול ועדות הפלה — שחקן פוליטי.",
+      "key_findings": [
+        "הוותיק ביותר בתחום (1976) — 48 שנות פעילות",
+        "אדבוקסיה פוליטית: פורום 21 לביטול ועדות הפסקת הריון",
+        "6,000+ פניות ייעוץ חינם מאז 2018, כולל קטינים ללא הסכמת הורים",
+        "חבר SEI — אותה רשת כמו מידע אמין ומגע בתיאום",
+        "צוות ערבי ייעודי — פועל בעברית וערבית"
+      ],
+      "risk": "medium",
+      "funding_sources": "תרומות, PEF Israel (חסות פיסקלית), גפ\"ן. אין NIF.",
+      "report_url": "research/deep_Ladaat.md",
+      "source_links": [
+        {"label": "GuideStar IL", "url": "https://www.guidestar.org.il/organization/580055911"},
+        {"label": "obudget.org", "url": "https://next.obudget.org/i/org/association/580055911"},
+        {"label": "אתר רשמי", "url": "https://ladaat.org.il/"}
+      ]
+    },
+    "Todaa": {
+      "name_he": "מהפך תודעתי (ע\"ר)",
+      "name_en": "Todaa Association (Mahapach Todaati)",
+      "reg": "580396380",
+      "entity_type": "עמותה",
+      "founded": 2002,
+      "revenue_nis": 1359494,
+      "gov_pct": 0.79,
+      "staff": 5,
+      "neutrality": 1,
+      "transparency": 2,
+      "ideology_detected": true,
+      "cities": ["רמת גן", "תל אביב-יפו"],
+      "thesis": "פדגוגיה ביקורתית פמיניסטית. 6/6 דגלי נושא — שיא. ספק יחיד ממשרד הרווחה. מנכ\"לית משלבת אקדמיה, JDC ולובי פמיניסטי.",
+      "key_findings": [
+        "6 דגלי נושא בגפ\"ן — שיא חסר תקדים",
+        "ספק יחיד: חוזי משרד הרווחה ללא מכרז",
+        "שקיפות 49% ב-GuideStar (2/5)",
+        "מנכ\"לית חוקרת 'הנאה מינית' בקרב נערות — מיושם בתוכניות",
+        "אקטיביזם כמטרת לימוד מפורשת"
+      ],
+      "risk": "medium-high",
+      "funding_sources": "משרד הרווחה (79%), ספק יחיד 129K ₪ (2025), גפ\"ן 17.6K",
+      "report_url": "research/deep_Todaa.md",
+      "source_links": [
+        {"label": "GuideStar IL", "url": "https://www.guidestar.org.il/organization/580396380"},
+        {"label": "obudget.org", "url": "https://next.obudget.org/i/org/association/580396380"},
+        {"label": "אתר רשמי", "url": "https://www.todaango.org.il/"}
+      ]
+    },
+    "Or_Gelbard": {
+      "name_he": "כל השאלות נכונות / אלפי גלברד",
+      "name_en": "Kol HaShelot Nekhonot / Alfi Gelbard",
+      "reg": null,
+      "entity_type": "עוסק מורשה",
+      "founded": 2014,
+      "revenue_nis": 204668,
+      "gov_pct": null,
+      "staff": 1,
+      "neutrality": 2,
+      "transparency": 2,
+      "ideology_detected": true,
+      "cities": ["תל אביב-יפו", "רמת השרון", "רמת גן", "ירושלים", "באר שבע"],
+      "thesis": "עוסק מורשה יחיד עם 204K ₪ מכספי ציבור. הוסמך ע\"י IPPF/דלת פתוחה. מערכת הסמכה עצמית.",
+      "key_findings": [
+        "204K ₪ = התקציב הגבוה ביותר בקטגוריית R4, ללא שקיפות ארגונית",
+        "MA פסיכולוגיה + עבודה סוציאלית מ-TAU (תוכנית טאובמן)",
+        "63+ מאמרי הארץ — נוכחות תקשורתית חריגה",
+        "מאמר דעה נגד אבי מאוז — פעיל פוליטית",
+        "הסמכה עצמית: IPPF → SEI → אותו מעגל"
+      ],
+      "risk": "moderate",
+      "funding_sources": "גפ\"ן (204K ₪), ספרים, הרצאות פרטיות",
+      "report_url": "research/deep_Or_Gelbard.md",
+      "source_links": [
+        {"label": "אתר רשמי", "url": "https://www.kolhashelot.org/"},
+        {"label": "SEI", "url": "https://sei.org.il/"}
+      ]
+    },
+    "Sexual_Assault_Centers": {
+      "name_he": "איגוד מרכזי הסיוע לנפגעות תקיפה מינית (ARCCI)",
+      "name_en": "Association of Rape Crisis Centers in Israel",
+      "reg": "580173730",
+      "entity_type": "עמותה",
+      "founded": 1990,
+      "revenue_nis": 16445238,
+      "gov_pct": 0.01,
+      "staff": 12,
+      "neutrality": 3,
+      "transparency": 4,
+      "ideology_detected": false,
+      "cities": ["תל אביב-יפו", "הרצליה", "חיפה", "ירושלים", "קרית שמונה", "באר שבע", "הוד השרון"],
+      "thesis": "רשת 9 מרכזי סיוע + ארגון גג. 'יחד בהסכמה' (192K ₪) = חלק זעיר מפעילות משברית. תוכנית ממוקדת הסכמה, לא תאוריית מגדר.",
+      "key_findings": [
+        "רשת פדרטיבית: 9 מרכזים + ארגון גג, מחזור מצרפי 113M ₪",
+        "תקציב גפ\"ן = פחות מ-0.5% מהפעילות",
+        "מימון NIF היסטורי: NIF 'טיפח' את ARCCI",
+        "200,000 בני נוער/שנה — תוכנית מניעה ארצית",
+        "מנכ\"לית אורית סוליציאנו — דוברת שדולת הנשים לשעבר"
+      ],
+      "risk": "low",
+      "funding_sources": "משרד הרווחה (למרכזים), NIF (היסטורי), Hadassah Foundation, UJA-Federation NY",
+      "report_url": "research/deep_Sexual_Assault_Centers.md",
+      "source_links": [
+        {"label": "GuideStar (ARCCI)", "url": "https://www.guidestar.org.il/organization/580173730"},
+        {"label": "NIF", "url": "https://www.nif.org/tag/association-of-rape-crisis-centers/"}
+      ]
+    },
+    "Markam_Social_Space": {
+      "name_he": "למרחב לשינוי חברתי — המרחב החברתי",
+      "name_en": "The Social Space (LaMerhav LeShinu'i Chevrati)",
+      "reg": "580354538",
+      "entity_type": "עמותה",
+      "founded": 2000,
+      "revenue_nis": 3370629,
+      "gov_pct": 0.05,
+      "staff": 11,
+      "neutrality": 2,
+      "transparency": 2,
+      "ideology_detected": true,
+      "cities": ["תל אביב-יפו", "הרצליה", "ירושלים", "קרית אונו", "רמת השרון"],
+      "thesis": "סיור אודיו בתוך מועדון חשפנות לשעבר ('הפוסיקט') בכיכר אתרים. הגוף המפעיל 580354538, לא 'מרקם' 580541910 — בלבול שמות בגפ\"ן.",
+      "key_findings": [
+        "בלבול זהות: ספק גפ\"ן 'מרקם' ≠ מרקם-רשת הקהילות",
+        "תלמידים חווים מועדון חשפנות סגור עם אוזניות",
+        "3.37M ₪, 95% מימון פרטי לא מפורט",
+        "JTLV (נדל\"ן) תרמה הבניין",
+        "סיורים נפרדים לגברים ונשים — גישה מגדרית"
+      ],
+      "risk": "moderate",
+      "funding_sources": "JTLV (בניין), משרד הרווחה (162K), גפ\"ן (44K), 95% פרטי",
+      "report_url": "research/deep_Markam.md",
+      "source_links": [
+        {"label": "GuideStar (580354538)", "url": "https://www.guidestar.org.il/organization/580354538"},
+        {"label": "obudget.org", "url": "https://next.obudget.org/i/org/association/580354538"},
+        {"label": "המרחב החברתי", "url": "https://www.socialspace.org.il/"}
+      ]
+    },
+    "Chevruta": {
+      "name_he": "חברותא — המרכז למודעות יהודית",
+      "name_en": "Chevruta — Center for Jewish Awareness",
+      "reg": "580479608",
+      "entity_type": "עמותה",
+      "founded": 2007,
+      "revenue_nis": 9044412,
+      "gov_pct": 0.56,
+      "staff": 27,
+      "neutrality": 1,
+      "transparency": 2,
+      "ideology_detected": true,
+      "cities": ["תל אביב-יפו", "הרצליה", "חיפה", "ירושלים", "רמת גן", "רעננה", "ראש העין", "באר שבע"],
+      "thesis": "גרעין תורני ציוני-דתי. עקיבא סמוטריץ' (אח שר האוצר) בדירקטוריון. קשור לתנועת קוממיות. 10.4M ₪ מימון ממשלתי מצטבר.",
+      "key_findings": [
+        "עקיבא סמוטריץ' (אח שר האוצר) בדירקטוריון",
+        "מייסד יאיר קרטמן — חבר הנהלת 'קוממיות', מבית אל",
+        "חקירת ידיעות אחרונות 2018: כספי התיישבות הועברו לת\"א",
+        "6.3M ₪ ממשרד החינוך + 1.7M ממוסדות תורניים",
+        "'מודעות יהודית' = קירוב דתי, לא פלורליזם"
+      ],
+      "risk": "high",
+      "funding_sources": "משרד החינוך (6.3M), מוסדות תורניים (1.7M), התיישבות (1.26M), Charidy",
+      "report_url": "research/deep_Chevruta.md",
+      "source_links": [
+        {"label": "GuideStar IL", "url": "https://www.guidestar.org.il/organization/580479608"},
+        {"label": "obudget.org", "url": "https://next.obudget.org/i/org/association/580479608"},
+        {"label": "חקירת ידיעות אחרונות", "url": "https://www.yediot.co.il/articles/0,7340,L-5148194,00.html"}
+      ]
+    },
+    "Kehalim_Shluvim": {
+      "name_he": "קהלים שלובים לשינוי חברתי (חל\"צ)",
+      "name_en": "Kehalim Shluvim for Social Change",
+      "reg": "515521748",
+      "entity_type": "חל\"צ",
+      "founded": 2017,
+      "revenue_nis": 384143,
+      "gov_pct": 0,
+      "staff": 0,
+      "neutrality": 2,
+      "transparency": 2,
+      "ideology_detected": true,
+      "cities": ["תל אביב-יפו", "רמת השרון", "הרצליה", "הוד השרון", "ראש העין"],
+      "thesis": "חברת גישור מסחרית (גומא גבים) יצרה חל\"צ ללא עובדים כדי לגשת לתקציבי חינוך. 7 דגלי נושא. נוסדה אחרי רצח רבין.",
+      "key_findings": [
+        "דפוס חברת קש: 0 עובדים, 0 מתנדבים מדווחים — שליטה מלאה ע\"י גומא גבים",
+        "7 דגלי נושא — שיא בגפ\"ן",
+        "מנדט מפורש ל'שינוי תרבות השיח' — נוסד אחרי רצח רבין",
+        "אין הערכה עצמאית, אין מחקר אקדמי",
+        "384K ₪ הכנסות עם 0 עובדים = סתירה מבנית"
+      ],
+      "risk": "moderate",
+      "funding_sources": "גפ\"ן (70K ₪ דרך בתי ספר). תזרים אמיתי דרך גומא גבים.",
+      "report_url": "research/deep_Kehalim_Shluvim.md",
+      "source_links": [
+        {"label": "GuideStar IL", "url": "https://www.guidestar.org.il/organization/515521748"},
+        {"label": "גומא גבים", "url": "https://www.gomegevim.co.il/social/social_audience/"}
+      ]
+    },
+    "Teva_HaAdam": {
+      "name_he": "טבע האדם / כספי אלדד",
+      "name_en": "Teva HaAdam / Eldad Kaspi",
+      "reg": null,
+      "entity_type": "עוסק מורשה",
+      "founded": null,
+      "revenue_nis": 256369,
+      "gov_pct": null,
+      "staff": 1,
+      "neutrality": 4,
+      "transparency": 2,
+      "ideology_detected": false,
+      "cities": ["כרמיאל", "קרית גת", "רמת גן", "רמת השרון"],
+      "thesis": "עוסק מורשה — MSc רפואה (לא חינוך). פסיכולוגיה פופולרית, 'קבל את האחר'. מדריך מתארח גם בארגון ציוני-לאומי — ניטרלי אידיאולוגית.",
+      "key_findings": [
+        "תארים במדעי הרפואה — לא חינוך או פסיכולוגיה",
+        "256K ₪ ל-10 בתי ספר = חריג לעוסק מורשה",
+        "טביעת רגל דיגיטלית אפסית למרות טענה לעשרות אלפי תלמידים",
+        "מדריך מתארח ב'דרך עמ\"י' (ארגון לאומי) — מוכר לשני הצדדים",
+        "גישה אינדיבידואלית נגד דעות קדומות, לא ניתוח מבני"
+      ],
+      "risk": "low-moderate",
+      "funding_sources": "גפ\"ן (256K ₪), סדנאות פרטיות ותאגידיות",
+      "report_url": "research/deep_Teva_HaAdam.md",
+      "source_links": [
+        {"label": "אתר רשמי", "url": "https://tevahadam.co.il/"}
+      ]
+    },
+    "CHOSHEN": {
+      "name_he": "חוש\"ן — חינוך ושינוי",
+      "name_en": "CHOSHEN (Hoshen) — LGBTQ Education",
+      "reg": "513544494",
+      "entity_type": "חל\"צ",
+      "founded": 2004,
+      "revenue_nis": null,
+      "gov_pct": null,
+      "staff": null,
+      "neutrality": 1,
+      "transparency": 2,
+      "ideology_detected": true,
+      "cities": [],
+      "thesis": "ארגון חד-נושאי: כל 6 תוכניות גפ\"ן = נטייה מינית וזהות מגדרית. 250 מתנדבים להט\"ב. קיצוץ 85% ב-2024 ע\"י אבי מאוז.",
+      "key_findings": [
+        "6 תוכניות גפ\"ן כולן מתויגות 'מגדר'",
+        "קיצוץ 85%: מ-3M ₪ ל-300K, 4,200 סדנאות בוטלו",
+        "250 מתנדבים להט\"ב מספרים סיפורים אישיים מכיתה ז'",
+        "מימון NIF ($15K) + A Wider Bridge (ארה\"ב)",
+        "פער: בעברית 'אדבוקסיה', באנגלית 'חינוך ומידע'"
+      ],
+      "risk": "medium",
+      "funding_sources": "משרד החינוך (קוצץ 85%), עיריית ת\"א, NIF, A Wider Bridge",
+      "report_url": "research/deep_CHOSHEN.md",
+      "source_links": [
+        {"label": "GuideStar IL", "url": "https://www.guidestar.org.il/organization/513544494"},
+        {"label": "אתר רשמי", "url": "https://www.hoshen.org/"}
+      ]
+    },
+    "Yad_BYad": {
+      "name_he": "יד ביד: המרכז לחינוך יהודי ערבי",
+      "name_en": "Hand in Hand: Jewish-Arab Education",
+      "reg": "580293710",
+      "entity_type": "עמותה",
+      "founded": 1997,
+      "revenue_nis": 45095891,
+      "gov_pct": 0,
+      "staff": 270,
+      "neutrality": 2,
+      "transparency": 4,
+      "ideology_detected": true,
+      "cities": ["תל אביב-יפו", "חיפה", "ירושלים"],
+      "thesis": "פרויקט הדו-קיום המרכזי: 6 בתי ספר דו-לשוניים, מודל נרטיב-כפול (נכבה ויום עצמאות). $9M/שנה מארה\"ב. 45M ₪.",
+      "key_findings": [
+        "45M ₪ + $9M מארה\"ב — אפס מימון ממשלתי ישיר",
+        "501(c)(3) בפורטלנד — Charity Navigator 4/4 (98%)",
+        "נרטיב-כפול: הנצחת נכבה לצד יום העצמאות — מחוץ לקונצנזוס",
+        "הצתה 2014 ע\"י קיצוניים מ'להבה'",
+        "דמוגרפיה 60/40 ערבים-יהודים, נטישת משפחות יהודיות"
+      ],
+      "risk": "moderate",
+      "funding_sources": "USAID, NIF Australia, UJA-Federation NY, DEAR (שוויץ), Sternsinger (גרמניה), Pears (UK)",
+      "report_url": "research/deep_Yad_BYad.md",
+      "source_links": [
+        {"label": "GuideStar IL", "url": "https://www.guidestar.org.il/organization/580293710"},
+        {"label": "אתר (עברית)", "url": "https://www.hih.org.il"},
+        {"label": "ProPublica 990", "url": "https://projects.propublica.org/nonprofits/organizations/931269590"},
+        {"label": "Charity Navigator", "url": "https://www.charitynavigator.org/ein/931269590"}
+      ]
+    },
+    "Efshar_Acheret": {
+      "name_he": "אפשר אחרת",
+      "name_en": "A New Way (Efshar Acheret)",
+      "reg": "580316297",
+      "entity_type": "עמותה",
+      "founded": 1998,
+      "revenue_nis": 1876658,
+      "gov_pct": 0,
+      "staff": 13,
+      "neutrality": 4,
+      "transparency": 2,
+      "ideology_detected": false,
+      "cities": ["תל אביב-יפו", "הוד השרון", "קרית אונו", "ראש העין", "רמת השרון"],
+      "thesis": "דו-קיום יהודי-ערבי בנמוך-פרופיל. מודל תאומות בתי ספר. בגרות אזרחות משותפת ראשונה (2017). פרס אחדות ירושלים (מרכז-ימין).",
+      "key_findings": [
+        "מסגור אזרחי ('חיים משותפים') — לא פוליטי",
+        "פרס אחדות ירושלים 2022 — קבלה ממסדית מימין",
+        "בגרות אזרחות משותפת עם רשת אמל — יחידה בישראל",
+        "מייסדת עברה לגור בכפר קאסם — מחויבות אישית",
+        "אפס NIF, EU או מימון ממשלתי"
+      ],
+      "risk": "low",
+      "funding_sources": "תרומות פרטיות, קרן IFA, גפ\"ן (47K). אפס מימון ממשלתי או זר.",
+      "report_url": "research/deep_Efshar_Acheret.md",
+      "source_links": [
+        {"label": "GuideStar IL", "url": "https://www.guidestar.org.il/organization/580316297"},
+        {"label": "אתר רשמי", "url": "https://www.anewway.org.il/"}
+      ]
+    },
+    "Tehuda": {
+      "name_he": "תהודה הכשרה והעשרה (חל\"צ)",
+      "name_en": "Tehuda — Education, Impact, Community",
+      "reg": "515191955",
+      "entity_type": "חל\"צ",
+      "founded": 2015,
+      "revenue_nis": 1625488,
+      "gov_pct": 0,
+      "staff": 26,
+      "neutrality": 2,
+      "transparency": 2,
+      "ideology_detected": true,
+      "cities": ["תל אביב-יפו", "הרצליה"],
+      "thesis": "מנכ\"לית יו\"ר ועדת ביקורת של SEI — לולאת הסמכה עצמית. הוסמכה IPPF/דלת פתוחה. BA קולנוע, לא קליני.",
+      "key_findings": [
+        "לולאת הסמכה: מנכ\"לית יו\"ר ביקורת SEI שמכיר בתוכנית שלה",
+        "BA קולנוע והומניסטיקה — לא פסיכולוגיה או חינוך",
+        "הסמכה IPPF דרך 'דלת פתוחה' — צינור בינלאומי",
+        "~20 מנחי מיניות ארצית",
+        "CSE פרוגרסיבי: זהות מגדרית ונטיה מינית"
+      ],
+      "risk": "moderate",
+      "funding_sources": "גפ\"ן, חוזים עירוניים (מודיעין), הזמנות ישירות. אפס מימון ממשלתי.",
+      "report_url": "research/deep_Tehuda.md",
+      "source_links": [
+        {"label": "GuideStar IL", "url": "https://www.guidestar.org.il/he/organization/515191955"},
+        {"label": "מין חינוך שכזה", "url": "https://min-hinuch.co.il/"},
+        {"label": "SEI", "url": "https://sei.org.il/"}
+      ]
+    }
+  },
 
   /** City → org keys mapping for quick lookup in detail panels */
   "city_orgs": {
     "אריאל": ["Maga_BeTiaum"],
-    "באר שבע": ["Hartman", "Democratic_Institute", "Yedidut_Toronto", "Matzmichim", "Mind_Lab", "Yesodot_Dror", "Shaar_Shivion", "Gesher"],
+    "באר שבע": ["Hartman", "Democratic_Institute", "Yedidut_Toronto", "Matzmichim", "Mind_Lab", "Yesodot_Dror", "Shaar_Shivion", "Gesher", "AIDS_Task_Force", "Or_Gelbard", "Sexual_Assault_Centers", "Chevruta"],
     "גבעת שמואל": ["Matzmichim", "Meyda_Amin"],
     "גבעתיים": ["Matzmichim", "Meyda_Amin"],
-    "הוד השרון": ["Matzmichim", "Maga_BeTiaum", "Meyda_Amin", "Gesher"],
-    "הרצליה": ["Matzmichim", "Mind_Lab", "Yesodot_Dror", "Maga_BeTiaum", "Meyda_Amin", "Gesher"],
-    "חיפה": ["Hartman", "Yedidut_Toronto", "Matzmichim", "Mind_Lab", "Yesodot_Dror", "Shaar_Shivion", "Alliance_Israel", "Meyda_Amin", "Gesher"],
-    "ירושלים": ["Hartman", "Democratic_Institute", "Yedidut_Toronto", "Mind_Lab", "Yesodot_Dror", "Shaar_Shivion", "Alliance_Israel", "Meyda_Amin", "Gesher"],
-    "כרמיאל": ["Hartman", "Matzmichim", "Mind_Lab", "Yesodot_Dror", "Meyda_Amin"],
+    "הוד השרון": ["Matzmichim", "Maga_BeTiaum", "Meyda_Amin", "Gesher", "Sexual_Assault_Centers", "Kehalim_Shluvim", "Efshar_Acheret"],
+    "הרצליה": ["Matzmichim", "Mind_Lab", "Yesodot_Dror", "Maga_BeTiaum", "Meyda_Amin", "Gesher", "AIDS_Task_Force", "Yesod", "Sexual_Assault_Centers", "Markam_Social_Space", "Chevruta", "Kehalim_Shluvim", "Tehuda"],
+    "חיפה": ["Hartman", "Yedidut_Toronto", "Matzmichim", "Mind_Lab", "Yesodot_Dror", "Shaar_Shivion", "Alliance_Israel", "Meyda_Amin", "Gesher", "AIDS_Task_Force", "Sexual_Assault_Centers", "Chevruta", "Yad_BYad"],
+    "ירושלים": ["Hartman", "Democratic_Institute", "Yedidut_Toronto", "Mind_Lab", "Yesodot_Dror", "Shaar_Shivion", "Alliance_Israel", "Meyda_Amin", "Gesher", "AIDS_Task_Force", "Rossing_Center", "Ladaat", "Or_Gelbard", "Sexual_Assault_Centers", "Markam_Social_Space", "Chevruta", "Yad_BYad"],
+    "כרמיאל": ["Hartman", "Matzmichim", "Mind_Lab", "Yesodot_Dror", "Meyda_Amin", "Teva_HaAdam"],
     "נתיבות": ["Matzmichim", "Alliance_Israel"],
     "עמנואל": [],
     "אפרת": [],
-    "קרית אונו": ["Matzmichim", "Yesodot_Dror", "Meyda_Amin"],
-    "קרית גת": ["Yedidut_Toronto", "Matzmichim", "Yesodot_Dror", "Shaar_Shivion", "Alliance_Israel", "Meyda_Amin"],
-    "קרית שמונה": ["Matzmichim", "Meyda_Amin"],
-    "ראש העין": ["Matzmichim", "Yesodot_Dror", "Maga_BeTiaum", "Meyda_Amin"],
-    "רמת גן": ["ACRI", "Hartman", "Matzmichim", "Meyda_Amin"],
-    "רמת השרון": ["ACRI", "Hartman", "Havatzelet", "Matzmichim", "Yesodot_Dror", "Maga_BeTiaum", "Meyda_Amin"],
-    "רעננה": ["Democratic_Institute", "Matzmichim", "Yesodot_Dror", "Maga_BeTiaum", "Meyda_Amin"],
-    "תל אביב-יפו": ["Hartman", "Matzmichim", "Mind_Lab", "Yesodot_Dror", "Shaar_Shivion", "Alliance_Israel", "Maga_BeTiaum", "Meyda_Amin"]
+    "קרית אונו": ["Matzmichim", "Yesodot_Dror", "Meyda_Amin", "Markam_Social_Space", "Efshar_Acheret"],
+    "קרית גת": ["Yedidut_Toronto", "Matzmichim", "Yesodot_Dror", "Shaar_Shivion", "Alliance_Israel", "Meyda_Amin", "Teva_HaAdam"],
+    "קרית שמונה": ["Matzmichim", "Meyda_Amin", "Sexual_Assault_Centers"],
+    "ראש העין": ["Matzmichim", "Yesodot_Dror", "Maga_BeTiaum", "Meyda_Amin", "Chevruta", "Kehalim_Shluvim", "Efshar_Acheret"],
+    "רמת גן": ["ACRI", "Hartman", "Matzmichim", "Meyda_Amin", "Todaa", "Or_Gelbard", "Chevruta", "Teva_HaAdam"],
+    "רמת השרון": ["ACRI", "Hartman", "Havatzelet", "Matzmichim", "Yesodot_Dror", "Maga_BeTiaum", "Meyda_Amin", "Or_Gelbard", "Markam_Social_Space", "Kehalim_Shluvim", "Teva_HaAdam", "Efshar_Acheret"],
+    "רעננה": ["Democratic_Institute", "Matzmichim", "Yesodot_Dror", "Maga_BeTiaum", "Meyda_Amin", "Chevruta"],
+    "תל אביב-יפו": ["Hartman", "Matzmichim", "Mind_Lab", "Yesodot_Dror", "Shaar_Shivion", "Alliance_Israel", "Maga_BeTiaum", "Meyda_Amin", "AIDS_Task_Force", "Yesod", "Todaa", "Or_Gelbard", "Sexual_Assault_Centers", "Markam_Social_Space", "Chevruta", "Kehalim_Shluvim", "Yad_BYad", "Efshar_Acheret", "Tehuda"]
   }
 };
