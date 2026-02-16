@@ -325,7 +325,10 @@
         }
         .about-section .source-tag {
             background: #e8f0f8; padding: 4px 12px; border-radius: 4px;
-            font-size: 0.8em; color: #2a5a8a;
+            font-size: 0.8em; color: #2a5a8a; text-decoration: none;
+        }
+        .about-section a.source-tag:hover {
+            background: #d0e0f0; text-decoration: underline;
         }
 
         footer {
@@ -738,7 +741,7 @@
     <div class="about-section">
         <h3>אודות הפרויקט</h3>
         <p>
-            <strong>פרויקט אלכסון — דירוג ערים</strong> הוא כלי מחקר ייעודי לניתוח חדירה אידיאולוגית-ערכית
+            <strong>פרויקט זהות ציונית — דירוג ערים</strong> הוא כלי מחקר ייעודי לניתוח חדירה אידיאולוגית-ערכית
             למערכת החינוך העירונית בישראל. הפרויקט משלב שלושה מקורות נתונים עצמאיים לבניית תמונה חוצת-מקורות.
         </p>
         <p>
@@ -746,17 +749,19 @@
             ומחקר מעמיק על ארגונים הפועלים במערכת. כל ממצא מגובה במקור ציבורי הזמין לבדיקה.
         </p>
         <div class="data-sources">
-            <span class="source-tag">מערכת גפ"ן — משרד החינוך</span>
-            <span class="source-tag">פרוטוקולי מועצות עיר</span>
-            <span class="source-tag">GuideStar — רשם העמותות</span>
-            <span class="source-tag">NGO Monitor</span>
-            <span class="source-tag">דוחות כספיים ציבוריים</span>
+            <a href="https://apps.education.gov.il/gefen" target="_blank" class="source-tag">מערכת גפ"ן — משרד החינוך</a>
+            <a href="https://aosshalem-dev.github.io/educational-programs/" target="_blank" class="source-tag">ניתוח 2,859 תוכניות חינוך</a>
+            <a href="https://www.guidestar.org.il" target="_blank" class="source-tag">GuideStar — רשם העמותות</a>
+            <a href="https://next.obudget.org" target="_blank" class="source-tag">obudget.org — תקציב פתוח</a>
+            <a href="https://votes25.bechirot.gov.il/" target="_blank" class="source-tag">תוצאות בחירות כנסת 25</a>
+            <a href="research/" target="_blank" class="source-tag">14 דוחות מחקר מעמיק</a>
+            <a href="https://www.ngo-monitor.org.il" target="_blank" class="source-tag">NGO Monitor</a>
         </div>
     </div>
 
     <footer>
-        פרויקט אלכסון — דירוג ערים | עדכון אחרון: פברואר 2026<br>
-        מקורות: פרוטוקולים עירוניים (15 ערים) + תוכניות גפ"ן (20 ערים) + 7 דוחות מחקר מעמיק
+        פרויקט זהות ציונית — דירוג ערים | עדכון אחרון: פברואר 2026<br>
+        מקורות: פרוטוקולים עירוניים (15 ערים) + תוכניות גפ"ן (20 ערים) + 14 דוחות מחקר מעמיק + בחירות כנסת 25 + סיקור תקשורתי
     </footer>
 
     </div><!-- .main-content -->
@@ -969,7 +974,7 @@
         }).join('');
 
         return `<div class="detail-section org-profiles-section">
-            <h4>\u05d0\u05e8\u05d2\u05d5\u05e0\u05d9\u05dd \u05e0\u05d7\u05e7\u05e8\u05d9\u05dd \u05d1\u05e2\u05d9\u05e8 (${orgKeys.length} \u05de\u05ea\u05d5\u05da 14 \u05e0\u05d7\u05e7\u05e8\u05d9\u05dd)</h4>
+            <h4>\u05d0\u05e8\u05d2\u05d5\u05e0\u05d9\u05dd \u05e0\u05d7\u05e7\u05e8\u05d9\u05dd \u05d1\u05e2\u05d9\u05e8 (${orgKeys.length} \u05de\u05ea\u05d5\u05da 14 \u05e0\u05d7\u05e7\u05e8\u05d9\u05dd) &nbsp;<a href="research/" style="font-size:0.75em;font-weight:normal;color:#2980b9">כל הדוחות &rarr;</a></h4>
             ${cards}
         </div>`;
     }
@@ -997,7 +1002,10 @@
                 <div class="detail-section">
                     <h4>דגלים אדומים (${entry.red_flag || '\u2014'})</h4>
                     <ul class="kw-list">${buildKeywordPills(proto.red_flag_details)}</ul>
-                </div>` : ''}`;
+                </div>` : ''}
+                <div style="font-size:0.8em;margin-top:4px">
+                    מקור: פרוטוקולים של ישיבות מועצת העיר (${entry.protocol_coverage || ''} קבצים)
+                </div>`;
         }
 
         let rightPanel = '';
@@ -1007,6 +1015,10 @@
                     <h4>תוכניות חינוך בעייתיות (${worst.length} מובילות)</h4>
                     <div class="program-list">
                         ${worst.map(p => buildProgramCard(p)).join('')}
+                    </div>
+                    <div style="margin-top:8px;font-size:0.8em">
+                        מקור: <a href="https://apps.education.gov.il/gefen" target="_blank" rel="noopener" style="color:#2980b9">קטלוג גפ"ן — משרד החינוך</a>
+                        &nbsp;|&nbsp; <a href="https://aosshalem-dev.github.io/educational-programs/" target="_blank" rel="noopener" style="color:#2980b9">ניתוח מלא: 2,859 תוכניות</a>
                     </div>
                 </div>`;
         }
@@ -1022,6 +1034,10 @@
                     <div class="dim" style="margin-top:6px;font-size:0.85em">
                         פרוגרסיבי (מרצ+עבודה+יש עתיד): <strong>${entry.progressive_pct}%</strong> &nbsp;|&nbsp;
                         דתי (ש"ס+יהדות התורה+ציונות דתית): <strong>${entry.religious_pct}%</strong>
+                    </div>
+                    <div style="margin-top:6px;font-size:0.8em">
+                        מקור: <a href="https://votes25.bechirot.gov.il/" target="_blank" rel="noopener" style="color:#2980b9">ועדת הבחירות המרכזית — כנסת 25</a>
+                        &nbsp;|&nbsp; <a href="https://www.gov.il/he/departments/central_elections_committee" target="_blank" rel="noopener" style="color:#2980b9">אתר הוועדה</a>
                     </div>
                 </div>`;
         }
@@ -1047,7 +1063,7 @@
                     ${bars}
                     <div class="dim" style="margin-top:6px;font-size:0.85em">
                         ציון חדשות: <strong>${entry.news_score.toFixed(1)}</strong>/100
-                        &nbsp;|&nbsp; מקור: חיפוש Google News בעברית, כתבות שמזכירות את העיר בכותרת
+                        &nbsp;|&nbsp; מקור: <a href="https://news.google.com/search?q=${encodeURIComponent(entry.city + ' עירייה')}&hl=iw&gl=IL" target="_blank" rel="noopener" style="color:#2980b9">Google News — ${entry.city}</a>
                     </div>
                 </div>`;
         }
