@@ -1,7 +1,8 @@
 /**
- * research_orgs.js — Deep research profiles for 7 investigated organizations
+ * research_orgs.js — Deep research profiles for 14 investigated organizations
  * Generated from deep_research_*.md files (2026-02-16)
  * Cross-referenced with org_city_chalatz_mapping.json (1820 orgs × 20 cities)
+ * Batch 1: 7 orgs | Batch 2: 7 orgs (added evening session)
  */
 const RESEARCH_ORGS = {
   "orgs": {
@@ -167,27 +168,198 @@ const RESEARCH_ORGS = {
       ],
       "risk": "high",
       "funding_sources": "ממשלת ישראל (67%), הקיבוץ הארצי"
+    },
+    "Mind_Lab": {
+      "name_he": "אשכולות חשיבה ישראל",
+      "name_en": "Mind Lab / Accelium",
+      "reg": "513099341",
+      "revenue_nis": 12000000,
+      "gov_pct": 1,
+      "staff": 75,
+      "neutrality": 5,
+      "transparency": 2,
+      "ideology_detected": false,
+      "cities": ["באר שבע", "הרצליה", "חיפה", "ירושלים", "כרמיאל", "תל אביב-יפו"],
+      "school_count": 14,
+      "program_budget": 595116,
+      "thesis": "חברה עסקית למטרות רווח — הגדולה מסוגה בגפ\"ן. תוכן ניטרלי (משחקי חשיבה) אך שקיפות פיננסית אפסית. אימות אקדמי חלש.",
+      "key_findings": [
+        "חברה פרטית למטרות רווח — לא עמותה",
+        "4 ישויות קשורות (ישראל, ברזיל, Accelium, Mind Lab Group)",
+        "אין אידיאולוגיה — משחקי אסטרטגיה וחשיבה בלבד",
+        "דוח שנתי אחרון: 2017 — פער רגולטורי משמעותי",
+        "מחקר אקדמי חלש: חוקר מצוטט הוא מדען מדיני, לא פסיכולוג חינוכי"
+      ],
+      "risk": "low",
+      "funding_sources": "הכנסות מסחריות מבתי ספר, Gefen catalog"
+    },
+    "Yesodot_Dror": {
+      "name_he": "יסודות לצמיחה דרור",
+      "name_en": "Yesodot LeTzmicha Dror (Dror Israel operating arm)",
+      "reg": "580295533",
+      "revenue_nis": 34800000,
+      "gov_pct": 47,
+      "staff": 988,
+      "neutrality": 1,
+      "transparency": 3,
+      "ideology_detected": true,
+      "cities": ["באר שבע", "הרצליה", "חיפה", "ירושלים", "כרמיאל", "קרית אונו", "קרית גת", "ראש העין", "רמת השרון", "רעננה", "תל אביב-יפו"],
+      "school_count": 49,
+      "program_budget": 784592,
+      "thesis": "הזרוע המבצעית של דרור ישראל — 34.8M ₪, 148M ₪ מימון ממשלתי מצטבר. פדגוגיה ביקורתית של פאולו פריירה בכיתות. חלק מאקוסיסטם 234.6M ₪/שנה.",
+      "key_findings": [
+        "הקליפה התפעולית הראשית של תנועת דרור ישראל",
+        "תקציב 34.8M ₪, מימון ממשלתי 49.6M ₪ ב-3 שנים",
+        "פדגוגיה ביקורתית (פאולו פריירה) — חינוך כ'פעולה פוליטית'",
+        "14 קיבוצים עירוניים, 9+ בתי ספר חברתיים",
+        "988 'מתנדבים' — ייתכן שכר מתחת למינימום"
+      ],
+      "risk": "high",
+      "funding_sources": "משרד החינוך (108M ₪ מצטבר), קרנות בינ\"ל"
+    },
+    "Shaar_Shivion": {
+      "name_he": "שער שוויון",
+      "name_en": "Shaar Shivion / The Equalizer",
+      "reg": "580558591",
+      "revenue_nis": 13600000,
+      "gov_pct": 11,
+      "staff": 151,
+      "neutrality": 3,
+      "transparency": 3,
+      "ideology_detected": false,
+      "cities": ["באר שבע", "חיפה", "ירושלים", "קרית גת", "תל אביב-יפו"],
+      "school_count": 41,
+      "program_budget": 780495,
+      "thesis": "ארגון ספורט-לשינוי-חברתי (לא ג'וינט, לא פמיניסטי כפי שסווג בטעות). 410+ קבוצות כדורגל/כדורסל בקהילות מוחלשות. דו-קיום יהודי-ערבי דרך ספורט.",
+      "key_findings": [
+        "תיקון: לא גוף ג'וינט, לא ממומן מחו\"ל ברובו (28.7% בלבד)",
+        "410+ קבוצות, 10,000+ משתתפים, 500 מתנדבים",
+        "כדורגל/כדורסל בקהילות — יהודים, ערבים, בדואים, דרוזים, עולים",
+        "פרס UEFA, הכרת UNESCO",
+        "הסיכון האמיתי: דו-קיום מבוסס מגע, לא אג'נדה מגדרית"
+      ],
+      "risk": "moderate",
+      "funding_sources": "Harris Philanthropies (>$1M), Revson Foundation, ממשלת ישראל (11%)"
+    },
+    "Alliance_Israel": {
+      "name_he": "כל ישראל חברים / אליאנס",
+      "name_en": "Alliance Israelite Universelle (Israel branch)",
+      "reg": "580010890",
+      "revenue_nis": 15000000,
+      "gov_pct": 10,
+      "staff": 50,
+      "neutrality": 3,
+      "transparency": 3,
+      "ideology_detected": false,
+      "cities": ["חיפה", "ירושלים", "נתיבות", "קרית גת", "תל אביב-יפו"],
+      "school_count": 16,
+      "program_budget": 377004,
+      "thesis": "ארגון צרפתי-יהודי בן 166 שנה, מקורו בקולוניאליזם תרבותי. שליטה מפריז. בעלות משותפת על 3,300 דונם ליד ת\"א (מקוה ישראל) מוגנת בחוק כנסת 1976.",
+      "key_findings": [
+        "נוסד 1860 בפריז — אנטי-ציוני עד 1945",
+        "שליטה מפריז: ועדה מרכזית עם דרישת 2/3 תושבי פריז",
+        "3,300 דונם ליד ת\"א (מקוה ישראל) — חוק כנסת מ-1976",
+        "US entity הכנסות קרסו מ-$25M ל-$2.1M",
+        "תוכניות: סודקות (STEM לבנות), מורשה (יהדות חברתית)"
+      ],
+      "risk": "low-moderate",
+      "funding_sources": "Alliance Paris HQ, Posen Foundation, ממשלת ישראל"
+    },
+    "Maga_BeTiaum": {
+      "name_he": "מגע בתיאום בע\"מ",
+      "name_en": "Maga BeTiaum Ltd. (Touch in Coordination)",
+      "reg": "516711488",
+      "revenue_nis": 500000,
+      "gov_pct": 0,
+      "staff": 5,
+      "neutrality": 1,
+      "transparency": 1,
+      "ideology_detected": true,
+      "cities": ["אריאל", "הוד השרון", "הרצליה", "ראש העין", "רמת השרון", "רעננה", "תל אביב-יפו"],
+      "school_count": 27,
+      "program_budget": 453441,
+      "thesis": "חברה פרטית למטרות רווח שנוסדה נובמבר 2022, מספקת חינוך מיני מגן ועד י\"ב. 'דלת מסתובבת' — מנהלת מקצועית לשעבר ממשרד החינוך. אין מנגנון הסכמת הורים.",
+      "key_findings": [
+        "נוסדה נובמבר 2022 — חברה חדשה מאוד",
+        "דלת מסתובבת: שירי בסין סביון — ממשרד החינוך לקבלנית חיצונית",
+        "חינוך מיני מגיל גן — מסגרות הסכמה למבוגרים על ילדים",
+        "חברת SEI (הקמה מרץ 2023) — גוף מקצועי מאשר את עצמו",
+        "אין מנגנון opt-in להורים, שקיפות פיננסית אפסית"
+      ],
+      "risk": "high",
+      "funding_sources": "תשלומי בתי ספר דרך Gefen"
+    },
+    "Meyda_Amin": {
+      "name_he": "מידע אמין על מין (שלומית הברון)",
+      "name_en": "Meyda Amin Al Min / Reliable Info About Sex",
+      "reg": "עוסק מורשה",
+      "revenue_nis": 1200000,
+      "gov_pct": 0,
+      "staff": 40,
+      "neutrality": 1,
+      "transparency": 1,
+      "ideology_detected": true,
+      "cities": ["גבעת שמואל", "גבעתיים", "הוד השרון", "הרצליה", "חיפה", "ירושלים", "כרמיאל", "קרית אונו", "קרית גת", "קרית שמונה", "ראש העין", "רמת גן", "רמת השרון", "רעננה", "תל אביב-יפו"],
+      "school_count": 51,
+      "program_budget": 1189257,
+      "thesis": "לא עוסק יחיד — מרכז מסחרי עם ~40 מנחים הרשום כעוסק מורשה. 1.19M ₪ מכספי ציבור ללא חובת דיווח. מייסדת: אקטיביסטית פמיניסטית שהקימה 'מאגר אנסים'.",
+      "key_findings": [
+        "~40 מנחים מתחת לרישום עוסק מורשה — אפס שקיפות",
+        "1.19M ₪ מגפ\"ן — הגדול ביותר בקטגוריית חינוך מיני",
+        "51 בתי ספר ב-15 ערים — הפריסה הרחבה ביותר",
+        "נורמליזציה של אוננות מגיל 4-5, אישור LGBTQ+ לקטינים",
+        "מייסדת: שלומית הברון — 'אחת מתוך אחת' (2,000 עדויות תקיפה)"
+      ],
+      "risk": "high",
+      "funding_sources": "תשלומי בתי ספר דרך Gefen, ללא מימון ממשלתי ישיר"
+    },
+    "Gesher": {
+      "name_he": "גשר - מפעלים חינוכיים",
+      "name_en": "Gesher - Educational Enterprises",
+      "reg": "580054062",
+      "revenue_nis": 22800000,
+      "gov_pct": 15,
+      "staff": 80,
+      "neutrality": 2,
+      "transparency": 4,
+      "ideology_detected": true,
+      "cities": ["באר שבע", "הוד השרון", "הרצליה", "חיפה", "ירושלים"],
+      "school_count": 11,
+      "program_budget": 69181,
+      "thesis": "גשר אסימטרי — הנהלה דתית-לאומית בלעדית (מייסד מישיבת מרכז הרב, עמד בראש ועדת מינויים של הבית היהודי). מזיז חילונים לכיוון מסורת, לא להפך.",
+      "key_findings": [
+        "מייסד הרב דניאל טרופר — ישיבת מרכז הרב, יועץ שר החינוך האמר",
+        "טרופר עמד בראש ועדת מינויים של מפלגת הבית היהודי",
+        "תקציב אמיתי 22.8M ₪ — הגפ\"ן (69K) הוא 0.3% מהפעילות",
+        "קרן גשר לקולנוע: 105M ₪ מימון ממשלתי מצטבר",
+        "6,000+ חיילי צה\"ל/שנה בסמינרים, הכשרת אנשי תקשורת"
+      ],
+      "risk": "medium-high",
+      "funding_sources": "William Davidson Foundation ($500K), Ruderman Family, ממשלת ישראל, US fundraising ($1.6M/yr)"
     }
   },
 
   /** City → org keys mapping for quick lookup in detail panels */
   "city_orgs": {
-    "באר שבע": ["Hartman", "Democratic_Institute", "Yedidut_Toronto", "Matzmichim"],
-    "גבעת שמואל": ["Matzmichim"],
-    "גבעתיים": ["Matzmichim"],
-    "הוד השרון": ["Matzmichim"],
-    "הרצליה": ["Matzmichim"],
-    "חיפה": ["Hartman", "Yedidut_Toronto", "Matzmichim"],
-    "ירושלים": ["Hartman", "Democratic_Institute", "Yedidut_Toronto"],
-    "כרמיאל": ["Hartman", "Matzmichim"],
-    "נתיבות": ["Matzmichim"],
-    "קרית אונו": ["Matzmichim"],
-    "קרית גת": ["Yedidut_Toronto", "Matzmichim"],
-    "קרית שמונה": ["Matzmichim"],
-    "ראש העין": ["Matzmichim"],
-    "רמת גן": ["ACRI", "Hartman", "Matzmichim"],
-    "רמת השרון": ["ACRI", "Hartman", "Havatzelet", "Matzmichim"],
-    "רעננה": ["Democratic_Institute", "Matzmichim"],
-    "תל אביב-יפו": ["Hartman", "Matzmichim"]
+    "אריאל": ["Maga_BeTiaum"],
+    "באר שבע": ["Hartman", "Democratic_Institute", "Yedidut_Toronto", "Matzmichim", "Mind_Lab", "Yesodot_Dror", "Shaar_Shivion", "Gesher"],
+    "גבעת שמואל": ["Matzmichim", "Meyda_Amin"],
+    "גבעתיים": ["Matzmichim", "Meyda_Amin"],
+    "הוד השרון": ["Matzmichim", "Maga_BeTiaum", "Meyda_Amin", "Gesher"],
+    "הרצליה": ["Matzmichim", "Mind_Lab", "Yesodot_Dror", "Maga_BeTiaum", "Meyda_Amin", "Gesher"],
+    "חיפה": ["Hartman", "Yedidut_Toronto", "Matzmichim", "Mind_Lab", "Yesodot_Dror", "Shaar_Shivion", "Alliance_Israel", "Meyda_Amin", "Gesher"],
+    "ירושלים": ["Hartman", "Democratic_Institute", "Yedidut_Toronto", "Mind_Lab", "Yesodot_Dror", "Shaar_Shivion", "Alliance_Israel", "Meyda_Amin", "Gesher"],
+    "כרמיאל": ["Hartman", "Matzmichim", "Mind_Lab", "Yesodot_Dror", "Meyda_Amin"],
+    "נתיבות": ["Matzmichim", "Alliance_Israel"],
+    "עמנואל": [],
+    "אפרת": [],
+    "קרית אונו": ["Matzmichim", "Yesodot_Dror", "Meyda_Amin"],
+    "קרית גת": ["Yedidut_Toronto", "Matzmichim", "Yesodot_Dror", "Shaar_Shivion", "Alliance_Israel", "Meyda_Amin"],
+    "קרית שמונה": ["Matzmichim", "Meyda_Amin"],
+    "ראש העין": ["Matzmichim", "Yesodot_Dror", "Maga_BeTiaum", "Meyda_Amin"],
+    "רמת גן": ["ACRI", "Hartman", "Matzmichim", "Meyda_Amin"],
+    "רמת השרון": ["ACRI", "Hartman", "Havatzelet", "Matzmichim", "Yesodot_Dror", "Maga_BeTiaum", "Meyda_Amin"],
+    "רעננה": ["Democratic_Institute", "Matzmichim", "Yesodot_Dror", "Maga_BeTiaum", "Meyda_Amin"],
+    "תל אביב-יפו": ["Hartman", "Matzmichim", "Mind_Lab", "Yesodot_Dror", "Shaar_Shivion", "Alliance_Israel", "Maga_BeTiaum", "Meyda_Amin"]
   }
 };
