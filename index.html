@@ -456,6 +456,7 @@
                     <li>• אותות פרוגרסיביים בפרוטוקולים (ציר ב') <span class="weight">20%</span></li>
                     <li>• דגלים אדומים — שיתוף UNESCO, יועצים חיצוניים <span class="weight">15%</span></li>
                     <li class="dim" style="margin-top:8px">ציר א' (זהות יהודית/ציונית) מוצג לעיון בלבד ואינו נכלל בציון המשולב</li>
+                    <li class="dim">סיקור חדשותי (Google News) — מוצג לעיון, אינו בציון המשולב עדיין</li>
                 </ul>
             </div>
         </div>
@@ -511,6 +512,7 @@
                     <th data-col="city" data-type="str">עיר <span class="sort-arrow">&#9660;</span></th>
                     <th data-col="combined_score" data-type="num">ציון משולב <span class="sort-arrow">&#9660;</span></th>
                     <th data-col="progressive_pct" data-type="num">הצבעה פרוגר' <span class="sort-arrow">&#9660;</span></th>
+                    <th data-col="news_score" data-type="num">חדשות פרוגר' <span class="sort-arrow">&#9660;</span></th>
                     <th data-col="exposure_score" data-type="num">חשיפה חינוכית <span class="sort-arrow">&#9660;</span></th>
                     <th data-col="subversive_ratio" data-type="num">% תקציב מסומן <span class="sort-arrow">&#9660;</span></th>
                     <th data-col="pole_b" data-type="num">ציר ב' <span class="sort-arrow">&#9660;</span></th>
@@ -908,11 +910,37 @@
                 </div>`;
         }
 
-        if (!proto && worst.length === 0 && !electionPanel) {
+        let newsPanel = '';
+        if (entry.news_score != null && entry.news_topics) {
+            const t = entry.news_topics;
+            const topicLabels = {
+                lgbt_municipal: 'להטב',
+                gender_equality: 'מגדר',
+                sustainability: 'קיימות',
+                social_justice: 'צדק חברתי',
+                diversity_inclusion: 'גיוון',
+                education_progressive: 'חינוך פרוגרסיבי'
+            };
+            const bars = Object.entries(topicLabels).map(([key, label]) => {
+                const val = t[key] || 0;
+                return buildPoleBar(label, val, 80, '#339966');
+            }).join('');
+            newsPanel = `
+                <div class="detail-section">
+                    <h4>סיקור חדשותי — נושאים פרוגרסיביים (${entry.news_relevant || 0} כתבות רלוונטיות)</h4>
+                    ${bars}
+                    <div class="dim" style="margin-top:6px;font-size:0.85em">
+                        ציון חדשות: <strong>${entry.news_score.toFixed(1)}</strong>/100
+                        &nbsp;|&nbsp; מקור: חיפוש Google News בעברית, כתבות שמזכירות את העיר בכותרת
+                    </div>
+                </div>`;
+        }
+
+        if (!proto && worst.length === 0 && !electionPanel && !newsPanel) {
             return '<div class="detail-section"><h4>אין נתונים מפורטים זמינים</h4></div>';
         }
 
-        return `<div class="detail-grid">${leftPanel}${electionPanel}${rightPanel}</div>`;
+        return `<div class="detail-grid">${leftPanel}${electionPanel}${newsPanel}${rightPanel}</div>`;
     }
 
     function toggleCity(idx) {
@@ -1025,6 +1053,7 @@
                 <td class="city">${e.city} \u25BE ${isPartial ? '<span class="dim">(' + src + ')</span>' : ''}</td>
                 <td class="score" style="color:${color};font-weight:bold">${e.combined_score ?? '\u2014'}</td>
                 <td>${e.progressive_pct != null ? e.progressive_pct + '%' : '\u2014'}</td>
+                <td>${e.news_score != null ? e.news_score.toFixed(0) : '\u2014'}</td>
                 <td>${e.exposure_score != null ? e.exposure_score + '%' : '\u2014'}</td>
                 <td>${e.subversive_ratio != null ? e.subversive_ratio + '%' : '\u2014'}</td>
                 <td>${e.pole_b ?? '\u2014'}</td>
@@ -1033,7 +1062,7 @@
                 <td class="dim">${e.protocol_coverage || '\u2014'}</td>
             </tr>
             <tr class="detail-row" id="detail-${i}">
-                <td colspan="10" class="detail-cell">${buildDetailPanel(e)}</td>
+                <td colspan="11" class="detail-cell">${buildDetailPanel(e)}</td>
             </tr>`;
         });
 

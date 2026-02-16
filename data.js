@@ -23,7 +23,17 @@ const DATA = {
       "progressive_pct": 53.01,
       "religious_pct": 9.64,
       "eligible_voters": 447576,
-      "turnout_pct": 59.62
+      "turnout_pct": 59.62,
+      "news_score": 69.52,
+      "news_relevant": 146,
+      "news_topics": {
+        "lgbt_municipal": 60,
+        "gender_equality": 20,
+        "sustainability": 34,
+        "social_justice": 13,
+        "diversity_inclusion": 19,
+        "education_progressive": 0
+      }
     },
     {
       "city": "רמת השרון",
@@ -48,7 +58,17 @@ const DATA = {
       "progressive_pct": 57.88,
       "religious_pct": 8.25,
       "eligible_voters": 38282,
-      "turnout_pct": 71.42
+      "turnout_pct": 71.42,
+      "news_score": 14.76,
+      "news_relevant": 31,
+      "news_topics": {
+        "lgbt_municipal": 14,
+        "gender_equality": 0,
+        "sustainability": 15,
+        "social_justice": 1,
+        "diversity_inclusion": 1,
+        "education_progressive": 0
+      }
     },
     {
       "city": "כרמיאל",
@@ -72,7 +92,17 @@ const DATA = {
       "progressive_pct": 28.06,
       "religious_pct": 15.04,
       "eligible_voters": 42065,
-      "turnout_pct": 57.13
+      "turnout_pct": 57.13,
+      "news_score": 11.43,
+      "news_relevant": 24,
+      "news_topics": {
+        "lgbt_municipal": 14,
+        "gender_equality": 2,
+        "sustainability": 8,
+        "social_justice": 0,
+        "diversity_inclusion": 0,
+        "education_progressive": 0
+      }
     },
     {
       "city": "הוד השרון",
@@ -96,7 +126,17 @@ const DATA = {
       "progressive_pct": 52.97,
       "religious_pct": 7.43,
       "eligible_voters": 48723,
-      "turnout_pct": 74.36
+      "turnout_pct": 74.36,
+      "news_score": 34.76,
+      "news_relevant": 73,
+      "news_topics": {
+        "lgbt_municipal": 41,
+        "gender_equality": 5,
+        "sustainability": 21,
+        "social_justice": 1,
+        "diversity_inclusion": 5,
+        "education_progressive": 0
+      }
     },
     {
       "city": "גבעתיים",
@@ -120,7 +160,17 @@ const DATA = {
       "progressive_pct": 56.63,
       "religious_pct": 5.94,
       "eligible_voters": 49341,
-      "turnout_pct": 68.97
+      "turnout_pct": 68.97,
+      "news_score": 41.43,
+      "news_relevant": 87,
+      "news_topics": {
+        "lgbt_municipal": 36,
+        "gender_equality": 10,
+        "sustainability": 40,
+        "social_justice": 0,
+        "diversity_inclusion": 1,
+        "education_progressive": 0
+      }
     },
     {
       "city": "רעננה",
@@ -144,7 +194,17 @@ const DATA = {
       "progressive_pct": 42.43,
       "religious_pct": 15.99,
       "eligible_voters": 69652,
-      "turnout_pct": 66.61
+      "turnout_pct": 66.61,
+      "news_score": 39.05,
+      "news_relevant": 82,
+      "news_topics": {
+        "lgbt_municipal": 32,
+        "gender_equality": 5,
+        "sustainability": 29,
+        "social_justice": 7,
+        "diversity_inclusion": 9,
+        "education_progressive": 0
+      }
     },
     {
       "city": "הרצליה",
@@ -168,7 +228,17 @@ const DATA = {
       "progressive_pct": 48.71,
       "religious_pct": 9.88,
       "eligible_voters": 88932,
-      "turnout_pct": 65.64
+      "turnout_pct": 65.64,
+      "news_score": 42.38,
+      "news_relevant": 89,
+      "news_topics": {
+        "lgbt_municipal": 35,
+        "gender_equality": 9,
+        "sustainability": 29,
+        "social_justice": 9,
+        "diversity_inclusion": 6,
+        "education_progressive": 1
+      }
     },
     {
       "city": "קרית אונו",
@@ -192,7 +262,17 @@ const DATA = {
       "progressive_pct": 48.58,
       "religious_pct": 9.32,
       "eligible_voters": 31113,
-      "turnout_pct": 73.27
+      "turnout_pct": 73.27,
+      "news_score": 0.48,
+      "news_relevant": 1,
+      "news_topics": {
+        "lgbt_municipal": 0,
+        "gender_equality": 0,
+        "sustainability": 1,
+        "social_justice": 0,
+        "diversity_inclusion": 0,
+        "education_progressive": 0
+      }
     },
     {
       "city": "חיפה",
@@ -216,7 +296,17 @@ const DATA = {
       "progressive_pct": 35.67,
       "religious_pct": 13.22,
       "eligible_voters": 253292,
-      "turnout_pct": 55.53
+      "turnout_pct": 55.53,
+      "news_score": 100.0,
+      "news_relevant": 210,
+      "news_topics": {
+        "lgbt_municipal": 77,
+        "gender_equality": 38,
+        "sustainability": 36,
+        "social_justice": 23,
+        "diversity_inclusion": 36,
+        "education_progressive": 0
+      }
     },
     {
       "city": "באר שבע",
@@ -240,7 +330,17 @@ const DATA = {
       "progressive_pct": 14.89,
       "religious_pct": 26.09,
       "eligible_voters": 164728,
-      "turnout_pct": 61.31
+      "turnout_pct": 61.31,
+      "news_score": 83.81,
+      "news_relevant": 176,
+      "news_topics": {
+        "lgbt_municipal": 54,
+        "gender_equality": 38,
+        "sustainability": 40,
+        "social_justice": 16,
+        "diversity_inclusion": 27,
+        "education_progressive": 1
+      }
     },
     {
       "city": "גבעת שמואל",
@@ -264,7 +364,17 @@ const DATA = {
       "progressive_pct": 19.25,
       "religious_pct": 32.23,
       "eligible_voters": 20150,
-      "turnout_pct": 74.92
+      "turnout_pct": 74.92,
+      "news_score": 19.52,
+      "news_relevant": 41,
+      "news_topics": {
+        "lgbt_municipal": 29,
+        "gender_equality": 2,
+        "sustainability": 7,
+        "social_justice": 0,
+        "diversity_inclusion": 3,
+        "education_progressive": 0
+      }
     },
     {
       "city": "קרית שמונה",
@@ -289,7 +399,17 @@ const DATA = {
       "progressive_pct": 8.74,
       "religious_pct": 25.3,
       "eligible_voters": 18582,
-      "turnout_pct": 61.11
+      "turnout_pct": 61.11,
+      "news_score": 3.33,
+      "news_relevant": 7,
+      "news_topics": {
+        "lgbt_municipal": 4,
+        "gender_equality": 1,
+        "sustainability": 2,
+        "social_justice": 0,
+        "diversity_inclusion": 0,
+        "education_progressive": 0
+      }
     },
     {
       "city": "ראש העין",
@@ -313,7 +433,17 @@ const DATA = {
       "progressive_pct": 24.27,
       "religious_pct": 25.5,
       "eligible_voters": 49148,
-      "turnout_pct": 77.58
+      "turnout_pct": 77.58,
+      "news_score": 14.76,
+      "news_relevant": 31,
+      "news_topics": {
+        "lgbt_municipal": 19,
+        "gender_equality": 2,
+        "sustainability": 8,
+        "social_justice": 1,
+        "diversity_inclusion": 1,
+        "education_progressive": 0
+      }
     },
     {
       "city": "אריאל",
@@ -337,7 +467,17 @@ const DATA = {
       "progressive_pct": 13.63,
       "religious_pct": 21.25,
       "eligible_voters": 15396,
-      "turnout_pct": 61.81
+      "turnout_pct": 61.81,
+      "news_score": 1.43,
+      "news_relevant": 3,
+      "news_topics": {
+        "lgbt_municipal": 2,
+        "gender_equality": 1,
+        "sustainability": 0,
+        "social_justice": 0,
+        "diversity_inclusion": 0,
+        "education_progressive": 0
+      }
     },
     {
       "city": "קרית גת",
@@ -361,7 +501,17 @@ const DATA = {
       "progressive_pct": 9.57,
       "religious_pct": 37.63,
       "eligible_voters": 45388,
-      "turnout_pct": 68.51
+      "turnout_pct": 68.51,
+      "news_score": 3.33,
+      "news_relevant": 7,
+      "news_topics": {
+        "lgbt_municipal": 4,
+        "gender_equality": 0,
+        "sustainability": 3,
+        "social_justice": 0,
+        "diversity_inclusion": 0,
+        "education_progressive": 0
+      }
     },
     {
       "city": "אפרת",
@@ -385,7 +535,17 @@ const DATA = {
       "progressive_pct": 3.98,
       "religious_pct": 50.93,
       "eligible_voters": 7945,
-      "turnout_pct": 72.98
+      "turnout_pct": 72.98,
+      "news_score": 0.0,
+      "news_relevant": 0,
+      "news_topics": {
+        "lgbt_municipal": 0,
+        "gender_equality": 0,
+        "sustainability": 0,
+        "social_justice": 0,
+        "diversity_inclusion": 0,
+        "education_progressive": 0
+      }
     },
     {
       "city": "נתיבות",
@@ -409,7 +569,17 @@ const DATA = {
       "progressive_pct": 2.28,
       "religious_pct": 64.28,
       "eligible_voters": 28166,
-      "turnout_pct": 75.55
+      "turnout_pct": 75.55,
+      "news_score": 10.48,
+      "news_relevant": 22,
+      "news_topics": {
+        "lgbt_municipal": 12,
+        "gender_equality": 1,
+        "sustainability": 9,
+        "social_justice": 0,
+        "diversity_inclusion": 0,
+        "education_progressive": 0
+      }
     },
     {
       "city": "עמנואל",
@@ -433,7 +603,17 @@ const DATA = {
       "progressive_pct": 0.31,
       "religious_pct": 96.01,
       "eligible_voters": 2567,
-      "turnout_pct": 75.81
+      "turnout_pct": 75.81,
+      "news_score": 0.0,
+      "news_relevant": 0,
+      "news_topics": {
+        "lgbt_municipal": 0,
+        "gender_equality": 0,
+        "sustainability": 0,
+        "social_justice": 0,
+        "diversity_inclusion": 0,
+        "education_progressive": 0
+      }
     }
   ],
   "education_only": [
@@ -450,7 +630,17 @@ const DATA = {
       "progressive_pct": 12.71,
       "religious_pct": 56.33,
       "eligible_voters": 432125,
-      "turnout_pct": 61.6
+      "turnout_pct": 61.6,
+      "news_score": 76.67,
+      "news_relevant": 161,
+      "news_topics": {
+        "lgbt_municipal": 56,
+        "gender_equality": 24,
+        "sustainability": 34,
+        "social_justice": 26,
+        "diversity_inclusion": 20,
+        "education_progressive": 1
+      }
     },
     {
       "city": "רמת גן",
@@ -465,7 +655,17 @@ const DATA = {
       "progressive_pct": 43.88,
       "religious_pct": 12.08,
       "eligible_voters": 139055,
-      "turnout_pct": 65.23
+      "turnout_pct": 65.23,
+      "news_score": 43.81,
+      "news_relevant": 92,
+      "news_topics": {
+        "lgbt_municipal": 38,
+        "gender_equality": 13,
+        "sustainability": 32,
+        "social_justice": 4,
+        "diversity_inclusion": 5,
+        "education_progressive": 0
+      }
     }
   ],
   "protocols_only": [],
