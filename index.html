@@ -230,6 +230,19 @@
             display: inline-block; padding: 2px 8px; border-radius: 4px;
             font-size: 0.75em; font-weight: 700; color: #fff;
         }
+        .org-card.expanded .org-expand-hint { display: none; }
+        .org-source-link {
+            display: inline-block; padding: 3px 10px; background: #e8f0f8;
+            border: 1px solid #c0d0e8; border-radius: 4px; font-size: 0.75em;
+            color: #2a5a8a; text-decoration: none; white-space: nowrap;
+        }
+        .org-source-link:hover { background: #d0e0f0; border-color: #2a5a8a; }
+        .org-report-link {
+            display: inline-block; padding: 4px 12px; background: #8b0000;
+            color: #fff; border-radius: 4px; text-decoration: none;
+            font-size: 0.8em; font-weight: 600;
+        }
+        .org-report-link:hover { background: #a00; }
 
         /* ── Pole bars ── */
         .pole-bar-container { margin: 8px 0; }
@@ -901,38 +914,62 @@
         </div>`;
     }
 
+    let _orgCardIdx = 0;
     function buildOrgPanel(cityName) {
         if (typeof RESEARCH_ORGS === 'undefined') return '';
         const orgKeys = RESEARCH_ORGS.city_orgs[cityName];
         if (!orgKeys || orgKeys.length === 0) return '';
 
-        const riskClass = r => r === 'high' ? 'risk-high' : r === 'medium-high' ? 'risk-medium-high' : r === 'medium' ? 'risk-medium' : 'risk-low';
-        const riskLabel = r => r === 'high' ? '\u05d2\u05d1\u05d5\u05d4' : r === 'medium-high' ? '\u05d1\u05d9\u05e0\u05d5\u05e0\u05d9-\u05d2\u05d1\u05d5\u05d4' : r === 'medium' ? '\u05d1\u05d9\u05e0\u05d5\u05e0\u05d9' : '\u05e0\u05de\u05d5\u05da';
+        const riskClass = r => r === 'high' ? 'risk-high' : r === 'medium-high' ? 'risk-medium-high' : r === 'medium' ? 'risk-medium' : r === 'moderate' ? 'risk-medium' : 'risk-low';
+        const riskHe = r => ({'high':'\u05d2\u05d1\u05d5\u05d4','medium-high':'\u05d1\u05d9\u05e0\u05d5\u05e0\u05d9-\u05d2\u05d1\u05d5\u05d4','medium':'\u05d1\u05d9\u05e0\u05d5\u05e0\u05d9','moderate':'\u05de\u05ea\u05d5\u05df','low-moderate':'\u05e0\u05de\u05d5\u05da-\u05de\u05ea\u05d5\u05df','low':'\u05e0\u05de\u05d5\u05da'}[r] || r);
 
         const cards = orgKeys.map(key => {
             const o = RESEARCH_ORGS.orgs[key];
             if (!o) return '';
-            const findings = (o.key_findings || []).slice(0, 4);
-            return `<div class="org-card ${riskClass(o.risk)}">
+            const uid = _orgCardIdx++;
+            const findings = o.key_findings || [];
+            const links = o.source_links || [];
+            const ideoTag = o.ideology_detected
+                ? '<span style="background:#cc0000;color:#fff;padding:1px 6px;border-radius:3px;font-size:0.7em;margin-right:6px">\u05d0\u05d9\u05d3\u05d9\u05d0\u05d5\u05dc\u05d5\u05d2\u05d9\u05d4</span>'
+                : '<span style="background:#44aa66;color:#fff;padding:1px 6px;border-radius:3px;font-size:0.7em;margin-right:6px">\u05e0\u05d9\u05d8\u05e8\u05dc\u05d9</span>';
+
+            const srcLinks = links.map(l =>
+                `<a href="${l.url}" target="_blank" rel="noopener" class="org-source-link">${l.label}</a>`
+            ).join(' ');
+            const reportLink = o.report_url
+                ? `<a href="${o.report_url}" target="_blank" class="org-report-link">\u{1F4C4} \u05d3\u05d5\u05d7 \u05de\u05d7\u05e7\u05e8 \u05de\u05dc\u05d0</a>`
+                : '';
+
+            return `<div class="org-card ${riskClass(o.risk)}" onclick="document.getElementById('org-detail-${uid}').classList.toggle('visible');this.classList.toggle('expanded')" style="cursor:pointer">
                 <div class="org-card-header">
-                    <span class="org-card-name">${o.name_he}</span>
-                    <span class="org-risk-badge ${riskClass(o.risk)}">${riskLabel(o.risk)}</span>
+                    <span class="org-card-name">${o.name_he} ${ideoTag}</span>
+                    <span class="org-risk-badge ${riskClass(o.risk)}">${riskHe(o.risk)}</span>
                 </div>
-                <div class="org-card-reg">${o.name_en} | \u05e8\u05d9\u05e9\u05d5\u05dd: ${o.reg}</div>
+                <div class="org-card-reg">${o.name_en} | ${o.entity_type} | \u05e8\u05d9\u05e9\u05d5\u05dd: ${o.reg}${o.founded ? ' | \u05e0\u05d5\u05e1\u05d3: ' + o.founded : ''}</div>
                 <div class="org-card-thesis">${o.thesis}</div>
                 <div class="org-card-stats">
                     <div class="org-stat"><strong>\u20AA${(o.revenue_nis / 1000000).toFixed(1)}M</strong> \u05ea\u05e7\u05e6\u05d9\u05d1</div>
                     <div class="org-stat"><strong>${o.gov_pct}%</strong> \u05de\u05de\u05e9\u05dc\u05ea\u05d9</div>
                     <div class="org-stat"><strong>${o.staff}</strong> \u05e2\u05d5\u05d1\u05d3\u05d9\u05dd</div>
                     <div class="org-stat"><strong>${o.school_count}</strong> \u05d1\u05ea\u05d9 \u05e1\u05e4\u05e8</div>
-                    ${o.program_budget > 0 ? `<div class="org-stat"><strong>\u20AA${Math.round(o.program_budget).toLocaleString()}</strong> \u05ea\u05e7\u05e6\u05d9\u05d1 \u05ea\u05d5\u05db\u05e0\u05d9\u05d5\u05ea</div>` : ''}
+                    ${o.program_budget > 0 ? `<div class="org-stat"><strong>\u20AA${Math.round(o.program_budget).toLocaleString()}</strong> \u05ea\u05e7\u05e6\u05d9\u05d1 \u05d2\u05e4\u05df</div>` : ''}
+                    <div class="org-stat">\u05e0\u05d9\u05d8\u05e8\u05dc\u05d9\u05d5\u05ea: <strong>${o.neutrality}/5</strong></div>
+                    <div class="org-stat">\u05e9\u05e7\u05d9\u05e4\u05d5\u05ea: <strong>${o.transparency}/5</strong></div>
                 </div>
-                ${findings.length > 0 ? `<ul class="org-findings">${findings.map(f => `<li>${f}</li>`).join('')}</ul>` : ''}
+                <div class="org-expand-hint" style="text-align:center;font-size:0.75em;color:#888;margin-top:4px">\u25BC \u05dc\u05d7\u05e5 \u05dc\u05e4\u05e8\u05d8\u05d9\u05dd \u05de\u05dc\u05d0\u05d9\u05dd \u25BC</div>
+                <div class="prog-detail" id="org-detail-${uid}">
+                    <div style="font-size:0.8em;color:#666;margin-bottom:6px"><strong>\u05de\u05d9\u05de\u05d5\u05df:</strong> ${o.funding_sources}</div>
+                    ${findings.length > 0 ? `<ul class="org-findings">${findings.map(f => `<li>${f}</li>`).join('')}</ul>` : ''}
+                    <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:6px;align-items:center">
+                        ${reportLink}
+                        ${srcLinks}
+                    </div>
+                </div>
             </div>`;
         }).join('');
 
         return `<div class="detail-section org-profiles-section">
-            <h4>\u05d0\u05e8\u05d2\u05d5\u05e0\u05d9\u05dd \u05e0\u05d7\u05e7\u05e8\u05d9\u05dd \u05d1\u05e2\u05d9\u05e8 (${orgKeys.length} \u05de\u05ea\u05d5\u05da 7 \u05e0\u05d7\u05e7\u05e8\u05d9\u05dd)</h4>
+            <h4>\u05d0\u05e8\u05d2\u05d5\u05e0\u05d9\u05dd \u05e0\u05d7\u05e7\u05e8\u05d9\u05dd \u05d1\u05e2\u05d9\u05e8 (${orgKeys.length} \u05de\u05ea\u05d5\u05da 14 \u05e0\u05d7\u05e7\u05e8\u05d9\u05dd)</h4>
             ${cards}
         </div>`;
     }
