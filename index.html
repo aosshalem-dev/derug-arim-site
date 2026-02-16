@@ -459,6 +459,22 @@
             </div>
         </div>
 
+        <div class="method-box" style="border-color:#2e7d32">
+            <div class="method-toggle open" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+                <h3 style="color:#2e7d32">&#10003; תיקון חיוביים כוזבים — ציר ב'</h3>
+                <span class="arrow">&#9660;</span>
+            </div>
+            <div class="method-body open">
+                <ul style="margin-top:10px">
+                    <li><strong>ניתוח מעמיק של פרוטוקולים מכל 15 הערים</strong> גילה ששיעור החיוביים הכוזבים בציר ב' נע בין 0% ל-100%.</li>
+                    <li>דוגמאות: <strong>&#171;קיימות&#187;</strong> = "existing" (לא sustainability), <strong>&#171;שולי&#187;</strong> = שם פרטי (לא שוליות), <strong>&#171;הכלה&#187;</strong> = שגיאת OCR של הלכה (לא inclusion).</li>
+                    <li>הציונים המוצגים כעת הם <strong>ציוני ציר ב' מתוקנים</strong> — הציון הגולמי מוכפל באחוז האות האמיתי שזוהה בניתוח.</li>
+                    <li>לחצו על עיר לצפייה בציון הגולמי (<code>pole_b_raw</code>) לצד הציון המתוקן.</li>
+                    <li class="dim" style="margin-top:6px">רק חיפה והרצליה הציגו תוכניות מוסדיות אמיתיות (8-15% אות אמיתי). ב-7 ערים שיעור החיוביים הכוזבים היה 100%.</li>
+                </ul>
+            </div>
+        </div>
+
         <div class="method-box" style="border-color:#e8a000">
             <div class="method-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
                 <h3 style="color:#bf360c">&#9888; כתמים עיוורים של הסורק</h3>
@@ -851,8 +867,9 @@
                     <ul class="kw-list">${buildKeywordPills(proto.pole_a_details)}</ul>
                 </div>
                 <div class="detail-section">
-                    <h4>ציר ב' \u2014 אותות פרוגרסיביים (${entry.pole_b || '\u2014'})</h4>
-                    ${buildPoleBar('ציון', entry.pole_b || 0, 3, '#ff8800')}
+                    <h4>ציר ב' \u2014 אותות פרוגרסיביים (${entry.pole_b ?? '\u2014'}${entry.pole_b_raw != null ? ' \u2190 גולמי: ' + entry.pole_b_raw : ''})</h4>
+                    ${buildPoleBar('\u05de\u05ea\u05d5\u05e7\u05df', entry.pole_b || 0, 3, '#ff8800')}
+                    ${entry.pole_b_raw != null ? buildPoleBar('\u05d2\u05d5\u05dc\u05de\u05d9', entry.pole_b_raw, 3, '#ccc') : ''}
                     <ul class="kw-list">${buildKeywordPills(proto.pole_b_details)}</ul>
                 </div>
                 ${Object.keys(proto.red_flag_details || {}).length > 0 ? `
@@ -1095,8 +1112,9 @@
                         <ul class="kw-list">${buildKeywordPills(details.pole_a_details)}</ul>
                     </div>
                     <div>
-                        <strong>ציר ב' \u2014 אותות פרוגרסיביים (${entry.pole_b || '\u2014'})</strong>
-                        ${buildPoleBar('ציון', entry.pole_b || 0, 3, '#ff8800')}
+                        <strong>ציר ב' \u2014 אותות פרוגרסיביים (${entry.pole_b ?? '\u2014'}${entry.pole_b_raw != null ? ' \u2190 גולמי: ' + entry.pole_b_raw : ''})</strong>
+                        ${buildPoleBar('\u05de\u05ea\u05d5\u05e7\u05df', entry.pole_b || 0, 3, '#ff8800')}
+                        ${entry.pole_b_raw != null ? buildPoleBar('\u05d2\u05d5\u05dc\u05de\u05d9', entry.pole_b_raw, 3, '#ccc') : ''}
                         <ul class="kw-list">${buildKeywordPills(details.pole_b_details)}</ul>
                     </div>
                 </div>
