@@ -38,7 +38,7 @@ const DATA = {
       "subversive_deployments": 23,
       "combined_score": 23.95,
       "data_sources": "both",
-      "rank": 6
+      "rank": 7
     },
     {
       "city": "באר שבע",
@@ -58,7 +58,7 @@ const DATA = {
       "subversive_deployments": 78,
       "combined_score": 31.10,
       "data_sources": "both",
-      "rank": 3
+      "rank": 4
     },
     {
       "city": "הוד השרון",
@@ -78,7 +78,7 @@ const DATA = {
       "subversive_deployments": 42,
       "combined_score": 27.32,
       "data_sources": "both",
-      "rank": 4
+      "rank": 5
     },
     {
       "city": "רעננה",
@@ -98,7 +98,7 @@ const DATA = {
       "subversive_deployments": 31,
       "combined_score": 22.42,
       "data_sources": "both",
-      "rank": 7
+      "rank": 8
     },
     {
       "city": "הרצליה",
@@ -118,7 +118,7 @@ const DATA = {
       "subversive_deployments": 49,
       "combined_score": 17.93,
       "data_sources": "both",
-      "rank": 10
+      "rank": 11
     },
     {
       "city": "חיפה",
@@ -138,7 +138,7 @@ const DATA = {
       "subversive_deployments": 131,
       "combined_score": 21.09,
       "data_sources": "both",
-      "rank": 8
+      "rank": 9
     },
     {
       "city": "גבעת שמואל",
@@ -158,7 +158,7 @@ const DATA = {
       "subversive_deployments": 14,
       "combined_score": 19.45,
       "data_sources": "both",
-      "rank": 9
+      "rank": 10
     },
     {
       "city": "אריאל",
@@ -178,7 +178,7 @@ const DATA = {
       "subversive_deployments": 8,
       "combined_score": 17.15,
       "data_sources": "both",
-      "rank": 11
+      "rank": 12
     },
     {
       "city": "קרית אונו",
@@ -198,7 +198,7 @@ const DATA = {
       "subversive_deployments": 18,
       "combined_score": 16.44,
       "data_sources": "both",
-      "rank": 12
+      "rank": 13
     },
     {
       "city": "ראש העין",
@@ -218,7 +218,7 @@ const DATA = {
       "subversive_deployments": 19,
       "combined_score": 12.14,
       "data_sources": "both",
-      "rank": 14
+      "rank": 15
     },
     {
       "city": "קרית גת",
@@ -238,7 +238,7 @@ const DATA = {
       "subversive_deployments": 29,
       "combined_score": 13.92,
       "data_sources": "both",
-      "rank": 13
+      "rank": 14
     },
     {
       "city": "אפרת",
@@ -258,7 +258,7 @@ const DATA = {
       "subversive_deployments": 0,
       "combined_score": 4.40,
       "data_sources": "both",
-      "rank": 15
+      "rank": 16
     },
     {
       "city": "עמנואל",
@@ -278,7 +278,7 @@ const DATA = {
       "subversive_deployments": 0,
       "combined_score": 0.61,
       "data_sources": "both",
-      "rank": 17
+      "rank": 18
     },
     {
       "city": "נתיבות",
@@ -298,7 +298,7 @@ const DATA = {
       "subversive_deployments": 3,
       "combined_score": 1.63,
       "data_sources": "both",
-      "rank": 16
+      "rank": 17
     },
     {
       "city": "תל אביב-יפו",
@@ -339,7 +339,28 @@ const DATA = {
       "subversive_deployments": 4,
       "combined_score": 25.03,
       "data_sources": "both",
-      "rank": 5,
+      "rank": 6,
+      "fp_correction_pending": true
+    },
+    {
+      "city": "רמת השרון",
+      "protocol_key": "RAMAT_HASHARON",
+      "pole_a": 3.73,
+      "pole_b_raw": 0.28,
+      "pole_b": 0.28,
+      "red_flag": 0.0,
+      "ab_ratio": 13.32,
+      "protocol_files_scanned": 97,
+      "protocol_coverage": "97/681",
+      "exposure_score": 60.33,
+      "subversive_ratio": 18.16,
+      "subversive_budget": 837762.1499999999,
+      "total_edu_budget": 4612262.39,
+      "edu_deployments": 318,
+      "subversive_deployments": 54,
+      "combined_score": 32.97,
+      "data_sources": "both",
+      "rank": 3,
       "fp_correction_pending": true
     }
   ],
@@ -363,17 +384,6 @@ const DATA = {
       "total_edu_budget": 8685637.119999997,
       "edu_deployments": 613,
       "subversive_deployments": 48,
-      "combined_score": null,
-      "data_sources": "education_only"
-    },
-    {
-      "city": "רמת השרון",
-      "exposure_score": 60.33,
-      "subversive_ratio": 18.16,
-      "subversive_budget": 837762.1499999999,
-      "total_edu_budget": 4612262.39,
-      "edu_deployments": 318,
-      "subversive_deployments": 54,
       "combined_score": null,
       "data_sources": "education_only"
     },
@@ -1283,6 +1293,82 @@ const DATA = {
           "יועץ חיצוני": 1
         }
       }
+    },
+    "RAMAT_HASHARON": {
+      "pole_a_details": {
+        "jewish_heritage": {
+          "תורה": 7,
+          "הלכה": 11,
+          "בית כנסת": 11,
+          "רב העיר": 3,
+          "רבנות": 14
+        },
+        "zionist_national": {
+          "ציונות": 1,
+          "ציוני": 24,
+          "ציונית": 3,
+          "התיישבות": 1,
+          "עלייה": 21,
+          "קליטה": 1,
+          "ארץ ישראל": 1,
+          "עם ישראל": 1,
+          "מדינת ישראל": 31,
+          "דגל": 32,
+          "המנון": 2
+        },
+        "holidays_memory": {
+          "שבת": 330,
+          "פורים": 17,
+          "פסח": 15,
+          "סוכות": 2,
+          "שבועות": 25,
+          "ראש השנה": 4,
+          "יום כיפור": 2,
+          "יום הזיכרון": 6,
+          "יום העצמאות": 5,
+          "יום השואה": 1,
+          "שואה": 32,
+          "זיכרון": 12
+        },
+        "tradition_family": {
+          "מסורת": 7,
+          "מסורתי": 1,
+          "משפחה": 45,
+          "משפחתי": 3,
+          "הורים": 65,
+          "שורשים": 1,
+          "אבות": 9,
+          "מוסר": 14
+        },
+        "security_resilience": {
+          "ביטחון": 50,
+          "צה\"ל": 13,
+          "צבא": 26,
+          "חיילים": 28,
+          "חוסן": 10,
+          "מילואים": 7
+        }
+      },
+      "pole_b_details": {
+        "level_1_subtle": {
+          "קיימות": 23,
+          "הכלה": 5
+        },
+        "level_2_sel_language": {
+          "ניהול עצמי": 1
+        },
+        "level_3_critical_pedagogy": {
+          "ייצוג": 17
+        },
+        "analytical_framework": {
+          "אוכלוסיות": 4,
+          "שולי": 6,
+          "מיעוט": 6,
+          "פירוק": 7,
+          "מנהיגות צעירה": 1
+        }
+      },
+      "red_flag_details": {}
     },
     "ROSH_HAAYIN": {
       "pole_a_details": {
