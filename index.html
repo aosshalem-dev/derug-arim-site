@@ -189,6 +189,48 @@
         }
         .report-link:hover { background: #a00; }
 
+        /* ── Organization profile cards ── */
+        .org-profiles-section {
+            grid-column: 1 / -1;
+        }
+        .org-profiles-section h4 { color: #2a5a8a; margin-bottom: 10px; font-size: 0.95em; }
+        .org-card {
+            background: #fff; border: 1px solid #e0e0e0; border-radius: 6px;
+            padding: 12px 14px; margin: 8px 0;
+            border-right: 4px solid #cc8800;
+        }
+        .org-card.risk-high { border-right-color: #cc0000; }
+        .org-card.risk-medium-high { border-right-color: #ff6600; }
+        .org-card.risk-medium { border-right-color: #dd9900; }
+        .org-card.risk-low { border-right-color: #66aa44; }
+        .org-card-header {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 6px;
+        }
+        .org-card-name { font-weight: 700; font-size: 0.95em; color: #1a1a2e; }
+        .org-card-reg { font-size: 0.75em; color: #999; }
+        .org-card-thesis {
+            font-size: 0.85em; color: #444; line-height: 1.5;
+            margin-bottom: 8px; padding: 6px 10px;
+            background: #faf8f0; border-radius: 4px;
+        }
+        .org-card-stats {
+            display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 8px;
+            font-size: 0.8em; color: #555;
+        }
+        .org-stat { display: flex; align-items: center; gap: 4px; }
+        .org-stat strong { color: #222; }
+        .org-findings { list-style: none; padding: 0; margin: 0; }
+        .org-findings li {
+            padding: 2px 0; font-size: 0.8em; color: #555;
+            border-bottom: 1px solid #f5f5f5;
+        }
+        .org-findings li:before { content: '\25C6'; color: #cc8800; margin-left: 6px; font-size: 0.7em; }
+        .org-risk-badge {
+            display: inline-block; padding: 2px 8px; border-radius: 4px;
+            font-size: 0.75em; font-weight: 700; color: #fff;
+        }
+
         /* ── Pole bars ── */
         .pole-bar-container { margin: 8px 0; }
         .pole-bar-label { font-size: 0.8em; color: #777; margin-bottom: 3px; }
@@ -709,6 +751,7 @@
     <script src="data.js?v=10"></script>
     <script src="research_data.js?v=10"></script>
     <script src="protocols_data.js?v=10"></script>
+    <script src="research_orgs.js?v=10"></script>
     <script>
     // ── Tab switching ──
     function switchTab(tab, el) {
@@ -858,6 +901,42 @@
         </div>`;
     }
 
+    function buildOrgPanel(cityName) {
+        if (typeof RESEARCH_ORGS === 'undefined') return '';
+        const orgKeys = RESEARCH_ORGS.city_orgs[cityName];
+        if (!orgKeys || orgKeys.length === 0) return '';
+
+        const riskClass = r => r === 'high' ? 'risk-high' : r === 'medium-high' ? 'risk-medium-high' : r === 'medium' ? 'risk-medium' : 'risk-low';
+        const riskLabel = r => r === 'high' ? '\u05d2\u05d1\u05d5\u05d4' : r === 'medium-high' ? '\u05d1\u05d9\u05e0\u05d5\u05e0\u05d9-\u05d2\u05d1\u05d5\u05d4' : r === 'medium' ? '\u05d1\u05d9\u05e0\u05d5\u05e0\u05d9' : '\u05e0\u05de\u05d5\u05da';
+
+        const cards = orgKeys.map(key => {
+            const o = RESEARCH_ORGS.orgs[key];
+            if (!o) return '';
+            const findings = (o.key_findings || []).slice(0, 4);
+            return `<div class="org-card ${riskClass(o.risk)}">
+                <div class="org-card-header">
+                    <span class="org-card-name">${o.name_he}</span>
+                    <span class="org-risk-badge ${riskClass(o.risk)}">${riskLabel(o.risk)}</span>
+                </div>
+                <div class="org-card-reg">${o.name_en} | \u05e8\u05d9\u05e9\u05d5\u05dd: ${o.reg}</div>
+                <div class="org-card-thesis">${o.thesis}</div>
+                <div class="org-card-stats">
+                    <div class="org-stat"><strong>\u20AA${(o.revenue_nis / 1000000).toFixed(1)}M</strong> \u05ea\u05e7\u05e6\u05d9\u05d1</div>
+                    <div class="org-stat"><strong>${o.gov_pct}%</strong> \u05de\u05de\u05e9\u05dc\u05ea\u05d9</div>
+                    <div class="org-stat"><strong>${o.staff}</strong> \u05e2\u05d5\u05d1\u05d3\u05d9\u05dd</div>
+                    <div class="org-stat"><strong>${o.school_count}</strong> \u05d1\u05ea\u05d9 \u05e1\u05e4\u05e8</div>
+                    ${o.program_budget > 0 ? `<div class="org-stat"><strong>\u20AA${Math.round(o.program_budget).toLocaleString()}</strong> \u05ea\u05e7\u05e6\u05d9\u05d1 \u05ea\u05d5\u05db\u05e0\u05d9\u05d5\u05ea</div>` : ''}
+                </div>
+                ${findings.length > 0 ? `<ul class="org-findings">${findings.map(f => `<li>${f}</li>`).join('')}</ul>` : ''}
+            </div>`;
+        }).join('');
+
+        return `<div class="detail-section org-profiles-section">
+            <h4>\u05d0\u05e8\u05d2\u05d5\u05e0\u05d9\u05dd \u05e0\u05d7\u05e7\u05e8\u05d9\u05dd \u05d1\u05e2\u05d9\u05e8 (${orgKeys.length} \u05de\u05ea\u05d5\u05da 7 \u05e0\u05d7\u05e7\u05e8\u05d9\u05dd)</h4>
+            ${cards}
+        </div>`;
+    }
+
     function buildDetailPanel(entry) {
         const key = entry.protocol_key || CITY_KEY_MAP[entry.city];
         const proto = key ? DATA.protocol_details[key] : null;
@@ -936,11 +1015,13 @@
                 </div>`;
         }
 
-        if (!proto && worst.length === 0 && !electionPanel && !newsPanel) {
+        let orgsPanel = buildOrgPanel(entry.city);
+
+        if (!proto && worst.length === 0 && !electionPanel && !newsPanel && !orgsPanel) {
             return '<div class="detail-section"><h4>אין נתונים מפורטים זמינים</h4></div>';
         }
 
-        return `<div class="detail-grid">${leftPanel}${electionPanel}${newsPanel}${rightPanel}</div>`;
+        return `<div class="detail-grid">${leftPanel}${electionPanel}${newsPanel}${rightPanel}${orgsPanel}</div>`;
     }
 
     function toggleCity(idx) {
