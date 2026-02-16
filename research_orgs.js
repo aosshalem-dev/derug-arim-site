@@ -144,7 +144,7 @@ const RESEARCH_ORGS = {
         "לא נמצא במיפוי גפן — פעילות מחוץ לקטלוג"
       ],
       "risk": "medium-high",
-      "funding_sources": "ממשלת ישראל (49%), NIF, קרנות שמאל",
+      "funding_sources": "ממשלת ישראל (49%), NIF, קרנות פרוגרסיביות",
       "report_url": "research/deep_Tikkun.md",
       "source_links": [
         {"label": "GuideStar IL", "url": "https://www.guidestar.org.il/organization/580334779"},
