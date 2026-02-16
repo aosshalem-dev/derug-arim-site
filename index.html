@@ -450,10 +450,11 @@
             </div>
             <div class="method-body">
                 <ul style="margin-top:10px">
-                    <li><strong>ציון משולב</strong> = שקלול של שלושה מקורות מידע:</li>
-                    <li>• חשיפה חינוכית (תוכניות גפ"ן) <span class="weight">50%</span></li>
-                    <li>• אותות פרוגרסיביים בפרוטוקולים (ציר ב') <span class="weight">30%</span></li>
-                    <li>• דגלים אדומים — שיתוף UNESCO, יועצים חיצוניים <span class="weight">20%</span></li>
+                    <li><strong>ציון משולב</strong> = שקלול של ארבעה מקורות מידע:</li>
+                    <li>• חשיפה חינוכית (תוכניות גפ"ן) <span class="weight">40%</span></li>
+                    <li>• הצבעה פרוגרסיבית (כנסת 25) <span class="weight">25%</span></li>
+                    <li>• אותות פרוגרסיביים בפרוטוקולים (ציר ב') <span class="weight">20%</span></li>
+                    <li>• דגלים אדומים — שיתוף UNESCO, יועצים חיצוניים <span class="weight">15%</span></li>
                     <li class="dim" style="margin-top:8px">ציר א' (זהות יהודית/ציונית) מוצג לעיון בלבד ואינו נכלל בציון המשולב</li>
                 </ul>
             </div>
@@ -509,6 +510,7 @@
                     <th data-col="rank" data-type="num"># <span class="sort-arrow">&#9660;</span></th>
                     <th data-col="city" data-type="str">עיר <span class="sort-arrow">&#9660;</span></th>
                     <th data-col="combined_score" data-type="num">ציון משולב <span class="sort-arrow">&#9660;</span></th>
+                    <th data-col="progressive_pct" data-type="num">הצבעה פרוגר' <span class="sort-arrow">&#9660;</span></th>
                     <th data-col="exposure_score" data-type="num">חשיפה חינוכית <span class="sort-arrow">&#9660;</span></th>
                     <th data-col="subversive_ratio" data-type="num">% תקציב מסומן <span class="sort-arrow">&#9660;</span></th>
                     <th data-col="pole_b" data-type="num">ציר ב' <span class="sort-arrow">&#9660;</span></th>
@@ -891,11 +893,26 @@
                 </div>`;
         }
 
-        if (!proto && worst.length === 0) {
+        let electionPanel = '';
+        if (entry.progressive_pct != null) {
+            const progBar = buildPoleBar('פרוגרסיבי', entry.progressive_pct, 60, '#6644cc');
+            const religBar = buildPoleBar('דתי', entry.religious_pct || 0, 60, '#cc8844');
+            electionPanel = `
+                <div class="detail-section">
+                    <h4>הצבעה — כנסת 25 (${(entry.turnout_pct || 0).toFixed(0)}% הצבעה, ${(entry.eligible_voters || 0).toLocaleString()} זכאים)</h4>
+                    ${progBar}${religBar}
+                    <div class="dim" style="margin-top:6px;font-size:0.85em">
+                        פרוגרסיבי (מרצ+עבודה+יש עתיד): <strong>${entry.progressive_pct}%</strong> &nbsp;|&nbsp;
+                        דתי (ש"ס+יהדות התורה+ציונות דתית): <strong>${entry.religious_pct}%</strong>
+                    </div>
+                </div>`;
+        }
+
+        if (!proto && worst.length === 0 && !electionPanel) {
             return '<div class="detail-section"><h4>אין נתונים מפורטים זמינים</h4></div>';
         }
 
-        return `<div class="detail-grid">${leftPanel}${rightPanel}</div>`;
+        return `<div class="detail-grid">${leftPanel}${electionPanel}${rightPanel}</div>`;
     }
 
     function toggleCity(idx) {
@@ -1007,6 +1024,7 @@
                 <td class="rank">${isPartial ? '\u2014' : (e.rank || i+1)}</td>
                 <td class="city">${e.city} \u25BE ${isPartial ? '<span class="dim">(' + src + ')</span>' : ''}</td>
                 <td class="score" style="color:${color};font-weight:bold">${e.combined_score ?? '\u2014'}</td>
+                <td>${e.progressive_pct != null ? e.progressive_pct + '%' : '\u2014'}</td>
                 <td>${e.exposure_score != null ? e.exposure_score + '%' : '\u2014'}</td>
                 <td>${e.subversive_ratio != null ? e.subversive_ratio + '%' : '\u2014'}</td>
                 <td>${e.pole_b ?? '\u2014'}</td>
@@ -1015,7 +1033,7 @@
                 <td class="dim">${e.protocol_coverage || '\u2014'}</td>
             </tr>
             <tr class="detail-row" id="detail-${i}">
-                <td colspan="9" class="detail-cell">${buildDetailPanel(e)}</td>
+                <td colspan="10" class="detail-cell">${buildDetailPanel(e)}</td>
             </tr>`;
         });
 
