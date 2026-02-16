@@ -1,0 +1,1048 @@
+{
+  "inter_rater_reliability": {
+    "n_pairs": 172,
+    "n_skipped": 1,
+    "pearson_r": 0.6748,
+    "cohens_weighted_kappa_quadratic": 0.6283,
+    "exact_agreement": {
+      "count": 100,
+      "total": 172,
+      "rate": 0.5814
+    },
+    "within_1_point_agreement": {
+      "count": 156,
+      "total": 172,
+      "rate": 0.907
+    },
+    "score_difference_distribution_A_minus_B": {
+      "-2.0": 2,
+      "-1.0": 13,
+      "0.0": 100,
+      "1.0": 43,
+      "2.0": 10,
+      "3.0": 4
+    },
+    "agent_a_stats": {
+      "mean": 2.33,
+      "std": 1.11,
+      "min": 1.0,
+      "max": 5.0
+    },
+    "agent_b_stats": {
+      "mean": 1.99,
+      "std": 0.92,
+      "min": 1.0,
+      "max": 5.0
+    }
+  },
+  "normalization_ceiling_analysis": {
+    "pole_b": {
+      "n": 15,
+      "mean": 0.4607,
+      "median": 0.31,
+      "std_dev": 0.5541,
+      "min": 0.01,
+      "max": 2.25,
+      "p90": 0.786,
+      "p95": 1.298,
+      "p99": 2.0596,
+      "recommended_ceiling_p95x1_5": 1.947,
+      "all_values": [
+        0.01,
+        0.07,
+        0.12,
+        0.12,
+        0.12,
+        0.19,
+        0.26,
+        0.31,
+        0.34,
+        0.44,
+        0.58,
+        0.58,
+        0.63,
+        0.89,
+        2.25
+      ]
+    },
+    "red_flag": {
+      "n": 15,
+      "mean": 0.0253,
+      "median": 0.02,
+      "std_dev": 0.0356,
+      "min": 0.0,
+      "max": 0.12,
+      "p90": 0.07,
+      "p95": 0.099,
+      "p99": 0.1158,
+      "recommended_ceiling_p95x1_5": 0.1485,
+      "all_values": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.01,
+        0.02,
+        0.02,
+        0.02,
+        0.02,
+        0.04,
+        0.04,
+        0.09,
+        0.12
+      ]
+    }
+  },
+  "coverage_analysis": {
+    "per_city": [
+      {
+        "city": "ariel",
+        "files_scanned": 69,
+        "files_total": 196,
+        "files_failed": 31,
+        "coverage_pct": 35.2,
+        "confidence": "high"
+      },
+      {
+        "city": "BEER_SHEVA",
+        "files_scanned": 97,
+        "files_total": 1027,
+        "files_failed": 3,
+        "coverage_pct": 9.44,
+        "confidence": "low"
+      },
+      {
+        "city": "EFRAT",
+        "files_scanned": 93,
+        "files_total": 252,
+        "files_failed": 7,
+        "coverage_pct": 36.9,
+        "confidence": "high"
+      },
+      {
+        "city": "EMANUEL",
+        "files_scanned": 50,
+        "files_total": 155,
+        "files_failed": 50,
+        "coverage_pct": 32.26,
+        "confidence": "high"
+      },
+      {
+        "city": "GIVAT_SHMUEL",
+        "files_scanned": 68,
+        "files_total": 392,
+        "files_failed": 32,
+        "coverage_pct": 17.35,
+        "confidence": "medium"
+      },
+      {
+        "city": "GIVATAYIM",
+        "files_scanned": 76,
+        "files_total": 668,
+        "files_failed": 24,
+        "coverage_pct": 11.38,
+        "confidence": "low"
+      },
+      {
+        "city": "HAIFA",
+        "files_scanned": 93,
+        "files_total": 1215,
+        "files_failed": 7,
+        "coverage_pct": 7.65,
+        "confidence": "low"
+      },
+      {
+        "city": "HERZLIYA",
+        "files_scanned": 66,
+        "files_total": 1813,
+        "files_failed": 34,
+        "coverage_pct": 3.64,
+        "confidence": "low"
+      },
+      {
+        "city": "HOD_HASHARON",
+        "files_scanned": 43,
+        "files_total": 715,
+        "files_failed": 57,
+        "coverage_pct": 6.01,
+        "confidence": "low"
+      },
+      {
+        "city": "KARMIEL",
+        "files_scanned": 49,
+        "files_total": 162,
+        "files_failed": 51,
+        "coverage_pct": 30.25,
+        "confidence": "high"
+      },
+      {
+        "city": "KIRYAT_GAT",
+        "files_scanned": 17,
+        "files_total": 222,
+        "files_failed": 83,
+        "coverage_pct": 7.66,
+        "confidence": "low"
+      },
+      {
+        "city": "KIRYAT_ONO",
+        "files_scanned": 67,
+        "files_total": 233,
+        "files_failed": 33,
+        "coverage_pct": 28.76,
+        "confidence": "medium"
+      },
+      {
+        "city": "NETIVOT",
+        "files_scanned": 44,
+        "files_total": 300,
+        "files_failed": 56,
+        "coverage_pct": 14.67,
+        "confidence": "low"
+      },
+      {
+        "city": "RAANANA",
+        "files_scanned": 82,
+        "files_total": 968,
+        "files_failed": 18,
+        "coverage_pct": 8.47,
+        "confidence": "low"
+      },
+      {
+        "city": "ROSH_HAAYIN",
+        "files_scanned": 100,
+        "files_total": 457,
+        "files_failed": 0,
+        "coverage_pct": 21.88,
+        "confidence": "medium"
+      }
+    ],
+    "summary": {
+      "total_cities": 15,
+      "high_confidence": 4,
+      "medium_confidence": 3,
+      "low_confidence": 8,
+      "mean_coverage_pct": 18.1,
+      "median_coverage_pct": 14.67
+    }
+  },
+  "sensitivity_analysis": {
+    "n_cities": 15,
+    "weight_schemes": {
+      "current_50_30_20": {
+        "education": 50,
+        "protocol": 30,
+        "redflag": 20
+      },
+      "equal_33_33_33": {
+        "education": 33,
+        "protocol": 33,
+        "redflag": 33
+      },
+      "education_heavy_70_20_10": {
+        "education": 70,
+        "protocol": 20,
+        "redflag": 10
+      },
+      "protocol_heavy_30_50_20": {
+        "education": 30,
+        "protocol": 50,
+        "redflag": 20
+      }
+    },
+    "rankings_per_scheme": {
+      "current_50_30_20": [
+        {
+          "city": "גבעתיים",
+          "score": 52.98,
+          "norm_education": 32.62,
+          "norm_protocol": 100.0,
+          "norm_redflag": 33.33,
+          "rank": 1
+        },
+        {
+          "city": "כרמיאל",
+          "score": 51.97,
+          "norm_education": 75.14,
+          "norm_protocol": 25.78,
+          "norm_redflag": 33.33,
+          "rank": 2
+        },
+        {
+          "city": "באר שבע",
+          "score": 39.63,
+          "norm_education": 30.19,
+          "norm_protocol": 15.11,
+          "norm_redflag": 100.0,
+          "rank": 3
+        },
+        {
+          "city": "הוד השרון",
+          "score": 37.75,
+          "norm_education": 30.03,
+          "norm_protocol": 25.78,
+          "norm_redflag": 75.0,
+          "rank": 4
+        },
+        {
+          "city": "הרצליה",
+          "score": 29.77,
+          "norm_education": 29.13,
+          "norm_protocol": 39.56,
+          "norm_redflag": 16.67,
+          "rank": 5
+        },
+        {
+          "city": "רעננה",
+          "score": 29.18,
+          "norm_education": 34.9,
+          "norm_protocol": 28.0,
+          "norm_redflag": 16.67,
+          "rank": 6
+        },
+        {
+          "city": "חיפה",
+          "score": 26.59,
+          "norm_education": 38.12,
+          "norm_protocol": 19.56,
+          "norm_redflag": 8.33,
+          "rank": 7
+        },
+        {
+          "city": "גבעת שמואל",
+          "score": 19.68,
+          "norm_education": 37.49,
+          "norm_protocol": 3.11,
+          "norm_redflag": 0.0,
+          "rank": 8
+        },
+        {
+          "city": "אריאל",
+          "score": 18.21,
+          "norm_education": 26.56,
+          "norm_protocol": 5.33,
+          "norm_redflag": 16.67,
+          "rank": 9
+        },
+        {
+          "city": "קרית אונו",
+          "score": 16.84,
+          "norm_education": 30.48,
+          "norm_protocol": 5.33,
+          "norm_redflag": 0.0,
+          "rank": 10
+        },
+        {
+          "city": "ראש העין",
+          "score": 15.6,
+          "norm_education": 24.27,
+          "norm_protocol": 11.56,
+          "norm_redflag": 0.0,
+          "rank": 11
+        },
+        {
+          "city": "קרית גת",
+          "score": 13.95,
+          "norm_education": 27.63,
+          "norm_protocol": 0.44,
+          "norm_redflag": 0.0,
+          "rank": 12
+        },
+        {
+          "city": "אפרת",
+          "score": 7.6,
+          "norm_education": 3.46,
+          "norm_protocol": 8.44,
+          "norm_redflag": 16.67,
+          "rank": 13
+        },
+        {
+          "city": "עמנואל",
+          "score": 4.74,
+          "norm_education": 1.22,
+          "norm_protocol": 13.78,
+          "norm_redflag": 0.0,
+          "rank": 14
+        },
+        {
+          "city": "נתיבות",
+          "score": 3.22,
+          "norm_education": 3.25,
+          "norm_protocol": 5.33,
+          "norm_redflag": 0.0,
+          "rank": 15
+        }
+      ],
+      "equal_33_33_33": [
+        {
+          "city": "גבעתיים",
+          "score": 54.76,
+          "norm_education": 32.62,
+          "norm_protocol": 100.0,
+          "norm_redflag": 33.33,
+          "rank": 1
+        },
+        {
+          "city": "באר שבע",
+          "score": 47.95,
+          "norm_education": 30.19,
+          "norm_protocol": 15.11,
+          "norm_redflag": 100.0,
+          "rank": 2
+        },
+        {
+          "city": "כרמיאל",
+          "score": 44.3,
+          "norm_education": 75.14,
+          "norm_protocol": 25.78,
+          "norm_redflag": 33.33,
+          "rank": 3
+        },
+        {
+          "city": "הוד השרון",
+          "score": 43.17,
+          "norm_education": 30.03,
+          "norm_protocol": 25.78,
+          "norm_redflag": 75.0,
+          "rank": 4
+        },
+        {
+          "city": "הרצליה",
+          "score": 28.17,
+          "norm_education": 29.13,
+          "norm_protocol": 39.56,
+          "norm_redflag": 16.67,
+          "rank": 5
+        },
+        {
+          "city": "רעננה",
+          "score": 26.26,
+          "norm_education": 34.9,
+          "norm_protocol": 28.0,
+          "norm_redflag": 16.67,
+          "rank": 6
+        },
+        {
+          "city": "חיפה",
+          "score": 21.78,
+          "norm_education": 38.12,
+          "norm_protocol": 19.56,
+          "norm_redflag": 8.33,
+          "rank": 7
+        },
+        {
+          "city": "אריאל",
+          "score": 16.02,
+          "norm_education": 26.56,
+          "norm_protocol": 5.33,
+          "norm_redflag": 16.67,
+          "rank": 8
+        },
+        {
+          "city": "גבעת שמואל",
+          "score": 13.4,
+          "norm_education": 37.49,
+          "norm_protocol": 3.11,
+          "norm_redflag": 0.0,
+          "rank": 9
+        },
+        {
+          "city": "קרית אונו",
+          "score": 11.82,
+          "norm_education": 30.48,
+          "norm_protocol": 5.33,
+          "norm_redflag": 0.0,
+          "rank": 10
+        },
+        {
+          "city": "ראש העין",
+          "score": 11.82,
+          "norm_education": 24.27,
+          "norm_protocol": 11.56,
+          "norm_redflag": 0.0,
+          "rank": 11
+        },
+        {
+          "city": "אפרת",
+          "score": 9.43,
+          "norm_education": 3.46,
+          "norm_protocol": 8.44,
+          "norm_redflag": 16.67,
+          "rank": 12
+        },
+        {
+          "city": "קרית גת",
+          "score": 9.26,
+          "norm_education": 27.63,
+          "norm_protocol": 0.44,
+          "norm_redflag": 0.0,
+          "rank": 13
+        },
+        {
+          "city": "עמנואל",
+          "score": 4.95,
+          "norm_education": 1.22,
+          "norm_protocol": 13.78,
+          "norm_redflag": 0.0,
+          "rank": 14
+        },
+        {
+          "city": "נתיבות",
+          "score": 2.83,
+          "norm_education": 3.25,
+          "norm_protocol": 5.33,
+          "norm_redflag": 0.0,
+          "rank": 15
+        }
+      ],
+      "education_heavy_70_20_10": [
+        {
+          "city": "כרמיאל",
+          "score": 61.09,
+          "norm_education": 75.14,
+          "norm_protocol": 25.78,
+          "norm_redflag": 33.33,
+          "rank": 1
+        },
+        {
+          "city": "גבעתיים",
+          "score": 46.17,
+          "norm_education": 32.62,
+          "norm_protocol": 100.0,
+          "norm_redflag": 33.33,
+          "rank": 2
+        },
+        {
+          "city": "באר שבע",
+          "score": 34.16,
+          "norm_education": 30.19,
+          "norm_protocol": 15.11,
+          "norm_redflag": 100.0,
+          "rank": 3
+        },
+        {
+          "city": "הוד השרון",
+          "score": 33.68,
+          "norm_education": 30.03,
+          "norm_protocol": 25.78,
+          "norm_redflag": 75.0,
+          "rank": 4
+        },
+        {
+          "city": "רעננה",
+          "score": 31.7,
+          "norm_education": 34.9,
+          "norm_protocol": 28.0,
+          "norm_redflag": 16.67,
+          "rank": 5
+        },
+        {
+          "city": "חיפה",
+          "score": 31.43,
+          "norm_education": 38.12,
+          "norm_protocol": 19.56,
+          "norm_redflag": 8.33,
+          "rank": 6
+        },
+        {
+          "city": "הרצליה",
+          "score": 29.97,
+          "norm_education": 29.13,
+          "norm_protocol": 39.56,
+          "norm_redflag": 16.67,
+          "rank": 7
+        },
+        {
+          "city": "גבעת שמואל",
+          "score": 26.87,
+          "norm_education": 37.49,
+          "norm_protocol": 3.11,
+          "norm_redflag": 0.0,
+          "rank": 8
+        },
+        {
+          "city": "קרית אונו",
+          "score": 22.4,
+          "norm_education": 30.48,
+          "norm_protocol": 5.33,
+          "norm_redflag": 0.0,
+          "rank": 9
+        },
+        {
+          "city": "אריאל",
+          "score": 21.33,
+          "norm_education": 26.56,
+          "norm_protocol": 5.33,
+          "norm_redflag": 16.67,
+          "rank": 10
+        },
+        {
+          "city": "קרית גת",
+          "score": 19.43,
+          "norm_education": 27.63,
+          "norm_protocol": 0.44,
+          "norm_redflag": 0.0,
+          "rank": 11
+        },
+        {
+          "city": "ראש העין",
+          "score": 19.3,
+          "norm_education": 24.27,
+          "norm_protocol": 11.56,
+          "norm_redflag": 0.0,
+          "rank": 12
+        },
+        {
+          "city": "אפרת",
+          "score": 5.78,
+          "norm_education": 3.46,
+          "norm_protocol": 8.44,
+          "norm_redflag": 16.67,
+          "rank": 13
+        },
+        {
+          "city": "עמנואל",
+          "score": 3.61,
+          "norm_education": 1.22,
+          "norm_protocol": 13.78,
+          "norm_redflag": 0.0,
+          "rank": 14
+        },
+        {
+          "city": "נתיבות",
+          "score": 3.34,
+          "norm_education": 3.25,
+          "norm_protocol": 5.33,
+          "norm_redflag": 0.0,
+          "rank": 15
+        }
+      ],
+      "protocol_heavy_30_50_20": [
+        {
+          "city": "גבעתיים",
+          "score": 66.45,
+          "norm_education": 32.62,
+          "norm_protocol": 100.0,
+          "norm_redflag": 33.33,
+          "rank": 1
+        },
+        {
+          "city": "כרמיאל",
+          "score": 42.1,
+          "norm_education": 75.14,
+          "norm_protocol": 25.78,
+          "norm_redflag": 33.33,
+          "rank": 2
+        },
+        {
+          "city": "הוד השרון",
+          "score": 36.9,
+          "norm_education": 30.03,
+          "norm_protocol": 25.78,
+          "norm_redflag": 75.0,
+          "rank": 3
+        },
+        {
+          "city": "באר שבע",
+          "score": 36.61,
+          "norm_education": 30.19,
+          "norm_protocol": 15.11,
+          "norm_redflag": 100.0,
+          "rank": 4
+        },
+        {
+          "city": "הרצליה",
+          "score": 31.85,
+          "norm_education": 29.13,
+          "norm_protocol": 39.56,
+          "norm_redflag": 16.67,
+          "rank": 5
+        },
+        {
+          "city": "רעננה",
+          "score": 27.8,
+          "norm_education": 34.9,
+          "norm_protocol": 28.0,
+          "norm_redflag": 16.67,
+          "rank": 6
+        },
+        {
+          "city": "חיפה",
+          "score": 22.88,
+          "norm_education": 38.12,
+          "norm_protocol": 19.56,
+          "norm_redflag": 8.33,
+          "rank": 7
+        },
+        {
+          "city": "אריאל",
+          "score": 13.97,
+          "norm_education": 26.56,
+          "norm_protocol": 5.33,
+          "norm_redflag": 16.67,
+          "rank": 8
+        },
+        {
+          "city": "ראש העין",
+          "score": 13.06,
+          "norm_education": 24.27,
+          "norm_protocol": 11.56,
+          "norm_redflag": 0.0,
+          "rank": 9
+        },
+        {
+          "city": "גבעת שמואל",
+          "score": 12.8,
+          "norm_education": 37.49,
+          "norm_protocol": 3.11,
+          "norm_redflag": 0.0,
+          "rank": 10
+        },
+        {
+          "city": "קרית אונו",
+          "score": 11.81,
+          "norm_education": 30.48,
+          "norm_protocol": 5.33,
+          "norm_redflag": 0.0,
+          "rank": 11
+        },
+        {
+          "city": "אפרת",
+          "score": 8.59,
+          "norm_education": 3.46,
+          "norm_protocol": 8.44,
+          "norm_redflag": 16.67,
+          "rank": 12
+        },
+        {
+          "city": "קרית גת",
+          "score": 8.51,
+          "norm_education": 27.63,
+          "norm_protocol": 0.44,
+          "norm_redflag": 0.0,
+          "rank": 13
+        },
+        {
+          "city": "עמנואל",
+          "score": 7.25,
+          "norm_education": 1.22,
+          "norm_protocol": 13.78,
+          "norm_redflag": 0.0,
+          "rank": 14
+        },
+        {
+          "city": "נתיבות",
+          "score": 3.64,
+          "norm_education": 3.25,
+          "norm_protocol": 5.33,
+          "norm_redflag": 0.0,
+          "rank": 15
+        }
+      ]
+    },
+    "comparisons_vs_baseline": {
+      "equal_33_33_33": {
+        "weights": [
+          33,
+          33,
+          33
+        ],
+        "rank_changes": [
+          {
+            "city": "גבעתיים",
+            "baseline_rank": 1,
+            "new_rank": 1,
+            "rank_change": 0
+          },
+          {
+            "city": "באר שבע",
+            "baseline_rank": 3,
+            "new_rank": 2,
+            "rank_change": -1
+          },
+          {
+            "city": "כרמיאל",
+            "baseline_rank": 2,
+            "new_rank": 3,
+            "rank_change": 1
+          },
+          {
+            "city": "הוד השרון",
+            "baseline_rank": 4,
+            "new_rank": 4,
+            "rank_change": 0
+          },
+          {
+            "city": "הרצליה",
+            "baseline_rank": 5,
+            "new_rank": 5,
+            "rank_change": 0
+          },
+          {
+            "city": "רעננה",
+            "baseline_rank": 6,
+            "new_rank": 6,
+            "rank_change": 0
+          },
+          {
+            "city": "חיפה",
+            "baseline_rank": 7,
+            "new_rank": 7,
+            "rank_change": 0
+          },
+          {
+            "city": "אריאל",
+            "baseline_rank": 9,
+            "new_rank": 8,
+            "rank_change": -1
+          },
+          {
+            "city": "גבעת שמואל",
+            "baseline_rank": 8,
+            "new_rank": 9,
+            "rank_change": 1
+          },
+          {
+            "city": "קרית אונו",
+            "baseline_rank": 10,
+            "new_rank": 10,
+            "rank_change": 0
+          },
+          {
+            "city": "ראש העין",
+            "baseline_rank": 11,
+            "new_rank": 11,
+            "rank_change": 0
+          },
+          {
+            "city": "אפרת",
+            "baseline_rank": 13,
+            "new_rank": 12,
+            "rank_change": -1
+          },
+          {
+            "city": "קרית גת",
+            "baseline_rank": 12,
+            "new_rank": 13,
+            "rank_change": 1
+          },
+          {
+            "city": "עמנואל",
+            "baseline_rank": 14,
+            "new_rank": 14,
+            "rank_change": 0
+          },
+          {
+            "city": "נתיבות",
+            "baseline_rank": 15,
+            "new_rank": 15,
+            "rank_change": 0
+          }
+        ],
+        "big_movers_gt2": []
+      },
+      "education_heavy_70_20_10": {
+        "weights": [
+          70,
+          20,
+          10
+        ],
+        "rank_changes": [
+          {
+            "city": "כרמיאל",
+            "baseline_rank": 2,
+            "new_rank": 1,
+            "rank_change": -1
+          },
+          {
+            "city": "גבעתיים",
+            "baseline_rank": 1,
+            "new_rank": 2,
+            "rank_change": 1
+          },
+          {
+            "city": "באר שבע",
+            "baseline_rank": 3,
+            "new_rank": 3,
+            "rank_change": 0
+          },
+          {
+            "city": "הוד השרון",
+            "baseline_rank": 4,
+            "new_rank": 4,
+            "rank_change": 0
+          },
+          {
+            "city": "רעננה",
+            "baseline_rank": 6,
+            "new_rank": 5,
+            "rank_change": -1
+          },
+          {
+            "city": "חיפה",
+            "baseline_rank": 7,
+            "new_rank": 6,
+            "rank_change": -1
+          },
+          {
+            "city": "הרצליה",
+            "baseline_rank": 5,
+            "new_rank": 7,
+            "rank_change": 2
+          },
+          {
+            "city": "גבעת שמואל",
+            "baseline_rank": 8,
+            "new_rank": 8,
+            "rank_change": 0
+          },
+          {
+            "city": "קרית אונו",
+            "baseline_rank": 10,
+            "new_rank": 9,
+            "rank_change": -1
+          },
+          {
+            "city": "אריאל",
+            "baseline_rank": 9,
+            "new_rank": 10,
+            "rank_change": 1
+          },
+          {
+            "city": "קרית גת",
+            "baseline_rank": 12,
+            "new_rank": 11,
+            "rank_change": -1
+          },
+          {
+            "city": "ראש העין",
+            "baseline_rank": 11,
+            "new_rank": 12,
+            "rank_change": 1
+          },
+          {
+            "city": "אפרת",
+            "baseline_rank": 13,
+            "new_rank": 13,
+            "rank_change": 0
+          },
+          {
+            "city": "עמנואל",
+            "baseline_rank": 14,
+            "new_rank": 14,
+            "rank_change": 0
+          },
+          {
+            "city": "נתיבות",
+            "baseline_rank": 15,
+            "new_rank": 15,
+            "rank_change": 0
+          }
+        ],
+        "big_movers_gt2": []
+      },
+      "protocol_heavy_30_50_20": {
+        "weights": [
+          30,
+          50,
+          20
+        ],
+        "rank_changes": [
+          {
+            "city": "גבעתיים",
+            "baseline_rank": 1,
+            "new_rank": 1,
+            "rank_change": 0
+          },
+          {
+            "city": "כרמיאל",
+            "baseline_rank": 2,
+            "new_rank": 2,
+            "rank_change": 0
+          },
+          {
+            "city": "הוד השרון",
+            "baseline_rank": 4,
+            "new_rank": 3,
+            "rank_change": -1
+          },
+          {
+            "city": "באר שבע",
+            "baseline_rank": 3,
+            "new_rank": 4,
+            "rank_change": 1
+          },
+          {
+            "city": "הרצליה",
+            "baseline_rank": 5,
+            "new_rank": 5,
+            "rank_change": 0
+          },
+          {
+            "city": "רעננה",
+            "baseline_rank": 6,
+            "new_rank": 6,
+            "rank_change": 0
+          },
+          {
+            "city": "חיפה",
+            "baseline_rank": 7,
+            "new_rank": 7,
+            "rank_change": 0
+          },
+          {
+            "city": "אריאל",
+            "baseline_rank": 9,
+            "new_rank": 8,
+            "rank_change": -1
+          },
+          {
+            "city": "ראש העין",
+            "baseline_rank": 11,
+            "new_rank": 9,
+            "rank_change": -2
+          },
+          {
+            "city": "גבעת שמואל",
+            "baseline_rank": 8,
+            "new_rank": 10,
+            "rank_change": 2
+          },
+          {
+            "city": "קרית אונו",
+            "baseline_rank": 10,
+            "new_rank": 11,
+            "rank_change": 1
+          },
+          {
+            "city": "אפרת",
+            "baseline_rank": 13,
+            "new_rank": 12,
+            "rank_change": -1
+          },
+          {
+            "city": "קרית גת",
+            "baseline_rank": 12,
+            "new_rank": 13,
+            "rank_change": 1
+          },
+          {
+            "city": "עמנואל",
+            "baseline_rank": 14,
+            "new_rank": 14,
+            "rank_change": 0
+          },
+          {
+            "city": "נתיבות",
+            "baseline_rank": 15,
+            "new_rank": 15,
+            "rank_change": 0
+          }
+        ],
+        "big_movers_gt2": []
+      }
+    },
+    "normalization_note": "All components normalized to 0-100 via max-scaling; exposure_score used as-is from source data"
+  }
+}
