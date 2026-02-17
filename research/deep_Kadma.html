@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>בית ספר קדמה (Kedma School), Jerusalem — דוח מחקר מעמיק</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background: #f5f5f8;
+  color: #1a1a2e;
+  direction: rtl;
+  line-height: 1.8;
+  font-size: 17px;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #1a1a2e; color: #fff;
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  overflow-x: auto; white-space: nowrap;
+}
+nav .brand { font-weight: 700; color: #ff8800; flex-shrink: 0; }
+nav a { color: #ccc; text-decoration: none; font-size: 0.85em; padding: 8px 4px; border-bottom: 2px solid transparent; flex-shrink: 0; }
+nav a:hover { color: #ff8800; border-bottom-color: #ff8800; }
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a5a8a 100%);
+  color: #fff; padding: 50px 20px 40px; text-align: center;
+}
+.hero h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+.hero .subtitle { font-size: 1.05em; color: #b0c4de; margin-bottom: 6px; }
+.hero .meta { font-size: 0.9em; color: #ff8800; margin-top: 8px; }
+.risk-badge {
+  display: inline-block; padding: 4px 16px; border-radius: 20px;
+  font-size: 0.85em; font-weight: 600; margin-top: 10px;
+}
+.risk-high { background: #e74c3c; color: #fff; }
+.risk-medium { background: #f39c12; color: #fff; }
+.risk-low { background: #27ae60; color: #fff; }
+.container { max-width: 860px; margin: 0 auto; padding: 30px 20px 80px; }
+.toc {
+  background: #fff; border-radius: 8px; padding: 22px 26px;
+  margin-bottom: 32px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.toc h2 { font-size: 1.15em; color: #2a5a8a; margin-bottom: 12px; border-bottom: 2px solid #667eea; padding-bottom: 6px; }
+.toc ol { padding-right: 22px; font-size: 0.93em; }
+.toc li { margin-bottom: 4px; }
+.toc a { color: #2a5a8a; text-decoration: none; }
+.toc a:hover { color: #ff8800; text-decoration: underline; }
+.section {
+  background: #fff; border-radius: 8px; padding: 28px 26px;
+  margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.section h2 { font-size: 1.4em; color: #1a1a2e; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #667eea; }
+.section h3 { font-size: 1.1em; color: #2a5a8a; margin: 18px 0 8px; }
+.section h4 { font-size: 1em; color: #444; margin: 14px 0 6px; }
+.section p { margin-bottom: 12px; text-align: justify; }
+.section ul, .section ol { padding-right: 22px; margin-bottom: 12px; }
+.section li { margin-bottom: 5px; }
+blockquote {
+  background: #f0f4fa; border-right: 4px solid #667eea;
+  padding: 12px 18px; margin: 12px 0; border-radius: 0 6px 6px 0;
+  font-size: 0.94em; color: #333;
+}
+.thesis {
+  background: #fff8f0; border-right: 3px solid #ff8800;
+  padding: 14px 18px; margin: 12px 0; border-radius: 0 5px 5px 0;
+  font-size: 0.96em; color: #6b4500;
+}
+table {
+  width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.91em;
+}
+th {
+  background: #667eea; color: #fff; padding: 8px 12px;
+  text-align: right; position: sticky; top: 44px; z-index: 5;
+}
+td {
+  padding: 7px 12px; border-bottom: 1px solid #e8e8e8;
+  text-align: right; vertical-align: top;
+}
+tr:nth-child(even) { background: #f8f9fc; }
+a { color: #2a5a8a; }
+a:hover { color: #ff8800; }
+.back-link {
+  display: inline-block; margin-bottom: 20px; padding: 6px 14px;
+  background: #667eea; color: #fff; border-radius: 4px;
+  text-decoration: none; font-size: 0.88em;
+}
+.back-link:hover { background: #5a6fd6; color: #fff; }
+footer {
+  text-align: center; padding: 30px 20px; color: #888; font-size: 0.85em;
+}
+strong { color: #1a1a2e; }
+code {
+  background: #f0f0f0; padding: 1px 5px; border-radius: 3px;
+  font-size: 0.9em;
+}
+.source-tag {
+  display: inline-block; background: #e8eef6; padding: 2px 8px;
+  border-radius: 10px; font-size: 0.78em; color: #2a5a8a;
+  margin: 2px 3px; text-decoration: none;
+}
+.source-tag:hover { background: #d0dff0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">דוח מחקר מעמיק</span>
+  <a href="../">חזרה לדירוג</a>
+  <a href="../research/">כל הדוחות</a>
+  <a href="#section-1">2. Current Structure</a> <a href="#section-2">3. Educational Philo</a> <a href="#section-3">4. Ideological Orien</a> <a href="#section-4">5. Leadership</a> <a href="#section-5">6. Funding & Governa</a> <a href="#section-6">7. Programs & Specia</a> <a href="#section-7">8. Achievements & Re</a> <a href="#section-8">9. Controversies & C</a> <a href="#section-9">10. Network & Expans</a> <a href="#section-10">11. Registration & L</a> <a href="#section-11">12. Key People Summa</a> <a href="#section-12">13. Analytical Asses</a> <a href="#section-13">Sources</a>
+</nav>
+
+<div class="hero">
+  <h1>בית ספר קדמה (Kedma School), Jerusalem</h1>
+  <div class="subtitle">1. History & Founding</div>
+  <div class="meta">Origins (1993-1994)</div>
+  
+</div>
+
+<div class="container">
+  <a href="../research/" class="back-link">← כל דוחות המחקר</a>
+  <div class="toc"><h2>תוכן עניינים</h2><ol><li><a href="#section-1">2. Current Structure</a></li><li><a href="#section-2">3. Educational Philosophy</a></li><li><a href="#section-3">4. Ideological Orientation</a></li><li><a href="#section-4">5. Leadership</a></li><li><a href="#section-5">6. Funding & Governance</a></li><li><a href="#section-6">7. Programs & Special Initiatives</a></li><li><a href="#section-7">8. Achievements & Recognition</a></li><li><a href="#section-8">9. Controversies & Challenges</a></li><li><a href="#section-9">10. Network & Expansion</a></li><li><a href="#section-10">11. Registration & Legal Entities</a></li><li><a href="#section-11">12. Key People Summary</a></li><li><a href="#section-12">13. Analytical Assessment</a></li><li><a href="#section-13">Sources</a></li></ol></div>
+  <div class="section" id="section-1">
+<h2>2. Current Structure</h2>
+<h3>Basic Facts</h3>
+<table>
+<tr><th>Field</th><th>Details</th></tr>
+<tr><td><strong>Full name</strong></td><td>בית ספר תיכון קדמה ירושלים (Kedma Jerusalem High School)</td></tr>
+<tr><td><strong>Type</strong></td><td>Public secular (ממלכתי) secondary school</td></tr>
+<tr><td><strong>Grades</strong></td><td>7-12 (middle school + high school / חטיבת ביניים + חטיבה עליונה)</td></tr>
+<tr><td><strong>Students</strong></td><td>~136 (73 boys, 63 girls) — as of 2025 data</td></tr>
+<tr><td><strong>Class size</strong></td><td>Capped at 25 students per class</td></tr>
+<tr><td><strong>Teaching staff</strong></td><td>25 teachers (7 male, 18 female); most hold M.A. degrees</td></tr>
+<tr><td><strong>Address</strong></td><td>Bar Yochai Street, Katamonim (הקטמונים), Jerusalem</td></tr>
+<tr><td><strong>Phone</strong></td><td>02-679-5955</td></tr>
+<tr><td><strong>Principal</strong></td><td>Michal Hadad (מיכל חדד)</td></tr>
+<tr><td><strong>School website</strong></td><td>kedmaschool.co.il</td></tr>
+<tr><td><strong>Association website</strong></td><td>kedma-edu.org.il</td></tr>
+</table>
+<h3>Location Context</h3>
+<p>The Katamonim neighborhood is historically one of Jerusalem's poorest areas, a transit camp (ma'abara) neighborhood populated primarily by Mizrachi Jewish immigrants from North Africa and the Middle East in the 1950s. The school was deliberately placed here as a community-based institution serving its own neighborhood.</p>
+
+</div>
+<div class="section" id="section-2">
+<h2>3. Educational Philosophy</h2>
+<h3>Core Approach: Critical Pedagogy</h3>
+<p>Kedma is described as <strong>"a distinct model of implementing the educational approach of critical pedagogy"</strong> (פדגוגיה ביקורתית). This is not a democratic school in the formal sense (like Sudbury/Hadera democratic schools), but rather a school grounded in:</p>
+<ol>
+<li><strong>Belief in universal capability</strong>: The conviction that most children from disadvantaged neighborhoods can achieve full matriculation and university education given appropriate conditions.</li>
+<li><strong>Anti-tracking</strong>: No academic streaming/grouping. All students study in heterogeneous classes toward full academic matriculation (bagrut).</li>
+<li><strong>Community-based education</strong>: The school functions as a community institution, not just a classroom. Parents are full partners in the educational process.</li>
+<li><strong>Cultural pride and identity</strong>: Students' Mizrachi heritage is celebrated, not suppressed. The curriculum connects to students' traditions and culture.</li>
+<li><strong>Social consciousness</strong>: Development of critical thinking and social awareness alongside academic achievement.</li>
+</ol>
+<h3>The Accompaniers/Mentors Model (מודל המלווים)</h3>
+<p>Kedma's signature pedagogical innovation is the <strong>"Melavim" (Accompaniers) Model</strong>:</p>
+<ul>
+<li>Each class has <strong>two homeroom teachers</strong> (called "melavim" / מלווים — "accompaniers").</li>
+<li>These teachers support students in <strong>all dimensions</strong>: academic, social, and emotional.</li>
+<li>The model creates an "educational triangle" of students, teachers, and parents, with students at the center.</li>
+</ul>
+<h3>Learning Clusters (אשכולות למידה)</h3>
+<p>Learning is organized in <strong>clusters that integrate multiple subject areas</strong>:</p>
+<ul>
+<li>Classes last 1.5 hours (not the standard 45-minute period).</li>
+<li>Each cluster follows a three-stage self-learning model: (1) raising a question, (2) inquiry process, (3) review and summary together.</li>
+<li>Emphasis on depth, creativity, and connection to students' lived experience.</li>
+</ul>
+<h3>Stated Values</h3>
+<ul>
+<li>Open, direct dialogue</li>
+<li>Self-awareness and mutual understanding</li>
+<li>Respectful treatment</li>
+<li>Belief in success and possibility</li>
+<li>Creation of Israeli, democratic, pluralistic culture</li>
+</ul>
+
+</div>
+<div class="section" id="section-3">
+<h2>4. Ideological Orientation</h2>
+<h3>Mizrachi Identity Politics</h3>
+<p>Kedma is explicitly and foundationally a <strong>Mizrachi social justice project</strong>. It was conceived as a <strong>secular alternative to Shas's "El HaMa'ayan" educational network</strong> — offering Mizrachi identity, cultural pride, and community empowerment without the ultra-Orthodox religious framework.</p>
+<p>The founders were prominent Mizrachi intellectuals and activists who saw education as the key battleground for Mizrachi equality in Israeli society. The school's founding thesis is that the Israeli education system systematically fails Mizrachi students from disadvantaged neighborhoods — steering them toward vocational tracks instead of academic ones, and perpetuating cycles of poverty and social marginalization.</p>
+<h3>Political Orientation</h3>
+<ul>
+<li><strong>Left-leaning on social justice</strong>: The founders include key figures of Israel's Mizrachi left — Shlomo Swirski (Adva Center), Henriette Dahan-Kalev (feminist scholar), Sami Shalom Shitrit (Democratic Mizrachi Rainbow / הקשת הדמוקרטית המזרחית).</li>
+<li><strong>Cross-party founding support</strong>: Despite the left-leaning founders, the school received initial support from both Amnon Rubinstein (Meretz/center-left) and Benny Begin (Likud/right), suggesting that the educational mission transcended partisan lines.</li>
+<li><strong>Not a democratic school</strong>: Despite democratic values in its stated mission, Kedma is not formally part of Israel's democratic education movement. It is a structured, academic, matriculation-oriented school.</li>
+</ul>
+<h3>Connection to Social Movements</h3>
+<ul>
+<li><strong>The Democratic Mizrachi Rainbow (הקשת הדמוקרטית המזרחית)</strong>: Several founders were active in this movement.</li>
+<li><strong>Adva Center</strong>: Shlomo Swirski's social policy research institute, which has documented educational inequality in Israel.</li>
+<li><strong>Broader Mizrachi activism</strong>: The school emerged from the same intellectual milieu as Israel's Mizrachi identity politics of the 1990s — itself rooted in the Black Panthers movement of the 1970s.</li>
+</ul>
+
+</div>
+<div class="section" id="section-4">
+<h2>5. Leadership</h2>
+<h3>Founding Principal</h3>
+<p><strong>Clara Yona-Meshumar (קלרה יונה-משומר)</strong> — Led the school from its founding in 1994 until approximately 2006. Personal biography is itself a Kedma success story: grew up in Katamon, from a family of eight, parents were Libyan/Yemenite immigrants in manual labor jobs. She overcame the system's low expectations, earned two degrees from Hebrew University, and returned to build the school her neighborhood never had. After leaving Kedma Jerusalem, she went on to manage Neve Hof elementary school in Rishon LeZion (2012-2022).</p>
+<h3>Current Principal</h3>
+<p><strong>Michal Hadad (מיכל חדד)</strong> — Current school principal. She received the National Education Prize in 2015 on behalf of the school, at a ceremony at Yad Ben-Zvi attended by Education Minister Naftali Bennett.</p>
+<h3>Organization Leadership</h3>
+<ul>
+<li><strong>Ilana Yona</strong> — Director of the Kedma Association (holds M.A. in Public Policy from Tel Aviv University). Listed as Education Director.</li>
+<li><strong>Dr. Shlomo Swirski</strong> — Remains involved in an advisory/intellectual capacity.</li>
+</ul>
+<h3>"Justice Worker" Prize Committee</h3>
+<p>Since 2007, Kedma awards the <strong>"Oved Tzedek" (עובד צדק / Justice Worker) Prize</strong> for education demonstrating social awareness. The committee has included Clara Yona-Shomer, Shlomo Swirski, Esther Herzog, and the late <strong>Yossi Sarid</strong> (former Education Minister and Meretz leader, d. 2015).</p>
+
+</div>
+<div class="section" id="section-5">
+<h2>6. Funding & Governance</h2>
+<h3>Legal Status</h3>
+<table>
+<tr><th>Field</th><th>Details</th></tr>
+<tr><td><strong>Registered name</strong></td><td>קדמה - לשוויון בחינוך ובחברה בישראל ע"ר (Kedma — for Equality in Education and Society in Israel)</td></tr>
+<tr><td><strong>Registration number</strong></td><td><strong>580320083</strong> (GuideStar Israel)</td></tr>
+<tr><td><strong>Registration type</strong></td><td>Registered Association (עמותה רשומה)</td></tr>
+<tr><td><strong>Year registered</strong></td><td>1998 (originally "Friends of Kedma School"; renamed to current name)</td></tr>
+<tr><td><strong>Registered address</strong></td><td>Bar Yochai 3, Jerusalem</td></tr>
+<tr><td><strong>Annual turnover (2024)</strong></td><td><strong>NIS 2,736,947</strong> (~$750,000 USD)</td></tr>
+<tr><td><strong>Staff</strong></td><td>7 employees + 40 volunteers</td></tr>
+<tr><td><strong>Sector median</strong></td><td>NIS 1,345,480 (Kedma is ~2x the sector median)</td></tr>
+<tr><td><strong>Government transfers (last 3 years)</strong></td><td>None documented in obudget.org</td></tr>
+<tr><td><strong>HQ</strong></td><td>Ramat Gan (association level)</td></tr>
+</table>
+<h3>School Classification</h3>
+<p>The school is classified as <strong>ממלכתי</strong> (state/public secular) in the Ministry of Education system, school code <strong>144592</strong>.</p>
+<h3>Funding Sources</h3>
+<p><strong>Municipal/Government:</strong></p>
+<ul>
+<li>As a public (ממלכתי) school, Kedma receives standard Ministry of Education per-student funding.</li>
+<li>No special government transfers to the association were found in budget transparency databases for recent years.</li>
+</ul>
+<p><strong>External Foundations (documented):</strong></p>
+<ul>
+<li><strong>Jerusalem Foundation</strong> — Supporting since 1995: books, remedial classes, enrichment programs, violence-prevention support groups (Kassell Center), and renovation of the Josefowitz Library (2003). Donors include: Davies Jacob Estate, Josefowitz Samuel, Wertheimer Alain & Brigitte R.</li>
+<li><strong>Matanel Foundation</strong> — Funds the Cultural Enrichment program (theater, music, art exposure), 60 merit-based scholarships per year, and afterschool activities.</li>
+<li><strong>Other philanthropic support</strong> — The school has historically relied heavily on philanthropic funding beyond government per-student allocations.</li>
+</ul>
+
+</div>
+<div class="section" id="section-6">
+<h2>7. Programs & Special Initiatives</h2>
+<h3>School-Level Programs</h3>
+<ol>
+<li><strong>The Accompaniers/Mentors Model</strong> — Two homeroom teachers per class providing holistic support (see section 3).</li>
+<li><strong>Learning Clusters</strong> — Integrated cross-disciplinary 1.5-hour learning units.</li>
+<li><strong>Matriculation preparation</strong> — Intensive academic preparation targeting full bagrut completion.</li>
+<li><strong>Matanel Cultural Enrichment</strong> — Exposure to theater, music, art; celebrating Mizrachi cultural heritage.</li>
+<li><strong>Merit Scholarships</strong> — 60 students/year receive scholarships for books, clothing, necessities.</li>
+<li><strong>Kedmiya (קדמיה)</strong> — Afternoon enrichment activities for children.</li>
+<li><strong>Bridge to University (גשר לאוניברסיטה)</strong> — Program supporting graduates' transition to higher education.</li>
+<li><strong>Empowerment Center</strong> — Community empowerment activities.</li>
+<li><strong>Innovation & Entrepreneurship</strong> — Programs in these areas are listed on the school's current website.</li>
+<li><strong>Mentoring Program</strong> — Additional mentoring for individual students.</li>
+</ol>
+<h3>Association-Level Programs</h3>
+<ol>
+<li><strong>"Dialog Hour" (שעת דיאלוג)</strong> — A published book series (3 books for grades 10-12, though some sources describe 6 volumes total for grades 7-12) of experiential educational lessons combining topics from students' lives. Available commercially for NIS 150.</li>
+<li><strong>Annual Educator Conference</strong> — Held in Jerusalem, collaborative with Israeli higher education institutions.</li>
+<li><strong>Teacher Training & Professional Development</strong> — Dissemination of the Kedma pedagogical model to other educators.</li>
+<li><strong>Kedma Publications</strong> — Educational materials with a social justice orientation.</li>
+<li><strong>"Justice Worker" Prize (פרס עובד צדק)</strong> — Awarded since 2007 for education demonstrating social awareness.</li>
+</ol>
+
+</div>
+<div class="section" id="section-7">
+<h2>8. Achievements & Recognition</h2>
+<h3>Academic Outcomes</h3>
+<ul>
+<li><strong>Matriculation rate</strong>: 72-85% of graduates complete full bagrut (sources vary by year; the most recent data from the founder claims 80-85%). This is extraordinary given that when the school was founded, the neighborhood's matriculation rate was <strong>near zero</strong>.</li>
+<li><strong>Higher education</strong>: ~30-40% of graduates continue to higher education.</li>
+<li><strong>Context</strong>: Israel's national average for disadvantaged populations is ~40% full matriculation; affluent areas reach 65%+.</li>
+</ul>
+<h3>Awards</h3>
+<ul>
+<li><strong>2014</strong>: Jerusalem Education Director Prize (Avi Saley Prize) — recognized for heterogeneity, dialogue, and community engagement. Ceremony attended by Mayor Nir Barkat.</li>
+<li><strong>2014</strong>: Minchai Education Prize (פרס מנח"י).</li>
+<li><strong>2015</strong>: <strong>National Education Prize</strong> (פרס החינוך הארצי) — Awarded by the Ministry of Education. Ceremony at Yad Ben-Zvi, attended by Education Minister Naftali Bennett.</li>
+<li>Ministry of Education selection as a <strong>"Quality Pedagogy" school</strong>.</li>
+</ul>
+<h3>Academic Research</h3>
+<p>The school has been the subject of academic research:</p>
+<ul>
+<li><strong>Bar Shalom, Y. & Krumer Navo, M. (2007)</strong> — "The Usage of Qualitative Methods as Means to Empower Disadvantaged Groups: The Example of the Kedma School in Jerusalem." <em>The International Journal of Interdisciplinary Social Sciences</em>, 2(1), 237-244.</li>
+<li>The school's model is described as being "studied in every education school and faculty in the country."</li>
+</ul>
+
+</div>
+<div class="section" id="section-8">
+<h2>9. Controversies & Challenges</h2>
+<h3>Early Resistance from Jerusalem Municipality</h3>
+<p>The Jerusalem municipal education system was not supportive of Kedma's establishment. In the school's first year, the municipality issued a <strong>closure order</strong> against its temporary location in Gilo, forcing the school to relocate multiple times.</p>
+<h3>Tel Aviv Branch Boycott & Closure (1994-1999)</h3>
+<p>The most significant controversy in Kedma's history was the <strong>Tel Aviv Hatikva branch</strong>:</p>
+<ul>
+<li>Neighborhood residents <strong>boycotted the school</strong>, considering its Mizrachi-identity ideology "too extreme and far from the consensual national ideology."</li>
+<li>Enrollment collapsed: by 1997, only <strong>4 students</strong> had enrolled.</li>
+<li>Conflicts with the Tel Aviv municipality education department.</li>
+<li>The branch <strong>closed in January 1999</strong>.</li>
+</ul>
+<h3>Kiryat Malachi Closure (1995-1996)</h3>
+<p>The Kiryat Malachi branch closed within its first year, reasons not extensively documented.</p>
+<h3>The "Failed Enterprise" Narrative</h3>
+<p>A 2014 Haaretz article framed the broader Kedma project as a partial failure: of 15 planned schools, only 1 survived. The article documented "ego battles, ideological disputes, media scandals, legal battles, and inevitable politics" within the movement. This represents a self-critical narrative within Kedma's own milieu, acknowledging that the grand vision of a national Mizrachi education network was not realized.</p>
+<h3>Ideological Tension</h3>
+<p>Kedma occupies an inherently contested space:</p>
+<ul>
+<li>Some in the Mizrachi community viewed it as too leftist/secular (preferring Shas's El HaMa'ayan religious network).</li>
+<li>Some in the educational establishment viewed it as too identity-political or too focused on Mizrachi particularism.</li>
+<li>The school navigates between being a social justice project and being a pragmatic academic institution focused on matriculation outcomes.</li>
+</ul>
+<h3>No Major Recent Controversies</h3>
+<p>No significant public controversies were found in recent years. The school appears to have settled into a stable, recognized, and respected position within Jerusalem's educational landscape.</p>
+
+</div>
+<div class="section" id="section-9">
+<h2>10. Network & Expansion</h2>
+<h3>Current Kedma Network</h3>
+<p>As of 2025-2026, the Kedma Association operates:</p>
+<ol>
+<li><strong>Kedma Jerusalem</strong> — The flagship school (grades 7-12, ~136 students).</li>
+<li><strong>Neve Hof Elementary School, Rishon LeZion</strong> — Under Kedma management since 2012; Clara Yona-Meshumar served as principal until 2022.</li>
+</ol>
+<h3>Closed Branches</h3>
+<ul>
+<li>Kedma Tel Aviv / Hatikva (1994-1999) — closed</li>
+<li>Kedma Kiryat Malachi (1995-1996) — closed</li>
+</ul>
+<h3>Expansion Plans</h3>
+<p>The Matanel Foundation page references plans to "establish additional schools beyond Jerusalem in central Israel," and the original vision was for 15 schools. However, no concrete new school openings have been documented in recent years. The association appears to have shifted emphasis toward <strong>disseminating its pedagogical model</strong> through teacher training, publications, and conferences rather than directly operating new schools.</p>
+
+</div>
+<div class="section" id="section-10">
+<h2>11. Registration & Legal Entities</h2>
+<table>
+<tr><th>Entity</th><th>Registration #</th><th>Type</th><th>Notes</th></tr>
+<tr><td>קדמה - לשוויון בחינוך ובחברה בישראל ע"ר</td><td><strong>580320083</strong></td><td>Registered Association</td><td>The operating association for Kedma schools</td></tr>
+<tr><td>Ministry of Education school code</td><td><strong>144592</strong></td><td>School registration</td><td>Kedma Jerusalem in MoE system</td></tr>
+</table>
+<p><strong>Note:</strong> There is a separate, unrelated organization called "קדמה התיישבות צעירים" (Kedma Young Settlement, #580573640) — this is a <em>different</em> organization focused on settlement activity and has no connection to the Kedma school.</p>
+
+</div>
+<div class="section" id="section-11">
+<h2>12. Key People Summary</h2>
+<table>
+<tr><th>Person</th><th>Role</th><th>Period</th><th>Notes</th></tr>
+<tr><td>Clara Yona-Meshumar</td><td>Founder & first principal</td><td>1994-~2006</td><td>Grew up in Katamon; later ran Neve Hof</td></tr>
+<tr><td>Michal Hadad</td><td>Current principal</td><td>~2006-present</td><td>Received National Education Prize 2015</td></tr>
+<tr><td>Ilana Yona</td><td>Association director</td><td>Current</td><td>M.A. Public Policy, Tel Aviv University</td></tr>
+<tr><td>Shlomo Swirski</td><td>Co-founder</td><td>1993-ongoing</td><td>Sociologist, Adva Center founder</td></tr>
+<tr><td>Sami Shalom Shitrit</td><td>Co-founder, named the school</td><td>1993-1999</td><td>Ran Tel Aviv branch; poet & activist</td></tr>
+<tr><td>Meir Buzaglo</td><td>Co-founder</td><td>1993</td><td>Philosopher, Hebrew University</td></tr>
+<tr><td>Henriette Dahan-Kalev</td><td>Co-founder</td><td>1993</td><td>Political scientist, BGU</td></tr>
+<tr><td>Eli Sha'aya</td><td>Co-founder</td><td>1993</td><td>Social activist</td></tr>
+<tr><td>Yossi Sarid</td><td>Prize committee member</td><td>Until 2015</td><td>Former Education Minister (Meretz), d. 2015</td></tr>
+</table>
+
+</div>
+<div class="section" id="section-12">
+<h2>13. Analytical Assessment</h2>
+<h3>What Makes Kedma Distinctive</h3>
+<p>Kedma is not just a school — it is an <strong>ideological project</strong> that sought to prove a thesis: that Mizrachi students from Israel's poorest neighborhoods, systematically written off by the education system, could achieve academic excellence if given the right environment. The school's 72-85% matriculation rate (vs. near-zero when it was founded) validates this thesis at the Jerusalem site.</p>
+<h3>Why the Network Didn't Scale</h3>
+<p>The Haaretz analysis points to internal conflicts, ideological disputes, and institutional resistance. The Tel Aviv boycott is particularly revealing: the very community Kedma aimed to serve rejected it, possibly because the explicit Mizrachi-identity framing felt politically loaded or because secular Mizrachi families preferred mainstream integration over identity-based education.</p>
+<h3>Current Positioning</h3>
+<p>Today, Kedma Jerusalem functions as a small, respected, well-regarded school with strong outcomes — more "successful community school" than "revolutionary movement." The association's influence extends beyond its ~136 students through teacher training, publications, and its pedagogical model being studied in Israeli education faculties.</p>
+<h3>Comparison to Shas's El HaMa'ayan</h3>
+<p>Where Shas offered Mizrachi identity through religion (ultra-Orthodox education network), Kedma offered Mizrachi identity through secular critical pedagogy. Shas's network grew vastly larger. Kedma's secular alternative remained small but intellectually influential.</p>
+
+</div>
+<div class="section" id="section-13">
+<h2>Sources</h2>
+<ul>
+<li><a href="https://kedma-edu.org.il/" target="_blank" rel="noopener">Kedma Association official website</a></li>
+<li><a href="https://kedmaschool.co.il/" target="_blank" rel="noopener">Kedma School website</a></li>
+<li><a href="https://www.hamichlol.org.il/%D7%91%D7%99%D7%AA_%D7%A1%D7%A4%D7%A8_%D7%AA%D7%99%D7%9B%D7%95%D7%9F_%D7%A7%D7%93%D7%9E%D7%94" target="_blank" rel="noopener">Kedma High School - HaMichlol (Hebrew Wikipedia mirror)</a></li>
+<li><a href="https://www.hamichlol.org.il/%D7%A7%D7%93%D7%9E%D7%94_(%D7%AA%D7%A0%D7%95%D7%A2%D7%94_%D7%97%D7%91%D7%A8%D7%AA%D7%99%D7%AA" target="_blank" rel="noopener">Kedma (Social Movement) - HaMichlol</a>)</li>
+<li><a href="https://jerusalemfoundation.org/old-project/kedma-school/" target="_blank" rel="noopener">Jerusalem Foundation - Kedma School</a></li>
+<li><a href="https://www.matanel.org/project/kedma-school/" target="_blank" rel="noopener">Matanel Foundation - Kedma School</a></li>
+<li><a href="https://www.guidestar.org.il/organization/580320083" target="_blank" rel="noopener">GuideStar Israel - Kedma Association #580320083</a></li>
+<li><a href="https://www.haaretz.co.il/magazine/2014-07-19/ty-article/.premium/0000017f-e37c-df7c-a5ff-e37e0a4c0000" target="_blank" rel="noopener">Haaretz - "Why Did the Mizrachi Education Enterprise Fail" (2014)</a> (paywalled)</li>
+<li><a href="https://portal.macam.ac.il/article/%D7%A2%D7%9D-%D7%94%D7%A4%D7%A0%D7%99%D7%9D-%D7%9C%D7%9E%D7%96%D7%A8%D7%97-%D7%A7%D7%9C%D7%A8%D7%94-%D7%99%D7%95%D7%A0%D7%94-%D7%9E%D7%99%D7%99%D7%A1%D7%93%D7%AA-%D7%AA%D7%99%D7%9B%D7%95%D7%9F/" target="_blank" rel="noopener">MACAM Portal - Clara Yona interview</a></li>
+<li><a href="https://www.ynet.co.il/articles/0,7340,L-5271899,00.html" target="_blank" rel="noopener">Ynet - Clara Yona profile (2018)</a></li>
+<li><a href="https://www.madlan.co.il/education/school/144592" target="_blank" rel="noopener">Kedma School - Madlan</a></li>
+<li><a href="https://www.allschool.co.il/%D7%9E%D7%95%D7%A1%D7%93%D7%95%D7%AA/144592/" target="_blank" rel="noopener">Kedma School - AllSchool</a></li>
+<li><a href="https://kedma-edu.org.il/about-us-inner/" target="_blank" rel="noopener">Kedma Education Portal</a></li>
+<li><a href="https://www.researchgate.net/publication/293310212" target="_blank" rel="noopener">Bar Shalom & Krumer Navo (2007) - ResearchGate</a></li>
+<li><a href="https://next.obudget.org/i/org/association/580320083" target="_blank" rel="noopener">Open Budget (obudget) - Kedma Association</a></li>
+<li><a href="https://stairs-adv.co.il/jerusalem/%D7%91%D7%99%D7%AA-%D7%94%D7%A1%D7%A4%D7%A8-%D7%A7%D7%93%D7%9E%D7%94-%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%99%D7%9D/" target="_blank" rel="noopener">Stairs - Kedma Jerusalem</a></li>
+</ul>
+
+</div>
+</div>
+
+<footer>
+  פרויקט זהות ציונית — דוח מחקר מעמיק | <a href="../">דירוג ערים</a> | <a href="../research/">כל הדוחות</a>
+</footer>
+
+</body>
+</html>

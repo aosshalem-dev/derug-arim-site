@@ -1,8 +1,8 @@
 /**
- * research_orgs.js — Deep research profiles for 29 investigated organizations
- * Generated from deep_research_*.md files (2026-02-16)
+ * research_orgs.js — Deep research profiles for 31 investigated organizations
+ * Generated from deep_research_*.md files (2026-02-16/17)
  * Cross-referenced with org_city_chalatz_mapping.json (1820 orgs × 20 cities)
- * Batch 1: 7 orgs | Batch 2: 7 orgs | Batch 3: 15 orgs
+ * Batch 1: 7 orgs | Batch 2: 7 orgs | Batch 3: 15 orgs | Schools: 2 (Leyada, Kedma)
  *
  * Source data: https://github.com/aosshalem-dev/derug-arim-site
  * Methodology: Multi-agent deep research (4-6 parallel agents per org)
@@ -923,6 +923,74 @@ const RESEARCH_ORGS = {
         {"label": "מין חינוך שכזה", "url": "https://min-hinuch.co.il/"},
         {"label": "SEI", "url": "https://sei.org.il/"}
       ]
+    },
+    "Leyada": {
+      "name_he": "בית הספר התיכון ליד האוניברסיטה העברית (ליד\"ה)",
+      "name_en": "Hebrew University Secondary School (Leyada)",
+      "reg": "510030695",
+      "entity_type": "חל\"צ",
+      "founded": 1935,
+      "revenue_nis": 35943299,
+      "gov_pct": 1.1,
+      "staff": 212,
+      "neutrality": 2,
+      "transparency": 2,
+      "ideology_detected": true,
+      "cities": ["ירושלים"],
+      "school_count": 1,
+      "program_budget": null,
+      "thesis": "בית ספר אליטיסטי סלקטיבי הצמוד לאוניברסיטה העברית, עם אוריינטציה פרוגרסיבית מובהקת — הזמנת דוברים משמאל, הנפת דגל גאווה, כנסי 'הומניזם במלחמה'. מותקף שוב ושוב מימין.",
+      "key_findings": [
+        "נוסד 1935, חל\"צ עם הכנסה שנתית 36M ₪ — מימון ממשלתי 1.1% בלבד",
+        "שקיפות 40% בגיידסטאר — נמוכה ביחס לגודל המוסד",
+        "דגל גאווה מונף קבוע מאז רצח שירה בנקי (2015)",
+        "הרצאות של איימן עודה, רולא דאוד (עומדים ביחד), שוברים שתיקה",
+        "ערוץ 14 ניהל מסע נגד בית הספר (2025) — משרד החינוך חקר",
+        "בוגרים: 2 פרסי נובל, 5 שופטי עליון, 20+ פרסי ישראל",
+        "5 מ-14 חברי דירקטוריון הם סגל האוניברסיטה העברית"
+      ],
+      "risk": "high",
+      "funding_sources": "שכר לימוד, תרומות (ניכוי מס בישראל, ארה\"ב, בריטניה, צרפת), קרנות אמריקאיות",
+      "report_url": "research/deep_Leyada.html",
+      "source_links": [
+        {"label": "GuideStar IL", "url": "https://www.guidestar.org.il/organization/510030695"},
+        {"label": "obudget.org", "url": "https://next.obudget.org/i/org/association/510030695"},
+        {"label": "אתר בית הספר", "url": "https://www.leyada.net"}
+      ]
+    },
+    "Kedma": {
+      "name_he": "בית ספר תיכון קדמה ירושלים",
+      "name_en": "Kedma School Jerusalem",
+      "reg": "580320083",
+      "entity_type": "עמותה",
+      "founded": 1994,
+      "revenue_nis": 2736947,
+      "gov_pct": 0,
+      "staff": 25,
+      "neutrality": 2.5,
+      "transparency": 3,
+      "ideology_detected": true,
+      "cities": ["ירושלים"],
+      "school_count": 1,
+      "program_budget": null,
+      "thesis": "פרויקט חינוכי מזרחי-חברתי שיישם פדגוגיה ביקורתית בשכונת הקטמונים. מייסדים מהשמאל המזרחי (סבירסקי, שטרית, דהאן-כלב). מתוך 15 בתי ספר שתוכננו, רק אחד שרד.",
+      "key_findings": [
+        "נוסד 1994 כחלופה חילונית ל'אל המעיין' של ש\"ס",
+        "~136 תלמידים, 25 מורים — בית ספר קטן וקהילתי",
+        "שיעור בגרות 72-85% — מאפס בשכונה לפני הקמת בית הספר",
+        "מייסדים: סבירסקי (מרכז אדוה), שטרית (הקשת המזרחית), דהאן-כלב (פמיניזם)",
+        "מימון: קרן ירושלים, קרן מתנאל, ללא העברות ממשלתיות ישירות",
+        "סניפים נסגרו: תל אביב (1999), קרית מלאכי (1996)",
+        "פרס חינוך ארצי 2015 מטעם משרד החינוך"
+      ],
+      "risk": "medium",
+      "funding_sources": "קרן ירושלים, קרן מתנאל, תקציב משרד החינוך לתלמיד",
+      "report_url": "research/deep_Kedma.html",
+      "source_links": [
+        {"label": "GuideStar IL", "url": "https://www.guidestar.org.il/organization/580320083"},
+        {"label": "אתר העמותה", "url": "https://kedma-edu.org.il"},
+        {"label": "אתר בית הספר", "url": "https://kedmaschool.co.il"}
+      ]
     }
   },
 
@@ -935,7 +1003,7 @@ const RESEARCH_ORGS = {
     "הוד השרון": ["Matzmichim", "Maga_BeTiaum", "Meyda_Amin", "Gesher", "Sexual_Assault_Centers", "Kehalim_Shluvim", "Efshar_Acheret"],
     "הרצליה": ["Matzmichim", "Mind_Lab", "Yesodot_Dror", "Maga_BeTiaum", "Meyda_Amin", "Gesher", "AIDS_Task_Force", "Yesod", "Sexual_Assault_Centers", "Markam_Social_Space", "Chevruta", "Kehalim_Shluvim", "Tehuda"],
     "חיפה": ["Hartman", "Yedidut_Toronto", "Matzmichim", "Mind_Lab", "Yesodot_Dror", "Shaar_Shivion", "Alliance_Israel", "Meyda_Amin", "Gesher", "AIDS_Task_Force", "Sexual_Assault_Centers", "Chevruta", "Yad_BYad"],
-    "ירושלים": ["Hartman", "Democratic_Institute", "Yedidut_Toronto", "Mind_Lab", "Yesodot_Dror", "Shaar_Shivion", "Alliance_Israel", "Meyda_Amin", "Gesher", "AIDS_Task_Force", "Rossing_Center", "Ladaat", "Or_Gelbard", "Sexual_Assault_Centers", "Markam_Social_Space", "Chevruta", "Yad_BYad"],
+    "ירושלים": ["Hartman", "Democratic_Institute", "Yedidut_Toronto", "Mind_Lab", "Yesodot_Dror", "Shaar_Shivion", "Alliance_Israel", "Meyda_Amin", "Gesher", "AIDS_Task_Force", "Rossing_Center", "Ladaat", "Or_Gelbard", "Sexual_Assault_Centers", "Markam_Social_Space", "Chevruta", "Yad_BYad", "Leyada", "Kedma"],
     "כרמיאל": ["Hartman", "Matzmichim", "Mind_Lab", "Yesodot_Dror", "Meyda_Amin", "Teva_HaAdam"],
     "נתיבות": ["Matzmichim", "Alliance_Israel"],
     "עמנואל": [],

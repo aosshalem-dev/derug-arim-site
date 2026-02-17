@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leyada (Hebrew University Secondary School) — דוח מחקר מעמיק</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background: #f5f5f8;
+  color: #1a1a2e;
+  direction: rtl;
+  line-height: 1.8;
+  font-size: 17px;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #1a1a2e; color: #fff;
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  overflow-x: auto; white-space: nowrap;
+}
+nav .brand { font-weight: 700; color: #ff8800; flex-shrink: 0; }
+nav a { color: #ccc; text-decoration: none; font-size: 0.85em; padding: 8px 4px; border-bottom: 2px solid transparent; flex-shrink: 0; }
+nav a:hover { color: #ff8800; border-bottom-color: #ff8800; }
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a5a8a 100%);
+  color: #fff; padding: 50px 20px 40px; text-align: center;
+}
+.hero h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+.hero .subtitle { font-size: 1.05em; color: #b0c4de; margin-bottom: 6px; }
+.hero .meta { font-size: 0.9em; color: #ff8800; margin-top: 8px; }
+.risk-badge {
+  display: inline-block; padding: 4px 16px; border-radius: 20px;
+  font-size: 0.85em; font-weight: 600; margin-top: 10px;
+}
+.risk-high { background: #e74c3c; color: #fff; }
+.risk-medium { background: #f39c12; color: #fff; }
+.risk-low { background: #27ae60; color: #fff; }
+.container { max-width: 860px; margin: 0 auto; padding: 30px 20px 80px; }
+.toc {
+  background: #fff; border-radius: 8px; padding: 22px 26px;
+  margin-bottom: 32px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.toc h2 { font-size: 1.15em; color: #2a5a8a; margin-bottom: 12px; border-bottom: 2px solid #667eea; padding-bottom: 6px; }
+.toc ol { padding-right: 22px; font-size: 0.93em; }
+.toc li { margin-bottom: 4px; }
+.toc a { color: #2a5a8a; text-decoration: none; }
+.toc a:hover { color: #ff8800; text-decoration: underline; }
+.section {
+  background: #fff; border-radius: 8px; padding: 28px 26px;
+  margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.section h2 { font-size: 1.4em; color: #1a1a2e; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #667eea; }
+.section h3 { font-size: 1.1em; color: #2a5a8a; margin: 18px 0 8px; }
+.section h4 { font-size: 1em; color: #444; margin: 14px 0 6px; }
+.section p { margin-bottom: 12px; text-align: justify; }
+.section ul, .section ol { padding-right: 22px; margin-bottom: 12px; }
+.section li { margin-bottom: 5px; }
+blockquote {
+  background: #f0f4fa; border-right: 4px solid #667eea;
+  padding: 12px 18px; margin: 12px 0; border-radius: 0 6px 6px 0;
+  font-size: 0.94em; color: #333;
+}
+.thesis {
+  background: #fff8f0; border-right: 3px solid #ff8800;
+  padding: 14px 18px; margin: 12px 0; border-radius: 0 5px 5px 0;
+  font-size: 0.96em; color: #6b4500;
+}
+table {
+  width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.91em;
+}
+th {
+  background: #667eea; color: #fff; padding: 8px 12px;
+  text-align: right; position: sticky; top: 44px; z-index: 5;
+}
+td {
+  padding: 7px 12px; border-bottom: 1px solid #e8e8e8;
+  text-align: right; vertical-align: top;
+}
+tr:nth-child(even) { background: #f8f9fc; }
+a { color: #2a5a8a; }
+a:hover { color: #ff8800; }
+.back-link {
+  display: inline-block; margin-bottom: 20px; padding: 6px 14px;
+  background: #667eea; color: #fff; border-radius: 4px;
+  text-decoration: none; font-size: 0.88em;
+}
+.back-link:hover { background: #5a6fd6; color: #fff; }
+footer {
+  text-align: center; padding: 30px 20px; color: #888; font-size: 0.85em;
+}
+strong { color: #1a1a2e; }
+code {
+  background: #f0f0f0; padding: 1px 5px; border-radius: 3px;
+  font-size: 0.9em;
+}
+.source-tag {
+  display: inline-block; background: #e8eef6; padding: 2px 8px;
+  border-radius: 10px; font-size: 0.78em; color: #2a5a8a;
+  margin: 2px 3px; text-decoration: none;
+}
+.source-tag:hover { background: #d0dff0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">דוח מחקר מעמיק</span>
+  <a href="../">חזרה לדירוג</a>
+  <a href="../research/">כל הדוחות</a>
+  <a href="#section-1">1. History & Foundin</a> <a href="#section-2">2. Current Structure</a> <a href="#section-3">3. Educational Philo</a> <a href="#section-4">4. Ideological Orien</a> <a href="#section-5">5. Leadership</a> <a href="#section-6">6. Funding & Governa</a> <a href="#section-7">7. Programs & Tracks</a> <a href="#section-8">8. Controversies</a> <a href="#section-9">9. Connection to Heb</a> <a href="#section-10">10. Registration & L</a> <a href="#section-11">Analytical Summary</a> <a href="#section-12">Sources</a>
+</nav>
+
+<div class="hero">
+  <h1>Leyada (Hebrew University Secondary School)</h1>
+  <div class="subtitle">בית הספר התיכון ליד האוניברסיטה העברית / ליד"ה</div>
+  <div class="meta"></div>
+  
+</div>
+
+<div class="container">
+  <a href="../research/" class="back-link">← כל דוחות המחקר</a>
+  <div class="toc"><h2>תוכן עניינים</h2><ol><li><a href="#section-1">1. History & Founding</a></li><li><a href="#section-2">2. Current Structure</a></li><li><a href="#section-3">3. Educational Philosophy</a></li><li><a href="#section-4">4. Ideological Orientation</a></li><li><a href="#section-5">5. Leadership</a></li><li><a href="#section-6">6. Funding & Governance</a></li><li><a href="#section-7">7. Programs & Tracks</a></li><li><a href="#section-8">8. Controversies</a></li><li><a href="#section-9">9. Connection to Hebrew University</a></li><li><a href="#section-10">10. Registration & Legal Details</a></li><li><a href="#section-11">Analytical Summary</a></li><li><a href="#section-12">Sources</a></li></ol></div>
+  <div class="section" id="section-1">
+<h2>1. History & Founding</h2>
+<h3>Origins (1935)</h3>
+<ul>
+<li><strong>Founded:</strong> 1935 (the school celebrated its 90th anniversary in 2025)</li>
+<li><strong>Founders:</strong> The Education Department of the Hebrew University of Jerusalem, with support from the Va'ad Leumi (National Committee) and Beit HaMidrash LeMorim HaIvri (Hebrew Teachers' Seminary)</li>
+<li><strong>Original Name:</strong> Beit HaKerem High School (Tichon Beit HaKerem)</li>
+<li><strong>Original Location:</strong> Housed in the Teachers' Seminary building in the Beit HaKerem neighborhood, Jerusalem</li>
+<li><strong>Original Mission:</strong> To serve as a pedagogical laboratory -- a training school where education students at the Hebrew University could observe lessons and practice teaching. From the outset, it also concentrated gifted and talented students.</li>
+</ul>
+<h3>Mandate Period Leadership</h3>
+<p>During the British Mandate, the head of the university's Education Department also served as school principal:</p>
+<ul>
+<li><strong>Prof. Alexander Dushkin</strong> (1935-1939, 1951-1953)</li>
+<li><strong>Prof. Akiva Ernst Simon</strong> (1939, 1950)</li>
+<li><strong>Dr. Eliezer Rieger</strong> (1935-1951)</li>
+</ul>
+<h3>Notable Mandate-Era Teachers</h3>
+<p>Some of the most distinguished intellectuals in the Yishuv taught at the school:</p>
+<ul>
+<li><strong>Yeshayahu Leibowitz</strong> -- sciences (chemistry, biochemistry)</li>
+<li><strong>Samuel Sambursky</strong> -- physics</li>
+<li><strong>Mordechai Ardon</strong> -- visual art</li>
+<li><strong>Menashe Harel</strong> -- geography of Israel</li>
+<li><strong>Yitzhak Navon</strong> -- Arabic (later became Israel's 5th president)</li>
+</ul>
+<h3>Relocation to Givat Ram (1960s)</h3>
+<ul>
+<li>When the Hebrew University opened its Givat Ram campus, the Jerusalem Municipality allocated a 12-dunam plot at the campus entrance for the school.</li>
+<li>The cornerstone was laid on July 4, 1960.</li>
+<li>The building was designed by architect <strong>Shimon Pozvner (Fubzner)</strong> and inaugurated in October 1963.</li>
+<li>Funding came primarily from a Jewish women's organization in New York, with partial support from the Jerusalem Municipality.</li>
+</ul>
+<h3>Legal Registration</h3>
+<ul>
+<li>The entity was formally registered in <strong>1945</strong> (per GuideStar/obudget records), though the school itself operated from 1935.</li>
+<li><strong>Registration Number:</strong> 510030695</li>
+<li><strong>Legal Name:</strong> בית הספר התיכון ליד האוניברסיטה העברית ירושלים (חל"צ)</li>
+<li><strong>Legal Form:</strong> Chevra Le-To'elet Ha-Tzibur (Public Benefit Company / CHL"TZ) -- NOT a standard amuta (association)</li>
+</ul>
+
+</div>
+<div class="section" id="section-2">
+<h2>2. Current Structure</h2>
+<h3>Scale</h3>
+<ul>
+<li><strong>Students:</strong> Over 1,150</li>
+<li><strong>Teaching & Support Staff:</strong> Approximately 200 professionals (212 employees per obudget 2025 data)</li>
+<li><strong>Volunteers:</strong> 0 (per official records)</li>
+<li><strong>Grades:</strong> 7-12 (six-year program, encompassing both middle school and high school)</li>
+<li><strong>Classes Per Grade:</strong> Six to seven classes; four to five designated as accelerated/gifted classes</li>
+</ul>
+<h3>Location</h3>
+<ul>
+<li><strong>Address:</strong> Rechov Prof. Menashe Harel 1, Givat Ram, Jerusalem</li>
+<li><strong>Coordinates:</strong> 31.78060250 N, 35.196934000 E</li>
+<li><strong>Campus:</strong> Adjacent to Hebrew University's Givat Ram (Safra) Campus</li>
+</ul>
+<h3>Building</h3>
+<ul>
+<li>Three interconnected wings: central administrative section + two classroom buildings</li>
+<li>Modernist design adapted to Givat Ram's natural slope; maximum three stories</li>
+<li>Light hewn stone panels with exposed concrete beams; two internal courtyards</li>
+<li>Opened October 1963; still operational but showing effects of decades of modifications</li>
+</ul>
+<h3>Supervision</h3>
+<ul>
+<li>Classified as <strong>Mamlachti (State/secular)</strong> education -- NOT Mamlachti-Dati (State-Religious)</li>
+<li>Described in Ministry of Education records as a "unique inter-regional school"</li>
+<li>This designation allows it to accept students from beyond Jerusalem's municipal boundaries</li>
+</ul>
+
+</div>
+<div class="section" id="section-3">
+<h2>3. Educational Philosophy</h2>
+<h3>Core Identity</h3>
+<p>The school describes its mission as developing "gifted and talented students from all parts of Israeli society in Jerusalem and the region toward future leadership in a democratic society." The motto: <strong>"Developing without destroying, preserving without stagnating."</strong></p>
+<h3>Key Philosophical Pillars</h3>
+<ol>
+<li><strong>Choice and critical thinking</strong> -- students are expected to engage with complex ideas, including political topics</li>
+<li><strong>In-depth study and enrichment</strong> -- beyond the standard curriculum</li>
+<li><strong>Open inquiry and independent learning</strong></li>
+<li><strong>Creative thinking and expression</strong></li>
+<li><strong>Democratic values and human rights</strong> -- explicitly stated as institutional values</li>
+</ol>
+<h3>Evolution Over Time</h3>
+<p>According to Prof. Avner de-Shalit (board chair and alumnus): "The educational approach became softer, more inclusive, less competitive and less pressuring" compared to the school's earlier decades. The school has moved from pure academic selectivity toward balancing merit with inclusivity, though gifted students remain two-thirds of the student body.</p>
+<h3>Political Engagement</h3>
+<p>The school explicitly encourages political engagement. Former principal Dr. Gilad Amir stated upon retirement (2020): "Politics should be brought into classrooms" ("yesh lehakhnis politika la-kitot"). Current principal Erez Hacker stated that in the first half of the 2024-2025 school year alone, over 200 speakers visited from "diverse identities and positions."</p>
+
+</div>
+<div class="section" id="section-4">
+<h2>4. Ideological Orientation</h2>
+<h3>Perceived Left-Wing Identity</h3>
+<p>Leyada is widely perceived as having a left-wing, progressive orientation. This perception is based on:</p>
+<ol>
+<li><strong>Institutional actions:</strong></li>
+</ol>
+<ul>
+<li>Flew the Pride flag alongside the Israeli flag in response to Education Minister Rafi Peretz's comments supporting conversion therapy (2020)</li>
+<li>Student council voted to raise the Pride flag permanently after the murder of student Shira Banki at Jerusalem Pride (2015)</li>
+<li>Hosted speakers from left-wing organizations (Breaking the Silence, Standing Together)</li>
+<li>Organized a conference on "education toward humanism in war" during the Gaza war (2024-2025)</li>
+</ul>
+<ol>
+<li><strong>Alumni testimony:</strong></li>
+</ol>
+<ul>
+<li>Carni Eldad (right-wing alumna, Maariv op-ed) described the school as having a "pronounced left-wing environment despite claims of pluralism"</li>
+<li>She cited: organized trips to anti-Haredi protests, distribution of Breaking the Silence materials, Bible classes presenting Palestinians as modern Philistines, and a civics teacher promoting "anti-Haredi, anti-settler, anti-religious" sentiment</li>
+<li>"Only two right-wing female students in my class"</li>
+</ul>
+<ol>
+<li><strong>Right-wing media characterization:</strong></li>
+</ol>
+<ul>
+<li>Channel 14 (right-wing channel) ran multiple critical segments about the school</li>
+<li>The channel called a student art exhibit (a trash can with a caricature of PM Netanyahu labeled "Liar") "trampling of state symbols" ("remisat simlei shilton")</li>
+</ul>
+<ol>
+<li><strong>Counter-narrative:</strong></li>
+</ol>
+<ul>
+<li>Principal Erez Hacker insisted the school hosts speakers from all perspectives</li>
+<li>The school defines itself as <strong>pluralistic and democratic</strong>, not left-wing</li>
+<li>The board includes diverse figures, including alumni from different political backgrounds</li>
+<li>Prof. de-Shalit (board chair) is a political science professor at Hebrew University</li>
+</ul>
+<h3>Connection to Specific Movements</h3>
+<ul>
+<li>No formal affiliation with any political party or movement</li>
+<li>Strong alignment with <strong>liberal-democratic values, human rights discourse, and LGBTQ+ inclusion</strong></li>
+<li>Historical connection to the broader secular-Ashkenazi Israeli elite establishment</li>
+<li>NOT connected to youth movements like Dror Israel, HaNoar HaOved, etc.</li>
+</ul>
+
+</div>
+<div class="section" id="section-5">
+<h2>5. Leadership</h2>
+<h3>Principal Timeline</h3>
+<table>
+<tr><th>Name</th><th>Period</th><th>Notes</th></tr>
+<tr><td>Prof. Alexander Dushkin</td><td>1935-1939, 1951-1953</td><td>Also head of HU Education Dept.</td></tr>
+<tr><td>Prof. Akiva Ernst Simon</td><td>1939, 1950</td><td>Also head of HU Education Dept.</td></tr>
+<tr><td>Dr. Eliezer Rieger</td><td>1935-1951</td></tr>
+<tr><td>Dr. Meir Shapira</td><td>1951-1978</td><td>Most influential principal; shaped school character over 27 years</td></tr>
+<tr><td>Dr. Samuel Kunler (Kanler)</td><td>1978-1989</td></tr>
+<tr><td>Hannah Levita</td><td>1989-2003</td><td>"Led with significant tolerance"</td></tr>
+<tr><td>Dr. Gilad Amir</td><td>2003-2020</td><td>First principal who was also a Leyada alumnus (Class of '32/1970); expanded student political engagement</td></tr>
+<tr><td><strong>Erez Hacker</strong></td><td><strong>2020-present</strong></td><td><strong>Current principal</strong>; youngest at appointment (age 47); former civics and history teacher</td></tr>
+</table>
+<h3>Board of Directors (Current)</h3>
+<table>
+<tr><th>Name</th><th>Role/Background</th></tr>
+<tr><td><strong>Prof. Nili Mor</strong> (Chair)</td><td>Head of Cognition & Emotion Lab, Psychology Dept., Hebrew University</td></tr>
+<tr><td>Dr. Haim Ailuz-Eilon</td><td>Lecturer in Law, Hebrew University; 30+ years Africa experience</td></tr>
+<tr><td>Dr. Gilad Amir</td><td>Former principal (2003-2020); Class of '32 alumnus</td></tr>
+<tr><td>Dr. Sami Arshid</td><td>Lecturer/researcher in law at Hebrew University; founder of Arshid Law Offices</td></tr>
+<tr><td>Prof. Avner de-Shalit</td><td>Political science professor, Hebrew University; former dean; Class of '37 (1975) alumnus</td></tr>
+<tr><td>Joshua Yadlin</td><td>Ministry of Education representative</td></tr>
+<tr><td>Dr. Asnat Labtzion Korach</td><td>Director of Shamir Medical Center (Assaf HaRofeh); school alumna</td></tr>
+<tr><td>Hannah Levita</td><td>Former principal (1989-2003)</td></tr>
+<tr><td>Ilon Michaliy</td><td>High-tech industry; Class of '33 (1971) alumnus</td></tr>
+<tr><td>Shiri Marzel</td><td>Deputy President & CEO, Shalom Hartman Institute</td></tr>
+<tr><td>Dr. Yael Kaplan Gat</td><td>Chair of parents' council</td></tr>
+<tr><td>Dr. Noga Rovin</td><td>Yiddish literature researcher; David Yellin College lecturer; alumna</td></tr>
+<tr><td>Prof. Jacob Ritov</td><td>Professor emeritus of statistics, Hebrew University & University of Michigan</td></tr>
+<tr><td>Prof. Lilach Shagb</td><td>Vice rector, Hebrew University; School of Business Administration</td></tr>
+</table>
+<p><strong>Board Composition Analysis:</strong> Heavy representation from Hebrew University faculty (at least 5 members), multiple alumni, and a notable presence from the medical and legal fields. The Ministry of Education has a single representative. No identifiable right-wing political figures. Shiri Marzel's role at the Hartman Institute is notable -- Hartman is a liberal-pluralistic Jewish think tank.</p>
+<h3>Notable Alumni</h3>
+<p><strong>Presidents & Prime Ministers:</strong></p>
+<ul>
+<li><strong>Yitzhak Navon</strong> (Class of 1, 1939) -- 5th President of Israel; first from Leyada's inaugural graduating class</li>
+</ul>
+<p><strong>Nobel Prize Winners:</strong></p>
+<ul>
+<li><strong>Prof. Daniel Kahneman</strong> (Class of 13, 1951) -- Nobel Prize in Economics (2002); Princeton University; behavioral economics pioneer</li>
+<li><strong>Prof. David Gross</strong> (Class of 21, 1959) -- Nobel Prize in Physics (2004); discovered asymptotic freedom</li>
+</ul>
+<p><strong>Fields Medal:</strong></p>
+<ul>
+<li><strong>Prof. Elon Lindenstrauss</strong> -- Fields Medal (2010); first Israeli Fields Medalist; Hebrew University</li>
+</ul>
+<p><strong>Supreme Court Justices (5):</strong></p>
+<ul>
+<li><strong>Aharon Barak</strong> (Class of ~16, 1954) -- President of the Supreme Court (1995-2006)</li>
+<li><strong>Mishael Cheshin</strong></li>
+<li><strong>Gabriel Bach</strong> (also served as State Attorney and at Nuremberg trials)</li>
+<li><strong>Tova Strasberg-Cohen</strong></li>
+<li><strong>Ruth Ronnen</strong> (sworn in 2022)</li>
+</ul>
+<p><strong>Military Generals (4):</strong></p>
+<ul>
+<li>Commanders of the Navy, Air Force, and Military Intelligence (specific names not fully confirmed in sources)</li>
+</ul>
+<p><strong>Other Notable Alumni:</strong></p>
+<ul>
+<li><strong>Karnit Flug</strong> -- Governor of the Bank of Israel (2013-2018)</li>
+<li><strong>David Grossman</strong> -- novelist, Israel Prize laureate</li>
+<li><strong>Meir Shalev</strong> -- novelist</li>
+<li><strong>A.B. Yehoshua</strong> -- novelist (disputed in some sources)</li>
+<li><strong>Etgar Keret</strong> (Class of ~47, 1985) -- writer and filmmaker</li>
+<li><strong>Tom Segev</strong> -- historian and journalist</li>
+<li><strong>Yehoram Gaon</strong> -- singer and actor, Israel Prize laureate</li>
+<li><strong>Esther Herlitz</strong> (first graduating class) -- Knesset member, diplomat, Israel Prize</li>
+<li><strong>Ruth Kark</strong> (1958) -- Professor of Geography, Herzl Prize</li>
+<li><strong>David Kroyanker</strong> (1958) -- architect and author</li>
+<li><strong>Orna Angel</strong> (1980) -- former CEO of Tel Aviv Port Authority (also on board)</li>
+</ul>
+<p><strong>Overall Count:</strong></p>
+<ul>
+<li>20+ Israel Prize recipients</li>
+<li>2 Nobel Prize winners</li>
+<li>2 Wolf Prize winners</li>
+<li>1 Fields Medal winner</li>
+<li>1 Godel Prize winner</li>
+<li>5 Supreme Court justices</li>
+<li>4 IDF generals</li>
+</ul>
+
+</div>
+<div class="section" id="section-6">
+<h2>6. Funding & Governance</h2>
+<h3>Legal Structure</h3>
+<ul>
+<li><strong>Public Benefit Company (CHL"TZ / Chevra Le-To'elet Ha-Tzibur)</strong> -- NOT a standard municipal school, NOT a standard amuta</li>
+<li>This structure grants <strong>pedagogical autonomy</strong> while maintaining institutional accountability</li>
+<li>The school can set its own admissions criteria, curriculum enrichments, and educational philosophy</li>
+<li>Donations are <strong>tax-deductible</strong> in Israel, the US, UK, and France (indicating international fundraising infrastructure)</li>
+</ul>
+<h3>Financial Data (2025, from obudget.org)</h3>
+<ul>
+<li><strong>Annual Revenue:</strong> NIS 35,943,299 (approximately $9.7M USD)</li>
+<li>This exceeds the median annual revenue (NIS 4,911,491) for organizations in the educational institutions sector by ~7x</li>
+</ul>
+<h3>Government Funding (Documented Transfers)</h3>
+<p>Government funding is surprisingly minimal relative to total revenue:</p>
+<table>
+<tr><th>Source</th><th>Amount (NIS)</th><th>Purpose</th></tr>
+<tr><td>Ministry of Education</td><td>197,910</td><td>Educational initiatives</td></tr>
+<tr><td>Ministry of Education</td><td>154,886</td><td>Competitions and olympiads</td></tr>
+<tr><td>Ministry of Education</td><td>19,644</td><td>Pedagogical initiatives</td></tr>
+<tr><td>Israel Tax Authority</td><td>11,657</td><td>Hall rental contracts</td></tr>
+<tr><td>Ministry of Foreign Affairs</td><td>7,645</td><td>Sports facility rental</td></tr>
+<tr><td>Planning Administration</td><td>3,600</td><td>Sports facility rental</td></tr>
+<tr><td>Ministry of Justice</td><td>1,441</td><td>Sports facility rental</td></tr>
+<tr><td><strong>Total Government</strong></td><td><strong>~397,000</strong></td><td><strong>~1.1% of total revenue</strong></td></tr>
+</table>
+<h3>Revenue Sources (Inferred)</h3>
+<p>Given that government transfers account for only ~1.1% of the NIS 36M annual revenue, the school's funding must come primarily from:</p>
+<ol>
+<li><strong>Tuition fees</strong> -- approximately NIS 7,000/year per student (~1,150 students = ~NIS 8M)</li>
+<li><strong>Donations and fundraising</strong> -- the school has international tax-deductibility and active fundraising (historical funding from American Jewish women's organizations)</li>
+<li><strong>Scholarships fund</strong> -- the school provides approximately NIS 500,000/year in scholarships, funded by donations</li>
+<li><strong>Possible Ministry of Education per-pupil allocations</strong> (not shown as direct transfers but may flow through the municipality)</li>
+</ol>
+<h3>Transparency</h3>
+<ul>
+<li><strong>GuideStar Transparency Rating:</strong> 40% (2 out of 5 stars) -- relatively low</li>
+<li>Financial reports exist but are not fully public</li>
+</ul>
+<h3>Historical Funding</h3>
+<ul>
+<li>In the Mandate period and 1950s, funded primarily by <strong>tuition fees, donations from American Jews, and National Committee/Va'ad Leumi education department</strong></li>
+<li>The school charged tuition even for grades 7-8, distinguishing it from public schools</li>
+<li>The 1960s building was funded by a <strong>Jewish women's organization in New York</strong> + Jerusalem Municipality</li>
+</ul>
+
+</div>
+<div class="section" id="section-7">
+<h2>7. Programs & Tracks</h2>
+<h3>Four Main Tracks</h3>
+<h4>1. Accelerated Track (Maslul HaMu'atz)</h4>
+<ul>
+<li><strong>Duration:</strong> 6 years (grades 7-12)</li>
+<li><strong>Target:</strong> Gifted and outstanding students from across Jerusalem and the region</li>
+<li><strong>Admission:</strong> Psychometric entrance exam (gifted testing) + interview</li>
+<li><strong>Size:</strong> ~120 admitted per grade from ~400 applicants (30% acceptance rate, with gender parity)</li>
+<li><strong>Features:</strong> "Challenge Program" (Etgar) in middle school; accelerated pace in specific subjects; early matriculation exams possible; advanced independent study</li>
+<li>Students can take university courses at Hebrew University</li>
+</ul>
+<h4>2. Regional Track (HaMaslul HaEzori)</h4>
+<ul>
+<li><strong>Duration:</strong> 3 years (grades 7-9 only, middle school)</li>
+<li><strong>Target:</strong> Capable students from the "West Quarter" (western Jerusalem) enrollment area</li>
+<li><strong>Size:</strong> ~30 per grade</li>
+<li><strong>Admission:</strong> Standard; lottery if oversubscribed</li>
+<li><strong>Features:</strong> High performers can integrate into accelerated classes and transition to the accelerated track in high school</li>
+</ul>
+<h4>3. Reinforcement Track (Maslul HaTagbur)</h4>
+<ul>
+<li><strong>Duration:</strong> 6 years (grades 7-12)</li>
+<li><strong>Target:</strong> Students who need additional support but show potential; described as Karl Frankenstein's remedial methodology</li>
+<li><strong>Features:</strong> Smaller classes, experienced teachers, personalized support; students integrate with advanced peers; described as "unique and the only one in Israel" -- a six-year program combining standard curriculum with gifted integration</li>
+<li>Started in 1980</li>
+</ul>
+<h4>4. Communication Classes (Kitot HaTikshoret)</h4>
+<ul>
+<li><strong>Duration:</strong> 6 years</li>
+<li><strong>Target:</strong> Gifted students on the autism spectrum</li>
+<li><strong>Size:</strong> Six classes total (approximately one per grade)</li>
+<li><strong>Features:</strong> The ONLY program in Israel that addresses giftedness and autism simultaneously; full matriculation; specialized communication staff; cognitive, emotional, social, and motor support</li>
+<li>Established approximately 12 years ago (~2013-2014)</li>
+</ul>
+<h3>Admissions Process</h3>
+<ol>
+<li><strong>Documentation:</strong> Registration forms, transcripts, achievement records, gifted program documentation</li>
+<li><strong>Gifted Testing:</strong> Held at Leyada in January; assesses quantitative reasoning, spatial visualization, verbal analogies, sentence completion; severe time pressure (~30 seconds per question)</li>
+<li><strong>Personal Interview:</strong> Conducted by school staff in February; students bring notebooks, ID, and a personal item</li>
+</ol>
+<h3>Academic Performance</h3>
+<ul>
+<li><strong>99%</strong> of graduates earn matriculation certificates</li>
+<li><strong>100%</strong> study English at 5-unit (highest) level; average grade 95</li>
+<li><strong>63%</strong> study Mathematics at 5-unit level; average grade 90</li>
+<li>Consistently ranked among top 20 high schools in Israel</li>
+</ul>
+<h3>University Connection (Active Programs)</h3>
+<ul>
+<li>Guest lectures from Hebrew University faculty</li>
+<li>Academic courses available to students</li>
+<li>Laboratory visits at university facilities</li>
+<li>Research supervision by university professors</li>
+</ul>
+
+</div>
+<div class="section" id="section-8">
+<h2>8. Controversies</h2>
+<h3>Recurring Theme: Elitism</h3>
+<ul>
+<li>The school was <strong>excluded from Israel's 1968 educational integration program</strong> (reform that merged students from different socioeconomic backgrounds)</li>
+<li>Charged tuition even for compulsory education grades, distinguishing it from public schools</li>
+<li>Criticized as "aristocratic" for concentrating children of the secular-Ashkenazi elite</li>
+<li>Former principal Dr. Amir was himself an alumnus -- critics point to self-perpetuating elite cycles</li>
+<li>A parent reported that a talented child was rejected allegedly due to the mother's single-parent status</li>
+</ul>
+<h3>Shira Banki Murder (2015)</h3>
+<ul>
+<li>On July 30, 2015, 16-year-old <strong>Shira Banki</strong>, a Leyada student, was stabbed by ultra-Orthodox extremist <strong>Yishai Schlissel</strong> at the Jerusalem Pride Parade. She died on August 2, 2015.</li>
+<li>Her family said she was killed "because she came to support her friends and any person's right to live their life their own way"</li>
+<li>The student council subsequently voted to fly the <strong>Pride flag</strong> at the school entrance permanently alongside the Israeli flag</li>
+<li>The school has memorialized Banki and her death became a defining moment for the school's identity</li>
+</ul>
+<h3>Breaking the Silence / Hebron (2012-2013)</h3>
+<ul>
+<li>In 2012, a planned student meeting with <strong>Breaking the Silence</strong> (Shovrim Shtika) during a school tour of Hebron was <strong>blocked by police/military</strong></li>
+<li>In January 2013, Breaking the Silence representatives visited the school and spoke with 8th graders about "the reality of occupation"</li>
+<li>This drew criticism from right-wing groups and media</li>
+</ul>
+<h3>Education Minister Rafi Peretz Clash (2020)</h3>
+<ul>
+<li>After Education Minister <strong>Rafi Peretz</strong> expressed support for conversion therapy in an interview, the school flew the <strong>Pride flag</strong> alongside the Israeli flag at the school entrance</li>
+<li>This was widely covered in Israeli media as a statement of defiance</li>
+</ul>
+<h3>Standing Together / Rula Daood Visit (January 2025)</h3>
+<ul>
+<li><strong>Rula Daood</strong>, co-director of the left-wing Arab-Jewish movement <strong>Standing Together</strong> (Omdim BeYachad), visited the school and posted photos with students on social media</li>
+<li>She described discussing "the Israeli-Palestinian conflict, the war in Gaza, and that two peoples live in the country"</li>
+<li>The <strong>Ministry of Education</strong> opened an investigation into whether this constituted prohibited "political propaganda" in schools</li>
+<li>This was reported as a "severe incident" by the Ministry</li>
+</ul>
+<h3>Ayman Odeh Lecture (December 2024)</h3>
+<ul>
+<li><strong>Ayman Odeh</strong>, chairman of the Joint List (Hadash-Ta'al), gave a lecture at the school</li>
+<li>This sparked outrage among some parents and right-wing media, particularly because Odeh had recently compared released hostages to released Palestinian prisoners</li>
+<li>Parents who had previously requested to bring <strong>Interior Security Minister Itamar Ben Gvir</strong> to the school said they had been refused</li>
+</ul>
+<h3>"Humanism in War" Conference (January 2025)</h3>
+<ul>
+<li>The school held a conference on <strong>"education toward humanism in war"</strong> during the Gaza war</li>
+<li><strong>Bereaved parents</strong> expressed anger at the conference's framing</li>
+</ul>
+<h3>Channel 14 vs. Student Artwork (March 2025)</h3>
+<ul>
+<li>Channel 14 (right-wing channel) ran a <strong>seven-minute segment</strong> attacking a student's art exhibit: a trash can with a sticker showing a caricature of PM Netanyahu with the caption "Liar" (שקרן)</li>
+<li>The Ministry of Education called this "damage to a state symbol" (פגיעה בסמלי שלטון)</li>
+<li>Channel 14 called for the <strong>suspension of Principal Erez Hacker</strong></li>
+<li>The parents' council defended the school, stating that "publication aimed at degradation, defamation, silencing and intimidation is abhorrent"</li>
+<li><strong>Haaretz</strong> reported that the Ministry of Education did not defend ("back") the principal or the student</li>
+<li>This incident was the most sustained right-wing media campaign against the school</li>
+</ul>
+<h3>2007 Guinness Record Protest</h3>
+<ul>
+<li>On November 20, 2007, during a national teachers' strike, approximately <strong>244 students crowded into a 30-square-meter classroom</strong> to protest the government's refusal to reduce class sizes</li>
+<li>This was presented as a Guinness World Record attempt</li>
+</ul>
+<h3>2008 Admissions Controversy</h3>
+<ul>
+<li>The school began prioritizing admission for <strong>West Jerusalem residents</strong> over students from other parts of the city, raising equity concerns</li>
+</ul>
+
+</div>
+<div class="section" id="section-9">
+<h2>9. Connection to Hebrew University</h2>
+<h3>Historical Relationship</h3>
+<ul>
+<li><strong>Founded by</strong> the Hebrew University's Education Department (1935)</li>
+<li>In the Mandate period, the <strong>head of the Education Department</strong> simultaneously served as school principal</li>
+<li>The school was originally co-owned by the Hebrew University and Beit HaMidrash LeMorim</li>
+<li>Designed as a <strong>teaching laboratory</strong> for university education students to observe and practice</li>
+</ul>
+<h3>Current Relationship</h3>
+<ul>
+<li>The school is <strong>physically adjacent</strong> to the Hebrew University's Givat Ram campus, on land allocated by the Jerusalem Municipality</li>
+<li><strong>Board composition:</strong> At least 5 of 14 board members are Hebrew University faculty (Prof. Nili Mor, Dr. Sami Arshid, Prof. Avner de-Shalit, Prof. Jacob Ritov, Prof. Lilach Shagb)</li>
+<li>The Vice Rector of Hebrew University (Prof. Lilach Shagb) sits on the board</li>
+<li><strong>Academic integration:</strong> Students can attend guest lectures, take academic courses, visit laboratories, and receive research supervision from university professors</li>
+<li>The school is NOT a department of the university; it operates as a <strong>separate legal entity</strong> (CHL"TZ)</li>
+</ul>
+<h3>Nature of the Connection</h3>
+<p>The relationship is best described as a <strong>privileged partnership</strong> rather than ownership or subsidiary status. The university provides intellectual resources and some governance participation, while the school operates independently as a public benefit company. The name "Leyada" (literally "next to it" -- i.e., next to the university) reflects both the physical proximity and the institutional closeness.</p>
+
+</div>
+<div class="section" id="section-10">
+<h2>10. Registration & Legal Details</h2>
+<table>
+<tr><th>Field</th><th>Value</th></tr>
+<tr><td><strong>Registration Number</strong></td><td>510030695</td></tr>
+<tr><td><strong>Legal Name (Hebrew)</strong></td><td>בית הספר התיכון ליד האוניברסיטה העברית ירושלים (חל"צ)</td></tr>
+<tr><td><strong>Entity Type</strong></td><td>Chevra Le-To'elet Ha-Tzibur (Public Benefit Company)</td></tr>
+<tr><td><strong>Registration Date</strong></td><td>1945 (per GuideStar/obudget; school operational from 1935)</td></tr>
+<tr><td><strong>GuideStar Page</strong></td><td>https://www.guidestar.org.il/organization/510030695</td></tr>
+<tr><td><strong>obudget Page</strong></td><td>https://next.obudget.org/i/org/association/510030695</td></tr>
+<tr><td><strong>Tax Deductibility</strong></td><td>Israel, US, UK, France</td></tr>
+<tr><td><strong>MoE School Code</strong></td><td>140061 (per Madlan)</td></tr>
+<tr><td><strong>Supervision</strong></td><td>Mamlachti (State/Secular)</td></tr>
+<tr><td><strong>Classification</strong></td><td>Unique inter-regional school (בית ספר ייחודי בין-אזורי)</td></tr>
+</table>
+
+</div>
+<div class="section" id="section-11">
+<h2>Analytical Summary</h2>
+<h3>Thesis: Elite School, Elite Controversies</h3>
+<p>Leyada occupies a unique position in Israeli education: it is simultaneously one of the most academically accomplished schools in the country and one of the most politically controversial. Its controversies are not incidental -- they are a direct product of its institutional identity.</p>
+<p>The school was designed from the start to concentrate gifted students and produce an intellectual elite. For decades, this elite was drawn overwhelmingly from the secular-Ashkenazi establishment of Jerusalem. The alumni list reads like a who's who of Israel's liberal establishment: Supreme Court President Aharon Barak, novelist David Grossman, historian Tom Segev, Bank of Israel Governor Karnit Flug.</p>
+<p>In recent years, the school has made genuine efforts at diversification -- admitting Ethiopian students, Arab students, religious students, and students on the autism spectrum. But the core identity remains: a selective, academically rigorous institution that explicitly embraces democratic, humanistic, and pluralistic values.</p>
+<p>This identity puts Leyada on a collision course with Israel's political right, particularly since October 7, 2023. The school's decision to host Ayman Odeh, Rula Daood from Standing Together, and a conference on "humanism in war" during active hostilities was guaranteed to provoke. Channel 14's sustained campaign against the school and the Ministry of Education's investigation represent an escalating pattern.</p>
+<h3>Key Tensions</h3>
+<ol>
+<li><strong>Selectivity vs. Equity:</strong> The school selects ~120 from ~400 applicants per grade through psychometric testing. Critics call this self-perpetuating elitism; defenders call it necessary for serving gifted students.</li>
+</ol>
+<ol>
+<li><strong>Pluralism vs. Political Identity:</strong> The school claims to present "diverse perspectives" (200+ speakers from various backgrounds in one semester). Critics argue the institutional culture, faculty composition, and board membership skew heavily progressive.</li>
+</ol>
+<ol>
+<li><strong>Autonomy vs. Accountability:</strong> As a CHL"TZ (not a municipal school), Leyada has unusual pedagogical freedom. This allows innovation but also creates friction with the Ministry of Education, which has limited leverage.</li>
+</ol>
+<ol>
+<li><strong>Hebrew University Connection:</strong> The university provides intellectual prestige and board participation but doesn't appear to exercise operational control. Five of 14 board members are HU faculty.</li>
+</ol>
+<h3>Financial Opacity</h3>
+<p>The school's 40% transparency rating on GuideStar is notable for an institution with NIS 36M annual revenue. Government transfers account for only ~1% of revenue, meaning the school is funded primarily by tuition and donations -- sources that are less transparent than government allocations. The international tax-deductibility (US, UK, France) suggests a significant diaspora fundraising operation, but details are not publicly available.</p>
+
+</div>
+<div class="section" id="section-12">
+<h2>Sources</h2>
+<h3>Primary Sources</h3>
+<ul>
+<li><a href="https://www.leyada.net/english/" target="_blank" rel="noopener">Leyada Official Website (English)</a></li>
+<li><a href="https://www.leyada.net/about/" target="_blank" rel="noopener">Leyada Official Website - About</a></li>
+<li><a href="https://www.leyada.net/about/board-of-directors/" target="_blank" rel="noopener">Leyada Board of Directors</a></li>
+<li><a href="https://www.leyada.net/pedagogical-space/the-study-tracks/" target="_blank" rel="noopener">Leyada Study Tracks</a></li>
+<li><a href="https://www.leyada.net/%D7%94%D7%95%D7%A7%D7%A8%D7%94-%D7%95%D7%A4%D7%A8%D7%A1%D7%99%D7%9D-2/" target="_blank" rel="noopener">Leyada Awards and Alumni</a></li>
+</ul>
+<h3>Encyclopedia & Reference</h3>
+<ul>
+<li><a href="https://www.hamichlol.org.il/%D7%94%D7%AA%D7%99%D7%9B%D7%95%D7%9F_%D7%9C%D7%99%D7%93_%D7%94%D7%90%D7%95%D7%A0%D7%99%D7%91%D7%A8%D7%A1%D7%99%D7%98%D7%94" target="_blank" rel="noopener">HaMichlol - Hebrew Wikipedia Mirror</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Hebrew_University_Secondary_School" target="_blank" rel="noopener">Wikipedia - Hebrew University Secondary School</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Elon_Lindenstrauss" target="_blank" rel="noopener">Wikipedia - Elon Lindenstrauss</a></li>
+</ul>
+<h3>Financial & Legal</h3>
+<ul>
+<li><a href="https://www.guidestar.org.il/organization/510030695" target="_blank" rel="noopener">GuideStar Israel - Registration 510030695</a></li>
+<li><a href="https://next.obudget.org/i/org/association/510030695" target="_blank" rel="noopener">obudget.org - Government Transfers</a></li>
+<li><a href="https://www.israelgives.org//amuta/510030695" target="_blank" rel="noopener">IsraelGives - Donation Page</a></li>
+<li><a href="https://www.madlan.co.il/education/school/140061" target="_blank" rel="noopener">Madlan - School Data</a></li>
+</ul>
+<h3>News Coverage</h3>
+<ul>
+<li><a href="https://www.kolhair.co.il/arena/238230/" target="_blank" rel="noopener">Kol Ha'Ir - Leyada Celebrates 90 Years</a></li>
+<li><a href="https://www.maariv.co.il/journalists/article-518205" target="_blank" rel="noopener">Maariv - Right-Wing Student at Leyada (Carni Eldad)</a></li>
+<li><a href="https://jerusalem.mynet.co.il/local_news/article/hy6yioduyx" target="_blank" rel="noopener">mynet Jerusalem - Standing Together Controversy</a></li>
+<li><a href="https://jerusalem.mynet.co.il/local_news/article/BkdL15jfP" target="_blank" rel="noopener">mynet Jerusalem - Dr. Gilad Amir Retirement</a></li>
+<li><a href="https://www.haaretz.co.il/news/education/2025-03-28/ty-article/.highlight/00000195-d841-d1f1-a7d5-f8e535a40000" target="_blank" rel="noopener">Haaretz - Channel 14 vs. Leyada</a></li>
+<li><a href="https://www.rashuiot.co.il/html5/ARCLookup.taf?_function=details&_ID=71818&did=1118&G=11246&SM=" target="_blank" rel="noopener">Rashuiot - Channel 14 "Trampling State Symbols"</a></li>
+<li><a href="https://www.kolhair.co.il/education/119112/" target="_blank" rel="noopener">Kol Ha'Ir - Response to Education Minister Peretz</a></li>
+<li><a href="https://www.cnn.com/2015/08/03/middleeast/jerusalem-gay-pride-parade-stabbings-shira-banki-funeral" target="_blank" rel="noopener">CNN - Shira Banki Funeral</a></li>
+<li><a href="https://www.timesofisrael.com/after-stabbing-friends-and-family-mourn-precious-flower-banki/" target="_blank" rel="noopener">Times of Israel - Shira Banki</a></li>
+</ul>
+<h3>Architecture</h3>
+<ul>
+<li><a href="https://michaelarch.wordpress.com/2017/07/26/%D7%A1%D7%99%D7%91%D7%95%D7%91-%D7%91%D7%91%D7%99%D7%AA-%D7%94%D7%A1%D7%A4%D7%A8-%D7%94%D7%AA%D7%99%D7%9B%D7%95%D7%9F-%D7%9C%D7%99%D7%93-%D7%94%D7%90%D7%95%D7%A0%D7%99%D7%91%D7%A8%D7%A1%D7%99%D7%98/" target="_blank" rel="noopener">Michael Arch Blog - Leyada Building Tour</a></li>
+</ul>
+<h3>Admissions</h3>
+<ul>
+<li><a href="https://www.machon-noam.co.il/%D7%AA%D7%99%D7%9B%D7%95%D7%9F-%D7%9C%D7%99%D7%93%D7%94-%D7%94%D7%9B%D7%A0%D7%94-%D7%9C%D7%91%D7%97%D7%99%D7%A0%D7%95%D7%AA" target="_blank" rel="noopener">Machon Noam - Leyada Gifted Testing Info</a></li>
+</ul>
+<h3>Fundraising</h3>
+<ul>
+<li><a href="https://www.jgive.com/new/en/usd/charity-organizations/2827" target="_blank" rel="noopener">JGive - Leyada Donations</a></li>
+</ul>
+
+</div>
+</div>
+
+<footer>
+  פרויקט זהות ציונית — דוח מחקר מעמיק | <a href="../">דירוג ערים</a> | <a href="../research/">כל הדוחות</a>
+</footer>
+
+</body>
+</html>
