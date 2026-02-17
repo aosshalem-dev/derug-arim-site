@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alfi Gelbard (אלפי גלברד) — "Kol HaShelot Nekhonot" (כל השאלות נכונות) — דוח מחקר מעמיק</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background: #f5f5f8;
+  color: #1a1a2e;
+  direction: rtl;
+  line-height: 1.8;
+  font-size: 17px;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #1a1a2e; color: #fff;
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  overflow-x: auto; white-space: nowrap;
+}
+nav .brand { font-weight: 700; color: #ff8800; flex-shrink: 0; }
+nav a { color: #ccc; text-decoration: none; font-size: 0.85em; padding: 8px 4px; border-bottom: 2px solid transparent; flex-shrink: 0; }
+nav a:hover { color: #ff8800; border-bottom-color: #ff8800; }
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a5a8a 100%);
+  color: #fff; padding: 50px 20px 40px; text-align: center;
+}
+.hero h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+.hero .subtitle { font-size: 1.05em; color: #b0c4de; margin-bottom: 6px; }
+.hero .meta { font-size: 0.9em; color: #ff8800; margin-top: 8px; }
+.risk-badge {
+  display: inline-block; padding: 4px 16px; border-radius: 20px;
+  font-size: 0.85em; font-weight: 600; margin-top: 10px;
+}
+.risk-high { background: #e74c3c; color: #fff; }
+.risk-medium { background: #f39c12; color: #fff; }
+.risk-low { background: #27ae60; color: #fff; }
+.container { max-width: 860px; margin: 0 auto; padding: 30px 20px 80px; }
+.toc {
+  background: #fff; border-radius: 8px; padding: 22px 26px;
+  margin-bottom: 32px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.toc h2 { font-size: 1.15em; color: #2a5a8a; margin-bottom: 12px; border-bottom: 2px solid #667eea; padding-bottom: 6px; }
+.toc ol { padding-right: 22px; font-size: 0.93em; }
+.toc li { margin-bottom: 4px; }
+.toc a { color: #2a5a8a; text-decoration: none; }
+.toc a:hover { color: #ff8800; text-decoration: underline; }
+.section {
+  background: #fff; border-radius: 8px; padding: 28px 26px;
+  margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.section h2 { font-size: 1.4em; color: #1a1a2e; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #667eea; }
+.section h3 { font-size: 1.1em; color: #2a5a8a; margin: 18px 0 8px; }
+.section h4 { font-size: 1em; color: #444; margin: 14px 0 6px; }
+.section p { margin-bottom: 12px; text-align: justify; }
+.section ul, .section ol { padding-right: 22px; margin-bottom: 12px; }
+.section li { margin-bottom: 5px; }
+blockquote {
+  background: #f0f4fa; border-right: 4px solid #667eea;
+  padding: 12px 18px; margin: 12px 0; border-radius: 0 6px 6px 0;
+  font-size: 0.94em; color: #333;
+}
+.thesis {
+  background: #fff8f0; border-right: 3px solid #ff8800;
+  padding: 14px 18px; margin: 12px 0; border-radius: 0 5px 5px 0;
+  font-size: 0.96em; color: #6b4500;
+}
+table {
+  width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.91em;
+}
+th {
+  background: #667eea; color: #fff; padding: 8px 12px;
+  text-align: right; position: sticky; top: 44px; z-index: 5;
+}
+td {
+  padding: 7px 12px; border-bottom: 1px solid #e8e8e8;
+  text-align: right; vertical-align: top;
+}
+tr:nth-child(even) { background: #f8f9fc; }
+a { color: #2a5a8a; }
+a:hover { color: #ff8800; }
+.back-link {
+  display: inline-block; margin-bottom: 20px; padding: 6px 14px;
+  background: #667eea; color: #fff; border-radius: 4px;
+  text-decoration: none; font-size: 0.88em;
+}
+.back-link:hover { background: #5a6fd6; color: #fff; }
+footer {
+  text-align: center; padding: 30px 20px; color: #888; font-size: 0.85em;
+}
+strong { color: #1a1a2e; }
+code {
+  background: #f0f0f0; padding: 1px 5px; border-radius: 3px;
+  font-size: 0.9em;
+}
+.source-tag {
+  display: inline-block; background: #e8eef6; padding: 2px 8px;
+  border-radius: 10px; font-size: 0.78em; color: #2a5a8a;
+  margin: 2px 3px; text-decoration: none;
+}
+.source-tag:hover { background: #d0dff0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">דוח מחקר מעמיק</span>
+  <a href="../">חזרה לדירוג</a>
+  <a href="../research/">כל הדוחות</a>
+  <a href="#section-1">2. BUSINESS STRUCTUR</a> <a href="#section-2">3. PROGRAM CONTENT: </a> <a href="#section-3">4. BUDGET ANOMALY AN</a> <a href="#section-4">5. IDEOLOGY AND WORL</a> <a href="#section-5">6. NETWORK AND CONNE</a> <a href="#section-6">7. SCOPE: How Did On</a> <a href="#section-7">8. MEDIA PRESENCE</a> <a href="#section-8">9. SYNTHESIS AND ANA</a> <a href="#section-9">10. OPEN QUESTIONS F</a>
+</nav>
+
+<div class="hero">
+  <h1>Alfi Gelbard (אלפי גלברד) — "Kol HaShelot Nekhonot" (כל השאלות נכונות)</h1>
+  <div class="subtitle"></div>
+  <div class="meta"></div>
+  
+</div>
+
+<div class="container">
+  <a href="../research/" class="back-link">← כל דוחות המחקר</a>
+  <div class="toc"><h2>תוכן עניינים</h2><ol><li><a href="#section-1">2. BUSINESS STRUCTURE</a></li><li><a href="#section-2">3. PROGRAM CONTENT: "Kol HaShelot Nekhonot" (כל השאלות נכונות / All Questions Are Valid)</a></li><li><a href="#section-3">4. BUDGET ANOMALY ANALYSIS</a></li><li><a href="#section-4">5. IDEOLOGY AND WORLDVIEW</a></li><li><a href="#section-5">6. NETWORK AND CONNECTIONS</a></li><li><a href="#section-6">7. SCOPE: How Did One Person Achieve This Penetration?</a></li><li><a href="#section-7">8. MEDIA PRESENCE</a></li><li><a href="#section-8">9. SYNTHESIS AND ANALYSIS</a></li><li><a href="#section-9">10. OPEN QUESTIONS FOR FURTHER INVESTIGATION</a></li></ol></div>
+  <div class="section" id="section-1">
+<h2>2. BUSINESS STRUCTURE</h2>
+<h3>Legal Entity: Likely Sole Proprietor (עוסק מורשה)</h3>
+<ul>
+<li><strong>No amuta (association) registration found.</strong> The program "Kol HaShelot Nekhonot" is consistently described as a <strong>"social enterprise" (מיזם חברתי)</strong> — NOT an amuta.</li>
+<li>No company registration (ח.פ.) was found under "Gelbard" or "Kol HaShelot."</li>
+<li>The contact details are personal: phone 054-790-1301, email kolhashelot@gmail.com</li>
+<li>Books are <strong>self-published</strong> (הוצאה עצמית) — ISBN 9789655987188 for "Bli Banana"</li>
+<li><strong>Website:</strong> https://www.kolhashelot.org/</li>
+</ul>
+<h3>Implications</h3>
+<p>This fits the pattern identified in prior research (Batch 2): <strong>for-profit/sole-proprietor entities use legal structures that avoid amuta transparency.</strong> As a sole proprietor, Gelbard has no obligation to file public financial reports, disclose board members, or submit to the transparency requirements that apply to amutot.</p>
+<p>A sole proprietor receiving 204,668 NIS through the Gefen system is operating as an individual contractor to the Ministry of Education — there is no organizational layer of oversight beyond whatever the Gefen tender process requires.</p>
+
+</div>
+<div class="section" id="section-2">
+<h2>3. PROGRAM CONTENT: "Kol HaShelot Nekhonot" (כל השאלות נכונות / All Questions Are Valid)</h2>
+<h3>Overview</h3>
+<p>A comprehensive sexuality education program for adolescents operating as a Gefen-approved provider (#12233). The program operates through:</p>
+<ol>
+<li><strong>Workshops for teenagers</strong> (ages 15+)</li>
+<li><strong>Workshops/lectures for parents</strong></li>
+<li><strong>Training and guidance kits for educational teams</strong></li>
+</ol>
+<h3>Methodology</h3>
+<ul>
+<li><strong>"How yes" approach (איך כן):</strong> The program explicitly frames itself as the opposite of abstinence-based or prohibition-based education. Instead of "how not" (restrictions, warnings), it focuses on "how to ensure I and the person I'm with are doing well."</li>
+<li><strong>Pleasure-positive framing:</strong> Emphasizes pleasure, consent, communication, and interpersonal dialogue</li>
+<li><strong>Comprehensive Sexuality Education (CSE):</strong> Aligns with the IPPF-endorsed holistic approach</li>
+<li>Workshops run by <strong>certified professional facilitators only</strong> (per the website)</li>
+</ul>
+<h3>Topics Covered (from book and workshop descriptions)</h3>
+<ul>
+<li>First dates and dating</li>
+<li>Pornography vs. reality</li>
+<li>Orgasm and sexual pleasure</li>
+<li>Consent and boundaries</li>
+<li>Jealousy in relationships</li>
+<li>Masturbation</li>
+<li>LGBTQ+ identities (including interviews with lesbian, bisexual, and transgender women for the book)</li>
+<li>Gender identity and gender diversity</li>
+<li>Body image</li>
+<li>Interpersonal communication</li>
+</ul>
+<h3>Target Age: 15+ years old</h3>
+<p>The book explicitly targets ages 15 and up. Workshop content is divided by age group (per "Bli Banana" guidebook).</p>
+<h3>Publications</h3>
+<ol>
+<li><strong>"Kol HaShelot Nekhonot — Miniut, Zugiut VeGil HaHitbagrut"</strong> (כל השאלות נכונות — מיניות, זוגיות וגיל ההתבגרות)</li>
+</ol>
+<ul>
+<li>~100 frequently asked questions from teenagers, answered from a positive perspective</li>
+<li>Self-published, available through major Israeli bookstores</li>
+<li>Recommended by Haaretz's sexuality education column</li>
+</ul>
+<ol>
+<li><strong>"Bli Banana — Hankhaiat Kvutzot No'ar LeMiniut Bri'a"</strong> (בלי בננה — הנחיית קבוצות נוער למיניות בריאה)</li>
+</ol>
+<ul>
+<li>Published 2024, self-published</li>
+<li>233 pages, 125 NIS</li>
+<li>ISBN: 9789655987188</li>
+<li>Practical guide for teachers, counselors, and youth group facilitators</li>
+<li>Contains: guidance philosophy, messaging recommendations by age, 80+ methodologies, ~30 case analyses, worksheets, resource references</li>
+<li>Illustrations/design by Shira Nok, design by Noa Nitzani</li>
+</ul>
+<p><strong>Sources:</strong></p>
+<ul>
+<li>kolhashelot.org: https://www.kolhashelot.org/</li>
+<li>Hamigdalor book listing (Bli Banana): https://www.hamigdalor.co.il/item/9789655987188/</li>
+<li>Ecostore listing: https://www.ecostore.co.il/product/kl-hwalvt-hnkvnvt-alpi-glbrd/</li>
+<li>Haaretz recommendation: https://www.haaretz.co.il/family/chenkatchevich/BLOG-.premium-1.6982915</li>
+</ul>
+
+</div>
+<div class="section" id="section-3">
+<h2>4. BUDGET ANOMALY ANALYSIS</h2>
+<h3>The Numbers</h3>
+<ul>
+<li><strong>204,668 NIS</strong> across 5 cities and 9 schools</li>
+<li>This is the <strong>HIGHEST budget of any R4-rated provider</strong> in the Gefen catalog for this category</li>
+<li>Average per school: ~22,741 NIS</li>
+<li>Average per city: ~40,934 NIS</li>
+</ul>
+<h3>How Is This Possible for a Solo Operator?</h3>
+<p>Several factors likely explain the high budget:</p>
+<ol>
+<li><strong>Gefen system mechanics:</strong> Schools choose and pay providers from their Gefen budgets (~11,500 NIS/student allocated to schools). A provider doesn't need a large organization — they need schools to select them. If Gelbard's workshops are popular with school counselors in these cities, the cumulative budget grows.</li>
+</ol>
+<ol>
+<li><strong>Multiple program lines:</strong> "Kol HaShelot" offers workshops for students, parents, AND teacher training. A single school could purchase multiple services.</li>
+</ol>
+<ol>
+<li><strong>Possible subcontractors:</strong> The website states workshops are led by "certified and professional facilitators" (plural). Gelbard may employ contract facilitators while registering as the sole Gefen provider. This is common among sole-proprietor Gefen providers who scale through contractors.</li>
+</ol>
+<ol>
+<li><strong>Geographic concentration in urban centers:</strong> All 5 cities are major urban areas with larger school budgets and more progressive educational cultures likely to embrace comprehensive sexuality education.</li>
+</ol>
+<ol>
+<li><strong>The "Bli Banana" multiplier:</strong> By publishing a facilitator guidebook, Gelbard effectively trains others to deliver his methodology — this could enable scaling without Gelbard personally delivering every session.</li>
+</ol>
+<h3>Comparison Context</h3>
+<p>For context: the Gefen system allocates ~11,500 NIS per student to schools. A single school's total Gefen budget could be hundreds of thousands. 204K across 9 schools represents a relatively modest slice per school (~23K each), but it is unusual for this amount to flow to a single individual rather than an organization.</p>
+<h3>Risk Indicators</h3>
+<ul>
+<li><strong>No transparency:</strong> As a sole proprietor, there is zero public financial reporting</li>
+<li><strong>Self-certifying field:</strong> The Association for Sex Education in Israel (SEI) sets its own standards — graduates of IPPF-affiliated programs certify each other</li>
+<li><strong>Unclear capacity:</strong> Can one person genuinely service 9 schools across 5 cities? If subcontractors are used, who are they, and what is their training?</li>
+</ul>
+
+</div>
+<div class="section" id="section-4">
+<h2>5. IDEOLOGY AND WORLDVIEW</h2>
+<h3>Core Orientation: Progressive, Pleasure-Positive, LGBTQ+-Inclusive</h3>
+<p>Gelbard's ideological positioning is clear and consistent across all sources:</p>
+<ol>
+<li><strong>Pleasure-positive sexuality education:</strong> His framework explicitly centers pleasure, consent, and mutual satisfaction rather than risk avoidance or abstinence. He states: <em>"Sexuality is a puzzle composed of many variables like values, culture, tradition, family, experiences, kinks and inner feelings."</em></li>
+</ol>
+<ol>
+<li><strong>LGBTQ+ inclusive:</strong> For his book, he specifically interviewed lesbian, bisexual, and transgender women to ensure representation. He appeared on the "Gender Mosaic" lecture series honoring Prof. Daphna Joel's work on gender as a spectrum.</li>
+</ol>
+<ol>
+<li><strong>Gender-sensitive / feminist-aligned:</strong> His entire editorial team (linguistic editor, proofreader, professional consultant, illustrator, graphic designer) was deliberately chosen to be female. He acknowledges his positionality as a man writing about sexuality.</li>
+</ol>
+<ol>
+<li><strong>Critical of prohibition-based approaches:</strong> He explicitly frames his work against the "how not" (prohibition) approach, arguing that fear-based sexuality education fails young people.</li>
+</ol>
+<ol>
+<li><strong>Politically engaged:</strong> In December 2022, he wrote an op-ed in Haaretz titled <strong>"I operate an external educational program. Don't rely on municipalities"</strong> — opposing municipal declarations to fund external programs independently after Avi Maoz (Noam party) gained oversight of external education programs. His argument: municipalities declaring independence from MoE oversight actually makes it easier for Maoz to dismantle the system.</li>
+</ol>
+<ol>
+<li><strong>Published on mako Pride section:</strong> Wrote an article "Instead of judging Ofira and Berkowitz, we should educate them" (Feb 2018) — defending sex education in response to a controversial TV interview, published in the Pride & LGBTQ section of mako.</li>
+</ol>
+<h3>Ideological Network Alignment</h3>
+<p>His training through <strong>Open Door/IPPF</strong> and <strong>Mida Amin Al Min</strong> places him squarely within the international comprehensive sexuality education (CSE) framework promoted by IPPF, UNESCO, and WHO. This is the dominant progressive paradigm in Western sexuality education.</p>
+<p><strong>Sources:</strong></p>
+<ul>
+<li>Haaretz op-ed: https://www.haaretz.co.il/opinions/2022-12-05/ty-article-opinion/.premium/00000184-e255-d539-a1ff-efdf0d600000</li>
+<li>Mako Pride article: https://www.mako.co.il/pride-culture/cultura/Article-0dee30e15807161006.htm</li>
+<li>Gender Mosaic event: https://tv.social.org.il/social/2020/02/01/gender-mosaic-2</li>
+</ul>
+
+</div>
+<div class="section" id="section-5">
+<h2>6. NETWORK AND CONNECTIONS</h2>
+<h3>Professional Network Map</h3>
+<table>
+<tr><th>Connection</th><th>Type</th><th>Details</th></tr>
+<tr><td><strong>Open Door / Delet Petukha (IPPF Israel)</strong></td><td>Training origin</td><td>Graduate of their certified facilitator program. Open Door is Israel's exclusive IPPF representative, founded 1966, amuta #580030179</td></tr>
+<tr><td><strong>Mida Amin Al Min (Reliable Information About Sex)</strong></td><td>Training origin</td><td>Additional certification. Led by Shlomit Haron. Sits on SEI board.</td></tr>
+<tr><td><strong>Association for Sex Education in Israel (SEI)</strong></td><td>Professional body</td><td>Listed in their facilitators directory. SEI (amuta #580763738) was established March 2023 as a professional umbrella for sex educators</td></tr>
+<tr><td><strong>Community Security Authority (הרשות לביטחון קהילתי)</strong></td><td>Collaborator</td><td>Mentioned as organizational partner in Mako interview</td></tr>
+<tr><td><strong>"Zehirim BaReshet" (זהירים ברשת / Careful on the Net)</strong></td><td>Collaborator</td><td>Internet safety education organization, mentioned as partner</td></tr>
+<tr><td><strong>Poetry Slam Israel</strong></td><td>Artistic network</td><td>Member of the workshop team, performer</td></tr>
+<tr><td><strong>Prof. Daphna Joel (TAU)</strong></td><td>Academic connection</td><td>Participated in Gender Mosaic book launch event at TAU</td></tr>
+<tr><td><strong>Prof. Daffi Yoel (TAU)</strong></td><td>Academic mentor</td><td>MA thesis supervisor (pornography consumption effects)</td></tr>
+<tr><td><strong>Haaretz newspaper</strong></td><td>Media platform</td><td>63+ articles/opinions published. Contributor page exists.</td></tr>
+<tr><td><strong>Ynet</strong></td><td>Media platform</td><td>Published content including video series</td></tr>
+</table>
+<h3>The Self-Certifying Ecosystem</h3>
+<p>A critical observation: Gelbard was trained by Open Door (IPPF) and Mida Amin Al Min. He is listed in the SEI directory. SEI was established by professionals and organizations in this exact field. The organizations that train him are the same ones that certify him and set the professional standards. There is no external validation body — the field regulates itself.</p>
+<p>This is the same <strong>"revolving door"</strong> pattern identified in Batch 2 research: the sex education sector has a small number of training organizations that produce graduates, who then become the "certified professionals" that the sector itself defines as the standard.</p>
+<p><strong>Sources:</strong></p>
+<ul>
+<li>Open Door Wikipedia: https://he.wikipedia.org/wiki/%D7%93%D7%9C%D7%AA_%D7%A4%D7%AA%D7%95%D7%97%D7%94_(%D7%A2%D7%9E%D7%95%D7%AA%D7%94)</li>
+<li>Open Door GuideStar: https://www.guidestar.org.il/organization/580030179</li>
+<li>SEI GuideStar: https://www.guidestar.org.il/organization/580763738</li>
+</ul>
+
+</div>
+<div class="section" id="section-6">
+<h2>7. SCOPE: How Did One Person Achieve This Penetration?</h2>
+<h3>5 Cities, 9 Schools — The Expansion Path</h3>
+<p><strong>Timeline reconstruction:</strong></p>
+<ul>
+<li><strong>2014:</strong> Begins conducting workshops (confirmed by multiple sources: "since 2014")</li>
+<li><strong>~2018:</strong> Already active enough to write media commentary (Mako Pride article Feb 2018)</li>
+<li><strong>~2020:</strong> First book published ("Kol HaShelot Nekhonot")</li>
+<li><strong>2020:</strong> Ynet contributor with published articles and video content</li>
+<li><strong>2022:</strong> Haaretz op-ed revealing deep engagement with MoE external programs policy</li>
+<li><strong>2024:</strong> Second book published ("Bli Banana" — facilitator guide, 233 pages)</li>
+<li><strong>Current:</strong> Gefen provider #12233, operating in 5 cities, 9 schools, 204,668 NIS budget</li>
+</ul>
+<h3>Mechanisms of Penetration</h3>
+<ol>
+<li><strong>Media-driven demand:</strong> With 63+ Haaretz articles, Ynet video content, Mako features, and a Haaretz blog, Gelbard has built significant media visibility. School counselors who read Haaretz or follow progressive education media would naturally discover his program.</li>
+</ol>
+<ol>
+<li><strong>Book as marketing tool:</strong> "Kol HaShelot Nekhonot" (the book) functions as both a product and a marketing vehicle. School counselors who read the book may then seek out the workshop program. The book is sold through major retailers (Steimatzky, Green Brothers, etc.).</li>
+</ol>
+<ol>
+<li><strong>"Bli Banana" as force multiplier:</strong> The 2024 facilitator guidebook means Gelbard doesn't have to personally deliver every workshop. Other facilitators can use his methodology, potentially operating under his Gefen registration.</li>
+</ol>
+<ol>
+<li><strong>Network referrals:</strong> Being listed in the SEI directory and connected to Open Door/IPPF creates a referral network. When schools seek Gefen-approved sexuality education, the ecosystem of sex education professionals points them toward "approved" providers like Gelbard.</li>
+</ol>
+<ol>
+<li><strong>Gefen system design:</strong> The Gefen system encourages schools to choose providers. If school counselors in a city share recommendations (as they do through professional networks), one provider can rapidly expand across multiple schools in a city. The jump from 1 school to 3-4 in the same city is relatively easy.</li>
+</ol>
+<ol>
+<li><strong>Progressive urban concentration:</strong> All 5 cities (Beer Sheva, Jerusalem, Ramat Gan, Ramat HaSharon, Tel Aviv) have educational institutions likely to embrace CSE programs. Tel Aviv, Ramat Gan, and Ramat HaSharon in particular are progressive strongholds.</li>
+</ol>
+<h3>Open Questions</h3>
+<ul>
+<li>Does Gelbard personally deliver all workshops, or does he employ/subcontract facilitators?</li>
+<li>If subcontractors are used, are they listed somewhere? What is their training?</li>
+<li>What is the actual number of students reached? (9 schools could mean hundreds to thousands of students)</li>
+<li>Is the 204,668 NIS his total income from Gefen, or does he have additional revenue from private bookings, parent lectures, book sales, etc.?</li>
+</ul>
+
+</div>
+<div class="section" id="section-7">
+<h2>8. MEDIA PRESENCE</h2>
+<h3>Overview: Significant and Growing</h3>
+<p>Gelbard has an unusually strong media presence for a sole-proprietor educational provider:</p>
+<table>
+<tr><th>Platform</th><th>Details</th></tr>
+<tr><td><strong>Haaretz</strong></td><td>63+ articles. Contributor/writer page. Op-eds on education policy.</td></tr>
+<tr><td><strong>Ynet</strong></td><td>Topics page. Articles + video content (#AskerForAFriend series)</td></tr>
+<tr><td><strong>Mako</strong></td><td>Multiple features: in-depth interview, Pride section article, parenting section</td></tr>
+<tr><td><strong>Social TV (הטלוויזיה החברתית)</strong></td><td>Appeared in Gender Mosaic series (TAU/Prof. Daphna Joel)</td></tr>
+<tr><td><strong>Poetry Slam Israel</strong></td><td>Active performer and workshop facilitator</td></tr>
+<tr><td><strong>Website</strong></td><td>https://www.kolhashelot.org/</td></tr>
+<tr><td><strong>Facebook</strong></td><td>Page exists (linked from website), content includes videos and flyers</td></tr>
+<tr><td><strong>Instagram</strong></td><td>Account exists (linked from website)</td></tr>
+<tr><td><strong>YouTube</strong></td><td>Channel exists (linked from website)</td></tr>
+<tr><td><strong>Google Drive</strong></td><td>Public folder with videos and flyers (linked from website)</td></tr>
+<tr><td><strong>Email:</strong></td><td>kolhashelot@gmail.com</td></tr>
+<tr><td><strong>Phone:</strong></td><td>054-790-1301</td></tr>
+</table>
+<h3>Key Media Appearances</h3>
+<ol>
+<li><strong>Mako (March 2021):</strong> "For many years, the thought of sexuality embarrassed me" — in-depth profile covering his background, book, methodology, and personal journey</li>
+</ol>
+<ul>
+<li>URL: https://www.mako.co.il/home-family-kids/education/Article-a85bd10f1aa1871027.htm</li>
+</ul>
+<ol>
+<li><strong>Mako Pride (Feb 2018):</strong> "Instead of judging Ofira and Berkowitz, we should educate them" — opinion piece defending sex education in response to a controversial TV interview</li>
+</ol>
+<ul>
+<li>URL: https://www.mako.co.il/pride-culture/cultura/Article-0dee30e15807161006.htm</li>
+</ul>
+<ol>
+<li><strong>Haaretz Opinion (Dec 2022):</strong> "I operate an external educational program. Don't rely on municipalities" — political op-ed about Avi Maoz's oversight of external programs</li>
+</ol>
+<ul>
+<li>URL: https://www.haaretz.co.il/opinions/2022-12-05/ty-article-opinion/.premium/00000184-e255-d539-a1ff-efdf0d600000</li>
+</ul>
+<ol>
+<li><strong>Ynet (Dec 2020):</strong> "Questions About Sex You Never Thought You Could Ask" + "#AskerForAFriend" video series</li>
+</ol>
+<ul>
+<li>URL: https://www.ynet.co.il/topics/%D7%90%D7%9C%D7%A4%D7%99_%D7%92%D7%9C%D7%91%D7%A8%D7%93</li>
+</ul>
+<ol>
+<li><strong>Social TV / TAU (2019-2020):</strong> Gender Mosaic event with Prof. Daphna Joel — 2 segments</li>
+</ol>
+<ul>
+<li>URL: https://tv.social.org.il/tag/%D7%90%D7%9C%D7%A4%D7%99-%D7%92%D7%9C%D7%91%D7%A8%D7%93</li>
+</ul>
+<ol>
+<li><strong>Dorit Bar review (Jan 2021):</strong> Positive recommendation of his book on the Conscious Intimacy website</li>
+</ol>
+<ul>
+<li>URL: https://doritbar.com/youth-sexual-education-book/</li>
+</ul>
+<ol>
+<li><strong>Poetry Slam Israel interview:</strong> Biographical interview as a poet</li>
+</ol>
+<ul>
+<li>URL: https://poetryslam.org.il/interview/%D7%A8%D7%90%D7%99%D7%95%D7%9F-%D7%A2%D7%9D-%D7%90%D7%9C%D7%A4%D7%99-%D7%92%D7%9C%D7%91%D7%A8%D7%93/</li>
+</ul>
+
+</div>
+<div class="section" id="section-8">
+<h2>9. SYNTHESIS AND ANALYSIS</h2>
+<div class="thesis"><h3>Thesis</h3>
+<p>Alfi Gelbard represents the <strong>successful scaling of an individual-level sex education enterprise</strong> within the Gefen system, leveraging media presence, self-publishing, and IPPF-network certification to achieve institutional penetration that would normally require organizational infrastructure. The 204,668 NIS budget is the highest for an R4 provider in this category, flowing to what appears to be a sole proprietorship with no public financial oversight.</p>
+<h3>Key Findings</h3>
+<p><strong>Strengths of the operation:</strong></p>
+<ul>
+<li>Genuinely qualified (dual MA in psychology and social work from a top program)</li>
+<li>Certified through recognized training programs (Open Door/IPPF, Mida Amin Al Min)</li>
+<li>Prolific author and media contributor — not hiding or obscure</li>
+<li>Transparent about methodology and worldview</li>
+<li>Listed in SEI professional directory</li>
+</ul>
+<p><strong>Concerns and open questions:</strong></p>
+<ol>
+<li><strong>No organizational transparency:</strong> As a sole proprietor, zero public financial reporting. 204K+ NIS flows to an individual with no board, no annual report, and no public accountability beyond Gefen's internal processes.</li>
+<li><strong>Self-certifying ecosystem:</strong> Trained by IPPF/Open Door -> certified by SEI (which was founded by IPPF/Open Door alumni) -> listed as "professional" by the same network. No external validation.</li>
+<li><strong>Capacity question:</strong> One person across 5 cities and 9 schools. Either he is stretched extremely thin, or he has unlisted subcontractors delivering content under his Gefen registration.</li>
+<li><strong>Ideological uniformity:</strong> The program is positioned firmly within the progressive CSE paradigm. This is not inherently problematic, but it means schools selecting this program are getting a specific worldview — not a neutral educational service.</li>
+<li><strong>Political engagement:</strong> The Haaretz op-ed (Dec 2022) shows Gelbard is not just an educator but a political actor in the debate over external programs in schools, specifically opposing Avi Maoz's oversight.</li>
+<li><strong>Name discrepancy:</strong> The Gefen catalog lists "Or Gelbard" while all public sources use "Alfi Gelbard." This may be a legal name vs. professional name difference, but it warrants verification.</li>
+</ol>
+<h3>Values Alignment Table</h3>
+<table>
+<tr><th>Value</th><th>Score (1-5)</th><th>Notes</th></tr>
+<tr><td>Transparency</td><td>2/5</td><td>Sole proprietor, no public reporting, self-published. Media presence creates illusion of openness but financials are opaque.</td></tr>
+<tr><td>Professional qualification</td><td>4/5</td><td>Dual MA from TAU Taubman program, IPPF certification, 10+ years of practice. Genuine credentials.</td></tr>
+<tr><td>Accountability</td><td>2/5</td><td>No board, no amuta oversight, self-certifying professional body. Gefen internal oversight only.</td></tr>
+<tr><td>Ideological transparency</td><td>5/5</td><td>Very clear about his worldview. Does not hide his progressive, pleasure-positive, LGBTQ-inclusive orientation.</td></tr>
+<tr><td>Proportionate access</td><td>3/5</td><td>204K for a sole proprietor is high; unclear if justified by capacity. 9 schools is modest in absolute terms.</td></tr>
+<tr><td>External validation</td><td>2/5</td><td>Recognized by SEI, but SEI is the field regulating itself. No external educational assessment found.</td></tr>
+</table>
+<h3>Comparison to Other Providers</h3>
+<p>This profile closely resembles other sole-proprietor Gefen providers identified in Batch 2 research (Mind Lab, Maga BeTiaum, Meyda Amin) — individuals operating through osek mursheh registrations, avoiding amuta transparency while receiving significant public education budgets. The distinguishing feature is Gelbard's unusually high media profile and academic credentials, which provide more public visibility than most sole operators.</p>
+</div>
+</div>
+<div class="section" id="section-9">
+<h2>10. OPEN QUESTIONS FOR FURTHER INVESTIGATION</h2>
+<ol>
+<li><strong>Legal name verification:</strong> Is "Or Gelbard" the legal name and "Alfi" a nickname? Or vice versa? Check Gefen registration against business registration records.</li>
+<li><strong>Subcontractor network:</strong> Who actually delivers the workshops in 9 schools across 5 cities? Request from MoE/Gefen the list of facilitators operating under this program number.</li>
+<li><strong>Revenue totals:</strong> 204K is the Gefen budget only. What are his total revenues from private workshops, book sales, media, corporate lectures, etc.?</li>
+<li><strong>School satisfaction data:</strong> What are the actual evaluation scores from the 9 schools? The R4 rating is a Gefen system rating — what about direct school feedback?</li>
+<li><strong>Content review:</strong> Has the actual workshop content been reviewed by anyone outside the CSE professional ecosystem? Are parents given advance access to materials?</li>
+<li><strong>Book editorial oversight:</strong> Both books are self-published. Has any external body reviewed the content for educational appropriateness?</li>
+<li><strong>Haaretz 63 articles:</strong> What is the nature of these 63+ articles? Are they all opinion/blog pieces, or do they include paid content?</li>
+<li><strong>SEI board composition:</strong> Is Gelbard on the SEI board himself? The small size of this professional community suggests significant overlap.</li>
+</ol>
+<p><em>Report compiled from web research on 2026-02-16. All URLs verified at time of research.</em></p>
+
+</div>
+</div>
+
+<footer>
+  פרויקט זהות ציונית — דוח מחקר מעמיק | <a href="../">דירוג ערים</a> | <a href="../research/">כל הדוחות</a>
+</footer>
+
+</body>
+</html>

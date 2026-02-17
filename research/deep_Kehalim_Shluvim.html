@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>קהלים שלובים לשינוי חברתי (Kehalim Shluvim for Social Change) — דוח מחקר מעמיק</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background: #f5f5f8;
+  color: #1a1a2e;
+  direction: rtl;
+  line-height: 1.8;
+  font-size: 17px;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #1a1a2e; color: #fff;
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  overflow-x: auto; white-space: nowrap;
+}
+nav .brand { font-weight: 700; color: #ff8800; flex-shrink: 0; }
+nav a { color: #ccc; text-decoration: none; font-size: 0.85em; padding: 8px 4px; border-bottom: 2px solid transparent; flex-shrink: 0; }
+nav a:hover { color: #ff8800; border-bottom-color: #ff8800; }
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a5a8a 100%);
+  color: #fff; padding: 50px 20px 40px; text-align: center;
+}
+.hero h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+.hero .subtitle { font-size: 1.05em; color: #b0c4de; margin-bottom: 6px; }
+.hero .meta { font-size: 0.9em; color: #ff8800; margin-top: 8px; }
+.risk-badge {
+  display: inline-block; padding: 4px 16px; border-radius: 20px;
+  font-size: 0.85em; font-weight: 600; margin-top: 10px;
+}
+.risk-high { background: #e74c3c; color: #fff; }
+.risk-medium { background: #f39c12; color: #fff; }
+.risk-low { background: #27ae60; color: #fff; }
+.container { max-width: 860px; margin: 0 auto; padding: 30px 20px 80px; }
+.toc {
+  background: #fff; border-radius: 8px; padding: 22px 26px;
+  margin-bottom: 32px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.toc h2 { font-size: 1.15em; color: #2a5a8a; margin-bottom: 12px; border-bottom: 2px solid #667eea; padding-bottom: 6px; }
+.toc ol { padding-right: 22px; font-size: 0.93em; }
+.toc li { margin-bottom: 4px; }
+.toc a { color: #2a5a8a; text-decoration: none; }
+.toc a:hover { color: #ff8800; text-decoration: underline; }
+.section {
+  background: #fff; border-radius: 8px; padding: 28px 26px;
+  margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.section h2 { font-size: 1.4em; color: #1a1a2e; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #667eea; }
+.section h3 { font-size: 1.1em; color: #2a5a8a; margin: 18px 0 8px; }
+.section h4 { font-size: 1em; color: #444; margin: 14px 0 6px; }
+.section p { margin-bottom: 12px; text-align: justify; }
+.section ul, .section ol { padding-right: 22px; margin-bottom: 12px; }
+.section li { margin-bottom: 5px; }
+blockquote {
+  background: #f0f4fa; border-right: 4px solid #667eea;
+  padding: 12px 18px; margin: 12px 0; border-radius: 0 6px 6px 0;
+  font-size: 0.94em; color: #333;
+}
+.thesis {
+  background: #fff8f0; border-right: 3px solid #ff8800;
+  padding: 14px 18px; margin: 12px 0; border-radius: 0 5px 5px 0;
+  font-size: 0.96em; color: #6b4500;
+}
+table {
+  width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.91em;
+}
+th {
+  background: #667eea; color: #fff; padding: 8px 12px;
+  text-align: right; position: sticky; top: 44px; z-index: 5;
+}
+td {
+  padding: 7px 12px; border-bottom: 1px solid #e8e8e8;
+  text-align: right; vertical-align: top;
+}
+tr:nth-child(even) { background: #f8f9fc; }
+a { color: #2a5a8a; }
+a:hover { color: #ff8800; }
+.back-link {
+  display: inline-block; margin-bottom: 20px; padding: 6px 14px;
+  background: #667eea; color: #fff; border-radius: 4px;
+  text-decoration: none; font-size: 0.88em;
+}
+.back-link:hover { background: #5a6fd6; color: #fff; }
+footer {
+  text-align: center; padding: 30px 20px; color: #888; font-size: 0.85em;
+}
+strong { color: #1a1a2e; }
+code {
+  background: #f0f0f0; padding: 1px 5px; border-radius: 3px;
+  font-size: 0.9em;
+}
+.source-tag {
+  display: inline-block; background: #e8eef6; padding: 2px 8px;
+  border-radius: 10px; font-size: 0.78em; color: #2a5a8a;
+  margin: 2px 3px; text-decoration: none;
+}
+.source-tag:hover { background: #d0dff0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">דוח מחקר מעמיק</span>
+  <a href="../">חזרה לדירוג</a>
+  <a href="../research/">כל הדוחות</a>
+  <a href="#section-1">1. Registration & Le</a> <a href="#section-2">2. Finances</a> <a href="#section-3">3. Leadership & Pers</a> <a href="#section-4">4. Programs: What Ar</a> <a href="#section-5">5. Ideology: What "S</a> <a href="#section-6">6. Network Connectio</a> <a href="#section-7">7. Media Coverage</a> <a href="#section-8">8. Risk Assessment &</a> <a href="#section-9">9. Values Alignment </a> <a href="#section-10">10. Open Questions f</a> <a href="#section-11">Data Sources Used</a>
+</nav>
+
+<div class="hero">
+  <h1>קהלים שלובים לשינוי חברתי (Kehalim Shluvim for Social Change)</h1>
+  <div class="subtitle">Executive Summary</div>
+  <div class="meta"></div>
+  
+</div>
+
+<div class="container">
+  <a href="../research/" class="back-link">← כל דוחות המחקר</a>
+  <div class="toc"><h2>תוכן עניינים</h2><ol><li><a href="#section-1">1. Registration & Legal Identity</a></li><li><a href="#section-2">2. Finances</a></li><li><a href="#section-3">3. Leadership & Personnel</a></li><li><a href="#section-4">4. Programs: What Are They Actually Teaching?</a></li><li><a href="#section-5">5. Ideology: What "Social Change"? What Direction?</a></li><li><a href="#section-6">6. Network Connections</a></li><li><a href="#section-7">7. Media Coverage</a></li><li><a href="#section-8">8. Risk Assessment & Red Flags</a></li><li><a href="#section-9">9. Values Alignment Table</a></li><li><a href="#section-10">10. Open Questions for Further Investigation</a></li><li><a href="#section-11">Data Sources Used</a></li></ol></div>
+  <div class="section" id="section-1">
+<h2>1. Registration & Legal Identity</h2>
+<table>
+<tr><th>Field</th><th>Value</th></tr>
+<tr><td><strong>Legal name</strong></td><td>קהלים שלובים לשינוי חברתי בע"מ (חל"צ) / KEHALIM SHLUVIM FOR SOCIAL CHANGE LTD (CC)</td></tr>
+<tr><td><strong>Registration number</strong></td><td>515521748 (Companies Registrar)</td></tr>
+<tr><td><strong>Entity type</strong></td><td>חברה לתועלת הציבור (Public Benefit Company / chelatz)</td></tr>
+<tr><td><strong>Founded</strong></td><td>July 20, 2017</td></tr>
+<tr><td><strong>Status</strong></td><td>Active</td></tr>
+<tr><td><strong>Registered address</strong></td><td>חרושת 18, רמת השרון 4702518 (also listed: שבותי ישראל 14, הרצליה)</td></tr>
+<tr><td><strong>Last annual report</strong></td><td>2023</td></tr>
+<tr><td><strong>Sector classification</strong></td><td>Educational Programs (תכניות חינוכיות)</td></tr>
+</table>
+<p><strong>Source:</strong> <a href="https://www.guidestar.org.il/organization/515521748" target="_blank" rel="noopener">GuideStar Israel</a>, <a href="https://www.checkid.co.il/company/%D7%A7%D7%94%D7%9C%D7%99%D7%9D-%D7%A9%D7%9C%D7%95%D7%91%D7%99%D7%9D-%D7%9C%D7%A9%D7%99%D7%A0%D7%95%D7%99-%D7%97%D7%91%D7%A8%D7%AA%D7%99-%D7%91%D7%A2~%D7%9E-(%D7%97%D7%9C~%D7%A6" target="_blank" rel="noopener">CheckID</a>-g3L5g16-515521748), <a href="https://next.obudget.org/i/org/association/515521748" target="_blank" rel="noopener">Obudget</a></p>
+<p><strong>Note:</strong> The chelatz structure (vs. amuta) gives this entity the corporate governance of a company -- shareholders, directors -- while maintaining non-profit status. This is the same structure used by entities that want to combine commercial activity with public benefit designation.</p>
+
+</div>
+<div class="section" id="section-2">
+<h2>2. Finances</h2>
+<table>
+<tr><th>Metric</th><th>Value</th></tr>
+<tr><td><strong>Annual revenue (2025 report)</strong></td><td>384,143 NIS</td></tr>
+<tr><td><strong>Sector median</strong></td><td>1,345,480 NIS</td></tr>
+<tr><td><strong>Government transfers (last 3 years)</strong></td><td>0 NIS documented</td></tr>
+<tr><td><strong>Employees</strong></td><td>0 (reported)</td></tr>
+<tr><td><strong>Volunteers</strong></td><td>0 (reported)</td></tr>
+</table>
+<p><strong>Source:</strong> <a href="https://next.obudget.org/i/org/association/515521748" target="_blank" rel="noopener">Obudget entity page</a></p>
+<h3>Analysis</h3>
+<p>The financial picture is puzzling:</p>
+<ul>
+<li><strong>384K NIS revenue</strong> is extremely small for an org claiming 100+ classrooms nationwide, operations from Deir Hanna/Sakhnin to Eilat, partnerships with Bank Leumi, and a full-time CEO.</li>
+<li><strong>0 employees / 0 volunteers reported</strong> -- yet the website lists a CEO (Zvika Shahar), a pedagogical director (Ofir Abigdori), a legal advisor (Shay Brand), plus the founders. Either the staff are compensated through Goma Gevim (the parent commercial entity) or reporting is incomplete.</li>
+<li><strong>0 government transfers</strong> in 3 years -- yet the 70,199 NIS in Gefen catalog is Ministry of Education money flowing through school budgets to the supplier. This is technically a school-to-supplier payment, not a direct government transfer, which may explain why Obudget shows zero.</li>
+<li>The real money likely flows through <strong>Goma Gevim / Gevim Group</strong> (the commercial entities), with Kehalim Shluvim acting as a non-profit front/channel for school-system access that a for-profit company would not easily get through Gefen.</li>
+</ul>
+<h3>Funding model</h3>
+<p>The Gefen (GaPaN) catalog system works as follows: the Ministry of Education allocates a flexible budget to each school, schools choose programs from the Gefen catalog, and schools pay suppliers directly. So the 70,199 NIS in the user's data represents payments from 8 schools in 5 cities. This money comes from public funds but is routed through school budgets, not direct government transfers.</p>
+
+</div>
+<div class="section" id="section-3">
+<h2>3. Leadership & Personnel</h2>
+<h3>Founders (from kehalims.com "About Us" page)</h3>
+<table>
+<tr><th>Name</th><th>Role</th><th>Background</th></tr>
+<tr><td><strong>Elisha Mazali (אלישע מזלי)</strong></td><td>CEO (per Ynet article, March 2023)</td><td>30 years business management; certified mediator in business/organizations; teaches mediation/negotiation courses. LinkedIn: 25+ years senior IT management (global/local companies up to 220 staff).</td></tr>
+<tr><td><strong>Omri Gafen (עמרי גפן)</strong></td><td>Founder, ideological leader</td><td>Founded Gevim Group in 1996 after Rabin assassination as "first social enterprise in Israel." Expert in collaboration/trust/negotiation/mediation. Lecturer at TAU Executive Leadership Program, BGU Conflict Management, IDC. Author of "עוצמת השיתופיות" (The Power of Collaboration, Matar 2021; English: Routledge 2024). Founding partner Goma Gevim (2020).</td></tr>
+<tr><td><strong>Yehuda Atiyas (יהודה אטיאס)</strong></td><td>Co-founder</td><td>MBA; senior coach (MCIL); CEO of Goma Gevim Group; 20+ years management experience at leading communications company; pivoted to coaching in 2006. Hosts "הכל זה יחסים" podcast.</td></tr>
+<tr><td><strong>Sharon Randelik (שרון רנדליק)</strong></td><td>Partner & academic manager</td><td>Psychotherapist; partner at Goma Gevim; developed TAC (Trauma & Addiction Counselors) program with Ministry of Health; NLP background.</td></tr>
+</table>
+<h3>Shareholders & Directors (per kehalims.com)</h3>
+<p>Hadas Dror, Araz Lazover, Gali Eisenkraft, Sharon Blum, Omri Gafen, Sharon Randelik, Yehuda Atiyas</p>
+<h3>Trustees (Ne'emanim)</h3>
+<p>Boaz Shalm, Ora Ashel, Arik Raz</p>
+<h3>Management Team</h3>
+<table>
+<tr><th>Name</th><th>Role</th><th>Background</th></tr>
+<tr><td><strong>Zvika Shahar (צביקה שחר)</strong></td><td>CEO (current?)</td><td>Listed on kehalims.com member page</td></tr>
+<tr><td><strong>Shay Brand (שי ברנד)</strong></td><td>Legal Advisor</td><td>LLB, LLM; notary, arbitrator and mediator; 16+ years in law. Runs Brand Law Office.</td></tr>
+<tr><td><strong>Ofir Abigdori (אופיר אביגדורי)</strong></td><td>Professional Pedagogical Director</td><td>Senior mediation facilitator; professional coordinator in education at Gevim; trains mediators in education. Also 20 years in Chinese medicine/acupuncture.</td></tr>
+</table>
+<p><strong>Sources:</strong> <a href="https://kehalims.com/%D7%9E%D7%99-%D7%90%D7%A0%D7%97%D7%A0%D7%95/" target="_blank" rel="noopener">Kehalims.com About</a>, <a href="https://www.gomegevim.co.il/instructor/%D7%A2%D7%9E%D7%A8%D7%99-%D7%92%D7%A4%D7%9F/" target="_blank" rel="noopener">Goma Gevim - Omri Gafen</a>, <a href="https://www.gomegevim.co.il/instructor/%D7%99%D7%94%D7%95%D7%93%D7%94-%D7%90%D7%98%D7%99%D7%90%D7%A1/" target="_blank" rel="noopener">Goma Gevim - Yehuda Atiyas</a>, <a href="https://www.linkedin.com/in/elisha-mazali-49ab2/" target="_blank" rel="noopener">LinkedIn - Elisha Mazali</a></p>
+<h3>Leadership pattern</h3>
+<p>The entire leadership team comes from Goma Gevim / Gevim Group. There is <strong>no independent board</strong> -- the chelatz's shareholders and directors are the same people who run the commercial parent entity. This is a classic pattern: a commercial training company creates a non-profit subsidiary to access government-funded education markets.</p>
+
+</div>
+<div class="section" id="section-4">
+<h2>4. Programs: What Are They Actually Teaching?</h2>
+<h3>Gefen catalog listing</h3>
+<ul>
+<li><strong>Program #9281:</strong> "גישור ודיאלוג" (Mediation and Dialogue for Life Skills)</li>
+<li><strong>Rating:</strong> 3/5 (org_inherited -- meaning the rating is inherited from the organization, not earned by the specific program)</li>
+</ul>
+<h3>Program content (from website, Ynet article, Tzomet HaSharon article)</h3>
+<p><strong>Three target groups:</strong></p>
+<ol>
+<li><strong>All students</strong> -- Workshops on dialogue, mediation, consensus-building, listening, conflict analysis, cooperation, win-win solutions, communication</li>
+<li><strong>Selected student mediators</strong> -- 30-hour certification course producing school mediators who staff "mediation rooms" (חדרי גישור)</li>
+<li><strong>Teachers & parents</strong> -- Professional development workshops; digital mediation course (online, self-paced)</li>
+</ol>
+<p><strong>Age range:</strong> Kindergarten (age 3+) through 12th grade</p>
+<p><strong>Sectors:</strong> State, state-religious, ultra-Orthodox, Arab (Hebrew & Arabic)</p>
+<p><strong>Geographic claim:</strong> From Deir Hanna/Sakhnin in the north to Eilat in the south</p>
+<h3>"Shvil HaPiyus" (שביל הפיוס -- Path of Reconciliation)</h3>
+<ul>
+<li>A physical PVC mat (1.1m x 2.5m) with printed dialogue instructions</li>
+<li>Children walk along the path, tell their story, listen, and resolve disputes</li>
+<li>Available for kindergartens, schools, homes, and parks</li>
+<li>Also available in Arabic (الطريق الى الصُلح)</li>
+<li>Sold commercially through meshulam.co.il</li>
+<li>Separate website: <a href="https://shvilhapius.co.il/" target="_blank" rel="noopener">shvilhapius.co.il</a></li>
+</ul>
+<h3>Content assessment</h3>
+<p>The <strong>surface content</strong> is standard conflict resolution / mediation education. The techniques described -- active listening, expressing positions, finding agreements, win-win framing -- come from the mediation/NVC (Nonviolent Communication) tradition.</p>
+<p><strong>However, the "social change" framing is persistent and explicit:</strong></p>
+<ul>
+<li>The company name itself: "לשינוי חברתי" (for social change)</li>
+<li>Omri Gafen founded the movement after Rabin's assassination specifically to change Israeli society</li>
+<li>The Tzomet HaSharon article states the program was "established by Omri Gafen after Rabin's assassination"</li>
+<li>Repeated language about "חברה שסועה" (fractured society), "נגועה באלימות" (afflicted with violence), "קושי בהדברות" (difficulty in dialogue)</li>
+<li>The explicit goal is to "change the discourse culture in the State of Israel" (לשנות את תרבות השיח במדינת ישראל)</li>
+</ul>
+<p><strong>What could trigger 7 theme flags simultaneously?</strong></p>
+<p>Without seeing the specific flags, a mediation/dialogue program that explicitly aims to "change discourse culture" across all sectors (including Arab sector, in Arabic) could plausibly trigger flags related to:</p>
+<ol>
+<li>Social-emotional learning (SEL)</li>
+<li>Conflict resolution / peace education</li>
+<li>Values education</li>
+<li>Multicultural / shared society</li>
+<li>Anti-violence / anti-bullying</li>
+<li>Life skills</li>
+<li>Democratic citizenship / discourse culture</li>
+</ol>
+<p>Seven flags for a single program is highly unusual and suggests the program's content spans multiple categories that individually might be uncontroversial but collectively indicate a broad social engineering agenda.</p>
+
+</div>
+<div class="section" id="section-5">
+<h2>5. Ideology: What "Social Change"? What Direction?</h2>
+<h3>The founding narrative</h3>
+<p>The origin story is told repeatedly and consistently:</p>
+<ul>
+<li>In <strong>1994</strong>, Omri Gafen began working in mediation</li>
+<li>Following <strong>Rabin's assassination (November 4, 1995)</strong>, he founded <strong>Gevim Group in 1996</strong> as what he calls "the first social enterprise in Israel"</li>
+<li>His vision: "consciousness-and-action-based change" (שינוי מבוסס תודעה ומעשה)</li>
+<li>Gevim was "the first organization in Israel that worked to develop mediation and implement the language in many systems"</li>
+</ul>
+<p>This places the entire enterprise squarely in the <strong>post-Rabin peace movement</strong> tradition. The Rabin assassination is the explicit founding trauma and motivation. The unstated but clear implication: Israeli society's "discourse culture" is broken (evidenced by the assassination), and must be changed through systematic education starting from kindergarten.</p>
+<h3>Buzzword analysis</h3>
+<p>From the website and press:</p>
+<ul>
+<li>"שינוי חברתי" (social change) -- in the company name</li>
+<li>"תרבות השיח" (discourse culture) -- the primary target for change</li>
+<li>"חברה שסועה" (fractured/divided society)</li>
+<li>"חוסן" (resilience) -- co-opted from security/psychological discourse</li>
+<li>"קבלת האחר" (acceptance of the other) -- standard shared-society language</li>
+<li>"חיים משותפים" (shared life) -- used by shared-society movement</li>
+<li>"שיתופיות" (collaboration/cooperation) -- Gafen's book title and core concept</li>
+<li>Teaching in Arabic and Hebrew "in all sectors" -- shared society framing</li>
+</ul>
+<h3>Semantic displacement check</h3>
+<p>The word "גישור" (mediation) in standard legal/commercial Hebrew means a structured process of dispute resolution between specific parties with a neutral third party. The way Kehalim Shluvim uses it, "גישור" becomes a broader social philosophy -- a way of life ("דרך חיים"), a tool for societal transformation, a means to create "shared lives" between divided communities. This is a significant semantic expansion: from a professional technique to a social ideology.</p>
+<p>Similarly, "דיאלוג" (dialogue) shifts from its neutral meaning (conversation between parties) to carrying the specific post-Rabin connotation of Jewish-Arab / left-right rapprochement dialogue programs.</p>
+<h3>Hebrew vs. English messaging</h3>
+<p>No significant English-language presence was found. The organization operates almost entirely in Hebrew (with some Arabic for Arab-sector schools). There is no fundraising presence in English, no US entity, no attempt to market internationally. This is a purely domestic operation.</p>
+
+</div>
+<div class="section" id="section-6">
+<h2>6. Network Connections</h2>
+<h3>Parent organization: Goma Gevim / Gevim Group</h3>
+<p>The relationship is not parent-subsidiary in a legal sense, but in practice:</p>
+<table>
+<tr><th>Entity</th><th>Type</th><th>Founded</th><th>Role</th></tr>
+<tr><td><strong>Gevim Group (קבוצת גבים)</strong></td><td>Commercial</td><td>1996</td><td>Original mediation firm founded by Omri Gafen. Now redirects to Goma Gevim.</td></tr>
+<tr><td><strong>Goma Gevim (גומא גבים)</strong></td><td>Commercial</td><td>~2020 (merger/rebrand)</td><td>"Center for Mediation, Coaching and Cooperation." College offering NLP, mediation, coaching, family studies, TAC certification.</td></tr>
+<tr><td><strong>Kehalim Shluvim (קהלים שלובים)</strong></td><td>Chelatz (non-profit)</td><td>2017</td><td>Education-sector arm. Listed on Goma Gevim website as a division/project. Shares all leadership with Goma Gevim.</td></tr>
+<tr><td><strong>Shvil HaPiyus (שביל הפיוס)</strong></td><td>Product brand</td><td>Unknown</td><td>Physical mat product for conflict resolution. Has own website. Connected to Kehalim Shluvim.</td></tr>
+</table>
+<p><strong>Goma Gevim website explicitly lists "קהלים שלובים" as one of its social projects</strong> at <a href="https://www.gomegevim.co.il/social/social_audience/" target="_blank" rel="noopener">gomegevim.co.il/social/social_audience/</a>.</p>
+<h3>Wider mediation/dialogue network</h3>
+<p>Omri Gafen is deeply embedded in the Israeli mediation field:</p>
+<ul>
+<li>Lecturer at <strong>Tel Aviv University</strong> (Executive Leadership Program)</li>
+<li>Lecturer at <strong>Ben-Gurion University</strong> (Conflict Management program)</li>
+<li>Lecturer at <strong>IDC Herzliya</strong> (MA Social and Organizational Psychology)</li>
+<li>Author of <strong>"The Power of Collaboration"</strong> (English: Routledge 2024; Hebrew: Matar 2021 as "עוצמת השיתופיות")</li>
+<li>Recognized as one of the leaders of the "mediation movement" in Israel</li>
+<li>Partner at <strong>Goma Gevim</strong>, which is a recognized school by <strong>Israel Coaches Chamber (לשכת המאמנים)</strong></li>
+</ul>
+<h3>NVC (Nonviolent Communication) connection</h3>
+<p>No direct organizational link to the NVC movement (העמותה לתקשורת מקרבת) was found. However, the methodology (dialogue-based conflict resolution, listening, needs-based communication) is closely aligned with NVC principles. The mediation field in Israel has significant overlap with the NVC community.</p>
+<h3>Corporate partner</h3>
+<ul>
+<li><strong>Bank Leumi</strong> -- trained ~40 employees as volunteer mediators through Kehalim Shluvim</li>
+</ul>
+<h3>Digital partner</h3>
+<ul>
+<li><strong>Yschool</strong> -- collaborated on the digital mediation course</li>
+</ul>
+<p><strong>Sources:</strong> <a href="https://www.gomegevim.co.il/" target="_blank" rel="noopener">Goma Gevim website</a>, <a href="https://www.amazon.com/Power-Collaboration-Omri-Gefen/dp/103284602X" target="_blank" rel="noopener">Amazon - The Power of Collaboration</a>, <a href="https://www.matarbooks.co.il/%D7%9E%D7%97%D7%91%D7%A8%D7%99%D7%9D/%D7%A2%D7%9E%D7%A8%D7%99-%D7%92%D7%A4%D7%9F" target="_blank" rel="noopener">Matar Books - Omri Gafen</a></p>
+
+</div>
+<div class="section" id="section-7">
+<h2>7. Media Coverage</h2>
+<table>
+<tr><th>Date</th><th>Source</th><th>Type</th><th>Key Content</th></tr>
+<tr><td>March 13, 2023</td><td><strong>Ynet</strong></td><td>Sponsored content (תוכן פרסומי)</td><td>Interview with Elisha Mazali and Omri Gafen. Program overview, digital course announcement, awareness event for March 19. Claims "all sectors."</td></tr>
+<tr><td>July 12, 2023</td><td><strong>Tzomet HaSharon Herzliya</strong></td><td>Local news article</td><td>Reporter Mazal Talbi Levy. Program "revolutionizes discourse culture." States 100+ classrooms in 2022-2023. Founding after Rabin assassination mentioned. Elisha Mazali interview.</td></tr>
+<tr><td>Undated</td><td><strong>Goma Gevim site</strong></td><td>Organization page</td><td>Lists Kehalim Shluvim as social project of Goma Gevim.</td></tr>
+</table>
+<p><strong>Notable:</strong> The Ynet article is explicitly labeled "sponsored content" (תוכן פרסומי), meaning it was paid for. The Tzomet HaSharon article reads like a press release rewrite -- no critical analysis, no other sources. <strong>No independent investigative or critical coverage was found.</strong></p>
+<p>No academic citations were found linking to Kehalim Shluvim or its programs. No evaluation studies of program effectiveness were found.</p>
+<p><strong>Sources:</strong> <a href="https://www.ynet.co.il/article/rjlp1ch12" target="_blank" rel="noopener">Ynet article</a>, <a href="https://www.tzomet-hrz.co.il/education/55815" target="_blank" rel="noopener">Tzomet HaSharon</a></p>
+
+</div>
+<div class="section" id="section-8">
+<h2>8. Risk Assessment & Red Flags</h2>
+<h3>Structural concerns</h3>
+<ol>
+<li><strong>Shell-company pattern:</strong> A commercial mediation/coaching firm (Goma Gevim) created a non-profit (Kehalim Shluvim) to access public education funding through the Gefen catalog. The non-profit reports 0 employees and minimal revenue, while the commercial parent does the actual work. This is a known pattern for extracting public money through non-profit channels.</li>
+</ol>
+<ol>
+<li><strong>No independent governance:</strong> All directors/shareholders of the chelatz are also leaders of the commercial parent. There is no independent board oversight.</li>
+</ol>
+<ol>
+<li><strong>Financial opacity:</strong> 384K NIS in revenue with 0 employees and 0 volunteers is internally contradictory for an organization claiming 100+ classrooms. Where does the money go? Through Goma Gevim?</li>
+</ol>
+<ol>
+<li><strong>7 simultaneous theme flags</strong> is the highest flag count in the Gefen dataset -- this suggests the program's content touches an unusually broad range of sensitive educational themes.</li>
+</ol>
+<ol>
+<li><strong>org_inherited rating (3/5):</strong> The program's Gefen rating is inherited from the organization rather than earned through program-specific evaluation. This means the program content itself has not been independently evaluated.</li>
+</ol>
+<h3>Ideological concerns</h3>
+<ol>
+<li><strong>Explicit social change mandate:</strong> The company exists to "change the discourse culture" of the State of Israel. This is not a neutral educational service -- it is an explicitly transformative agenda.</li>
+</ol>
+<ol>
+<li><strong>Post-Rabin founding mythology:</strong> The founding narrative explicitly ties the organization to the Rabin assassination and the subsequent peace/dialogue movement. This is a political origin, not an educational one.</li>
+</ol>
+<ol>
+<li><strong>All-sector penetration:</strong> The program explicitly targets secular, religious, ultra-Orthodox, and Arab schools in Hebrew and Arabic. The goal is society-wide transformation, not serving a specific need.</li>
+</ol>
+<ol>
+<li><strong>Kindergarten-to-12th-grade pipeline:</strong> Starting at age 3 and continuing through high school ensures maximum exposure time for ideological formation.</li>
+</ol>
+<h3>What's missing</h3>
+<ol>
+<li><strong>No published curriculum:</strong> The actual lesson plans, materials, and content are not publicly available for review.</li>
+<li><strong>No independent evaluation:</strong> No academic study, no impact assessment, no third-party review of what happens in the classroom.</li>
+<li><strong>No critical media coverage:</strong> Only paid/sponsored content and press-release-style local coverage.</li>
+</ol>
+
+</div>
+<div class="section" id="section-9">
+<h2>9. Values Alignment Table</h2>
+<table>
+<tr><th>Value</th><th>Score (1-5)</th><th>Notes</th></tr>
+<tr><td><strong>Transparency</strong></td><td>2/5</td><td>Chelatz structure with 0-employee reporting; no published curriculum; financial flow unclear</td></tr>
+<tr><td><strong>Independence from commercial interests</strong></td><td>1/5</td><td>Fully controlled by commercial parent Goma Gevim; same leadership, same address</td></tr>
+<tr><td><strong>Educational neutrality</strong></td><td>2/5</td><td>"Social change" in the name; post-Rabin founding narrative; all-sector transformation agenda</td></tr>
+<tr><td><strong>Financial proportionality</strong></td><td>3/5</td><td>Small amounts (70K in Gefen); but opacity about real revenue/cost structure</td></tr>
+<tr><td><strong>Evidence base</strong></td><td>1/5</td><td>No published research, no evaluation, no academic citation</td></tr>
+<tr><td><strong>Governance quality</strong></td><td>2/5</td><td>No independent trustees separate from management; standard chelatz minimum</td></tr>
+</table>
+
+</div>
+<div class="section" id="section-10">
+<h2>10. Open Questions for Further Investigation</h2>
+<ol>
+<li><strong>What is the actual financial relationship between Kehalim Shluvim and Goma Gevim?</strong> Does revenue pass through? Are staff employed by Goma Gevim but deployed through Kehalim Shluvim?</li>
+<li><strong>What are the specific 7 theme flags?</strong> This would clarify what content areas the program touches.</li>
+<li><strong>Is there a published curriculum or teacher's guide</strong> that can be reviewed for political content?</li>
+<li><strong>What do the "mediation rooms" in schools actually look like?</strong> Are conflicts being "mediated" using a specific ideological framework?</li>
+<li><strong>What was the scope expansion after October 7, 2023?</strong> The organization's narrative about "divided society" and "discourse culture" would have intensified post-war.</li>
+<li><strong>Are there connections to other post-Rabin dialogue organizations</strong> (e.g., Givat Haviva, Hand in Hand, Merchavim, ACRI)?</li>
+<li><strong>Why chelatz and not amuta?</strong> The chelatz structure provides certain advantages (shareholder control, less regulatory oversight than amuta) -- was this a deliberate choice?</li>
+</ol>
+
+</div>
+<div class="section" id="section-11">
+<h2>Data Sources Used</h2>
+<ul>
+<li><a href="https://www.guidestar.org.il/organization/515521748" target="_blank" rel="noopener">GuideStar Israel - Kehalim Shluvim</a></li>
+<li><a href="https://www.guidestar.org.il/organization/515521748/finances" target="_blank" rel="noopener">GuideStar Israel - Finances</a></li>
+<li><a href="https://next.obudget.org/i/org/association/515521748" target="_blank" rel="noopener">Obudget - Entity Page</a></li>
+<li><a href="https://www.checkid.co.il/company/%D7%A7%D7%94%D7%9C%D7%99%D7%9D-%D7%A9%D7%9C%D7%95%D7%91%D7%99%D7%9D-%D7%9C%D7%A9%D7%99%D7%A0%D7%95%D7%99-%D7%97%D7%91%D7%A8%D7%AA%D7%99-%D7%91%D7%A2~%D7%9E-(%D7%97%D7%9C~%D7%A6" target="_blank" rel="noopener">CheckID - Company Registration</a>-g3L5g16-515521748)</li>
+<li><a href="https://kehalims.com/" target="_blank" rel="noopener">Kehalims.com - Homepage</a></li>
+<li><a href="https://kehalims.com/%D7%9E%D7%99-%D7%90%D7%A0%D7%97%D7%A0%D7%95/" target="_blank" rel="noopener">Kehalims.com - About Us</a></li>
+<li><a href="https://www.gomegevim.co.il/social/social_audience/" target="_blank" rel="noopener">Goma Gevim - Kehalim Shluvim page</a></li>
+<li><a href="https://www.gomegevim.co.il/about-us/who-we-are/" target="_blank" rel="noopener">Goma Gevim - About Us</a></li>
+<li><a href="https://www.ynet.co.il/article/rjlp1ch12" target="_blank" rel="noopener">Ynet - Sponsored article (March 2023)</a></li>
+<li><a href="https://www.tzomet-hrz.co.il/education/55815" target="_blank" rel="noopener">Tzomet HaSharon (July 2023)</a></li>
+<li><a href="https://www.amazon.com/Power-Collaboration-Omri-Gefen/dp/103284602X" target="_blank" rel="noopener">Amazon - The Power of Collaboration by Omri Gefen</a></li>
+<li><a href="https://shvilhapius.co.il/" target="_blank" rel="noopener">Shvil HaPiyus website</a></li>
+<li><a href="https://www.brandlaw.co.il/blank" target="_blank" rel="noopener">Brand Law Office</a></li>
+<li><a href="https://www.linkedin.com/in/elisha-mazali-49ab2/" target="_blank" rel="noopener">LinkedIn - Elisha Mazali</a></li>
+<li><a href="https://www.gomegevim.co.il/instructor/%D7%A2%D7%9E%D7%A8%D7%99-%D7%92%D7%A4%D7%9F/" target="_blank" rel="noopener">Goma Gevim - Omri Gafen profile</a></li>
+<li><a href="https://www.gomegevim.co.il/instructor/%D7%99%D7%94%D7%95%D7%93%D7%94-%D7%90%D7%98%D7%99%D7%90%D7%A1/" target="_blank" rel="noopener">Goma Gevim - Yehuda Atiyas profile</a></li>
+<li><a href="https://ilcc.org.il/schools/%D7%92%D7%95%D7%9E%D7%90-%D7%92%D7%91%D7%99%D7%9D-%D7%94%D7%9E%D7%A8%D7%9B%D7%96-%D7%9C%D7%92%D7%99%D7%A9%D7%95%D7%A8-%D7%90%D7%99%D7%9E%D7%95%D7%9F-%D7%95%D7%A9%D7%99%D7%AA%D7%95%D7%A4%D7%99-%D7%A4/" target="_blank" rel="noopener">Israel Coaches Chamber - Goma Gevim</a></li>
+</ul>
+
+</div>
+</div>
+
+<footer>
+  פרויקט זהות ציונית — דוח מחקר מעמיק | <a href="../">דירוג ערים</a> | <a href="../research/">כל הדוחות</a>
+</footer>
+
+</body>
+</html>

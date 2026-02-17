@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>מרכז רוסינג לחינוך ולדיאלוג (Rossing Center for Education and Dialogue) — דוח מחקר מעמיק</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background: #f5f5f8;
+  color: #1a1a2e;
+  direction: rtl;
+  line-height: 1.8;
+  font-size: 17px;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #1a1a2e; color: #fff;
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  overflow-x: auto; white-space: nowrap;
+}
+nav .brand { font-weight: 700; color: #ff8800; flex-shrink: 0; }
+nav a { color: #ccc; text-decoration: none; font-size: 0.85em; padding: 8px 4px; border-bottom: 2px solid transparent; flex-shrink: 0; }
+nav a:hover { color: #ff8800; border-bottom-color: #ff8800; }
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a5a8a 100%);
+  color: #fff; padding: 50px 20px 40px; text-align: center;
+}
+.hero h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+.hero .subtitle { font-size: 1.05em; color: #b0c4de; margin-bottom: 6px; }
+.hero .meta { font-size: 0.9em; color: #ff8800; margin-top: 8px; }
+.risk-badge {
+  display: inline-block; padding: 4px 16px; border-radius: 20px;
+  font-size: 0.85em; font-weight: 600; margin-top: 10px;
+}
+.risk-high { background: #e74c3c; color: #fff; }
+.risk-medium { background: #f39c12; color: #fff; }
+.risk-low { background: #27ae60; color: #fff; }
+.container { max-width: 860px; margin: 0 auto; padding: 30px 20px 80px; }
+.toc {
+  background: #fff; border-radius: 8px; padding: 22px 26px;
+  margin-bottom: 32px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.toc h2 { font-size: 1.15em; color: #2a5a8a; margin-bottom: 12px; border-bottom: 2px solid #667eea; padding-bottom: 6px; }
+.toc ol { padding-right: 22px; font-size: 0.93em; }
+.toc li { margin-bottom: 4px; }
+.toc a { color: #2a5a8a; text-decoration: none; }
+.toc a:hover { color: #ff8800; text-decoration: underline; }
+.section {
+  background: #fff; border-radius: 8px; padding: 28px 26px;
+  margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.section h2 { font-size: 1.4em; color: #1a1a2e; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #667eea; }
+.section h3 { font-size: 1.1em; color: #2a5a8a; margin: 18px 0 8px; }
+.section h4 { font-size: 1em; color: #444; margin: 14px 0 6px; }
+.section p { margin-bottom: 12px; text-align: justify; }
+.section ul, .section ol { padding-right: 22px; margin-bottom: 12px; }
+.section li { margin-bottom: 5px; }
+blockquote {
+  background: #f0f4fa; border-right: 4px solid #667eea;
+  padding: 12px 18px; margin: 12px 0; border-radius: 0 6px 6px 0;
+  font-size: 0.94em; color: #333;
+}
+.thesis {
+  background: #fff8f0; border-right: 3px solid #ff8800;
+  padding: 14px 18px; margin: 12px 0; border-radius: 0 5px 5px 0;
+  font-size: 0.96em; color: #6b4500;
+}
+table {
+  width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.91em;
+}
+th {
+  background: #667eea; color: #fff; padding: 8px 12px;
+  text-align: right; position: sticky; top: 44px; z-index: 5;
+}
+td {
+  padding: 7px 12px; border-bottom: 1px solid #e8e8e8;
+  text-align: right; vertical-align: top;
+}
+tr:nth-child(even) { background: #f8f9fc; }
+a { color: #2a5a8a; }
+a:hover { color: #ff8800; }
+.back-link {
+  display: inline-block; margin-bottom: 20px; padding: 6px 14px;
+  background: #667eea; color: #fff; border-radius: 4px;
+  text-decoration: none; font-size: 0.88em;
+}
+.back-link:hover { background: #5a6fd6; color: #fff; }
+footer {
+  text-align: center; padding: 30px 20px; color: #888; font-size: 0.85em;
+}
+strong { color: #1a1a2e; }
+code {
+  background: #f0f0f0; padding: 1px 5px; border-radius: 3px;
+  font-size: 0.9em;
+}
+.source-tag {
+  display: inline-block; background: #e8eef6; padding: 2px 8px;
+  border-radius: 10px; font-size: 0.78em; color: #2a5a8a;
+  margin: 2px 3px; text-decoration: none;
+}
+.source-tag:hover { background: #d0dff0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">דוח מחקר מעמיק</span>
+  <a href="../">חזרה לדירוג</a>
+  <a href="../research/">כל הדוחות</a>
+  <a href="#section-1">1. Registration & Le</a> <a href="#section-2">2. Finances</a> <a href="#section-3">3. Leadership & Staf</a> <a href="#section-4">4. Programs: "Educat</a> <a href="#section-5">5. All Programs (Com</a> <a href="#section-6">6. Ideology Analysis</a> <a href="#section-7">7. Foreign Funding -</a> <a href="#section-8">8. Controversies</a> <a href="#section-9">9. Network & Organiz</a> <a href="#section-10">10. Values Alignment</a> <a href="#section-11">11. Open Questions f</a> <a href="#section-12">Source URLs</a>
+</nav>
+
+<div class="hero">
+  <h1>מרכז רוסינג לחינוך ולדיאלוג (Rossing Center for Education and Dialogue)</h1>
+  <div class="subtitle">Executive Summary / Thesis</div>
+  <div class="meta"></div>
+  
+</div>
+
+<div class="container">
+  <a href="../research/" class="back-link">← כל דוחות המחקר</a>
+  <div class="toc"><h2>תוכן עניינים</h2><ol><li><a href="#section-1">1. Registration & Legal Structure</a></li><li><a href="#section-2">2. Finances</a></li><li><a href="#section-3">3. Leadership & Staff</a></li><li><a href="#section-4">4. Programs: "Educators for Change" (מחנכים לשינוי) -- Content Analysis</a></li><li><a href="#section-5">5. All Programs (Complete List)</a></li><li><a href="#section-6">6. Ideology Analysis: Hebrew vs. English</a></li><li><a href="#section-7">7. Foreign Funding -- Detailed Analysis</a></li><li><a href="#section-8">8. Controversies</a></li><li><a href="#section-9">9. Network & Organizational Connections</a></li><li><a href="#section-10">10. Values Alignment Assessment</a></li><li><a href="#section-11">11. Open Questions for Further Investigation</a></li><li><a href="#section-12">Source URLs</a></li></ol></div>
+  <div class="section" id="section-1">
+<h2>1. Registration & Legal Structure</h2>
+<table>
+<tr><th>Field</th><th>Value</th></tr>
+<tr><td><strong>Legal name (Hebrew)</strong></td><td>מרכז רוסינג לחינוך ודיאלוג (חל"צ)</td></tr>
+<tr><td><strong>English name</strong></td><td>Rossing Center for Education and Dialogue</td></tr>
+<tr><td><strong>GuideStar Israel number</strong></td><td>513816421</td></tr>
+<tr><td><strong>Entity type</strong></td><td>חברה לתועלת הציבור (Company for Public Benefit / חל"צ)</td></tr>
+<tr><td><strong>Founded</strong></td><td>2004 by Daniel Rossing</td></tr>
+<tr><td><strong>Original name</strong></td><td>Center for Jewish-Christian Relations in Jerusalem (המרכז ליחסי יהודים-נוצרים בירושלים)</td></tr>
+<tr><td><strong>Renamed</strong></td><td>2017 -- renamed to honor Daniel Rossing after his death in 2010</td></tr>
+<tr><td><strong>Location</strong></td><td>Jerusalem</td></tr>
+<tr><td><strong>GuideStar page</strong></td><td>https://www.guidestar.org.il/organization/513816421</td></tr>
+<tr><td><strong>GuideStar finances</strong></td><td>https://www.guidestar.org.il/organization/513816421/finances</td></tr>
+<tr><td><strong>GuideStar people</strong></td><td>https://www.guidestar.org.il/organization/513816421/people</td></tr>
+</table>
+<p><strong>Note on entity type:</strong> This is a חל"צ (Company for Public Benefit), NOT an עמותה (amuta). This is a meaningful legal distinction -- חל"צ is a company limited by guarantee, subject to Companies Law rather than Amutot Law, while still qualifying for nonprofit status. This structure is common among larger NGOs that want corporate governance flexibility.</p>
+<h3>About Daniel Rossing (1946-2010)</h3>
+<ul>
+<li>Born in the United States</li>
+<li>Immigrated to Israel in 1971</li>
+<li><strong>Education:</strong> BA in History (University of Wisconsin); MA in Theology (Lutheran School of Theology at Chicago); MA in Contemporary Judaism (Hebrew University of Jerusalem)</li>
+<li><strong>Career in government:</strong> Directed the Christian Communities Department in Israel's Ministry of Religious Affairs for 12 years (1976-1987)</li>
+<li>Headed the Christian Communities desk at the Jerusalem Foundation</li>
+<li>Published extensively on Christian minorities in the Middle East, interfaith relations</li>
+<li>Book: "Between Heaven and Earth" (published posthumously, 2012)</li>
+<li><strong>Honors:</strong> Mount Zion Award (2009) for outstanding contribution to dialogue between religions and cultures in the Holy Land</li>
+<li>Died 2010</li>
+</ul>
+<p><strong>Source:</strong> https://rossingcenter.org/about/ ; https://www.hamichlol.org.il/מרכז_רוסינג_לחינוך_ודיאלוג</p>
+<p><strong>Key biographical note:</strong> Rossing's background is significant. He was an American-born Jew who studied at a Lutheran seminary before immigrating to Israel, then ran the government department responsible for Christian communities. This explains the center's DNA: it is fundamentally a Christian-Jewish dialogue organization that later expanded into broader interreligious and civic education work.</p>
+
+</div>
+<div class="section" id="section-2">
+<h2>2. Finances</h2>
+<h3>Known Financial Data</h3>
+<p>GuideStar Israel page exists at https://www.guidestar.org.il/organization/513816421/finances but is JavaScript-rendered and cannot be scraped programmatically (known limitation -- same issue encountered with all GuideStar IL research).</p>
+<h3>Documented Funding Sources</h3>
+<p>From annual reports, PEF funding requests, and public mentions:</p>
+<table>
+<tr><th>Funder</th><th>Type</th><th>Amount/Details</th><th>Source</th></tr>
+<tr><td><strong>Misereor</strong> (Bischofliches Hilfswerk MISEREOR e.V.)</td><td>German Catholic development agency</td><td>Documented supporter</td><td>2020 Annual Report</td></tr>
+<tr><td><strong>DVHL</strong> (Deutscher Verein vom Heiligen Lande)</td><td>German Catholic Holy Land association</td><td>Listed project partner; dedicated project page</td><td>https://www.dvhl.de/projekte/rossing-center/</td></tr>
+<tr><td><strong>Church of Sweden</strong></td><td>Swedish Lutheran church</td><td>Listed supporter</td><td>Rossing Center website</td></tr>
+<tr><td><strong>US Embassy in Israel</strong></td><td>US government</td><td>$8,000 in 2019, $8,000 in 2020 for Dialogue and Identity project</td><td>2020 Annual Report</td></tr>
+<tr><td><strong>PEF Israel Endowment Funds</strong></td><td>US tax-exempt fund</td><td>Open House Ramle funding request submitted</td><td>https://pefisrael.org/wp-content/uploads/2019/01/Rossing-Center-Open-House-Funding-Request.pdf</td></tr>
+<tr><td><strong>Jerusalem Foundation</strong></td><td>Israeli philanthropy</td><td>Program development partner for Educators for Change</td><td>Rossing Center website</td></tr>
+<tr><td><strong>Joseph and Mildred C. Stern Philanthropic Fund</strong></td><td>US private fund</td><td>Documented supporter</td><td>2020 Annual Report</td></tr>
+<tr><td><strong>Leichtag Foundation</strong></td><td>US Jewish philanthropy (San Diego/Jerusalem)</td><td>Listed supporter</td><td>Rossing Center website</td></tr>
+<tr><td><strong>Individual donors</strong></td><td>Private</td><td>374 donors via 39 ambassadors (2024 CauseMatch campaign)</td><td>2024 Annual Report reference</td></tr>
+</table>
+<h3>Funding Profile Analysis</h3>
+<p>The Rossing Center's funding base has a distinctive pattern:</p>
+<ol>
+<li><strong>Heavy European church funding</strong> -- Misereor (German Catholic), DVHL (German Catholic Holy Land society), Church of Sweden (Lutheran). This is consistent with the founder's Lutheran seminary background and the center's Christian-Jewish dialogue origins.</li>
+<li><strong>US Embassy small grants</strong> -- $8,000/year, minimal in absolute terms but indicates US government endorsement.</li>
+<li><strong>US Jewish philanthropic channels</strong> -- PEF, Leichtag, private donors.</li>
+<li><strong>No NIF funding found</strong> -- Searches for New Israel Fund grants to the Rossing Center returned no results. This is notable; NIF is the major funder of left-wing Israeli civil society, and the Rossing Center's absence from NIF's grantee list suggests it occupies a different niche (interfaith rather than rights-based).</li>
+<li><strong>No Ford Foundation funding found.</strong></li>
+<li><strong>No direct EU institutional funding found</strong> -- While European church agencies fund the center, I did not find evidence of direct EU Commission/Parliament grants.</li>
+<li><strong>Government funding %</strong> -- Cannot determine from available data. The GuideStar finances page would show this but is not scrapable.</li>
+</ol>
+<h3>Annual Reports (PDF links -- cannot be parsed programmatically)</h3>
+<ul>
+<li><strong>2024:</strong> https://rossingcenter.org/wp-content/uploads/2025/07/Rossing-Center-Annual-Report-2024-WEB.pdf</li>
+<li><strong>2023:</strong> https://rossingcenter.org/wp-content/uploads/2024/07/Rossing-Center-Annual-Report-2023-DIGITAL.pdf</li>
+<li><strong>2020:</strong> https://rossingcenter.org/wp-content/uploads/2021/08/Rossing-Annual-report-2020.pdf</li>
+</ul>
+
+</div>
+<div class="section" id="section-3">
+<h2>3. Leadership & Staff</h2>
+<h3>Current Director</h3>
+<p><strong>Dr. Sarah Bernstein</strong> -- Executive Director since 2011</p>
+<ul>
+<li>Born in the UK</li>
+<li>Background: Lawyer and mediator</li>
+<li><strong>Education:</strong> PhD in Peace and Reconciliation Studies, Coventry University (thesis: "Narratives of Belonging: Life Stories of Jewish-Israeli Women in Jerusalem")</li>
+<li>Working in Jerusalem in peacebuilding and shared society since 2000</li>
+<li><strong>Affiliations:</strong></li>
+<li>Alliance for Peacebuilding Global Advisory Council on Effective Interreligious Peacebuilding</li>
+<li>Founding Board member, International Association of Spiritual Care</li>
+<li><strong>Publications:</strong></li>
+<li>Chapter: "Is 'Interreligious' Synonymous with 'Interfaith'?" in <em>Peacebuilding and Reconciliation: Contemporary Challenges and Themes</em> (Pluto Press, 2012)</li>
+<li>Blog posts at Times of Israel on dialogue and compassion</li>
+<li><strong>LinkedIn:</strong> https://www.linkedin.com/in/sarah-bernstein-87448427/</li>
+<li><strong>Source:</strong> https://rossingcenter.org/wps-members/dr-sarah-bernstein/</li>
+</ul>
+<h3>Key Staff</h3>
+<table>
+<tr><th>Name</th><th>Role</th><th>Background</th></tr>
+<tr><td><strong>Hana Bendcowsky</strong></td><td>Director, Jerusalem Center for Jewish-Christian Relations</td><td>Coordinates educational programs, produces educational materials, advocacy work. Also affiliated with Mitchell Hamline School of Law (faculty listing).</td></tr>
+<tr><td><strong>Hussam Elias</strong></td><td>Project Director; Executive Secretary, International Christian Committee in Israel</td><td>Arab Christian; program management</td></tr>
+<tr><td><strong>John Munayer</strong></td><td>Director, International Engagement</td><td>PhD in Theology and Religious Studies, University of Edinburgh</td></tr>
+<tr><td><strong>Federica Sasso</strong></td><td>Researcher</td><td>Authored 2024 report on attacks on Christians</td></tr>
+</table>
+<h3>Known Board Members</h3>
+<table>
+<tr><th>Name</th><th>Role/Background</th></tr>
+<tr><td><strong>Melanie Sobell Zaken</strong></td><td>Director of Human Resources, HR Global, American Jewish Joint Distribution Committee (JDC)</td></tr>
+<tr><td><strong>Fr. David Neuhaus, SJ</strong></td><td>Formerly Patriarchal Vicar for Hebrew-speaking Catholics (Jesuit priest)</td></tr>
+<tr><td><strong>Fr. Norayr Kazazian</strong></td><td>Principal, Armenian school in Jerusalem</td></tr>
+<tr><td><strong>Ms. Hanan Abu-Dalu</strong></td><td>Principal, Al-Sawahrah Middle School, Jabel Mukaber; long-term interfaith activist</td></tr>
+</table>
+<p><strong>Source:</strong> https://rossingcenter.org/about/</p>
+<h3>Political Ties Analysis</h3>
+<ul>
+<li><strong>No direct political party affiliations found.</strong> The board is predominantly interfaith-oriented (Catholic, Armenian, Arab educator, JDC professional) rather than politically aligned.</li>
+<li>Sarah Bernstein's publications and blog posts focus on dialogue, compassion, and peacebuilding. She writes at Times of Israel (centrist platform). No evidence of explicitly political advocacy.</li>
+<li>The JDC connection (Melanie Sobell Zaken) is notable -- JDC is mainstream establishment Jewish philanthropy, not politically left-wing.</li>
+<li>Fr. David Neuhaus SJ is a significant figure -- a South African-born Jew who converted to Catholicism, became a Jesuit priest, and served as the Patriarchal Vicar for Hebrew-speaking Catholics. His presence on the board underlines the center's interfaith DNA.</li>
+</ul>
+
+</div>
+<div class="section" id="section-4">
+<h2>4. Programs: "Educators for Change" (מחנכים לשינוי) -- Content Analysis</h2>
+<h3>Gefen Catalog Entry</h3>
+<ul>
+<li><strong>Program number:</strong> #1521 in Gefen catalog</li>
+<li><strong>Rating:</strong> 5/5 (human review)</li>
+<li><strong>Theme:</strong> Anti-racism</li>
+<li><strong>Provider:</strong> Rossing Center for Education and Dialogue</li>
+</ul>
+<h3>Program Details</h3>
+<p><strong>What teachers are trained to do:</strong></p>
+<p>The program trains teachers to facilitate classroom discussions on conflict-related, socially sensitive, and politically charged topics. Specifically:</p>
+<ol>
+<li><strong>Practical facilitation skills</strong> -- Managing emotionally charged group conversations</li>
+<li><strong>Creating "safe space"</strong> -- Establishing legitimacy for feelings like fear and anger so they can be processed rather than suppressed</li>
+<li><strong>Preventing radicalization</strong> -- The program's stated rationale is that without legitimacy for difficult emotions, "extreme and racist positions can become established among children" and may escalate to violence</li>
+<li><strong>Individual and group development</strong> -- Both personal reflection and collective professional development for teaching staff</li>
+</ol>
+<p><strong>Structure:</strong></p>
+<ul>
+<li>30 hours of modular school-based training</li>
+<li>Multi-year engagement: selected schools receive follow-up in years 2 and 3</li>
+<li>Includes mentoring and institutional integration</li>
+<li>Materials: lesson plans, learning resources, diverse pedagogical methods, digital content database</li>
+</ul>
+<p><strong>Partners in development:</strong></p>
+<ul>
+<li>Center for Civic Education in the Ministry of Education (המרכז לחינוך אזרחי)</li>
+<li>Jerusalem Education Administration</li>
+<li>Jerusalem Foundation</li>
+</ul>
+<p><strong>Target population:</strong> High school educators; includes special program for Jewish and Arab school principals</p>
+<p><strong>Source:</strong> https://rossingcenter.org/programs/ed4change/</p>
+<h3>Content Analysis -- Ideological Framing</h3>
+<p>The "Educators for Change" program uses a <strong>conflict facilitation / dialogue</strong> framing rather than a systemic racism / critical theory framing:</p>
+<ul>
+<li><strong>Language used:</strong> "conflict-related topics," "diversity," "respect for difference," "racist positions" (as something to prevent), "safe space for conversation"</li>
+<li><strong>Approach:</strong> Facilitative -- the teacher creates conditions for students to examine their own views honestly, not to adopt a particular view</li>
+<li><strong>Theoretical framework:</strong> Appears to be rooted in dialogue pedagogy and conflict resolution rather than Critical Race Theory</li>
+<li><strong>Hebrew vs English comparison:</strong> The Hebrew materials on the website use "גזענות" (racism) straightforwardly -- "עמדות קיצוניות וגזעניות" (extreme and racist positions). No evidence of CRT-specific terminology like "systemic racism," "white privilege," "intersectionality," or "structural oppression" in either language.</li>
+<li><strong>Post-colonial framing:</strong> Not detected. The program addresses racism as an emotion-driven phenomenon (fear -> hatred -> extreme positions) rather than as a structural/systemic issue.</li>
+</ul>
+<p><strong>Key distinction:</strong> This program differs from US-style anti-racism programs in important ways:</p>
+<ol>
+<li>It frames racism as a <strong>reaction to conflict and fear</strong> rather than as a <strong>structural system</strong></li>
+<li>It aims to create <strong>dialogue</strong> rather than to <strong>deconstruct power structures</strong></li>
+<li>It was co-developed with the <strong>Ministry of Education</strong> (specifically the Center for Civic Education), not in opposition to the establishment</li>
+<li>It works in the <strong>Israeli-Palestinian conflict context</strong> where "racism" primarily refers to Jewish-Arab hostility, not to a US-style racial hierarchy</li>
+</ol>
+
+</div>
+<div class="section" id="section-5">
+<h2>5. All Programs (Complete List)</h2>
+<table>
+<tr><th>#</th><th>Program</th><th>Description</th><th>Notes</th></tr>
+<tr><td>1</td><td><strong>Jerusalem Center for Jewish-Christian Relations</strong></td><td>Educational programming for Israeli teachers and youth educators about Christian communities in the Holy Land</td><td>Original core program; Rossing's legacy</td></tr>
+<tr><td>2</td><td><strong>Foundations for Partnership (Dialogue and Identity)</strong></td><td>Elementary/middle school program where Jewish, Christian, Muslim students learn about their own and others' traditions</td><td>US Embassy funded ($8K/year)</td></tr>
+<tr><td>3</td><td><strong>Educators for Change (מחנכים לשינוי)</strong></td><td>Teacher training in conflict discussion facilitation (30 hours)</td><td>Gefen #1521; MoE partnership</td></tr>
+<tr><td>4</td><td><strong>Open House, Ramle</strong></td><td>Interfaith community hub in mixed city of Ramle; grassroots programming</td><td>Taken over from Open House NGO in 2019/2020</td></tr>
+<tr><td>5</td><td><strong>Meeting Place (בית מפגש)</strong></td><td>Campus-based dialogue at Hebrew University for Jewish/Christian/Muslim/Israeli/Palestinian students</td><td>University partnership</td></tr>
+<tr><td>6</td><td><strong>Healing Hatred</strong></td><td>Spiritual counseling-based interreligious dialogue; trauma healing model</td><td>Partnership with Hebrew Union College + Holy Land Trust Bethlehem; est. 2013</td></tr>
+<tr><td>7</td><td><strong>ADAShA (עדשה)</strong></td><td>Educational tourism; brings visiting groups to experience diverse religious/political narratives in Israel</td><td>Revenue-generating?</td></tr>
+<tr><td>8</td><td><strong>Know Your Neighbor</strong></td><td>Digital database of information about Christianity, Judaism, Islam traditions</td><td>Online resource</td></tr>
+</table>
+<p><strong>Annual reach:</strong> ~8,000-10,000 participants</p>
+<p><strong>Partner institutions:</strong> 120-140+ religious, interfaith, educational, and public bodies</p>
+
+</div>
+<div class="section" id="section-6">
+<h2>6. Ideology Analysis: Hebrew vs. English</h2>
+<h3>Hebrew Website (rossingcenter.org)</h3>
+<ul>
+<li>Uses straightforward Hebrew: "חברה מכילה" (inclusive society), "דיאלוג בין-דתי" (interfaith dialogue), "כבוד לשונה ולמגוון" (respect for difference and diversity)</li>
+<li>"גזענות" (racism) used in the context of preventing extremism</li>
+<li>No use of post-colonial terminology</li>
+<li>No "occupation" language detected on the main site</li>
+<li>Framing: "building shared society" (חברה משותפת)</li>
+</ul>
+<h3>English Website (rossingcenter.org/about/)</h3>
+<ul>
+<li>"Build the desire and capacity of Israelis and Palestinians to create truly shared societies for all groups"</li>
+<li>"Teaching skills and values of inclusivity within the Israeli education system"</li>
+<li>"Engaging Jews and Arabs in mixed spaces"</li>
+<li>References "diverse Israeli-Palestinian staff"</li>
+<li>Vision: "societies which embrace religious, ethnic and national diversity as an asset rather than a threat"</li>
+</ul>
+<h3>Messaging Gap Analysis</h3>
+<p><strong>Minimal gap detected.</strong> Unlike some Israeli NGOs that present different faces in Hebrew and English, the Rossing Center's messaging is relatively consistent. Both languages emphasize:</p>
+<ul>
+<li>Interfaith dialogue as primary method</li>
+<li>Shared society as goal</li>
+<li>Education as vehicle</li>
+<li>Diversity as asset</li>
+</ul>
+<p>The English site does use "Palestinians" more prominently (the Hebrew tends toward "ערבים" / Arabs), but this is a common and relatively minor linguistic choice in Israeli NGO communications.</p>
+<h3>CRT / Post-Colonial Assessment</h3>
+<p><strong>No evidence of CRT or post-colonial framing found.</strong> The center's ideological roots are in:</p>
+<ol>
+<li><strong>Interfaith dialogue tradition</strong> (Christian-Jewish relations, rooted in post-Holocaust reconciliation)</li>
+<li><strong>Contact theory</strong> (bringing different groups together reduces prejudice)</li>
+<li><strong>Conflict resolution pedagogy</strong> (dialogue as tool for processing emotions)</li>
+<li><strong>Spiritual counseling</strong> (the "Healing Hatred" approach)</li>
+</ol>
+<p>These are older, more traditional frameworks that predate CRT and post-colonial theory in educational settings.</p>
+
+</div>
+<div class="section" id="section-7">
+<h2>7. Foreign Funding -- Detailed Analysis</h2>
+<h3>Confirmed Church/Interfaith Funding</h3>
+<table>
+<tr><th>Funder</th><th>Country</th><th>Type</th><th>Significance</th></tr>
+<tr><td><strong>Misereor</strong></td><td>Germany</td><td>Catholic international development agency of German bishops</td><td>Major funder of developing-world and peacebuilding projects. Has been criticized by NGO Monitor for funding politically-active Israeli-Palestinian NGOs. Funded by German government.</td></tr>
+<tr><td><strong>DVHL</strong> (Deutscher Verein vom Heiligen Lande)</td><td>Germany</td><td>German Catholic association for the Holy Land</td><td>Has dedicated project page for Rossing Center. Church-based; focused on Christian presence in Holy Land.</td></tr>
+<tr><td><strong>Church of Sweden</strong> (Svenska kyrkan)</td><td>Sweden</td><td>Evangelical Lutheran Church of Sweden</td><td>State church; Sweden's largest Christian denomination. Active in Israel/Palestine through its aid arm Act Church of Sweden.</td></tr>
+</table>
+<h3>US Government</h3>
+<table>
+<tr><th>Funder</th><th>Amount</th><th>Purpose</th></tr>
+<tr><td><strong>US Embassy, Jerusalem</strong></td><td>$8,000/year (2019-2020)</td><td>Dialogue and Identity project</td></tr>
+</table>
+<h3>US Philanthropic</h3>
+<table>
+<tr><th>Funder</th><th>Type</th></tr>
+<tr><td><strong>PEF Israel Endowment Funds</strong></td><td>US 501(c)(3) for channeling donations to Israeli charities</td></tr>
+<tr><td><strong>Leichtag Foundation</strong></td><td>San Diego/Jerusalem Jewish philanthropy</td></tr>
+<tr><td><strong>Joseph & Mildred C. Stern Fund</strong></td><td>Private philanthropic fund</td></tr>
+</table>
+<h3>NOT Found (searched specifically)</h3>
+<ul>
+<li><strong>New Israel Fund (NIF)</strong> -- No evidence of NIF funding</li>
+<li><strong>Ford Foundation</strong> -- No evidence</li>
+<li><strong>EU Commission/Parliament direct grants</strong> -- No evidence</li>
+<li><strong>Soros / Open Society</strong> -- No evidence</li>
+<li><strong>B8 of Hope</strong> -- Rossing Center is "on their radar" but NOT a grantee</li>
+</ul>
+<h3>Assessment</h3>
+<p>The Rossing Center's foreign funding profile is <strong>primarily European church-based</strong>, which is distinctive. Most Israeli peace/coexistence NGOs rely on NIF, EU, or progressive foundation money. The Rossing Center's reliance on Catholic and Lutheran churches reflects its interfaith dialogue origins and is functionally different from the standard left-wing NGO funding ecosystem. Misereor and DVHL fund the center because of its Christian-Jewish relations work, not because of anti-occupation advocacy.</p>
+<p>That said, Misereor is itself a conduit for German government money and has been flagged by NGO Monitor for funding politically active NGOs in the Israeli-Palestinian space. The Church of Sweden's aid arm has also been criticized for one-sided positions on the conflict.</p>
+
+</div>
+<div class="section" id="section-8">
+<h2>8. Controversies</h2>
+<h3>Direct Controversies</h3>
+<p><strong>Remarkably few.</strong> The Rossing Center does NOT appear in:</p>
+<ul>
+<li>NGO Monitor's database (no dedicated profile found)</li>
+<li>Im Tirtzu's public targets</li>
+<li>Right-wing media criticism databases</li>
+</ul>
+<p>This is unusual for an organization that:</p>
+<ul>
+<li>Works on Jewish-Arab coexistence</li>
+<li>Receives European church funding</li>
+<li>Partners with Palestinian organizations (Holy Land Trust)</li>
+<li>Reports on attacks against Christians by Jewish extremists</li>
+</ul>
+<h3>Possible Reasons for Low Controversy Profile</h3>
+<ol>
+<li><strong>Interfaith framing</strong> rather than rights-based framing -- harder to criticize religious dialogue than "anti-occupation" work</li>
+<li><strong>Ministry of Education partnership</strong> -- the MoE co-developed their flagship program, giving institutional legitimacy</li>
+<li><strong>Small size</strong> -- ~8,000 participants/year is modest; likely below the radar of watchdog orgs</li>
+<li><strong>Balanced board</strong> -- includes JDC professional (establishment), Catholic priest, Armenian, Arab educator -- not an obviously "left-wing" composition</li>
+<li><strong>Christian communities focus</strong> -- reporting on attacks against Christians positions them as defenders of a vulnerable minority, not as critics of the state</li>
+</ol>
+<h3>Indirect Controversy: Report on Attacks Against Christians</h3>
+<p>The Rossing Center's 2024 annual report documented <strong>111 cases of harassment and violence against Christians</strong> in Israel and East Jerusalem. This report received wide coverage in Catholic/Vatican media:</p>
+<ul>
+<li>47 were physical assaults (primarily spitting)</li>
+<li>35 were vandalism against churches, monasteries</li>
+<li>Perpetrators identified as "young, ultra-Orthodox Jews belonging to circles of religious-nationalist extremism"</li>
+<li>48% of Christian youth under 30 said they were considering emigrating</li>
+<li>77% cited escalating discrimination as primary reason</li>
+</ul>
+<p>This report drew international Catholic attention (Vatican News, EWTN, Catholic News Agency) and could potentially draw right-wing criticism, but as of research date, no such criticism was found.</p>
+<p><strong>Source:</strong> https://rossingcenter.org/the-2024-annual-report/ ; https://www.vaticannews.va/en/world/news/2025-04/holy-land-christians-rossing-center-jerusalem-jewish-relations.html</p>
+
+</div>
+<div class="section" id="section-9">
+<h2>9. Network & Organizational Connections</h2>
+<h3>Formal Memberships</h3>
+<table>
+<tr><th>Network</th><th>Type</th><th>Significance</th></tr>
+<tr><td><strong>ALLMEP</strong> (Alliance for Middle East Peace)</td><td>Coalition of 170+ Israeli-Palestinian peacebuilding orgs</td><td>Mainstream peacebuilding coalition; lobbied for MEPPA (Middle East Partnership for Peace Act)</td></tr>
+<tr><td><strong>ICCJ</strong> (International Council of Christians and Jews)</td><td>Global interfaith umbrella</td><td>Israel representative organization</td></tr>
+<tr><td><strong>Anna Lindh Foundation</strong></td><td>Euro-Mediterranean intercultural dialogue network</td><td>EU-associated but independent</td></tr>
+<tr><td><strong>Jerusalem Tolerance Coalition</strong> (קואליציית הסובלנות)</td><td>Local coalition of ~70 Jerusalem organizations</td><td>Formed 2016 after Shira Banki murder at Pride parade</td></tr>
+</table>
+<h3>Partner Organizations</h3>
+<table>
+<tr><th>Partner</th><th>Relationship</th></tr>
+<tr><td><strong>Holy Land Trust</strong> (Bethlehem)</td><td>Co-developed "Healing Hatred" program since 2013</td></tr>
+<tr><td><strong>Hebrew Union College</strong> (Jerusalem)</td><td>Co-developed "Healing Hatred" program; Reform Judaism seminary</td></tr>
+<tr><td><strong>Ministry of Education -- Center for Civic Education</strong></td><td>Co-developed "Educators for Change"</td></tr>
+<tr><td><strong>Jerusalem Education Administration</strong></td><td>Co-developed "Educators for Change"</td></tr>
+<tr><td><strong>Jerusalem Foundation</strong></td><td>Co-developed "Educators for Change"; likely funder</td></tr>
+<tr><td><strong>Hebrew University of Jerusalem</strong></td><td>"Meeting Place" campus dialogue program</td></tr>
+<tr><td><strong>Open House / Friends of the Open House (Ramle)</strong></td><td>Took over management of Open House in 2019/2020</td></tr>
+<tr><td><strong>Cathedral of Saint John the Divine</strong> (NYC)</td><td>Hosted "Healing Hatred" events</td></tr>
+<tr><td><strong>Congregation Emanuel</strong> (NYC)</td><td>Center for Interfaith Dialogue partnership</td></tr>
+</table>
+<h3>Network Assessment</h3>
+<p>The Rossing Center sits at the intersection of three networks:</p>
+<ol>
+<li><strong>International interfaith</strong> (ICCJ, Catholic church connections, Lutheran connections)</li>
+<li><strong>Israeli coexistence/peacebuilding</strong> (ALLMEP, Jerusalem Tolerance Coalition, Ministry of Education)</li>
+<li><strong>Palestinian-Israeli dialogue</strong> (Holy Land Trust, Hebrew University, mixed-city work in Ramle)</li>
+</ol>
+<p>This triple positioning is distinctive. Most organizations in this space are primarily in either the "interfaith" lane or the "peacebuilding" lane. The Rossing Center bridges both, which gives it unusual institutional flexibility and broader legitimacy.</p>
+
+</div>
+<div class="section" id="section-10">
+<h2>10. Values Alignment Assessment</h2>
+<table>
+<tr><th>Value/Concern</th><th>Score (1-5)</th><th>Notes</th></tr>
+<tr><td>Transparency</td><td>3/5</td><td>Annual reports published; GuideStar listing exists; but financial details not easily accessible</td></tr>
+<tr><td>Ideological moderation</td><td>4/5</td><td>Interfaith dialogue framing; no CRT; no post-colonial language; Ministry of Education partnership</td></tr>
+<tr><td>Foreign funding dependence</td><td>2/5</td><td>Heavy reliance on European church money; creates potential for donor-driven agenda</td></tr>
+<tr><td>Political neutrality</td><td>3/5</td><td>No overt political advocacy; but partner Holy Land Trust has been flagged by NGO Monitor</td></tr>
+<tr><td>Educational legitimacy</td><td>5/5</td><td>Gefen 5/5 rating; MoE co-development; 30-hour structured curriculum</td></tr>
+<tr><td>Institutional accountability</td><td>3/5</td><td>חל"צ structure; board exists but limited public info on governance</td></tr>
+</table>
+
+</div>
+<div class="section" id="section-11">
+<h2>11. Open Questions for Further Investigation</h2>
+<ol>
+<li><strong>Financial scale:</strong> What is the actual annual budget? GuideStar IL finances page (https://www.guidestar.org.il/organization/513816421/finances) would show this but requires browser access.</li>
+<li><strong>Government funding %:</strong> What percentage of revenue comes from Israeli government sources vs. foreign donors? Critical for assessing dependence.</li>
+<li><strong>Misereor funding amount:</strong> How much does Misereor specifically contribute? This is likely the largest single funder.</li>
+<li><strong>Holy Land Trust relationship depth:</strong> HLT has been flagged by NGO Monitor for ties to BDS and anti-normalization. How deep is the Rossing Center's partnership with HLT beyond "Healing Hatred"?</li>
+<li><strong>"Educators for Change" actual classroom content:</strong> The 30-hour curriculum materials are not publicly available. What specific topics and materials are used? What does "anti-racism" training look like in practice in an Israeli high school classroom?</li>
+<li><strong>Open House Ramle -- "shared society" in practice:</strong> What does the programming look like? Is there political advocacy embedded in the "shared city" programming?</li>
+<li><strong>US 501(c)(3) status:</strong> Does the Rossing Center have a US-based entity (Friends of Rossing Center, etc.)? PEF acts as fiscal sponsor, but is there an independent US entity?</li>
+</ol>
+
+</div>
+<div class="section" id="section-12">
+<h2>Source URLs</h2>
+<ul>
+<li>GuideStar IL: https://www.guidestar.org.il/organization/513816421</li>
+<li>Rossing Center website: https://rossingcenter.org/</li>
+<li>Rossing Center About: https://rossingcenter.org/about/</li>
+<li>Educators for Change program: https://rossingcenter.org/programs/ed4change/</li>
+<li>Programs overview: https://rossingcenter.org/programs/</li>
+<li>Healing Hatred: https://rossingcenter.org/programs/healing-hatred/</li>
+<li>Open House Ramle: https://rossingcenter.org/programs/open-house/</li>
+<li>HaMichlol article: https://www.hamichlol.org.il/מרכז_רוסינג_לחינוך_ודיאלוג</li>
+<li>IsraelGives: https://www.israelgives.org/amuta/513816421</li>
+<li>DVHL project page: https://www.dvhl.de/projekte/rossing-center/</li>
+<li>ICCJ membership: https://www.iccj.org/home/member-organisations/israel-the-rossing-center-for-education-and-dialogue.html</li>
+<li>Anna Lindh Foundation: https://alf.website/en/?members=the-rossing-center-for-education-and-dialogue</li>
+<li>ALLMEP membership: https://www.allmep.org/allmep_member/rossing-center/</li>
+<li>Vatican News report: https://www.vaticannews.va/en/world/news/2025-04/holy-land-christians-rossing-center-jerusalem-jewish-relations.html</li>
+<li>PEF funding request: https://pefisrael.org/wp-content/uploads/2019/01/Rossing-Center-Open-House-Funding-Request.pdf</li>
+<li>PEF 2022-23 report: https://pefisrael.org/wp-content/uploads/2019/01/Rossing-Center_Open-House-2021-22-Report-2022-23-Proposal.pdf</li>
+<li>PEF 2023-24 report: https://pefisrael.org/wp-content/uploads/2019/01/PEF-23-24-Report-24-25-Proposal.pdf</li>
+<li>2024 Annual Report: https://rossingcenter.org/wp-content/uploads/2025/07/Rossing-Center-Annual-Report-2024-WEB.pdf</li>
+<li>2023 Annual Report: https://rossingcenter.org/wp-content/uploads/2024/07/Rossing-Center-Annual-Report-2023-DIGITAL.pdf</li>
+<li>2020 Annual Report: https://rossingcenter.org/wp-content/uploads/2021/08/Rossing-Annual-report-2020.pdf</li>
+<li>2024 Attacks on Christians report: https://rossingcenter.org/wp-content/uploads/2025/03/Web-Harrasment-christians-in-jlem-report-ENG-2024.pdf</li>
+<li>Sarah Bernstein bio: https://rossingcenter.org/wps-members/dr-sarah-bernstein/</li>
+<li>Sarah Bernstein ToI blog: https://blogs.timesofisrael.com/author/sarah-bernstein/</li>
+<li>B8 of Hope grantees: https://b8ofhope.org/grantees/</li>
+<li>Jerusalem Tolerance Coalition: https://jerusalemtolerancecoalition.com/</li>
+<li>Daniel Rossing founder page: https://rossingcenter.org/מרכז-רוסינג-לחינוך-ולדיאלוג/daniel-rossing-h-2/</li>
+<li>DialogTogether profile: https://dialogtogether.com/en/organisations/rossing-center-for-education-and-dialogue/</li>
+</ul>
+
+</div>
+</div>
+
+<footer>
+  פרויקט זהות ציונית — דוח מחקר מעמיק | <a href="../">דירוג ערים</a> | <a href="../research/">כל הדוחות</a>
+</footer>
+
+</body>
+</html>

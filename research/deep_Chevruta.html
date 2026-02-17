@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chevruta - The Center for Jewish Awareness — דוח מחקר מעמיק</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background: #f5f5f8;
+  color: #1a1a2e;
+  direction: rtl;
+  line-height: 1.8;
+  font-size: 17px;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #1a1a2e; color: #fff;
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  overflow-x: auto; white-space: nowrap;
+}
+nav .brand { font-weight: 700; color: #ff8800; flex-shrink: 0; }
+nav a { color: #ccc; text-decoration: none; font-size: 0.85em; padding: 8px 4px; border-bottom: 2px solid transparent; flex-shrink: 0; }
+nav a:hover { color: #ff8800; border-bottom-color: #ff8800; }
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a5a8a 100%);
+  color: #fff; padding: 50px 20px 40px; text-align: center;
+}
+.hero h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+.hero .subtitle { font-size: 1.05em; color: #b0c4de; margin-bottom: 6px; }
+.hero .meta { font-size: 0.9em; color: #ff8800; margin-top: 8px; }
+.risk-badge {
+  display: inline-block; padding: 4px 16px; border-radius: 20px;
+  font-size: 0.85em; font-weight: 600; margin-top: 10px;
+}
+.risk-high { background: #e74c3c; color: #fff; }
+.risk-medium { background: #f39c12; color: #fff; }
+.risk-low { background: #27ae60; color: #fff; }
+.container { max-width: 860px; margin: 0 auto; padding: 30px 20px 80px; }
+.toc {
+  background: #fff; border-radius: 8px; padding: 22px 26px;
+  margin-bottom: 32px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.toc h2 { font-size: 1.15em; color: #2a5a8a; margin-bottom: 12px; border-bottom: 2px solid #667eea; padding-bottom: 6px; }
+.toc ol { padding-right: 22px; font-size: 0.93em; }
+.toc li { margin-bottom: 4px; }
+.toc a { color: #2a5a8a; text-decoration: none; }
+.toc a:hover { color: #ff8800; text-decoration: underline; }
+.section {
+  background: #fff; border-radius: 8px; padding: 28px 26px;
+  margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.section h2 { font-size: 1.4em; color: #1a1a2e; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #667eea; }
+.section h3 { font-size: 1.1em; color: #2a5a8a; margin: 18px 0 8px; }
+.section h4 { font-size: 1em; color: #444; margin: 14px 0 6px; }
+.section p { margin-bottom: 12px; text-align: justify; }
+.section ul, .section ol { padding-right: 22px; margin-bottom: 12px; }
+.section li { margin-bottom: 5px; }
+blockquote {
+  background: #f0f4fa; border-right: 4px solid #667eea;
+  padding: 12px 18px; margin: 12px 0; border-radius: 0 6px 6px 0;
+  font-size: 0.94em; color: #333;
+}
+.thesis {
+  background: #fff8f0; border-right: 3px solid #ff8800;
+  padding: 14px 18px; margin: 12px 0; border-radius: 0 5px 5px 0;
+  font-size: 0.96em; color: #6b4500;
+}
+table {
+  width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.91em;
+}
+th {
+  background: #667eea; color: #fff; padding: 8px 12px;
+  text-align: right; position: sticky; top: 44px; z-index: 5;
+}
+td {
+  padding: 7px 12px; border-bottom: 1px solid #e8e8e8;
+  text-align: right; vertical-align: top;
+}
+tr:nth-child(even) { background: #f8f9fc; }
+a { color: #2a5a8a; }
+a:hover { color: #ff8800; }
+.back-link {
+  display: inline-block; margin-bottom: 20px; padding: 6px 14px;
+  background: #667eea; color: #fff; border-radius: 4px;
+  text-decoration: none; font-size: 0.88em;
+}
+.back-link:hover { background: #5a6fd6; color: #fff; }
+footer {
+  text-align: center; padding: 30px 20px; color: #888; font-size: 0.85em;
+}
+strong { color: #1a1a2e; }
+code {
+  background: #f0f0f0; padding: 1px 5px; border-radius: 3px;
+  font-size: 0.9em;
+}
+.source-tag {
+  display: inline-block; background: #e8eef6; padding: 2px 8px;
+  border-radius: 10px; font-size: 0.78em; color: #2a5a8a;
+  margin: 2px 3px; text-decoration: none;
+}
+.source-tag:hover { background: #d0dff0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">דוח מחקר מעמיק</span>
+  <a href="../">חזרה לדירוג</a>
+  <a href="../research/">כל הדוחות</a>
+  <a href="#section-1">1. REGISTRATION AND </a> <a href="#section-2">2. FINANCIAL ANALYSI</a> <a href="#section-3">3. LEADERSHIP</a> <a href="#section-4">4. IDEOLOGY: "JEWISH</a> <a href="#section-5">5. PROGRAMS</a> <a href="#section-6">6. NETWORK CONNECTIO</a> <a href="#section-7">7. GOVERNMENT TIES A</a> <a href="#section-8">8. FOREIGN FUNDING</a> <a href="#section-9">9. CONTROVERSIES AND</a> <a href="#section-10">10. IMPORTANT DISAMB</a> <a href="#section-11">11. VALUES ALIGNMENT</a> <a href="#section-12">12. OPEN QUESTIONS F</a> <a href="#section-13">METHODOLOGY NOTES</a>
+</nav>
+
+<div class="hero">
+  <h1>Chevruta - The Center for Jewish Awareness</h1>
+  <div class="subtitle">EXECUTIVE SUMMARY / THESIS</div>
+  <div class="meta"></div>
+  
+</div>
+
+<div class="container">
+  <a href="../research/" class="back-link">← כל דוחות המחקר</a>
+  <div class="toc"><h2>תוכן עניינים</h2><ol><li><a href="#section-1">1. REGISTRATION AND LEGAL STATUS</a></li><li><a href="#section-2">2. FINANCIAL ANALYSIS</a></li><li><a href="#section-3">3. LEADERSHIP</a></li><li><a href="#section-4">4. IDEOLOGY: "JEWISH AWARENESS" IN PRACTICE</a></li><li><a href="#section-5">5. PROGRAMS</a></li><li><a href="#section-6">6. NETWORK CONNECTIONS</a></li><li><a href="#section-7">7. GOVERNMENT TIES AND FUNDING MECHANISMS</a></li><li><a href="#section-8">8. FOREIGN FUNDING</a></li><li><a href="#section-9">9. CONTROVERSIES AND MEDIA COVERAGE</a></li><li><a href="#section-10">10. IMPORTANT DISAMBIGUATION</a></li><li><a href="#section-11">11. VALUES ALIGNMENT TABLE</a></li><li><a href="#section-12">12. OPEN QUESTIONS FOR FURTHER INVESTIGATION</a></li><li><a href="#section-13">METHODOLOGY NOTES</a></li></ol></div>
+  <div class="section" id="section-1">
+<h2>1. REGISTRATION AND LEGAL STATUS</h2>
+<table>
+<tr><th>Field</th><th>Value</th></tr>
+<tr><td><strong>Legal Name</strong></td><td>חברותא - המרכז למודעות יהודית (ע"ר)</td></tr>
+<tr><td><strong>English Name</strong></td><td>Chevruta - The Center for Jewish Awareness</td></tr>
+<tr><td><strong>Entity Type</strong></td><td>Registered Association (Amuta / עמותה)</td></tr>
+<tr><td><strong>Registration Number</strong></td><td>580479608</td></tr>
+<tr><td><strong>GuideStar Israel</strong></td><td>https://www.guidestar.org.il/organization/580479608</td></tr>
+<tr><td><strong>Founded</strong></td><td>2007</td></tr>
+<tr><td><strong>Address</strong></td><td>Balfour 30, Tel Aviv-Jaffo, 6521202 (Beit Ohel Shem)</td></tr>
+<tr><td><strong>obudget.org</strong></td><td>https://next.obudget.org/i/org/association/580479608</td></tr>
+</table>
+<p><strong>Stated Objectives (from GuideStar):</strong></p>
+<ul>
+<li>Education and dissemination of the values of Judaism and Zionism</li>
+<li>Organizing Jewish cultural events</li>
+<li>Publishing books on religion, Judaism, and Zionism</li>
+<li>Conducting research in education for Jewish and Zionist values</li>
+<li>Initiating and encouraging volunteering in these areas</li>
+<li>Establishing and building centers for Jewish culture</li>
+<li>Conducting lessons, lectures, and workshops</li>
+<li>Establishing a mobile educational study hall (beit midrash nayad)</li>
+</ul>
+<p><strong>Sources:</strong></p>
+<ul>
+<li><a href="https://www.guidestar.org.il/organization/580479608" target="_blank" rel="noopener">GuideStar Israel - Chevruta</a></li>
+<li><a href="https://next.obudget.org/i/org/association/580479608" target="_blank" rel="noopener">obudget.org - Chevruta</a></li>
+</ul>
+
+</div>
+<div class="section" id="section-2">
+<h2>2. FINANCIAL ANALYSIS</h2>
+<h3>Annual Revenue</h3>
+<table>
+<tr><th>Year</th><th>Revenue (NIS)</th></tr>
+<tr><td>2023</td><td>8,660,479</td></tr>
+<tr><td>2024</td><td>9,044,412</td></tr>
+</table>
+<p>The median sector benchmark is only 339,907 NIS -- making Chevruta roughly <strong>26x larger</strong> than the typical organization in its field.</p>
+<h3>Government Funding Breakdown (Cumulative from obudget.org)</h3>
+<table>
+<tr><th>Ministry / Source</th><th>Amount (NIS)</th><th>Primary Categories</th></tr>
+<tr><td>Ministry of Education</td><td>6,339,536</td><td>Jewish Culture; National Educational Nucleus</td></tr>
+<tr><td>Education - Torah Institutions Dept</td><td>1,712,715</td><td>National Educational Nucleus</td></tr>
+<tr><td>Ministry of Settlement</td><td>732,795</td><td>Settlement Management; Jewish Culture</td></tr>
+<tr><td>Settlement Division</td><td>529,320</td><td>Settlement Nuclei</td></tr>
+<tr><td>Ministry of Finance</td><td>449,700</td><td>COVID-19 NGO Relief; Compensation Fund</td></tr>
+<tr><td>Ministry of Agriculture</td><td>438,487</td><td>Urban Settlement Management; Rural Support</td></tr>
+<tr><td>Ministry of Agriculture & Food Security</td><td>264,688</td><td>Urban Settlement Management</td></tr>
+<tr><td>Ministry of Immigrant Absorption</td><td>17,633</td><td>Social Integration Support</td></tr>
+<tr><td>Ministry of Religious Services</td><td>2,999</td><td>Facility Rental</td></tr>
+<tr><td><strong>TOTAL documented</strong></td><td><strong>~10,488,000</strong></td></tr>
+</table>
+<p><strong>3-Year Government Support Total:</strong> 5,057,558 NIS (ranked 10th in its field for government income).</p>
+<h3>Staffing</h3>
+<table>
+<tr><th>Year</th><th>Employees</th><th>Volunteers</th></tr>
+<tr><td>2024</td><td>27</td><td>84</td></tr>
+</table>
+<h3>Financial Red Flags (from Yedioth Ahronoth investigation, 2018)</h3>
+<ul>
+<li>Received <strong>720,000+ NIS from the Settlement Division</strong> over two years, despite funds being designated for disadvantaged populations in peripheral areas -- Chevruta operates in central Tel Aviv.</li>
+<li>In 2015, reported to the Registry of Associations attempts to recover from a <strong>"severe deficit"</strong> and took out loans of <strong>"extensive scope."</strong></li>
+<li>Rabbi Kartman personally loaned the organization <strong>"tens of thousands of shekels"</strong> from his private account.</li>
+<li>Rabbi Dorfman and his wife together received <strong>"hundreds of thousands of shekels"</strong> in salaries.</li>
+<li>Separate funding stream: 700,000 NIS/year from the Housing Ministry for operating HaMakom.</li>
+</ul>
+<h3>Gefen System School Programs</h3>
+<p>From the original research data: 103,582 NIS across 8 cities, 20 schools. This represents <strong>barely 1% of the organization's total revenue</strong>, suggesting the school programs are a minor part of operations compared to the HaMakom center activities.</p>
+<p><strong>Sources:</strong></p>
+<ul>
+<li><a href="https://next.obudget.org/i/org/association/580479608" target="_blank" rel="noopener">obudget.org - Chevruta Financial Data</a></li>
+<li><a href="https://www.yediot.co.il/articles/0,7340,L-5148194,00.html" target="_blank" rel="noopener">Yedioth Ahronoth - "Malkahaim Movement" Investigation</a></li>
+<li><a href="https://toravoda.org.il/%D7%91%D7%9E%D7%A9%D7%A8%D7%93-%D7%94%D7%A9%D7%99%D7%9B%D7%95%D7%9F-%D7%9E%D7%95%D7%93%D7%99%D7%9D-%D7%90%D7%99%D7%9F-%D7%9C%D7%A0%D7%95-%D7%9E%D7%95%D7%A9%D7%92-%D7%9B%D7%99%D7%A6%D7%93-%D7%97/" target="_blank" rel="noopener">Neemanei Torah V'Avodah - Housing Ministry 100M Distribution</a></li>
+</ul>
+
+</div>
+<div class="section" id="section-3">
+<h2>3. LEADERSHIP</h2>
+<h3>Rabbi Ariel Dorfman - Founder & CEO</h3>
+<ul>
+<li><strong>Role:</strong> Founder and Director of Chevruta / HaMakom</li>
+<li><strong>Background:</strong> Gush Katif evacuee (2005 disengagement); relocated to Tel Aviv as part of the Religious-Zionist settlement kernel movement</li>
+<li><strong>Residence:</strong> Reported in Pisgat Ze'ev (East Jerusalem settlement neighborhood)</li>
+<li><strong>Education:</strong> Studied at multiple yeshivot including Noam, Netiv Meir, Yeshivat HaKotel, Merkaz HaRav, Kfar Chassidim</li>
+<li><strong>Additional career:</strong> Cantorial performer; has released albums of liturgical music including settings of Rabbi Kook's poetry and Zelda's poetry</li>
+<li><strong>Teaching:</strong> Teaches courses on Rabbi Abraham Isaac Kook's writings at yeshiva.org.il</li>
+<li><strong>Ideology:</strong> Religious-Zionist; follower of Rabbi Kook's philosophy of Jewish national redemption; affiliated with Tekuma party (part of Religious Zionist party)</li>
+<li><strong>Family:</strong> Married, father of five; his brother Meir Dorfman also teaches at HaMakom</li>
+<li><strong>Views on LGBTQ:</strong> According to kamoha.org.il, stated his approach to homosexuality is "the mainstream of Judaism" (implying traditional Orthodox opposition)</li>
+</ul>
+<p><strong>Key quote from Chotam profile:</strong> Dorfman's distinguishing characteristic is his conviction that Jewish engagement requires persistent effort -- he insists on hosting programming even when surveys show limited awareness among target audiences.</p>
+<h3>Rabbi Yair Kartman - Founder</h3>
+<ul>
+<li><strong>Role:</strong> Co-founder of Chevruta; one of the founders of the Tel Aviv Torah kernel</li>
+<li><strong>Background:</strong> From Beit El (West Bank settlement)</li>
+<li><strong>Political affiliation:</strong> Member of the management of "Komemiyut - Spirit and Strength for a Jewish Israel" (קוממיות - רוח וגבורה לישראל יהודית) -- a far-right Religious-Zionist movement</li>
+<li><strong>Financial involvement:</strong> Personally loaned the organization "tens of thousands of shekels" from his private account</li>
+</ul>
+<h3>Akiva Smotrich - Board Member</h3>
+<ul>
+<li><strong>Role:</strong> Board member (chaver va'ad) of Chevruta</li>
+<li><strong>Notable connection:</strong> Brother of Finance Minister Bezalel Smotrich (head of Religious Zionist Party)</li>
+<li><strong>Other activities:</strong> Reportedly one of the leaders of efforts to return to the evacuated settlement of Homesh in northern Samaria</li>
+</ul>
+<h3>Noam Klein - Deputy Director</h3>
+<ul>
+<li><strong>Role:</strong> Director / Deputy Director of HaMakom</li>
+<li><strong>Quoted in Arutz 7 (2024):</strong> Described the surge in attendance after October 7, 2023, saying "an enormous number of people wanting to join since the war broke out," with the facility needing "to break down walls to open more spaces."</li>
+</ul>
+<p><strong>Sources:</strong></p>
+<ul>
+<li><a href="https://chotam.org.il/%D7%A2%D7%9C-%D7%A1%D7%93%D7%A8-%D7%94%D7%99%D7%95%D7%9D/%D7%A0%D7%95%D7%A9%D7%90%D7%99%D7%9D-%D7%A0%D7%95%D7%A1%D7%A4%D7%99%D7%9D/%D7%94%D7%A8%D7%91-%D7%A9%D7%9C-%D7%A6%D7%A2%D7%99%D7%A8%D7%99-%D7%AA%D7%9C-%D7%90%D7%91%D7%99%D7%91/" target="_blank" rel="noopener">Chotam - "The Rabbi of Tel Aviv's Young People"</a></li>
+<li><a href="https://www.inn.co.il/news/671084" target="_blank" rel="noopener">Arutz 7 - HaMakom During Wartime</a></li>
+<li><a href="https://www.yediot.co.il/articles/0,7340,L-5148194,00.html" target="_blank" rel="noopener">Yedioth Ahronoth - Malkahaim Investigation</a></li>
+<li><a href="https://www.yeshiva.org.il/rabbi/219" target="_blank" rel="noopener">Yeshiva.org.il - Rabbi Dorfman Profile</a></li>
+<li><a href="https://www.kamoha.org.il/?p=30551" target="_blank" rel="noopener">Kamoha.org.il - Dorfman on Homosexuality</a></li>
+</ul>
+
+</div>
+<div class="section" id="section-4">
+<h2>4. IDEOLOGY: "JEWISH AWARENESS" IN PRACTICE</h2>
+<h3>What "Jewish Awareness" Actually Means</h3>
+<p>Despite the neutral-sounding name, Chevruta's ideology is firmly <strong>Religious-Zionist</strong>, specifically within the school of Rabbi Abraham Isaac Kook (Rav Kook). Key indicators:</p>
+<ol>
+<li><strong>Torah kernel model (garin torani):</strong> The organization is structured as a mission-driven community of Religious-Zionist families who settle in predominantly secular neighborhoods to spread Jewish observance and strengthen Jewish identity.</li>
+</ol>
+<ol>
+<li><strong>Rav Kook's philosophy:</strong> Dorfman explicitly teaches Kook's writings. In Kook's framework, secular Jews are unwitting carriers of holiness who need to be reconnected to their spiritual roots -- the secular-religious encounter is itself part of the messianic process of national redemption.</li>
+</ol>
+<ol>
+<li><strong>"Return to Judaism" (hazara b'tshuva) framing:</strong> The Rosh Yehudi connection is explicit -- Rosh Yehudi's founder Israel Zeira stated they want to be "Zionist Chabadniks" and are "proud of our religiousization" (hadatah). Dorfman is described as coming to Tel Aviv "to spread the Torah of Rav Kook."</li>
+</ol>
+<ol>
+<li><strong>Settlement ideology:</strong> Funding from the Settlement Division, board member from the Smotrich family, founder from Beit El, connection to Komemiyut movement -- all point to a Religious-Zionist settlement ideology that views settling in Tel Aviv as a form of "internal settlement."</li>
+</ol>
+<ol>
+<li><strong>Post-October 7 shift:</strong> Since the war, HaMakom explicitly pivoted from personal empowerment to <strong>national identity</strong> questions -- "what it means to be Jewish," "why we're here in Israel," "why Jews are persecuted." This aligns with Religious-Zionist framing of the conflict as existential-spiritual.</li>
+</ol>
+<h3>NOT Progressive / NOT Pluralist / NOT Post-Zionist</h3>
+<p>The organization is the <strong>opposite</strong> of progressive Judaism, pluralism, or post-Zionism:</p>
+<ul>
+<li>It is Orthodox in religious orientation</li>
+<li>Its leaders are settlers or settlement-affiliated</li>
+<li>Its board includes a member of the Smotrich family</li>
+<li>It is connected to the far-right Komemiyut movement</li>
+<li>It teaches Rav Kook's religious-national philosophy</li>
+<li>Its funding comes heavily from settlement-oriented government ministries</li>
+</ul>
+<p>The "awareness" in "Jewish Awareness" is closer to <strong>kiruv</strong> (religious outreach) within a Religious-Zionist frame than to liberal/pluralist Jewish identity exploration.</p>
+
+</div>
+<div class="section" id="section-5">
+<h2>5. PROGRAMS</h2>
+<h3>HaMakom (The Place) - Core Activity</h3>
+<ul>
+<li><strong>Location:</strong> Beit Ohel Shem, Balfour 30, Tel Aviv (originally founded by poet Chaim Nachman Bialik)</li>
+<li><strong>Opened:</strong> 2008</li>
+<li><strong>Activities:</strong></li>
+<li>Weekly chevruta (paired study) sessions -- 200+ participants per week, pairing religious and secular Jews</li>
+<li>Courses and workshops on Kabbalah, Talmud, psychology, Jewish philosophy</li>
+<li>Cultural performances and events</li>
+<li>Holiday programming (Shabbat, festivals)</li>
+<li>Student scholarship program</li>
+<li>Activities for schools, youth movements, and community partners</li>
+<li><strong>Instructors:</strong> "Dozens" including educators, musicians, psychologists, and rabbis</li>
+<li><strong>Website:</strong> https://makom.org.il/</li>
+</ul>
+<h3>Gefen-Approved School Programs</h3>
+<p>Based on the original research data from the Gefen mapping:</p>
+<table>
+<tr><th>Program</th><th>Gefen ID</th><th>Theme</th><th>Scale</th></tr>
+<tr><td>0% Indifference (0% אדישות)</td><td>#13171</td><td>Anti-racism (R1 agent-researched)</td><td>Part of 8-city, 20-school deployment</td></tr>
+<tr><td>Direct Encounter (מפגש ישיר)</td><td>#31502</td><td>Unknown specific content (R3 designation)</td><td>Part of 8-city, 20-school deployment</td></tr>
+</table>
+<p><strong>Note:</strong> Detailed content of these specific programs could not be found through web searches. The program names suggest anti-racism and intercultural encounter themes, but given the organization's Religious-Zionist orientation, these likely frame "encounters" through a Jewish-identity lens rather than a progressive anti-racism framework. The total Gefen allocation of 103,582 NIS is a tiny fraction of the org's 9M+ annual revenue.</p>
+<h3>Cities of Operation (from Gefen mapping)</h3>
+<p>Beer Sheva, Herzliya, Haifa, Jerusalem, Rosh HaAyin, Ramat Gan, Ra'anana, Tel Aviv</p>
+<p>This geographic spread maps to known Torah kernel (garin torani) deployment patterns -- these are all cities where Religious-Zionist families establish mission-driven communities.</p>
+
+</div>
+<div class="section" id="section-6">
+<h2>6. NETWORK CONNECTIONS</h2>
+<h3>Rosh Yehudi (ראש יהודי)</h3>
+<ul>
+<li><strong>Founder:</strong> Israel Zeira (ישראל זעירא)</li>
+<li><strong>Connection:</strong> Dorfman is described as having come to Tel Aviv within the "Rosh Yehudi" kernel framework</li>
+<li><strong>Ideology:</strong> Explicitly Religious-Zionist kiruv; Zeira stated "we want to be Zionist Chabadniks" and is "proud of our religiousization"</li>
+<li><strong>Controversies:</strong> Zeira was found to be living illegally in a synagogue basement he converted to a residence; Tel Aviv municipality initiated legal proceedings in 2024</li>
+<li><strong>Note:</strong> Rosh Yehudi is a separate organization but shares the same physical and ideological ecosystem</li>
+</ul>
+<h3>MAKOM Council of Mission-Driven Communities (חיבור חדש)</h3>
+<ul>
+<li>The Chevruta-HaMakom listing appears on the "Chibur Hadash" (New Connection) website, which is the council/umbrella organization for mission-driven communities (garinim) in Israel</li>
+<li>This confirms Chevruta's self-identification as a mission-driven settlement kernel</li>
+</ul>
+<h3>Komemiyut (קוממיות)</h3>
+<ul>
+<li>Rabbi Yair Kartman (co-founder) is a member of the management of "Komemiyut - Spirit and Strength for a Jewish Israel"</li>
+<li>The Yedioth investigation alleged Chevruta served as an <strong>operational arm</strong> for the Komemiyut caucus, facilitating legislative initiatives while obscuring ideological motivations</li>
+<li>Komemiyut is a far-right Religious-Zionist movement</li>
+</ul>
+<h3>Smotrich Family Connection</h3>
+<ul>
+<li>Board member Akiva Smotrich is the brother of Finance Minister Bezalel Smotrich</li>
+<li>This creates a direct connection to the most senior Religious-Zionist politician in Israel's government</li>
+</ul>
+
+</div>
+<div class="section" id="section-7">
+<h2>7. GOVERNMENT TIES AND FUNDING MECHANISMS</h2>
+<h3>Ministry of Education (Largest Funder)</h3>
+<ul>
+<li><strong>6.3M+ NIS cumulative</strong> for "Jewish Culture" and "National Educational Nucleus" budget lines</li>
+<li>The Torah Institutions Department within MoE provides an additional 1.7M+ NIS</li>
+<li>Gefen system school programs are a small but visible part of MoE relationship</li>
+</ul>
+<h3>Settlement Division / Ministry of Settlement</h3>
+<ul>
+<li><strong>1.26M+ NIS cumulative</strong> from settlement-related budget lines</li>
+<li>The Neemanei Torah V'Avodah investigation revealed that settlement funds designated for peripheral areas were directed to central Tel Aviv operations</li>
+<li>Housing Ministry head of Neighborhood Rehabilitation testified that "Rabbi Dorfman circulated through the Housing Ministry calling himself head of the Torah Core Groups administration"</li>
+</ul>
+<h3>Budget Flow Pattern</h3>
+<p>The funding pattern shows a classic Religious-Zionist kernel financing structure:</p>
+<ol>
+<li>MoE funds for "Jewish culture" and "educational nucleus" -- legitimate-sounding categories</li>
+<li>Settlement Division funds for "settlement management" -- redirected to urban Torah kernel operations</li>
+<li>Housing Ministry funds for "neighborhood rehabilitation" -- used for cultural center in affluent Tel Aviv</li>
+<li>Agriculture Ministry funds for "urban settlement management" -- a creative budget line</li>
+</ol>
+
+</div>
+<div class="section" id="section-8">
+<h2>8. FOREIGN FUNDING</h2>
+<p><strong>No direct evidence found</strong> of funding from NIF, Abraham Fund, US Jewish federations, or other progressive/liberal funders. This is consistent with the organization's Religious-Zionist orientation -- these funders typically support pluralist or progressive organizations, not Orthodox kiruv operations.</p>
+<p>The Charidy fundraising platform has a campaign page for HaMakom/Rabbi Dorfman (https://www.charidy.com/hamakom-6/1), suggesting private philanthropic fundraising, likely from Religious-Zionist donors in Israel and abroad.</p>
+<p>Given the 9M+ annual revenue and ~5M government funding over 3 years, there is a significant gap that must be filled by donations. The likely sources are:</p>
+<ul>
+<li>Religious-Zionist philanthropists in Israel</li>
+<li>American Orthodox/Religious-Zionist donors</li>
+<li>Charidy campaigns</li>
+<li>Program fees and event revenue</li>
+</ul>
+
+</div>
+<div class="section" id="section-9">
+<h2>9. CONTROVERSIES AND MEDIA COVERAGE</h2>
+<h3>2018 Yedioth Ahronoth Investigation ("Malkahaim Movement")</h3>
+<p>The most significant investigative piece, published in Yedioth Ahronoth (Israel's largest newspaper), alleged:</p>
+<ol>
+<li><strong>Fund misallocation:</strong> Settlement Division funds meant for peripheral, disadvantaged communities were channeled to Chevruta in affluent central Tel Aviv</li>
+<li><strong>Political connections:</strong> The organization served as an operational arm for the Komemiyut political caucus</li>
+<li><strong>Personal enrichment:</strong> Rabbi Dorfman and his wife received "hundreds of thousands of shekels" in salaries; Rabbi Kartman personally loaned the org money</li>
+<li><strong>Financial distress:</strong> Despite government funding, the org reported severe deficits and took extensive loans in 2015</li>
+</ol>
+<h3>Neemanei Torah V'Avodah Investigation</h3>
+<p>This Religious-Zionist watchdog organization published findings about the Housing Ministry's 110M NIS annual allocation to settlement kernels, specifically noting that "the Housing Ministry admits they have no idea how 100 million shekels transferred to the Settlement Division were distributed." Chevruta/Dorfman were specifically named as recipients of 700K NIS/year from this opaque process.</p>
+<h3>"Religiousization" (Hadatah) Debate</h3>
+<p>The broader ecosystem of Torah kernels in secular cities -- including Chevruta's operations -- is a central topic in Israel's "religiousization" debate. Critics argue these organizations receive government funds to promote Orthodox religious observance in secular communities under the guise of "Jewish culture." Defenders argue they fill a genuine demand for Jewish identity content.</p>
+<p><strong>Source URLs:</strong></p>
+<ul>
+<li><a href="https://www.yediot.co.il/articles/0,7340,L-5148194,00.html" target="_blank" rel="noopener">Yedioth Ahronoth Investigation</a></li>
+<li><a href="https://toravoda.org.il/%D7%91%D7%9E%D7%A9%D7%A8%D7%93-%D7%94%D7%A9%D7%99%D7%9B%D7%95%D7%9F-%D7%9E%D7%95%D7%93%D7%99%D7%9D-%D7%90%D7%99%D7%9F-%D7%9C%D7%A0%D7%95-%D7%9E%D7%95%D7%A9%D7%92-%D7%9B%D7%99%D7%A6%D7%93-%D7%97/" target="_blank" rel="noopener">Neemanei Torah V'Avodah - Housing Ministry Investigation</a></li>
+<li><a href="https://www.ha-makom.co.il/ze-ira/" target="_blank" rel="noopener">Ha-Makom Investigation - Rosh Yehudi Housing Violation</a></li>
+</ul>
+
+</div>
+<div class="section" id="section-10">
+<h2>10. IMPORTANT DISAMBIGUATION</h2>
+<p>There are MULTIPLE organizations in Israel using the name "Chevruta" / "Havruta":</p>
+<table>
+<tr><th>Organization</th><th>Registration</th><th>Domain</th><th>Description</th></tr>
+<tr><td><strong>Chevruta - Center for Jewish Awareness</strong></td><td>580479608</td><td>hevruta-makom.com / makom.org.il</td><td>THIS REPORT. Religious-Zionist Torah kernel.</td></tr>
+<tr><td>Chevruta - Religious LGBT</td><td>580533305</td><td>havruta.org.il</td><td>LGBTQ religious community org. CEO: Netanel Shaler. DIFFERENT org.</td></tr>
+<tr><td>Chevruta - Education in Community</td><td>Unknown</td><td>havruta.co.il</td><td>Run by Rostem Mailov. Afterschool programs. DIFFERENT org.</td></tr>
+<tr><td>Chevruta - L'Oraita</td><td>580303998</td><td>N/A</td><td>Torah study org. DIFFERENT org.</td></tr>
+<tr><td>Chevruta Community Center Ramat Gan</td><td>580094035</td><td>N/A</td><td>Religious community center. DIFFERENT org.</td></tr>
+<tr><td>Kesher Yehudi - Chevruta</td><td>580512093</td><td>N/A</td><td>Secular-religious pairing program. DIFFERENT org.</td></tr>
+<tr><td>Hartman Institute Hevruta</td><td>N/A</td><td>hartman.org.il</td><td>Gap-year program. Part of Hartman Institute.</td></tr>
+</table>
+
+</div>
+<div class="section" id="section-11">
+<h2>11. VALUES ALIGNMENT TABLE</h2>
+<table>
+<tr><th>Value</th><th>Score (1-5)</th><th>Notes</th></tr>
+<tr><td>Transparency</td><td>2/5</td><td>Opaque funding flows; Settlement Division funds to central Tel Aviv; severe deficit hidden until forced disclosure</td></tr>
+<tr><td>Pluralism</td><td>2/5</td><td>Claims to bridge secular-religious; but Orthodox framework, Rav Kook ideology, anti-LGBTQ views</td></tr>
+<tr><td>Democratic values</td><td>2/5</td><td>Connected to Komemiyut movement; board member is Smotrich brother; settlement ideology</td></tr>
+<tr><td>Educational quality</td><td>3/5</td><td>200+ weekly participants suggest genuine demand; post-10/7 surge in interest</td></tr>
+<tr><td>Financial responsibility</td><td>2/5</td><td>Severe deficits, extensive loans, salary controversies, fund misallocation allegations</td></tr>
+<tr><td>Anti-racism (claimed theme)</td><td>?/5</td><td>"0% Indifference" program exists but no content details found; unclear if anti-racism is substantive or performative</td></tr>
+</table>
+
+</div>
+<div class="section" id="section-12">
+<h2>12. OPEN QUESTIONS FOR FURTHER INVESTIGATION</h2>
+<ol>
+<li><strong>What is the actual content of "0% Indifference" and "Direct Encounter"?</strong> These Gefen programs could not be found online. Are they genuinely anti-racist, or do they frame "encounters" through a Religious-Zionist identity lens?</li>
+</ol>
+<ol>
+<li><strong>Who are the private donors?</strong> The gap between government funding and total revenue suggests significant private philanthropy. Are there US 501(c)(3) entities channeling funds?</li>
+</ol>
+<ol>
+<li><strong>What is the current board composition?</strong> GuideStar pages could not be scraped. Is Akiva Smotrich still on the board?</li>
+</ol>
+<ol>
+<li><strong>What is the Rosh Yehudi / Chevruta / HaMakom corporate structure?</strong> Are these three names for functionally the same operation, or genuinely separate entities sharing space?</li>
+</ol>
+<ol>
+<li><strong>Has the State Comptroller ever audited Chevruta specifically?</strong> The broader Torah kernel funding mechanism has been flagged but individual org audits are unknown.</li>
+</ol>
+<ol>
+<li><strong>What is the relationship between the school programs and the core HaMakom activities?</strong> Are schools being used as a pipeline to HaMakom programming?</li>
+</ol>
+
+</div>
+<div class="section" id="section-13">
+<h2>METHODOLOGY NOTES</h2>
+<ul>
+<li>Research conducted via WebSearch (Hebrew and English queries) and WebFetch</li>
+<li>GuideStar Israel pages could not be scraped (JavaScript-rendered Salesforce application)</li>
+<li>Financial data primarily from obudget.org (government transfers) and Yedioth/Torah V'Avodah investigative reporting</li>
+<li>Leadership data from journalistic profiles (Chotam, Arutz 7, Yedioth)</li>
+<li>No direct website content could be extracted from hevruta-makom.com or havruta.co.il (Wix-based, JS-rendered)</li>
+<li>Multiple "Chevruta" organizations exist and careful disambiguation was required throughout</li>
+</ul>
+
+</div>
+</div>
+
+<footer>
+  פרויקט זהות ציונית — דוח מחקר מעמיק | <a href="../">דירוג ערים</a> | <a href="../research/">כל הדוחות</a>
+</footer>
+
+</body>
+</html>

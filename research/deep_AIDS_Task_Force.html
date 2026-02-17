@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>הוועד למלחמה באיידס (Israel AIDS Task Force) — דוח מחקר מעמיק</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background: #f5f5f8;
+  color: #1a1a2e;
+  direction: rtl;
+  line-height: 1.8;
+  font-size: 17px;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #1a1a2e; color: #fff;
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  overflow-x: auto; white-space: nowrap;
+}
+nav .brand { font-weight: 700; color: #ff8800; flex-shrink: 0; }
+nav a { color: #ccc; text-decoration: none; font-size: 0.85em; padding: 8px 4px; border-bottom: 2px solid transparent; flex-shrink: 0; }
+nav a:hover { color: #ff8800; border-bottom-color: #ff8800; }
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a5a8a 100%);
+  color: #fff; padding: 50px 20px 40px; text-align: center;
+}
+.hero h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+.hero .subtitle { font-size: 1.05em; color: #b0c4de; margin-bottom: 6px; }
+.hero .meta { font-size: 0.9em; color: #ff8800; margin-top: 8px; }
+.risk-badge {
+  display: inline-block; padding: 4px 16px; border-radius: 20px;
+  font-size: 0.85em; font-weight: 600; margin-top: 10px;
+}
+.risk-high { background: #e74c3c; color: #fff; }
+.risk-medium { background: #f39c12; color: #fff; }
+.risk-low { background: #27ae60; color: #fff; }
+.container { max-width: 860px; margin: 0 auto; padding: 30px 20px 80px; }
+.toc {
+  background: #fff; border-radius: 8px; padding: 22px 26px;
+  margin-bottom: 32px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.toc h2 { font-size: 1.15em; color: #2a5a8a; margin-bottom: 12px; border-bottom: 2px solid #667eea; padding-bottom: 6px; }
+.toc ol { padding-right: 22px; font-size: 0.93em; }
+.toc li { margin-bottom: 4px; }
+.toc a { color: #2a5a8a; text-decoration: none; }
+.toc a:hover { color: #ff8800; text-decoration: underline; }
+.section {
+  background: #fff; border-radius: 8px; padding: 28px 26px;
+  margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.section h2 { font-size: 1.4em; color: #1a1a2e; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #667eea; }
+.section h3 { font-size: 1.1em; color: #2a5a8a; margin: 18px 0 8px; }
+.section h4 { font-size: 1em; color: #444; margin: 14px 0 6px; }
+.section p { margin-bottom: 12px; text-align: justify; }
+.section ul, .section ol { padding-right: 22px; margin-bottom: 12px; }
+.section li { margin-bottom: 5px; }
+blockquote {
+  background: #f0f4fa; border-right: 4px solid #667eea;
+  padding: 12px 18px; margin: 12px 0; border-radius: 0 6px 6px 0;
+  font-size: 0.94em; color: #333;
+}
+.thesis {
+  background: #fff8f0; border-right: 3px solid #ff8800;
+  padding: 14px 18px; margin: 12px 0; border-radius: 0 5px 5px 0;
+  font-size: 0.96em; color: #6b4500;
+}
+table {
+  width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.91em;
+}
+th {
+  background: #667eea; color: #fff; padding: 8px 12px;
+  text-align: right; position: sticky; top: 44px; z-index: 5;
+}
+td {
+  padding: 7px 12px; border-bottom: 1px solid #e8e8e8;
+  text-align: right; vertical-align: top;
+}
+tr:nth-child(even) { background: #f8f9fc; }
+a { color: #2a5a8a; }
+a:hover { color: #ff8800; }
+.back-link {
+  display: inline-block; margin-bottom: 20px; padding: 6px 14px;
+  background: #667eea; color: #fff; border-radius: 4px;
+  text-decoration: none; font-size: 0.88em;
+}
+.back-link:hover { background: #5a6fd6; color: #fff; }
+footer {
+  text-align: center; padding: 30px 20px; color: #888; font-size: 0.85em;
+}
+strong { color: #1a1a2e; }
+code {
+  background: #f0f0f0; padding: 1px 5px; border-radius: 3px;
+  font-size: 0.9em;
+}
+.source-tag {
+  display: inline-block; background: #e8eef6; padding: 2px 8px;
+  border-radius: 10px; font-size: 0.78em; color: #2a5a8a;
+  margin: 2px 3px; text-decoration: none;
+}
+.source-tag:hover { background: #d0dff0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">דוח מחקר מעמיק</span>
+  <a href="../">חזרה לדירוג</a>
+  <a href="../research/">כל הדוחות</a>
+  <a href="#section-1">1. REGISTRATION & LE</a> <a href="#section-2">2. FINANCES</a> <a href="#section-3">3. LEADERSHIP</a> <a href="#section-4">4. PROGRAMS</a> <a href="#section-5">5. IDEOLOGY: HEALTH </a> <a href="#section-6">6. FOREIGN FUNDING</a> <a href="#section-7">7. CONTROVERSIES</a> <a href="#section-8">8. GOVERNMENT TIES</a> <a href="#section-9">VALUES ALIGNMENT TAB</a> <a href="#section-10">RISK SUMMARY & OPEN </a> <a href="#section-11">SOURCE INDEX</a>
+</nav>
+
+<div class="hero">
+  <h1>הוועד למלחמה באיידס (Israel AIDS Task Force)</h1>
+  <div class="subtitle">Gefen Catalog Program #1102: "התנהגות מינית אחראית" (Responsible Sexual Behavior)</div>
+  <div class="meta"></div>
+  
+</div>
+
+<div class="container">
+  <a href="../research/" class="back-link">← כל דוחות המחקר</a>
+  <div class="toc"><h2>תוכן עניינים</h2><ol><li><a href="#section-1">1. REGISTRATION & LEGAL IDENTITY</a></li><li><a href="#section-2">2. FINANCES</a></li><li><a href="#section-3">3. LEADERSHIP</a></li><li><a href="#section-4">4. PROGRAMS</a></li><li><a href="#section-5">5. IDEOLOGY: HEALTH ORGANIZATION OR ADVOCACY VEHICLE?</a></li><li><a href="#section-6">6. FOREIGN FUNDING</a></li><li><a href="#section-7">7. CONTROVERSIES</a></li><li><a href="#section-8">8. GOVERNMENT TIES</a></li><li><a href="#section-9">VALUES ALIGNMENT TABLE</a></li><li><a href="#section-10">RISK SUMMARY & OPEN QUESTIONS</a></li><li><a href="#section-11">SOURCE INDEX</a></li></ol></div>
+  <div class="section" id="section-1">
+<h2>1. REGISTRATION & LEGAL IDENTITY</h2>
+<table>
+<tr><th>Field</th><th>Value</th></tr>
+<tr><td><strong>Legal Name (Hebrew)</strong></td><td>הוועד למלחמה באיידס (ע"ר)</td></tr>
+<tr><td><strong>English Name</strong></td><td>Israel AIDS Task Force (IATF)</td></tr>
+<tr><td><strong>GuideStar Israel Number</strong></td><td>580104545</td></tr>
+<tr><td><strong>Entity Type</strong></td><td>Amuta (עמותה רשומה / Registered Association)</td></tr>
+<tr><td><strong>Founded</strong></td><td>1985 (activities); formal registration 1987 per some sources</td></tr>
+<tr><td><strong>Address</strong></td><td>HaNetziv 29A (or 18 HaNetziv per some sources), Tel Aviv 6701808</td></tr>
+<tr><td><strong>Phone</strong></td><td>03-5613000</td></tr>
+<tr><td><strong>Hotline</strong></td><td>03-5613300 (Sun-Thu 18:00-20:00)</td></tr>
+<tr><td><strong>Website</strong></td><td>https://www.aidsisrael.org.il/</td></tr>
+<tr><td><strong>Email</strong></td><td>iatf@aidsisrael.org.il</td></tr>
+<tr><td><strong>Midot Effectiveness Seal</strong></td><td>Valid through June 2027</td></tr>
+<tr><td><strong>GuideStar Transparency Score</strong></td><td>67% (3/5 stars)</td></tr>
+<tr><td><strong>Tax-deductible in</strong></td><td>Israel, US, UK, France</td></tr>
+</table>
+<p><strong>Sources:</strong></p>
+<ul>
+<li>GuideStar Israel: https://www.guidestar.org.il/organization/580104545</li>
+<li>IsraelGives: https://www.israelgives.org/amuta/580104545</li>
+<li>Benevity: https://causes.benevity.org/causes/376-580104545</li>
+<li>Midot: https://midot.org.il/association/aidsisrael-2</li>
+<li>Kol Zchut: https://www.kolzchut.org.il/he/הוועד_למלחמה_באיידס</li>
+</ul>
+<h3>Founding History</h3>
+<p>The organization was founded in 1985 by a group of HIV-positive individuals and social activists, at a time when an HIV diagnosis was considered a death sentence. Named founders include:</p>
+<ul>
+<li><strong>Dr. Chen Kogel</strong> -- one of the volunteer physicians who staffed the committee's first testing center</li>
+<li><strong>Shlomi Patiaya</strong></li>
+<li><strong>Prof. Zvi Bentwich</strong> (associated with the organization; head of AIDS clinic at Kaplan Hospital, Rehovot)</li>
+<li><strong>Micha van Dijk</strong></li>
+<li><strong>Dr. Avi Hasner</strong></li>
+<li><strong>Dan Lachman</strong> -- credited by English-language sources as launching the first HIV test at the Theater Club, then Tel Aviv's largest gay club</li>
+</ul>
+<p><strong>Source:</strong> HaMichlol (Hebrew encyclopedia): https://www.hamichlol.org.il/הוועד_למלחמה_באיידס</p>
+
+</div>
+<div class="section" id="section-2">
+<h2>2. FINANCES</h2>
+<h3>Annual Turnover</h3>
+<table>
+<tr><th>Year</th><th>Turnover (NIS)</th><th>Source</th></tr>
+<tr><td>~2001</td><td>3,000,000</td><td>Globes (Rami Hassman era; 8x increase)</td></tr>
+<tr><td>~2006</td><td>2,477,000</td><td>Ynet health NGO survey</td></tr>
+<tr><td>2024</td><td>3,816,413</td><td>obudget.org</td></tr>
+</table>
+<p><strong>Sector median (Health & Life-Saving):</strong> 687,351 NIS -- IATF is approximately <strong>5.5x the sector median</strong>.</p>
+<h3>Revenue Breakdown (~2006-2007 data, most detailed available)</h3>
+<table>
+<tr><th>Source</th><th>Percentage</th></tr>
+<tr><td>Public donations (fundraising events)</td><td>55%</td></tr>
+<tr><td>Foundation grants</td><td>12%</td></tr>
+<tr><td>Self-generated income</td><td>16%</td></tr>
+<tr><td>Corporate/private donations</td><td>8%</td></tr>
+<tr><td>Government & municipal support</td><td>8%</td></tr>
+</table>
+<p>A separate breakdown from a different report year shows:</p>
+<ul>
+<li>67% public donations</li>
+<li>22% public participation in service costs</li>
+<li>8% institutional/contract payments</li>
+<li>3% government support/grants</li>
+</ul>
+<h3>Government Funding (from obudget.org)</h3>
+<p><strong>Total government transfers (3-year sum):</strong> 176,612 NIS</p>
+<ul>
+<li>Contracts (התקשרויות): 87,806 NIS</li>
+<li>Support/grants (תמיכות): 88,806 NIS</li>
+</ul>
+<p><strong>By Ministry:</strong></p>
+<table>
+<tr><th>Ministry</th><th>Amount (NIS)</th><th>Details</th></tr>
+<tr><td>Ministry of Health</td><td>2,489,194</td><td>Support for medical orgs (1.5M over 19 payments), retroactive AIDS committee payment (174K), shared HIV testing initiative (167K), condom/detection promotion (161K), other contracts (482K)</td></tr>
+<tr><td>Ministry of Finance</td><td>88,806</td><td>Compensation fund for associations (2 payments)</td></tr>
+<tr><td>Prison Service</td><td>8,000</td><td>AIDS awareness activities (3 contracts)</td></tr>
+<tr><td>Youth Aliyah Administration</td><td>5,400</td><td>AIDS awareness services</td></tr>
+</table>
+<p><strong>Key observation:</strong> Government funding is a <strong>tiny fraction</strong> of the organization's total revenue. The 2.49M from MOH appears to be a cumulative multi-year figure. The organization is fundamentally <strong>donation-dependent</strong>, not government-funded.</p>
+<h3>Staffing (2024)</h3>
+<ul>
+<li><strong>Employees:</strong> 14</li>
+<li><strong>Volunteers:</strong> 68 (previously reported as ~100-150 in other years)</li>
+</ul>
+<h3>Known Corporate Donors</h3>
+<ul>
+<li><strong>Gilead Sciences</strong> -- Major pharmaceutical company; funds the "100% Connection 0% Infection" program and CARES COVID-19 support. Gilead partnered with IATF in 2019 specifically around HIV testing advocacy for pregnant women.</li>
+<li>Source: https://www.gileadzeroingin.com/global-programs/israel.html</li>
+<li>Source: https://www.gilead.com/en-il/responsibility/partnership-and-community</li>
+<li><strong>Bank Hapoalim</strong> -- Previously a major donor; funding reportedly declined (mentioned in 2019 ha-makom article)</li>
+<li><strong>McDonald's Israel</strong> -- Previously donated; funding reportedly declined</li>
+<li><strong>Y&R Israel</strong> (advertising firm) -- Provides voluntary advertising services; one campaign received UN recognition</li>
+<li><strong>Ranni Rahav</strong> (PR professional) -- Organizes annual art fundraiser with ~500 artists donating works</li>
+<li><strong>Igul LaTova</strong> (Round-Up for Good) -- Micro-donation platform; 1,604 active participants, ~6 NIS/month average</li>
+</ul>
+<h3>Financial Crises</h3>
+<ul>
+<li><strong>~2003:</strong> Organization was "nearly defunct" with a budgetary deficit when Dr. Gideon Hirsch took over as director</li>
+<li><strong>January 2019:</strong> CEO Chen Shmulio sent a warning letter to Deputy Health Minister Yaakov Litzman that the organization faced <strong>closure</strong> due to ~1 million NIS shortfall. MOH had reduced funding by ~70,000 NIS from 2017 levels and failed to transfer payments for joint projects. Programs for Ethiopian immigrants and drug users were frozen.</li>
+<li>Source: https://www.ynet.co.il/articles/0,7340,L-5452053,00.html</li>
+</ul>
+<p><strong>Sources:</strong></p>
+<ul>
+<li>obudget.org: https://next.obudget.org/i/org/association/580104545</li>
+<li>Ynet budget article: https://www.ynet.co.il/articles/0,7340,L-3223698,00.html</li>
+<li>Igul LaTova: https://www.igul.org.il/amutot/aids/</li>
+</ul>
+
+</div>
+<div class="section" id="section-3">
+<h2>3. LEADERSHIP</h2>
+<h3>CEO/Executive Director Timeline</h3>
+<table>
+<tr><th>Period</th><th>Name</th><th>Notes</th></tr>
+<tr><td>1985-?</td><td>Various founders</td><td>Founding period</td></tr>
+<tr><td>~2003-Dec 2008</td><td><strong>Dr. Gideon Hirsch</strong></td><td>PhD in Psychology from Stanford; Israel's first openly HIV+ medical student. Rehabilitated the nearly-defunct organization, launched website, started public education. <strong>Died by suicide (pill overdose) Dec 19, 2008, age 47.</strong> His mother and father also died by suicide.</td></tr>
+<tr><td>2009-?</td><td><strong>Yonatan Karni</strong></td><td>Age 30 at appointment; behavioral science & business admin from Ben-Gurion U.; was Hirsch's "right-hand man"</td></tr>
+<tr><td>Dec 2012-?</td><td><strong>Dr. Yuval Levant (Labanet)</strong></td><td>HaMichlol lists him as CEO from December 2012</td></tr>
+<tr><td>~2018-2019</td><td><strong>Chen Shmulio</strong></td><td>Executive Director who sent the 2019 closure warning letter to Litzman</td></tr>
+<tr><td>~2019-present</td><td><strong>Idan Barak</strong></td><td>Executive Director per Gilead stories (2022); led the pregnant women HIV screening advocacy</td></tr>
+<tr><td>2023-2024</td><td><strong>George Avni (ג'ורג' אבני)</strong></td><td>Listed as CEO in 2023 media; appeared in December 2024 interviews</td></tr>
+</table>
+<p><strong>Note:</strong> The frequent CEO turnover is notable. Multiple sources conflict on exact dates, suggesting some overlap or confusion between "Executive Director" and "CEO" titles, or interim periods.</p>
+<h3>Board Chairs</h3>
+<table>
+<tr><th>Period</th><th>Name</th><th>Notes</th></tr>
+<tr><td>1998-2001</td><td><strong>Rami Hassman</strong></td><td>Former ad executive (head of strategy at Gitam agency). Grew budget 8x to 3M NIS, expanded to 4 branches, 3 clinics, 250 staff/volunteers. Led hunger strike at PM's residence. Secured 150M NIS for AIDS drugs in health basket.</td></tr>
+<tr><td>?</td><td><strong>Shulamit Neumann</strong></td><td>Elected as chairwoman (period unclear)</td></tr>
+<tr><td>2019</td><td><strong>Noga Aronit</strong></td><td>Sent damage-control emails after strategic pivot controversy</td></tr>
+<tr><td>?</td><td><strong>Margelit Lorberbaum</strong></td><td>Board member mentioned in 2019 ha-makom controversy</td></tr>
+</table>
+<h3>Political Connections</h3>
+<ul>
+<li><strong>Nava Barak</strong> (wife of PM Ehud Barak) -- Assisted Rami Hassman's hunger strike campaign</li>
+<li><strong>Roni Milo</strong> (former Tel Aviv mayor, Likud) -- Also assisted the hunger strike</li>
+<li><strong>Avinof Frumer</strong> -- NIF-supported leader who led the 70-day campaign in 1998 to include AIDS cocktail in the health basket. Pressured Knesset directly.</li>
+<li><strong>Yaakov Litzman</strong> (UTJ, Deputy Health Minister) -- Received the 2019 closure warning letter from Chen Shmulio</li>
+<li><strong>Shlomo Benizri</strong> (Shas, Health Minister 1999) -- Banned the organization's World AIDS Day condom campaign posters, ordering destruction of materials showing condom imagery</li>
+</ul>
+<p><strong>Sources:</strong></p>
+<ul>
+<li>Jerusalem Post: https://www.jpost.com/Health-and-Sci-Tech/Health/AIDS-group-creating-fund-in-memory-of-courageous-director-who-committed-suicide</li>
+<li>Haaretz: https://www.haaretz.com/2008-12-21/ty-article/israel-aids-task-force-head-dead-in-apparent-suicide/0000017f-db42-d856-a37f-ffc2ccfd0000</li>
+<li>Globes: https://www.globes.co.il/news/m/article.aspx?did=487449</li>
+<li>NIF: https://www.nif.org/stories/social-and-economic-justice/watch-avinof-frumer-the-trailblazer-who-made-sure-aids-patients-would-be-cared-for/</li>
+</ul>
+
+</div>
+<div class="section" id="section-4">
+<h2>4. PROGRAMS</h2>
+<h3>4a. Education Department ("Teen Talk" / "התנהגות מינית אחראית")</h3>
+<ul>
+<li><strong>Operating since:</strong> 1994</li>
+<li><strong>Scale:</strong> Over 25,000 students annually</li>
+<li><strong>Gefen Program #1102:</strong> "Responsible Sexual Behavior" (התנהגות מינית אחראית)</li>
+<li>Rating: 5/5 (human review)</li>
+<li>Deployed in: 5 cities (Beer Sheva, Herzliya, Haifa, Jerusalem, Tel Aviv)</li>
+<li>Schools: 6</li>
+<li>Budget: 37,100 NIS</li>
+<li><strong>Stated goal:</strong> "Provide reliable and current sex education, appropriate and comprehensive for diverse populations, so they can enjoy psychological wellbeing, optimal social and sexual relationships, and maintain healthy and safe sexual lives."</li>
+<li><strong>Content areas:</strong> Healthy sexuality, contraception/birth control, STIs, adolescent sexuality, at-risk youth</li>
+<li><strong>Target audiences:</strong> Teenagers, military recruits, students, young adults (20-30), adults (30-65), seniors, parents, educational staff, government entities</li>
+<li><strong>Delivery:</strong> Experienced facilitators directed by the organization's educational advisor</li>
+</ul>
+<p><strong>Critical observation:</strong> The Gefen catalog budget of 37,100 NIS is <strong>negligible</strong> compared to IATF's 3.8M NIS total turnover. This appears to be a <strong>foothold program</strong> -- the Gefen listing grants institutional legitimacy and school access, but the actual revenue impact is minimal. The real question is what content is delivered in those 6 schools across 5 cities.</p>
+<h3>4b. "Bella Doeget" (בלה דואגת) -- LGBTQ Division</h3>
+<ul>
+<li><strong>Origin:</strong> Originally a separate organization; merged with IATF in 2002 following member vote</li>
+<li><strong>Function:</strong> Information, awareness, and prevention work specifically within the LGBTQ+ community</li>
+<li><strong>Website:</strong> https://www.beladoeget.org/</li>
+<li><strong>Activities:</strong> Sexual health outreach, community clinics, awareness campaigns</li>
+</ul>
+<h3>4c. HIV Testing Services</h3>
+<ul>
+<li><strong>Anonymous rapid testing</strong> with mobile outreach units</li>
+<li><strong>Testing centers</strong> in Tel Aviv, Haifa, Beer Sheva</li>
+<li><strong>Counseling</strong> by trained volunteers</li>
+</ul>
+<h3>4d. Other Programs</h3>
+<ul>
+<li><strong>Ethiopian immigrant community</strong> -- Specific HIV awareness and prevention (reportedly frozen in 2019 due to budget cuts)</li>
+<li><strong>Asylum seekers and refugees</strong> -- Academic publication: "ASSAF/Israel AIDS Task Force: Promoting Equal Rights for HIV-Positive Refugee Asylum Seekers in Israel" (published by Taylor & Francis)</li>
+<li><strong>Drug users</strong> -- Harm reduction programs (historically controversial; in 1987 tried to distribute syringes against MOH policy)</li>
+<li><strong>Prison education</strong> -- Awareness activities via contracts with Prison Service</li>
+<li><strong>IVF access for HIV+ individuals</strong> -- Gideon Hirsch pressured Knesset to discuss women's IVF rights</li>
+<li><strong>PrEP advocacy</strong> -- Approved in Israel 2017; IATF pushed for broader access per WHO guidelines</li>
+<li><strong>Universal HIV screening for pregnant women</strong> -- Led decade-long advocacy; achieved policy change in September 2022</li>
+</ul>
+<p><strong>Sources:</strong></p>
+<ul>
+<li>Sex Education Association: https://sei.org.il/הוועד-למלחמה-באיידס/</li>
+<li>Benevity: https://causes.benevity.org/causes/376-580104545</li>
+<li>Gilead: https://www.gilead.com/stories/decades-long-effort-to-enact-universal-hiv-screening-for-pregnant-women-in-israel</li>
+</ul>
+
+</div>
+<div class="section" id="section-5">
+<h2>5. IDEOLOGY: HEALTH ORGANIZATION OR ADVOCACY VEHICLE?</h2>
+<h3>The 2019 Strategic Pivot</h3>
+<p>The most significant ideological shift occurred in <strong>July 2019</strong>, when CEO Chen Shmulio announced a strategic pivot from pure HIV/AIDS work toward <strong>"healthy sexuality"</strong> (מיניות בריאה). This was modeled on international sexual health centers.</p>
+<p><strong>What happened:</strong></p>
+<ul>
+<li>The pivot was announced via a media interview, not internal communication</li>
+<li>Some board members claim they were <strong>not invited</strong> to the assembly vote approving the change</li>
+<li>Invitations should have preceded the meeting by 10 days under nonprofit law; some members say this wasn't followed</li>
+<li>Non-members allegedly received invitations while registered members did not</li>
+<li>Meeting minutes were not published despite requests</li>
+<li>Board member <strong>Margelit Lorberbaum</strong> and others raised objections</li>
+</ul>
+<p><strong>Why it matters:</strong></p>
+<p>The shift from "fighting AIDS" to "healthy sexuality" is exactly the pattern seen in other organizations where a specific public health mandate transforms into a broader social/ideological platform. Critics within the organization explicitly warned that HIV work would be deprioritized despite rising infection rates (400 new cases in 2018, second consecutive year of increases).</p>
+<p><strong>Financial motivation:</strong> Major donors (Bank Hapoalim, McDonald's) had withdrawn funding. Broadening the mission was seen as a way to attract new donors.</p>
+<p><strong>Source:</strong> https://www.ha-makom.co.il/post-tomer-change-vaad-shmilo/</p>
+<h3>Hebrew vs. English Messaging</h3>
+<ul>
+<li><strong>Hebrew website:</strong> Focuses on HIV testing, treatment advocacy, rights of people living with HIV. The "Who We Are" page emphasizes being the oldest national AIDS organization.</li>
+<li><strong>English website:</strong> More emphasis on "building a healthy community" framing; broader sexual health language.</li>
+<li><strong>Bella Doeget (LGBTQ arm):</strong> Has its own website (beladoeget.org) focused specifically on LGBTQ sexual health -- this is the most explicitly LGBTQ-focused arm.</li>
+</ul>
+<h3>LGBTQ Integration</h3>
+<p>The LGBTQ dimension is <strong>structurally embedded</strong> in the organization since the 2002 Bella Doeget merger. This is not incidental -- MSM (men who have sex with men) are a primary HIV risk population in Israel. However, the merger means that LGBTQ advocacy is now an <strong>institutional function</strong> of the organization, not merely a health outreach program.</p>
+<h3>Connection to Sex Education Association (האגודה לחינוך מיני)</h3>
+<p>The IATF is listed on the website of the Sex Education Association (sei.org.il), an umbrella body for sex education organizations in Israel. This positions the IATF within the broader sex education institutional ecosystem.</p>
+<h3>What Do They Actually Teach in Schools?</h3>
+<p>Based on available evidence, the school program content focuses on:</p>
+<ol>
+<li>STI prevention (HIV and other)</li>
+<li>Condom use and contraception</li>
+<li>"Healthy sexuality" and safe sexual relationships</li>
+<li>Psychological wellbeing related to sexuality</li>
+</ol>
+<p><strong>What I could NOT find:</strong> No publicly available curriculum documents, lesson plans, or specific content about gender identity, sexual orientation education, or LGBTQ-specific content in the K-12 school program. The Gefen program description focuses on "responsible sexual behavior" -- the question is whether this includes gender ideology content or is limited to STI/pregnancy prevention.</p>
+<p><strong>Assessment:</strong> The organization's school program likely focuses on STI prevention and safe sex rather than gender ideology per se. However, post-2019, the "healthy sexuality" framing opens the door to broader content. The lack of publicly available curriculum documents is a gap.</p>
+
+</div>
+<div class="section" id="section-6">
+<h2>6. FOREIGN FUNDING</h2>
+<h3>Confirmed Foreign Funding Sources</h3>
+<table>
+<tr><th>Source</th><th>Type</th><th>Evidence</th></tr>
+<tr><td><strong>New Israel Fund (NIF)</strong></td><td>Grants</td><td>NIF explicitly claims credit for supporting the IATF since its founding. Avinof Frumer is described as founding "the NIF-supported Israel AIDS Task Force." NIF page: https://www.nif.org/stories/social-and-economic-justice/watch-avinof-frumer-the-trailblazer-who-made-sure-aids-patients-would-be-cared-for/</td></tr>
+<tr><td><strong>Gilead Sciences (US pharma)</strong></td><td>Corporate grants</td><td>Zeroing In program, CARES COVID fund. Source: https://www.gileadzeroingin.com/global-programs/israel.html</td></tr>
+</table>
+<h3>NOT Confirmed</h3>
+<table>
+<tr><th>Source</th><th>Status</th></tr>
+<tr><td><strong>Ford Foundation</strong></td><td>No evidence of direct funding to IATF found. Ford funds NIF, which funds IATF -- indirect pipeline possible but unverified.</td></tr>
+<tr><td><strong>EU</strong></td><td>No evidence found</td></tr>
+<tr><td><strong>US 501(c)(3) entity</strong></td><td>No "American Friends of Israel AIDS Task Force" entity found. However, the organization claims tax-deductible status in the US, UK, and France -- this likely means donations are routed through a fiscal sponsor (e.g., IsraelGives, PEF Israel Endowment Fund, or similar).</td></tr>
+</table>
+<h3>Key Finding: NIF Connection</h3>
+<p>The NIF connection is <strong>documented by NIF itself</strong>. This places the IATF in the broader NIF ecosystem of Israeli civil society organizations. NIF has provided over $350M to 950+ organizations since 1979. The IATF appears to be one of the earlier grantees.</p>
+<p><strong>Sources:</strong></p>
+<ul>
+<li>NIF UK: https://newisraelfund.org.uk/issue/watch-the-trailblazer-who-made-sure-aids-patients-would-be-cared-for-2/</li>
+<li>IsraelGives: https://www.israelgives.org/amuta/580104545</li>
+</ul>
+
+</div>
+<div class="section" id="section-7">
+<h2>7. CONTROVERSIES</h2>
+<h3>7a. Syringe Distribution Standoff (1987)</h3>
+<p>In May 1987, the IATF announced it would begin distributing clean syringes to drug users, in direct defiance of Health Ministry policy. Health Minister <strong>Shoshana Arbeli-Almozlino</strong> threatened a lawsuit. The IATF backed down, but media pressure eventually forced the MOH to change its policy.</p>
+<h3>7b. Condom Poster Ban (1999)</h3>
+<p>Health Minister <strong>Shlomo Benizri</strong> (Shas, ultra-Orthodox) ordered the <strong>destruction</strong> of World AIDS Day posters and pamphlets showing condoms. He called the imagery "embarrassing" and potentially "desecrating" Jerusalem's streets. Prof. Zvi Bentwich responded: "Apparently, his religious urges have overcome his senses."</p>
+<p><strong>Source:</strong> BMJ: https://pmc.ncbi.nlm.nih.gov/articles/PMC1117198/</p>
+<h3>7c. CEO Suicide (December 2008)</h3>
+<p><strong>Dr. Gideon Hirsch</strong>, age 47, was found dead in his Jaffa apartment from pill overdose. He had been HIV+ for 20 years (diagnosed at Stanford), was Israel's first openly HIV+ medical student, and had rehabilitated the IATF from near-collapse. Both his parents also died by suicide. This was a significant organizational trauma.</p>
+<p><strong>Sources:</strong></p>
+<ul>
+<li>Haaretz: https://www.haaretz.com/2008-12-21/ty-article/israel-aids-task-force-head-dead-in-apparent-suicide/</li>
+<li>Jerusalem Post: https://www.jpost.com/Health-and-Sci-Tech/Health/AIDS-group-creating-fund-in-memory-of-courageous-director-who-committed-suicide</li>
+</ul>
+<h3>7d. Near-Closure Financial Crisis (2019)</h3>
+<p>CEO Chen Shmulio warned Deputy Health Minister Litzman that the organization faced closure due to ~1M NIS shortfall. MOH had cut funding and failed to transfer payments for completed projects. Ethiopian immigrant and drug user programs were frozen.</p>
+<p><strong>Source:</strong> Ynet: https://www.ynet.co.il/articles/0,7340,L-5452053,00.html</p>
+<h3>7e. Strategic Pivot Controversy (2019)</h3>
+<p>Internal governance crisis when the organization pivoted from "AIDS" to "healthy sexuality." Board members accused leadership of:</p>
+<ul>
+<li>Bypassing proper assembly procedures</li>
+<li>Not inviting all members to the vote</li>
+<li>Publishing meeting changes via media before internal communication</li>
+<li>Deprioritizing HIV work despite rising infection rates</li>
+</ul>
+<p><strong>Source:</strong> Ha-Makom: https://www.ha-makom.co.il/post-tomer-change-vaad-shmilo/</p>
+<h3>7f. Rising HIV Rates Despite Organization's Existence</h3>
+<ul>
+<li>~8,700 people living with HIV in Israel (2017)</li>
+<li>405 new HIV cases in 2017 (increase over prior year)</li>
+<li>400 new cases in 2018 (second consecutive year of increases)</li>
+<li>However: <strong>22% decrease in new cases reported in 2024</strong> (Times of Israel, World AIDS Day report)</li>
+</ul>
+<p><strong>Source:</strong> https://www.timesofisrael.com/on-world-aids-day-health-ministry-reports-22-decrease-of-new-hiv-cases-in-2024/</p>
+
+</div>
+<div class="section" id="section-8">
+<h2>8. GOVERNMENT TIES</h2>
+<h3>Ministry of Health</h3>
+<ul>
+<li><strong>Primary government funder</strong> (2.49M NIS cumulative via obudget)</li>
+<li>IATF has conducted <strong>joint projects</strong> with MOH on HIV testing promotion</li>
+<li>IATF advocated for (and achieved) universal HIV screening for pregnant women (2022)</li>
+<li>Historically adversarial relationship: MOH threatened lawsuit over syringe distribution (1987), blocked condom campaigns (1999), and cut funding triggering near-closure (2019)</li>
+</ul>
+<h3>Ministry of Education</h3>
+<ul>
+<li><strong>Gefen catalog program #1102</strong> -- "Responsible Sexual Behavior"</li>
+<li>Listed as a government partner on Kol Zchut</li>
+<li>Small footprint: 6 schools, 5 cities, 37,100 NIS budget</li>
+</ul>
+<h3>Knesset</h3>
+<ul>
+<li><strong>Avinof Frumer's 70-day campaign</strong> (1998) brought the first AIDS patients to testify before Knesset</li>
+<li><strong>Rami Hassman</strong> organized daily Knesset appearances by 3 representatives</li>
+<li><strong>Gideon Hirsch</strong> pressured Knesset to discuss IVF rights for HIV+ women</li>
+<li>Knesset Health Committee has discussed IATF matters</li>
+</ul>
+<h3>Prison Service</h3>
+<ul>
+<li>Contracts for AIDS awareness (8,000 NIS, 3 contracts)</li>
+</ul>
+<h3>Youth Aliyah Administration</h3>
+<ul>
+<li>Single contract for awareness services (5,400 NIS)</li>
+</ul>
+
+</div>
+<div class="section" id="section-9">
+<h2>VALUES ALIGNMENT TABLE</h2>
+<table>
+<tr><th>Value</th><th>Score (1-5)</th><th>Assessment</th></tr>
+<tr><td><strong>Public health impact</strong></td><td>4</td><td>Measurable: 22% HIV decline in 2024; universal screening for pregnant women achieved; 25K+ students/year educated</td></tr>
+<tr><td><strong>Financial transparency</strong></td><td>3</td><td>67% GuideStar score; responded to questionnaires promptly but limited public financial data</td></tr>
+<tr><td><strong>Governance quality</strong></td><td>2</td><td>2019 strategic pivot controversy exposed procedural failures; frequent CEO turnover; assembly vote disputes</td></tr>
+<tr><td><strong>Mission fidelity</strong></td><td>2</td><td>Original HIV/AIDS mission has broadened significantly; internal critics warned of mission drift</td></tr>
+<tr><td><strong>Political neutrality</strong></td><td>2</td><td>NIF-funded since founding; Gilead pharmaceutical funding raises conflict-of-interest questions; LGBTQ advocacy arm goes beyond health mandate</td></tr>
+<tr><td><strong>Content transparency (schools)</strong></td><td>1</td><td>No publicly available curriculum for the Gefen program; impossible to verify what is actually taught in classrooms</td></tr>
+<tr><td><strong>Foreign funding transparency</strong></td><td>2</td><td>NIF funding confirmed by NIF itself but amounts unclear; Gilead funding confirmed but amounts unclear; tax-deductible in 4 countries but mechanism opaque</td></tr>
+</table>
+
+</div>
+<div class="section" id="section-10">
+<h2>RISK SUMMARY & OPEN QUESTIONS</h2>
+<h3>Key Risks</h3>
+<ol>
+<li><strong>Monopoly position:</strong> As the "only national-level NGO" in AIDS, it faces no competitive accountability</li>
+<li><strong>Mission creep:</strong> The 2019 pivot from AIDS to "healthy sexuality" is textbook mission drift, potentially using the HIV mandate as cover for broader sex education ideology</li>
+<li><strong>NIF funding pipeline:</strong> Confirmed NIF grantee since founding. Amounts and conditions unknown.</li>
+<li><strong>Pharmaceutical conflicts:</strong> Gilead (maker of HIV drugs including PrEP) is a major funder. This creates an inherent conflict of interest -- the organization advocates for broader PrEP access while funded by the PrEP manufacturer.</li>
+<li><strong>School program opacity:</strong> The Gefen program reaches students but curriculum content is not publicly documented</li>
+</ol>
+<h3>Open Questions for Further Investigation</h3>
+<ol>
+<li><strong>What exactly is taught in the 6 schools under program #1102?</strong> No curriculum documents are publicly available. A parent or school board member would need to request the actual lesson plans.</li>
+<li><strong>What is the current NIF funding level?</strong> NIF claims the IATF as a historical grantee but current amounts are unclear.</li>
+<li><strong>Who are the current board members?</strong> GuideStar's people page renders via JavaScript and could not be scraped. This requires manual lookup.</li>
+<li><strong>What is the Gilead funding amount?</strong> Gilead's grantee list PDF exists but specific amounts per organization are likely not disclosed.</li>
+<li><strong>What happened after the 2019 strategic pivot?</strong> Did the organization actually rebrand? The website still uses "הוועד למלחמה באיידס" but English messaging has shifted.</li>
+<li><strong>Does the school program include LGBTQ content?</strong> The Bella Doeget arm focuses on LGBTQ communities, but it's unclear whether this content enters the K-12 Gefen program.</li>
+<li><strong>Is there a US fiscal sponsor or "Friends of" entity?</strong> The organization claims US tax-deductibility but no dedicated 501(c)(3) entity was found.</li>
+</ol>
+
+</div>
+<div class="section" id="section-11">
+<h2>SOURCE INDEX</h2>
+<table>
+<tr><th>#</th><th>Source</th><th>URL</th></tr>
+<tr><td>1</td><td>GuideStar Israel (main page)</td><td>https://www.guidestar.org.il/organization/580104545</td></tr>
+<tr><td>2</td><td>GuideStar Israel (gov services)</td><td>https://www.guidestar.org.il/organization/580104545/govservices</td></tr>
+<tr><td>3</td><td>GuideStar Israel (people)</td><td>https://www.guidestar.org.il/organization/580104545/people</td></tr>
+<tr><td>4</td><td>obudget.org</td><td>https://next.obudget.org/i/org/association/580104545</td></tr>
+<tr><td>5</td><td>IsraelGives</td><td>https://www.israelgives.org/amuta/580104545</td></tr>
+<tr><td>6</td><td>Benevity</td><td>https://causes.benevity.org/causes/376-580104545</td></tr>
+<tr><td>7</td><td>Midot (effectiveness)</td><td>https://midot.org.il/association/aidsisrael-2</td></tr>
+<tr><td>8</td><td>Kol Zchut</td><td>https://www.kolzchut.org.il/he/הוועד_למלחמה_באיידס</td></tr>
+<tr><td>9</td><td>Official website (Hebrew)</td><td>https://www.aidsisrael.org.il/</td></tr>
+<tr><td>10</td><td>Official website (English)</td><td>https://www.aidsisrael.org.il/english?lang=en</td></tr>
+<tr><td>11</td><td>Sex Education Association</td><td>https://sei.org.il/הוועד-למלחמה-באיידס/</td></tr>
+<tr><td>12</td><td>Infomed</td><td>https://www.infomed.co.il/definitions/aids-israel/</td></tr>
+<tr><td>13</td><td>HaMichlol</td><td>https://www.hamichlol.org.il/הוועד_למלחמה_באיידס</td></tr>
+<tr><td>14</td><td>Igul LaTova</td><td>https://www.igul.org.il/amutot/aids/</td></tr>
+<tr><td>15</td><td>NIF (Avinof Frumer story)</td><td>https://www.nif.org/stories/social-and-economic-justice/watch-avinof-frumer-the-trailblazer-who-made-sure-aids-patients-would-be-cared-for/</td></tr>
+<tr><td>16</td><td>Gilead Zeroing In</td><td>https://www.gileadzeroingin.com/global-programs/israel.html</td></tr>
+<tr><td>17</td><td>Gilead (pregnant women)</td><td>https://www.gilead.com/stories/decades-long-effort-to-enact-universal-hiv-screening-for-pregnant-women-in-israel</td></tr>
+<tr><td>18</td><td>Ha-Makom (2019 controversy)</td><td>https://www.ha-makom.co.il/post-tomer-change-vaad-shmilo/</td></tr>
+<tr><td>19</td><td>Ynet (closure crisis 2019)</td><td>https://www.ynet.co.il/articles/0,7340,L-5452053,00.html</td></tr>
+<tr><td>20</td><td>Globes (Rami Hassman)</td><td>https://www.globes.co.il/news/m/article.aspx?did=487449</td></tr>
+<tr><td>21</td><td>BMJ (Benizri condom ban)</td><td>https://pmc.ncbi.nlm.nih.gov/articles/PMC1117198/</td></tr>
+<tr><td>22</td><td>Haaretz (Hirsch suicide)</td><td>https://www.haaretz.com/2008-12-21/ty-article/israel-aids-task-force-head-dead-in-apparent-suicide/</td></tr>
+<tr><td>23</td><td>JPost (Hirsch memorial)</td><td>https://www.jpost.com/Health-and-Sci-Tech/Health/AIDS-group-creating-fund-in-memory-of-courageous-director-who-committed-suicide</td></tr>
+<tr><td>24</td><td>ToI (22% HIV decline 2024)</td><td>https://www.timesofisrael.com/on-world-aids-day-health-ministry-reports-22-decrease-of-new-hiv-cases-in-2024/</td></tr>
+<tr><td>25</td><td>Bella Doeget</td><td>https://www.beladoeget.org/</td></tr>
+<tr><td>26</td><td>Maariv (teen sex ed)</td><td>https://www.maariv.co.il/lifestyle/health/Article-601436</td></tr>
+<tr><td>27</td><td>Patients Rights Assoc.</td><td>https://www.patients-rights.org/הוועד-למלחמה-באיידס</td></tr>
+<tr><td>28</td><td>Kesher.org</td><td>https://www.kesher.org.il/knowledge_item/הוועד-למלחמה-באיידס-ער/</td></tr>
+</table>
+<p><em>Report generated by automated deep research. All claims include source URLs. Financial data from obudget.org and public filings. Leadership data cross-referenced across multiple sources. Gaps noted explicitly where information could not be verified.</em></p>
+
+</div>
+</div>
+
+<footer>
+  פרויקט זהות ציונית — דוח מחקר מעמיק | <a href="../">דירוג ערים</a> | <a href="../research/">כל הדוחות</a>
+</footer>
+
+</body>
+</html>

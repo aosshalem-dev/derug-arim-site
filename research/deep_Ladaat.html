@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>לדעת — לבחור נכון (Ladaat — Choose Well) — דוח מחקר מעמיק</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background: #f5f5f8;
+  color: #1a1a2e;
+  direction: rtl;
+  line-height: 1.8;
+  font-size: 17px;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #1a1a2e; color: #fff;
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  overflow-x: auto; white-space: nowrap;
+}
+nav .brand { font-weight: 700; color: #ff8800; flex-shrink: 0; }
+nav a { color: #ccc; text-decoration: none; font-size: 0.85em; padding: 8px 4px; border-bottom: 2px solid transparent; flex-shrink: 0; }
+nav a:hover { color: #ff8800; border-bottom-color: #ff8800; }
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a5a8a 100%);
+  color: #fff; padding: 50px 20px 40px; text-align: center;
+}
+.hero h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+.hero .subtitle { font-size: 1.05em; color: #b0c4de; margin-bottom: 6px; }
+.hero .meta { font-size: 0.9em; color: #ff8800; margin-top: 8px; }
+.risk-badge {
+  display: inline-block; padding: 4px 16px; border-radius: 20px;
+  font-size: 0.85em; font-weight: 600; margin-top: 10px;
+}
+.risk-high { background: #e74c3c; color: #fff; }
+.risk-medium { background: #f39c12; color: #fff; }
+.risk-low { background: #27ae60; color: #fff; }
+.container { max-width: 860px; margin: 0 auto; padding: 30px 20px 80px; }
+.toc {
+  background: #fff; border-radius: 8px; padding: 22px 26px;
+  margin-bottom: 32px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.toc h2 { font-size: 1.15em; color: #2a5a8a; margin-bottom: 12px; border-bottom: 2px solid #667eea; padding-bottom: 6px; }
+.toc ol { padding-right: 22px; font-size: 0.93em; }
+.toc li { margin-bottom: 4px; }
+.toc a { color: #2a5a8a; text-decoration: none; }
+.toc a:hover { color: #ff8800; text-decoration: underline; }
+.section {
+  background: #fff; border-radius: 8px; padding: 28px 26px;
+  margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.section h2 { font-size: 1.4em; color: #1a1a2e; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #667eea; }
+.section h3 { font-size: 1.1em; color: #2a5a8a; margin: 18px 0 8px; }
+.section h4 { font-size: 1em; color: #444; margin: 14px 0 6px; }
+.section p { margin-bottom: 12px; text-align: justify; }
+.section ul, .section ol { padding-right: 22px; margin-bottom: 12px; }
+.section li { margin-bottom: 5px; }
+blockquote {
+  background: #f0f4fa; border-right: 4px solid #667eea;
+  padding: 12px 18px; margin: 12px 0; border-radius: 0 6px 6px 0;
+  font-size: 0.94em; color: #333;
+}
+.thesis {
+  background: #fff8f0; border-right: 3px solid #ff8800;
+  padding: 14px 18px; margin: 12px 0; border-radius: 0 5px 5px 0;
+  font-size: 0.96em; color: #6b4500;
+}
+table {
+  width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.91em;
+}
+th {
+  background: #667eea; color: #fff; padding: 8px 12px;
+  text-align: right; position: sticky; top: 44px; z-index: 5;
+}
+td {
+  padding: 7px 12px; border-bottom: 1px solid #e8e8e8;
+  text-align: right; vertical-align: top;
+}
+tr:nth-child(even) { background: #f8f9fc; }
+a { color: #2a5a8a; }
+a:hover { color: #ff8800; }
+.back-link {
+  display: inline-block; margin-bottom: 20px; padding: 6px 14px;
+  background: #667eea; color: #fff; border-radius: 4px;
+  text-decoration: none; font-size: 0.88em;
+}
+.back-link:hover { background: #5a6fd6; color: #fff; }
+footer {
+  text-align: center; padding: 30px 20px; color: #888; font-size: 0.85em;
+}
+strong { color: #1a1a2e; }
+code {
+  background: #f0f0f0; padding: 1px 5px; border-radius: 3px;
+  font-size: 0.9em;
+}
+.source-tag {
+  display: inline-block; background: #e8eef6; padding: 2px 8px;
+  border-radius: 10px; font-size: 0.78em; color: #2a5a8a;
+  margin: 2px 3px; text-decoration: none;
+}
+.source-tag:hover { background: #d0dff0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">דוח מחקר מעמיק</span>
+  <a href="../">חזרה לדירוג</a>
+  <a href="../research/">כל הדוחות</a>
+  <a href="#section-1">1. Registration & Le</a> <a href="#section-2">2. Financial Analysi</a> <a href="#section-3">3. Leadership</a> <a href="#section-4">4. Programs & Servic</a> <a href="#section-5">5. Ideology & Conten</a> <a href="#section-6">6. Network Analysis</a> <a href="#section-7">7. Controversies & C</a> <a href="#section-8">8. Scope & Geographi</a> <a href="#section-9">9. Historical Timeli</a> <a href="#section-10">10. Comparative Posi</a> <a href="#section-11">11. Values Alignment</a> <a href="#section-12">12. Open Questions f</a> <a href="#section-13">Sources</a>
+</nav>
+
+<div class="hero">
+  <h1>לדעת — לבחור נכון (Ladaat — Choose Well)</h1>
+  <div class="subtitle">Formerly: ש.י.ל.ה (SHILA — Pregnancy and Contraception Counseling Services)</div>
+  <div class="meta"></div>
+  
+</div>
+
+<div class="container">
+  <a href="../research/" class="back-link">← כל דוחות המחקר</a>
+  <div class="toc"><h2>תוכן עניינים</h2><ol><li><a href="#section-1">1. Registration & Legal Identity</a></li><li><a href="#section-2">2. Financial Analysis</a></li><li><a href="#section-3">3. Leadership</a></li><li><a href="#section-4">4. Programs & Services</a></li><li><a href="#section-5">5. Ideology & Content Analysis</a></li><li><a href="#section-6">6. Network Analysis</a></li><li><a href="#section-7">7. Controversies & Criticisms</a></li><li><a href="#section-8">8. Scope & Geographic Reach</a></li><li><a href="#section-9">9. Historical Timeline</a></li><li><a href="#section-10">10. Comparative Position in the Sex-Ed Cluster</a></li><li><a href="#section-11">11. Values Alignment Assessment</a></li><li><a href="#section-12">12. Open Questions for Further Investigation</a></li><li><a href="#section-13">Sources</a></li></ol></div>
+  <div class="section" id="section-1">
+<h2>1. Registration & Legal Identity</h2>
+<table>
+<tr><th>Field</th><th>Value</th></tr>
+<tr><td><strong>Legal Name (Hebrew)</strong></td><td>לדעת - לבחור נכון (ע"ר)</td></tr>
+<tr><td><strong>Legal Name (English)</strong></td><td>Ladaat — Choose Well</td></tr>
+<tr><td><strong>Former Name</strong></td><td>ש.י.ל.ה — שירות ייעוץ להיריון ומניעה (SHILA — Pregnancy and Contraception Counseling Services)</td></tr>
+<tr><td><strong>GuideStar Israel Number</strong></td><td>580055911</td></tr>
+<tr><td><strong>Entity Type</strong></td><td>עמותה רשומה (Registered Association / Amuta)</td></tr>
+<tr><td><strong>Founding Year</strong></td><td>1976 (registered as amuta 1983 per obudget.org)</td></tr>
+<tr><td><strong>Status</strong></td><td>Active</td></tr>
+<tr><td><strong>Registered Address</strong></td><td>יפו 97, בניין העמותות, ירושלים 9434001 (Jaffo 97, Building of Associations, Jerusalem)</td></tr>
+<tr><td><strong>Gefen Program Number</strong></td><td>992</td></tr>
+<tr><td><strong>Gefen Program Name</strong></td><td>חינוך למיניות בריאה</td></tr>
+<tr><td><strong>Gefen Rating</strong></td><td>5/5</td></tr>
+<tr><td><strong>Section 46a Tax Exempt</strong></td><td>Yes (tax-deductible donations)</td></tr>
+<tr><td><strong>Proper Management Certificate</strong></td><td>Yes (2024)</td></tr>
+</table>
+<p><strong>Source:</strong> GuideStar Israel — https://www.guidestar.org.il/organization/580055911; obudget.org — https://next.obudget.org/i/org/association/580055911</p>
+<p><strong>Note on founding dates:</strong> The organization's website and Wikipedia say "founded 1976." obudget.org shows registration year 1983. The likely explanation: SHILA began operations informally in 1976 and formally registered as an amuta in 1983.</p>
+
+</div>
+<div class="section" id="section-2">
+<h2>2. Financial Analysis</h2>
+<h3>Revenue</h3>
+<table>
+<tr><th>Year</th><th>Annual Turnover (NIS)</th><th>Source</th></tr>
+<tr><td>2024</td><td>1,345,480</td><td>obudget.org</td></tr>
+</table>
+<h3>Government Funding (Historical)</h3>
+<table>
+<tr><th>Source</th><th>Amount (NIS)</th><th>Details</th></tr>
+<tr><td>Ministry of Health</td><td>157,000</td><td>8 transfers, NIS 6,000–46,000 each; support for medical organizations</td></tr>
+<tr><td>Ministry of Aliyah and Integration</td><td>43,567</td><td>Social absorption support</td></tr>
+<tr><td><strong>Total Historical Government</strong></td><td><strong>200,567</strong></td><td>No documented government funding in last 3 years</td></tr>
+</table>
+<p><strong>Source:</strong> obudget.org — https://next.obudget.org/i/org/association/580055911</p>
+<h3>Funding Model</h3>
+<ul>
+<li><strong>Donations:</strong> Primary revenue source. The organization accepts donations through JGive, CauseMatch, and direct transfers</li>
+<li><strong>US Fiscal Sponsorship:</strong> PEF Israel Endowment Funds serves as fiscal sponsor for US tax-deductible donations (CauseMatch page confirms PEF/Stripe payment processing)</li>
+<li><strong>PEF Annual Report:</strong> A "Ladaat Annual Report 2015-16" PDF is hosted on PEF's website, confirming a long-standing donor pipeline — https://pefisrael.org/wp-content/uploads/2012/08/Ladaat-Annual-Report-2015-16.pdf</li>
+<li><strong>Gefen Ministry Payments:</strong> Program #992 receives funding through the Gefen system (school-level budgets allocated by municipalities)</li>
+<li><strong>No NIF funding documented:</strong> No evidence found of New Israel Fund grants to Ladaat. This does not rule it out but it was not discoverable</li>
+</ul>
+<h3>Budget Health</h3>
+<ul>
+<li>MAX Impact evaluation notes the organization operates without budget surplus</li>
+<li>2021 showed annual deficit, covered by reserves</li>
+<li>No indication of excessive capital accumulation</li>
+</ul>
+<h3>Staffing (2024)</h3>
+<table>
+<tr><th>Category</th><th>Count</th></tr>
+<tr><td>Employees</td><td>30</td></tr>
+<tr><td>Volunteers</td><td>63</td></tr>
+</table>
+<p><strong>Source:</strong> obudget.org</p>
+<h3>Cost Efficiency (Social Media)</h3>
+<p>Per MAX Impact evaluation: "Each shekel invested in the organization generates between 35–77 views among Hebrew speakers and 13–50 among Arabic speakers."</p>
+<p><strong>Source:</strong> MAX Impact — https://maximpact.org.il/associations/%D7%9C%D7%93%D7%A2%D7%AA-%D7%9C%D7%91%D7%97%D7%95%D7%A8-%D7%A0%D7%9B%D7%95%D7%9F/</p>
+
+</div>
+<div class="section" id="section-3">
+<h2>3. Leadership</h2>
+<h3>CEO: Dina Shalev (דינה שלו)</h3>
+<table>
+<tr><th>Field</th><th>Value</th></tr>
+<tr><td><strong>Title</strong></td><td>Executive Director (מנכ"לית)</td></tr>
+<tr><td><strong>Education</strong></td><td>M.A. in Social Work, Hebrew University of Jerusalem</td></tr>
+<tr><td><strong>LinkedIn</strong></td><td>https://www.linkedin.com/in/dina-shalev-49b0b81b1/</td></tr>
+<tr><td><strong>Location</strong></td><td>Tel Aviv-Yafo (per LinkedIn)</td></tr>
+<tr><td><strong>Tenure</strong></td><td>10+ years in the field of sex education and reproductive health</td></tr>
+<tr><td><strong>Publishing</strong></td><td>Author in Gluya Magazine on "Multidimensional Model for Healthy Sexuality"; Ynet op-ed opposing "Until Marriage" Knesset conference</td></tr>
+<tr><td><strong>Podcast Appearances</strong></td><td>"Firefly Line" Episode 25; "The Joy of Text" (Orthodox Jewish podcast) on abortion and family planning</td></tr>
+<tr><td><strong>Political Activism</strong></td><td>Leads "Forum 21" — coalition to abolish Israel's pregnancy termination committees</td></tr>
+</table>
+<h3>Department Heads</h3>
+<table>
+<tr><th>Name</th><th>Role</th></tr>
+<tr><td>Noa Maruchini (נועה מרוכיני)</td><td>Head of Education Department</td></tr>
+<tr><td>Orly Gabai (אורלי גבאי)</td><td>Head of Hebrew Counseling</td></tr>
+<tr><td>Bian Ragabi (ביאן רגבי)</td><td>Head of Arabic Department</td></tr>
+<tr><td>Fatina Husseini (פאטינה חוסייני)</td><td>Arabic Operations</td></tr>
+<tr><td>Adwa Matzliach (עדוה מצליח)</td><td>Education Operations</td></tr>
+<tr><td>Hagar Asaf (הגר אסף)</td><td>Social Media Manager</td></tr>
+</table>
+<h3>Board of Directors</h3>
+<table>
+<tr><th>Name</th><th>Role/Background</th></tr>
+<tr><td><strong>Dr. Shulamit Shulov-Barkan</strong> (ד"ר שולמית שולוב-ברקן)</td><td>Chair (יו"ר); coaching professional</td></tr>
+<tr><td>Roytal Shamron (רויטל שמרון)</td><td>Board member</td></tr>
+<tr><td>Atty. Michal Barki Hadani (עו"ד מיכל ברקי הדני)</td><td>Board member (attorney)</td></tr>
+<tr><td>Gusti Yehoshua Braverman (גוסטי יהושע ברברמן)</td><td>Board member</td></tr>
+<tr><td>Dr. Moshira Abu-Dia (ד"ר מושירה אבו-דיא)</td><td>Board member</td></tr>
+<tr><td>Anat Ben Zaken (ענת בן זקן)</td><td>Board member</td></tr>
+<tr><td>Adena Atgar (אדינה אתגר)</td><td>Board member</td></tr>
+<tr><td>Alon Ziv (אלון זיו)</td><td>Board member</td></tr>
+</table>
+<p><strong>Source:</strong> ladaat.org.il — https://ladaat.org.il/%D7%90%D7%95%D7%93%D7%95%D7%AA/%D7%A2%D7%9E%D7%95%D7%AA%D7%AA-%D7%9C%D7%93%D7%A2%D7%AA/</p>
+
+</div>
+<div class="section" id="section-4">
+<h2>4. Programs & Services</h2>
+<h3>A. Education Center (מרכז החינוך)</h3>
+<p><strong>Scale:</strong> 800+ workshops per year (self-reported); ~33,000 adolescents reached since 2018; approximately 30 Jerusalem schools</p>
+<p><strong>Target age groups:</strong> Grades 7–12 (middle school and high school); some work with younger populations in informal settings</p>
+<p><strong>Workshop Topics:</strong></p>
+<ul>
+<li>Anatomy and puberty</li>
+<li>Contraception</li>
+<li>Consent and mutuality</li>
+<li>Healthy relationships</li>
+<li>Digital safety and social media</li>
+<li>Pornography literacy</li>
+<li>Body image</li>
+</ul>
+<p><strong>Languages:</strong> Hebrew and Arabic</p>
+<p><strong>Methodology:</strong></p>
+<ul>
+<li>Facilitators undergo 60-hour professional training (certified by the Israeli Association for Sex Education)</li>
+<li>All facilitators must have prior educational or therapeutic experience with youth and group facilitation expertise</li>
+<li>Workshops are tailored by age group and school context</li>
+<li>Follow-up support available through anonymous counseling center</li>
+</ul>
+<p><strong>Training for Educators:</strong> Separate workshops for school staff covering puberty, communication skills, and attitude examination</p>
+<p><strong>Parent Engagement:</strong> Lectures and workshops for parents (but no documented opt-in/opt-out mechanism for parental consent regarding student workshops)</p>
+<h3>B. Counseling Center (מרכז הייעוץ)</h3>
+<p><strong>Scale:</strong> ~6,000 consultations since 2018; ~25 volunteer professionals</p>
+<p><strong>Services:</strong></p>
+<ul>
+<li>Free, anonymous counseling in Hebrew and Arabic</li>
+<li>Available via WhatsApp, phone, email, Facebook, and in-person</li>
+<li>Contraception selection and usage guidance</li>
+<li>Unplanned pregnancy support</li>
+<li>Abortion-related counseling</li>
+<li>Medical services by volunteer gynecologists</li>
+<li><strong>Mobile Counseling Unit</strong> serving homeless youth and sex workers</li>
+<li><strong>"Parlour Meetings"</strong> — informal workshops in women's homes</li>
+</ul>
+<p><strong>Access:</strong> Available to all persons regardless of gender, age, marital status, place of residence, religion, or nationality. Services provided without parental consent for minors.</p>
+<h3>C. Social Media & Digital Outreach</h3>
+<ul>
+<li>Instagram: @ladaat.choose.well (Hebrew)</li>
+<li>Arabic Instagram account (separate)</li>
+<li>TikTok: @ladaat.choose.well</li>
+<li>Facebook presence</li>
+<li>Podcast (referenced but not independently identified)</li>
+<li>Website: ladaat.org.il (Hebrew and English)</li>
+</ul>
+<h3>D. Political Advocacy</h3>
+<ul>
+<li><strong>Forum 21:</strong> Coalition of organizations pushing to abolish Israel's pregnancy termination committees</li>
+<li>Knesset engagement and policy advocacy</li>
+<li>Public opposition to conservative sex-ed approaches (e.g., "Until Marriage" conference)</li>
+<li>Abortion policy reviews published on website</li>
+</ul>
+<h3>E. Awards & Recognition</h3>
+<ul>
+<li><strong>1995:</strong> Jerusalem Mayor's Prize for Distinguished Volunteer Organizations (awarded by Mayor Ehud Olmert)</li>
+</ul>
+<p><strong>Sources:</strong> ladaat.org.il, sei.org.il, CauseMatch page, self-help.org.il</p>
+
+</div>
+<div class="section" id="section-5">
+<h2>5. Ideology & Content Analysis</h2>
+<h3>Core Ideological Framework</h3>
+<p>Ladaat explicitly states four foundational principles:</p>
+<ol>
+<li><strong>Access to reliable information</strong> about sexuality and reproduction</li>
+<li><strong>Freedom of self-expression</strong> regarding sexuality and relationships without fear</li>
+<li><strong>Autonomy</strong> in choices regarding relationships, sexuality, and reproduction</li>
+<li><strong>Consent</strong> as the basis for all sexual behavior — encompassing desire, mutual respect, and knowledge</li>
+</ol>
+<p>The organization promotes "education for mutuality, equality, body literacy, and informed decision-making" (from SEI listing).</p>
+<h3>Progressive Positioning</h3>
+<p>Ladaat's framework is standard progressive/comprehensive sex education aligned with WHO and UNESCO guidelines. Key markers:</p>
+<ul>
+<li>Consent-centered approach</li>
+<li>Body autonomy and bodily literacy</li>
+<li>Critical thinking about gender norms</li>
+<li>Pornography literacy (not abstinence from pornography but critical engagement)</li>
+<li>Reproductive rights advocacy (pro-choice stance clearly articulated through Forum 21)</li>
+</ul>
+<h3>LGBTQ+ Content</h3>
+<p><strong>Not explicitly detailed</strong> on the organization's public-facing materials. The SEI association page lists goals including "creating social discourse and promoting political thinking on issues of sexual health and the factors that shape perceptions about sexuality, masculinity, femininity, and gender roles." The Instagram account (@ladaat.choose.well) likely includes LGBTQ+-affirming content based on the organization's progressive positioning and SEI membership, but specific curricula or workshop outlines addressing sexual orientation or gender identity were not found in public sources.</p>
+<p><strong>Comparison:</strong> Meyda Amin explicitly includes LGBTQ+ affirmation and gender identity exploration in its curriculum. Ladaat is more cautious in its public marketing, possibly because of its Jerusalem location and diverse constituency including Arab communities.</p>
+<h3>Conservative Alternatives Comparison</h3>
+<table>
+<tr><th>Dimension</th><th>Ladaat (Progressive)</th><th>"Until Marriage" (Conservative)</th></tr>
+<tr><td>Core principle</td><td>Informed choice</td><td>Abstinence until marriage</td></tr>
+<tr><td>Consent framing</td><td>Active, ongoing consent model</td><td>Sexuality within marriage = consent</td></tr>
+<tr><td>Contraception</td><td>Taught and counseled</td><td>Discouraged or not addressed</td></tr>
+<tr><td>LGBTQ+</td><td>Implicitly affirming</td><td>Not addressed or opposed</td></tr>
+<tr><td>Target population</td><td>All youth regardless of religion</td><td>Primarily religious/traditional communities</td></tr>
+<tr><td>Political advocacy</td><td>Forum 21, pro-choice</td><td>Lobby for religious women, Knesset conference</td></tr>
+<tr><td>Criticism received</td><td>"Undermining family values"</td><td>"Degrading analogies" (sticker metaphor at Nov 2025 Knesset)</td></tr>
+</table>
+<p><strong>Source:</strong> Ynet article by Dina Shalev — https://www.ynet.co.il/news/article/rkemv00f4bx</p>
+
+</div>
+<div class="section" id="section-6">
+<h2>6. Network Analysis</h2>
+<h3>Israeli Association for Sex Education (SEI) Membership</h3>
+<p>Ladaat is a member of the האגודה לחינוך מיני (Israeli Association for Sex Education), which functions as a professional body and network for sex-education providers. Other notable members in the same network:</p>
+<table>
+<tr><th>Organization</th><th>Gefen Connection</th><th>Notes</th></tr>
+<tr><td><strong>מידע אמין על מין</strong> (Meyda Amin)</td><td>Gefen #2437</td><td>Sole proprietorship, NIS 1.18M, 40 facilitators, 15 cities</td></tr>
+<tr><td><strong>מגע בתיאום בע"מ</strong> (Maga BeTiaum)</td><td>Gefen #2930, #3027</td><td>Private company (בע"מ), NIS 453K, 7 cities</td></tr>
+<tr><td><strong>לדעת לבחור נכון</strong> (Ladaat)</td><td>Gefen #992</td><td>Registered amuta, NIS 1.35M, Jerusalem focus</td></tr>
+<tr><td>לבוא — לדבר מין ההתחלה</td><td>SEI member</td><td>Sex ed from early childhood</td></tr>
+<tr><td>נקודת מפגש</td><td>SEI member</td><td>"Sexuality at eye level"</td></tr>
+<tr><td>לדבר על זה</td><td>SEI member</td><td>Comprehensive sex ed initiative</td></tr>
+<tr><td>תהודה</td><td>SEI member</td><td>"Sexuality Education Like This" program</td></tr>
+<tr><td>לגעת בזה, המעורר</td><td>SEI member</td><td>Touch/awakening framework</td></tr>
+</table>
+<p><strong>Total SEI members:</strong> 28 organizations (including support centers for sexual assault victims, LGBTQ+ orgs, and academic institutions)</p>
+<p><strong>Source:</strong> SEI organizations index — https://sei.org.il/organizations/</p>
+<h3>Formal Connections to Meyda Amin and Maga BeTiaum</h3>
+<ul>
+<li>All three are SEI members sharing its "vision, goals, and code of ethics"</li>
+<li>The Maga BeTiaum research report (batch 2) explicitly identified Ladaat as part of "the cluster" alongside Meyda Amin</li>
+<li>SEI serves as a self-certifying professional body — Ladaat's facilitators are trained to SEI standards, and SEI membership is held by all three Gefen sex-ed providers</li>
+<li>Shiri Basin Savion (Maga BeTiaum's professional director) moved from the Ministry of Education's sexuality unit — this revolving door touches the same ecosystem that certifies Ladaat's facilitators</li>
+</ul>
+<h3>Key Distinction</h3>
+<p>Unlike Meyda Amin (sole proprietorship) and Maga BeTiaum (private company), Ladaat is the only registered amuta in this cluster with:</p>
+<ul>
+<li>Public GuideStar filings</li>
+<li>A named board of directors</li>
+<li>Transparent financial reporting requirements</li>
+<li>Nearly 50 years of institutional history</li>
+</ul>
+
+</div>
+<div class="section" id="section-7">
+<h2>7. Controversies & Criticisms</h2>
+<h3>Direct Controversies</h3>
+<p><strong>No major public controversies found targeting Ladaat specifically.</strong> Unlike Meyda Amin (whose founder's "Achat Mitoch Achat" database of 1,800 alleged perpetrators drew attention), Ladaat has maintained a relatively low-controversy profile over its 48-year history.</p>
+<h3>Indirect/Contextual Controversies</h3>
+<ol>
+<li><strong>Conservative pushback on sex education generally:</strong> The November 2025 "Until Marriage" (עד החתונה) Knesset conference — organized by MK Limor Son Har Melekh's lobby — represents the conservative counter-movement. Dina Shalev's public Ynet rebuttal placed Ladaat squarely in the political crosshairs of this debate.</li>
+</ol>
+<ol>
+<li><strong>Gender Critical Israel (ג'נדר קריטיקל ישראל):</strong> This website publishes critical content about gender-ideology education in schools. While Ladaat is not specifically named in their critiques (as far as discoverable), the broader sex-ed ecosystem it belongs to is under scrutiny from this perspective.</li>
+</ol>
+<ol>
+<li><strong>Haredi community exclusion:</strong> The Shomrim investigative report documents that ~400,000 Haredi children receive zero sex education. Ladaat's Jerusalem location places it at the geographic center of this tension, but it does not appear to operate in Haredi schools.</li>
+</ol>
+<ol>
+<li><strong>Reproductive rights advocacy as political activism:</strong> Ladaat's leadership of Forum 21 (the coalition to abolish pregnancy termination committees) and its explicit pro-choice advocacy through Knesset engagement positions it as a political actor, not merely an educational provider. This dual role is relevant for parents evaluating whether the organization delivers neutral education or ideologically driven content.</li>
+</ol>
+<ol>
+<li><strong>Services to minors without parental consent:</strong> The counseling center explicitly provides services "without parental consent for minors." While this is standard practice for sexual health counseling in many Western countries, it may concern parents who expect to be informed of their children's engagement with sexuality-related services.</li>
+</ol>
+<h3>No documented:</h3>
+<ul>
+<li>Lawsuits</li>
+<li>State Comptroller findings</li>
+<li>Parent complaint campaigns</li>
+<li>Media scandals</li>
+<li>Financial irregularities</li>
+</ul>
+
+</div>
+<div class="section" id="section-8">
+<h2>8. Scope & Geographic Reach</h2>
+<h3>Jerusalem Core</h3>
+<ul>
+<li><strong>~30 schools</strong> in Jerusalem (per English website)</li>
+<li><strong>800+ workshops per year</strong> across these schools and other frameworks</li>
+<li><strong>33,000 adolescents</strong> reached since 2018 (cumulative)</li>
+<li><strong>6,000 consultations</strong> provided since 2018</li>
+</ul>
+<h3>Beyond Schools</h3>
+<p>The organization operates in:</p>
+<ul>
+<li>Secondary schools (7th–12th grade)</li>
+<li>Hostels (מעונות)</li>
+<li>NGO frameworks</li>
+<li>At-risk youth programs (מסגרות נוער בסיכון)</li>
+<li>Boarding schools (פנימיות)</li>
+<li>Municipal services</li>
+<li>IDF courses</li>
+<li>Community centers</li>
+<li>Informal education settings</li>
+<li>Women's homes ("Parlour Meetings")</li>
+<li>Street outreach (Mobile Counseling Unit for homeless youth and sex workers)</li>
+</ul>
+<h3>Arab Community Reach</h3>
+<p>Ladaat explicitly serves Arabic-speaking populations:</p>
+<ul>
+<li>Arabic Instagram account</li>
+<li>Arabic counseling services (led by Bian Ragabi and Fatina Husseini)</li>
+<li>Arabic workshops in formal and informal settings</li>
+</ul>
+<h3>National Reach via Digital</h3>
+<p>The organization's social media presence (Instagram, TikTok) extends its reach nationally beyond its Jerusalem physical footprint.</p>
+<h3>Gefen Footprint</h3>
+<p>Gefen program #992 is listed in the Ministry of Education's catalog, allowing any school in Israel to select it. However, the actual deployment appears concentrated in Jerusalem and surrounding areas. The exact number of cities and schools using program #992 through Gefen was not found in public mapping data.</p>
+
+</div>
+<div class="section" id="section-9">
+<h2>9. Historical Timeline</h2>
+<table>
+<tr><th>Year</th><th>Event</th></tr>
+<tr><td>1976</td><td>Founded as ש.י.ל.ה (SHILA) — Israel's first combined pregnancy counseling + education + medical services organization</td></tr>
+<tr><td>1983</td><td>Formally registered as an amuta (association)</td></tr>
+<tr><td>~1990s</td><td>Served as model for establishing teen counseling services nationwide</td></tr>
+<tr><td>1995</td><td>Received Jerusalem Mayor's Prize for Distinguished Volunteer Organizations (Mayor Ehud Olmert)</td></tr>
+<tr><td>~2010s</td><td>Rebranded from SHILA to "לדעת — לבחור נכון" (Ladaat — Choose Well)</td></tr>
+<tr><td>2018+</td><td>Education department scaled to 800+ workshops/year</td></tr>
+<tr><td>2021</td><td>Published abortion policy review; ran annual deficit covered by reserves</td></tr>
+<tr><td>2024</td><td>Reported NIS 1.35M turnover; 30 employees, 63 volunteers</td></tr>
+<tr><td>Nov 2025</td><td>CEO Dina Shalev publicly opposed "Until Marriage" Knesset conference in Ynet op-ed</td></tr>
+</table>
+
+</div>
+<div class="section" id="section-10">
+<h2>10. Comparative Position in the Sex-Ed Cluster</h2>
+<table>
+<tr><th>Metric</th><th>Ladaat</th><th>Meyda Amin</th><th>Maga BeTiaum</th></tr>
+<tr><td><strong>Entity Type</strong></td><td>Amuta (ע"ר)</td><td>Sole proprietorship (עוסק מורשה)</td><td>Private company (בע"מ)</td></tr>
+<tr><td><strong>GuideStar</strong></td><td>Yes (580055911)</td><td>No (not an amuta)</td><td>No (not an amuta)</td></tr>
+<tr><td><strong>Founded</strong></td><td>1976</td><td>2014</td><td>2022</td></tr>
+<tr><td><strong>Annual Revenue</strong></td><td>NIS 1.35M</td><td>NIS 1.19M (Gefen alone)</td><td>NIS 453K (Gefen alone)</td></tr>
+<tr><td><strong>Geographic Focus</strong></td><td>Jerusalem (~30 schools)</td><td>15 cities (~51 schools)</td><td>7 cities (~27 schools)</td></tr>
+<tr><td><strong>Employees</strong></td><td>30 + 63 volunteers</td><td>~40 facilitators</td><td>Unknown</td></tr>
+<tr><td><strong>Board Transparency</strong></td><td>Full board published</td><td>N/A (sole proprietorship)</td><td>Unknown shareholders</td></tr>
+<tr><td><strong>SEI Member</strong></td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+<tr><td><strong>Gefen Program #</strong></td><td>992</td><td>2437</td><td>2930, 3027</td></tr>
+<tr><td><strong>Political Advocacy</strong></td><td>Active (Forum 21, Knesset)</td><td>Some (feminist activism)</td><td>None documented</td></tr>
+<tr><td><strong>Gefen Rating</strong></td><td>5/5</td><td>Not found</td><td>Not found</td></tr>
+</table>
+
+</div>
+<div class="section" id="section-11">
+<h2>11. Values Alignment Assessment</h2>
+<table>
+<tr><th>Value</th><th>Score (1-5)</th><th>Notes</th></tr>
+<tr><td><strong>Transparency</strong></td><td>4/5</td><td>Amuta with GuideStar compliance; board published; but specific curricula not publicly available</td></tr>
+<tr><td><strong>Professional Standards</strong></td><td>4/5</td><td>60-hour certified training; multidisciplinary team; 48-year track record</td></tr>
+<tr><td><strong>Parental Sovereignty</strong></td><td>2/5</td><td>No documented opt-in mechanism; counseling available to minors without parental consent</td></tr>
+<tr><td><strong>Political Neutrality</strong></td><td>2/5</td><td>Active political advocacy; Forum 21; public opposition to conservative education; pro-choice positioning</td></tr>
+<tr><td><strong>Content Transparency</strong></td><td>2/5</td><td>Workshop topics listed generally but specific lesson plans, curricula, and materials not publicly available for parental review</td></tr>
+<tr><td><strong>Financial Accountability</strong></td><td>4/5</td><td>GuideStar filings; proper management certificate; tax-exempt status verified</td></tr>
+<tr><td><strong>Ideological Diversity</strong></td><td>2/5</td><td>Progressive-only framework; no accommodation for religious or traditional perspectives (though it serves diverse populations)</td></tr>
+</table>
+
+</div>
+<div class="section" id="section-12">
+<h2>12. Open Questions for Further Investigation</h2>
+<ol>
+<li><strong>Specific curricula:</strong> What exactly is taught in each workshop? Lesson plans are not publicly available. A parent seeking to review content before their child participates would have difficulty doing so.</li>
+</ol>
+<ol>
+<li><strong>LGBTQ+ content specifics:</strong> The organization's position on gender identity education is not explicitly stated in public materials. Does program #992 include gender identity content? Sexual orientation content? At what ages?</li>
+</ol>
+<ol>
+<li><strong>Gefen deployment data:</strong> How many schools outside Jerusalem use program #992? The Gefen mapping data would show this.</li>
+</ol>
+<ol>
+<li><strong>NIF/Shatil connection:</strong> No evidence of NIF funding was found, but the overlap in advocacy goals (reproductive rights, progressive education) and the use of PEF as fiscal sponsor (a common NIF-adjacent funding channel) warrants investigation.</li>
+</ol>
+<ol>
+<li><strong>Forum 21 partners:</strong> Which other organizations are in the Forum 21 coalition? This would map the full advocacy network.</li>
+</ol>
+<ol>
+<li><strong>Board member backgrounds:</strong> Dr. Shulamit Shulov-Barkan (chair) and Gusti Yehoshua Braverman appear to be notable figures. Their full backgrounds would illuminate the organization's governance orientation.</li>
+</ol>
+<ol>
+<li><strong>Mobile Counseling Unit:</strong> What content is delivered to homeless youth and sex workers? Who funds this operation?</li>
+</ol>
+<ol>
+<li><strong>Arabic programming:</strong> What specific content is delivered to Arab communities in East Jerusalem? Is it identical to the Hebrew curriculum or adapted?</li>
+</ol>
+
+</div>
+<div class="section" id="section-13">
+<h2>Sources</h2>
+<ul>
+<li>GuideStar Israel: https://www.guidestar.org.il/organization/580055911</li>
+<li>obudget.org: https://next.obudget.org/i/org/association/580055911</li>
+<li>Ladaat official website: https://ladaat.org.il/</li>
+<li>Ladaat English website: https://ladaat.org.il/en/</li>
+<li>SEI (Israeli Association for Sex Education): https://sei.org.il/%D7%9C%D7%93%D7%A2%D7%AA-%D7%9C%D7%91%D7%97%D7%95%D7%A8-%D7%A0%D7%9B%D7%95%D7%9F/</li>
+<li>SEI organizations index: https://sei.org.il/organizations/</li>
+<li>MAX Impact profile: https://maximpact.org.il/associations/%D7%9C%D7%93%D7%A2%D7%AA-%D7%9C%D7%91%D7%97%D7%95%D7%A8-%D7%A0%D7%9B%D7%95%D7%9F/</li>
+<li>self-help.org.il: https://self-help.org.il/organizations/%D7%9C%D7%93%D7%A2%D7%AA-%D7%9C%D7%91%D7%97%D7%95%D7%A8-%D7%A0%D7%9B%D7%95%D7%9F</li>
+<li>CauseMatch fundraising: https://web.causematch.com/donate/ladaat</li>
+<li>PEF Israel Endowment Funds (Ladaat annual report): https://pefisrael.org/wp-content/uploads/2012/08/Ladaat-Annual-Report-2015-16.pdf</li>
+<li>IsraelToremet: https://www.israeltoremet.org/amuta/580055911</li>
+<li>Dina Shalev LinkedIn: https://www.linkedin.com/in/dina-shalev-49b0b81b1/</li>
+<li>Dina Shalev article in Gluya Magazine: https://gluya.org/multidimensional-model/</li>
+<li>Dina Shalev on Ynet (vs "Until Marriage"): https://www.ynet.co.il/news/article/rkemv00f4bx</li>
+<li>Dina Shalev on "The Joy of Text" podcast: https://podcasts.apple.com/us/podcast/abortion-dina-shalev-on-family-planning/id954105187?i=1000529659291</li>
+<li>Firefly Line podcast (Ep 25 with Dina Shalev): https://podcasts.apple.com/il/podcast/%D7%A4%D7%A8%D7%A7-25-%D7%A4%D7%99%D7%99%D7%A8%D7%A4%D7%9C%D7%99%D7%99-%D7%9C%D7%99%D7%99%D7%9F-%D7%A2%D7%9D-%D7%93%D7%99%D7%A0%D7%94-%D7%A9%D7%9C%D7%95-%D7%9E-%D7%9C%D7%93%D7%A2%D7%AA-%D7%9C%D7%91%D7%97%D7%95%D7%A8-%D7%A0%D7%9B%D7%95%D7%9F/id1552573306?i=1000523014508</li>
+<li>Shomrim investigation (Haredi sex-ed gap): https://www.shomrim.news/hebrew/lack-of-education</li>
+<li>EdNow comparison article: https://www.edunow.org.il/article/4097</li>
+<li>Wikipedia (Hebrew): https://he.wikipedia.org/wiki/%D7%9C%D7%93%D7%A2%D7%AA_%E2%80%93_%D7%9C%D7%91%D7%97%D7%95%D7%A8_%D7%A0%D7%9B%D7%95%D7%9F</li>
+<li>Gender Critical Israel: https://gc-israel.org/</li>
+<li>HebPsy sex education principles article: https://www.hebpsy.net/articles.asp?id=3570</li>
+</ul>
+
+</div>
+</div>
+
+<footer>
+  פרויקט זהות ציונית — דוח מחקר מעמיק | <a href="../">דירוג ערים</a> | <a href="../research/">כל הדוחות</a>
+</footer>
+
+</body>
+</html>

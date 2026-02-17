@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>אפשר אחרת (Efshar Acheret — "A New Way" / "It's Possible Otherwise") — דוח מחקר מעמיק</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background: #f5f5f8;
+  color: #1a1a2e;
+  direction: rtl;
+  line-height: 1.8;
+  font-size: 17px;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #1a1a2e; color: #fff;
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  overflow-x: auto; white-space: nowrap;
+}
+nav .brand { font-weight: 700; color: #ff8800; flex-shrink: 0; }
+nav a { color: #ccc; text-decoration: none; font-size: 0.85em; padding: 8px 4px; border-bottom: 2px solid transparent; flex-shrink: 0; }
+nav a:hover { color: #ff8800; border-bottom-color: #ff8800; }
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a5a8a 100%);
+  color: #fff; padding: 50px 20px 40px; text-align: center;
+}
+.hero h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+.hero .subtitle { font-size: 1.05em; color: #b0c4de; margin-bottom: 6px; }
+.hero .meta { font-size: 0.9em; color: #ff8800; margin-top: 8px; }
+.risk-badge {
+  display: inline-block; padding: 4px 16px; border-radius: 20px;
+  font-size: 0.85em; font-weight: 600; margin-top: 10px;
+}
+.risk-high { background: #e74c3c; color: #fff; }
+.risk-medium { background: #f39c12; color: #fff; }
+.risk-low { background: #27ae60; color: #fff; }
+.container { max-width: 860px; margin: 0 auto; padding: 30px 20px 80px; }
+.toc {
+  background: #fff; border-radius: 8px; padding: 22px 26px;
+  margin-bottom: 32px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.toc h2 { font-size: 1.15em; color: #2a5a8a; margin-bottom: 12px; border-bottom: 2px solid #667eea; padding-bottom: 6px; }
+.toc ol { padding-right: 22px; font-size: 0.93em; }
+.toc li { margin-bottom: 4px; }
+.toc a { color: #2a5a8a; text-decoration: none; }
+.toc a:hover { color: #ff8800; text-decoration: underline; }
+.section {
+  background: #fff; border-radius: 8px; padding: 28px 26px;
+  margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.section h2 { font-size: 1.4em; color: #1a1a2e; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #667eea; }
+.section h3 { font-size: 1.1em; color: #2a5a8a; margin: 18px 0 8px; }
+.section h4 { font-size: 1em; color: #444; margin: 14px 0 6px; }
+.section p { margin-bottom: 12px; text-align: justify; }
+.section ul, .section ol { padding-right: 22px; margin-bottom: 12px; }
+.section li { margin-bottom: 5px; }
+blockquote {
+  background: #f0f4fa; border-right: 4px solid #667eea;
+  padding: 12px 18px; margin: 12px 0; border-radius: 0 6px 6px 0;
+  font-size: 0.94em; color: #333;
+}
+.thesis {
+  background: #fff8f0; border-right: 3px solid #ff8800;
+  padding: 14px 18px; margin: 12px 0; border-radius: 0 5px 5px 0;
+  font-size: 0.96em; color: #6b4500;
+}
+table {
+  width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.91em;
+}
+th {
+  background: #667eea; color: #fff; padding: 8px 12px;
+  text-align: right; position: sticky; top: 44px; z-index: 5;
+}
+td {
+  padding: 7px 12px; border-bottom: 1px solid #e8e8e8;
+  text-align: right; vertical-align: top;
+}
+tr:nth-child(even) { background: #f8f9fc; }
+a { color: #2a5a8a; }
+a:hover { color: #ff8800; }
+.back-link {
+  display: inline-block; margin-bottom: 20px; padding: 6px 14px;
+  background: #667eea; color: #fff; border-radius: 4px;
+  text-decoration: none; font-size: 0.88em;
+}
+.back-link:hover { background: #5a6fd6; color: #fff; }
+footer {
+  text-align: center; padding: 30px 20px; color: #888; font-size: 0.85em;
+}
+strong { color: #1a1a2e; }
+code {
+  background: #f0f0f0; padding: 1px 5px; border-radius: 3px;
+  font-size: 0.9em;
+}
+.source-tag {
+  display: inline-block; background: #e8eef6; padding: 2px 8px;
+  border-radius: 10px; font-size: 0.78em; color: #2a5a8a;
+  margin: 2px 3px; text-decoration: none;
+}
+.source-tag:hover { background: #d0dff0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">דוח מחקר מעמיק</span>
+  <a href="../">חזרה לדירוג</a>
+  <a href="../research/">כל הדוחות</a>
+  <a href="#section-1">1. Registration & Le</a> <a href="#section-2">2. Financial Analysi</a> <a href="#section-3">3. Leadership</a> <a href="#section-4">4. Programs</a> <a href="#section-5">5. Ideology & Model</a> <a href="#section-6">6. Awards & Recognit</a> <a href="#section-7">7. Network & Connect</a> <a href="#section-8">8. The "Miki Alon" Q</a> <a href="#section-9">9. Controversies & C</a> <a href="#section-10">10. Assessment & Ope</a> <a href="#section-11">Source URLs</a>
+</nav>
+
+<div class="hero">
+  <h1>אפשר אחרת (Efshar Acheret — "A New Way" / "It's Possible Otherwise")</h1>
+  <div class="subtitle">Executive Summary</div>
+  <div class="meta"></div>
+  
+</div>
+
+<div class="container">
+  <a href="../research/" class="back-link">← כל דוחות המחקר</a>
+  <div class="toc"><h2>תוכן עניינים</h2><ol><li><a href="#section-1">1. Registration & Legal Identity</a></li><li><a href="#section-2">2. Financial Analysis</a></li><li><a href="#section-3">3. Leadership</a></li><li><a href="#section-4">4. Programs</a></li><li><a href="#section-5">5. Ideology & Model</a></li><li><a href="#section-6">6. Awards & Recognition</a></li><li><a href="#section-7">7. Network & Connections</a></li><li><a href="#section-8">8. The "Miki Alon" Question — CRITICAL DISAMBIGUATION</a></li><li><a href="#section-9">9. Controversies & Criticism</a></li><li><a href="#section-10">10. Assessment & Open Questions</a></li><li><a href="#section-11">Source URLs</a></li></ol></div>
+  <div class="section" id="section-1">
+<h2>1. Registration & Legal Identity</h2>
+<table>
+<tr><th>Field</th><th>Value</th></tr>
+<tr><td><strong>Legal Name (Hebrew)</strong></td><td>אפשר אחרת (ע"ר)</td></tr>
+<tr><td><strong>Legal Name (English)</strong></td><td>A New Way Is Possible Otherwise</td></tr>
+<tr><td><strong>Entity Type</strong></td><td>עמותה רשומה (Registered Association / Amuta)</td></tr>
+<tr><td><strong>GuideStar Israel Number</strong></td><td>580316297</td></tr>
+<tr><td><strong>Founded</strong></td><td>1998</td></tr>
+<tr><td><strong>Address</strong></td><td>Sokolov 68, Ramat HaSharon 4723530</td></tr>
+<tr><td><strong>Website</strong></td><td>https://www.anewway.org.il/</td></tr>
+<tr><td><strong>Contact Email</strong></td><td>itay@anewway.org.il</td></tr>
+<tr><td><strong>Phone</strong></td><td>03-549-3859</td></tr>
+<tr><td><strong>Tax Deductible</strong></td><td>Israel, US, UK, France (Section 46 equivalent in each)</td></tr>
+<tr><td><strong>Nihul Takin</strong></td><td>Certificate of Good Standing available</td></tr>
+<tr><td><strong>Transparency (IsraelGives)</strong></td><td>58% (2.5/5 stars)</td></tr>
+</table>
+<p><strong>Sources:</strong></p>
+<ul>
+<li>GuideStar Israel: https://www.guidestar.org.il/organization/580316297</li>
+<li>obudget.org: https://next.obudget.org/i/org/association/580316297</li>
+<li>IsraelGives: https://www.israelgives.org/amuta/580316297</li>
+</ul>
+
+</div>
+<div class="section" id="section-2">
+<h2>2. Financial Analysis</h2>
+<h3>Revenue</h3>
+<table>
+<tr><th>Year</th><th>Revenue (NIS)</th><th>Source</th></tr>
+<tr><td>2022</td><td>~1,834,222</td><td>GuideStar Israel</td></tr>
+<tr><td>2024</td><td>~1,876,658</td><td>obudget.org</td></tr>
+</table>
+<h3>Government Funding</h3>
+<p><strong>"לא תועדו הכנסות של הארגון מכספי המדינה בשלוש השנים האחרונות"</strong> — No government income recorded for the organization in the past three years (obudget.org).</p>
+<p>This is notable: the organization operates Gefen program #1481, which implies municipal procurement of its services through the Ministry of Education's Gefen catalog. The 46,920 NIS from the Gefen catalog listing represents the known scope from the cities studied (Hod HaSharon, Kiryat Ono, Rosh HaAyin, Ramat HaSharon, Tel Aviv). However, obudget shows no direct government transfers. This could mean:</p>
+<ol>
+<li>Municipalities pay the org directly (not tracked as state transfers)</li>
+<li>The org's Gefen participation is recent and hasn't shown up in obudget yet</li>
+<li>The amounts are too small to register as "government income"</li>
+</ol>
+<h3>Staffing</h3>
+<table>
+<tr><th>Metric</th><th>Value (2024)</th></tr>
+<tr><td>Employees</td><td>13 (obudget) / 135 (HaMichlol/Wikipedia)</td></tr>
+<tr><td>Volunteers</td><td>8</td></tr>
+<tr><td>Trained facilitators</td><td>25</td></tr>
+</table>
+<p><strong>Note:</strong> The discrepancy between 13 employees (obudget) and 135 staff (HaMichlol) likely reflects the difference between salaried employees and the broader network of contractors/facilitators. The org uses ~25 trained facilitators from diverse backgrounds (drama, sports, music, education).</p>
+<h3>Sector Comparison</h3>
+<ul>
+<li>Field: Education, Scholarship & Vocational Training</li>
+<li>Sector Median (3-year average): 2,119,903 NIS</li>
+<li>Organization is <strong>below sector median</strong></li>
+</ul>
+<h3>Funding Sources</h3>
+<ul>
+<li><strong>Private donations</strong> (primary source) — individual donors visible on IsraelGives (small amounts: 56-435 NIS per donation)</li>
+<li><strong>IFA Foundation</strong> — confirmed as a recurring donor (3+ years)</li>
+<li><strong>Devex contract listing:</strong> "Support for Arab-Jewish 'Shared Citizenship' Campaign" (from an NGO/CSO funding source)</li>
+<li><strong>No confirmed NIF, EU, USAID, or major foreign foundation funding</strong> found in research</li>
+<li><strong>No NGO-Monitor profile</strong> — the org does not appear in NGO-Monitor's database (searched extensively)</li>
+</ul>
+<h3>Financial Documentation Gap</h3>
+<p>IsraelGives notes the following documents are <strong>not available</strong> for download:</p>
+<ul>
+<li>Official financial report (דוח כספי רשמי)</li>
+<li>Proper accounting records certification</li>
+<li>Tax deduction authorization</li>
+<li>Annual summary</li>
+</ul>
+<p>This is concerning for an organization claiming tax-deductible status in four countries.</p>
+<p><strong>Sources:</strong></p>
+<ul>
+<li>obudget.org: https://next.obudget.org/i/org/association/580316297</li>
+<li>IsraelGives: https://www.israeltoremet.org/amuta/580316297</li>
+<li>Devex: https://www.devex.com/organizations/a-new-way-121961</li>
+</ul>
+
+</div>
+<div class="section" id="section-3">
+<h2>3. Leadership</h2>
+<h3>Founder & Long-term Leader</h3>
+<p><strong>Dr. Tikva (Taqwa) Bracha</strong> — Founder (1998) and long-serving CEO/Executive Director.</p>
+<ul>
+<li>Founded the organization in 1998 as a think tank of social activists and academics discussing Arab-Jewish relations</li>
+<li>Transitioned the org from theoretical discussion to action after the Second Intifada (2000-2005)</li>
+<li>Personally relocated to <strong>Kfar Kassem</strong> (Arab town) to initiate community engagement</li>
+<li>Won the <strong>2021 William Berelson Prize</strong> for the Promotion of Jewish-Arab Understanding in Memory of Yitzhak Rabin (Ben-Gurion University)</li>
+<li>Listed as Executive Director on RocketReach</li>
+</ul>
+<h3>Current CEO</h3>
+<p><strong>Erez Bar</strong> — identified as current CEO in the Americans for BGU 2021 article, suggesting a leadership transition from Dr. Bracha (who may have moved to a founder/board role).</p>
+<h3>Board Chairs (Historical)</h3>
+<table>
+<tr><th>Chair</th><th>Tenure</th></tr>
+<tr><td>Francis Lorenzo</td><td>1998–2003</td></tr>
+<tr><td>Major General Amos Lapidot</td><td>2004–2012</td></tr>
+<tr><td>Dan Piltz</td><td>2013–2016</td></tr>
+<tr><td>(Current chair unknown)</td><td>2017–present</td></tr>
+</table>
+<p><strong>Note on Amos Lapidot:</strong> If this is the Amos Lapidot who was IAF Commander and head of Israel Space Agency, it's a notable establishment figure lending credibility to the organization during its growth period.</p>
+<h3>Staff Composition</h3>
+<ul>
+<li>Mixed Jewish-Arab team distributed nationwide</li>
+<li>Staff includes leaders from education, arts, law, economy, research, business, ergonomics, and mediation</li>
+<li>Marketing: Avital Elyakim (joined July 2021)</li>
+<li>Contact person: Itay (itay@anewway.org.il)</li>
+</ul>
+<p><strong>Sources:</strong></p>
+<ul>
+<li>HaMichlol (Israeli Wikipedia mirror): https://www.hamichlol.org.il/אפשר_אחרת</li>
+<li>Americans for BGU: https://americansforbgu.org/a-new-way/</li>
+<li>RocketReach: https://rocketreach.co/tikva-bracha-email_143898941</li>
+</ul>
+
+</div>
+<div class="section" id="section-4">
+<h2>4. Programs</h2>
+<h3>Core Model: School Twinning</h3>
+<p>The organization pairs neighboring Jewish and Arab schools for long-term (multi-year) experiential programs:</p>
+<ul>
+<li><strong>Target grades:</strong> 4–12</li>
+<li><strong>Annual participants:</strong> ~5,000</li>
+<li><strong>Municipalities served:</strong> ~40 across Israel</li>
+<li><strong>Total impact to date:</strong> 100,000+ students, parents, educators</li>
+</ul>
+<h3>Specific Programs</h3>
+<p><strong>1. Joint Bagrut (Matriculation) Civics Study Program (launched 2017)</strong></p>
+<ul>
+<li>Developed with the <strong>Amal network</strong></li>
+<li>Israel's first and only shared matriculation exam</li>
+<li>Year 1: Joint coursework preparing for shared civics exam (bilingual)</li>
+<li>Year 2: Collaborative research projects on social issues + community awareness campaigns</li>
+<li>500+ students participated as of ~2021</li>
+<li>Authorized and supervised by the Ministry of Education</li>
+</ul>
+<p><strong>2. General Education on "The Second Society" (Grade 10)</strong></p>
+<ul>
+<li>Mutual cultural learning about Jewish and Arab societies</li>
+<li>Varied pedagogical approaches</li>
+</ul>
+<p><strong>3. Educator Team Initiatives (launched 2016)</strong></p>
+<ul>
+<li>Training programs encouraging teachers to initiate multicultural activities</li>
+<li>Based on sustainable models for independent continuation</li>
+</ul>
+<p><strong>4. Women Creating Community Change</strong></p>
+<ul>
+<li>Brings together Arab and Jewish women from same/adjacent cities</li>
+<li>Develops leadership and community action skills</li>
+</ul>
+<p><strong>5. Multicultural Youth Leadership Training</strong></p>
+<ul>
+<li>Develops young leaders across cultural backgrounds</li>
+<li>Promotes tolerance and multiculturalism</li>
+</ul>
+<h3>Gefen Catalog Entry</h3>
+<ul>
+<li><strong>Program #1481:</strong> "חינוך לחיים משותפים" (Education for Shared Living)</li>
+<li><strong>Rating:</strong> 2/5 in Gefen catalog</li>
+<li><strong>Cities:</strong> Hod HaSharon, Kiryat Ono, Rosh HaAyin, Ramat HaSharon, Tel Aviv</li>
+<li><strong>Schools:</strong> 6</li>
+<li><strong>Budget:</strong> 46,920 NIS</li>
+</ul>
+<h3>Methodology</h3>
+<p>Based on:</p>
+<ul>
+<li><strong>Contact Theory</strong> (Allport's hypothesis that intergroup contact reduces prejudice)</li>
+<li><strong>Narrative approaches</strong> (sharing personal and community stories)</li>
+<li><strong>Collective action</strong> (joint projects and volunteering)</li>
+<li><strong>Experiential tools:</strong> Drama, sports, music, discussions, volunteering activities, "circle of trust" exercises</li>
+<li><strong>Parent engagement sessions</strong> included</li>
+</ul>
+<h3>Measured Impact</h3>
+<p>Research cited by Americans for BGU showed:</p>
+<ul>
+<li>Participants felt <strong>25% less hatred</strong> toward "the other" vs non-participants</li>
+<li>Participants felt <strong>16% less anger</strong> toward "the other" vs non-participants</li>
+</ul>
+<p><strong>Sources:</strong></p>
+<ul>
+<li>Americans for BGU: https://americansforbgu.org/a-new-way/</li>
+<li>HaMichlol: https://www.hamichlol.org.il/אפשר_אחרת</li>
+<li>anewway.org.il (programs page): https://www.anewway.org.il/en/התכניות-שלנו</li>
+</ul>
+
+</div>
+<div class="section" id="section-5">
+<h2>5. Ideology & Model</h2>
+<h3>What Is the "Alternative" They Propose?</h3>
+<p>The name "אפשר אחרת" (It's Possible Otherwise / A New Way) signals a <strong>coexistence-through-grassroots-contact</strong> model. The org does NOT advocate for a specific political solution (one-state, two-state, binational state). Instead, it argues:</p>
+<ol>
+<li><strong>The current separation is destructive</strong> — Jewish and Arab Israelis live in separate worlds with minimal contact, breeding fear and prejudice</li>
+<li><strong>People-to-people contact creates change</strong> — direct meetings without mediators reduce hostility and build trust</li>
+<li><strong>Start with children, expand to communities</strong> — school-based encounters that ripple outward to parents, educators, and municipal leadership</li>
+<li><strong>Shared citizenship, not political coexistence</strong> — the framing is civic ("shared citizenship," "shared living") rather than geopolitical ("peace," "two states")</li>
+</ol>
+<h3>Hebrew vs English Messaging</h3>
+<ul>
+<li><strong>Hebrew site/publications:</strong> Emphasis on "חיים משותפים" (shared living), "שותפות" (partnership), "חברה רב-תרבותית" (multicultural society)</li>
+<li><strong>English site/publications:</strong> More activist framing — "abolish social polarization," "deep-rooted and sustainable change," "multicultural collaborations and shared society"</li>
+</ul>
+<p>The English messaging is slightly more ambitious in tone but substantively aligned with the Hebrew.</p>
+<h3>Theoretical Framework</h3>
+<p>The org operates within the <strong>"shared society"</strong> paradigm (as opposed to "peace" or "dialogue" frameworks). This means:</p>
+<ul>
+<li>Focus on Israeli citizens (Jewish and Arab citizens of Israel), not the Israeli-Palestinian conflict broadly</li>
+<li>Emphasis on civic integration, not political negotiation</li>
+<li>Contact + collaboration, not just dialogue</li>
+<li>Sustainable community change, not one-off events</li>
+</ul>
+<h3>IDI Research Context</h3>
+<p>The Israel Democracy Institute published a 2020 research report titled "חינוך לחיים משותפים או חינוך לשותפות" (Education for Shared Living or Education for Partnership) — distinguishing between these two approaches. This broader academic framework contextualizes Efshar Acheret's work.</p>
+<p><strong>Source:</strong> IDI report: https://www.idi.org.il/media/15055/education-for-a-shared-life-or-education-for-shared-society.pdf</p>
+
+</div>
+<div class="section" id="section-6">
+<h2>6. Awards & Recognition</h2>
+<table>
+<tr><th>Award</th><th>Year</th><th>Grantor</th></tr>
+<tr><td><strong>William Berelson Prize</strong> for the Promotion of Jewish-Arab Understanding in Memory of Yitzhak Rabin</td><td>2021</td><td>Ben-Gurion University of the Negev</td></tr>
+<tr><td><strong>Jerusalem Unity Prize</strong> (Education category, 2nd place)</td><td>2022</td><td>Jerusalem Unity Prize Foundation (with Netzach network and Achdut Israel School Tekoa)</td></tr>
+</table>
+<p><strong>Note on the Jerusalem Unity Prize:</strong> This is a center-right initiative launched by then-Jerusalem Mayor Nir Barkat and the families of the three teenagers kidnapped and murdered in 2014. Winning this prize signals that אפשר אחרת is viewed as a mainstream coexistence org, not a politically controversial one — the prize specifically rewards "unity of the Jewish people" and the org won alongside religious-Zionist institutions (Achdut Israel School Tekoa, Netzach network).</p>
+<p><strong>Sources:</strong></p>
+<ul>
+<li>BGU prize: https://americansforbgu.org/a-new-way/</li>
+<li>Unity Prize 2022 winners: https://unityday.org.il/זוכי-2022/</li>
+</ul>
+
+</div>
+<div class="section" id="section-7">
+<h2>7. Network & Connections</h2>
+<h3>Confirmed Associations</h3>
+<ul>
+<li><strong>Ministry of Education</strong> — Civic Education and Shared Living department (partner for Gefen program)</li>
+<li><strong>Amal Network</strong> — Developed joint bagrut program together</li>
+<li><strong>Forum for Education for Shared Living (פורום חינוך לחיים משותפים)</strong> — listed on dialogtogether.com alongside other orgs in the shared living space</li>
+<li><strong>DialogTogether.com</strong> — listed as a member organization</li>
+<li><strong>IFA Foundation</strong> — recurring donor (3+ years)</li>
+<li><strong>Devex</strong> — listed as a development organization</li>
+</ul>
+<h3>Same Ecosystem, But No Confirmed Direct Partnerships</h3>
+<ul>
+<li><strong>Abraham Fund Initiatives (קרן אברהם)</strong> — operates in the same coexistence space but no direct partnership confirmed</li>
+<li><strong>Sikkuy-Aurad</strong> — similar mission but no direct link found</li>
+<li><strong>Givat Haviva</strong> — same sector but no confirmed collaboration</li>
+<li><strong>Hand in Hand (יד ביד)</strong> — bilingual schools model (different from twinning model)</li>
+<li><strong>New Israel Fund (NIF)</strong> — no confirmed funding relationship (NIF funds many coexistence orgs but אפשר אחרת was not found in any NIF grantee lists)</li>
+</ul>
+<h3>Not in NGO-Monitor Database</h3>
+<p>The organization does <strong>not appear</strong> in NGO-Monitor's database. This is significant: NGO-Monitor tracks organizations that receive foreign government funding and engage in political advocacy. The absence suggests אפשר אחרת is not on the right-wing radar as a problematic NGO — consistent with its grassroots, civic (non-political) framing and Jerusalem Unity Prize win.</p>
+
+</div>
+<div class="section" id="section-8">
+<h2>8. The "Miki Alon" Question — CRITICAL DISAMBIGUATION</h2>
+<p>The user correctly flagged this. There are <strong>two completely separate entities</strong>:</p>
+<h3>Entity A: אפשר אחרת (A New Way)</h3>
+<ul>
+<li><strong>Legal entity:</strong> Amuta 580316297</li>
+<li><strong>Website:</strong> anewway.org.il</li>
+<li><strong>Founder:</strong> Dr. Tikva Bracha (1998)</li>
+<li><strong>Mission:</strong> Jewish-Arab coexistence education through school twinning</li>
+<li><strong>Gefen Program #1481:</strong> "חינוך לחיים משותפים" — THIS IS THEIR PROGRAM</li>
+<li><strong>Address:</strong> Ramat HaSharon</li>
+</ul>
+<h3>Entity B: אפשר גם אחרת (It's Also Possible Otherwise) — Miki Alon</h3>
+<ul>
+<li><strong>Legal entity:</strong> Likely a sole proprietorship (עוסק מורשה/פטור), NOT an amuta</li>
+<li><strong>Website:</strong> efshargamacheret.co.il (currently appears offline — DNS not resolving)</li>
+<li><strong>Operator:</strong> Miki Alon (מיקי אלון)</li>
+<li><strong>Mission:</strong> Violence prevention and life skills enrichment for youth</li>
+<li><strong>Location:</strong> Rishon Lezion</li>
+<li><strong>Background of Miki Alon:</strong> Multi-disciplinary practitioner in Chinese medicine, tuina, and shiatsu; social activist in Rishon Lezion for 15+ years; former chair of city parents' council (4 years); served in various public leadership roles</li>
+<li><strong>Program content:</strong> Experiential personal/social empowerment training through simulated challenging situations; teaches children to communicate positively, take responsibility, accept others</li>
+<li><strong>Also in Gefen:</strong> Listed in the Gefen educational catalog as "אפשר גם אחרת לכיתה ז' - דיגיטלי" (for 7th grade, digital)</li>
+</ul>
+<p><strong>Key Differences:</strong></p>
+<table>
+<tr><th>אפשר אחרת (A New Way)</th><th>אפשר גם אחרת (Miki Alon)</th></tr>
+<tr><td>Entity type</td><td>Amuta (580316297)</td><td>Likely sole proprietor</td></tr>
+<tr><td>Focus</td><td>Jewish-Arab coexistence</td><td>Violence prevention / life skills</td></tr>
+<tr><td>Scale</td><td>National, ~40 municipalities</td><td>Local (Rishon Lezion area)</td></tr>
+<tr><td>Budget</td><td>~1.87M NIS</td><td>Unknown (small)</td></tr>
+<tr><td>Staff</td><td>13-135</td><td>Individual practitioner</td></tr>
+<tr><td>Political content</td><td>Civic coexistence</td><td>None (personal empowerment)</td></tr>
+<tr><td>Website</td><td>anewway.org.il</td><td>efshargamacheret.co.il (offline)</td></tr>
+</table>
+<p><strong>Conclusion:</strong> Gefen program #1481 "חינוך לחיים משותפים" belongs to אפשר אחרת (A New Way), NOT to Miki Alon. These are unrelated entities with confusingly similar names.</p>
+<p><strong>Sources:</strong></p>
+<ul>
+<li>Miki Alon profile: https://www.rishon106.co.il/modules.php?name=Content&pa=showpage&pid=60</li>
+<li>Miki Alon website: https://efshargamacheret.co.il/ (offline)</li>
+<li>Gefen catalog listing: https://ecat.education.gov.il/אפשר-גם-אחרת-לכיתה-ז-דיגיטלי</li>
+</ul>
+
+</div>
+<div class="section" id="section-9">
+<h2>9. Controversies & Criticism</h2>
+<h3>No Significant Controversies Found</h3>
+<p>After extensive searching in Hebrew and English across:</p>
+<ul>
+<li>Israeli news sites (Haaretz, Ynet, Israel Hayom, Maariv, Calcalist, Globes)</li>
+<li>NGO-Monitor</li>
+<li>Im Tirtzu</li>
+<li>Academic sources</li>
+<li>Knesset records</li>
+</ul>
+<p><strong>No controversies, criticism, or negative coverage was found</strong> about אפשר אחרת.</p>
+<h3>Possible Reasons for Low Profile</h3>
+<ol>
+<li><strong>Small budget</strong> (~1.87M NIS) — below threshold for political scrutiny</li>
+<li><strong>No foreign government funding</strong> — avoids the right-wing NGO-funding critique</li>
+<li><strong>Civic framing</strong> — "shared living" rather than "peace" or "Palestinian rights" keeps it off ideological radar</li>
+<li><strong>Mainstream awards</strong> — Jerusalem Unity Prize (center-right provenance) signals establishment acceptance</li>
+<li><strong>Ministry of Education partnership</strong> — operates within the system, not against it</li>
+</ol>
+<h3>Transparency Concerns (Minor)</h3>
+<ul>
+<li>58% transparency rating on IsraelGives (below average)</li>
+<li>Financial documents not available for download</li>
+<li>Discrepancy between reported staff numbers (13 vs 135)</li>
+</ul>
+<p>These are operational transparency issues, not ideological controversies.</p>
+
+</div>
+<div class="section" id="section-10">
+<h2>10. Assessment & Open Questions</h2>
+<h3>Gefen Context</h3>
+<p>With a Gefen rating of 2/5 and only 46,920 NIS across 6 schools in 5 cities, the Gefen presence of אפשר אחרת is <strong>very small</strong> compared to the org's self-reported scale of 40 municipalities and 5,000 annual participants. This suggests the Gefen catalog represents only a fraction of their activity, with most work funded through private donations and possibly direct municipal contracts.</p>
+<h3>Values Alignment Assessment</h3>
+<table>
+<tr><th>Value</th><th>Score (1-5)</th><th>Notes</th></tr>
+<tr><td>Transparency</td><td>2/5</td><td>Low IsraelGives score, missing financial docs</td></tr>
+<tr><td>Ideological neutrality</td><td>4/5</td><td>Civic framing, no detected political advocacy</td></tr>
+<tr><td>Educational quality</td><td>3/5</td><td>Gefen 2/5 rating; but BGU impact research positive</td></tr>
+<tr><td>Establishment acceptance</td><td>4/5</td><td>Jerusalem Unity Prize, MoE partnership, Berelson Prize</td></tr>
+<tr><td>Foreign funding independence</td><td>5/5</td><td>No detected foreign government funding</td></tr>
+<tr><td>Parental choice respect</td><td>4/5</td><td>Works within school system, parent engagement component</td></tr>
+</table>
+<h3>Open Questions for Further Investigation</h3>
+<ol>
+<li><strong>Who are the major donors?</strong> IFA Foundation confirmed, but what are the other sources of the ~1.87M NIS annual revenue?</li>
+<li><strong>Why the low Gefen rating (2/5)?</strong> Is this based on evaluation of outcomes, or administrative criteria?</li>
+<li><strong>What is the current board composition</strong> (post-Dan Piltz 2016)?</li>
+<li><strong>Has the CEO transition from Dr. Bracha to Erez Bar been completed?</strong> Or is Bar a co-leader?</li>
+<li><strong>Why are financial documents unavailable</strong> on public platforms despite operating since 1998?</li>
+<li><strong>Is there a US 501(c)(3) entity?</strong> Tax deductibility in the US suggests either a fiscal sponsor or direct entity — not found in search.</li>
+<li><strong>What is the actual content of the shared civics bagrut exam?</strong> Does it include politically charged material?</li>
+</ol>
+
+</div>
+<div class="section" id="section-11">
+<h2>Source URLs</h2>
+<ol>
+<li>GuideStar Israel: https://www.guidestar.org.il/organization/580316297</li>
+<li>obudget.org: https://next.obudget.org/i/org/association/580316297</li>
+<li>IsraelGives: https://www.israelgives.org/amuta/580316297</li>
+<li>IsraelToremet: https://www.israeltoremet.org/amuta/580316297</li>
+<li>HaMichlol (Israeli encyclopedia): https://www.hamichlol.org.il/אפשר_אחרת</li>
+<li>Hebrew Wikipedia: https://he.wikipedia.org/wiki/אפשר_אחרת</li>
+<li>English Wikipedia: https://en.wikipedia.org/wiki/New_Way_(Israel)</li>
+<li>Official website: https://www.anewway.org.il/en</li>
+<li>Americans for BGU (Berelson Prize article): https://americansforbgu.org/a-new-way/</li>
+<li>Devex profile: https://www.devex.com/organizations/a-new-way-121961</li>
+<li>DialogTogether listing: https://dialogtogether.com/en/organisations/a-new-way/</li>
+<li>Jerusalem Unity Prize 2022 winners: https://unityday.org.il/זוכי-2022/</li>
+<li>IDI research report on shared living education: https://www.idi.org.il/media/15055/education-for-a-shared-life-or-education-for-shared-society.pdf</li>
+<li>Gefen catalog: https://mygefen.co.il/catalog/</li>
+<li>Miki Alon (separate entity): https://www.rishon106.co.il/modules.php?name=Content&pa=showpage&pid=60</li>
+</ol>
+
+</div>
+</div>
+
+<footer>
+  פרויקט זהות ציונית — דוח מחקר מעמיק | <a href="../">דירוג ערים</a> | <a href="../research/">כל הדוחות</a>
+</footer>
+
+</body>
+</html>

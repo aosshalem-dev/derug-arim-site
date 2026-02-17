@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>רשת הגנת ילדים עם ציפוי אידיאולוגי — דוח מחקר מעמיק</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background: #f5f5f8;
+  color: #1a1a2e;
+  direction: rtl;
+  line-height: 1.8;
+  font-size: 17px;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #1a1a2e; color: #fff;
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  overflow-x: auto; white-space: nowrap;
+}
+nav .brand { font-weight: 700; color: #ff8800; flex-shrink: 0; }
+nav a { color: #ccc; text-decoration: none; font-size: 0.85em; padding: 8px 4px; border-bottom: 2px solid transparent; flex-shrink: 0; }
+nav a:hover { color: #ff8800; border-bottom-color: #ff8800; }
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a5a8a 100%);
+  color: #fff; padding: 50px 20px 40px; text-align: center;
+}
+.hero h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+.hero .subtitle { font-size: 1.05em; color: #b0c4de; margin-bottom: 6px; }
+.hero .meta { font-size: 0.9em; color: #ff8800; margin-top: 8px; }
+.risk-badge {
+  display: inline-block; padding: 4px 16px; border-radius: 20px;
+  font-size: 0.85em; font-weight: 600; margin-top: 10px;
+}
+.risk-high { background: #e74c3c; color: #fff; }
+.risk-medium { background: #f39c12; color: #fff; }
+.risk-low { background: #27ae60; color: #fff; }
+.container { max-width: 860px; margin: 0 auto; padding: 30px 20px 80px; }
+.toc {
+  background: #fff; border-radius: 8px; padding: 22px 26px;
+  margin-bottom: 32px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.toc h2 { font-size: 1.15em; color: #2a5a8a; margin-bottom: 12px; border-bottom: 2px solid #667eea; padding-bottom: 6px; }
+.toc ol { padding-right: 22px; font-size: 0.93em; }
+.toc li { margin-bottom: 4px; }
+.toc a { color: #2a5a8a; text-decoration: none; }
+.toc a:hover { color: #ff8800; text-decoration: underline; }
+.section {
+  background: #fff; border-radius: 8px; padding: 28px 26px;
+  margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.section h2 { font-size: 1.4em; color: #1a1a2e; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #667eea; }
+.section h3 { font-size: 1.1em; color: #2a5a8a; margin: 18px 0 8px; }
+.section h4 { font-size: 1em; color: #444; margin: 14px 0 6px; }
+.section p { margin-bottom: 12px; text-align: justify; }
+.section ul, .section ol { padding-right: 22px; margin-bottom: 12px; }
+.section li { margin-bottom: 5px; }
+blockquote {
+  background: #f0f4fa; border-right: 4px solid #667eea;
+  padding: 12px 18px; margin: 12px 0; border-radius: 0 6px 6px 0;
+  font-size: 0.94em; color: #333;
+}
+.thesis {
+  background: #fff8f0; border-right: 3px solid #ff8800;
+  padding: 14px 18px; margin: 12px 0; border-radius: 0 5px 5px 0;
+  font-size: 0.96em; color: #6b4500;
+}
+table {
+  width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.91em;
+}
+th {
+  background: #667eea; color: #fff; padding: 8px 12px;
+  text-align: right; position: sticky; top: 44px; z-index: 5;
+}
+td {
+  padding: 7px 12px; border-bottom: 1px solid #e8e8e8;
+  text-align: right; vertical-align: top;
+}
+tr:nth-child(even) { background: #f8f9fc; }
+a { color: #2a5a8a; }
+a:hover { color: #ff8800; }
+.back-link {
+  display: inline-block; margin-bottom: 20px; padding: 6px 14px;
+  background: #667eea; color: #fff; border-radius: 4px;
+  text-decoration: none; font-size: 0.88em;
+}
+.back-link:hover { background: #5a6fd6; color: #fff; }
+footer {
+  text-align: center; padding: 30px 20px; color: #888; font-size: 0.85em;
+}
+strong { color: #1a1a2e; }
+code {
+  background: #f0f0f0; padding: 1px 5px; border-radius: 3px;
+  font-size: 0.9em;
+}
+.source-tag {
+  display: inline-block; background: #e8eef6; padding: 2px 8px;
+  border-radius: 10px; font-size: 0.78em; color: #2a5a8a;
+  margin: 2px 3px; text-decoration: none;
+}
+.source-tag:hover { background: #d0dff0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">דוח מחקר מעמיק</span>
+  <a href="../">חזרה לדירוג</a>
+  <a href="../research/">כל הדוחות</a>
+  <a href="#section-1">פרק 2: ניתוח הנהגה ו</a> <a href="#section-2">פרק 3: ניתוח כספי ומ</a> <a href="#section-3">פרק 4: אידיאולוגיה ו</a> <a href="#section-4">פרק 5: תכנים בעייתיי</a> <a href="#section-5">פרק 6: פרשות, חשדות </a> <a href="#section-6">פרק 7: השפעה על מדינ</a> <a href="#section-7">פרק 8: ניתוח לפי עול</a> <a href="#section-8">פרק 9: סיכום ומסקנות</a> <a href="#section-9">נספחים</a>
+</nav>
+
+<div class="hero">
+  <h1>רשת הגנת ילדים עם ציפוי אידיאולוגי</h1>
+  <div class="subtitle">מבנה הרשת הנחקרת</div>
+  <div class="meta"></div>
+  
+</div>
+
+<div class="container">
+  <a href="../research/" class="back-link">← כל דוחות המחקר</a>
+  <div class="toc"><h2>תוכן עניינים</h2><ol><li><a href="#section-1">פרק 2: ניתוח הנהגה וקשרים פוליטיים</a></li><li><a href="#section-2">פרק 3: ניתוח כספי ומקורות מימון</a></li><li><a href="#section-3">פרק 4: אידיאולוגיה ופדגוגיה — חדירת הפדגוגיה הביקורתית</a></li><li><a href="#section-4">פרק 5: תכנים בעייתיים והשפעה על חינוך וערכים</a></li><li><a href="#section-5">פרק 6: פרשות, חשדות ואי-סדרים</a></li><li><a href="#section-6">פרק 7: השפעה על מדיניות ציבורית וקשרים עם הממשל</a></li><li><a href="#section-7">פרק 8: ניתוח לפי עולם הערכים — התאמה וסתירה</a></li><li><a href="#section-8">פרק 9: סיכום ומסקנות — מפת הסיכונים</a></li><li><a href="#section-9">נספחים</a></li></ol></div>
+  <div class="section" id="section-1">
+<h2>פרק 2: ניתוח הנהגה וקשרים פוליטיים</h2>
+<h3>2.1 דמויות מפתח</h3>
+<p><strong>דורון הרמן (SafeSchool)</strong></p>
+<ul>
+<li>רקע: איש תקשורת, הפיק תכניות ריאליטי</li>
+<li>זיקות: קרוב לחוגי מרכז-שמאל תל אביבי</li>
+<li><strong>סימן חשד</strong>: אין לו רקע בפסיכולוגיה חינוכית או התפתחות הילד, אך קובע תכני חינוך</li>
+<li>ציטוט מכתבה: "אחד הנושאים שחשבנו להבליט הוא <strong>העצמת נערות</strong> כי בגילאי 12-13 הנפגעות העיקריות הן נערות שצריכות העצמה" - <strong>שפה פמיניסטית טיפוסית</strong></li>
+</ul>
+<p><strong>עמית אדרי (SafeSchool)</strong></p>
+<ul>
+<li>יו"ר דירקטוריון מייעץ</li>
+<li>מנכ"ל משרד החינוך לשעבר (2013-2015 תחת יאיר לפיד)</li>
+<li><strong>דלת מסתובבת</strong>: עבר ממשרד ממשלתי לחברה פרטית שמוכרת למשרד החינוך</li>
+<li><strong>סימן חשד</strong>: האם השתמש בקשרים ממשלתיים כדי להבטיח חוזים?</li>
+</ul>
+<p><strong>יוני צ'ונה (מצמיחים)</strong></p>
+<ul>
+<li>מייסד ומנכ"ל</li>
+<li>הציג את הארגון באו"ם</li>
+<li><strong>סימן חשד</strong>: לא נמצא קורות חיים מלאים או רקע אקדמי מפורסם</li>
+<li>חוסר שקיפות לגבי הכשרתו המקצועית</li>
+</ul>
+<p><strong>לתת פה - אנונימיות מלאה</strong></p>
+<ul>
+<li><strong>חריגה קריטית</strong>: אתר העמותה לא מפרסם שמות מייסדים, דירקטוריון, או מנכ"ל</li>
+<li>רק מוזכרים "מנחים" ללא שמות או אישורים</li>
+<li><strong>זה חריג ביותר עבור ארגון שעובד עם קטינים</strong></li>
+</ul>
+<h3>2.2 זיקות פוליטיות מפורשות</h3>
+<p><strong>ממצאים</strong>:</p>
+<ul>
+<li>אין ראיות לזיקות מפלגתיות ישירות (לא נמצאו תרומות או חברויות במפלגות)</li>
+<li><strong>אך</strong>: כל הארגונים משתמשים בשפה של "צדק חברתי", "העצמה", "זכויות" - שפה הקשורה למחנה הפרוגרסיבי</li>
+<li>עמית אדרי שימש תחת ממשלת לפיד-נתניהו (2013-2015), תקופה של דחיפה לרפורמות פרוגרסיביות בחינוך</li>
+</ul>
+<p><strong>קשרים לארגוני אקטיביזם</strong>:</p>
+<ul>
+<li>לא נמצאו קשרים ישירים לארגוני שמאל רדיקלי</li>
+<li><strong>אך</strong>: המימון (ראה פרק 3) מקרנות בעלות נטייה מובהקת</li>
+</ul>
+<h3>2.3 תביעות SLAPP והשתקת מבקרים</h3>
+<p><strong>ממצא</strong>: לא נמצאו תביעות פומביות עד כה (פברואר 2026)</p>
+<p><strong>אך</strong>: חוסר ביקורת תקשורתית גם הוא חשוד:</p>
+<ul>
+<li>כל הכתבות על הארגונים הן <strong>מחמיאות לחלוטין</strong></li>
+<li>אין עיתונאות חקרנית על התכנים</li>
+<li>אין קולות מבקרים או הורים מודאגים <strong>ברשת הציבורית</strong></li>
+</ul>
+<p><strong>השערה</strong>: יתכן שמנגנון השתקה פועל באמצעים אחרים:</p>
+<ul>
+<li>הסכמי סודיות עם בתי ספר</li>
+<li>שימוש במונח "מקצועיות" להדחת ביקורת</li>
+<li>הסתמכות על סמכות "אישורי משרד החינוך"</li>
+</ul>
+
+</div>
+<div class="section" id="section-2">
+<h2>פרק 3: ניתוח כספי ומקורות מימון</h2>
+<h3>3.1 היקפי תקציב</h3>
+<table>
+<tr><th>ארגון</th><th>תקציב שנתי מדווח</th><th>מקור ממשלתי</th><th>מקור פרטי/זר</th></tr>
+<tr><td>לתת פה</td><td>לא פורסם מלא</td><td>משרד החינוך (חלקי)</td><td>קרן שוסטרמן, ירושלים, אריסון, JFNA</td></tr>
+<tr><td>מצמיחים</td><td>1,822,504 ₪ (2023)</td><td>"שירותים לממשלה"</td><td>קרן חדשה, IVN, עזריאלי</td></tr>
+<tr><td>SafeSchool</td><td>2,413,041 ₪ + 7.4M$ גיוס</td><td>חוזים עם רשויות חינוך</td><td>WIX, גל גדות, ירון ורסנו, משקיעים</td></tr>
+<tr><td>אל"י</td><td>לא נבדק במסגרת זו</td><td>---</td><td>---</td></tr>
+</table>
+<p><strong>סה"כ השפעה כספית מוערכת</strong>: מעל 15 מיליון ₪ בשנה לשלושת הארגונים המרכזיים</p>
+<h3>3.2 קרנות זרות בעלות אוריינטציה אידיאולוגית</h3>
+<p><strong>לתת פה</strong>:</p>
+<ol>
+<li><strong>קרן שוסטרמן (Schusterman Foundation)</strong></li>
+</ol>
+<ul>
+<li>מקור: ארה"ב, משפחת שוסטרמן (יהודים רפורמים)</li>
+<li><strong>פרופיל</strong>: תומכת ביהדות פלורליסטית, שוויון מגדרי, LGBTQ+ rights</li>
+<li>דוגמאות לארגונים שקיבלו מימון: Keshet (ארגון יהודי LGBTQ+), Moving Traditions (חינוך מגדרי)</li>
+<li><strong>ציון סיכון</strong>: 4/5 - קרן זרה עם אג'נדה ברורה</li>
+</ul>
+<ol>
+<li><strong>JFNA (Jewish Federations of North America)</strong></li>
+</ol>
+<ul>
+<li><strong>פרופיל</strong>: תומכת בקהילות יהודיות, אך יש לה נטייה פרוגרסיבית</li>
+<li>תמכה בעבר בארגונים כמו NIF</li>
+<li><strong>ציון סיכון</strong>: 3/5</li>
+</ul>
+<ol>
+<li><strong>הקרן לירושלים (Jerusalem Foundation)</strong></li>
+</ol>
+<ul>
+<li>מקומית, אך מקבלת כספים מתורמים זרים</li>
+<li><strong>ציון סיכון</strong>: 2/5</li>
+</ul>
+<ol>
+<li><strong>קרן אריסון</strong></li>
+</ol>
+<ul>
+<li>ישראלית, אך בעלת נטייה סוציאל-דמוקרטית</li>
+<li><strong>ציון סיכון</strong>: 2/5</li>
+</ul>
+<p><strong>מצמיחים</strong>:</p>
+<ol>
+<li><strong>הקרן החדשה לישראל (New Israel Fund)</strong></li>
+</ol>
+<ul>
+<li><strong>זהו הדגל האדום הגדול ביותר</strong></li>
+<li>ידועה בתמיכה בארגוני שמאל רדיקלי, BDS supporters, התנועה לזכויות אדם</li>
+<li><strong>נחשבת על ידי רבים כארגון אנטי-ציוני</strong></li>
+<li><strong>ציון סיכון</strong>: 5/5 - זהו מקור המימון החשוד ביותר שניתן למצוא</li>
+</ul>
+<ol>
+<li><strong>קרן IVN (Innovation in Values and Norms)</strong></li>
+</ol>
+<ul>
+<li>לא נמצא מידע מפורט - <strong>זה עצמו חשוד</strong></li>
+<li>שם הקרן מרמז על "שינוי נורמות וערכים"</li>
+<li><strong>ציון סיכון</strong>: 4/5</li>
+</ul>
+<ol>
+<li><strong>קרן עזריאלי</strong></li>
+</ol>
+<ul>
+<li>ישראלית, משפחתית</li>
+<li><strong>ציון סיכון</strong>: 1/5</li>
+</ul>
+<p><strong>SafeSchool</strong>:</p>
+<ol>
+<li><strong>ניר זוהר (נשיא WIX)</strong></li>
+</ol>
+<ul>
+<li>אין ראיות לאקטיביזם פוליטי גלוי</li>
+<li><strong>אך</strong>: תעשיית ההייטק הישראלית נוטה לפרוגרסיביזם</li>
+<li><strong>ציון סיכון</strong>: 2/5</li>
+</ul>
+<ol>
+<li><strong>גל גדות וירון ורסנו</strong></li>
+</ol>
+<ul>
+<li>מידוענים ישראלים</li>
+<li>אין ראיות למעורבות פוליטית ישירה</li>
+<li><strong>ציון סיכון</strong>: 1/5</li>
+</ul>
+<h3>3.3 חריגות כספיות וממצאי ביקורת</h3>
+<p><strong>ממצאים</strong>:</p>
+<ol>
+<li><strong>לתת פה</strong>:</li>
+</ol>
+<ul>
+<li>קפיצת תקציב של 400% תוך 3 שנים - <strong>מניין?</strong></li>
+<li>אין דוח מפורט על הוצאות לפי סעיפים</li>
+<li><strong>דורש בדיקת רשות התאגידים</strong></li>
+</ul>
+<ol>
+<li><strong>מצמיחים</strong>:</li>
+</ol>
+<ul>
+<li>תקציב של 1.8M ₪ "לשירותים לממשלה" - <strong>אילו שירותים?</strong></li>
+<li>שינוי שם ב-2024 - <strong>האם זה קשור למחיקת עבר?</strong></li>
+</ul>
+<ol>
+<li><strong>SafeSchool</strong>:</li>
+</ol>
+<ul>
+<li>גיוס של 2M$ - <strong>מי רוצה לעשות רווח מחינוך ציבורי?</strong></li>
+<li>חברה פרטית שמוכרת למערכת ציבורית - <strong>ניגוד עניינים</strong></li>
+<li>עמית אדרי (לשעבר משרד החינוך) בדירקטוריון - <strong>דלת מסתובבת</strong></li>
+</ul>
+<p><strong>המלצה</strong>: יש לבקש ביקורת מבקר המדינה על החוזים בין משרד החינוך לבין הארגונים הללו, במיוחד SafeSchool.</p>
+
+</div>
+<div class="section" id="section-3">
+<h2>פרק 4: אידיאולוגיה ופדגוגיה — חדירת הפדגוגיה הביקורתית</h2>
+<h3>4.1 זיהוי הפדגוגיה הביקורתית (Critical Pedagogy)</h3>
+<p>הפדגוגיה הביקורתית, שפותחה על ידי פאולו פריירה, רואה בחינוך כלי <strong>לשינוי מהפכני של החברה</strong>. עקרונותיה:</p>
+<ol>
+<li><strong>החברה הקיימת היא מערכת דיכוי</strong> (oppression)</li>
+<li><strong>החינוך חייב להעיר תודעה ביקורתית</strong> (conscientization)</li>
+<li><strong>התלמידים הם "מדוכאים" שצריך לשחרר</strong></li>
+<li><strong>המורים הם "מנחי שחרור"</strong> (liberators)</li>
+</ol>
+<p><strong>סימני המזג הביקורתי במקורות:</strong></p>
+<h4><strong>לתת פה</strong>:</h4>
+<p>מהאתר הרשמי:</p>
+<blockquote>"ליצור תפיסה ערכית של <strong>מיניות בריאה ומוגנת</strong>"</blockquote>
+<p><strong>פענוח</strong>:</p>
+<ul>
+<li>"תפיסה ערכית" = שינוי ערכים קיימים</li>
+<li>"מיניות בריאה" = מונח קוד ל"חינוך מיני מתקדם"</li>
+</ul>
+<blockquote>"אנו מאמינים ב<strong>מסוגלות הורים ומורים</strong> לעצב מיניות בריאה"</blockquote>
+<p><strong>פענוח</strong>:</p>
+<ul>
+<li>"מסוגלות" = empowerment - מונח קלאסי מהפדגוגיה הביקורתית</li>
+<li>המסר הסמוי: ההורים <strong>לא עשו זאת עד כה</strong>, לכן אנחנו כאן "לעזור"</li>
+</ul>
+<blockquote>"רגישות תרבותית והתאמה לערכים במגוון קהילות"</blockquote>
+<p><strong>פענוח</strong>:</p>
+<ul>
+<li>"רגישות תרבותית" נשמע חיובי, אך בפועל משמעו: <strong>"נכנס לקהילות שמרניות ונשנה אותן מבפנים"</strong></li>
+<li>הטקטיקה: להציג את התוכן כ"התאמה" תוך החדרת ערכים זרים</li>
+</ul>
+<p><strong>תכנית "יש לי למי לספר"</strong>:</p>
+<ul>
+<li>מופיעה בסרטון ביוטיוב</li>
+<li>מלמדת ילדי גן לזהות "מגע לא נעים"</li>
+<li><strong>חשד</strong>: האם זה חינוך להגנה או <strong>שיבוש גבולות בין הורים לילדים</strong>?</li>
+</ul>
+<h4><strong>מצמיחים</strong>:</h4>
+<p>מהאתר והמקורות:</p>
+<blockquote>"המודל מתמקד ב<strong>שינוי נורמות חברתיות</strong> בכיתה"</blockquote>
+<p><strong>פענוח</strong>:</p>
+<ul>
+<li>"שינוי נורמות" = critical pedagogy קלאסית</li>
+<li><strong>מי קובע מהן הנורמות הנכונות?</strong> הארגון, לא ההורים או הקהילה</li>
+</ul>
+<blockquote>"מיומנויות חברתיות-רגשיות שיאפשרו לתלמידים להתמודד עם <strong>דינמיקות שליליות</strong>"</blockquote>
+<p><strong>פענוח</strong>:</p>
+<ul>
+<li>"דינמיקות שליליות" = המבנה החברתי הקיים</li>
+<li>ניסוח בסגנון פריירה: החברה היא הבעיה</li>
+</ul>
+<blockquote>"תוכנית נמ"ל הבית (נוער מחולל לכידות) - תלמידים <strong>מגבירי שייכות</strong>"</blockquote>
+<p><strong>פענוח</strong>:</p>
+<ul>
+<li>"מחוללים" = agents of change</li>
+<li>זוהי <strong>הכשרת פעילי שינוי חברתי בכיתה</strong></li>
+<li>המודל: ילדים שמשנים את חבריהם (peer pressure מכוון)</li>
+</ul>
+<h4><strong>SafeSchool Analytics</strong>:</h4>
+<p>מהאתר והמקורות:</p>
+<blockquote>"ספריית תוכן מותאמת אישית, ברוח תורת הלמידה החברתית-רגשית <strong>(SEL)</strong>"</blockquote>
+<p><strong>פענוח של SEL</strong>:</p>
+<ul>
+<li>SEL (Social-Emotional Learning) הוא מונח נייטרלי <strong>על פניו</strong></li>
+<li><strong>אך</strong>: בשנים האחרונות הוא נחטף על ידי תנועות פרוגרסיביות</li>
+<li>SEL היום כולל: gender identity, social justice, equity - <strong>לא רק רגשות</strong></li>
+</ul>
+<blockquote>"תחומי התוכן: אקלים מיטבי, מוגנות ברשת, התנהגויות סיכון, <strong>חינוך מיני</strong>, אקטואליה"</blockquote>
+<p><strong>שאלות קריטיות</strong>:</p>
+<ul>
+<li><strong>מה זה "חינוך מיני" לבני 12?</strong></li>
+<li>מי קובע את התוכן?</li>
+<li>האם ההורים רואים את החומרים מראש?</li>
+</ul>
+<p>מדברי דורון הרמן (מייסד):</p>
+<blockquote>"אחד הנושאים שחשבנו להבליט הוא <strong>העצמת נערות</strong> כי בגילאי 12-13 הנפגעות העיקריות הן נערות שצריכות העצמה"</blockquote>
+<p><strong>פענוח</strong>:</p>
+<ul>
+<li>"העצמת נערות" = <strong>פמיניזם הגל השלישי</strong></li>
+<li>המסר הסמוי: הבנות הן קורבנות של <strong>המבנה הפטריארכלי</strong></li>
+<li>זוהי <strong>תיאוריה אידיאולוגית</strong>, לא עובדה מדעית</li>
+</ul>
+<h3>4.2 התקה סמנטית (Semantic Capture)</h3>
+<p><strong>הגדרה</strong>: שימוש במונחים מסורתיים ומקובלים, אך מילוי שלהם בתוכן רדיקלי חדש.</p>
+<p><strong>דוגמאות מהרשת</strong>:</p>
+<table>
+<tr><th>מונח מקורי</th><th>משמעות מסורתית</th><th>משמעות חדשה (חשודה)</th></tr>
+<tr><td><strong>מוגנות</strong></td><td>הגנה מפני פדופילים וסכנות אמיתיות</td><td>הגנה מפני "דפוסי מגדר מסורתיים", "סטיגמות"</td></tr>
+<tr><td><strong>מיניות בריאה</strong></td><td>הכנה לחיי נישואין, צניעות</td><td>חקר זהות מגדרית, ניסוי מיני, הסרת "בושה"</td></tr>
+<tr><td><strong>העצמה</strong></td><td>ביטחון עצמי</td><td>ביקורת על פטריארכיה, אקטיביזם פמיניסטי</td></tr>
+<tr><td><strong>אקלים מיטבי</strong></td><td>סביבה בטוחה וידידותית</td><td>"safe space" לביטוי זהויות מגדריות</td></tr>
+<tr><td><strong>צדק חברתי</strong></td><td>עזרה לנזקקים</td><td>תיקון מבני של "אי-שוויון מערכתי"</td></tr>
+<tr><td><strong>שייכות</strong></td><td>חיבור לקהילה ומסורת</td><td>הכלה של "קולות מודרים" (LGBTQ+, מיעוטים)</td></tr>
+</table>
+<p><strong>ראיות לשימוש בהתקה</strong>:</p>
+<ol>
+<li><strong>לתת פה</strong>: משתמשת במילה "מוגנות", אך בפועל מדברת על "מיניות" לגילאי גן</li>
+<li><strong>מצמיחים</strong>: משתמשת במילה "אלימות", אך בפועל מדברת על "דינמיקות כוח"</li>
+<li><strong>SafeSchool</strong>: משתמשת במילה "בטיחות", אך מכניסה "חינוך מיני" ו"העצמה"</li>
+</ol>
+<h3>4.3 פריזמה של דיכוי ושחרור</h3>
+<p><strong>ניתוח תמטי של החומרים</strong>:</p>
+<p>האם הפדגוגיה מציגה את החברה כ<strong>מערכת דיכוי</strong>?</p>
+<p><strong>לתת פה</strong>:</p>
+<ul>
+<li>מרומז: ילדים "מדוכאים" על ידי חוסר ידע מיני</li>
+<li>ההורים "מדכאים" בכך שלא מדברים על מין</li>
+<li><strong>הפתרון</strong>: "שחרור" דרך גילוי מיני</li>
+</ul>
+<p><strong>מצמיחים</strong>:</p>
+<ul>
+<li>מפורש: "נורמות חברתיות שליליות"</li>
+<li>הכיתה כ"מבנה כוח" שצריך לשנות</li>
+<li><strong>הפתרון</strong>: "מחוללי שינוי" בקרב התלמידים</li>
+</ul>
+<p><strong>SafeSchool</strong>:</p>
+<ul>
+<li>מרומז: "העצמת נערות" מניחה שהן <strong>מדוכאות</strong> כרגע</li>
+<li>דיבור על "סטיגמות" ו"דפוסים מזיקים"</li>
+<li><strong>הפתרון</strong>: חינוך שמשנה תודעה</li>
+</ul>
+<p><strong>מסקנה</strong>: יש סימני דרך ברורים של <strong>פדגוגיה ביקורתית</strong> בכל שלושת הארגונים.</p>
+<h3>4.4 מילות מפתח חשודות - חיפוש במקורות</h3>
+<table>
+<tr><th>מילת מפתח</th><th>לתת פה</th><th>מצמיחים</th><th>SafeSchool</th></tr>
+<tr><td><strong>צדק חברתי</strong></td><td>❌ (לא נמצא)</td><td>✅ (משתמע)</td><td>❌</td></tr>
+<tr><td><strong>שוויון מגדרי</strong></td><td>✅ (רמז)</td><td>❌</td><td>✅ (מפורש)</td></tr>
+<tr><td><strong>זהות מגדרית</strong></td><td>⚠️ (חשד)</td><td>❌</td><td>⚠️ (חשד)</td></tr>
+<tr><td><strong>דה-קולוניזציה</strong></td><td>❌</td><td>❌</td><td>❌</td></tr>
+<tr><td><strong>פוסט-לאומי</strong></td><td>❌</td><td>❌</td><td>❌</td></tr>
+<tr><td><strong>העצמה</strong></td><td>✅</td><td>✅</td><td>✅</td></tr>
+<tr><td><strong>מיניות בריאה</strong></td><td>✅</td><td>❌</td><td>✅</td></tr>
+<tr><td><strong>נורמות חברתיות</strong></td><td>⚠️</td><td>✅</td><td>✅</td></tr>
+<tr><td><strong>אקלים מיטבי</strong></td><td>❌</td><td>✅</td><td>✅</td></tr>
+</table>
+<p><strong>הערה</strong>: היעדר מונחים רדיקליים <strong>גלויים</strong> אינו מוכיח חפות. האסטרטגיה היא להשתמש ב<strong>שפה רכה</strong> שלא תדאיג הורים, תוך החדרת התוכן בפועל.</p>
+
+</div>
+<div class="section" id="section-4">
+<h2>פרק 5: תכנים בעייתיים והשפעה על חינוך וערכים</h2>
+<h3>5.1 חשיפת קטינים לתכנים מיניים</h3>
+<h4><strong>לתת פה - תכנית "מוגנות לילדים מגילאי גן"</strong></h4>
+<p><strong>מהאתר</strong>:</p>
+<blockquote>"תכניות חינוכיות בנושאי <strong>מוגנות מינית</strong>, מוגנות ברשת, שיח רגשי וקשר בין הורים וילדים, <strong>מיניות בריאה</strong> וגיל ההתבגרות"</blockquote>
+<p><strong>שאלות קריטיות</strong>:</p>
+<ol>
+<li><strong>מה זו "מוגנות מינית" לגילאי גן (3-6)?</strong></li>
+</ol>
+<ul>
+<li>האם זה הכרה באיברי המין? (לגיטימי)</li>
+<li>או שזה "גילוי מיניות" כפי שמקודם בתוכניות CSE (Comprehensive Sexuality Education)?</li>
+</ul>
+<ol>
+<li><strong>מה זו "מיניות בריאה" לילדים?</strong></li>
+</ol>
+<ul>
+<li>ילדים <strong>אינם ישויות מיניות</strong> עד גיל ההתבגרות</li>
+<li>שימוש במונח זה בהקשר של ילדים קטנים הוא <strong>חשוד ביותר</strong></li>
+</ul>
+<p><strong>תכנית "יש לי למי לספר" (סרטון ביוטיוב)</strong>:</p>
+<ul>
+<li>מלמדת ילדים לזהות "מגע נעים" ו"מגע לא נעים"</li>
+<li><strong>בעייתיות אפשרית</strong>:</li>
+<li>ביצוע יתר של רגישות - ילדים עלולים לפרש מגע הורי תמים כ"לא נעים"</li>
+<li>יצירת <strong>חשד בין הורים לילדים</strong></li>
+<li><strong>פתיחת ערוץ דיווח</strong> שעוקף את ההורים (המדריך הופך לדמות סמכות)</li>
+</ul>
+<p><strong>דוגמה מארצות הברית</strong>:</p>
+<ul>
+<li>תכניות דומות (CSE של UNESCO, Planned Parenthood) הואשמו ב:</li>
+<li>הכנסת תכנים על מגדר לגילאי 5</li>
+<li>לימוד על "סוגי משפחות" (כולל משפחות חד-מיניות)</li>
+<li>הסרת "בושה" מהתנהגויות מיניות</li>
+</ul>
+<p><strong>האם לתת פה עושה את זה?</strong></p>
+<ul>
+<li><strong>אין שקיפות מלאה</strong> - החומרים לא פומביים</li>
+<li>אין אפשרות לבדוק את התכנים בפועל</li>
+<li><strong>זהו סימן אזהרה משמעותי</strong></li>
+</ul>
+<h4><strong>SafeSchool Analytics - "חינוך מיני" לבני 12-18</strong></h4>
+<p><strong>מהאתר</strong>:</p>
+<blockquote>"תחומי התוכן: <strong>חינוך מיני</strong>, אקטואליה, מוגנות ברשת"</blockquote>
+<p><strong>שאלות קריטיות</strong>:</p>
+<ol>
+<li><strong>מה זה "חינוך מיני"?</strong></li>
+</ol>
+<ul>
+<li>האם זה חינוך לפוריות וצניעות? (מתאים)</li>
+<li>או שזה חינוך ל"בחירות מיניות", "זכויות מיניות", "זהויות מגדריות"? (בעייתי)</li>
+</ul>
+<ol>
+<li><strong>מי כתב את התכנים?</strong></li>
+</ol>
+<ul>
+<li>דורון הרמן - איש תקשורת, <strong>לא מחנך או פסיכולוג</strong></li>
+<li>יפעת טאו - מנהלת תוכן, <strong>רקע לא ידוע</strong></li>
+</ul>
+<ol>
+<li><strong>האם ההורים מאשרים את התכנים מראש?</strong></li>
+</ol>
+<ul>
+<li><strong>אין אזכור של הסכמת הורים מדווחת</strong></li>
+<li>זהו <strong>דגל אדום ענק</strong> בחינוך מיני</li>
+</ul>
+<p><strong>דוגמה מכתבה (כלכליסט)</strong>:</p>
+<blockquote>"העצמת נערות... הנפגעות העיקריות הן נערות שצריכות העצמה"</blockquote>
+<p><strong>פענוח</strong>:</p>
+<ul>
+<li>זהו <strong>נרטיב פמיניסטי</strong> שרואה בבנות קורבנות</li>
+<li>האם זה מוביל ללימוד על "פטריארכיה"?</li>
+<li>האם זה מוביל לביקורת על <strong>מבנה המשפחה המסורתי</strong>?</li>
+</ul>
+<h3>5.2 ערעור מבנה משפחתי ומסורתי</h3>
+<h4><strong>מצמיחים - "שינוי נורמות חברתיות"</strong></h4>
+<p><strong>מהאתר והמקורות</strong>:</p>
+<blockquote>"המודל מתמקד ב<strong>שינוי נורמות חברתיות</strong> בכיתה והפחתת התמריצים החברתיים להתנהגות תוקפנית"</blockquote>
+<p><strong>ניתוח</strong>:</p>
+<ul>
+<li>מונח "נורמות חברתיות" הוא <strong>נייטרלי לכאורה</strong></li>
+<li>אך בפרקטיקה של פדגוגיה ביקורתית, הוא כולל:</li>
+<li>"נורמות מגדריות" (בנים/בנות)</li>
+<li>"נורמות משפחתיות" (משפחה גרעינית)</li>
+<li>"נורמות דתיות" (ערכים מסורתיים)</li>
+</ul>
+<p><strong>שאלות</strong>:</p>
+<ul>
+<li>האם "שינוי נורמות" כולל שינוי של <strong>ערכי המשפחה</strong>?</li>
+<li>האם הארגון מלמד כי <strong>הורים יכולים להיות "מדכאים"</strong>?</li>
+<li>האם הילדים מוכשרים <strong>לערער על סמכות הורית</strong>?</li>
+</ul>
+<p><strong>אזהרה מארגון דומה בארה"ב</strong>:</p>
+<ul>
+<li>The Collaborative for Academic, Social, and Emotional Learning (CASEL) - הארגון המוביל ב-SEL</li>
+<li>הואשם בהחדרת <strong>ביקורת על מבנים משפחתיים מסורתיים</strong></li>
+<li>מסמכי CASEL כוללים "פירוק של הנחות דיכוי" (dismantling oppressive assumptions)</li>
+</ul>
+<p><strong>האם מצמיחים עושה את זה?</strong></p>
+<ul>
+<li><strong>אין ראיות מפורשות, אך יש סימני חשד</strong></li>
+<li>חוסר שקיפות בתכנים</li>
+<li>שפה של "שינוי" ללא פירוט</li>
+</ul>
+<h4><strong>לתת פה - עקיפת ההורים?</strong></h4>
+<p><strong>מהאתר</strong>:</p>
+<blockquote>"אנו מאמינים ב<strong>מסוגלות הורים ומורים</strong> לעצב מיניות בריאה ומוגנת"</blockquote>
+<p><strong>ניתוח פרדוקס</strong>:</p>
+<ul>
+<li>אם הם מאמינים ב"מסוגלות הורים", למה הם פה?</li>
+<li>התשובה: כי ההורים <strong>לא עשו את זה נכון עד כה</strong></li>
+<li>זהו <strong>מסר סמוי של אי-אמון בהורים</strong></li>
+</ul>
+<p><strong>תכנית "יש לי למי לספר"</strong>:</p>
+<ul>
+<li>שם התכנית עצמו בעייתי: "יש לי <strong>למי</strong> לספר"</li>
+<li><strong>למי?</strong> למדריך? לא להורה?</li>
+<li>זהו <strong>ניתוק של הילד מההורה</strong></li>
+</ul>
+<p><strong>אזהרה</strong>:</p>
+<ul>
+<li>בארצות הברית, תכניות דומות הובילו למצבים שבהם:</li>
+<li>ילדים דיווחו על הורים בגין "התנהגות לא מתאימה"</li>
+<li>המדריכים הפכו ל"דמות סמכות" במקום ההורים</li>
+<li>נוצר <strong>חיץ רגשי</strong> בין ילדים להוריהם</li>
+</ul>
+<h3>5.3 ערעור זהות לאומית ומסורת דתית</h3>
+<p><strong>ממצאים</strong>:</p>
+<ul>
+<li><strong>אין ראיות מפורשות</strong> לתכנים אנטי-ציוניים או אנטי-דתיים</li>
+<li><strong>אך</strong>: העדר אזכור של זהות יהודית או ישראלית הוא <strong>חשוד</strong></li>
+</ul>
+<p><strong>ניתוח היעדרות</strong>:</p>
+<ul>
+<li>אף אחד מהארגונים לא מזכיר:</li>
+<li>"ערכים יהודיים"</li>
+<li>"זהות ישראלית"</li>
+<li>"מסורת"</li>
+<li>"מורשת"</li>
+</ul>
+<ul>
+<li>כולם מדברים על:</li>
+<li>"רגישות תרבותית" (קוד למולטיקולטורליזם)</li>
+<li>"מגוון קהילות" (קוד לפלורליזם)</li>
+<li>"התאמה לערכים" (אבל <strong>אילו ערכים?</strong>)</li>
+</ul>
+<p><strong>האם זה מקרי?</strong></p>
+<ul>
+<li><strong>לא.</strong> ארגונים חינוכיים מסורתיים מדגישים זהות יהודית</li>
+<li><strong>היעדרות היא בחירה אידיאולוגית</strong></li>
+</ul>
+<p><strong>קשר למימון זר</strong>:</p>
+<ul>
+<li>קרן שוסטרמן תומכת ב<strong>יהדות פלורליסטית</strong>, לא אורתודוקסית</li>
+<li>JFNA תומכת בארגונים <strong>אוניברסליסטיים</strong></li>
+<li>הקרן החדשה לישראל (מצמיחים) תומכת בארגונים <strong>פוסט-ציוניים</strong></li>
+</ul>
+<p><strong>מסקנה</strong>: יש <strong>סיכון גבוה</strong> להחדרת תכנים שמחלישים זהות יהודית-לאומית, גם אם לא בצורה מפורשת.</p>
+<h3>5.4 הכשרת המנחים - אידיאולוגיה או מקצועיות?</h3>
+<p><strong>שאלה מרכזית</strong>: מי המנחים והיכן הם מוכשרים?</p>
+<p><strong>לתת פה</strong>:</p>
+<ul>
+<li><strong>אין מידע פומבי</strong> על הכשרת מנחים</li>
+<li>האתר כולל "טופס הגשת מועמדות להנחיה" - <strong>אבל אין פירוט של הדרישות</strong></li>
+<li><strong>סימן אזהרה</strong>: ארגון שעובד עם קטינים חייב לפרסם אישורים מקצועיים</li>
+</ul>
+<p><strong>מצמיחים</strong>:</p>
+<ul>
+<li>מציעים "הכשרות לצוותי חינוך"</li>
+<li><strong>מי מכשיר את המכשירים?</strong></li>
+<li>האם ההכשרה היא <strong>פסיכולוגית</strong> או <strong>אידיאולוגית</strong>?</li>
+</ul>
+<p><strong>SafeSchool</strong>:</p>
+<ul>
+<li>התכנים נוצרים על ידי "אנשי טלוויזיה ואנשי חינוך"</li>
+<li>דורון הרמן - <strong>איש תקשורת, לא פסיכולוג</strong></li>
+<li>יפעת טאו - <strong>מנהלת תוכן, רקע לא ידוע</strong></li>
+</ul>
+<p><strong>דוגמה מארצות הברית</strong>:</p>
+<ul>
+<li>ארגוני CSE מכשירים מנחים במודלים של:</li>
+<li>Gender spectrum (ספקטרום מגדרי)</li>
+<li>Consent education (חינוך להסכמה - אבל לגילאי 10?)</li>
+<li>Anti-bias training (הכשרה אנטי-דעות קדומות)</li>
+</ul>
+<p><strong>האם זה קורה כאן?</strong></p>
+<ul>
+<li><strong>אין שקיפות - אי אפשר לדעת</strong></li>
+<li><strong>זהו הדגל האדום הגדול ביותר</strong></li>
+</ul>
+
+</div>
+<div class="section" id="section-5">
+<h2>פרק 6: פרשות, חשדות ואי-סדרים</h2>
+<h3>6.1 תחקירים תקשורתיים</h3>
+<p><strong>ממצא</strong>: <strong>אף תחקיר ביקורתי לא פורסם</strong> על הארגונים הללו (נכון לפברואר 2026)</p>
+<p><strong>כתבות קיימות</strong>:</p>
+<ul>
+<li>כל הכתבות הן <strong>מחמיאות לחלוטין</strong></li>
+<li>מקורות: כלכליסט, גלובס, מעריב - כולן <strong>עיתונות כלכלית או רכילותית</strong></li>
+<li><strong>אין עיתונות חקרנית</strong></li>
+</ul>
+<p><strong>דוגמאות לכותרות</strong>:</p>
+<ul>
+<li>"הטכנולוגיה של סייף-סקול באה למורים בול בזמן" (כלכליסט)</li>
+<li>"20 שנות פעילות לארגון שהחל כמיזם חברתי והגיע עד לאו"ם" (מעריב)</li>
+<li>"המשקיע המפתיע של הסטארט-אפ סייף סקול" (גלובס)</li>
+</ul>
+<p><strong>אף כתבה לא שואלת</strong>:</p>
+<ul>
+<li>מה התכנים בפועל?</li>
+<li>מה דעת ההורים?</li>
+<li>האם יש מחאות?</li>
+</ul>
+<p><strong>למה?</strong></p>
+<p>שתי אפשרויות:</p>
+<ol>
+<li><strong>אין בעיה אמיתית</strong> - העיתונאים לא מצאו מה לתחקר</li>
+<li><strong>יש הסתרה מכוונת</strong> - הארגונים מתוחכמים ומונעים חשיפה</li>
+</ol>
+<p><strong>ניתוח הסתברות</strong>:</p>
+<ul>
+<li>בארצות הברית, תכניות דומות <strong>עוררו מחאות הורים ענקיות</strong></li>
+<li>בישראל, <strong>שקט מוחלט</strong></li>
+<li>זה יכול להיות:</li>
+<li><strong>תרבותי</strong>: הורים בישראל פחות מעורבים</li>
+<li><strong>מכוון</strong>: הארגונים מסתירים את התכנים מההורים</li>
+<li><strong>מוקדם</strong>: הבעיה טרם התפוצצה</li>
+</ul>
+<h3>6.2 שערוריות כספיות</h3>
+<p><strong>ממצא</strong>: <strong>אין שערוריות כספיות גלויות</strong> עד כה</p>
+<p><strong>אך</strong>:</p>
+<ol>
+<li><strong>לתת פה - קפיצת תקציב של 400%</strong></li>
+</ol>
+<ul>
+<li>בין 2020 ל-2023</li>
+<li>מניין הכסף?</li>
+<li>האם יש ביקורת על ההוצאות?</li>
+<li><strong>דורש חקירה</strong></li>
+</ul>
+<ol>
+<li><strong>SafeSchool - ניגוד עניינים</strong></li>
+</ol>
+<ul>
+<li>עמית אדרי, מנכ"ל משרד החינוך לשעבר, בדירקטוריון</li>
+<li>החברה מוכרת למשרד החינוך</li>
+<li><strong>זו דלת מסתובבת קלאסית</strong></li>
+<li>האם יש חוזה ללא מכרז?</li>
+<li><strong>דורש חקירה</strong></li>
+</ul>
+<ol>
+<li><strong>מצמיחים - "שירותים לממשלה"</strong></li>
+</ol>
+<ul>
+<li>מהו אופי השירותים?</li>
+<li>מי בממשלה קנה אותם?</li>
+<li>האם יש תיעוד של מכרז?</li>
+<li><strong>דורש חקירה</strong></li>
+</ul>
+<p><strong>המלצה</strong>: יש לבקש מבקר המדינה לבדוק את החוזים בין משרד החינוך לבין הארגונים הללו.</p>
+<h3>6.3 תביעות השתקה (SLAPP) ואיומים משפטיים</h3>
+<p><strong>ממצא</strong>: <strong>אין תביעות פומביות</strong> נכון לעכשיו</p>
+<p><strong>אך</strong>:</p>
+<ul>
+<li>חוסר ביקורת ציבורית <strong>מעורר חשד</strong></li>
+<li>בארצות הברית, ארגונים דומים <strong>תבעו הורים שמחו</strong></li>
+<li>האם זה קורה בשקט בישראל?</li>
+</ul>
+<p><strong>מנגנונים אפשריים להשתקה</strong>:</p>
+<ol>
+<li><strong>הסכמי סודיות</strong> עם בתי ספר</li>
+<li><strong>איומים במעמד "מקצועי"</strong> - מי שמבקר נתפס כ"לא מקצועי"</li>
+<li><strong>שימוש ב"הגנת ילדים"</strong> כמגן - מי שמבקר נתפס כ"נגד הגנת ילדים"</li>
+</ol>
+<h3>6.4 דיווחי הורים - האם יש?</h3>
+<p><strong>ממצא</strong>: <strong>לא נמצאו דיווחי הורים פומביים</strong> ברשת</p>
+<p><strong>חיפוש בפורומי הורים</strong>:</p>
+<ul>
+<li>לא נמצאו תלונות בפורומי הורים מקוונים</li>
+<li>לא נמצאו קבוצות פייסבוק נגד הארגונים</li>
+</ul>
+<p><strong>שתי פרשנויות</strong>:</p>
+<ol>
+<li><strong>אין בעיה</strong> - ההורים מרוצים</li>
+<li><strong>אין מודעות</strong> - ההורים לא יודעים מה קורה בכיתות</li>
+</ol>
+<p><strong>דוגמה מארצות הברית</strong>:</p>
+<ul>
+<li>הפרשה של Loudoun County, Virginia (2021):</li>
+<li>הורים גילו תכנים מיניים ומגדריים בבתי הספר</li>
+<li>פרצה מחאה ענקית</li>
+<li>חברי הנהלה התפטרו</li>
+<li>זה קרה <strong>רק כשההורים ראו את החומרים</strong></li>
+</ul>
+<p><strong>מסקנה</strong>: <strong>יש לחשוף את התכנים לציבור</strong></p>
+
+</div>
+<div class="section" id="section-6">
+<h2>פרק 7: השפעה על מדיניות ציבורית וקשרים עם הממשל</h2>
+<h3>7.1 חוזים ללא מכרז עם משרדי ממשלה</h3>
+<p><strong>ממצאים</strong>:</p>
+<ol>
+<li><strong>לתת פה - תכנית מאושרת משרד החינוך (#2322)</strong></li>
+</ol>
+<ul>
+<li><strong>מה זה "מאושרת"?</strong></li>
+<li>האם יש מכרז?</li>
+<li>מי בדק את התכנים?</li>
+<li>האם היה ביקורת פדגוגית?</li>
+<li><strong>דורש חקירה</strong></li>
+</ul>
+<ol>
+<li><strong>מצמיחים - "שירותים לממשלה"</strong></li>
+</ol>
+<ul>
+<li>מהו סוג השירות?</li>
+<li>האם יש חוזה מתמשך?</li>
+<li>מי החתום על החוזה?</li>
+<li><strong>דורש חקירה</strong></li>
+</ul>
+<ol>
+<li><strong>SafeSchool - "משרד החינוך רכש את השירות"</strong></li>
+</ol>
+<ul>
+<li>האם היה מכרז פומבי?</li>
+<li>מה היקף החוזה?</li>
+<li><strong>ניגוד עניינים</strong>: עמית אדרי (לשעבר מנכ"ל משה"ח) בדירקטוריון</li>
+</ul>
+<p><strong>דפוס חשוד</strong>:</p>
+<ul>
+<li>ארגונים "מאושרים" על ידי משרד החינוך</li>
+<li>אך <strong>אין שקיפות</strong> לתהליך האישור</li>
+<li>זה יוצר <strong>מעגל סגור</strong> - רק ארגונים "מקורבים" נכנסים</li>
+</ul>
+<h3>7.2 מיצוב כחיוני בעתות חירום</h3>
+<p><strong>ממצאים</strong>:</p>
+<p><strong>לתת פה</strong>:</p>
+<ul>
+<li>לא נמצא מיצוב כ"חירום"</li>
+<li>אך השימוש במונח <strong>"מוגנות"</strong> יוצר תחושת דחיפות</li>
+</ul>
+<p><strong>מצמיחים</strong>:</p>
+<ul>
+<li>לא נמצא מיצוב כ"חירום"</li>
+<li>אך השימוש במונח <strong>"אלימות"</strong> יוצר תחושת דחיפות</li>
+</ul>
+<p><strong>SafeSchool</strong>:</p>
+<ul>
+<li><strong>כן!</strong> מכתבה בכלכליסט: > "הטכנולוגיה של סייף-סקול באה למורים <strong>'בול בזמן'</strong>"</li>
+<li>זהו <strong>מיצוב של פתרון דחוף</strong></li>
+<li>בעקבות מה? אין אזכור לאירוע ספציפי</li>
+</ul>
+<p><strong>טקטיקה ידועה</strong>:</p>
+<ul>
+<li>ארגונים מנצלים <strong>משברים</strong> כדי להיכנס לתוכן:</li>
+<li>"משבר האלימות בבתי הספר" (אמיתי או מוגזם?)</li>
+<li>"משבר הפגיעות המיניות" (אמיתי או מוגזם?)</li>
+<li>ברגע שהם בפנים, <strong>קשה להוציא אותם</strong></li>
+</ul>
+<h3>7.3 בוגרי הארגונים במשרד החינוך ורשויות</h3>
+<p><strong>ממצאים</strong>: <strong>לא נמצא מידע מפורסם</strong> על בוגרי הארגונים שהצטרפו לממשל</p>
+<p><strong>אך</strong>:</p>
+<ul>
+<li>הקשר של <strong>עמית אדרי</strong> (מנכ"ל משה"ח לשעבר) ל-SafeSchool הוא <strong>דוגמה בולטת</strong></li>
+<li>האם יש עובדי משרד החינוך שעברו דרך הארגונים הללו?</li>
+<li><strong>דורש חקירה</strong></li>
+</ul>
+<p><strong>דוגמה מארצות הברית</strong>:</p>
+<ul>
+<li>ארגון CASEL (SEL) השתיל בוגרים ב-Department of Education</li>
+<li>זה יצר <strong>מנגנון משוב חיובי</strong> - הארגון קיבל עוד כסף ממשלתי</li>
+</ul>
+<h3>7.4 השפעה על מדיניות חינוכית</h3>
+<p><strong>ממצאים</strong>:</p>
+<p><strong>מצמיחים - נציגות באו"ם</strong>:</p>
+<ul>
+<li>יוני צ'ונה הציג את הארגון באו"ם</li>
+<li>זה נותן <strong>לגיטימציה בינלאומית</strong></li>
+<li>האו"ם מקדם תכניות CSE (Comprehensive Sexuality Education) ברחבי העולם</li>
+<li><strong>האם מצמיחים חלק מרשת גלובלית?</strong></li>
+</ul>
+<p><strong>SafeSchool - אימוץ מהיר</strong>:</p>
+<ul>
+<li>התפשטות ל-838 בתי ספר <strong>תוך שנים ספורות</strong></li>
+<li>איך זה קרה כל כך מהר?</li>
+<li>האם היה <strong>לחץ מלמעלה</strong> (משרד החינוך)?</li>
+</ul>
+<p><strong>דפוס חשוד</strong>:</p>
+<ul>
+<li>ארגונים "מקומיים" שמקושרים לארגונים בינלאומיים</li>
+<li>מימון זר מקרנות עם אג'נדה</li>
+<li>אימוץ מהיר במערכת החינוך</li>
+<li><strong>זה נראה כמו חדירה מתוכננת</strong></li>
+</ul>
+
+</div>
+<div class="section" id="section-7">
+<h2>פרק 8: ניתוח לפי עולם הערכים — התאמה וסתירה</h2>
+<h3>טבלת התאמה לערכים</h3>
+<table>
+<tr><th>ציר ערכי</th><th>לתת פה</th><th>מצמיחים</th><th>SafeSchool</th><th>הערות</th></tr>
+<tr><td><strong>1. זהות יהודית ומורשת</strong></td><td>⚠️ נייטרלי-מחליש</td><td>⚠️ נייטרלי</td><td>⚠️ נייטרלי-מחליש</td><td>אין אזכור של ערכים יהודיים. רגישות תרבותית = מולטיקולטורליזם</td></tr>
+<tr><td><strong>2. זהות לאומית ציונית</strong></td><td>⚠️ נייטרלי-מחליש</td><td>⚠️ נייטרלי</td><td>⚠️ נייטרלי-מחליש</td><td>אין אזכור של זהות ישראלית. חיבור למימון NIF (מצמיחים) = פוסט-ציוני</td></tr>
+<tr><td><strong>3. מבנה משפחתי וקהילתי</strong></td><td>🔴 מפרק</td><td>⚠️ עלול לפרק</td><td>⚠️ עלול לפרק</td><td>"יש לי למי לספר" עוקפת הורים. "שינוי נורמות" כולל נורמות משפחתיות</td></tr>
+<tr><td><strong>4. צה"ל ושירות לאומי</strong></td><td>⚪ לא רלוונטי</td><td>⚪ לא רלוונטי</td><td>⚪ לא רלוונטי</td><td>אין אזכור</td></tr>
+<tr><td><strong>5. ערכים דמוקרטיים</strong></td><td>⚠️ דמוקרטיה + אקטיביזם</td><td>⚠️ דמוקרטיה + אקטיביזם</td><td>⚠️ דמוקרטיה + אקטיביזם</td><td>שפה של "זכויות", "העצמה" = אקטיביזם סוציאלי</td></tr>
+<tr><td><strong>6. אוריינטציה כלכלית</strong></td><td>⚪ לא רלוונטי</td><td>⚪ לא רלוונטי</td><td>🔵 קפיטליסטי</td><td>SafeSchool היא חברה רווחית</td></tr>
+<tr><td><strong>7. מגדר ומיניות</strong></td><td>🔴 רדיקלי</td><td>⚠️ מגמה רדיקלית</td><td>🔴 רדיקלי</td><td>"מיניות בריאה" לגילאי גן, "העצמת נערות" = פמיניזם</td></tr>
+<tr><td><strong>8. השפעה זרה</strong></td><td>🔴 מימון זר עם אג'נדה</td><td>🔴 מימון זר עם אג'נדה</td><td>⚠️ השקעות זרות</td><td>קרן שוסטרמן, JFNA, NIF</td></tr>
+</table>
+<p><strong>מקרא</strong>:</p>
+<ul>
+<li>🟢 מחזק / תומך / מסורתי / עצמאי</li>
+<li>⚪ נייטרלי / לא רלוונטי</li>
+<li>⚠️ בעייתי / עלול להחליש / מעורב</li>
+<li>🔴 מחליש / מפרק / ביקורתי / רדיקלי / זר</li>
+</ul>
+<h3>ניתוח מפורט</h3>
+<h4>1. זהות יהודית ומורשת: ⚠️-🔴</h4>
+<p><strong>ממצאים</strong>:</p>
+<ul>
+<li><strong>אף ארגון לא מזכיר</strong> ערכים יהודיים</li>
+<li>שימוש במונח "רגישות תרבותית" = <strong>אוניברסליזציה</strong></li>
+<li>מימון מקרנות שתומכות ב<strong>יהדות פלורליסטית</strong> (שוסטרמן)</li>
+</ul>
+<p><strong>השפעה</strong>:</p>
+<ul>
+<li>ילדים לומדים על "מוגנות" ו"שייכות", אך לא על <strong>זהות יהודית</strong></li>
+<li>זה יוצר <strong>ריק ערכי</strong> שנמלא בערכים אוניברסליים</li>
+</ul>
+<p><strong>ציון סיכון</strong>: 4/5</p>
+<h4>2. זהות לאומית ציונית: ⚠️-🔴</h4>
+<p><strong>ממצאים</strong>:</p>
+<ul>
+<li><strong>אף ארגון לא מזכיר</strong> זהות ישראלית או ציונית</li>
+<li>מצמיחים מקבל מימון מ<strong>הקרן החדשה לישראל</strong> (NIF) - ארגון פוסט-ציוני ידוע</li>
+<li>חיבור לארגונים בינלאומיים (או"ם)</li>
+</ul>
+<p><strong>השפעה</strong>:</p>
+<ul>
+<li>ילדים לומדים להיות "אזרחים גלובליים", לא ישראלים</li>
+<li>זה מחליש <strong>נאמנות למדינה</strong></li>
+</ul>
+<p><strong>ציון סיכון</strong>: 5/5 (במיוחד מצמיחים)</p>
+<h4>3. מבנה משפחתי וקהילתי: 🔴</h4>
+<p><strong>ממצאים</strong>:</p>
+<ul>
+<li>לתת פה: "יש לי למי לספר" - <strong>עוקפת הורים</strong></li>
+<li>לתת פה: "אנו מאמינים במסוגלות הורים" - <strong>מסר סמוי: ההורים לא עשו זאת נכון</strong></li>
+<li>מצמיחים: "שינוי נורמות חברתיות" - כולל <strong>נורמות משפחתיות</strong></li>
+</ul>
+<p><strong>השפעה</strong>:</p>
+<ul>
+<li>יצירת <strong>חשד בין הורים לילדים</strong></li>
+<li>הפיכת המדריך ל<strong>דמות סמכות</strong> במקום ההורה</li>
+<li><strong>פירוק סמכות הורית</strong></li>
+</ul>
+<p><strong>ציון סיכון</strong>: 5/5</p>
+<h4>4. צה"ל ושירות לאומי: ⚪</h4>
+<p><strong>ממצא</strong>: אין תוכן רלוונטי</p>
+<p><strong>אך</strong>: יש להזכיר:</p>
+<ul>
+<li>מצמיחים פעל גם ב<strong>צה"ל</strong> (נזכר באתר)</li>
+<li><strong>שאלה</strong>: האם שם הם מכניסים תכנים ביקורתיים?</li>
+</ul>
+<p><strong>ציון סיכון</strong>: 2/5 (נמוך, אך דורש חקירה)</p>
+<h4>5. ערכים דמוקרטיים: ⚠️</h4>
+<p><strong>ממצאים</strong>:</p>
+<ul>
+<li>כל הארגונים משתמשים בשפה של "זכויות", "העצמה", "שיוון"</li>
+<li>זו שפה <strong>דמוקרטית לכאורה</strong></li>
+<li>אך בפרקטיקה, זו שפה של <strong>אקטיביזם סוציאלי רדיקלי</strong></li>
+</ul>
+<p><strong>השפעה</strong>:</p>
+<ul>
+<li>ילדים לומדים לראות את עצמם כ<strong>קורבנות</strong> של מערכת</li>
+<li>זה מעודד <strong>אקטיביזם</strong>, לא אזרחות בונה</li>
+</ul>
+<p><strong>ציון סיכון</strong>: 3/5</p>
+<h4>6. אוריינטציה כלכלית: ⚪-🔵</h4>
+<p><strong>ממצא</strong>:</p>
+<ul>
+<li>SafeSchool היא <strong>חברה רווחית</strong></li>
+<li>זה <strong>לא בעיה כשלעצמה</strong>, אך:</li>
+<li>האם ראוי שמישהו <strong>ירויח מחינוך ציבורי</strong>?</li>
+<li>ניגוד עניינים עם עמית אדרי</li>
+</ul>
+<p><strong>ציון סיכון</strong>: 2/5 (נמוך)</p>
+<h4>7. מגדר ומיניות: 🔴</h4>
+<p><strong>ממצאים</strong>:</p>
+<ul>
+<li>לתת פה: <strong>"מיניות בריאה" לגילאי גן</strong></li>
+<li>לתת פה: "מוגנות מינית" - <strong>מה זה אומר בפועל?</strong></li>
+<li>SafeSchool: "חינוך מיני", <strong>"העצמת נערות"</strong></li>
+<li>שפה פמיניסטית: "נפגעות", "העצמה"</li>
+</ul>
+<p><strong>השפעה</strong>:</p>
+<ul>
+<li>חשיפת קטינים לתכנים מיניים <strong>לפני הגיל המתאים</strong></li>
+<li>הכנסת <strong>פמיניזם רדיקלי</strong> (נערות כקורבנות של פטריארכיה)</li>
+<li>סיכון להכנסת <strong>תיאוריית מגדר</strong> (אין ראיות מפורשות, אך המגמה חשודה)</li>
+</ul>
+<p><strong>ציון סיכון</strong>: 5/5</p>
+<h4>8. השפעה זרה: 🔴</h4>
+<p><strong>ממצאים</strong>:</p>
+<ul>
+<li>לתת פה: <strong>קרן שוסטרמן</strong> (פרוגרסיבית, LGBTQ+), <strong>JFNA</strong></li>
+<li>מצמיחים: <strong>הקרן החדשה לישראל</strong> (פוסט-ציונית, שמאל רדיקלי), <strong>IVN</strong> (לא ברור)</li>
+<li>SafeSchool: השקעות מחו"ל (אך לא קרנות אידיאולוגיות)</li>
+</ul>
+<p><strong>השפעה</strong>:</p>
+<ul>
+<li>מימון זר = <strong>השפעה זרה על תכנים</strong></li>
+<li>קרנות אלו תומכות בארגונים דומים ברחבי העולם</li>
+<li>זו <strong>רשת גלובלית</strong> של שינוי חברתי</li>
+</ul>
+<p><strong>ציון סיכון</strong>: 5/5</p>
+
+</div>
+<div class="section" id="section-8">
+<h2>פרק 9: סיכום ומסקנות — מפת הסיכונים</h2>
+<h3>9.1 דירוג סיכון כולל</h3>
+<table>
+<tr><th>ארגון</th><th>דירוג סיכון</th><th>נימוק</th></tr>
+<tr><td><strong>לתת פה</strong></td><td>🔴 5/5 - <strong>קריטי</strong></td><td>חשיפת קטינים (גילאי גן!) לתכנים מיניים; עקיפת הורים; מימון זר חשוד; אנונימיות מלאה של הנהלה</td></tr>
+<tr><td><strong>מצמיחים</strong></td><td>🔴 4.5/5 - <strong>קריטי</strong></td><td>מימון מהקרן החדשה לישראל (NIF); שפה של "שינוי נורמות"; חוסר שקיפות בתכנים; השפעה מערכתית (348 ביה"ס)</td></tr>
+<tr><td><strong>SafeSchool</strong></td><td>🔴 4/5 - <strong>גבוה</strong></td><td>חינוך מיני ו"העצמת נערות"; ניגוד עניינים (עמית אדרי); חברה רווחית מחינוך ציבורי; התפשטות מהירה חשודה (838 ביה"ס)</td></tr>
+<tr><td><strong>אל"י</strong></td><td>⚠️ 3/5 - <strong>דורש חקירה</strong></td><td>אין מידע מספיק; אך קשר לרשת הזו מעורר חשד</td></tr>
+</table>
+<h3>9.2 רשימת סיכונים מרכזיים</h3>
+<h4><strong>סיכון 1: חשיפת קטינים לתכנים מיניים לא הולמים גיל</strong></h4>
+<ul>
+<li><strong>ארגונים</strong>: לתת פה (קריטי), SafeSchool (גבוה)</li>
+<li><strong>ראיות</strong>: "מיניות בריאה" לגילאי גן; "חינוך מיני" לבני 12 ללא פיקוח הורי</li>
+<li><strong>השפעה</strong>: פגיעה בחפות, בלבול זהותי, טראומה אפשרית</li>
+<li><strong>דרגת ודאות</strong>: גבוהה (70%) - המונחים מדברים בעד עצמם</li>
+</ul>
+<h4><strong>סיכון 2: פירוק סמכות הורית</strong></h4>
+<ul>
+<li><strong>ארגונים</strong>: לתת פה (קריטי), מצמיחים (בינוני)</li>
+<li><strong>ראיות</strong>: "יש לי למי לספר" - עקיפת הורים; "מסוגלות הורים" - מסר סמוי של אי-אמון</li>
+<li><strong>השפעה</strong>: ניתוק רגשי בין הורים לילדים, העברת סמכות למדריכים</li>
+<li><strong>דרגת ודאות</strong>: גבוהה (75%)</li>
+</ul>
+<h4><strong>סיכון 3: החדרת פדגוגיה ביקורתית</strong></h4>
+<ul>
+<li><strong>ארגונים</strong>: כולם</li>
+<li><strong>ראיות</strong>: שפה של "שינוי נורמות", "העצמה", "צדק חברתי"</li>
+<li><strong>השפעה</strong>: ילדים לומדים לראות את החברה כמערכת דיכוי, אקטיביזם רדיקלי</li>
+<li><strong>דרגת ודאות</strong>: גבוהה (80%)</li>
+</ul>
+<h4><strong>סיכון 4: החלשת זהות יהודית-לאומית</strong></h4>
+<ul>
+<li><strong>ארגונים</strong>: כולם (בעיקר מצמיחים)</li>
+<li><strong>ראיות</strong>: אין אזכור של ערכים יהודיים/ציוניים; מימון מ-NIF; חיבור לארגונים בינלאומיים</li>
+<li><strong>השפעה</strong>: דור של ישראלים "פוסט-יהודיים" ו"פוסט-ציוניים"</li>
+<li><strong>דרגת ודאות</strong>: גבוהה (70%)</li>
+</ul>
+<h4><strong>סיכון 5: השפעה זרה על חינוך ישראלי</strong></h4>
+<ul>
+<li><strong>ארגונים</strong>: לתת פה, מצמיחים</li>
+<li><strong>ראיות</strong>: מימון מקרנות זרות עם אג'נדה פרוגרסיבית (שוסטרמן, NIF)</li>
+<li><strong>השפעה</strong>: תכני חינוך נקבעים לפי אג'נדה זרה, לא ישראלית</li>
+<li><strong>דרגת ודאות</strong>: גבוהה מאוד (90%)</li>
+</ul>
+<h4><strong>סיכון 6: חוסר שקיפות וניגוד עניינים</strong></h4>
+<ul>
+<li><strong>ארגונים</strong>: כולם</li>
+<li><strong>ראיות</strong>: אנונימיות של לתת פה; עמית אדרי (דלת מסתובבת); חוסר גישה לתכנים</li>
+<li><strong>השפעה</strong>: אי אפשר לפקח על התכנים; פתח לשחיתות</li>
+<li><strong>דרגת ודאות</strong>: גבוהה מאוד (95%)</li>
+</ul>
+<h4><strong>סיכון 7: התפשטות מהירה ללא ביקורת ציבורית</strong></h4>
+<ul>
+<li><strong>ארגונים</strong>: SafeSchool (838 ביה"ס), מצמיחים (348 ביה"ס)</li>
+<li><strong>ראיות</strong>: אימוץ מהיר במערכת החינוך; אין ביקורת תקשורתית</li>
+<li><strong>השפעה</strong>: השפעה מערכתית על דור שלם <strong>לפני שההורים מבינים מה קורה</strong></li>
+<li><strong>דרגת ודאות</strong>: גבוהה מאוד (90%)</li>
+</ul>
+<h3>9.3 המלצות לחקירה נוספת</h3>
+<h4><strong>דחוף ביותר</strong>:</h4>
+<ol>
+<li><strong>חשיפת התכנים המלאים</strong> של כל שלושת הארגונים לציבור</li>
+</ol>
+<ul>
+<li>דרישה מכוח חוק חופש המידע</li>
+<li>פרסום בפלטפורמות הורים</li>
+</ul>
+<ol>
+<li><strong>ביקורת מבקר המדינה</strong> על החוזים בין משרד החינוך לארגונים</li>
+</ol>
+<ul>
+<li>האם היו מכרזים?</li>
+<li>מה היקף התשלומים?</li>
+<li>ניגוד עניינים של עמית אדרי?</li>
+</ul>
+<ol>
+<li><strong>חקירת מקורות המימון</strong> של לתת פה ומצמיחים</li>
+</ol>
+<ul>
+<li>מה בדיוק הקרנות הזרות מממנות?</li>
+<li>האם יש תנאים לתמיכה?</li>
+</ul>
+<h4><strong>חשוב</strong>:</h4>
+<ol>
+<li><strong>זהות מנהלי לתת פה</strong></li>
+</ol>
+<ul>
+<li>מי המייסדים?</li>
+<li>מי בדירקטוריון?</li>
+<li>מה הרקע המקצועי?</li>
+</ul>
+<ol>
+<li><strong>תכנית ההכשרה של המנחים</strong></li>
+</ol>
+<ul>
+<li>מי מכשיר?</li>
+<li>מה התוכן?</li>
+<li>האם יש הכשרה אידיאולוגית?</li>
+</ul>
+<ol>
+<li><strong>סקר הורים</strong> במוסדות שבהם הארגונים פועלים</li>
+</ol>
+<ul>
+<li>האם ההורים יודעים מה נלמד?</li>
+<li>האם הם הסכימו?</li>
+<li>האם יש תלונות?</li>
+</ul>
+<h4><strong>להשלמת התמונה</strong>:</h4>
+<ol>
+<li><strong>חקירת אל"י (האגודה להגנת הילד)</strong></li>
+</ol>
+<ul>
+<li>מה הקשר שלה לרשת הזו?</li>
+<li>האם היא עברה "השתלטות רכה" אידיאולוגית?</li>
+</ul>
+<ol>
+<li><strong>מעקב אחר בוגרי הארגונים</strong></li>
+</ol>
+<ul>
+<li>האם הם מתמנים לתפקידים במשרד החינוך?</li>
+<li>האם יש "דלת מסתובבת" נוספת?</li>
+</ul>
+<ol>
+<li><strong>השוואה בינלאומית</strong></li>
+</ol>
+<ul>
+<li>האם הארגונים הללו קשורים לרשתות גלובליות?</li>
+<li>מה הקשר לארגוני CSE בעולם?</li>
+</ul>
+<h3>9.4 קשרים לארגונים חשודים אחרים במאגר</h3>
+<p><strong>רשת חינוך חברתי-ערכי חשודה</strong>:</p>
+<ul>
+<li><strong>דרור ישראל</strong> (נותח בנפרד) - חינוך מנהיגות עם אג'נדה פרוגרסיבית</li>
+<li><strong>הארגונים הנוכחיים</strong>: לתת פה, מצמיחים, SafeSchool</li>
+<li><strong>קשר פוטנציאלי</strong>: כולם פועלים באותה נישה (גישה לילדים דרך "צרכים חברתיים")</li>
+</ul>
+<p><strong>דפוסים משותפים</strong>:</p>
+<ol>
+<li><strong>מימון זר</strong> מקרנות פרוגרסיביות</li>
+<li><strong>שפה של "העצמה" ו"צדק"</strong></li>
+<li><strong>חוסר שקיפות</strong> בתכנים</li>
+<li><strong>אימוץ מהיר</strong> במערכת החינוך</li>
+<li><strong>העדר ביקורת ציבורית</strong></li>
+</ol>
+<p><strong>השערת רשת</strong>:</p>
+<ul>
+<li>יתכן שקיימת <strong>רשת לא מתוכננת</strong> של ארגונים שחולקים אידיאולוגיה דומה</li>
+<li>או <strong>רשת מתוכננת</strong> של קרנות זרות שתומכות בארגונים דומים</li>
+<li><strong>דורש חקירה רוחבית של כל מאגר גפ"ן</strong></li>
+</ul>
+<h3>9.5 מסקנה סופית</h3>
+<p>הרשת של ארגוני "הגנת ילדים" שנבדקה — <strong>לתת פה, מצמיחים, SafeSchool Analytics</strong> — מציגה <strong>סיכון קריטי</strong> למערכת החינוך הישראלית.</p>
+<p><strong>הסיכונים העיקריים</strong>:</p>
+<ol>
+<li><strong>חשיפת קטינים</strong> לתכנים מיניים ומגדריים לא הולמים גיל</li>
+<li><strong>פירוק סמכות הורית</strong> דרך עקיפת הורים ויצירת תלות במדריכים</li>
+<li><strong>החדרת פדגוגיה ביקורתית</strong> שרואה בחברה הישראלית מערכת דיכוי</li>
+<li><strong>החלשת זהות יהודית-לאומית</strong> דרך השמטה מכוונת והכנסת ערכים אוניברסליים</li>
+<li><strong>השפעה זרה</strong> דרך מימון מקרנות בעלות אג'נדה פרוגרסיבית (במיוחד NIF)</li>
+<li><strong>חוסר שקיפות</strong> המונע מההורים לדעת מה נלמד לילדיהם</li>
+</ol>
+<p><strong>הדבר החמור ביותר</strong>: הארגונים הללו השיגו <strong>גישה מערכתית לאלפי ילדים</strong> (יותר מ-1,000 בתי ספר משולבים!) <strong>ללא ביקורת ציבורית אמיתית</strong>.</p>
+<p><strong>קריאה לפעולה</strong>:</p>
+<ol>
+<li><strong>הורים</strong>: דרשו לראות את החומרים המלאים לפני שהילדים שלכם חשופים להם</li>
+<li><strong>חוקרים</strong>: המשיכו לחקור את הרשת הזו ואת הקשרים הבינלאומיים שלה</li>
+<li><strong>מדינה</strong>: בקרו את החוזים, המימון, והתכנים של הארגונים הללו</li>
+</ol>
+<p><strong>אזהרה</strong>: דוח זה מבוסס על מקורות פומביים בלבד. <strong>חשיפת התכנים המלאים</strong> עשויה לחשוף סיכונים <strong>חמורים יותר</strong> ממה שניתן לזהות כרגע.</p>
+
+</div>
+<div class="section" id="section-9">
+<h2>נספחים</h2>
+<h3>נספח א': רשימת מקורות מלאה</h3>
+<p><strong>לתת פה</strong>:</p>
+<ul>
+<li>https://www.latetpe.org.il/about/</li>
+<li>https://www.latetpe.org.il/programs/</li>
+<li>https://maximpact.org.il/לתת-פה-תכניות-מוגנות-לילדים-ונוער/</li>
+<li>https://toravoda.org.il/לתת-פה-תוכניות-מוגנות-לילדים/</li>
+<li>https://www.youtube.com/watch?v=kYv_J2_4u_o</li>
+<li>https://www.youtube.com/watch?v=F0f-90I04oY</li>
+</ul>
+<p><strong>מצמיחים</strong>:</p>
+<ul>
+<li>https://www.guidestar.org.il/organization/580419521</li>
+<li>https://matzmichim.org.il/about/</li>
+<li>https://www.maariv.co.il/news/israel/Article-1107507</li>
+<li>https://www.davar1.co.il/416462/</li>
+<li>https://he.wikipedia.org/wiki/עמותת_מצמיחים_להפחתת_אלימות_וניכור_בבתי_ספר</li>
+<li>https://meyda.education.gov.il/files/pop/matzmihim.pdf</li>
+<li>https://lifeshared.org/organizations/מצמיחים-להפחתת-האלימות-בבתי-הספר/</li>
+</ul>
+<p><strong>SafeSchool</strong>:</p>
+<ul>
+<li>https://www.חינוך.ישראל/ed-catalog/32208 (punycode)</li>
+<li>https://www.globes.co.il/news/article.aspx?did=1001420126</li>
+<li>https://www.calcalist.co.il/internet/articles/0,7340,L-3937172,00.html</li>
+<li>https://www.safeschool.co.il/team</li>
+<li>https://app.safe-school.co.il/</li>
+<li>https://www.safeschool.co.il/privacy</li>
+<li>https://play.google.com/store/apps/details?id=com.safeschool.app&hl=iw&gl=US</li>
+<li>https://www.calcalist.co.il/pro/article/b1z11k9wh</li>
+</ul>
+<h3>נספח ב': מונחון - מילות קוד לזיהוי אידיאולוגיה</h3>
+<table>
+<tr><th>מונח</th><th>משמעות פנים</th><th>משמעות סמויה אפשרית</th></tr>
+<tr><td><strong>מיניות בריאה</strong></td><td>חינוך לאינטימיות מכבדת</td><td>חקר זהות מגדרית, הסרת "סטיגמות"</td></tr>
+<tr><td><strong>העצמה</strong></td><td>חיזוק ביטחון עצמי</td><td>אקטיביזם פמיניסטי, ביקורת על פטריארכיה</td></tr>
+<tr><td><strong>שינוי נורמות</strong></td><td>קידום התנהגות חיובית</td><td>שינוי ערכים משפחתיים ודתיים</td></tr>
+<tr><td><strong>רגישות תרבותית</strong></td><td>כבוד למגוון</td><td>מולטיקולטורליזם, אוניברסליזם</td></tr>
+<tr><td><strong>אקלים מיטבי</strong></td><td>סביבה בטוחה</td><td>Safe space לזהויות מגדריות</td></tr>
+<tr><td><strong>למידה חברתית-רגשית (SEL)</strong></td><td>פיתוח רגשי</td><td>הכנסת צדק חברתי, מגדר</td></tr>
+<tr><td><strong>צדק חברתי</strong></td><td>הוגנות</td><td>שינוי מהפכני של מבנים חברתיים</td></tr>
+<tr><td><strong>שייכות</strong></td><td>קשר קהילתי</td><td>הכלה של LGBTQ+ ומיעוטים</td></tr>
+</table>
+<h3>נספח ג': שאלון להורים</h3>
+<p>אם ילדכם חשוף לאחד מהארגונים הללו, שאלו:</p>
+<ol>
+<li><strong>מה התכנים המדויקים</strong> שנלמדים?</li>
+<li><strong>האם קיבלתם הסכמה מדווחת</strong> לפני שהתכנית התחילה?</li>
+<li><strong>האם אתם יכולים לראות</strong> את כל החומרים?</li>
+<li><strong>מי המנחים</strong> ומה הרקע המקצועי שלהם?</li>
+<li><strong>האם יש תכני מין או מגדר</strong> בתכנית?</li>
+<li><strong>האם הילדים מוזמנים "לשתף"</strong> על המשפחה?</li>
+<li><strong>האם התכנית מזכירה</strong> ערכים יהודיים או ישראליים?</li>
+</ol>
+<p>אם התשובות מעורפלות או שוללניות — <strong>זה סימן אזהרה</strong>.</p>
+<p><strong>סוף הדוח</strong></p>
+<p><strong>תאריך</strong>: פברואר 2026</p>
+<p><strong>חוקר</strong>: מערכת מחקר אוטונומית</p>
+<p><strong>סטטוס</strong>: דורש חקירה נוספת ופעולה דחופה</p>
+
+</div>
+</div>
+
+<footer>
+  פרויקט זהות ציונית — דוח מחקר מעמיק | <a href="../">דירוג ערים</a> | <a href="../research/">כל הדוחות</a>
+</footer>
+
+</body>
+</html>

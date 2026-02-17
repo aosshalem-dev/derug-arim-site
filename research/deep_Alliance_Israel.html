@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>כל ישראל חברים / Alliance Israelite Universelle — דוח מחקר מעמיק</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background: #f5f5f8;
+  color: #1a1a2e;
+  direction: rtl;
+  line-height: 1.8;
+  font-size: 17px;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #1a1a2e; color: #fff;
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  overflow-x: auto; white-space: nowrap;
+}
+nav .brand { font-weight: 700; color: #ff8800; flex-shrink: 0; }
+nav a { color: #ccc; text-decoration: none; font-size: 0.85em; padding: 8px 4px; border-bottom: 2px solid transparent; flex-shrink: 0; }
+nav a:hover { color: #ff8800; border-bottom-color: #ff8800; }
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a5a8a 100%);
+  color: #fff; padding: 50px 20px 40px; text-align: center;
+}
+.hero h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+.hero .subtitle { font-size: 1.05em; color: #b0c4de; margin-bottom: 6px; }
+.hero .meta { font-size: 0.9em; color: #ff8800; margin-top: 8px; }
+.risk-badge {
+  display: inline-block; padding: 4px 16px; border-radius: 20px;
+  font-size: 0.85em; font-weight: 600; margin-top: 10px;
+}
+.risk-high { background: #e74c3c; color: #fff; }
+.risk-medium { background: #f39c12; color: #fff; }
+.risk-low { background: #27ae60; color: #fff; }
+.container { max-width: 860px; margin: 0 auto; padding: 30px 20px 80px; }
+.toc {
+  background: #fff; border-radius: 8px; padding: 22px 26px;
+  margin-bottom: 32px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.toc h2 { font-size: 1.15em; color: #2a5a8a; margin-bottom: 12px; border-bottom: 2px solid #667eea; padding-bottom: 6px; }
+.toc ol { padding-right: 22px; font-size: 0.93em; }
+.toc li { margin-bottom: 4px; }
+.toc a { color: #2a5a8a; text-decoration: none; }
+.toc a:hover { color: #ff8800; text-decoration: underline; }
+.section {
+  background: #fff; border-radius: 8px; padding: 28px 26px;
+  margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.section h2 { font-size: 1.4em; color: #1a1a2e; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #667eea; }
+.section h3 { font-size: 1.1em; color: #2a5a8a; margin: 18px 0 8px; }
+.section h4 { font-size: 1em; color: #444; margin: 14px 0 6px; }
+.section p { margin-bottom: 12px; text-align: justify; }
+.section ul, .section ol { padding-right: 22px; margin-bottom: 12px; }
+.section li { margin-bottom: 5px; }
+blockquote {
+  background: #f0f4fa; border-right: 4px solid #667eea;
+  padding: 12px 18px; margin: 12px 0; border-radius: 0 6px 6px 0;
+  font-size: 0.94em; color: #333;
+}
+.thesis {
+  background: #fff8f0; border-right: 3px solid #ff8800;
+  padding: 14px 18px; margin: 12px 0; border-radius: 0 5px 5px 0;
+  font-size: 0.96em; color: #6b4500;
+}
+table {
+  width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.91em;
+}
+th {
+  background: #667eea; color: #fff; padding: 8px 12px;
+  text-align: right; position: sticky; top: 44px; z-index: 5;
+}
+td {
+  padding: 7px 12px; border-bottom: 1px solid #e8e8e8;
+  text-align: right; vertical-align: top;
+}
+tr:nth-child(even) { background: #f8f9fc; }
+a { color: #2a5a8a; }
+a:hover { color: #ff8800; }
+.back-link {
+  display: inline-block; margin-bottom: 20px; padding: 6px 14px;
+  background: #667eea; color: #fff; border-radius: 4px;
+  text-decoration: none; font-size: 0.88em;
+}
+.back-link:hover { background: #5a6fd6; color: #fff; }
+footer {
+  text-align: center; padding: 30px 20px; color: #888; font-size: 0.85em;
+}
+strong { color: #1a1a2e; }
+code {
+  background: #f0f0f0; padding: 1px 5px; border-radius: 3px;
+  font-size: 0.9em;
+}
+.source-tag {
+  display: inline-block; background: #e8eef6; padding: 2px 8px;
+  border-radius: 10px; font-size: 0.78em; color: #2a5a8a;
+  margin: 2px 3px; text-decoration: none;
+}
+.source-tag:hover { background: #d0dff0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">דוח מחקר מעמיק</span>
+  <a href="../">חזרה לדירוג</a>
+  <a href="../research/">כל הדוחות</a>
+  <a href="#section-1">Historical Backgroun</a> <a href="#section-2">Organizational Struc</a> <a href="#section-3">Financial Analysis</a> <a href="#section-4">Leadership Map</a> <a href="#section-5">Programs in Israeli </a> <a href="#section-6">Ideology & Values</a> <a href="#section-7">Foreign Governance A</a> <a href="#section-8">Controversies</a> <a href="#section-9">Values Alignment Tab</a> <a href="#section-10">Open Questions</a> <a href="#section-11">Source References</a>
+</nav>
+
+<div class="hero">
+  <h1>כל ישראל חברים / Alliance Israelite Universelle</h1>
+  <div class="subtitle"></div>
+  <div class="meta"></div>
+  
+</div>
+
+<div class="container">
+  <a href="../research/" class="back-link">← כל דוחות המחקר</a>
+  <div class="toc"><h2>תוכן עניינים</h2><ol><li><a href="#section-1">Historical Background (1860-present)</a></li><li><a href="#section-2">Organizational Structure (Paris-Israel-US)</a></li><li><a href="#section-3">Financial Analysis</a></li><li><a href="#section-4">Leadership Map</a></li><li><a href="#section-5">Programs in Israeli Schools</a></li><li><a href="#section-6">Ideology & Values</a></li><li><a href="#section-7">Foreign Governance Assessment</a></li><li><a href="#section-8">Controversies</a></li><li><a href="#section-9">Values Alignment Table</a></li><li><a href="#section-10">Open Questions</a></li><li><a href="#section-11">Source References</a></li></ol></div>
+  <div class="section" id="section-1">
+<h2>Historical Background (1860-present)</h2>
+<h3>Founding and Colonial Context</h3>
+<p>Alliance Israelite Universelle was founded on May 17, 1860 in Paris by a group of French Jewish notables:</p>
+<ul>
+<li><strong>Jules Carvallo</strong> (engineer)</li>
+<li><strong>Isidore Cahen</strong> (journalist)</li>
+<li><strong>Narcisse Leven</strong> (secretary to Adolphe Cremieux)</li>
+<li><strong>Eugene Manuel</strong> (poet)</li>
+<li><strong>Elie-Aristide Astruc</strong> (rabbi)</li>
+</ul>
+<p>The founding was catalyzed by two events: the <strong>Damascus Affair</strong> (1840, blood libel leading to arrests and torture of Syrian Jews) and the <strong>Mortara case</strong> (1858, papal kidnapping of a Jewish child in Bologna). The stated mission was to "serve as a most important stimulus to Jewish regeneration."</p>
+<h3>The Mission Civilisatrice</h3>
+<p>The AIU explicitly adopted French colonialism's "mission civilisatrice" (civilizing mission) model. French Jews, who had achieved emancipation through the Revolution, viewed themselves as culturally superior to "Eastern" Jews (Mizrachi, Sephardic, Ottoman) and sought to "regenerate" them through French language and culture. This was not merely educational charity -- it was ideological colonialism:</p>
+<ul>
+<li><strong>Language weapon:</strong> Schools taught exclusively in French for decades, displacing local languages (Ladino, Judeo-Arabic, Judeo-Persian) and creating a French-speaking Jewish elite.</li>
+<li><strong>Cultural assimilation:</strong> Curriculum combined secular French education with religious instruction, designed to produce Jews loyal to French culture and values.</li>
+<li><strong>Imperial alignment:</strong> The AIU operated in explicit coordination with French colonial interests. Schools in Morocco, Tunisia, Algeria, and the Levant served as soft-power instruments of French imperialism.</li>
+<li><strong>Scale:</strong> By World War I, 14,000 students were enrolled in 183 AIU schools across the Ottoman Empire, North Africa, Iran, and the Balkans.</li>
+</ul>
+<h3>Peak Operations</h3>
+<table>
+<tr><th>Period</th><th>Schools</th><th>Students</th><th>Key Regions</th></tr>
+<tr><td>1862</td><td>1</td><td>~100</td><td>Tetouan, Morocco</td></tr>
+<tr><td>1912</td><td>115</td><td>~14,000</td><td>Ottoman Empire (71 boys', 44 girls')</td></tr>
+<tr><td>1939</td><td>100+</td><td>~40,000</td><td>Morocco (45 schools), Turkey, Iran, Iraq</td></tr>
+<tr><td>1955</td><td>85 (Morocco alone)</td><td>28,143</td><td>Morocco peak</td></tr>
+<tr><td>1968</td><td>64</td><td>20,946</td><td>Morocco (31), Iran (13), Israel (13), Others</td></tr>
+</table>
+<h3>Key Financial Patron</h3>
+<p><strong>Baron Maurice de Hirsch</strong> donated 1 million gold francs in 1873 and 10 million gold francs in 1889 -- enormous sums that funded Ottoman Jewish education. The Rothschild family also funded school infrastructure (e.g., rebuilding the Safed school in 1912).</p>
+<h3>Post-Colonial Collapse and Reinvention</h3>
+<p>After 1948, the mass Jewish exodus from Arab countries systematically destroyed the AIU's school network:</p>
+<ul>
+<li><strong>Iraq</strong> (10 schools, 6,000 students by 1947): Closed after 1948-1951 mass emigration</li>
+<li><strong>Syria</strong>: Effectively closed</li>
+<li><strong>Egypt</strong>: Closed</li>
+<li><strong>Morocco</strong>: Gradual decline from 85 schools (1955) to 31 (1968), transferred to state control</li>
+<li><strong>Iran</strong>: 13 schools (1960), eventually closed after 1979 revolution</li>
+<li><strong>Tunisia</strong>: Reduced from peak to 3 schools (1968)</li>
+</ul>
+<p>The organization reinvented itself in two directions:</p>
+<ol>
+<li><strong>France:</strong> Absorbing North African Jewish immigrants, running schools in France</li>
+<li><strong>Israel:</strong> Expanding from its historic Mikveh Israel base into broader educational programming</li>
+</ol>
+<h3>Stance on Zionism</h3>
+<p>The AIU was <strong>anti-Zionist</strong> until 1945. It opposed both minority rights concepts (preferring assimilation) and Jewish nationalism. Only after the Holocaust did it adopt a pro-Zionist position (1945 programmatic declaration under Rene Cassin). This ideological pivot is important context: the organization's DNA is French Republican universalism, not Zionist particularism.</p>
+
+</div>
+<div class="section" id="section-2">
+<h2>Organizational Structure (Paris-Israel-US)</h2>
+<h3>Entity Map</h3>
+<table>
+<tr><th>Entity</th><th>Registration</th><th>Location</th><th>Type</th><th>Role</th></tr>
+<tr><td>Alliance Israelite Universelle</td><td>French association</td><td>45 rue La Bruyere, 75009 Paris</td><td>HQ, global governance</td><td>Parent org, library, archives, College of Jewish Studies</td></tr>
+<tr><td>Alliance Israelite Universelle</td><td>EIN 98-6001112</td><td>Paris 75007</td><td>US 501(c)(3) since Feb 1947</td><td>US tax-exempt fundraising vehicle for global operations</td></tr>
+<tr><td>American Friends of AIU</td><td>EIN 13-5626342</td><td>150 W 30th St, NYC</td><td>US 501(c)(3) since Aug 1948</td><td>Grants to school system, scholarships, teacher pensions</td></tr>
+<tr><td>כל ישראל חברים (ע"ר)</td><td>580010890</td><td>Holon, Israel</td><td>Israeli association (registered 1982)</td><td>Israeli branch: educational programs</td></tr>
+<tr><td>מקוה ישראל - כל ישראל חברים (חל"צ)</td><td>510151814</td><td>Mikve Israel</td><td>Government company (joint ownership)</td><td>Agricultural youth village, schools, 3,300 dunams</td></tr>
+<tr><td>בית ספר תיכון עירוני כל ישראל חברים בחיפה</td><td>580002657</td><td>Haifa</td><td>Separate entity</td><td>Alliance High School Haifa (transferred to municipal ownership 2023)</td></tr>
+</table>
+<h3>Governance: Paris Controls</h3>
+<p>The AIU governance model is centralized in Paris:</p>
+<ul>
+<li><strong>Central Committee:</strong> 30 members, two-thirds must be Paris residents</li>
+<li><strong>Quorum:</strong> Seven members (all from Paris-dominated committee)</li>
+<li><strong>World President:</strong> Always a French Jew (current: Marc Eisenberg, since 2011)</li>
+<li><strong>Israeli branch:</strong> Operates under the parent organization's authority; Israeli Chairman (Sam Pinto) and CEO (Eli Bareket) report to Paris</li>
+</ul>
+<p>This is a classic French centralized administrative model applied to an international organization. Israeli operations are a subsidiary of a Paris-headquartered entity.</p>
+<h3>Mikveh Israel: The Crown Jewel</h3>
+<p>Mikveh Israel is uniquely important:</p>
+<ul>
+<li><strong>Founded 1870</strong> by Charles Netter on 2,600 dunams of Ottoman-leased land</li>
+<li><strong>Current size:</strong> ~3,300 dunams -- massive real estate southeast of Jaffa/Tel Aviv</li>
+<li><strong>1956 Agreement:</strong> Alliance and the State of Israel formed a joint government company to manage the property</li>
+<li><strong>1976 Knesset Law:</strong> "חוק בית הספר החקלאי מקוה ישראל, תשל"ו-1976" -- special legislation protecting the land:</li>
+<li>Land cannot be rezoned without approval of Ministers of Education, Agriculture, Rural Development, and Interior</li>
+<li>Plus approval from a joint Knesset committee (Education + Interior)</li>
+<li>Changes to the company's articles of incorporation require government + Knesset committee approval</li>
+<li><strong>Board:</strong> Includes Alliance representatives, government representatives, farm workers, and public representatives. Board chairman appointed by the Education Minister.</li>
+</ul>
+<p><strong>Significance:</strong> A French organization co-owns 3,300 dunams of prime land near Tel Aviv with the State of Israel, protected by a dedicated Knesset law. This is an extraordinary level of foreign institutional entrenchment in Israeli sovereignty.</p>
+
+</div>
+<div class="section" id="section-3">
+<h2>Financial Analysis</h2>
+<h3>Israeli Government Transfers (obudget.org data, entity 580010890)</h3>
+<p><strong>Summary of approved transfers by year:</strong></p>
+<table>
+<tr><th>Year</th><th>Total Approved (NIS)</th><th>Key Categories</th></tr>
+<tr><td>2025</td><td>163,164</td><td>Centers for deepening education</td></tr>
+<tr><td>2024</td><td>336,011</td><td>Education centers (284K), Literature (42K), Jerusalem culture grant (10K)</td></tr>
+<tr><td>2023</td><td>454,389</td><td>Jewish culture (178K), Education centers (221K), Literature (45K), Jerusalem (10K)</td></tr>
+<tr><td>2022</td><td>389,348</td><td>Education centers (184K), Jewish culture (150K), Literature (45K), Jerusalem (11K)</td></tr>
+<tr><td>2021</td><td>521,686</td><td>Jewish culture (262K), Education centers (201K), Literature (43K), Jerusalem (16K)</td></tr>
+<tr><td>2020</td><td>78,571</td><td>Literature (64K), Jerusalem (15K)</td></tr>
+<tr><td>2019</td><td>362,943</td><td>At-risk youth activities (253K), Literature (63K), Jewish culture (27K), Jerusalem (20K)</td></tr>
+<tr><td>2018</td><td>770,381</td><td>At-risk youth (409K), Education centers (200K), Jewish culture (86K), Literature (75K)</td></tr>
+<tr><td>2017</td><td>2,129,383</td><td><strong>Long-term projects (1,450K)</strong>, At-risk youth (411K), Education centers (129K), Jewish culture (79K), Literature (61K)</td></tr>
+<tr><td>2016</td><td>489,986</td><td>At-risk youth (348K), Jewish culture (69K), Education centers (38K), Literature (35K)</td></tr>
+<tr><td>2015</td><td>293,620</td><td>At-risk youth (216K), Jewish culture (70K), Literature (8K)</td></tr>
+</table>
+<p><strong>Key observations:</strong></p>
+<ul>
+<li>2017 was an outlier year with 1.45M NIS in "long-term projects" (פרויקטים ארוכי טווח)</li>
+<li>Typical annual government funding: 300K-550K NIS</li>
+<li>Main funding categories: "Centers for deepening Jewish education" and "At-risk youth activities"</li>
+<li>Earlier years (2006-2013) show only small medical rehabilitation equipment grants (4.5-5.25K)</li>
+</ul>
+<h3>US Entity Financials (EIN 98-6001112 -- Paris HQ's US filing)</h3>
+<table>
+<tr><th>Year</th><th>Revenue</th><th>Expenses</th><th>Net Assets</th></tr>
+<tr><td>2024</td><td>$2,114,147</td><td>$4,902,244</td><td>$11,121,997</td></tr>
+<tr><td>2023</td><td>$2,410,401</td><td>$4,657,009</td><td>$14,174,906</td></tr>
+<tr><td>2022</td><td>$9,084,465</td><td>$4,027,185</td><td>$16,212,579</td></tr>
+<tr><td>2018</td><td>$25,141,081</td><td>$7,628,799</td><td>$17,925,856</td></tr>
+</table>
+<p><strong>Key observations:</strong></p>
+<ul>
+<li>Revenue plummeted from $25M (2018) to $2.1M (2024) -- a 92% decline</li>
+<li>Expenses consistently exceed revenue -- organization draws down assets</li>
+<li>Net assets fell from $17.9M to $11.1M over six years</li>
+<li>2024 revenue: 59% contributions ($1.25M), 35% other revenue ($744K), 5% investment income</li>
+<li>CEO compensation: $123,516 (Deborah Serrao)</li>
+<li>Total executive/salary costs: $1.35M (28% of expenses)</li>
+</ul>
+<h3>American Friends Entity (EIN 13-5626342)</h3>
+<table>
+<tr><th>Year</th><th>Revenue</th><th>Expenses</th><th>Net Assets</th></tr>
+<tr><td>2024</td><td>$76,756</td><td>$4,339</td><td>$2,102,991</td></tr>
+<tr><td>2023</td><td>$2,025,074</td><td>$78,039</td><td>$2,030,574</td></tr>
+<tr><td>2022</td><td>$114,096</td><td>$130,036</td><td>$83,539</td></tr>
+<tr><td>2021</td><td>$186,536</td><td>$2,347,447</td><td>$99,479</td></tr>
+<tr><td>2020</td><td>$430,947</td><td>$475,094</td><td>$2,258,788</td></tr>
+</table>
+<p><strong>Key observations:</strong></p>
+<ul>
+<li>Highly volatile revenue -- ranges from $77K to $2M year-to-year</li>
+<li>2023 saw a massive $2M injection that rebuilt assets from $84K to $2M</li>
+<li>Grants to school system, scholarships, and retired teacher pensions</li>
+<li>$0 officer compensation (all board serves unpaid)</li>
+<li>Board president: Sam Pinto (same person who chairs Israeli branch)</li>
+</ul>
+<h3>Financial Gap Analysis</h3>
+<p>The Gefen mapping shows only 377K NIS budget for KIAH's educational programs. But:</p>
+<ul>
+<li>Government transfers alone range 300K-2.1M NIS/year</li>
+<li>The organization claims to reach 50,000 people/year across 50+ municipalities and 90+ schools</li>
+<li>The US entities hold $13M+ in combined assets</li>
+<li>Paris HQ had $25M revenue as recently as 2018</li>
+</ul>
+<p><strong>Conclusion:</strong> The 377K figure captures only one slice (likely a single Gefen-funded program). Actual operations are funded through multiple channels: Israeli government, Paris HQ transfers, US fundraising entities, Trump Foundation grants, Posen Foundation grants, and other donors. Total Israeli operations likely run in the millions of NIS.</p>
+<h3>External Funders (Documented)</h3>
+<table>
+<tr><th>Funder</th><th>Type</th><th>Details</th></tr>
+<tr><td><strong>Trump Foundation</strong> (trump.org.il)</td><td>Israeli foundation</td><td>"Repeat grantee" -- funded coaching program for 5-unit math in peripheral schools</td></tr>
+<tr><td><strong>Posen Foundation</strong></td><td>Israeli foundation</td><td>Supports educational programs (amount undisclosed)</td></tr>
+<tr><td><strong>French Government</strong></td><td>State funding</td><td>Co-sponsors French-Israeli School at Mikve Israel</td></tr>
+<tr><td><strong>Israeli Government</strong></td><td>Ministry transfers</td><td>300K-2.1M NIS/year (obudget data)</td></tr>
+<tr><td><strong>Paris HQ</strong></td><td>Parent organization</td><td>Unknown amount of transfers to Israeli branch</td></tr>
+<tr><td><strong>Baron de Hirsch legacy</strong></td><td>Historical endowment</td><td>Original massive endowments may still generate income</td></tr>
+</table>
+
+</div>
+<div class="section" id="section-4">
+<h2>Leadership Map</h2>
+<h3>Paris HQ (Global Leadership)</h3>
+<table>
+<tr><th>Role</th><th>Name</th><th>Background</th><th>Tenure</th></tr>
+<tr><td>World President</td><td><strong>Marc Eisenberg</strong></td><td>French businessman, philanthropist. Born 1955, Paris. Joined Central Committee 2006, VP 2009, organized 150th anniversary 2010.</td><td>2011-present</td></tr>
+<tr><td>Previous President</td><td><strong>Ady Steg</strong></td><td>Professor, 26-year tenure</td><td>1985-2011</td></tr>
+<tr><td>Historical President</td><td><strong>Rene Cassin</strong></td><td>Nobel Peace Prize laureate, VP was Baron Edmond de Rothschild</td><td>1943-1976</td></tr>
+<tr><td>CEO (US filing)</td><td><strong>Deborah Serrao</strong></td><td>$123,516 compensation</td><td>Current</td></tr>
+<tr><td>Admin/Finance</td><td><strong>Luc Reitenbach</strong></td><td>$103,675 compensation</td><td>Current</td></tr>
+</table>
+<h3>Israeli Branch Leadership</h3>
+<table>
+<tr><th>Role</th><th>Name</th><th>Background</th></tr>
+<tr><td>Chairman</td><td><strong>Sam Pinto</strong></td><td>Moroccan-born businessman and philanthropist. Also serves as President of American Friends board</td></tr>
+<tr><td>CEO</td><td><strong>Eli Bareket</strong></td><td>Runs day-to-day Israeli operations</td></tr>
+<tr><td>VP Society & Policy</td><td><strong>Hani Mimrame</strong></td></tr>
+<tr><td>VP Education</td><td><strong>Galit Katz</strong></td></tr>
+<tr><td>Finance & Admin</td><td><strong>Sivan Eladi</strong></td></tr>
+<tr><td>HQ Director</td><td><strong>Rachel Yaron</strong></td></tr>
+</table>
+<h3>Program Directors</h3>
+<table>
+<tr><th>Name</th><th>Program</th></tr>
+<tr><td>Pnina Gal-Jacob</td><td>Reshit</td></tr>
+<tr><td>Rachel Walfish</td><td>Kerem Institute</td></tr>
+<tr><td>Shoshi Peretz</td><td>Morasha</td></tr>
+<tr><td>Irit Rosh Shitrit</td><td>Memizrach Shemesh</td></tr>
+<tr><td>Nira Hillel Amir</td><td>Sodkot (Glass Ceiling)</td></tr>
+<tr><td>Eva Labi</td><td>Israel-Diaspora</td></tr>
+<tr><td>Sarit Hadad</td><td>Gateways to Graduation</td></tr>
+<tr><td>Tami Rozay Mesika</td><td>Yesharim</td></tr>
+<tr><td>Haya Neeman</td><td>Mafteah</td></tr>
+<tr><td>Oshra Namimi Ha'Levi</td><td>Identity-Based Pedagogy</td></tr>
+</table>
+<h3>Mikveh Israel Leadership</h3>
+<table>
+<tr><th>Role</th><th>Name</th></tr>
+<tr><td>General School Director</td><td>Dafna Schneider</td></tr>
+<tr><td>Religious School Director</td><td>Brurit Nahmias</td></tr>
+<tr><td>French-Israeli School Director</td><td>Ruth Ben Samian</td></tr>
+<tr><td>Farm Manager</td><td>Yoav Calderon</td></tr>
+<tr><td>Village Administrator</td><td>Sharit Goldstein</td></tr>
+<tr><td>Finance Director</td><td>Liron Saliman Yankowitz</td></tr>
+</table>
+<h3>Cross-Board Connections</h3>
+<p><strong>Sam Pinto</strong> serves simultaneously as:</p>
+<ul>
+<li>Chairman of כל ישראל חברים in Israel</li>
+<li>President of American Friends of AIU (EIN 13-5626342)</li>
+<li>Presumably a member of Paris Central Committee</li>
+</ul>
+<p><strong>Marc Eisenberg</strong> serves as:</p>
+<ul>
+<li>World President (Paris)</li>
+<li>Vice President of American Friends of AIU</li>
+</ul>
+<p>This dual-hatting pattern (same individuals running both Israeli and US entities) is common in Israeli NGOs with international branches but creates potential governance opacity.</p>
+
+</div>
+<div class="section" id="section-5">
+<h2>Programs in Israeli Schools</h2>
+<h3>1. Sodkot et Tikrat HaZekhuchit (סודקות את תקרת הזכוכית) -- "Cracking the Glass Ceiling"</h3>
+<ul>
+<li><strong>Launched:</strong> 2011</li>
+<li><strong>Focus:</strong> Gender empowerment in STEM (STEAM) for girls in the socio-geographic periphery</li>
+<li><strong>Duration:</strong> 5-year track, grades 8-12</li>
+<li><strong>Scale:</strong> 40+ schools nationwide</li>
+<li><strong>Components:</strong></li>
+<li>Exposure to academia and hi-tech companies</li>
+<li>Mentoring by women role models</li>
+<li>Gender and empowerment workshops</li>
+<li>Academic support emphasizing mathematics</li>
+<li>Website-building competitions</li>
+<li><strong>Corporate partners:</strong> Teva, Amdocs, SAP, SentinelOne, Salesforce, Microsoft, Elbit, Israel Aerospace Industries</li>
+<li><strong>Director:</strong> Nira Hillel Amir</li>
+</ul>
+<h3>2. Morasha (מורשה) -- "Heritage"</h3>
+<ul>
+<li><strong>Launched:</strong> 2001</li>
+<li><strong>Focus:</strong> Pluralistic Jewish identity education in formal school settings</li>
+<li><strong>Duration:</strong> ~4 year implementation per school</li>
+<li><strong>Ideology:</strong> "Social Judaism" -- connecting Jewish sources to social values and daily life</li>
+<li><strong>Emphases:</strong> Tradition (diverse Jewish voices), community building, social responsibility, tikkun olam, Zionism and love of the Land of Israel</li>
+<li><strong>Director:</strong> Shoshi Peretz</li>
+</ul>
+<h3>3. Kerem Institute (מכון כרם) -- Teacher Training</h3>
+<ul>
+<li><strong>Founded:</strong> 1974 in Jerusalem</li>
+<li><strong>Partnership:</strong> David Yellin College</li>
+<li><strong>Scale:</strong> Trains 120 student teachers + 180 practicing teachers annually</li>
+<li><strong>Focus:</strong> Humanistic Jewish education -- integrating Judaic material in humanistic fashion into general studies</li>
+<li><strong>Certification:</strong> Jewish Studies, Humanities, Social Sciences, Arts</li>
+<li><strong>Approach:</strong> "Dialogical educational perspective" with emphasis on humanities and Judaism to strengthen state education</li>
+<li><strong>Director:</strong> Rachel Walfish</li>
+</ul>
+<h3>4. Yesharim (ישרים) -- Educational Excellence</h3>
+<ul>
+<li><strong>Focus:</strong> Equal educational opportunities, talent development in periphery</li>
+<li><strong>Director:</strong> Tami Rozay Mesika</li>
+</ul>
+<h3>5. Memizrach Shemesh (ממזרח שמש) -- "Rising Sun"</h3>
+<ul>
+<li><strong>Founded:</strong> 2000</li>
+<li><strong>Focus:</strong> Institute for Jewish social leadership</li>
+<li><strong>Director:</strong> Irit Rosh Shitrit</li>
+</ul>
+<h3>6. Reshit (רשית)</h3>
+<ul>
+<li><strong>Director:</strong> Pnina Gal-Jacob</li>
+</ul>
+<h3>7. Sha'ar / Gateway to Graduation (שער)</h3>
+<ul>
+<li><strong>Founded:</strong> 2001</li>
+<li><strong>Focus:</strong> Addressing educational gaps in peripheral schools; supports learning-disabled students</li>
+<li><strong>Director:</strong> Sarit Hadad</li>
+</ul>
+<h3>8. Netu'im -- AIDA</h3>
+<ul>
+<li><strong>Focus:</strong> Israel-Diaspora connections</li>
+</ul>
+<h3>9. Alle</h3>
+<ul>
+<li><strong>Focus:</strong> Unknown from available sources</li>
+</ul>
+<h3>10. French-Israeli Schools</h3>
+<ul>
+<li><strong>Location:</strong> Mikve Israel campus (and previously Maimonides school)</li>
+<li><strong>Founded:</strong> 2007</li>
+<li><strong>Co-sponsors:</strong> French and Israeli governments</li>
+<li><strong>Focus:</strong> Multilingual and multicultural education, diplomacy, international relations, sciences</li>
+<li><strong>Grades:</strong> 7-12</li>
+<li><strong>Fees (2007):</strong> 1,600 NIS/year for locals, $5,000 for international students</li>
+<li><strong>Director:</strong> Ruth Ben Samian</li>
+</ul>
+<h3>Content Initiatives</h3>
+<ul>
+<li>"The Daily Sage" (החכם היומי) -- Eastern Jewish thought website</li>
+<li>The 7th of Adar</li>
+<li>"Hachmat Lev" -- educational materials</li>
+</ul>
+
+</div>
+<div class="section" id="section-6">
+<h2>Ideology & Values</h2>
+<h3>Core Tension: French Republicanism vs. Israeli Zionism</h3>
+<p>The AIU was born as a French Republican organization. Its founding values are:</p>
+<ol>
+<li><strong>Universalism</strong> -- Jewish solidarity transcending borders</li>
+<li><strong>Emancipation</strong> through education (secular + religious)</li>
+<li><strong>French language and culture</strong> as vehicles for "civilization"</li>
+<li><strong>Anti-nationalism</strong> -- historically opposed both diaspora minority rights AND Zionism</li>
+</ol>
+<p>In Israel, the organization has reinvented itself but the French DNA persists:</p>
+<p><strong>Evidence of French universalist influence:</strong></p>
+<ul>
+<li>The Kerem Institute promotes "humanistic Jewish education" -- not Torah-centric or Zionist-centric</li>
+<li>Morasha program promotes "social Judaism" with tikkun olam emphasis</li>
+<li>The French-Israeli School on Israeli soil is an explicit French cultural presence</li>
+<li>Anti-Zionist until 1945 (only became pro-Zionist under Rene Cassin)</li>
+</ul>
+<p><strong>Evidence of adaptation to Israeli context:</strong></p>
+<ul>
+<li>Programs emphasize Sephardic Jewish heritage (natural fit given AIU's historical constituency)</li>
+<li>Explicit Zionism mentioned in Morasha program description</li>
+<li>Educational excellence focus (Sodkot, Yesharim) is ideologically neutral</li>
+<li>Operates in Israel's periphery (Netivot, Kiryat Gat) -- traditionally religious, Sephardic communities</li>
+</ul>
+<h3>Semantic Displacement Analysis</h3>
+<p>The organization uses "Jewish identity" and "Jewish culture" but in a specifically AIU sense:</p>
+<ul>
+<li>"Judaism" = social, humanistic, inclusive -- NOT halakhic or Orthodox</li>
+<li>"Heritage" (Morasha) = Sephardic tradition + social values -- NOT religious observance</li>
+<li>"Educational excellence" = secular academic achievement -- NOT Torah study</li>
+<li>"Tikkun olam" = social justice framing -- progressive-coded term</li>
+</ul>
+<p>This is consistent with the AIU's historical mission: replace traditional religious education with secular French-inflected education. In Israel, this translates to promoting a liberal, humanistic form of Judaism -- which places it in the "mamlachti" (state secular) rather than "mamlachti-dati" (state religious) camp.</p>
+<h3>Comparison to Other Researched Organizations</h3>
+<p>Unlike organizations like ACRI (overtly progressive-activist) or HaShomer HaTzair (ideologically socialist), KIAH does not appear to push a political agenda. Its programs are educational rather than political. However, the "social Judaism" and "tikkun olam" framing of Morasha may introduce progressive values into traditionally religious Sephardic communities -- a dynamic worth noting.</p>
+
+</div>
+<div class="section" id="section-7">
+<h2>Foreign Governance Assessment</h2>
+<h3>Question: How Much Control Does Paris Have Over Israeli Operations?</h3>
+<p><strong>Structural Control:</strong></p>
+<ol>
+<li><strong>Governance:</strong> Paris Central Committee (30 members, 2/3 Parisian) has ultimate authority over the global organization</li>
+<li><strong>Leadership appointment:</strong> World President is always French; Israeli chairman appears to serve under Paris authority</li>
+<li><strong>Financial control:</strong> Paris HQ's US entity held $11-17M in assets; funding flows to Israel are opaque</li>
+<li><strong>Brand and mission:</strong> Israeli branch operates under the "Alliance" brand and must align with global mission</li>
+</ol>
+<p><strong>Operational Autonomy:</strong></p>
+<ol>
+<li><strong>Israeli entity (580010890)</strong> is a separately registered Israeli association -- legally autonomous</li>
+<li><strong>Israeli CEO (Eli Bareket)</strong> appears to run day-to-day operations independently</li>
+<li><strong>Programs are Israel-specific</strong> -- Morasha, Sodkot, etc. don't exist in other Alliance countries</li>
+<li><strong>Israeli government funding</strong> goes directly to the Israeli entity</li>
+</ol>
+<p><strong>Mikveh Israel -- the Deep Entanglement:</strong></p>
+<ul>
+<li>A French organization co-owns 3,300 dunams of Israeli land</li>
+<li>Protected by a dedicated Knesset law (1976)</li>
+<li>Board chairman appointed by Israel's Education Minister -- but Alliance representatives sit on the board</li>
+<li>French-Israeli School on the campus is a joint French-Israeli government project</li>
+</ul>
+<p><strong>Assessment:</strong> This is not a puppet-master relationship, but it's also not full independence. The Israeli branch operates within the AIU's ideological framework and under its governance structure. The French-Israeli School and Mikveh Israel co-ownership represent tangible foreign influence in Israeli education and land policy. The financial dependence on Paris transfers (given the Israeli entity's modest reported budget vs. its claimed 50K person/year reach) suggests Paris has significant leverage.</p>
+<p><strong>Comparable patterns:</strong> This resembles the relationship between international organizations like the Aga Khan Foundation (based in Geneva, operating in developing countries) or the British Council (UK government cultural arm) -- organizations that deliver valuable services while also serving as soft-power instruments for their home countries.</p>
+
+</div>
+<div class="section" id="section-8">
+<h2>Controversies</h2>
+<h3>Historical Controversies</h3>
+<ol>
+<li><strong>Colonial education model (1860-1948):</strong> The AIU's "mission civilisatrice" was criticized by Zionists, traditionalists, and local communities for:</li>
+</ol>
+<ul>
+<li>Displacing local Jewish languages (Ladino, Judeo-Arabic) with French</li>
+<li>Creating cultural alienation between French-educated elites and their communities</li>
+<li>Serving French colonial interests rather than Jewish self-determination</li>
+<li>Initially teaching exclusively in French (Hebrew was added only after Zionist Congress pressure)</li>
+</ul>
+<ol>
+<li><strong>Ultra-Orthodox opposition (1867-1912):</strong> Jerusalem and Safed schools faced fierce opposition from Ashkenazi rabbis who:</li>
+</ol>
+<ul>
+<li>Condemned the secular curriculum as "apostasy"</li>
+<li>Persecuted families who sent children to AIU schools</li>
+<li>The 1867 Jerusalem school was forced to close after three years due to rabbinical opposition</li>
+</ul>
+<ol>
+<li><strong>Anti-Zionism (pre-1945):</strong> The AIU actively opposed Jewish nationalism, preferring assimilation into French culture -- putting it in direct conflict with the Zionist movement that eventually created Israel</li>
+</ol>
+<h3>Modern Controversies</h3>
+<ol>
+<li><strong>Mikveh Israel land disputes:</strong> The 3,300-dunam campus near Tel Aviv has been the subject of development pressures:</li>
+</ol>
+<ul>
+<li>Holon municipality has plans for the area</li>
+<li>After 150 years, public access through the campus is being expanded (Ynet report)</li>
+<li>The 1976 law protects the land but creates tension between preservation and urban development needs</li>
+</ul>
+<ol>
+<li><strong>Haifa school transfer (2023):</strong> The Alliance High School in Haifa was transferred to municipal ownership -- potentially indicating a retreat from direct school operation in Israel</li>
+</ol>
+<ol>
+<li><strong>Financial decline:</strong> Paris HQ revenue collapsed from $25M (2018) to $2.1M (2024), raising questions about long-term viability of Israeli operations dependent on Paris funding</li>
+</ol>
+<h3>No Major Scandals Found</h3>
+<p>Unlike organizations like Dror Israel (housing controversies, political activism) or ACRI (legal battles, BDS-adjacent funding), KIAH appears to operate without major public scandals. This may reflect both genuinely clean operations and relatively low public profile compared to more activist organizations.</p>
+
+</div>
+<div class="section" id="section-9">
+<h2>Values Alignment Table</h2>
+<p>Assessment framework for the דירוג ערים project (scoring the organization's alignment with traditional/Zionist vs. progressive/universalist values):</p>
+<table>
+<tr><th>Value Dimension</th><th>Score (1=traditional, 5=progressive)</th><th>Evidence</th></tr>
+<tr><td><strong>Jewish Identity</strong></td><td>3 -- "Social Judaism," humanistic, pluralistic</td><td>Morasha program promotes tikkun olam-inflected Judaism, not halakhic observance</td></tr>
+<tr><td><strong>Zionism</strong></td><td>3 -- Pro-Zionist since 1945 but not Zionist-first</td><td>Was anti-Zionist until 1945; current programs mention Zionism alongside universalist values</td></tr>
+<tr><td><strong>Educational Approach</strong></td><td>2 -- Secular excellence, periphery-focused</td><td>Sodkot, Yesharim focus on academic achievement; no progressive activism content</td></tr>
+<tr><td><strong>Gender</strong></td><td>4 -- Active gender-equality programming</td><td>Sodkot is explicitly feminist STEM program; 40+ schools, corporate partnerships</td></tr>
+<tr><td><strong>Foreign Influence</strong></td><td>5 -- Significant French governance and funding</td><td>Paris HQ controls governance; co-owns land; French-Israeli School; financial dependence</td></tr>
+<tr><td><strong>Political Activism</strong></td><td>1 -- No political activism detected</td><td>Unlike ACRI/HaShomer/Dror, no political campaigns or legal advocacy</td></tr>
+<tr><td><strong>Coexistence/Interfaith</strong></td><td>3 -- Historical Arab-Jewish programs</td><td>Jerusalem deaf school was joint Jewish-Arab; some interfaith mentions in programs</td></tr>
+<tr><td><strong>Overall Assessment</strong></td><td>3 -- Moderate</td><td>Educational excellence org with French Republican values DNA; not a political actor</td></tr>
+</table>
+
+</div>
+<div class="section" id="section-10">
+<h2>Open Questions</h2>
+<ol>
+<li><strong>What is the actual total budget of KIAH Israel operations?</strong> The 377K Gefen figure is clearly a fraction. Need GuideStar IL financial filings (JS-rendered, not scrape-able).</li>
+</ol>
+<ol>
+<li><strong>How much money flows from Paris HQ to the Israeli branch annually?</strong> The US 990 doesn't break out Israel-specific grants.</li>
+</ol>
+<ol>
+<li><strong>What caused the 92% revenue decline at Paris HQ</strong> ($25M in 2018 to $2.1M in 2024)? Is this accounting reclassification, loss of French government support, or organizational decline?</li>
+</ol>
+<ol>
+<li><strong>Why was the 2017 "long-term projects" transfer so large</strong> (1.45M NIS)? What project was this?</li>
+</ol>
+<ol>
+<li><strong>What is the Posen Foundation grant amount?</strong> They list KIAH as a grantee but don't disclose the sum.</li>
+</ol>
+<ol>
+<li><strong>What happened to the Darca partnership?</strong> In 2010, KIAH transferred school management to the Darca network (Rashi Foundation partnership). What does KIAH still operate directly vs. through Darca?</li>
+</ol>
+<ol>
+<li><strong>Is the Kerem Institute's "humanistic Jewish education" approach influencing state-secular school curricula</strong> at scale? 120 teachers trained/year could have significant downstream impact.</li>
+</ol>
+<ol>
+<li><strong>What is the French government's financial contribution</strong> to the French-Israeli School at Mikve Israel? This is a binational state project -- the funding should be documentable.</li>
+</ol>
+<ol>
+<li><strong>Are there Knesset committee minutes</strong> from oversight of the Mikve Israel law? These would reveal the political dynamics of French-Israeli co-governance.</li>
+</ol>
+<ol>
+<li><strong>What specific programs does KIAH run in Netivot and Kiryat Gat</strong> (the Gefen-mapped cities in Israel's periphery)? These are traditionally religious Sephardic communities -- how does "social Judaism" land there?</li>
+</ol>
+
+</div>
+<div class="section" id="section-11">
+<h2>Source References</h2>
+<h3>Primary Sources Consulted</h3>
+<ul>
+<li>GuideStar Israel: https://www.guidestar.org.il/organization/580010890</li>
+<li>ProPublica Nonprofit Explorer (EIN 98-6001112): https://projects.propublica.org/nonprofits/organizations/986001112</li>
+<li>ProPublica Nonprofit Explorer (EIN 13-5626342): https://projects.propublica.org/nonprofits/organizations/135626342</li>
+<li>obudget.org API: Government transfers to entity 580010890</li>
+<li>KIAH official website: https://www.kiah.org.il/en/</li>
+<li>Mikve Israel official website: https://www.mikveisrael.org.il/</li>
+<li>Jewish Virtual Library: https://www.jewishvirtuallibrary.org/alliance-israelite-universelle</li>
+<li>HaMichlol (Hebrew encyclopedia): https://www.hamichlol.org.il/כל_ישראל_חברים</li>
+<li>Trump Foundation: https://www.trump.org.il/en/partner/alliance</li>
+<li>Posen Foundation: https://www.posenfoundation.co.il/en/our_grants/כל-ישראל-חברים-כיח-2/</li>
+<li>AIU Paris website: https://www.aiu.org/en/</li>
+<li>Britannica: https://www.britannica.com/topic/Alliance-Israelite-Universelle</li>
+<li>Encyclopedia.com: https://www.encyclopedia.com/humanities/encyclopedias-almanacs-transcripts-and-maps/alliance-israelite-universelle-aiu</li>
+</ul>
+
+</div>
+</div>
+
+<footer>
+  פרויקט זהות ציונית — דוח מחקר מעמיק | <a href="../">דירוג ערים</a> | <a href="../research/">כל הדוחות</a>
+</footer>
+
+</body>
+</html>

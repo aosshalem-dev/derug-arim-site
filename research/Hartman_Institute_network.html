@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>רשת מכון שלום הרטמן — דוח מחקר מעמיק</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background: #f5f5f8;
+  color: #1a1a2e;
+  direction: rtl;
+  line-height: 1.8;
+  font-size: 17px;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #1a1a2e; color: #fff;
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  overflow-x: auto; white-space: nowrap;
+}
+nav .brand { font-weight: 700; color: #ff8800; flex-shrink: 0; }
+nav a { color: #ccc; text-decoration: none; font-size: 0.85em; padding: 8px 4px; border-bottom: 2px solid transparent; flex-shrink: 0; }
+nav a:hover { color: #ff8800; border-bottom-color: #ff8800; }
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a5a8a 100%);
+  color: #fff; padding: 50px 20px 40px; text-align: center;
+}
+.hero h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+.hero .subtitle { font-size: 1.05em; color: #b0c4de; margin-bottom: 6px; }
+.hero .meta { font-size: 0.9em; color: #ff8800; margin-top: 8px; }
+.risk-badge {
+  display: inline-block; padding: 4px 16px; border-radius: 20px;
+  font-size: 0.85em; font-weight: 600; margin-top: 10px;
+}
+.risk-high { background: #e74c3c; color: #fff; }
+.risk-medium { background: #f39c12; color: #fff; }
+.risk-low { background: #27ae60; color: #fff; }
+.container { max-width: 860px; margin: 0 auto; padding: 30px 20px 80px; }
+.toc {
+  background: #fff; border-radius: 8px; padding: 22px 26px;
+  margin-bottom: 32px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.toc h2 { font-size: 1.15em; color: #2a5a8a; margin-bottom: 12px; border-bottom: 2px solid #667eea; padding-bottom: 6px; }
+.toc ol { padding-right: 22px; font-size: 0.93em; }
+.toc li { margin-bottom: 4px; }
+.toc a { color: #2a5a8a; text-decoration: none; }
+.toc a:hover { color: #ff8800; text-decoration: underline; }
+.section {
+  background: #fff; border-radius: 8px; padding: 28px 26px;
+  margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.section h2 { font-size: 1.4em; color: #1a1a2e; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #667eea; }
+.section h3 { font-size: 1.1em; color: #2a5a8a; margin: 18px 0 8px; }
+.section h4 { font-size: 1em; color: #444; margin: 14px 0 6px; }
+.section p { margin-bottom: 12px; text-align: justify; }
+.section ul, .section ol { padding-right: 22px; margin-bottom: 12px; }
+.section li { margin-bottom: 5px; }
+blockquote {
+  background: #f0f4fa; border-right: 4px solid #667eea;
+  padding: 12px 18px; margin: 12px 0; border-radius: 0 6px 6px 0;
+  font-size: 0.94em; color: #333;
+}
+.thesis {
+  background: #fff8f0; border-right: 3px solid #ff8800;
+  padding: 14px 18px; margin: 12px 0; border-radius: 0 5px 5px 0;
+  font-size: 0.96em; color: #6b4500;
+}
+table {
+  width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.91em;
+}
+th {
+  background: #667eea; color: #fff; padding: 8px 12px;
+  text-align: right; position: sticky; top: 44px; z-index: 5;
+}
+td {
+  padding: 7px 12px; border-bottom: 1px solid #e8e8e8;
+  text-align: right; vertical-align: top;
+}
+tr:nth-child(even) { background: #f8f9fc; }
+a { color: #2a5a8a; }
+a:hover { color: #ff8800; }
+.back-link {
+  display: inline-block; margin-bottom: 20px; padding: 6px 14px;
+  background: #667eea; color: #fff; border-radius: 4px;
+  text-decoration: none; font-size: 0.88em;
+}
+.back-link:hover { background: #5a6fd6; color: #fff; }
+footer {
+  text-align: center; padding: 30px 20px; color: #888; font-size: 0.85em;
+}
+strong { color: #1a1a2e; }
+code {
+  background: #f0f0f0; padding: 1px 5px; border-radius: 3px;
+  font-size: 0.9em;
+}
+.source-tag {
+  display: inline-block; background: #e8eef6; padding: 2px 8px;
+  border-radius: 10px; font-size: 0.78em; color: #2a5a8a;
+  margin: 2px 3px; text-decoration: none;
+}
+.source-tag:hover { background: #d0dff0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">דוח מחקר מעמיק</span>
+  <a href="../">חזרה לדירוג</a>
+  <a href="../research/">כל הדוחות</a>
+  <a href="#section-1">פרק 3: ניתוח כספי ומ</a> <a href="#section-2">פרק 4: אידיאולוגיה ו</a> <a href="#section-3">פרק 5: תכנים בעייתיי</a> <a href="#section-4">פרק 6: פרשות, חשדות </a> <a href="#section-5">פרק 7: השפעה על מדינ</a> <a href="#section-6">פרק 8: ניתוח לפי עול</a> <a href="#section-7">פרק 9: סיכום ומסקנות</a> <a href="#section-8">מקורות</a>
+</nav>
+
+<div class="hero">
+  <h1>רשת מכון שלום הרטמן</h1>
+  <div class="subtitle">פרק 1: זהות ארגונית, רשת עמותות ומבנה שליטה</div>
+  <div class="meta">מבנה הרשת הארגוני</div>
+  
+</div>
+
+<div class="container">
+  <a href="../research/" class="back-link">← כל דוחות המחקר</a>
+  <div class="toc"><h2>תוכן עניינים</h2><ol><li><a href="#section-1">פרק 3: ניתוח כספי ומקורות מימון</a></li><li><a href="#section-2">פרק 4: אידיאולוגיה ופדגוגיה — חדירת הפדגוגיה הביקורתית</a></li><li><a href="#section-3">פרק 5: תכנים בעייתיים והשפעה על חינוך וערכים</a></li><li><a href="#section-4">פרק 6: פרשות, חשדות ואי-סדרים</a></li><li><a href="#section-5">פרק 7: השפעה על מדיניות ציבורית וקשרים עם הממשל</a></li><li><a href="#section-6">פרק 8: ניתוח לפי עולם הערכים — התאמה וסתירה</a></li><li><a href="#section-7">פרק 9: סיכום ומסקנות — מפת הסיכונים</a></li><li><a href="#section-8">מקורות</a></li></ol></div>
+  <div class="section" id="section-1">
+<h2>פרק 3: ניתוח כספי ומקורות מימון</h2>
+<h3>תקציב שנתי והכנסות</h3>
+<p><strong>מכון שלום הרטמן-ישראל:</strong></p>
+<p>על פי נתוני מפתח התקציב (obudget.org.il), המכון קיבל <strong>₪15,516 בלבד מחוזי ממשלה ישראליים בשלוש השנים האחרונות</strong> – סכום זניח המעיד על כך שהמכון בישראל כמעט ואינו מתוקצב ממקורות ממשלתיים ישראליים.</p>
+<p><strong>מכון הרטמן צפון אמריקה:</strong></p>
+<p>על פי דיווחי IRS 990 (ProPublica Nonprofit Explorer), הארגון האמריקאי העביר <strong>גרנטים בסך $10,570,050 בשנת 2024</strong> (על פי נתוני פברואר 2026). טווח התרומות הטיפוסי: <strong>$10,016,250–$10,581,550</strong>.</p>
+<p><strong>סיכום:</strong> המכון מתוקצב כמעט לחלוטין ממקורות פרטיים זרים, בעיקר מארה"ב.</p>
+<h3>תורמים עיקריים ומקורות מימון זרים</h3>
+<p><strong>1. קרן CLAWS Foundation (קלוז):</strong></p>
+<p><strong>התורם הגדול ביותר למכון הרטמן בעשור 2010-2020</strong>, עם תרומות <strong>שעלו על $25 מיליון</strong>. קרן קלוז מנוהלת על ידי:</p>
+<ul>
+<li><strong>Jeffrey Yass</strong> – מיליארדר אמריקאי, ממייסדי חברת המסחר Susquehanna International Group.</li>
+<li><strong>Arthur Dantchik</strong> – שותף עסקי של Yass.</li>
+</ul>
+<p><strong>ממצא קריטי:</strong> Yass ו-Dantchik הם גם <strong>התורמים המרכזיים של פורום קהלת</strong> – המכון הליברטריאני-שמרני בישראל שמזוהה עם הימין. לפי חשיפה בהארץ (פברואר 2023), מכון הרטמן קיבל מימון מאותם מיליארדרים אמריקאים שתומכים בפורום קהלת, <strong>מה שמעורר שאלות על אינטרסים כלכליים פוליטיים אפשריים</strong>.</p>
+<p><strong>2. קרן Jim Joseph Foundation:</strong></p>
+<p>על פי מקורות אמריקאיים, מכון הרטמן קיבל מענק של <strong>$1 מיליון</strong> לשלוש שנים לתוכנית iEngage בחוף המערבי של ארה"ב.</p>
+<p><strong>3. מקורות נוספים:</strong></p>
+<ul>
+<li><strong>תורמים יהודים אמריקאים פרטיים</strong> – על פי דיווחי המכון, הבניין הנוכחי (שנבנה ב-1994) מומן בעיקרו על ידי תרומות מיהדות אמריקה.</li>
+<li><strong>מימון מקבוצות יהודיות בקנדה, ארה"ב ואירופה</strong> דרך ה-North America branch.</li>
+</ul>
+<h3>האם יש קשר לקרן החדשה או לקרן פורד?</h3>
+<p><strong>לא נמצאו ראיות ישירות למימון מהקרן החדשה (New Israel Fund) או מקרן פורד (Ford Foundation)</strong> במקורות הזמינים.</p>
+<p>עם זאת:</p>
+<ul>
+<li><strong>קרן פורד העבירה $40 מיליון לארגונים בישראל דרך הקרן החדשה בשנים 2003-2013</strong>, אך המימון הופסק ב-2013.</li>
+<li><strong>אין אזכור של מכון הרטמן כמקבל של מימון זה</strong>.</li>
+<li>המכון <strong>אינו מופיע במסדי הנתונים של NGO Monitor</strong> כמי שמקבל מימון מקרנות פוליטיות זרות.</li>
+</ul>
+<p><strong>מסקנה:</strong> המכון מממן את עצמו מתורמים פרטיים בעלי אמצעים, בעיקר יהודים אמריקאים, <strong>ללא תלות במימון ממשלתי ישראלי או במימון מקרנות פוליטיות מפורשות כמו הקרן החדשה</strong>. עם זאת, <strong>ריכוז המימון בידי מיליארדרים אמריקאים בודדים</strong> מעורר חשש לגבי השפעה של אינטרסים חוץ-ישראליים על המכון.</p>
+<h3>ממצאי ביקורת</h3>
+<p><strong>לא נמצאו דיווחים על ביקורות שליליות, חריגות כספיות או שערוריות תקציביות הקשורות למכון הרטמן</strong>. המכון פועל באופן שקוף יחסית ומדווח על מימונו.</p>
+
+</div>
+<div class="section" id="section-2">
+<h2>פרק 4: אידיאולוגיה ופדגוגיה — חדירת הפדגוגיה הביקורתית</h2>
+<h3>הגישה הפדגוגית והאידיאולוגית של המכון</h3>
+<p>מכון שלום הרטמן מגדיר את עצמו כ<strong>"מרכז פלורליסטי למחקר, להגות, ולחינוך יהודי"</strong> ומטרתו המוצהרת:</p>
+<blockquote>"להעמיק ולחדש את השיח הערכי בנושאי יהדות וישראליות במאה ה-21, פלורליזם דתי, מדינה יהודית ודמוקרטית, מדינת ישראל והעם היהודי, ויחסי היהדות עם דתות העולם."</blockquote>
+<h3>האם המכון משתמש בפדגוגיה ביקורתית?</h3>
+<p><strong>תשובה: כן, אך באופן עדין ומתוחכם יותר מאשר בארגונים פרוגרסיביים רדיקליים.</strong></p>
+<p><strong>מאפיינים של פדגוגיה ביקורתית במכון הרטמן:</strong></p>
+<ol>
+<li><strong>פלורליזם כערך עליון:</strong> המכון מקדם את הפלורליזם הדתי והזהותי <strong>כערך מוחלט</strong>, תוך ביקורת משתמעת (ולעיתים מפורשת) כלפי:</li>
+</ol>
+<ul>
+<li><strong>אורתודוקסיה מסורתית</strong> – המכון מקדם הסמכת רבניות לנשים ושוויון מגדרי בהלכה, מה שעומד בניגוד לגישות אורתודוכסיות קלאסיות.</li>
+<li><strong>לאומיות חזקה</strong> – המכון ביקר את הציונות הדתית ואת "ארץ ישראל השלמה" כאמור בפרק 2.</li>
+</ul>
+<ol>
+<li><strong>ביקורת של מבני כוח דתיים מסורתיים:</strong></li>
+</ol>
+<ul>
+<li>המכון מקדם <strong>רבנות ישראלית פלורליסטית</strong> – רבנים מכל הזרמים (כולל רבניות, רבנים רפורמים, קונסרבטיבים וחילוניים).</li>
+<li>מדרשיית הרטמן לבנות מוגדרת כ<strong>"בית ספר ניסיוני בתחום הפמיניזם הדתי"</strong> המשלב <strong>"אידיאולוגיה פמיניסטית"</strong> עם לימודי תורה.</li>
+</ul>
+<ol>
+<li><strong>שיח דמוקרטי ליברלי כמסגרת לכל דיון:</strong> המכון ממסגר את השיח היהודי דרך עדשה של <strong>ליברליזם פוליטי מערבי</strong>: זכויות אדם, שוויון מגדרי, דמוקרטיה ליברלית. מסגרת זו <strong>אינה ניטרלית</strong> – היא מניחה מערכת ערכים מערבית מסוימת כנורמטיבית.</li>
+</ol>
+<ol>
+<li><strong>ביקורת "מעדנת" של מבנים מסורתיים:</strong> המכון אינו משתמש במינוח פוסט-קולוניאלי או ביקורתי רדיקלי (כמו "דיכוי", "דה-קולוניזציה"), אך <strong>באופן פרקטי</strong> הוא מערער על סמכויות דתיות מסורתיות (הרבנות הראשית, ההלכה המסורתית) ומקדם <strong>רב-קוליות</strong> ו<strong>דמוקרטיזציה של הסמכות הדתית</strong>.</li>
+</ol>
+<h3>"התקה סמנטית" — שימוש במונחים מסורתיים עם תוכן פרוגרסיבי</h3>
+<p><strong>כן, זהו מאפיין מרכזי של עבודת המכון.</strong></p>
+<p><strong>דוגמאות:</strong></p>
+<ul>
+<li><strong>"פלורליזם"</strong> – המכון משתמש במושג כדי לתאר מצב בו כל הזרמים בעם היהודי שווים לגיטימיים, <strong>כולל זרמים שאינם שומרי הלכה</strong> (רפורמים, חילוניים). זהו שינוי משמעותי מהמובן המסורתי של "מחלוקת לשם שמיים" באורתודוקסיה.</li>
+</ul>
+<ul>
+<li><strong>"מדינה יהודית ודמוקרטית"</strong> – המכון מפרש "יהודית" כ<strong>"דמוקרטית יותר"</strong>, דהיינו: יהדות = ליברליזם. זהו היפוך של הגישה המסורתית לפיה "יהודית" = נאמנות להלכה ולמסורת.</li>
+</ul>
+<ul>
+<li><strong>"זהות יהודית"</strong> – תוכנית "בארי" במערכת החינוך מקדמת <strong>"זהות יהודית-ישראלית פלורליסטית"</strong>, שמשמעותה: זהות רכה, מגוונת, לא נורמטיבית, המשלבת ערכים מערביים ליברליים תוך ויתור על אלמנטים נורמטיביים (כמו קדושת שבת, כשרות, שמירת הלכה).</li>
+</ul>
+<h3>האם הפדגוגיה ממסגרת את החברה הקיימת כמערכת דיכוי?</h3>
+<p><strong>לא באופן מפורש</strong>, אך ישנם אלמנטים ביקורתיים:</p>
+<ul>
+<li><strong>ביקורת הרבנות הראשית</strong> כמוסד המונופוליסטי והדוחה קבוצות (נשים, לא-אורתודוכסים).</li>
+<li><strong>ביקורת המערכת החינוכית המסורתית</strong> כמי שאינה מקדמת מספיק פלורליזם ושוויון.</li>
+<li><strong>ביקורת הציונות הדתית</strong> כמי שכובלת את הציונות לאידיאולוגיה לאומנית-דתית צרה.</li>
+</ul>
+<p><strong>אך:</strong> המכון אינו ביקורתי רדיקלי כלפי המדינה או הציונות <strong>כפרויקט</strong> – להיפך, הוא תומך במדינה יהודית ודמוקרטית ובציונות ליברלית.</p>
+<h3>מילות מפתח בתכנים</h3>
+<p><strong>נמצאו בתכני המכון:</strong></p>
+<ul>
+<li><strong>צדק חברתי</strong> – כן, בהקשר יהודי (צדק, צדקה, צדק משפט).</li>
+<li><strong>שוויון מגדרי</strong> – כן, בולט מאוד (רבניות, מדרשיית פמיניסטית, "סדר נשים").</li>
+<li><strong>פלורליזם</strong> – מושג מרכזי וחוזר.</li>
+<li><strong>דמוקרטיה</strong> – מושג מרכזי.</li>
+<li><strong>פוסט-לאומי</strong> – לא נמצא במפורש, אך יש ביקורת על לאומיות חזקה.</li>
+<li><strong>דה-קולוניזציה</strong> – לא נמצא.</li>
+</ul>
+<p><strong>מסקנה:</strong> המכון <strong>משתמש בפדגוגיה ליברלית-ביקורתית מתונה</strong>, שאינה רדיקלית אך <strong>מערערת על מבנים מסורתיים</strong> בעם היהודי ובחברה הישראלית תוך קידום ערכים פרוגרסיביים כמו שוויון מגדרי, פלורליזם דתי וליברליזם פוליטי.</p>
+
+</div>
+<div class="section" id="section-3">
+<h2>פרק 5: תכנים בעייתיים והשפעה על חינוך וערכים</h2>
+<h3>תכנים מיניים/מגדריים לקטינים</h3>
+<p><strong>לא נמצאו ראיות לתכנים מיניים מפורשים המיועדים לקטינים</strong> בתוכניות המכון.</p>
+<p><strong>אולם:</strong></p>
+<ul>
+<li><strong>מדרשיית הרטמן לבנות</strong> היא תיכון דתי-פמיניסטי המשלב <strong>"אידיאולוגיה פמיניסטית"</strong> עם לימודי תורה. זה עשוי לכלול תכנים על שוויון מגדרי, ביקורת של מבני כוח גבריים בהלכה, ושאלות על תפקידי מגדר מסורתיים.</li>
+</ul>
+<ul>
+<li><strong>"סדר נשים" – בית מדרש ליהדות ומגדר</strong> הוא תוכנית אקדמית למבוגרים העוסקת בפמיניזם יהודי ובסוגיות מגדר. אין ראיות שתכנים אלו מועברים לילדים צעירים.</li>
+</ul>
+<h3>תוכן המערער על מבנה משפחתי, זהות לאומית או מסורת דתית</h3>
+<p><strong>כן, קיימים תכנים מסוג זה:</strong></p>
+<p><strong>1. מבנה משפחתי:</strong></p>
+<ul>
+<li>המכון <strong>לא נמצא כמי שמקדם מבנים משפחתיים אלטרנטיביים</strong> (למשל, זוגיות חד-מינית), אך הוא כן <strong>מקדם שוויון מגדרי בתפקידים משפחתיים וקהילתיים</strong> (רבניות, מנהיגות נשים).</li>
+<li><strong>ביקורת חריפה על התנגדות לנישואי תערובת:</strong> פרופ' אביעם רוזנק ביקר את המכון (בספרו "זהויות מתנגשות") והאשים את דניאל הרטמן ב<strong>"תמיכה אידיאולוגית וחינוכית בנישואי תערובת"</strong> – טענה חמורה בעיני הממסד הדתי. המכון לא הכחיש זאת במפורש.</li>
+</ul>
+<p><strong>2. זהות לאומית:</strong></p>
+<ul>
+<li><strong>ביקורת הציונות הדתית</strong> והתנגדות ל"ארץ ישראל השלמה" (כאמור בפרק 2).</li>
+<li><strong>קידום "זהות יהודית-ישראלית פלורליסטית"</strong> בתוכנית "בארי" – זהות רכה ומגוונת, שאינה מבוססת על נורמות הלכתיות מחייבות או על נרטיב לאומי חזק.</li>
+</ul>
+<p><strong>3. מסורת דתית:</strong></p>
+<ul>
+<li><strong>המכון מקדם פלורליזם דתי</strong>, כלומר: <strong>שוויון לגיטימי בין כל הזרמים</strong> (אורתודוקסיה, קונסרבטיבים, רפורמים, חילוניים). זהו <strong>ערעור מובנה של הסמכות ההלכתית המסורתית</strong> והרבנות הראשית.</li>
+<li><strong>תמיכה ברבניות</strong> ובשוויון מגדרי בהלכה – <strong>סתירה ישירה לעמדות אורתודוכסיות מסורתיות</strong>.</li>
+</ul>
+<h3>האם המנחים מוכשרים באידיאולוגיה או בפסיכולוגיה התפתחותית?</h3>
+<p><strong>תוכנית "בארי" (הפעילה בבתי ספר):</strong></p>
+<ul>
+<li>המכון מכשיר <strong>מורים</strong> (לא רק מנחים) בתחום תרבות יהודית-ישראלית ומעניק <strong>הרחבת הסמכה לתעודת הוראה</strong>.</li>
+<li>המכון מספק <strong>ליווי פדגוגי</strong> ומנחים מלווים את יישום התוכנית בבתי הספר.</li>
+<li><strong>לא נמצא מידע על הכשרה פסיכולוגית מקצועית</strong> של המנחים בהתפתחות ילדים.</li>
+</ul>
+<p><strong>מרכז "בשבילנו":</strong></p>
+<ul>
+<li>מנחים פועלים <strong>בפיקוח משרד החינוך</strong> ותחת ארגון הגג "זהות".</li>
+<li><strong>נוכחות מורה בכיתה חובה</strong> במהלך הפעילויות, מה שמספק מידה של פיקוח פדגוגי.</li>
+<li><strong>לא נמצא מידע על רמת ההכשרה הפסיכולוגית</strong> של המנחים.</li>
+</ul>
+<h3>סיכום – השפעה על ערכים</h3>
+<p><strong>המכון משפיע על ערכים בדרכים הבאות:</strong></p>
+<ol>
+<li><strong>מחליש נורמטיביות הלכתית מסורתית</strong> – מקדם פלורליזם כשוויון לגיטימי בין כל הזרמים.</li>
+<li><strong>מקדם שוויון מגדרי רדיקלי</strong> – רבניות, פמיניזם דתי, ביקורת מבני כוח גבריים.</li>
+<li><strong>מערער זהות לאומית חזקה</strong> – ביקורת הציונות הדתית, התנגדות ל"ארץ ישראל השלמה".</li>
+<li><strong>מקדם ליברליזם כערך יהודי עליון</strong> – דמוקרטיה, זכויות אדם, פלורליזם כמהות היהדות.</li>
+</ol>
+<p><strong>לא נמצאו ראיות לתכנים מיניים בעייתיים לקטינים</strong>, אך <strong>קיימת השפעה אידיאולוגית ברורה</strong> לכיוון ליברליזם דתי ופוליטי.</p>
+
+</div>
+<div class="section" id="section-4">
+<h2>פרק 6: פרשות, חשדות ואי-סדרים</h2>
+<h3>תחקירים תקשורתיים</h3>
+<p><strong>חשיפת הארץ (פברואר 2023): "מכון הרטמן קיבל מימון ממיליארדרים אמריקאים שתומכים בפורום קהלת"</strong></p>
+<p>כתבה מרכזית בהארץ חשפה כי <strong>מכון הרטמן קיבל למעלה מ-$25 מיליון בשנים 2010-2020 מקרן CLAWS</strong>, שמנוהלת על ידי Jeffrey Yass ו-Arthur Dantchik – <strong>אותם מיליארדרים שתומכים בפורום קהלת</strong>, המכון הליברטריאני-שמרני בישראל.</p>
+<p><strong>הבעייתיות:</strong></p>
+<ul>
+<li><strong>פורום קהלת</strong> מזוהה עם הימין הכלכלי והפוליטי בישראל ותומך ברפורמת המשפט.</li>
+<li><strong>מכון הרטמן</strong> מזוהה עם השמאל הליברלי ומתנגד לרפורמת המשפט.</li>
+<li><strong>אותם תורמים תומכים בשני המוסדות</strong> – מה שמעורר שאלות על:</li>
+<li><strong>אינטרסים כלכליים</strong> של התורמים (Yass הוא ליברטריאני שמאל-ימין בעניינים כלכליים).</li>
+<li><strong>השפעה זרה</strong> על שיח ציבורי ישראלי משני הצדדים של המפה הפוליטית.</li>
+</ul>
+<p><strong>תגובת המכון:</strong> המכון לא הכחיש את המימון, אך הדגיש את עצמאותו האידיאולוגית ואת העובדה שהוא אינו משנה עמדותיו בהתאם לתורמים.</p>
+<h3>שערוריות כספיות</h3>
+<p><strong>לא נמצאו שערוריות כספיות, ממצאי ביקורת שליליים או דיווחים על חריגות תקציביות</strong> הקשורות למכון הרטמן. המכון נראה מנוהל באופן פיננסי תקין.</p>
+<h3>תביעות SLAPP (השתקת ביקורת)</h3>
+<p><strong>לא נמצאו דיווחים על תביעות SLAPP</strong> שהגיש המכון נגד מבקרים.</p>
+<h3>פרשות אחרות</h3>
+<p><strong>ביקורת אקדמית – פרופ' אביעם רוזנק:</strong></p>
+<p>בספרו "זהויות מתנגשות" (2018), רוזנק <strong>האשים את המכון ואת דניאל הרטמן בתמיכה אידיאולוגית וחינוכית בנישואי תערובת</strong> ובאימוץ מוחלט של ליברליזם המערער את הזהות היהודית המובחנת.</p>
+<p><strong>זוהי ביקורת אקדמית-אידיאולוגית</strong>, לא פרשה משפטית או פלילית, אך היא מצביעה על <strong>מתח עמוק בין גישת המכון לבין עמדות דתיות-שמרניות בעם היהודי</strong>.</p>
+<h3>סיכום</h3>
+<p><strong>אין פרשות משפטיות או כספיות מהותיות הקשורות למכון הרטמן</strong>. החשיפה העיקרית היא <strong>מימון ממיליארדרים אמריקאים שתומכים גם בפורום קהלת</strong>, מה שמעלה שאלות על השפעה זרה ואינטרסים כלכליים, אך אין ראיות למעשים בלתי חוקיים או לא אתיים.</p>
+<p><strong>הביקורת המרכזית כלפי המכון היא אידיאולוגית</strong>: האם הוא מערער את הזהות היהודית המסורתית ומקדם ליברליזם שאינו עולה בקנה אחד עם ערכים יהודיים מסורתיים?</p>
+
+</div>
+<div class="section" id="section-5">
+<h2>פרק 7: השפעה על מדיניות ציבורית וקשרים עם הממשל</h2>
+<h3>חוזים ללא מכרז עם משרדי ממשלה</h3>
+<p><strong>תוכנית "בארי" במשרד החינוך:</strong></p>
+<ul>
+<li>תוכנית "בארי" פועלת <strong>בתיאום ובשיתוף פעולה עם משרד החינוך</strong> כבר כ-20 שנה.</li>
+<li>התוכנית <strong>אושרה על ידי משרד החינוך</strong> וכ-<strong>75 בתי ספר</strong> משתתפים בה.</li>
+<li>ספרי הלימוד של "בארי" <strong>מאושרים על ידי משרד החינוך</strong> ומשמשים בכיתות ז'-י'.</li>
+</ul>
+<p><strong>האם זהו חוזה ללא מכרז?</strong></p>
+<ul>
+<li><strong>לא נמצא מידע מפורש על אופן הזכייה בחוזה</strong> (מכרז או לא).</li>
+<li>מכון הרטמן מתנהל כ<strong>ארגון חינוכי פרטי</strong> המספק תוכנית לימודים, הכשרת מורים וליווי פדגוגי לבתי ספר. <strong>משרד החינוך מאמץ את התוכנית</strong>, אך לא בהכרח מתקשר עם המכון באופן בלעדי.</li>
+</ul>
+<p><strong>מרכז "בשבילנו":</strong></p>
+<ul>
+<li>פועל <strong>תחת ארגון הגג "זהות" בפיקוח משרד החינוך</strong>.</li>
+<li>מקבל <strong>תקציבים מקומיים ועירוניים</strong> נוסף למשרד החינוך.</li>
+<li><strong>אין מידע על חוזה ישיר</strong> בין מכון הרטמן למשרד החינוך דרך "בשבילנו".</li>
+</ul>
+<p><strong>מסקנה:</strong> <strong>אין ראיות ברורות לחוזים ללא מכרז</strong>, אך <strong>קיים שיתוף פעולה ארוך טווח עם משרד החינוך</strong> בתוכנית "בארי".</p>
+<h3>מיצוב כחיוני בעתות חירום</h3>
+<p><strong>פעילות לאחר 7 באוקטובר 2023:</strong></p>
+<ul>
+<li>תוכנית "בארי" העבירה <strong>סדנאות בבתי ספר להעלאת מודעות למצוקת החטופים</strong> (100 דקות בחטיבות ביניים ותיכונים).</li>
+<li>התלמידים עסקו ב<strong>"ערך קדושת החיים"</strong> במסגרת החינוך היהודי-ערכי.</li>
+</ul>
+<p><strong>המכון לא מיצב את עצמו כחיוני בעתות חירום</strong> (כמו ארגונים שמספקים תמיכה נפשית או לוגיסטית בשטח), אך הוא <strong>מנצל אירועים לאומיים כדי להפיץ מסרים חינוכיים</strong> בהתאם לחזונו.</p>
+<h3>בוגרי המכון במשרד החינוך ובמוסדות ציבור</h3>
+<p><strong>תוכניות להכשרת מנהיגות:</strong></p>
+<ul>
+<li>המכון מכשיר <strong>רבנים, מנהיגי קהילה, מחנכים ומורים</strong> מזרמים ליברליים (רפורמים, קונסרבטיבים, אורתודוכסים מודרניים).</li>
+<li>בוגרי המכון פועלים <strong>בקהילות, בבתי ספר ובמוסדות ציבוריים</strong>.</li>
+</ul>
+<p><strong>לא נמצא מידע מפורש על "השתלה" של בוגרי המכון במשרד החינוך או ברשויות</strong>, אך <strong>השפעתם עקיפה דרך חינוך, הכשרת מורים ומנהיגות קהילתית</strong>.</p>
+<h3>השפעה על מדיניות ציבורית</h3>
+<p><strong>המרכז ליהדות ומדינה:</strong></p>
+<ul>
+<li>יחידה במכון הרטמן <strong>שמייעצת למקבלי החלטות</strong> בנושאים כמו:</li>
+<li><strong>דת ומדינה</strong> (כשרות, נישואין, גיור).</li>
+<li><strong>זהות יהודית לאומית</strong>.</li>
+<li><strong>דמוקרטיה ישראלית</strong>.</li>
+</ul>
+<p><strong>דוגמאות להשפעה:</strong></p>
+<ul>
+<li><strong>הרב ד"ר דניאל הרטמן</strong> מרצה בכנסים ממשלתיים וציבוריים, משפיע על שיח ציבורי.</li>
+<li><strong>חוקרי המכון</strong> מפרסמים מאמרי דעה בתקשורת ומשפיעים על דעת קהל.</li>
+</ul>
+<p><strong>המכון אינו גוף לובי פורמלי</strong>, אך יש לו <strong>השפעה אידיאולוגית משמעותית</strong> על מעצבי דעה ומקבלי החלטות.</p>
+<h3>סיכום</h3>
+<p><strong>המכון פועל באופן עקיף ועדין:</strong></p>
+<ul>
+<li><strong>אין חוזים ללא מכרז ברורים</strong>, אך <strong>שיתוף פעולה ארוך טווח עם משרד החינוך</strong>.</li>
+<li><strong>אין "השתלה" מאורגנת של בוגרים</strong>, אך <strong>השפעה רחבה דרך הכשרת מנהיגות, חינוך ושיח ציבורי</strong>.</li>
+<li><strong>המכון משפיע על מדיניות ציבורית בעקיפין</strong> דרך ייעוץ, מחקר והשפעה על דעת קהל.</li>
+</ul>
+
+</div>
+<div class="section" id="section-6">
+<h2>פרק 8: ניתוח לפי עולם הערכים — התאמה וסתירה</h2>
+<p>להלן טבלת התאמה לערכים של רשת מכון שלום הרטמן:</p>
+<table>
+<tr><th>**ציר ערכי**</th><th>**עמדת הארגון**</th><th>**הערכה**</th></tr>
+<tr><td><strong>זהות יהודית ומורשת</strong></td><td>המכון מקדם פלורליזם דתי ושוויון לגיטימי בין כל הזרמים (אורתודוקסיה, קונסרבטיבים, רפורמים, חילוניים). מבקר הסמכות הרבנית המסורתית ומקדם רבניות. מחזק את הקשר ללימוד מקורות, אך <strong>מאוניברסל את התוכן</strong> (יהדות = ליברליזם).</td><td><strong>⚠️ מחליש חלקית / מאוניברסל</strong><br>המכון מקדם זהות יהודית, אך <strong>רכה, לא-נורמטיבית ומנותקת מהלכה מחייבת</strong>.</td></tr>
+<tr><td><strong>זהות לאומית ציונית</strong></td><td>המכון תומך במדינה יהודית ודמוקרטית, אך <strong>מבקר את הציונות הדתית</strong> ואת "ארץ ישראל השלמה". מקדם ציונות ליברלית פלורליסטית. נשיא המכון הצהיר: "אני לא רוצה ארץ ישראל שלמה, אני רוצה שהעם יהיה שלם".</td><td><strong>🔶 ביקורתי-מתון</strong><br>תומך בציונות, אך <strong>מערער לאומיות חזקה</strong> ומקדם פשרה טריטוריאלית וזהות רכה.</td></tr>
+<tr><td><strong>מבנה משפחתי וקהילתי</strong></td><td>המכון לא תוקף במפורש את המשפחה המסורתית, אך <strong>מקדם שוויון מגדרי רדיקלי</strong> (רבניות, פמיניזם דתי) ונאשם בתמיכה בנישואי תערובת (על ידי פרופ' רוזנק). מקדם מבנים קהילתיים פלורליסטיים.</td><td><strong>🔶 תומך חלקית / מערער</strong><br>תומך במשפחה, אך <strong>מערער תפקידי מגדר מסורתיים</strong> וסמכות גברית.</td></tr>
+<tr><td><strong>צה"ל ושירות לאומי</strong></td><td>לא נמצא מידע ישיר על עמדת המכון לגבי צה"ל ושירות. המכון <strong>אינו אנטי-צבאי</strong>, אך ביקורתו כלפי הציונות הדתית עשויה להשתמע ביקורת כלפי תרבות צבאית חזקה.</td><td><strong>⚪ ניטרלי / אין עמדה ברורה</strong><br>אין מידע מספיק לקביעת עמדה.</td></tr>
+<tr><td><strong>ערכים דמוקרטיים</strong></td><td>המכון <strong>מקדם דמוקרטיה ליברלית כערך עליון</strong>. נשיא המכון: "מדינה שהיא פחות דמוקרטית היא פחות יהודית". התנגדות מפורשת לרפורמת המשפט. קידום זכויות אדם, שוויון, פלורליזם.</td><td><strong>✅ מחזק מאוד</strong><br>דמוקרטיה ליברלית היא ליבת האידיאולוגיה של המכון.</td></tr>
+<tr><td><strong>אוריינטציה כלכלית</strong></td><td>המכון <strong>אינו עוסק בכלכלה באופן ישיר</strong>, אך מכיוון שהוא ליברלי פוליטית, ניתן להניח תמיכה ב<strong>כלכלת שוק עם רשת ביטחון סוציאלית</strong>. תורמיו (Yass, Dantchik) הם ליברטריאנים כלכליים.</td><td><strong>⚪ לא רלוונטי / אין עמדה ברורה</strong><br>המכון אינו עוסק בכלכלה.</td></tr>
+<tr><td><strong>מגדר ומיניות</strong></td><td>המכון <strong>מקדם פמיניזם דתי ושוויון מגדרי רדיקלי</strong>: רבניות, מדרשיית פמיניסטית, "סדר נשים" – בית מדרש למגדר ויהדות. <strong>אין ראיות לקידום זהות מגדרית רדיקלית</strong> (טרנסג'נדר וכו'), אך <strong>יש ביקורת חזקה של מבני כוח גבריים</strong> בהלכה ובקהילה.</td><td><strong>🔶 פמיניזם חזק / לא רדיקלי מגדרית</strong><br>שוויון מגדרי מלא, אך <strong>לא תיאוריית מגדר פוסט-מודרנית</strong>.</td></tr>
+<tr><td><strong>השפעה זרה</strong></td><td>המכון <strong>מתוקצב כמעט לחלוטין ממקורות זרים</strong>: למעלה מ-$25 מיליון מקרן CLAWS (אותם תורמים של פורום קהלת), מיליונים נוספים מיהדות אמריקה. <strong>קשרים הדוקים עם יהדות צפון אמריקה</strong>, שלה אג'נדה ליברלית.</td><td><strong>⚠️ תלות גבוהה במימון זר עם אג'נדה</strong><br>המכון תלוי במיליארדרים אמריקאים עם אינטרסים אידיאולוגיים וכלכליים.</td></tr>
+</table>
+<h3>סיכום ניתוח ערכי</h3>
+<p><strong>מכון הרטמן:</strong></p>
+<ul>
+<li>✅ <strong>מחזק:</strong> דמוקרטיה ליברלית, פלורליזם, שוויון מגדרי, לימוד מקורות יהודיים.</li>
+<li>🔶 <strong>ביקורתי/מערער:</strong> זהות לאומית חזקה, סמכות הלכתית מסורתית, תפקידי מגדר מסורתיים.</li>
+<li>⚠️ <strong>מחליש:</strong> נורמטיביות יהודית מסורתית, הלכה מחייבת, סמכות רבנית אורתודוכסית.</li>
+</ul>
+
+</div>
+<div class="section" id="section-7">
+<h2>פרק 9: סיכום ומסקנות — מפת הסיכונים</h2>
+<h3>דירוג סיכון כולל: <strong>3/5 (בינוני-גבוה)</strong></h3>
+<p><strong>נימוק:</strong></p>
+<p>מכון שלום הרטמן הוא ארגון לגיטימי, מכובד ושקוף המקדם חינוך יהודי איכותי ופלורליזם דתי. <strong>אין ראיות למעשים בלתי חוקיים, לשערוריות כספיות או לתכנים בעייתיים מפורשים</strong>.</p>
+<p><strong>אולם:</strong></p>
+<ol>
+<li><strong>תלות כמעט מוחלטת במימון זר</strong> – המכון מתוקצב כמעט לחלוטין מתורמים אמריקאים, בעיקר <strong>מיליארדרים בודדים</strong> (Yass, Dantchik) <strong>שתומכים גם בפורום קהלת</strong>. זה מעורר חשד ל<strong>השפעה זרה על שיח ציבורי ישראלי</strong>.</li>
+</ol>
+<ol>
+<li><strong>ערעור נורמטיביות יהודית מסורתית</strong> – המכון מקדם <strong>פלורליזם דתי</strong> ו<strong>שוויון מגדרי רדיקלי</strong> (רבניות), מה <strong>שמערער סמכויות דתיות מסורתיות</strong> ועשוי להחליש את הזהות היהודית הנורמטיבית בקרב דור צעיר.</li>
+</ol>
+<ol>
+<li><strong>השפעה על מערכת החינוך</strong> – תוכנית "בארי" פועלת ב-<strong>75 בתי ספר</strong> ומאושרת על ידי משרד החינוך, מה שמעניק למכון <strong>גישה רחבה לתלמידים</strong> ואפשרות להשפיע על תודעתם בכיוון ליברלי-פלורליסטי.</li>
+</ol>
+<ol>
+<li><strong>ביקורת זהות לאומית</strong> – המכון מבקר את הציונות הדתית ואת "ארץ ישראל השלמה", מה שעשוי <strong>להחליש זהות לאומית חזקה</strong> בקרב תלמידים.</li>
+</ol>
+<ol>
+<li><strong>"התקה סמנטית"</strong> – המכון משתמש במונחים מסורתיים ("יהדות", "זהות יהודית", "ציונות") אך <strong>מחדיר להם תוכן ליברלי-פרוגרסיבי</strong>, מה שעשוי לבלבל ולהטעות הורים ומחנכים.</li>
+</ol>
+<h3>רשימת סיכונים מרכזיים</h3>
+<ol>
+<li><strong>סיכון אידיאולוגי:</strong></li>
+</ol>
+<ul>
+<li><strong>ערעור נורמטיביות הלכתית</strong> – המכון מקדם פלורליזם דתי כשוויון לגיטימי, מה <strong>שמערער סמכות הלכתית ורבנית מסורתית</strong>.</li>
+<li><strong>פמיניזם רדיקלי</strong> – רבניות, ביקורת מבני כוח גבריים, מדרשיית פמיניסטית.</li>
+<li><strong>ביקורת לאומיות</strong> – התנגדות ל"ארץ ישראל השלמה" וביקורת הציונות הדתית.</li>
+</ul>
+<ol>
+<li><strong>סיכון מימון זר:</strong></li>
+</ol>
+<ul>
+<li><strong>תלות כמעט מוחלטת במיליארדרים אמריקאים</strong> – אותם תורמים תומכים גם בפורום קהלת, מה שמעלה שאלות על <strong>אינטרסים כלכליים ופוליטיים</strong>.</li>
+<li><strong>אין שקיפות מלאה</strong> לגבי השפעת התורמים על מדיניות המכון.</li>
+</ul>
+<ol>
+<li><strong>סיכון חינוכי:</strong></li>
+</ol>
+<ul>
+<li><strong>גישה רחבה למערכת החינוך</strong> – תוכנית "בארי" ב-75 בתי ספר, ספרי לימוד מאושרים על ידי משרד החינוך.</li>
+<li><strong>"התקה סמנטית"</strong> – שימוש במונחים מסורתיים עם תוכן ליברלי, מה שעשוי <strong>להטעות הורים ולהחליש זהות יהודית נורמטיבית</strong>.</li>
+</ul>
+<ol>
+<li><strong>סיכון פוליטי:</strong></li>
+</ol>
+<ul>
+<li><strong>נשיא המכון (דניאל הרטמן) מתבטא בפומבי בנושאים פוליטיים רגישים</strong> (רפורמת המשפט, החטופים, הציונות הדתית), מה שמעיד על <strong>מעורבות פוליטית פעילה</strong>.</li>
+<li><strong>המרכז ליהדות ומדינה</strong> מייעץ למקבלי החלטות בנושאי דת ומדינה, מה שמעניק <strong>השפעה על מדיניות ציבורית</strong>.</li>
+</ul>
+<ol>
+<li><strong>סיכון זהות יהודית:</strong></li>
+</ol>
+<ul>
+<li><strong>ביקורת חריפה מצד חוקרים (רוזנק)</strong> – האשמה בתמיכה בנישואי תערובת ובערעור הזהות היהודית המובחנת.</li>
+<li><strong>פלורליזם כערך עליון</strong> עשוי לגרום ל<strong>יחסיות ערכית</strong> ול<strong>היעדר נורמות מחייבות</strong>.</li>
+</ul>
+<h3>המלצות לחקירה נוספת</h3>
+<ol>
+<li><strong>בדיקת מקורות מימון מפורטת:</strong></li>
+</ol>
+<ul>
+<li><strong>מיהם כל התורמים הגדולים</strong> (מעבר ל-CLAWS)?</li>
+<li><strong>האם יש תנאים או השפעה של התורמים</strong> על תכני המכון ומדיניותו?</li>
+<li><strong>קשרים לקרנות נוספות</strong> (האם באמת אין קשר לקרן חדשה, פורד או אחרות)?</li>
+</ul>
+<ol>
+<li><strong>ניתוח תכנים פדגוגיים מעמיק:</strong></li>
+</ol>
+<ul>
+<li><strong>קריאת ספרי הלימוד של תוכנית "בארי"</strong> – מה התכנים המדויקים? האם יש תכנים בעייתיים?</li>
+<li><strong>ניתוח סדנאות "בשבילנו"</strong> – מה מועבר בפועל לילדים?</li>
+<li><strong>האם יש תכנים על זהות מגדרית, LGBT, נישואי תערובת</strong>?</li>
+</ul>
+<ol>
+<li><strong>מעקב אחר בוגרים:</strong></li>
+</ol>
+<ul>
+<li><strong>כמה בוגרי המכון משרתים במשרד החינוך, ברשויות או בארגוני חברה אזרחית?</strong></li>
+<li><strong>מהי השפעתם על מדיניות ציבורית?</strong></li>
+</ul>
+<ol>
+<li><strong>בדיקת חוזים עם משרד החינוך:</strong></li>
+</ol>
+<ul>
+<li><strong>האם תוכנית "בארי" מתקשרת עם משרד החינוך בחוזה ללא מכרז?</strong></li>
+<li><strong>מהו היקף התקציב הממשלתי לתוכנית?</strong></li>
+</ul>
+<ol>
+<li><strong>ניטור עמדות פוליטיות:</strong></li>
+</ol>
+<ul>
+<li><strong>המשך מעקב אחר התבטאויות דניאל הרטמן</strong> בנושאים פוליטיים רגישים.</li>
+<li><strong>בדיקת קשרים לארגוני מחאה</strong> ולתנועות פוליטיות.</li>
+</ul>
+<h3>קשרים לארגונים חשודים אחרים במאגר</h3>
+<p><strong>ארגונים דומים בגישה ליברלית-פלורליסטית:</strong></p>
+<ol>
+<li><strong>התנועה לליברליזם בישראל</strong> – פלורליזם דתי, זכויות אדם, דמוקרטיה.</li>
+<li><strong>התנועה היהודית הרפורמית בישראל</strong> – זרם ליברלי, שוויון מגדרי, פלורליזם.</li>
+<li><strong>ארגונים פמיניסטיים דתיים</strong> – קולך, עדין, מבוי סתום.</li>
+<li><strong>ארגוני דו-קיום יהודי-ערבי</strong> – תג מאיר, אברהם, מאצ'סום ווטש (אם המכון מעורב בתחום זה).</li>
+</ol>
+<p><strong>ארגונים עם קשרי מימון דומים:</strong></p>
+<ol>
+<li><strong>פורום קהלת</strong> – <strong>אותם תורמים אמריקאים (CLAWS Foundation)</strong> תומכים גם בהרטמן וגם בקהלת.</li>
+<li><strong>ארגונים הקשורים לקרן חדשה</strong> (אם יתגלו קשרים בעתיד).</li>
+</ol>
+<h3>מסקנה סופית</h3>
+<p><strong>מכון שלום הרטמן הוא ארגון לגיטימי, משפיע ומקצועי</strong>, המקדם חינוך יהודי איכותי, פלורליזם דתי ושיח דמוקרטי. <strong>אין ראיות למעשים בלתי חוקיים או לא אתיים</strong>.</p>
+<p><strong>אולם:</strong></p>
+<ul>
+<li><strong>תלות כמעט מוחלטת במימון זר</strong> מעוררת חשש להשפעה חיצונית על שיח ישראלי.</li>
+<li><strong>ערעור נורמטיביות יהודית מסורתית</strong> ו<strong>ביקורת זהות לאומית</strong> עשויים להחליש ערכים יהודיים וציוניים בקרב דור צעיר.</li>
+<li><strong>השפעה רחבה על מערכת החינוך</strong> דרך תוכנית "בארי" מעניקה למכון כוח רב לעצב תודעה.</li>
+</ul>
+<p><strong>המכון מייצג גישה ליברלית-פלורליסטית לגיטימית ביהדות</strong>, אך על הורים, מחנכים ומקבלי החלטות <strong>להיות מודעים לאידיאולוגיה המונחית בבסיס תכניו</strong> ולשקול האם היא עולה בקנה אחד עם ערכיהם.</p>
+
+</div>
+<div class="section" id="section-8">
+<h2>מקורות</h2>
+<h3>פרק 1:</h3>
+<ul>
+<li><a href="https://heb.hartman.org.il/board-of-directors/" target="_blank" rel="noopener">דירקטוריון - מכון הרטמן</a></li>
+<li><a href="https://www.guidestar.org.il/organization/511021156" target="_blank" rel="noopener">GuideStar Israel - מכון שלום הרטמן</a></li>
+<li><a href="https://heb.hartman.org.il/person/shiri-mersel/" target="_blank" rel="noopener">שירי וינטר-מרזל - מנכ"לית</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Shalom_Hartman_Institute" target="_blank" rel="noopener">Wikipedia - Shalom Hartman Institute</a></li>
+</ul>
+<h3>פרק 2:</h3>
+<ul>
+<li><a href="https://he.wikipedia.org/wiki/%D7%93%D7%A0%D7%99%D7%90%D7%9C_%D7%94%D7%A8%D7%98%D7%9E%D7%9F" target="_blank" rel="noopener">ויקיפדיה - דניאל הרטמן</a></li>
+<li><a href="https://heb.hartman.org.il/donniel-hartman-on-channel-13/" target="_blank" rel="noopener">ראיון ערוץ 13 - דניאל הרטמן</a></li>
+<li><a href="https://heb.hartman.org.il/topic/judicial-reform/" target="_blank" rel="noopener">הרפורמה המשפטית - מכון הרטמן</a></li>
+<li><a href="https://www.haaretz.co.il/gallery/galleryfriday/2025-04-24/ty-article-magazine/.highlight/00000196-61aa-da53-a3fe-fbeeac480000" target="_blank" rel="noopener">הארץ - דניאל הרטמן: מדינה פחות דמוקרטית היא פחות יהודית</a></li>
+</ul>
+<h3>פרק 3:</h3>
+<ul>
+<li><a href="https://next.obudget.org/i/org/association/511021156" target="_blank" rel="noopener">מפתח התקציב - מכון הרטמן</a></li>
+<li><a href="https://projects.propublica.org/nonprofits/organizations/133014387" target="_blank" rel="noopener">ProPublica - Hartman Institute North America 990</a></li>
+<li><a href="https://www.haaretz.com/israel-news/2023-02-01/ty-article/.premium/hartman-institute-received-funds-from-u-s-billionaires-funding-attack-on-israeli-courts/00000186-0d9d-db1b-a1ce-cddde8ed0000" target="_blank" rel="noopener">הארץ - מכון הרטמן קיבל מימון ממיליארדרים שתומכים בקהלת</a></li>
+<li><a href="https://www.timesofisrael.com/hartman-institute-receives-1m-grant-for-israel-engagement-programs/" target="_blank" rel="noopener">Times of Israel - Hartman receives $1m grant</a></li>
+</ul>
+<h3>פרק 4:</h3>
+<ul>
+<li><a href="https://heb.hartman.org.il/topic/pluralism/" target="_blank" rel="noopener">פלורליזם - מכון הרטמן</a></li>
+<li><a href="https://heb.hartman.org.il/topic/feminism/" target="_blank" rel="noopener">פמיניזם - מכון הרטמן</a></li>
+<li><a href="https://heb.hartman.org.il/topic/gender/" target="_blank" rel="noopener">מגדר - מכון הרטמן</a></li>
+<li><a href="https://heb.hartman.org.il/program/beeri/" target="_blank" rel="noopener">תוכנית בארי</a></li>
+</ul>
+<h3>פרק 5:</h3>
+<ul>
+<li><a href="https://heb.hartman.org.il/program/midrashiya/" target="_blank" rel="noopener">מדרשיית הרטמן לבנות</a></li>
+<li><a href="https://heb.hartman.org.il/program/beit-midrash-for-israeli-rabbis/" target="_blank" rel="noopener">בית המדרש לרבנות ישראלית</a></li>
+<li><a href="https://www.academia.edu/103362306/" target="_blank" rel="noopener">Academia.edu - זהויות מתנגשות (רוזנק)</a></li>
+</ul>
+<h3>פרק 6:</h3>
+<ul>
+<li><a href="https://www.haaretz.com/israel-news/2023-02-01/ty-article/.premium/hartman-institute-received-funds-from-u-s-billionaires-funding-attack-on-israeli-courts/00000186-0d9d-db1b-a1ce-cddde8ed0000" target="_blank" rel="noopener">הארץ - מימון מ-CLAWS</a></li>
+<li><a href="https://forward.com/news/534641/hartman-institute-received-major-donations-from-u-s-billionaires-funding-attack-on-israeli-judiciary/" target="_blank" rel="noopener">Forward - Hartman received donations from US billionaires</a></li>
+</ul>
+<h3>פרק 7:</h3>
+<ul>
+<li><a href="https://heb.hartman.org.il/program/beeri/" target="_blank" rel="noopener">תוכנית בארי - משרד החינוך</a></li>
+<li><a href="https://heb.hartman.org.il/program/judaism-and-state-policy-center/" target="_blank" rel="noopener">המרכז ליהדות ומדינה</a></li>
+</ul>
+<h3>פרק 8-9:</h3>
+<p>כל המקורות לעיל + ניתוח משולב.</p>
+<p><strong>סיום הדוח</strong></p>
+
+</div>
+</div>
+
+<footer>
+  פרויקט זהות ציונית — דוח מחקר מעמיק | <a href="../">דירוג ערים</a> | <a href="../research/">כל הדוחות</a>
+</footer>
+
+</body>
+</html>

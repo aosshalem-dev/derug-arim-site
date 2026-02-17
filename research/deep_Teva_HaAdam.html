@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>טבע האדם / כספי אלדד — דוח מחקר מעמיק</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background: #f5f5f8;
+  color: #1a1a2e;
+  direction: rtl;
+  line-height: 1.8;
+  font-size: 17px;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #1a1a2e; color: #fff;
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  overflow-x: auto; white-space: nowrap;
+}
+nav .brand { font-weight: 700; color: #ff8800; flex-shrink: 0; }
+nav a { color: #ccc; text-decoration: none; font-size: 0.85em; padding: 8px 4px; border-bottom: 2px solid transparent; flex-shrink: 0; }
+nav a:hover { color: #ff8800; border-bottom-color: #ff8800; }
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a5a8a 100%);
+  color: #fff; padding: 50px 20px 40px; text-align: center;
+}
+.hero h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+.hero .subtitle { font-size: 1.05em; color: #b0c4de; margin-bottom: 6px; }
+.hero .meta { font-size: 0.9em; color: #ff8800; margin-top: 8px; }
+.risk-badge {
+  display: inline-block; padding: 4px 16px; border-radius: 20px;
+  font-size: 0.85em; font-weight: 600; margin-top: 10px;
+}
+.risk-high { background: #e74c3c; color: #fff; }
+.risk-medium { background: #f39c12; color: #fff; }
+.risk-low { background: #27ae60; color: #fff; }
+.container { max-width: 860px; margin: 0 auto; padding: 30px 20px 80px; }
+.toc {
+  background: #fff; border-radius: 8px; padding: 22px 26px;
+  margin-bottom: 32px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.toc h2 { font-size: 1.15em; color: #2a5a8a; margin-bottom: 12px; border-bottom: 2px solid #667eea; padding-bottom: 6px; }
+.toc ol { padding-right: 22px; font-size: 0.93em; }
+.toc li { margin-bottom: 4px; }
+.toc a { color: #2a5a8a; text-decoration: none; }
+.toc a:hover { color: #ff8800; text-decoration: underline; }
+.section {
+  background: #fff; border-radius: 8px; padding: 28px 26px;
+  margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.section h2 { font-size: 1.4em; color: #1a1a2e; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #667eea; }
+.section h3 { font-size: 1.1em; color: #2a5a8a; margin: 18px 0 8px; }
+.section h4 { font-size: 1em; color: #444; margin: 14px 0 6px; }
+.section p { margin-bottom: 12px; text-align: justify; }
+.section ul, .section ol { padding-right: 22px; margin-bottom: 12px; }
+.section li { margin-bottom: 5px; }
+blockquote {
+  background: #f0f4fa; border-right: 4px solid #667eea;
+  padding: 12px 18px; margin: 12px 0; border-radius: 0 6px 6px 0;
+  font-size: 0.94em; color: #333;
+}
+.thesis {
+  background: #fff8f0; border-right: 3px solid #ff8800;
+  padding: 14px 18px; margin: 12px 0; border-radius: 0 5px 5px 0;
+  font-size: 0.96em; color: #6b4500;
+}
+table {
+  width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.91em;
+}
+th {
+  background: #667eea; color: #fff; padding: 8px 12px;
+  text-align: right; position: sticky; top: 44px; z-index: 5;
+}
+td {
+  padding: 7px 12px; border-bottom: 1px solid #e8e8e8;
+  text-align: right; vertical-align: top;
+}
+tr:nth-child(even) { background: #f8f9fc; }
+a { color: #2a5a8a; }
+a:hover { color: #ff8800; }
+.back-link {
+  display: inline-block; margin-bottom: 20px; padding: 6px 14px;
+  background: #667eea; color: #fff; border-radius: 4px;
+  text-decoration: none; font-size: 0.88em;
+}
+.back-link:hover { background: #5a6fd6; color: #fff; }
+footer {
+  text-align: center; padding: 30px 20px; color: #888; font-size: 0.85em;
+}
+strong { color: #1a1a2e; }
+code {
+  background: #f0f0f0; padding: 1px 5px; border-radius: 3px;
+  font-size: 0.9em;
+}
+.source-tag {
+  display: inline-block; background: #e8eef6; padding: 2px 8px;
+  border-radius: 10px; font-size: 0.78em; color: #2a5a8a;
+  margin: 2px 3px; text-decoration: none;
+}
+.source-tag:hover { background: #d0dff0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">דוח מחקר מעמיק</span>
+  <a href="../">חזרה לדירוג</a>
+  <a href="../research/">כל הדוחות</a>
+  <a href="#section-1">1. IDENTITY: Who is </a> <a href="#section-2">2. BUSINESS STRUCTUR</a> <a href="#section-3">3. PROGRAM CONTENT</a> <a href="#section-4">4. BUDGET ANOMALY AN</a> <a href="#section-5">5. IDEOLOGY ASSESSME</a> <a href="#section-6">6. GEOGRAPHY ANALYSI</a> <a href="#section-7">7. NETWORK CONNECTIO</a> <a href="#section-8">8. DIGITAL PRESENCE </a> <a href="#section-9">9. VALUES ALIGNMENT </a> <a href="#section-10">10. RISK SUMMARY & O</a> <a href="#section-11">METHODOLOGY NOTE</a>
+</nav>
+
+<div class="hero">
+  <h1>טבע האדם / כספי אלדד</h1>
+  <div class="subtitle">Gefen Program #1302: "תכנית להגשמה אישית וחברתית"</div>
+  <div class="meta"></div>
+  
+</div>
+
+<div class="container">
+  <a href="../research/" class="back-link">← כל דוחות המחקר</a>
+  <div class="toc"><h2>תוכן עניינים</h2><ol><li><a href="#section-1">1. IDENTITY: Who is Eldad Kaspi?</a></li><li><a href="#section-2">2. BUSINESS STRUCTURE</a></li><li><a href="#section-3">3. PROGRAM CONTENT</a></li><li><a href="#section-4">4. BUDGET ANOMALY ANALYSIS</a></li><li><a href="#section-5">5. IDEOLOGY ASSESSMENT</a></li><li><a href="#section-6">6. GEOGRAPHY ANALYSIS</a></li><li><a href="#section-7">7. NETWORK CONNECTIONS</a></li><li><a href="#section-8">8. DIGITAL PRESENCE & MEDIA</a></li><li><a href="#section-9">9. VALUES ALIGNMENT TABLE</a></li><li><a href="#section-10">10. RISK SUMMARY & OPEN QUESTIONS</a></li><li><a href="#section-11">METHODOLOGY NOTE</a></li></ol></div>
+  <div class="section" id="section-1">
+<h2>1. IDENTITY: Who is Eldad Kaspi?</h2>
+<p><strong>Full Name:</strong> אלדד כספי (Eldad Kaspi/Caspi)</p>
+<p><strong>Website:</strong> <a href="https://tevahadam.co.il/" target="_blank" rel="noopener">tevahadam.co.il</a></p>
+<p><strong>About page:</strong> <a href="https://tevahadam.co.il/about/" target="_blank" rel="noopener">tevahadam.co.il/about</a></p>
+<p><strong>Dedicated bio page:</strong> <a href="https://tevahadam.co.il/%d7%90%d7%95%d7%93%d7%95%d7%aa-%d7%90%d7%9c%d7%93%d7%93-%d7%9b%d7%a1%d7%a4%d7%99/" target="_blank" rel="noopener">tevahadam.co.il/אודות-אלדד-כספי</a></p>
+<h3>Education</h3>
+<table>
+<tr><th>Credential</th><th>Institution</th><th>Notes</th></tr>
+<tr><td>M.Sc. Medical Sciences</td><td>Tel Aviv University</td><td>Not a physician — academic research degree</td></tr>
+<tr><td>B.Sc. Environmental Quality & Marine Biology</td><td>Unknown (likely TAU or Haifa)</td><td>Science background, not education</td></tr>
+<tr><td>2-year Group Facilitation Training</td><td>Tel Aviv University</td><td>Continuing education program</td></tr>
+<tr><td>MICHA (מיכא"ל) Certification</td><td>Michael Institute</td><td>"מיצוי כישורים אישיים למצוינות" — Personal Skills Development for Excellence</td></tr>
+<tr><td>Senior Coach Certification</td><td>Israel Coaching Association</td><td>Personal, family, group coaching for adults & youth</td></tr>
+<tr><td>Senior Lecturer — Environmental Quality</td><td>Unspecified</td><td>Self-reported credential</td></tr>
+</table>
+<h3>Personal Details (self-reported)</h3>
+<ul>
+<li>Father of three daughters</li>
+<li>Music and song enthusiast</li>
+<li>Deep connection to the sea (aligns with marine biology background)</li>
+<li>Describes himself as someone who "thinks differently from others"</li>
+<li>"Daily gratitude for opportunities to pursue his dreams"</li>
+</ul>
+<h3>Key Assessment</h3>
+<p>Kaspi has a <strong>science background</strong> (medical sciences + marine biology) — NOT an education degree, NOT a psychology degree, NOT a social work degree. His facilitation credentials come from continuing education certificates, not academic programs in education or therapy. The MICHA method (מיכא"ל) is a specific Israeli personal development methodology developed by Yovel Aloni, which trains facilitators in a broad mix of ~70 subject areas (psychology, sociology, creativity, etc.). It is respected in some educational circles but is NOT a clinical or academic credential.</p>
+<p><strong>Source:</strong> <a href="https://tevahadam.co.il/" target="_blank" rel="noopener">tevahadam.co.il</a>, <a href="https://tevahadam.co.il/about/" target="_blank" rel="noopener">tevahadam.co.il/about</a></p>
+
+</div>
+<div class="section" id="section-2">
+<h2>2. BUSINESS STRUCTURE</h2>
+<h3>Registration Type: Likely Sole Proprietor (עוסק מורשה)</h3>
+<p>The Gefen catalog lists the operator as "טבע האדם / כספי אלדד" — the format "Business Name / Personal Name" is the standard listing format for a sole proprietorship (עוסק מורשה) in the Gefen system, as opposed to an amuta (association) or company (חברה בע"מ) which would be listed by their registered legal name.</p>
+<p><strong>No GuideStar Israel entry found</strong> — confirms this is NOT a registered amuta or public benefit company. Searching GuideStar for "טבע האדם" or "כספי" returns no matching entities.</p>
+<p><strong>No Companies Registrar entry found</strong> — searching for "טבע האדם" as a company name returns no results, further confirming sole proprietor status.</p>
+<h3>What This Means</h3>
+<ul>
+<li><strong>Zero transparency obligations</strong>: Unlike amutot, sole proprietors are not required to file public financial reports, publish board member lists, or undergo audit</li>
+<li><strong>All revenue flows to a personal bank account</strong>: The 256K NIS from the Gefen program goes directly to Kaspi as personal income (minus taxes and expenses)</li>
+<li><strong>No oversight board</strong>: No independent directors, no public governance</li>
+<li><strong>This is legal and common</strong> in the Gefen system — many small educational vendors are sole proprietors — but it means there is no external accountability beyond the Ministry's own program evaluation</li>
+</ul>
+<h3>Similar Pattern</h3>
+<p>This matches findings from Batch 2 research (Mind Lab, Maga BeTiaum, Meyda Amin) where sole proprietorships use legal structures that avoid amuta transparency while operating programs indistinguishable from organizational activities.</p>
+<p><strong>Source:</strong> Gefen catalog data, GuideStar Israel search (no results), mygefen.co.il catalog structure</p>
+
+</div>
+<div class="section" id="section-3">
+<h2>3. PROGRAM CONTENT</h2>
+<h3>Gefen Listing</h3>
+<ul>
+<li><strong>Program #:</strong> 1302</li>
+<li><strong>Title:</strong> תכנית להגשמה אישית וחברתית (Program for Personal and Social Fulfillment)</li>
+<li><strong>Rating:</strong> 3/5 in Gefen catalog</li>
+<li><strong>Themes tagged:</strong> Anti-racism, activism</li>
+<li><strong>Delivery:</strong> In-school workshops</li>
+</ul>
+<h3>What the Website Claims</h3>
+<p>The tevahadam.co.il website describes the program as dealing with <strong>"the relationship between the subconscious and conscious mind, for personal and social fulfillment."</strong> The methodology emphasizes:</p>
+<ul>
+<li>"Freedom of choice" as the highest value</li>
+<li>Individual ability to influence their environment</li>
+<li>Consciousness-raising leading to tangible achievements</li>
+<li>Integration of diverse knowledge domains (philosophy, social sciences, physics)</li>
+<li>The individual as the primary agent of change (rather than environment determining behavior)</li>
+</ul>
+<h3>Specific Workshop Offerings (from Lectures & Workshops page)</h3>
+<table>
+<tr><th>Workshop Name</th><th>Hebrew</th><th>Focus</th><th>Anti-Racism Relevance</th></tr>
+<tr><td><strong>Blind Sight</strong></td><td>ראיה עיוורת</td><td>"Accepting the Other and Self-Acceptance" — how people perceive themselves and others fairly and equally</td><td><strong>HIGH — core anti-prejudice workshop</strong></td></tr>
+<tr><td><strong>Unconscious Heaviness</strong></td><td>הכבדה לא מודעת</td><td>Causes of psychological unrest; uses animal behavior theory</td><td>Low — personal development</td></tr>
+<tr><td><strong>We Are All Necessarily Leaders</strong></td><td>כולנו מנהיגים בהכרח</td><td>Leadership vs. follower roles; personal expression in groups</td><td>Medium — social skills</td></tr>
+<tr><td><strong>Hidden Capabilities</strong></td><td>יכולות נסתרות</td><td>Boldness, personal expression, demonstrating competence</td><td>Low — motivational</td></tr>
+<tr><td><strong>Environment and Humanity</strong></td><td>סביבה ואדם</td><td>4-lecture series on environmental quality, marine biology, biomimicry</td><td>None — science enrichment</td></tr>
+<tr><td><strong>Parallel and Limiting Universes</strong></td><td>יקומים מקבילים ויקומים מגבילים</td><td>Questioning fundamental assumptions; targets teenagers</td><td>Medium — critical thinking</td></tr>
+</table>
+<h3>Methodology Assessment</h3>
+<p>The program appears to use a <strong>pop-psychology / consciousness-coaching approach</strong> wrapped in scientific-sounding language. Key methodological claims:</p>
+<ol>
+<li><strong>"Where the conscious and unconscious meet"</strong> — this language borrows from psychodynamic theory but is applied in a coaching (not therapeutic) context</li>
+<li><strong>"Scientific perspective on human thought patterns"</strong> — the "Blind Sight" workshop claims to use science to explain prejudice, but no specific methodology (CBT, contact theory, social identity theory) is cited</li>
+<li><strong>Animal behavior theory</strong> — used to explain human psychological unrest (the "Unconscious Heaviness" workshop), which is an unusual approach</li>
+<li><strong>"Pioneering thought for creating results and success"</strong> — motivational/coaching language</li>
+</ol>
+<h3>The Anti-Racism Component</h3>
+<p>The <strong>"Blind Sight" (ראיה עיוורת)</strong> workshop is the core anti-racism/anti-prejudice offering:</p>
+<ul>
+<li>Subtitle: "Accepting the Other and Self-Acceptance"</li>
+<li>Claims a "logical-emotional explanation of how people perceive themselves and others fairly and equally"</li>
+<li>Claims to include a "scientific perspective on human thought patterns"</li>
+<li>Participants "often reassess their worldview during the session"</li>
+</ul>
+<p><strong>Assessment:</strong> This appears to be a soft anti-prejudice workshop focused on perception and empathy, NOT a structural/political anti-racism program. It does not appear to name specific groups, address institutional racism, or engage with Israeli social-political dynamics (mizrachi/ashkenazi, Jewish/Arab, etc.). The language suggests an individualistic "we all have biases" approach rather than a systemic analysis.</p>
+<p>The "activism" tag in the Gefen catalog likely refers to the personal empowerment / leadership development components rather than political activism per se.</p>
+<p><strong>Source:</strong> <a href="https://tevahadam.co.il/%D7%94%D7%A8%D7%A6%D7%90%D7%95%D7%AA-%D7%95%D7%A1%D7%93%D7%A0%D7%90%D7%95%D7%AA/" target="_blank" rel="noopener">tevahadam.co.il/הרצאות-וסדנאות</a></p>
+
+</div>
+<div class="section" id="section-4">
+<h2>4. BUDGET ANOMALY ANALYSIS</h2>
+<h3>The Numbers</h3>
+<table>
+<tr><th>Metric</th><th>Value</th></tr>
+<tr><td>Total Gefen budget</td><td>256,369 NIS</td></tr>
+<tr><td>Number of cities</td><td>4 (Karmiel, Kiryat Gat, Ramat Gan, Ramat HaSharon)</td></tr>
+<tr><td>Number of schools</td><td>10</td></tr>
+<tr><td>Per-school average</td><td>~25,637 NIS</td></tr>
+<tr><td>Operator type</td><td>Sole proprietor (individual)</td></tr>
+</table>
+<h3>Why This Is Notable</h3>
+<p>256K NIS is <strong>extremely high for a sole proprietor with only 10 schools.</strong> For comparison:</p>
+<ul>
+<li>This was flagged as the <strong>second-highest budget among R3+ non-researched programs</strong> in the analysis</li>
+<li>Large organizations like Matzmichim operate in 16+ cities with hundreds of schools</li>
+<li>The per-school spending of ~25.6K NIS suggests intensive, multi-session programming at each school, NOT a one-time workshop</li>
+</ul>
+<h3>Possible Explanations</h3>
+<ol>
+<li><strong>Premium pricing model:</strong> If Kaspi delivers multi-session programs (the "Environment and Humanity" series is described as 4 lectures), each school engagement could reasonably cost 25K+ NIS for a full-year program</li>
+<li><strong>Bundled services:</strong> The program may include teacher training + student workshops + individual coaching, bundling multiple Gefen line items</li>
+<li><strong>Repeat bookings:</strong> Schools that have used the program for years may continue ordering at established price points</li>
+<li><strong>Efficient self-marketing:</strong> As a sole proprietor with no organizational overhead (no rent for offices, no staff salaries, no board governance costs), the entire budget goes to either direct delivery or personal income</li>
+</ol>
+<h3>What Cannot Be Determined</h3>
+<ul>
+<li>Kaspi's actual take-home from the 256K (after materials, travel, subcontractors)</li>
+<li>Whether he uses subcontractors/co-facilitators</li>
+<li>How many contact hours each school receives</li>
+<li>Whether the 3/5 rating reflects program quality issues</li>
+</ul>
+<p><strong>Source:</strong> Gefen catalog data provided in research brief</p>
+
+</div>
+<div class="section" id="section-5">
+<h2>5. IDEOLOGY ASSESSMENT</h2>
+<h3>Ideological Profile: Soft Universalist / Personal Development</h3>
+<p>Based on all available evidence, the program's ideology is:</p>
+<table>
+<tr><th>Dimension</th><th>Assessment</th></tr>
+<tr><td>Political orientation</td><td><strong>Neutral/Universalist</strong> — no partisan signals detected</td></tr>
+<tr><td>Anti-racism approach</td><td><strong>Individualistic</strong> — "accept the other" framing, not structural analysis</td></tr>
+<tr><td>Activism framing</td><td><strong>Personal empowerment</strong> — "we are all leaders" rather than social movement organizing</td></tr>
+<tr><td>Religious content</td><td><strong>None detected</strong></td></tr>
+<tr><td>Zionist/post-Zionist</td><td><strong>Not addressed</strong></td></tr>
+<tr><td>Jewish identity</td><td><strong>Not addressed</strong></td></tr>
+<tr><td>Scientific grounding</td><td><strong>Claimed but unverified</strong> — references to "science" without citing specific methodologies</td></tr>
+<tr><td>Pop-psychology risk</td><td><strong>Medium-High</strong> — consciousness/unconscious language, "hidden capabilities," claims about animal behavior explaining human psychology</td></tr>
+</table>
+<h3>Compared to Other Gefen Programs</h3>
+<p>The program is <strong>not in the same category</strong> as:</p>
+<ul>
+<li><strong>ACRI / HaSadna</strong> (explicit political anti-racism with human rights framework)</li>
+<li><strong>Dror Israel</strong> (movement ideology with explicit social change agenda)</li>
+<li><strong>Shaar Shivion</strong> (gender/sexuality focused)</li>
+</ul>
+<p>It is <strong>more similar to</strong>:</p>
+<ul>
+<li><strong>Mind Lab</strong> (generic personal skills through games)</li>
+<li><strong>Maga BeTiaum</strong> (coaching/facilitation without strong ideology)</li>
+</ul>
+<h3>The "Activism" Tag</h3>
+<p>The Gefen catalog tags this with "activism" themes. Based on the website content, this likely refers to:</p>
+<ul>
+<li>Encouraging students to "take action" in their own lives</li>
+<li>Leadership development workshops</li>
+<li>Personal empowerment to "create change"</li>
+</ul>
+<p>This is <strong>personal activism</strong> (self-improvement, self-actualization), NOT <strong>political or social activism.</strong> The distinction matters for the Gefen rating system.</p>
+
+</div>
+<div class="section" id="section-6">
+<h2>6. GEOGRAPHY ANALYSIS</h2>
+<h3>Operating Cities</h3>
+<table>
+<tr><th>City</th><th>Region</th><th>Socioeconomic Profile</th><th>Notes</th></tr>
+<tr><td><strong>Karmiel</strong></td><td>North / Galilee</td><td>Mixed (development town + gentrification)</td><td><strong>Highest Gefen program exposure city in the analysis</strong></td></tr>
+<tr><td><strong>Kiryat Gat</strong></td><td>South / Negev approaches</td><td>Lower-income, traditional/mizrachi</td><td>Development town, different demographic from Karmiel</td></tr>
+<tr><td><strong>Ramat Gan</strong></td><td>Center / Gush Dan</td><td>Upper-middle class, secular</td><td>Large city, major school system</td></tr>
+<tr><td><strong>Ramat HaSharon</strong></td><td>Center / Sharon</td><td>Upper-middle class, secular-affluent</td><td>Small city, affluent population</td></tr>
+</table>
+<h3>Geographic Spread Assessment</h3>
+<p>The spread is <strong>interesting and unusual:</strong></p>
+<ul>
+<li>Two peripheral cities (Karmiel, Kiryat Gat) + two central affluent cities (Ramat Gan, Ramat HaSharon)</li>
+<li>This is NOT the pattern of an ideologically-driven organization (which would cluster in either periphery OR center)</li>
+<li>This IS the pattern of a <strong>commercial vendor</strong> who sells where there are buyers</li>
+<li>Karmiel's high exposure to Gefen programs generally means school administrators there are active Gefen purchasers</li>
+<li>The socioeconomic diversity suggests the program has broad market appeal</li>
+</ul>
+<h3>Connection to Karmiel</h3>
+<p>Karmiel was flagged as the "highest exposure city" in the broader analysis. Kaspi's presence there is one of many programs operating in that city. This may reflect:</p>
+<ul>
+<li>Active school administrators in Karmiel who purchase many Gefen programs</li>
+<li>Karmiel's multi-ethnic population (Jewish, Druze, Arab neighbors) creating demand for "accepting the other" programs</li>
+<li>Historical investment in social programs in development towns</li>
+</ul>
+<p><strong>Source:</strong> Gefen catalog geographic data</p>
+
+</div>
+<div class="section" id="section-7">
+<h2>7. NETWORK CONNECTIONS</h2>
+<h3>Confirmed Connection: Derech Ami / Amiway (דרך עמ"י)</h3>
+<p>A PDF document titled "טבע האדם" is hosted on the Amiway (Derech Ami) organization's website:</p>
+<p><strong><a href="https://amiway.org.il/wp-content/uploads/2022/11/3%D7%93%D7%A3-%D7%9E%D7%A0%D7%97%D7%94-%D7%98%D7%91%D7%A2-%D7%94%D7%90%D7%93%D7%9D.pdf" target="_blank" rel="noopener">amiway.org.il/wp-content/uploads/2022/11/3דף-מנחה-טבע-האדם.pdf</a></strong></p>
+<p><strong>About Derech Ami (דרך עמ"י):</strong></p>
+<ul>
+<li>Full name: Derech Ami — established in memory of Lt. Col. Emmanuel Moreno z"l</li>
+<li>Moreno was a Sayeret Matkal commander killed in 2006 Lebanon War</li>
+<li>Organization focuses on "deepening Jewish identity for all young people in Israel"</li>
+<li>Emphasizes "love for the people and land, and the heritage of Israel"</li>
+<li>Offers scholarships and educational programs</li>
+<li>Website: <a href="https://amiway.org.il/" target="_blank" rel="noopener">amiway.org.il</a></li>
+</ul>
+<p><strong>Nature of the Connection:</strong></p>
+<p>The PDF file name "3דף-מנחה-טבע-האדם" translates to "3-page facilitator guide — Teva HaAdam." This is a facilitator guide for delivering the "Teva HaAdam" program. Its hosting on Amiway's website suggests one of:</p>
+<ol>
+<li><strong>Subcontracting:</strong> Kaspi delivers his program through Derech Ami as a distribution channel</li>
+<li><strong>Content partnership:</strong> Teva HaAdam content is incorporated into Derech Ami's broader programming</li>
+<li><strong>Shared facilitator pool:</strong> Derech Ami facilitators use Kaspi's materials</li>
+</ol>
+<p><strong>Assessment:</strong> Derech Ami is a <strong>nationalist-Zionist</strong> memorial organization (Moreno was a national hero). Their focus on "Jewish identity" and "love for the people and land" positions them on the patriotic/nationalist end of the spectrum — which is notable because the Teva HaAdam program itself presents as ideologically neutral. The connection suggests Kaspi may market the same content to different audiences with different framing.</p>
+<h3>Confirmed Client: Intel Israel</h3>
+<p>Intel's logo appears on the tevahadam.co.il website among client logos, suggesting Kaspi has delivered corporate workshops to Intel's Israeli operations.</p>
+<h3>Confirmed School Clients (from website logos)</h3>
+<ul>
+<li>School "Arnon"</li>
+<li>School "HaNasi" (Bat Yam)</li>
+<li>Mordei HaGtaot</li>
+<li>ORT Singolovsky College</li>
+<li>Ironi Tel Aviv</li>
+</ul>
+<h3>Certification Network</h3>
+<ul>
+<li><strong>Israel Coaching Association</strong> — member</li>
+<li><strong>Michael Institute (מיכא"ל)</strong> — certified facilitator</li>
+<li><strong>Tel Aviv University</strong> — continuing education graduate (group facilitation program)</li>
+</ul>
+<p><strong>Source:</strong> <a href="https://amiway.org.il/" target="_blank" rel="noopener">amiway.org.il</a>, <a href="https://tevahadam.co.il/" target="_blank" rel="noopener">tevahadam.co.il</a></p>
+
+</div>
+<div class="section" id="section-8">
+<h2>8. DIGITAL PRESENCE & MEDIA</h2>
+<h3>Online Footprint Assessment: <strong>LOW</strong></h3>
+<table>
+<tr><th>Platform</th><th>Status</th><th>URL</th></tr>
+<tr><td>Website</td><td>Active</td><td><a href="https://tevahadam.co.il/" target="_blank" rel="noopener">tevahadam.co.il</a></td></tr>
+<tr><td>Website - About</td><td>Active</td><td><a href="https://tevahadam.co.il/about/" target="_blank" rel="noopener">tevahadam.co.il/about</a></td></tr>
+<tr><td>Website - Workshops</td><td>Active</td><td><a href="https://tevahadam.co.il/%D7%94%D7%A8%D7%A6%D7%90%D7%95%D7%AA-%D7%95%D7%A1%D7%93%D7%A0%D7%90%D7%95%D7%AA/" target="_blank" rel="noopener">tevahadam.co.il/הרצאות-וסדנאות</a></td></tr>
+<tr><td>Facebook</td><td><strong>NOT FOUND</strong></td><td>No public page detected</td></tr>
+<tr><td>Instagram</td><td><strong>NOT FOUND</strong> (personal)</td><td>No personal account; @tevahaadam is the FARM in Nir Tzvi, unrelated</td></tr>
+<tr><td>LinkedIn</td><td><strong>NOT FOUND</strong></td><td>Two "Eldad Caspi" profiles exist but are tech industry professionals (CipherSiP), not this person</td></tr>
+<tr><td>YouTube</td><td><strong>NOT FOUND</strong></td><td>No channel detected</td></tr>
+<tr><td>News mentions</td><td><strong>NONE</strong></td><td>Zero news articles found mentioning this person or program</td></tr>
+<tr><td>Academic publications</td><td><strong>NONE</strong></td><td>No papers found under this name</td></tr>
+<tr><td>Interviews</td><td><strong>NONE</strong></td><td>No media interviews found</td></tr>
+<tr><td>ProfilU (מאגר מרצים)</td><td><strong>NOT FOUND</strong></td><td>Not listed in the Israeli speakers bureau</td></tr>
+</table>
+<h3>Assessment</h3>
+<p>The digital footprint is <strong>remarkably thin</strong> for someone claiming "over a decade of experience" and "tens of thousands of students." There are no:</p>
+<ul>
+<li>Video testimonials from any of the listed client schools</li>
+<li>Blog posts or thought leadership content</li>
+<li>Media appearances or interviews</li>
+<li>Published papers or articles</li>
+<li>Social media presence of any kind</li>
+</ul>
+<p>The website itself is the <strong>only digital trace</strong> of this person's professional activity. This is not necessarily suspicious — many Israeli sole proprietor educators operate purely through word-of-mouth and Gefen catalog listings — but it means there is <strong>zero independent verification</strong> of the claims made on the website.</p>
+<p><strong>IMPORTANT NOTE ON NAME CONFUSION:</strong></p>
+<p>There are two completely unrelated entities using variations of "Teva HaAdam":</p>
+<ol>
+<li><strong>tevahadam.co.il</strong> (no hyphen) — Eldad Kaspi's education/coaching program (THE SUBJECT OF THIS REPORT)</li>
+<li><strong>teva-haadam.co.il</strong> (with hyphen) — A farm/retreat center in Nir Tzvi run by Gili Shlag and Rachel, offering sweat lodge ceremonies, grief rituals, men's circles, etc. Instagram: @tevahaadam. <strong>COMPLETELY UNRELATED</strong> to the Gefen program.</li>
+</ol>
+
+</div>
+<div class="section" id="section-9">
+<h2>9. VALUES ALIGNMENT TABLE</h2>
+<table>
+<tr><th>Value</th><th>Score (1-5)</th><th>Notes</th></tr>
+<tr><td><strong>Transparency</strong></td><td>2/5</td><td>Sole proprietor structure avoids all public reporting; no external verification of claims</td></tr>
+<tr><td><strong>Educational rigor</strong></td><td>2/5</td><td>No published methodology, no peer-reviewed basis, no specific pedagogical framework cited</td></tr>
+<tr><td><strong>Anti-racism depth</strong></td><td>2/5</td><td>"Accepting the Other" is surface-level; no engagement with Israeli social dynamics</td></tr>
+<tr><td><strong>Ideological neutrality</strong></td><td>4/5</td><td>No detectable political agenda; universal self-improvement framing</td></tr>
+<tr><td><strong>Budget proportionality</strong></td><td>3/5</td><td>25K/school is high but not unreasonable if delivering multi-session programs</td></tr>
+<tr><td><strong>Professional credentials</strong></td><td>3/5</td><td>Real university degrees + certification, but in science not education; coaching certs are non-academic</td></tr>
+<tr><td><strong>Institutional accountability</strong></td><td>1/5</td><td>Zero oversight, zero public governance, zero published outcomes</td></tr>
+</table>
+
+</div>
+<div class="section" id="section-10">
+<h2>10. RISK SUMMARY & OPEN QUESTIONS</h2>
+<h3>Risks</h3>
+<ol>
+<li><strong>Credential inflation:</strong> The website presents Kaspi as a senior expert, but his degrees are in marine biology and medical sciences (research), not education or psychology. His facilitation credentials are continuing education certificates, not clinical or academic qualifications. This does not mean the program is bad — but the presentation is misleading.</li>
+</ol>
+<ol>
+<li><strong>Unverifiable claims:</strong> "Tens of thousands of students" and "over a decade" cannot be independently verified. The complete absence of any external mentions (news, social media, testimonials beyond the website) is unusual.</li>
+</ol>
+<ol>
+<li><strong>Pop-psychology packaging:</strong> The "conscious and unconscious mind" framing, "animal behavior theory" applied to humans, and "hidden capabilities" language are markers of the coaching/self-help industry rather than evidence-based educational programming.</li>
+</ol>
+<ol>
+<li><strong>Budget concentration:</strong> 256K NIS flowing to a single individual with no organizational accountability structure deserves scrutiny from the Gefen program evaluation system.</li>
+</ol>
+<ol>
+<li><strong>Dual-market positioning:</strong> The same content appears to be marketed to both the Gefen system (where it is tagged with anti-racism/activism themes) and to Derech Ami (a nationalist Jewish identity organization). The ability to sell the same product to ideologically different buyers may indicate the content is so generic it can be framed either way.</li>
+</ol>
+<h3>Open Questions for Further Investigation</h3>
+<ol>
+<li><strong>What is the actual contact-hour count per school?</strong> 25.6K NIS/school needs context — is this 2 workshops or 20?</li>
+<li><strong>Does Kaspi employ subcontractors?</strong> The facilitator guide on Amiway's site suggests others may deliver his program.</li>
+<li><strong>What is the Derech Ami relationship specifically?</strong> Is he a paid vendor, a volunteer content partner, or something else?</li>
+<li><strong>Why has no school ever publicly referenced this program?</strong> With 10 schools and thousands of claimed students, the absence of ANY external mention is striking.</li>
+<li><strong>What specific anti-racism outcomes are measured?</strong> The Gefen rating of 3/5 suggests MoE evaluators found the program adequate but not exceptional — on what criteria?</li>
+<li><strong>What is his tax registration number?</strong> This would enable checking the actual revenue flow through obudget.org or the tax authority.</li>
+</ol>
+
+</div>
+<div class="section" id="section-11">
+<h2>METHODOLOGY NOTE</h2>
+<p>This research was conducted using web searches in Hebrew and English, direct website content extraction, and cross-referencing with known databases (GuideStar Israel, obudget.org, Companies Registrar). The PDF on amiway.org.il could not be read (binary PDF format not extractable via web fetch). The Gefen catalog portal (apps.education.gov.il) and mygefen.co.il catalog were accessed but program 1302 was not found in their public-facing indexes (may require authentication or the program number may have changed).</p>
+<p><strong>Total search queries executed:</strong> ~40+</p>
+<p><strong>Websites directly accessed:</strong> tevahadam.co.il (homepage, about, workshops, bio page), amiway.org.il, mygefen.co.il, michael.org.il, apps.education.gov.il</p>
+<p><strong>Key finding sources:</strong> tevahadam.co.il (primary), amiway.org.il PDF link (connection evidence)</p>
+<p><em>Research conducted 2026-02-16 by Claude Opus 4.6</em></p>
+<p><em>For the דירוג ערים project — Gefen program analysis</em></p>
+
+</div>
+</div>
+
+<footer>
+  פרויקט זהות ציונית — דוח מחקר מעמיק | <a href="../">דירוג ערים</a> | <a href="../research/">כל הדוחות</a>
+</footer>
+
+</body>
+</html>

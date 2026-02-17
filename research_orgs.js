@@ -51,7 +51,7 @@ const RESEARCH_ORGS = {
       ],
       "risk": "high",
       "funding_sources": "NIF, EU, Ford Foundation, Naomi & Nehemia Cohen Foundation",
-      "report_url": "research/deep_ACRI.md",
+      "report_url": "research/deep_ACRI.html",
       "source_links": [
         {"label": "GuideStar IL", "url": "https://www.guidestar.org.il/organization/580011567"},
         {"label": "obudget.org", "url": "https://next.obudget.org/i/associations/association/580011567"},
@@ -83,7 +83,7 @@ const RESEARCH_ORGS = {
       ],
       "risk": "medium",
       "funding_sources": "Jim Joseph Foundation, AVI CHAI, ממשלת ישראל (16%)",
-      "report_url": "research/deep_Hartman.md",
+      "report_url": "research/deep_Hartman.html",
       "source_links": [
         {"label": "GuideStar IL", "url": "https://www.guidestar.org.il/organization/511021156"},
         {"label": "obudget.org", "url": "https://next.obudget.org/i/associations/association/511021156"},
@@ -115,7 +115,7 @@ const RESEARCH_ORGS = {
       ],
       "risk": "low",
       "funding_sources": "קרנות פרטיות, שכר לימוד מבתי ספר",
-      "report_url": "research/deep_Matzmichim.md",
+      "report_url": "research/deep_Matzmichim.html",
       "source_links": [
         {"label": "GuideStar IL", "url": "https://www.guidestar.org.il/organization/580419521"},
         {"label": "obudget.org", "url": "https://next.obudget.org/i/associations/association/580419521"}
@@ -145,7 +145,7 @@ const RESEARCH_ORGS = {
       ],
       "risk": "medium-high",
       "funding_sources": "ממשלת ישראל (49%), NIF, קרנות פרוגרסיביות",
-      "report_url": "research/deep_Tikkun.md",
+      "report_url": "research/deep_Tikkun.html",
       "source_links": [
         {"label": "GuideStar IL", "url": "https://www.guidestar.org.il/organization/580334779"},
         {"label": "obudget.org", "url": "https://next.obudget.org/i/associations/association/580334779"}
@@ -175,7 +175,7 @@ const RESEARCH_ORGS = {
       ],
       "risk": "medium",
       "funding_sources": "ממשלת ישראל (44%), קרנות חינוך",
-      "report_url": "research/deep_Democratic_Institute.md",
+      "report_url": "research/deep_Democratic_Institute.html",
       "source_links": [
         {"label": "GuideStar IL", "url": "https://www.guidestar.org.il/organization/580330660"},
         {"label": "obudget.org", "url": "https://next.obudget.org/i/associations/association/580330660"}
@@ -205,7 +205,7 @@ const RESEARCH_ORGS = {
       ],
       "risk": "medium",
       "funding_sources": "Albert Friedberg (תורם יחיד), ממשלת ישראל (4%)",
-      "report_url": "research/deep_Yedidut_Toronto.md",
+      "report_url": "research/deep_Yedidut_Toronto.html",
       "source_links": [
         {"label": "GuideStar IL", "url": "https://www.guidestar.org.il/organization/580496123"},
         {"label": "obudget.org", "url": "https://next.obudget.org/i/associations/association/580496123"}
@@ -236,7 +236,7 @@ const RESEARCH_ORGS = {
       ],
       "risk": "high",
       "funding_sources": "ממשלת ישראל (67%), הקיבוץ הארצי",
-      "report_url": "research/deep_Havatzelet.md",
+      "report_url": "research/deep_Havatzelet.html",
       "source_links": [
         {"label": "GuideStar IL", "url": "https://www.guidestar.org.il/organization/510490451"},
         {"label": "obudget.org", "url": "https://next.obudget.org/i/associations/association/510490451"}
@@ -268,7 +268,7 @@ const RESEARCH_ORGS = {
       ],
       "risk": "low",
       "funding_sources": "הכנסות מסחריות מבתי ספר דרך Gefen",
-      "report_url": "research/deep_Mind_Lab.md",
+      "report_url": "research/deep_Mind_Lab.html",
       "source_links": [
         {"label": "רשם החברות", "url": "https://ica.justice.gov.il/GenericCorporarionInfo/SearchCorporation?unit=8&id=513099341"},
         {"label": "אתר Accelium", "url": "https://www.accelium.com"},
@@ -301,7 +301,7 @@ const RESEARCH_ORGS = {
       ],
       "risk": "high",
       "funding_sources": "משרד החינוך (108M ₪ מצטבר), קרנות בינ\"ל, תרומות פטורות ב-5 מדינות",
-      "report_url": "research/deep_Yesodot_Dror.md",
+      "report_url": "research/deep_Yesodot_Dror.html",
       "source_links": [
         {"label": "GuideStar IL", "url": "https://www.guidestar.org.il/organization/580295533"},
         {"label": "obudget.org", "url": "https://next.obudget.org/i/associations/association/580295533"},
@@ -335,7 +335,7 @@ const RESEARCH_ORGS = {
       ],
       "risk": "moderate",
       "funding_sources": "Harris Philanthropies (>$1M), Revson Foundation ($80K), ממשלת ישראל (11%)",
-      "report_url": "research/deep_Shaar_Shivion.md",
+      "report_url": "research/deep_Shaar_Shivion.html",
       "source_links": [
         {"label": "GuideStar IL", "url": "https://www.guidestar.org.il/organization/580558591"},
         {"label": "obudget.org", "url": "https://next.obudget.org/i/associations/association/580558591"},
@@ -368,7 +368,7 @@ const RESEARCH_ORGS = {
       ],
       "risk": "low-moderate",
       "funding_sources": "Alliance Paris HQ, Posen Foundation, Trump Foundation, ממשלת ישראל",
-      "report_url": "research/deep_Alliance_Israel.md",
+      "report_url": "research/deep_Alliance_Israel.html",
       "source_links": [
         {"label": "GuideStar IL", "url": "https://www.guidestar.org.il/organization/580010890"},
         {"label": "obudget.org", "url": "https://next.obudget.org/i/associations/association/580010890"},
@@ -403,7 +403,7 @@ const RESEARCH_ORGS = {
       ],
       "risk": "high",
       "funding_sources": "תשלומי בתי ספר דרך Gefen (תוכניות #2930, #3027)",
-      "report_url": "research/deep_Maga_BeTiaum.md",
+      "report_url": "research/deep_Maga_BeTiaum.html",
       "source_links": [
         {"label": "רשם החברות", "url": "https://ica.justice.gov.il/GenericCorporarionInfo/SearchCorporation?unit=8&id=516711488"},
         {"label": "דוח מחקר: אשכול חינוך מיני", "url": "research/Gender_sexuality_education_providers.md"}
@@ -437,7 +437,7 @@ const RESEARCH_ORGS = {
       ],
       "risk": "high",
       "funding_sources": "תשלומי בתי ספר דרך Gefen, ללא מימון ממשלתי ישיר, ללא חובת דיווח כעוסק מורשה",
-      "report_url": "research/deep_Meyda_Amin.md",
+      "report_url": "research/deep_Meyda_Amin.html",
       "source_links": [
         {"label": "דוח מחקר: אשכול חינוך מיני", "url": "research/Gender_sexuality_education_providers.md"},
         {"label": "SEI (האגודה לחינוך מיני)", "url": "https://www.sei.org.il"}
@@ -471,7 +471,7 @@ const RESEARCH_ORGS = {
       ],
       "risk": "medium-high",
       "funding_sources": "William Davidson Foundation ($500K), Ruderman Family ($126K), Maimonides Fund, ממשלת ישראל, US fundraising ($1.6M/yr)",
-      "report_url": "research/deep_Gesher.md",
+      "report_url": "research/deep_Gesher.html",
       "source_links": [
         {"label": "GuideStar IL", "url": "https://www.guidestar.org.il/organization/580054062"},
         {"label": "obudget.org", "url": "https://next.obudget.org/i/associations/association/580054062"},
@@ -505,7 +505,7 @@ const RESEARCH_ORGS = {
       ],
       "risk": "medium",
       "funding_sources": "תרומות (55%), קרנות (12%), גלעד סיינסס, NIF ארוך-שנים",
-      "report_url": "research/deep_AIDS_Task_Force.md",
+      "report_url": "research/deep_AIDS_Task_Force.html",
       "source_links": [
         {"label": "GuideStar IL", "url": "https://www.guidestar.org.il/organization/580104545"},
         {"label": "obudget.org", "url": "https://next.obudget.org/i/org/association/580104545"},
@@ -534,7 +534,7 @@ const RESEARCH_ORGS = {
       ],
       "risk": "medium",
       "funding_sources": "משה ינאי (פושט רגל). אפס מימון ממשלתי או זר.",
-      "report_url": "research/deep_Yesod.md",
+      "report_url": "research/deep_Yesod.html",
       "source_links": [
         {"label": "GuideStar IL", "url": "https://www.guidestar.org.il/organization/580558997"},
         {"label": "obudget.org", "url": "https://next.obudget.org/i/org/association/580558997"},
@@ -564,7 +564,7 @@ const RESEARCH_ORGS = {
       ],
       "risk": "low-moderate",
       "funding_sources": "כנסיות אירופיות (Misereor, DVHL, שוודיה), שגרירות ארה\"ב ($8K), PEF Israel",
-      "report_url": "research/deep_Rossing_Center.md",
+      "report_url": "research/deep_Rossing_Center.html",
       "source_links": [
         {"label": "GuideStar IL", "url": "https://www.guidestar.org.il/organization/513816421"},
         {"label": "אתר רשמי", "url": "https://rossingcenter.org/"}
@@ -593,7 +593,7 @@ const RESEARCH_ORGS = {
       ],
       "risk": "medium",
       "funding_sources": "תרומות, PEF Israel (חסות פיסקלית), גפ\"ן. אין NIF.",
-      "report_url": "research/deep_Ladaat.md",
+      "report_url": "research/deep_Ladaat.html",
       "source_links": [
         {"label": "GuideStar IL", "url": "https://www.guidestar.org.il/organization/580055911"},
         {"label": "obudget.org", "url": "https://next.obudget.org/i/org/association/580055911"},
@@ -623,7 +623,7 @@ const RESEARCH_ORGS = {
       ],
       "risk": "medium-high",
       "funding_sources": "משרד הרווחה (79%), ספק יחיד 129K ₪ (2025), גפ\"ן 17.6K",
-      "report_url": "research/deep_Todaa.md",
+      "report_url": "research/deep_Todaa.html",
       "source_links": [
         {"label": "GuideStar IL", "url": "https://www.guidestar.org.il/organization/580396380"},
         {"label": "obudget.org", "url": "https://next.obudget.org/i/org/association/580396380"},
@@ -653,7 +653,7 @@ const RESEARCH_ORGS = {
       ],
       "risk": "moderate",
       "funding_sources": "גפ\"ן (204K ₪), ספרים, הרצאות פרטיות",
-      "report_url": "research/deep_Or_Gelbard.md",
+      "report_url": "research/deep_Or_Gelbard.html",
       "source_links": [
         {"label": "אתר רשמי", "url": "https://www.kolhashelot.org/"},
         {"label": "SEI", "url": "https://sei.org.il/"}
@@ -682,7 +682,7 @@ const RESEARCH_ORGS = {
       ],
       "risk": "low",
       "funding_sources": "משרד הרווחה (למרכזים), NIF (היסטורי), Hadassah Foundation, UJA-Federation NY",
-      "report_url": "research/deep_Sexual_Assault_Centers.md",
+      "report_url": "research/deep_Sexual_Assault_Centers.html",
       "source_links": [
         {"label": "GuideStar (ARCCI)", "url": "https://www.guidestar.org.il/organization/580173730"},
         {"label": "NIF", "url": "https://www.nif.org/tag/association-of-rape-crisis-centers/"}
@@ -711,7 +711,7 @@ const RESEARCH_ORGS = {
       ],
       "risk": "moderate",
       "funding_sources": "JTLV (בניין), משרד הרווחה (162K), גפ\"ן (44K), 95% פרטי",
-      "report_url": "research/deep_Markam.md",
+      "report_url": "research/deep_Markam.html",
       "source_links": [
         {"label": "GuideStar (580354538)", "url": "https://www.guidestar.org.il/organization/580354538"},
         {"label": "obudget.org", "url": "https://next.obudget.org/i/org/association/580354538"},
@@ -741,7 +741,7 @@ const RESEARCH_ORGS = {
       ],
       "risk": "high",
       "funding_sources": "משרד החינוך (6.3M), מוסדות תורניים (1.7M), התיישבות (1.26M), Charidy",
-      "report_url": "research/deep_Chevruta.md",
+      "report_url": "research/deep_Chevruta.html",
       "source_links": [
         {"label": "GuideStar IL", "url": "https://www.guidestar.org.il/organization/580479608"},
         {"label": "obudget.org", "url": "https://next.obudget.org/i/org/association/580479608"},
@@ -771,7 +771,7 @@ const RESEARCH_ORGS = {
       ],
       "risk": "moderate",
       "funding_sources": "גפ\"ן (70K ₪ דרך בתי ספר). תזרים אמיתי דרך גומא גבים.",
-      "report_url": "research/deep_Kehalim_Shluvim.md",
+      "report_url": "research/deep_Kehalim_Shluvim.html",
       "source_links": [
         {"label": "GuideStar IL", "url": "https://www.guidestar.org.il/organization/515521748"},
         {"label": "גומא גבים", "url": "https://www.gomegevim.co.il/social/social_audience/"}
@@ -800,7 +800,7 @@ const RESEARCH_ORGS = {
       ],
       "risk": "low-moderate",
       "funding_sources": "גפ\"ן (256K ₪), סדנאות פרטיות ותאגידיות",
-      "report_url": "research/deep_Teva_HaAdam.md",
+      "report_url": "research/deep_Teva_HaAdam.html",
       "source_links": [
         {"label": "אתר רשמי", "url": "https://tevahadam.co.il/"}
       ]
@@ -828,7 +828,7 @@ const RESEARCH_ORGS = {
       ],
       "risk": "medium",
       "funding_sources": "משרד החינוך (קוצץ 85%), עיריית ת\"א, NIF, A Wider Bridge",
-      "report_url": "research/deep_CHOSHEN.md",
+      "report_url": "research/deep_CHOSHEN.html",
       "source_links": [
         {"label": "GuideStar IL", "url": "https://www.guidestar.org.il/organization/513544494"},
         {"label": "אתר רשמי", "url": "https://www.hoshen.org/"}
@@ -857,7 +857,7 @@ const RESEARCH_ORGS = {
       ],
       "risk": "moderate",
       "funding_sources": "USAID, NIF Australia, UJA-Federation NY, DEAR (שוויץ), Sternsinger (גרמניה), Pears (UK)",
-      "report_url": "research/deep_Yad_BYad.md",
+      "report_url": "research/deep_Yad_BYad.html",
       "source_links": [
         {"label": "GuideStar IL", "url": "https://www.guidestar.org.il/organization/580293710"},
         {"label": "אתר (עברית)", "url": "https://www.hih.org.il"},
@@ -888,7 +888,7 @@ const RESEARCH_ORGS = {
       ],
       "risk": "low",
       "funding_sources": "תרומות פרטיות, קרן IFA, גפ\"ן (47K). אפס מימון ממשלתי או זר.",
-      "report_url": "research/deep_Efshar_Acheret.md",
+      "report_url": "research/deep_Efshar_Acheret.html",
       "source_links": [
         {"label": "GuideStar IL", "url": "https://www.guidestar.org.il/organization/580316297"},
         {"label": "אתר רשמי", "url": "https://www.anewway.org.il/"}
@@ -917,7 +917,7 @@ const RESEARCH_ORGS = {
       ],
       "risk": "moderate",
       "funding_sources": "גפ\"ן, חוזים עירוניים (מודיעין), הזמנות ישירות. אפס מימון ממשלתי.",
-      "report_url": "research/deep_Tehuda.md",
+      "report_url": "research/deep_Tehuda.html",
       "source_links": [
         {"label": "GuideStar IL", "url": "https://www.guidestar.org.il/he/organization/515191955"},
         {"label": "מין חינוך שכזה", "url": "https://min-hinuch.co.il/"},

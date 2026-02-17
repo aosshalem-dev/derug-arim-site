@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yedidut Toronto (ידידות טורונטו) — דוח מחקר מעמיק</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background: #f5f5f8;
+  color: #1a1a2e;
+  direction: rtl;
+  line-height: 1.8;
+  font-size: 17px;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #1a1a2e; color: #fff;
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  overflow-x: auto; white-space: nowrap;
+}
+nav .brand { font-weight: 700; color: #ff8800; flex-shrink: 0; }
+nav a { color: #ccc; text-decoration: none; font-size: 0.85em; padding: 8px 4px; border-bottom: 2px solid transparent; flex-shrink: 0; }
+nav a:hover { color: #ff8800; border-bottom-color: #ff8800; }
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a5a8a 100%);
+  color: #fff; padding: 50px 20px 40px; text-align: center;
+}
+.hero h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+.hero .subtitle { font-size: 1.05em; color: #b0c4de; margin-bottom: 6px; }
+.hero .meta { font-size: 0.9em; color: #ff8800; margin-top: 8px; }
+.risk-badge {
+  display: inline-block; padding: 4px 16px; border-radius: 20px;
+  font-size: 0.85em; font-weight: 600; margin-top: 10px;
+}
+.risk-high { background: #e74c3c; color: #fff; }
+.risk-medium { background: #f39c12; color: #fff; }
+.risk-low { background: #27ae60; color: #fff; }
+.container { max-width: 860px; margin: 0 auto; padding: 30px 20px 80px; }
+.toc {
+  background: #fff; border-radius: 8px; padding: 22px 26px;
+  margin-bottom: 32px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.toc h2 { font-size: 1.15em; color: #2a5a8a; margin-bottom: 12px; border-bottom: 2px solid #667eea; padding-bottom: 6px; }
+.toc ol { padding-right: 22px; font-size: 0.93em; }
+.toc li { margin-bottom: 4px; }
+.toc a { color: #2a5a8a; text-decoration: none; }
+.toc a:hover { color: #ff8800; text-decoration: underline; }
+.section {
+  background: #fff; border-radius: 8px; padding: 28px 26px;
+  margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.section h2 { font-size: 1.4em; color: #1a1a2e; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #667eea; }
+.section h3 { font-size: 1.1em; color: #2a5a8a; margin: 18px 0 8px; }
+.section h4 { font-size: 1em; color: #444; margin: 14px 0 6px; }
+.section p { margin-bottom: 12px; text-align: justify; }
+.section ul, .section ol { padding-right: 22px; margin-bottom: 12px; }
+.section li { margin-bottom: 5px; }
+blockquote {
+  background: #f0f4fa; border-right: 4px solid #667eea;
+  padding: 12px 18px; margin: 12px 0; border-radius: 0 6px 6px 0;
+  font-size: 0.94em; color: #333;
+}
+.thesis {
+  background: #fff8f0; border-right: 3px solid #ff8800;
+  padding: 14px 18px; margin: 12px 0; border-radius: 0 5px 5px 0;
+  font-size: 0.96em; color: #6b4500;
+}
+table {
+  width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.91em;
+}
+th {
+  background: #667eea; color: #fff; padding: 8px 12px;
+  text-align: right; position: sticky; top: 44px; z-index: 5;
+}
+td {
+  padding: 7px 12px; border-bottom: 1px solid #e8e8e8;
+  text-align: right; vertical-align: top;
+}
+tr:nth-child(even) { background: #f8f9fc; }
+a { color: #2a5a8a; }
+a:hover { color: #ff8800; }
+.back-link {
+  display: inline-block; margin-bottom: 20px; padding: 6px 14px;
+  background: #667eea; color: #fff; border-radius: 4px;
+  text-decoration: none; font-size: 0.88em;
+}
+.back-link:hover { background: #5a6fd6; color: #fff; }
+footer {
+  text-align: center; padding: 30px 20px; color: #888; font-size: 0.85em;
+}
+strong { color: #1a1a2e; }
+code {
+  background: #f0f0f0; padding: 1px 5px; border-radius: 3px;
+  font-size: 0.9em;
+}
+.source-tag {
+  display: inline-block; background: #e8eef6; padding: 2px 8px;
+  border-radius: 10px; font-size: 0.78em; color: #2a5a8a;
+  margin: 2px 3px; text-decoration: none;
+}
+.source-tag:hover { background: #d0dff0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">דוח מחקר מעמיק</span>
+  <a href="../">חזרה לדירוג</a>
+  <a href="../research/">כל הדוחות</a>
+  <a href="#section-1">Part B: Extracted Fa</a> <a href="#section-2">Part C: Analysis</a>
+</nav>
+
+<div class="hero">
+  <h1>Yedidut Toronto (ידידות טורונטו)</h1>
+  <div class="subtitle">Registration: 580496123 | Founded: 2008 | Research Date: 2026-02-16</div>
+  <div class="meta">Source 1: HaMichlol (Israeli Encyclopedia) - Keren Yedidut Toronto</div>
+  
+</div>
+
+<div class="container">
+  <a href="../research/" class="back-link">← כל דוחות המחקר</a>
+  <div class="toc"><h2>תוכן עניינים</h2><ol><li><a href="#section-1">Part B: Extracted Facts</a></li><li><a href="#section-2">Part C: Analysis</a></li></ol></div>
+  <div class="section" id="section-1">
+<h2>Part B: Extracted Facts</h2>
+<h3>Domain 1: Organizational Structure</h3>
+<ul>
+<li><strong>Legal name:</strong> ידידות טורונטו (ע"ר) - Yedidut Toronto [Source: GuideStar]</li>
+<li><strong>Registration:</strong> 580496123, registered as Israeli amuta [Source: GuideStar]</li>
+<li><strong>Founded:</strong> 2008 [Source: HaMichlol]</li>
+<li><strong>Founding entity:</strong> Friedberg Charitable Foundation of Toronto, Canada (CRA #827915521RR0001) [Source: OpenGovCA]</li>
+<li><strong>HQ address:</strong> Kiryat HaMada 20 (also listed as Hartom 7, Beit HaDarim), Har Hotzvim, Jerusalem [Source: IsraelGives, Shatil]</li>
+<li><strong>Also listed at:</strong> Har Hotzvim Hi-Tech Park, Jerusalem [Source: hotzvim.org.il]</li>
+<li><strong>Website:</strong> ff-yt.org [Source: multiple]</li>
+<li><strong>Canadian parent:</strong> Friedberg Charitable Foundation, 600-220 Bay St, Toronto ON M5J 2W4. Private Foundation. Registered 2007 [Source: OpenGovCA]</li>
+<li><strong>Related Canadian entities controlled by Friedberg:</strong> Buckingham Charitable Foundation ($367M CAD transferred to Friedberg Foundation 2009-2022), Yedidut Torah Foundation (received $145K from Friedberg in 2020), Ne'eman Foundation Canada ($18M CAD from Friedberg 2016-2022, CRA status revoked 2024), Friedberg Jewish Manuscript Society ($2.63M in 2020) [Source: OpenGovCA, Mondoweiss]</li>
+<li><strong>Employees:</strong> 9 (as of 2024) [Source: obudget]</li>
+<li><strong>Volunteers:</strong> 0 (as of 2024) [Source: obudget]</li>
+<li><strong>Operational model:</strong> "Social incubator" -- five stages: identify social gaps, develop innovative models, field test, evaluate/measure, integrate into government systems ("social exit") [Source: HaMichlol]</li>
+<li><strong>300 institutions:</strong> These are ultra-Orthodox Torah schools (Talmudei Torah) and educational institutions participating in the El HaNefesh program [Source: HaMichlol, Kol Zchut]</li>
+<li><strong>Key network partner:</strong> Maayan HaChinuch HaTorani (מעיין החינוך התורני) -- a major Sephardi ultra-Orthodox school network [Source: BHol]</li>
+<li><strong>Transparency:</strong> 34% (1.5/5 stars) on IsraelGives; no financial documents uploaded; no Certificate of Good Standing uploaded [Source: IsraelGives]</li>
+</ul>
+<h3>Domain 2: Financial Analysis</h3>
+<ul>
+<li><strong>2023 revenue:</strong> 31M+ NIS [Source: HaMichlol, obudget]</li>
+<li><strong>2024 revenue:</strong> 20,915,858 NIS (~20.9M NIS) [Source: obudget]</li>
+<li><strong>Revenue drop 2023-2024:</strong> ~33% decline (31M to 20.9M), coinciding with Friedberg withdrawal [Source: obudget, HaMichlol]</li>
+<li><strong>Friedberg total investment:</strong> ~800 million NIS over 16 years (2008-2024) = average ~50M NIS/year [Source: HaMichlol, Wikipedia]</li>
+<li><strong>Friedberg Foundation 2020 total giving:</strong> $10.5M+ CAD across 90+ charities [Source: OpenGovCA]</li>
+<li><strong>Friedberg ecosystem total (2013-2022):</strong> $54M CAD from Friedberg + Buckingham foundations to Israel-related charities [Source: Mondoweiss]</li>
+<li><strong>Buckingham-to-Friedberg pipeline:</strong> $367M CAD transferred 2009-2022 [Source: Mondoweiss]</li>
+<li><strong>Government transfers (last 3 years):</strong> Total 44,890 NIS from Ministry of Education (Iron Swords therapy contract) + 866,552 NIS from Negev/Galilee Development Authority (3 social periphery grants) [Source: obudget]</li>
+<li><strong>Government funding is negligible:</strong> ~911K NIS government vs 20.9M total = ~4.4% government-funded [Source: obudget]</li>
+<li><strong>Grant size to recipients:</strong> $50,000-$1,000,000 per award [Source: Shatil]</li>
+<li><strong>Sector comparison:</strong> Median org in education/training field has 2.1M NIS turnover; YT at 20.9M is ~10x median [Source: obudget]</li>
+<li><strong>Tax deductibility:</strong> Israel, US, UK, France [Source: IsraelGives]</li>
+<li><strong>Heznekim program budget:</strong> 10M NIS [Source: Calcalist]</li>
+<li><strong>Scholarship amounts:</strong> Up to 13,000 NIS/year per Haredi student, 12,000 NIS/year living stipend for Heznekim [Source: Milgapo, Calcalist]</li>
+<li><strong>No longer accepting new funding applications</strong> [Source: Shatil]</li>
+</ul>
+<p><strong>CRITICAL: The Funding Cliff</strong></p>
+<ul>
+<li>2023: 31M+ NIS (Friedberg still active)</li>
+<li>2024: 20.9M NIS (Friedberg exits October 2024)</li>
+<li>This represents a ~33% revenue drop in one year</li>
+<li>If Friedberg was contributing ~50M NIS/year on average (800M / 16 years), the remaining 20.9M likely represents operational wind-down revenue, government contracts, and reserves</li>
+<li>With only ~911K in government transfers and the Shatil page stating "no new applications accepted," the organization appears to be in contraction mode</li>
+</ul>
+<h3>Domain 3: Leadership & Politics</h3>
+<ul>
+<li><strong>Dr. Albert Dov Friedberg (President, until Oct 2024):</strong> Toronto-based hedge fund manager. Owner of Friedberg Mercantile Group ($2.85B AUM). Ner Israel Rabbinical College graduate, BSc Johns Hopkins, MBA Columbia, PhD University of Toronto (Near/Middle Eastern Civilizations). Forbes #34 hedge fund earner (2011, earned $60M). Collector of rare Judaica. Started Israel philanthropy after 2004 fax from Bezalel Cohen in Jerusalem [Source: Haaretz, OPM Wire, OpenGovCA]</li>
+<li><strong>Nancy Friedberg:</strong> Director of Friedberg Charitable Foundation [Source: OpenGovCA]</li>
+<li><strong>Moshe Shapira (CEO, until Oct 2024):</strong> Long-serving CEO and fund representative in Israel. Referenced as "Rabbi Moshe Shapira" in Haredi media [Source: HaMichlol, Shatil, BHol]</li>
+<li><strong>Rabbi Mordechai Findros:</strong> Director of El HaNefesh project [Source: BHol]</li>
+<li><strong>Yakov Friedman:</strong> Former Director of Friedberg Foundation (ceased 2016) [Source: OpenGovCA]</li>
+<li><strong>Post-October 2024 leadership:</strong> Unknown. No public information on who took over after Friedberg/Shapira departure [Source: searches returned no results]</li>
+<li><strong>Friedberg's broader philanthropic network:</strong> Director at Yedidut Torah Foundation, Rofeh Wellness Centre, Kesher Employment Services, Friedberg Jewish Manuscript Society, Maimonides Educational Foundation, Stepping Stones Foundation [Source: Mondoweiss]</li>
+</ul>
+<h3>Domain 4: Ideology & Programs</h3>
+<p><strong>Core Ideology:</strong> "Social exit" -- develop programs that can be absorbed by government, then hand off. The foundation sees itself as an incubator, not a permanent service provider. Focus on reducing Israeli socioeconomic gaps, with particular emphasis on ultra-Orthodox communities and single-parent families [Source: HaMichlol]</p>
+<p><strong>Active Programs:</strong></p>
+<ol>
+<li><strong>El HaNefesh (אל הנפש) -- Flagship:</strong> Mental health support in ~300 Haredi educational institutions. Three pillars: (a) professional training for educators, (b) subsidized professional mental health treatment for children/youth, (c) emotional support hotline for parents and educators. 600+ practitioners. Thousands of children served. Free of charge. Listed as Gefen program #1795. Health Minister Award 2021 [Source: HaMichlol, Kol Zchut, search results]</li>
+</ol>
+<ol>
+<li><strong>Heznekim (הזנקים):</strong> Ultra-Orthodox hi-tech integration. 10M NIS budget. Two cohorts of 50. Partnerships with HP, Check Point, Mellanox. Joint with Ministry of Labor. 101 participants evaluated at 3-year mark (67 men, 34 women) [Source: Calcalist, Pareto]</li>
+</ol>
+<ol>
+<li><strong>Kol Achat (קול אחת):</strong> Single-parent employment support. Professional training, personal guidance, quality job placement. Has its own website: kolachat.org.il [Source: HaMichlol, Calcalist]</li>
+</ol>
+<ol>
+<li><strong>Sviva Betucha (סביבה בטוחה):</strong> Safe school environments in Haredi schools, preventing abuse. Developed with Henrietta Szold Institute [Source: HaMichlol, Szold Institute]</li>
+</ol>
+<ol>
+<li><strong>Alumim (עלומים):</strong> Healthy relationships and abuse prevention in religious-Zionist schools. 15,000+ students, 500+ teachers (from school year 2023-24) [Source: HaMichlol]</li>
+</ol>
+<ol>
+<li><strong>Kidmum (קידמום):</strong> Post-crisis (COVID-19) economic and emotional support for families [Source: HaMichlol]</li>
+</ol>
+<ol>
+<li><strong>Te'uda (תעודה):</strong> Helping at-risk Haredi girls achieve matriculation exams [Source: HaMichlol]</li>
+</ol>
+<ol>
+<li><strong>Lapidot (לפידות):</strong> Professional development for educators working with at-risk Haredi girls [Source: HaMichlol]</li>
+</ol>
+<ol>
+<li><strong>Orim (אורים):</strong> Parental competency program with longitudinal research [Source: HaMichlol]</li>
+</ol>
+<ol>
+<li><strong>Merchavim (מרחבים):</strong> Prevents school dropout for at-risk Haredi girls. Achieved 1% dropout rate and 86% matriculation exam participation [Source: HaMichlol]</li>
+</ol>
+<ol>
+<li><strong>Kol HaNa'ar (קול הנער):</strong> Identification and guidance for Haredi youth not in educational frameworks [Source: ff-yt.org]</li>
+</ol>
+<ol>
+<li><strong>Kishurim (כישורים):</strong> Skills development [Source: ff-yt.org]</li>
+</ol>
+<p><strong>Completed Programs (achieved "social exit"):</strong></p>
+<ul>
+<li>Haredim in Academia (חרדים באקדמיה): 4,000+ Haredi students supported; model adopted by government</li>
+<li>New Page (דף חדש): Employment model adopted by Ministry of Labor (2019)</li>
+<li>Others [Source: HaMichlol]</li>
+</ul>
+<p><strong>Hebrew vs English Messaging:</strong></p>
+<ul>
+<li>Hebrew website (ff-yt.org): Emphasizes programs for ultra-Orthodox community specifically, uses terms like "Torah education system," works within Haredi norms</li>
+<li>English website: Uses more generic social-impact language -- "non-profit incubator for effective solutions to systemic flaws," "underserved communities," does not prominently mention ultra-Orthodox focus</li>
+<li>Shatil listing includes "Jewish identity" and "improving Israel's image internationally" as funding areas -- not mentioned in English-facing materials [Source: Shatil, ff-yt.org]</li>
+</ul>
+<h3>Domain 5: Government Ties</h3>
+<ul>
+<li><strong>Ministry of Education:</strong> Contract for therapy services (Iron Swords). El HaNefesh listed as Gefen program #1795 (schools purchase using MoE budgets) [Source: obudget, search]</li>
+<li><strong>Ministry of Labor and Welfare:</strong> Joint partner on Heznekim program. Adopted "New Page" employment model (2019) [Source: HaMichlol, Calcalist]</li>
+<li><strong>Ministry of Economy and Industry:</strong> Partnership on Heznekim, with Economy Minister hosting event at JVP Jerusalem campus [Source: search results]</li>
+<li><strong>Ministry of Health:</strong> Awarded Health Minister's Award (2021) for El HaNefesh. Ongoing professional standards coordination [Source: HaMichlol]</li>
+<li><strong>Negev/Galilee Development Authority:</strong> 866K NIS in support grants ("Social Periphery") [Source: obudget]</li>
+<li><strong>National Insurance Institute:</strong> Some programs use NII funds [Source: HaMichlol]</li>
+<li><strong>Jerusalem Municipality:</strong> Partnership mentioned [Source: HaMichlol]</li>
+<li><strong>Legislative achievement:</strong> Amendment 73 to Execution Law (July 2023) -- protects parental support payments from creditor seizure. YT advocated for this change [Source: HaMichlol]</li>
+<li><strong>Access to Haredi institutions:</strong> Through network partnerships, especially Maayan HaChinuch HaTorani (Sephardi Haredi school network). This is the key access mechanism -- YT does not operate schools itself but embeds programs within existing Haredi educational networks [Source: BHol, JDN]</li>
+</ul>
+<h3>Domain 6: Controversies</h3>
+<ol>
+<li><strong>Friedberg Ecosystem and Ne'eman Foundation (MAJOR):</strong> Albert Friedberg's charitable network includes Ne'eman Foundation Canada, which had its CRA charitable status revoked in August 2024 for acting as an illegal "conduit" funneling donations to Israeli military organizations and illegal settlement groups. Friedberg donated $18M CAD to Ne'eman (2016-2022). However, Yedidut Toronto itself is NOT Ne'eman -- it is a separate entity focused on social programs. The connection is that the same donor (Friedberg) funded both [Source: Mondoweiss, Just Peace Advocates]</li>
+</ol>
+<ol>
+<li><strong>Rabbi Druckman Funding Freeze (2019):</strong> YT froze funding for Rabbi Chaim Druckman's 'Ami' conversion programs because Druckman refused to apologize for supporting Rabbi Moti Alon (convicted of sexual harassment). YT was the second-largest donor. This shows YT was willing to take a principled stand on abuse issues [Source: Kipa]</li>
+</ol>
+<ol>
+<li><strong>Transparency Concerns:</strong> 34% transparency rating on IsraelGives. No financial documents uploaded. No Certificate of Good Standing. For an organization handling 31M+ NIS/year, this opacity is notable [Source: IsraelGives]</li>
+</ol>
+<ol>
+<li><strong>Friedberg Fund Performance Decline:</strong> The hedge fund source of Friedberg's philanthropy (Friedberg Mercantile Group) reportedly lost ~84% from its 2012 peak through 2021. This may explain the eventual withdrawal of funding [Source: OPM Wire]</li>
+</ol>
+<ol>
+<li><strong>Community Reaction to Withdrawal:</strong> No public reporting found on how the Haredi community or service recipients reacted to the Friedberg withdrawal. The silence itself is notable -- 300 institutions serving thousands of children lost their primary funder, and there appears to be no public outcry or transition plan reported [Source: searches returned no results]</li>
+</ol>
+<ol>
+<li><strong>Program Effectiveness Data:</strong> While the Heznekim program has a Pareto Group evaluation (101 participants, 3-year mark), and the Haredim in Academia program has an ROI study, the flagship El HaNefesh program has limited publicly available effectiveness data beyond participation numbers [Source: Pareto, ffi.org.il]</li>
+</ol>
+
+</div>
+<div class="section" id="section-2">
+<h2>Part C: Analysis</h2>
+<h3>Thesis: A Single-Donor Social Laboratory Facing an Existential Cliff</h3>
+<p>Yedidut Toronto is the most significant example in Israel's third sector of what happens when a single philanthropist creates an entire social services ecosystem -- then walks away. For 16 years, Albert Dov Friedberg, a Toronto hedge fund billionaire with rabbinic training, invested approximately 800 million NIS (~$270M CAD at historical rates) into programs that embedded themselves deeply within Israel's ultra-Orthodox educational and social infrastructure. The organization achieved genuine impact: 4,000+ Haredi students in academia, a mental health program reaching 300 institutions, government adoption of employment models, and a Health Minister's Award. But the entire edifice was built on a single financial pillar that has now been removed. The 2024 revenue figure (20.9M NIS, down 33% from 31M+ NIS in 2023) tells the story of an organization in contraction, with negligible government funding (under 5%) and a Shatil listing that says "no longer accepting new applications."</p>
+<h3>Financial Flow Summary</h3>
+<p><code>`</code></p>
+<p>FUNDING SOURCE CHAIN:</p>
+<p>Albert Friedberg (personal wealth from Friedberg Mercantile Group, ~$2.85B AUM)</p>
+<table>
+<tr></tr>
+</table>
+<p>v</p>
+<p>Buckingham Charitable Foundation ($367M CAD transferred 2009-2022)</p>
+<table>
+<tr></tr>
+</table>
+<p>v</p>
+<p>Friedberg Charitable Foundation (CRA #827915521RR0001, Toronto)</p>
+<table>
+<tr></tr>
+</table>
+<p>+---> Yedidut Toronto (Israel, 580496123) -- ~800M NIS over 16 years</p>
+<p>+---> Ne'eman Foundation Canada -- $18M CAD (CRA status REVOKED 2024)</p>
+<p>+---> Friedberg Jewish Manuscript Society -- $2.63M (2020)</p>
+<p>+---> Jewish Heritage Foundation of Canada -- $2.15M (2020)</p>
+<p>+---> UIA Toronto -- $857K (2020)</p>
+<p>+---> Yedidut Torah Foundation -- $145K (2020)</p>
+<p>+---> 85+ other charities</p>
+<p>YEDIDUT TORONTO INTERNAL FLOW (2023):</p>
+<p>Friedberg Foundation ---> ~28-30M NIS (est. ~95% of 31M total)</p>
+<p>Government transfers --> ~911K NIS (~3%)</p>
+<p>Other sources --------> ~600K NIS (~2%)</p>
+<p>===============</p>
+<p>Total revenue:           ~31M NIS</p>
+<p>YEDIDUT TORONTO 2024 (post-Friedberg):</p>
+<p>Remaining revenue: 20.9M NIS (likely reserves + existing contracts)</p>
+<p>Government: ~911K NIS</p>
+<p>Trajectory: Declining</p>
+<p><code>`</code></p>
+<h3>Pattern Naming</h3>
+<ol>
+<li><strong>Single-Donor Dependency Syndrome:</strong> Yedidut Toronto exemplifies a pattern where a philanthropic foundation becomes so dependent on one donor that it cannot survive the donor's withdrawal. At ~95% funding from one source, this is not a diversified organization -- it is an operating arm of the Friedberg family. The "social exit" model (handing programs to government) was the intended mitigation, but it was incomplete when the exit came.</li>
+</ol>
+<ol>
+<li><strong>Philanthropic Laundering Structure (Friedberg Ecosystem -- NOT Yedidut Toronto itself):</strong> The Buckingham-to-Friedberg-to-multiple-entities pipeline, totaling $367M CAD in inter-foundation transfers, resembles structures that Canadian tax authorities flagged. Ne'eman Foundation's revocation for acting as a "conduit" is a red flag for the broader Friedberg ecosystem. However, it must be emphasized: Yedidut Toronto's programs (mental health for Haredi children, academic scholarships, employment training) are qualitatively different from Ne'eman's activities (military/settlement funding). They share a donor, not a mission.</li>
+</ol>
+<ol>
+<li><strong>Cultural Brokerage Model:</strong> YT succeeded in Haredi communities not because it offered services directly, but because it embedded programs within existing Haredi institutional structures (Maayan HaChinuch HaTorani, individual Talmudei Torah). This "work through, not around" approach is why 300 institutions participated -- and why the program's continuation depends on institutional relationships, not just funding.</li>
+</ol>
+<ol>
+<li><strong>Hebrew/English Messaging Divergence:</strong> The English-facing materials describe a generic "social incubator for underserved communities." The Hebrew materials reveal the core: a foundation focused primarily on ultra-Orthodox populations, working within Torah educational systems, with "Jewish identity" as a funding category. This is not necessarily deceptive -- it may simply reflect audience expectations -- but the gap is worth noting.</li>
+</ol>
+<h3>Values Alignment Table</h3>
+<table>
+<tr><th>Value</th><th>Score (1-5)</th><th>Evidence</th></tr>
+<tr><td>Transparency</td><td>2/5</td><td>34% IsraelGives rating; no public financials; no Certificate of Good Standing uploaded. For an org spending 31M NIS/year, this is poor.</td></tr>
+<tr><td>Social Impact</td><td>4/5</td><td>4,000+ Haredi students in academia; "New Page" model adopted by Ministry of Labor; Amendment 73 legislative achievement; Health Minister Award</td></tr>
+<tr><td>Financial Sustainability</td><td>1/5</td><td>95%+ single-donor dependency; 33% revenue drop in one year; no diversification strategy apparent</td></tr>
+<tr><td>Accountability</td><td>3/5</td><td>Heznekim has Pareto Group evaluation; Haredim in Academia has ROI study; but flagship El HaNefesh lacks published effectiveness data beyond participation counts</td></tr>
+<tr><td>Ethical Standards</td><td>4/5</td><td>Froze Druckman funding over abuse stance (2019); programs address genuine social needs (mental health, employment, education); but donor's parallel funding of Ne'eman raises questions about the broader ecosystem</td></tr>
+<tr><td>Government Integration</td><td>3/5</td><td>Several programs adopted by government; Gefen listing; but government funding is only ~4% of revenue, suggesting programs are not yet truly integrated into public budgets</td></tr>
+</table>
+<h3>Open Questions</h3>
+<ol>
+<li><strong>Who is running Yedidut Toronto now?</strong> Post-October 2024, no public information exists about new leadership after Shapira and Friedberg departed. Is the organization being wound down or restructured?</li>
+</ol>
+<ol>
+<li><strong>What happens to El HaNefesh's 300 institutions?</strong> If the primary funder is gone and government transfers cover less than 5% of operations, who is paying for subsidized mental health treatment in Haredi schools? Is the Gefen listing sufficient to sustain the program through school purchase orders?</li>
+</ol>
+<ol>
+<li><strong>Was the "social exit" strategy achieved?</strong> YT's model was to hand programs to government. The Haredim in Academia program was reportedly completed. But El HaNefesh (the largest active program) appears to still depend on philanthropic funding. Did the Friedberg withdrawal come before the "exit" was complete?</li>
+</ol>
+<ol>
+<li><strong>Why did Friedberg actually withdraw?</strong> The public record says the relationship "ended" in October 2024, but no explanation has been published. Possible factors: (a) Hedge fund performance decline (fund lost ~84% from 2012 peak), reducing philanthropic capacity; (b) CRA scrutiny of the broader Friedberg ecosystem following Ne'eman revocation (August 2024 -- same period); (c) Age/succession -- Friedberg is elderly; (d) Mission completion (unlikely, given active programs).</li>
+</ol>
+<ol>
+<li><strong>Is there a connection between Ne'eman revocation timing and Yedidut withdrawal timing?</strong> Ne'eman's charitable status was revoked in August 2024. Friedberg's relationship with Yedidut Toronto ended October 2024. The temporal proximity is striking. Did CRA enforcement activity cause Friedberg to restructure or reduce his Canadian charitable activities?</li>
+</ol>
+<ol>
+<li><strong>What is the 2024 revenue breakdown?</strong> The 20.9M NIS figure from obudget -- how much is reserves being spent down vs. new income? Is the organization burning through endowment?</li>
+</ol>
+<ol>
+<li><strong>Program effectiveness for El HaNefesh:</strong> Beyond participation numbers (300 institutions, 600 practitioners, "thousands of children"), what are the clinical outcomes? How does subsidized therapy in Haredi schools compare to standard mental health services? The Health Minister Award suggests recognition, but published outcome data is missing.</li>
+</ol>
+<ol>
+<li><strong>Why only 9 employees?</strong> For an organization with 31M NIS revenue and programs in 300+ institutions, 9 employees suggests heavy outsourcing or subcontracting. Where does the money actually go?</li>
+</ol>
+<p><em>Report compiled 2026-02-16 by Claude Opus 4.6 from publicly available sources. All facts attributed to specific sources. Analysis represents the researcher's interpretation of available data.</em></p>
+
+</div>
+</div>
+
+<footer>
+  פרויקט זהות ציונית — דוח מחקר מעמיק | <a href="../">דירוג ערים</a> | <a href="../research/">כל הדוחות</a>
+</footer>
+
+</body>
+</html>

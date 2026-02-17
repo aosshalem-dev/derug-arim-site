@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>שער שוויון (The Equalizer / Gateway to Equality) — דוח מחקר מעמיק</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background: #f5f5f8;
+  color: #1a1a2e;
+  direction: rtl;
+  line-height: 1.8;
+  font-size: 17px;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #1a1a2e; color: #fff;
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  overflow-x: auto; white-space: nowrap;
+}
+nav .brand { font-weight: 700; color: #ff8800; flex-shrink: 0; }
+nav a { color: #ccc; text-decoration: none; font-size: 0.85em; padding: 8px 4px; border-bottom: 2px solid transparent; flex-shrink: 0; }
+nav a:hover { color: #ff8800; border-bottom-color: #ff8800; }
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a5a8a 100%);
+  color: #fff; padding: 50px 20px 40px; text-align: center;
+}
+.hero h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+.hero .subtitle { font-size: 1.05em; color: #b0c4de; margin-bottom: 6px; }
+.hero .meta { font-size: 0.9em; color: #ff8800; margin-top: 8px; }
+.risk-badge {
+  display: inline-block; padding: 4px 16px; border-radius: 20px;
+  font-size: 0.85em; font-weight: 600; margin-top: 10px;
+}
+.risk-high { background: #e74c3c; color: #fff; }
+.risk-medium { background: #f39c12; color: #fff; }
+.risk-low { background: #27ae60; color: #fff; }
+.container { max-width: 860px; margin: 0 auto; padding: 30px 20px 80px; }
+.toc {
+  background: #fff; border-radius: 8px; padding: 22px 26px;
+  margin-bottom: 32px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.toc h2 { font-size: 1.15em; color: #2a5a8a; margin-bottom: 12px; border-bottom: 2px solid #667eea; padding-bottom: 6px; }
+.toc ol { padding-right: 22px; font-size: 0.93em; }
+.toc li { margin-bottom: 4px; }
+.toc a { color: #2a5a8a; text-decoration: none; }
+.toc a:hover { color: #ff8800; text-decoration: underline; }
+.section {
+  background: #fff; border-radius: 8px; padding: 28px 26px;
+  margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.section h2 { font-size: 1.4em; color: #1a1a2e; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #667eea; }
+.section h3 { font-size: 1.1em; color: #2a5a8a; margin: 18px 0 8px; }
+.section h4 { font-size: 1em; color: #444; margin: 14px 0 6px; }
+.section p { margin-bottom: 12px; text-align: justify; }
+.section ul, .section ol { padding-right: 22px; margin-bottom: 12px; }
+.section li { margin-bottom: 5px; }
+blockquote {
+  background: #f0f4fa; border-right: 4px solid #667eea;
+  padding: 12px 18px; margin: 12px 0; border-radius: 0 6px 6px 0;
+  font-size: 0.94em; color: #333;
+}
+.thesis {
+  background: #fff8f0; border-right: 3px solid #ff8800;
+  padding: 14px 18px; margin: 12px 0; border-radius: 0 5px 5px 0;
+  font-size: 0.96em; color: #6b4500;
+}
+table {
+  width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.91em;
+}
+th {
+  background: #667eea; color: #fff; padding: 8px 12px;
+  text-align: right; position: sticky; top: 44px; z-index: 5;
+}
+td {
+  padding: 7px 12px; border-bottom: 1px solid #e8e8e8;
+  text-align: right; vertical-align: top;
+}
+tr:nth-child(even) { background: #f8f9fc; }
+a { color: #2a5a8a; }
+a:hover { color: #ff8800; }
+.back-link {
+  display: inline-block; margin-bottom: 20px; padding: 6px 14px;
+  background: #667eea; color: #fff; border-radius: 4px;
+  text-decoration: none; font-size: 0.88em;
+}
+.back-link:hover { background: #5a6fd6; color: #fff; }
+footer {
+  text-align: center; padding: 30px 20px; color: #888; font-size: 0.85em;
+}
+strong { color: #1a1a2e; }
+code {
+  background: #f0f0f0; padding: 1px 5px; border-radius: 3px;
+  font-size: 0.9em;
+}
+.source-tag {
+  display: inline-block; background: #e8eef6; padding: 2px 8px;
+  border-radius: 10px; font-size: 0.78em; color: #2a5a8a;
+  margin: 2px 3px; text-decoration: none;
+}
+.source-tag:hover { background: #d0dff0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">דוח מחקר מעמיק</span>
+  <a href="../">חזרה לדירוג</a>
+  <a href="../research/">כל הדוחות</a>
+  <a href="#section-1">1. Organizational St</a> <a href="#section-2">2. Financial Analysi</a> <a href="#section-3">3. Leadership Map</a> <a href="#section-4">4. Programs & Curric</a> <a href="#section-5">5. Ideology Assessme</a> <a href="#section-6">6. Foreign Funding C</a> <a href="#section-7">7. Corporate Partner</a> <a href="#section-8">8. Controversies</a> <a href="#section-9">9. Values Alignment </a> <a href="#section-10">10. Open Questions</a> <a href="#section-11">11. Comparison with </a> <a href="#section-12">12. Methodology & So</a>
+</nav>
+
+<div class="hero">
+  <h1>שער שוויון (The Equalizer / Gateway to Equality)</h1>
+  <div class="subtitle"></div>
+  <div class="meta"></div>
+  <span class="risk-badge risk-high">סיכון גבוה</span>
+</div>
+
+<div class="container">
+  <a href="../research/" class="back-link">← כל דוחות המחקר</a>
+  <div class="toc"><h2>תוכן עניינים</h2><ol><li><a href="#section-1">1. Organizational Structure & Legal Identity</a></li><li><a href="#section-2">2. Financial Analysis</a></li><li><a href="#section-3">3. Leadership Map</a></li><li><a href="#section-4">4. Programs & Curriculum Content</a></li><li><a href="#section-5">5. Ideology Assessment</a></li><li><a href="#section-6">6. Foreign Funding Chain</a></li><li><a href="#section-7">7. Corporate Partnerships</a></li><li><a href="#section-8">8. Controversies</a></li><li><a href="#section-9">9. Values Alignment Table</a></li><li><a href="#section-10">10. Open Questions</a></li><li><a href="#section-11">11. Comparison with Prior Research Claims</a></li><li><a href="#section-12">12. Methodology & Sources</a></li></ol></div>
+  <div class="section" id="section-1">
+<h2>1. Organizational Structure & Legal Identity</h2>
+<h3>1.1 Legal Entity</h3>
+<ul>
+<li><strong>Name:</strong> שער שוויון (ע"ר) -- Sha'ar Shivyon Registered Association</li>
+<li><strong>Original Name:</strong> "The Israeli Sports and Education Initiative" (registered May 2012)</li>
+<li><strong>Name Change:</strong> October 2021, renamed to שער שוויון</li>
+<li><strong>Registration Number:</strong> 580558591</li>
+<li><strong>Legal Type:</strong> Amuta (registered association)</li>
+<li><strong>Address:</strong> Ben Tzvi Yitzhak 6, Hod HaSharon, 7537303</li>
+<li><strong>Field:</strong> Sports</li>
+<li><strong>Status:</strong> Active, proper management (Certificate of Proper Management 2022), Article 46 tax-exempt status (2024-2026)</li>
+<li><strong>Midot Effectiveness Badge:</strong> Valid through 03/2026 (awarded by Midot/SFI Group)</li>
+</ul>
+<h3>1.2 Founding Story</h3>
+<p>The organization was founded in <strong>2009</strong> by <strong>Liran Gerassi</strong> (born 1985) while he was a student at Hebrew University of Jerusalem. Gerassi volunteered at a community center in Jerusalem's Talpiot neighborhood and observed youth engaging in destructive behaviors during after-school hours. He gathered them to form a soccer team, secured sponsorship for equipment, and paired athletic training with academic tutoring. The model proved effective -- teachers noticed improved academic performance, leading schools to adopt the framework.</p>
+<ul>
+<li>Started with 7 soccer teams from 7 schools in 2009</li>
+<li>Registered as NGO in 2012/2013</li>
+<li>Expanded to high schools in 2014</li>
+<li>Ministry of Education inclusion by 2017</li>
+<li>By 2020: 300 teams, ~4,500 participants</li>
+<li>By 2025/2026: 410+ teams, 10,000+ participants</li>
+</ul>
+<h3>1.3 Relationship to JDC/Joint Israel</h3>
+<p><strong>CRITICAL CORRECTION:</strong> The prior cluster research report stated that "שער שוויון פועלת תחת ג'וינט ישראל" (operates under Joint Israel). This claim is <strong>not supported by evidence</strong>.</p>
+<p>Evidence against JDC subordination:</p>
+<ul>
+<li>שער שוויון is registered as an <strong>independent association</strong> (amuta), not as a JDC program</li>
+<li>The organization's website, GuideStar listing, and obudget entry make <strong>no reference to JDC</strong></li>
+<li>The founder (Liran Gerassi) is an independent social entrepreneur, not a JDC employee</li>
+<li>The board of directors has no identified JDC representatives</li>
+<li>Partners listed include: The Jewish Agency, Harris Philanthropies, Wingate Institute, Decathlon, Jerusalem Foundation -- but NOT JDC</li>
+</ul>
+<p><strong>What was likely confused:</strong> The program "סודקות את תקרת הזכוכית" (Cracking the Glass Ceiling) IS a JDC program. The prior research appears to have merged data from שער שוויון and סודקות into a single "feminist cluster" analysis, incorrectly attributing JDC connections to שער שוויון.</p>
+<h3>1.4 Scale of Operations</h3>
+<ul>
+<li><strong>Teams:</strong> 410+ across Israel</li>
+<li><strong>Participants:</strong> 10,000+ children and youth</li>
+<li><strong>Employees:</strong> 151 (2024)</li>
+<li><strong>Volunteers:</strong> 500+</li>
+<li><strong>Geographic reach:</strong> National, from Metula to Eilat</li>
+<li><strong>Cumulative impact:</strong> 32,000 children since founding; 2,100 groups; 5,000 volunteer trainers; 850+ regional tournaments</li>
+</ul>
+<p><strong>Sources:</strong></p>
+<ul>
+<li><a href="https://www.guidestar.org.il/organization/580558591" target="_blank" rel="noopener">GuideStar Profile</a></li>
+<li><a href="https://en.the-equalizer.org/about/" target="_blank" rel="noopener">The Equalizer About Page</a></li>
+<li><a href="https://next.obudget.org/i/org/association/580558591" target="_blank" rel="noopener">obudget.org</a></li>
+<li><a href="https://midot.org.il/association/shaar-shevion" target="_blank" rel="noopener">Midot Profile</a></li>
+</ul>
+
+</div>
+<div class="section" id="section-2">
+<h2>2. Financial Analysis</h2>
+<h3>2.1 Annual Revenue (2024 Reported)</h3>
+<p><strong>Total Revenue: 13,604,063 NIS</strong> (sector median for sports amutot: 456,283 NIS -- organization is 30x the median)</p>
+<table>
+<tr><th>Source</th><th>Amount (NIS)</th><th>% of Total</th></tr>
+<tr><td>Foreign Donations</td><td>3,908,146</td><td>28.7%</td></tr>
+<tr><td>Israeli Donations</td><td>2,059,241</td><td>15.1%</td></tr>
+<tr><td>Government Services</td><td>741,520</td><td>5.5%</td></tr>
+<tr><td>Local Authority Services</td><td>452,064</td><td>3.3%</td></tr>
+<tr><td>Government Support (2025)</td><td>386,240</td><td>2.8%</td></tr>
+<tr><td>Local Authority Support</td><td>33,750</td><td>0.2%</td></tr>
+<tr><td><strong>Other (unspecified)</strong></td><td><strong>6,023,102</strong></td><td><strong>44.3%</strong></td></tr>
+</table>
+<h3>2.2 Government Funding (obudget.org data)</h3>
+<p><strong>Total government transfers (3-year): 4,462,000 NIS</strong></p>
+<p>Breakdown:</p>
+<ul>
+<li><strong>Ministry of Negev, Galil & National Resilience:</strong> 4,461,999.90 NIS (Sports Services contract)</li>
+<li><strong>Development Authority (Negev, Galil & Cooperation):</strong> 3,037,665 NIS (Community & Society Projects grant)</li>
+</ul>
+<h3>2.3 Analysis of the "44% Unidentified" Revenue</h3>
+<p>The prior research flagged the 44.3% "other" revenue as a red flag suggesting opacity. This deserves more nuanced analysis:</p>
+<p><strong>Likely components of the 6M NIS "other" category:</strong></p>
+<ol>
+<li><strong>Corporate partnerships</strong> -- Amidar (public housing company, documented partnership), Decathlon (sporting goods), Wingate Institute</li>
+<li><strong>International sports partnerships</strong> -- Tottenham Hotspur (documented training event, 2022), UEFA (award-winning program)</li>
+<li><strong>Program fees</strong> from schools and community centers</li>
+<li><strong>Jewish Federation funding</strong> -- JUF (Jewish United Fund) documented as "longtime supporter"</li>
+<li><strong>Jewish Agency</strong> partnership (listed as partner on website)</li>
+<li><strong>Harris Philanthropies</strong> -- Josh and Marjorie Harris (Philadelphia 76ers co-owners) have given "in excess of $1 million" to the 48ers program since 2015</li>
+<li><strong>Event fundraising</strong> -- memorabilia auctions, tournaments</li>
+</ol>
+<p>The classification as "unidentified" stems from GuideStar's reporting categories not capturing corporate/programmatic partnerships separately. This is a structural reporting limitation, not necessarily a transparency failure.</p>
+<h3>2.4 Identified Foreign Donors</h3>
+<table>
+<tr><th>Donor</th><th>Amount/Nature</th><th>Source</th></tr>
+<tr><td>Charles H. Revson Foundation</td><td>$80,000 (2024 grant)</td><td><a href="https://revsonfoundation.org/grant/shaar-shivion-a-r/" target="_blank" rel="noopener">Revson Foundation</a></td></tr>
+<tr><td>Harris Philanthropies (Josh & Marjorie Harris)</td><td>>$1M cumulative since 2015</td><td><a href="https://ejewishphilanthropy.com/the-76ers-josh-and-marjorie-harris-back-israeli-girls-basketball-initiative/" target="_blank" rel="noopener">eJewishPhilanthropy</a></td></tr>
+<tr><td>JUF (Jewish United Fund, Chicago)</td><td>Undisclosed, "longtime supporter"</td><td><a href="https://www.juf.org/Israel_Office/tmpl-Impact.aspx?id=442938" target="_blank" rel="noopener">JUF Israel Office</a></td></tr>
+<tr><td>Tottenham Hotspur Foundation</td><td>In-kind (player visits, tickets, visibility)</td><td><a href="https://www.tottenhamhotspur.com/news/2022/july/proudly-supporting-the-equalizer-charity-in-israel/" target="_blank" rel="noopener">Tottenham</a></td></tr>
+</table>
+<p><strong>Assessment:</strong> The identified foreign donors are <strong>mainstream Jewish philanthropic entities and sports organizations</strong>, not politically-motivated progressive foundations. There is <strong>no evidence</strong> of funding from New Israel Fund, Ford Foundation, or Open Society Foundations (these were speculated in the prior report without any basis).</p>
+<h3>2.5 Gefen Mapping Budget</h3>
+<p>The <strong>780,495 NIS</strong> figure from the Gefen mapping represents only the enrichment program component (Gefen catalog #5197), which covers after-school soccer and Boatot activities for elementary students in the Arab sector. This is a small fraction of the total 13.6M NIS organizational budget.</p>
+<p><strong>Sources:</strong></p>
+<ul>
+<li><a href="https://www.guidestar.org.il/organization/580558591/finances" target="_blank" rel="noopener">GuideStar Finances</a></li>
+<li><a href="https://next.obudget.org/i/org/association/580558591" target="_blank" rel="noopener">obudget.org</a></li>
+<li><a href="https://revsonfoundation.org/grant/shaar-shivion-a-r/" target="_blank" rel="noopener">Revson Foundation Grant</a></li>
+<li><a href="https://ejewishphilanthropy.com/the-76ers-josh-and-marjorie-harris-back-israeli-girls-basketball-initiative/" target="_blank" rel="noopener">eJewishPhilanthropy</a></li>
+</ul>
+
+</div>
+<div class="section" id="section-3">
+<h2>3. Leadership Map</h2>
+<h3>3.1 Founder & CEO</h3>
+<p><strong>Liran Gerassi</strong> (לירן ג'רסי)</p>
+<ul>
+<li>Born 1985</li>
+<li>Hebrew University of Jerusalem graduate</li>
+<li>Founded the program in 2009 while a student</li>
+<li>Social entrepreneur, not connected to any political movement</li>
+<li>Email: liran@league.org.il</li>
+<li>Also co-founder of "Global GameChangers" (per ZoomInfo)</li>
+</ul>
+<h3>3.2 Executive Team</h3>
+<table>
+<tr><th>Name</th><th>Title</th></tr>
+<tr><td>Uri Shaham (אורי שחם)</td><td>CEO</td></tr>
+<tr><td>Gavriel Halevi</td><td>Deputy CEO</td></tr>
+<tr><td>Yaniv Kusevitzky</td><td>Deputy CEO</td></tr>
+<tr><td>Itamar Benovich</td><td>Partnerships Manager</td></tr>
+<tr><td>Sapir Alkobi</td><td>Boatot Program Manager</td></tr>
+<tr><td>Dolev Peretz</td><td>Southern District Manager</td></tr>
+<tr><td>Dean Blouin</td><td>Special Goals Program Manager</td></tr>
+<tr><td>Johnny Tenenbaum</td><td>North District Manager</td></tr>
+<tr><td>Eilon Amir</td><td>Central District Manager</td></tr>
+<tr><td>Matan Amira</td><td>Marketing Manager</td></tr>
+<tr><td>Noam Goldberg</td><td>Pedagogical Manager</td></tr>
+<tr><td>Tal Bakalo</td><td>The 48ers Program Manager</td></tr>
+<tr><td>Shir Ovadia</td><td>Private Sector Relationship Manager</td></tr>
+<tr><td>Yael Ben Zvi</td><td>Office Manager</td></tr>
+</table>
+<h3>3.3 Board of Directors</h3>
+<table>
+<tr><th>Name</th><th>Role</th></tr>
+<tr><td>Sharon Toussia-Cohen</td><td>Chairman</td></tr>
+<tr><td>Effie Rosenhaus</td><td>Honorary President</td></tr>
+<tr><td>David Bernstein</td><td>International President</td></tr>
+<tr><td>Liran Grassi/Gerassi</td><td>Founder</td></tr>
+<tr><td>Ronen Elad</td><td>Board Member</td></tr>
+<tr><td>Neil Corney</td><td>Board Member</td></tr>
+<tr><td>Shira Eting</td><td>Board Member</td></tr>
+<tr><td>Adi Gordon</td><td>Board Member</td></tr>
+<tr><td>Osnat Uzrad</td><td>Board Member</td></tr>
+<tr><td>Terry Newman</td><td>Board Member</td></tr>
+<tr><td>Eyal Weininger</td><td>Board Member</td></tr>
+<tr><td>Hanan Zellinger</td><td>Board Member</td></tr>
+</table>
+<h3>3.4 Notable Connections</h3>
+<ul>
+<li><strong>Sharon Toussia-Cohen</strong> (Chairman) -- Real estate professional (Rent It Residential REIT), Hebrew University graduate. No political affiliations identified.</li>
+<li><strong>Josh & Marjorie Harris</strong> -- Philadelphia 76ers co-owners, major donors. Jewish billionaire philanthropists focused on sports-based social impact. Connection is through sports, not political agenda.</li>
+<li><strong>David Bernstein</strong> (International President) -- requires further investigation; common name.</li>
+<li><strong>Effie Rosenhaus</strong> (Honorary President) -- requires further investigation.</li>
+</ul>
+<p><strong>Key finding:</strong> No identified board members have connections to JDC, New Israel Fund, or progressive political organizations. The board appears to be composed of business professionals and philanthropists.</p>
+<p><strong>Sources:</strong></p>
+<ul>
+<li><a href="https://en.the-equalizer.org/our-team/" target="_blank" rel="noopener">The Equalizer Team Page</a></li>
+<li><a href="https://www.timesofisrael.com/from-76ers-to-48ers-sports-nonprofit-works-to-level-playing-field-in-israel/" target="_blank" rel="noopener">Times of Israel Article</a></li>
+</ul>
+
+</div>
+<div class="section" id="section-4">
+<h2>4. Programs & Curriculum Content</h2>
+<h3>4.1 Core Programs</h3>
+<p><strong>1. Sha'ar Shivyon (The Equalizer)</strong> -- Flagship program</p>
+<ul>
+<li>270 groups, 4,590 participants</li>
+<li>Soccer + learning centers (homework help, test prep)</li>
+<li>4 sessions/week: 2 soccer practice, 2 study center</li>
+<li>Monthly regional tournaments</li>
+<li>Ages: 4th-10th grade</li>
+<li><strong>Mixed gender, mixed ethnicity</strong> (Jewish, Arab, Bedouin, Druze, Ethiopian, immigrant)</li>
+<li>Condition: Participants must maintain good school conduct and attendance</li>
+</ul>
+<p><strong>2. Boatot (בועטות)</strong> -- Girls' soccer</p>
+<ul>
+<li>95 groups, 1,615 girls</li>
+<li>Focus: Self-confidence, physical self-image, belonging</li>
+<li>60 tournaments annually</li>
+<li>Partnership with Ministry of Culture and Sports, Football Association</li>
+<li>Expanded to youth villages (residential education)</li>
+</ul>
+<p><strong>3. The 48ers</strong> -- Basketball</p>
+<ul>
+<li>25 groups, 500 teens</li>
+<li>Created 2016 in partnership with Josh Harris (Philadelphia 76ers)</li>
+<li>Basketball + STEM education + leadership</li>
+<li>32 tournaments yearly</li>
+<li>Named after Israel's 1948 founding (parallel to 76ers for 1776)</li>
+</ul>
+<p><strong>4. Female Empowerment</strong> -- Girls' basketball</p>
+<ul>
+<li>12 teams, 200 players</li>
+<li>Basketball + weekly enrichment workshops</li>
+<li>Focus: Gender empowerment, self-confidence, body image, belonging</li>
+<li>Israeli First Lady Michal Herzog participated in a tournament</li>
+</ul>
+<p><strong>5. Special Goals</strong> -- Special needs teens</p>
+<ul>
+<li>4 teams, 80 teens (northern region)</li>
+<li>Soccer for integration and independence</li>
+<li>5 tournaments annually</li>
+</ul>
+<p><strong>6. Safe Swimmers</strong></p>
+<ul>
+<li>8 groups, 320 children</li>
+<li>Swimming lessons for periphery children</li>
+<li>Combats drowning (major issue in Arab/Bedouin communities)</li>
+</ul>
+<p><strong>7. Bar/Bat Mitzvah Project</strong> -- Listed on website, details limited</p>
+<h3>4.2 Curriculum Analysis</h3>
+<p>The actual educational content centers on:</p>
+<ol>
+<li><strong>Academic tutoring</strong> -- homework help, test preparation, coordinated with school staff</li>
+<li><strong>Sportsmanship values</strong> -- "Fair Team Trophy" at tournaments, no red cards policy</li>
+<li><strong>Coexistence</strong> -- bringing together children from different backgrounds through shared sports</li>
+<li><strong>Violence prevention</strong> -- keeping youth occupied in positive after-school activities</li>
+<li><strong>Anti-racism</strong> -- cross-cultural encounters through tournaments</li>
+<li><strong>Self-confidence</strong> -- physical achievement, team belonging</li>
+</ol>
+<p><strong>What is NOT in the curriculum (based on available evidence):</strong></p>
+<ul>
+<li>Gender theory or gender identity education</li>
+<li>Intersectional feminism</li>
+<li>Critical pedagogy (Paulo Freire)</li>
+<li>Political activism training</li>
+<li>Anti-patriarchy messaging</li>
+</ul>
+<p>The "gender empowerment" component in Boatot and Female Empowerment programs focuses on <strong>practical self-confidence</strong> (body image, physical capability, belonging) rather than ideological gender theory. This is closer to <strong>traditional girls' sports empowerment</strong> (like Title IX in the US) than to critical gender theory.</p>
+<h3>4.3 Gefen Catalog Entry</h3>
+<ul>
+<li><strong>Gefen Number:</strong> 5197</li>
+<li><strong>Category:</strong> Enrichment (העשרה)</li>
+<li><strong>Description:</strong> After-school program for soccer and girls' football (Boatot)</li>
+<li><strong>Target:</strong> Elementary students, Arab sector</li>
+<li><strong>Route:</strong> Tender-based pool selection (מכרז מאגר)</li>
+<li><strong>Classification:</strong> Social-values framework, external organization</li>
+</ul>
+<p><strong>Sources:</strong></p>
+<ul>
+<li><a href="https://en.the-equalizer.org/our-programs/" target="_blank" rel="noopener">The Equalizer Programs</a></li>
+<li><a href="https://en.the-equalizer.org/shaar-shivyon/" target="_blank" rel="noopener">Sha'ar Shivyon Program Page</a></li>
+<li><a href="https://www.2school.co.il/InterData/ramt/" target="_blank" rel="noopener">Gefen Catalog</a></li>
+</ul>
+
+</div>
+<div class="section" id="section-5">
+<h2>5. Ideology Assessment</h2>
+<h3>5.1 Core Ideology</h3>
+<p>The organization's stated ideology is <strong>sport-based social change</strong>: using athletic activity as a common language to bridge social, ethnic, and economic divides. Key principles:</p>
+<ul>
+<li>Sport as "the great equalizer"</li>
+<li>Coexistence through shared experience (not through ideological education)</li>
+<li>"The field is the bridge"</li>
+<li>Equal access to development opportunities regardless of background</li>
+</ul>
+<h3>5.2 Is This Feminist/Gender-Agenda?</h3>
+<p><strong>The prior research classified this as "Feminist/Gender-Agenda (risk: high)."</strong> This requires significant qualification:</p>
+<p><strong>Evidence FOR gender focus:</strong></p>
+<ul>
+<li>Boatot (girls' soccer) and Female Empowerment (girls' basketball) are gender-specific programs</li>
+<li>The name includes "שוויון" (equality)</li>
+<li>The website mentions "gender equality" alongside social and geographic equality</li>
+<li>Gefen classification includes gender-related markers</li>
+</ul>
+<p><strong>Evidence AGAINST primary gender ideology:</strong></p>
+<ul>
+<li>The flagship program (Sha'ar Shivyon) is <strong>mixed-gender</strong> -- boys and girls together</li>
+<li>The organization also runs programs for boys, special needs teens, and mixed groups</li>
+<li>The founder's origin story is about <strong>violence prevention and coexistence</strong>, not gender</li>
+<li>The main body of work (270 out of ~400 groups) is the mixed-gender flagship</li>
+<li>Gender-specific programs (Boatot + Female Empowerment) represent ~27% of groups (107 out of ~400)</li>
+<li>The "empowerment" described is sports-based confidence building, not ideological</li>
+<li>No evidence of gender theory, intersectional feminism, or critical pedagogy in curriculum</li>
+<li>The organization received a UEFA award for social change -- European football governance recognizing sports-based work, not gender activism</li>
+</ul>
+<h3>5.3 Political Positioning</h3>
+<p><strong>Apolitical positioning is plausible:</strong></p>
+<ul>
+<li>Works with both Jewish and Arab communities</li>
+<li>Operates in Bedouin, Druze, and mixed cities</li>
+<li>Post-October 7 context: continued Arab-Jewish programming during war (Israel21c reported)</li>
+<li>Post-May 2021: expanded to mixed cities (Lod, Haifa, Acre) after ethnic clashes</li>
+<li>Recognition from UEFA, Israeli Football Association</li>
+<li>Tottenham Hotspur captain Hugo Lloris: "It is clear that the charity does a fantastic job in bringing together Israeli and Palestinian children through the power of football"</li>
+<li>Israeli First Lady Michal Herzog participated in a tournament</li>
+</ul>
+<p><strong>Potential concern areas:</strong></p>
+<ul>
+<li>The coexistence model could be viewed as normalizing/depoliticizing structural inequalities</li>
+<li>The Revson Foundation grant specifically funds "Arab and Bedouin communities" -- this is sector-targeted</li>
+<li>The "social change" language could evolve over time as the organization grows</li>
+<li>Any organization working in Arab-Jewish relations is inherently political in the Israeli context</li>
+</ul>
+<h3>5.4 Assessment: Pure Merit-Based vs. Intersectional</h3>
+<p><strong>More merit-based than intersectional.</strong> The model is:</p>
+<ul>
+<li>Sport as equalizer (meritocratic -- performance matters on the field)</li>
+<li>Academic tutoring (practical, achievement-oriented)</li>
+<li>Coexistence through shared activity (contact theory, not ideology)</li>
+<li>Condition-based participation (you must behave well in school to play)</li>
+</ul>
+<p>This is fundamentally different from a critical-theory approach that would frame society as oppressive and seek to create "agents of change."</p>
+
+</div>
+<div class="section" id="section-6">
+<h2>6. Foreign Funding Chain</h2>
+<h3>6.1 Documented Funding Sources</h3>
+<p><strong>American Jewish Philanthropy:</strong></p>
+<ul>
+<li><strong>Harris Philanthropies</strong> (Josh & Marjorie Harris, 76ers owners): >$1M since 2015. Motivation: Sports as social change, Jewish philanthropy. NOT progressive political.</li>
+<li><strong>Charles H. Revson Foundation</strong>: $80,000 in 2024 for Arab/Bedouin community programs. Revson is a Jewish life/education foundation, not a political advocacy funder.</li>
+<li><strong>JUF (Jewish United Fund of Chicago)</strong>: Undisclosed "longtime supporter" through Partnership2Gether program. JUF is mainstream Jewish community federation, not a political entity.</li>
+</ul>
+<p><strong>Jewish Community Organizations:</strong></p>
+<ul>
+<li><strong>The Jewish Agency</strong>: Listed as partner. Government-chartered Zionist organization.</li>
+<li><strong>Jerusalem Foundation</strong>: Listed as partner. Non-political civic development.</li>
+</ul>
+<p><strong>Sports Organizations:</strong></p>
+<ul>
+<li><strong>UEFA</strong>: Award recognition + likely funding</li>
+<li><strong>Tottenham Hotspur</strong>: In-kind support (player visits, visibility)</li>
+<li><strong>Decathlon</strong>: Corporate sponsor (sporting goods)</li>
+<li><strong>Wingate Institute</strong>: Israeli national sports institution</li>
+</ul>
+<p><strong>Government:</strong></p>
+<ul>
+<li>Ministry of Negev, Galil & National Resilience: 4.46M NIS (3-year)</li>
+<li>Local authorities: Various</li>
+<li>Ministry of Culture and Sports: Partnership on Boatot expansion</li>
+</ul>
+<p><strong>Housing:</strong></p>
+<ul>
+<li><strong>Amidar</strong> (Israel's public housing company): Partnership on soccer programs in public housing communities</li>
+</ul>
+<h3>6.2 Is JDC in the Funding Chain?</h3>
+<p><strong>No evidence of JDC funding to שער שוויון.</strong> The prior research claimed "operates under Joint Israel (JDC) -- almost entirely foreign-funded." Neither claim is supported:</p>
+<ul>
+<li>No JDC mention on the organization's website, GuideStar, or obudget</li>
+<li>No JDC personnel on the board</li>
+<li>The confusion likely arose from the cluster analysis grouping שער שוויון with סודקות את תקרת הזכוכית (which IS a JDC program)</li>
+</ul>
+<h3>6.3 Foreign Funding Assessment</h3>
+<p>Total foreign donations: 3,908,146 NIS (28.7% of revenue)</p>
+<p><strong>Identified foreign donors account for approximately:</strong></p>
+<ul>
+<li>Harris Philanthropies: ~1M+ NIS equivalent (rough estimate, $250K+/year)</li>
+<li>Revson Foundation: ~300K NIS ($80K)</li>
+<li>JUF: Unknown</li>
+<li>Remaining: Likely other Jewish community federations, European football organizations</li>
+</ul>
+<p><strong>None of the identified foreign donors are:</strong></p>
+<ul>
+<li>New Israel Fund</li>
+<li>Ford Foundation</li>
+<li>Open Society Foundations</li>
+<li>Any BDS-adjacent organization</li>
+<li>Any known anti-Israel entity</li>
+</ul>
+<p>The prior report's speculation about Ford Foundation, NIF, and Soros funding was <strong>entirely without evidence</strong> and should be retracted.</p>
+
+</div>
+<div class="section" id="section-7">
+<h2>7. Corporate Partnerships</h2>
+<h3>7.1 Documented Corporate Partners</h3>
+<table>
+<tr><th>Partner</th><th>Nature</th><th>Likely Motivation</th></tr>
+<tr><td>Amidar (public housing)</td><td>Joint soccer program in public housing</td><td>CSR, tenant engagement</td></tr>
+<tr><td>Decathlon (sporting goods)</td><td>Sponsor</td><td>CSR, brand visibility in sports</td></tr>
+<tr><td>Tottenham Hotspur</td><td>Player visits, visibility</td><td>Club social responsibility program</td></tr>
+<tr><td>Philadelphia 76ers (via Harris)</td><td>48ers program funding</td><td>Owner's personal philanthropy</td></tr>
+<tr><td>Wingate Institute</td><td>Training partnership</td><td>National sports development</td></tr>
+</table>
+<h3>7.2 Tech Company Connections</h3>
+<p>The task brief mentioned Teva, Amdocs, SAP, Microsoft, Elbit as reported corporate sponsors. <strong>No evidence was found for any of these companies' involvement with שער שוויון.</strong> These may have been attributed from the broader "feminist cluster" analysis or from a different organization in the cluster.</p>
+<h3>7.3 Academic Partners</h3>
+<ul>
+<li><strong>Tel Aviv-Yaffo Academic College</strong> (המכללה האקדמית ת"א יפו): Documented partnership</li>
+<li><strong>College Network</strong> (רשת מכללות): Listed as partner</li>
+</ul>
+
+</div>
+<div class="section" id="section-8">
+<h2>8. Controversies</h2>
+<h3>8.1 No Controversies Found</h3>
+<p>No controversies, legal actions, SLAPP suits, or public criticism of שער שוויון was found in any source. The organization appears to have a positive public image across the Israeli media spectrum (coverage in Ynet, Israel Hayom, Sport1, Times of Israel, Jerusalem Post, Maariv).</p>
+<h3>8.2 War-Period Activity</h3>
+<p>Following October 7, the organization continued operating and specifically maintained Arab-Jewish programming, which was positively covered in media. This suggests a genuine coexistence orientation that persists under stress -- an important test of organizational values.</p>
+
+</div>
+<div class="section" id="section-9">
+<h2>9. Values Alignment Table</h2>
+<table>
+<tr><th>Value</th><th>Score (1-5)</th><th>Notes</th></tr>
+<tr><td>Jewish/Zionist identity</td><td>2/5</td><td>Not explicitly Zionist but works with Jewish Agency; 48ers named after 1948. Coexistence model is implicitly Israeli-normative.</td></tr>
+<tr><td>Traditional family values</td><td>3/5</td><td>No evidence of challenging traditional values; girls' programs focus on confidence, not ideology</td></tr>
+<tr><td>Education quality</td><td>5/5</td><td>Academic tutoring is a core component; condition-based participation</td></tr>
+<tr><td>Anti-racism</td><td>4/5</td><td>Core mission, but framed as coexistence rather than critical race theory</td></tr>
+<tr><td>Gender ideology risk</td><td>2/5</td><td>Girls' programs exist but are sports-based empowerment, not gender theory</td></tr>
+<tr><td>Foreign influence risk</td><td>2/5</td><td>29% foreign funding, but from mainstream Jewish sources, not political</td></tr>
+<tr><td>Transparency</td><td>3/5</td><td>GuideStar compliant, Article 46, Midot badge; but 44% revenue not broken down by source</td></tr>
+<tr><td>Coexistence agenda</td><td>5/5</td><td>Core mission is Arab-Jewish encounters through sports</td></tr>
+<tr><td>Political neutrality</td><td>3/5</td><td>Ostensibly apolitical, but coexistence work is inherently political in Israeli context</td></tr>
+</table>
+
+</div>
+<div class="section" id="section-10">
+<h2>10. Open Questions</h2>
+<ol>
+<li><strong>Who exactly comprises the 3.9M NIS in foreign donations?</strong> Harris (~1M+) and Revson (~300K) account for ~1.3M+, leaving ~2.6M from unidentified foreign donors. Are these additional Jewish federations?</li>
+</ol>
+<ol>
+<li><strong>What is in the "other" 6M NIS revenue category?</strong> Likely corporate partnerships and program fees, but not publicly itemized.</li>
+</ol>
+<ol>
+<li><strong>What is the actual content of the "social-values" sessions?</strong> The 721,014 NIS in the Gefen mapping is for "social-values" programming. We know it includes anti-racism, coexistence, and sportsmanship -- but what specific materials are used?</li>
+</ol>
+<ol>
+<li><strong>Has the curriculum content shifted over time?</strong> As the organization has grown from 7 teams to 410+, has there been mission drift toward more ideological content?</li>
+</ol>
+<ol>
+<li><strong>David Bernstein (International President) -- who is he?</strong> Common name; requires LinkedIn/professional verification.</li>
+</ol>
+<ol>
+<li><strong>Effie Rosenhaus (Honorary President) -- what is his background?</strong> May provide insight into the organization's donor network.</li>
+</ol>
+<ol>
+<li><strong>What is the relationship between Liran Gerassi's "Global GameChangers" organization and שער שוויון?</strong></li>
+</ol>
+<ol>
+<li><strong>The Revson Foundation grant specifically targets Arab/Bedouin communities.</strong> Does this create a demographic focus that could shift the organization's mission over time?</li>
+</ol>
+
+</div>
+<div class="section" id="section-11">
+<h2>11. Comparison with Prior Research Claims</h2>
+<table>
+<tr><th>Prior Claim</th><th>Evidence Status</th><th>Correction</th></tr>
+<tr><td>"Operates under Joint Israel (JDC)"</td><td><strong>FALSE</strong></td><td>Independent amuta, no JDC connection found</td></tr>
+<tr><td>"Almost entirely foreign-funded"</td><td><strong>FALSE</strong></td><td>28.7% foreign; 8.5% government; 44% other (likely domestic mix)</td></tr>
+<tr><td>"44% of revenues unidentified"</td><td><strong>MISLEADING</strong></td><td>Standard GuideStar "other" category; not evidence of opacity</td></tr>
+<tr><td>"Feminist/Gender-Agenda (risk: high)"</td><td><strong>OVERSTATED</strong></td><td>Sports org with some gender programs; risk: moderate at most</td></tr>
+<tr><td>"41 schools across 5 cities"</td><td><strong>OUTDATED</strong></td><td>410+ teams nationwide, Metula to Eilat</td></tr>
+<tr><td>"Budget: 780,495 NIS"</td><td><strong>PARTIAL</strong></td><td>Gefen catalog entry only; total org budget is 13.6M NIS</td></tr>
+<tr><td>Possible Ford Foundation/NIF/Soros funding</td><td><strong>UNFOUNDED</strong></td><td>Zero evidence; identified donors are mainstream Jewish philanthropies</td></tr>
+<tr><td>"Semantic displacement" of term "equality"</td><td><strong>SPECULATIVE</strong></td><td>Organization uses "equality" in context of equal access to sports/education opportunities</td></tr>
+<tr><td>Connection to Paulo Freire critical pedagogy</td><td><strong>UNFOUNDED</strong></td><td>No evidence of critical pedagogy; model is sports-based, condition-based, achievement-oriented</td></tr>
+</table>
+
+</div>
+<div class="section" id="section-12">
+<h2>12. Methodology & Sources</h2>
+<h3>Primary Sources</h3>
+<ul>
+<li><a href="https://www.guidestar.org.il/organization/580558591" target="_blank" rel="noopener">GuideStar Israel - Organization Profile</a></li>
+<li><a href="https://www.guidestar.org.il/organization/580558591/finances" target="_blank" rel="noopener">GuideStar Israel - Finances</a></li>
+<li><a href="https://next.obudget.org/i/org/association/580558591" target="_blank" rel="noopener">obudget.org - Government Transfers</a></li>
+<li><a href="https://en.the-equalizer.org/" target="_blank" rel="noopener">The Equalizer Official Website</a></li>
+<li><a href="https://en.the-equalizer.org/our-programs/" target="_blank" rel="noopener">The Equalizer Programs</a></li>
+<li><a href="https://en.the-equalizer.org/our-team/" target="_blank" rel="noopener">The Equalizer Team</a></li>
+<li><a href="https://en.the-equalizer.org/association-documents/" target="_blank" rel="noopener">Association Documents</a></li>
+<li><a href="https://www.2school.co.il/InterData/ramt/" target="_blank" rel="noopener">Gefen Catalog Entry</a></li>
+<li><a href="https://midot.org.il/association/shaar-shevion" target="_blank" rel="noopener">Midot Effectiveness Profile</a></li>
+</ul>
+<h3>Media Sources</h3>
+<ul>
+<li><a href="https://www.timesofisrael.com/from-76ers-to-48ers-sports-nonprofit-works-to-level-playing-field-in-israel/" target="_blank" rel="noopener">Times of Israel - "From 76ers to 48ers"</a></li>
+<li><a href="https://ejewishphilanthropy.com/the-76ers-josh-and-marjorie-harris-back-israeli-girls-basketball-initiative/" target="_blank" rel="noopener">eJewishPhilanthropy - Harris Girls Basketball</a></li>
+<li><a href="https://www.tottenhamhotspur.com/news/2022/july/proudly-supporting-the-equalizer-charity-in-israel/" target="_blank" rel="noopener">Tottenham Hotspur - Support for The Equalizer</a></li>
+<li><a href="https://www.juf.org/Israel_Office/tmpl-Impact.aspx?id=442938" target="_blank" rel="noopener">JUF Israel Office - Impact</a></li>
+<li><a href="https://www.jpost.com/Israel-News/Israels-The-Equalizer-earns-UEFA-award-559073" target="_blank" rel="noopener">Jerusalem Post - UEFA Award</a></li>
+<li><a href="https://www.amidar.co.il/wps/portal/amidar/service/article/shaar" target="_blank" rel="noopener">Amidar - Partnership</a></li>
+</ul>
+<h3>Donor Sources</h3>
+<ul>
+<li><a href="https://revsonfoundation.org/grant/shaar-shivion-a-r/" target="_blank" rel="noopener">Charles H. Revson Foundation - Grant Page</a></li>
+<li><a href="https://www.jgive.com/new/he/ils/charity-organizations/518" target="_blank" rel="noopener">JGive Donation Platform</a></li>
+</ul>
+<h3>Hebrew Wikipedia</h3>
+<ul>
+<li><a href="https://he.wikipedia.org/wiki/%D7%A9%D7%A2%D7%A8_%D7%A9%D7%95%D7%95%D7%99%D7%95%D7%9F" target="_blank" rel="noopener">שער שוויון Wikipedia Entry</a></li>
+</ul>
+
+</div>
+</div>
+
+<footer>
+  פרויקט זהות ציונית — דוח מחקר מעמיק | <a href="../">דירוג ערים</a> | <a href="../research/">כל הדוחות</a>
+</footer>
+
+</body>
+</html>

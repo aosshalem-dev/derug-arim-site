@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Havatzelet / HaShomer HaTzair — דוח מחקר מעמיק</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background: #f5f5f8;
+  color: #1a1a2e;
+  direction: rtl;
+  line-height: 1.8;
+  font-size: 17px;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #1a1a2e; color: #fff;
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  overflow-x: auto; white-space: nowrap;
+}
+nav .brand { font-weight: 700; color: #ff8800; flex-shrink: 0; }
+nav a { color: #ccc; text-decoration: none; font-size: 0.85em; padding: 8px 4px; border-bottom: 2px solid transparent; flex-shrink: 0; }
+nav a:hover { color: #ff8800; border-bottom-color: #ff8800; }
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a5a8a 100%);
+  color: #fff; padding: 50px 20px 40px; text-align: center;
+}
+.hero h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+.hero .subtitle { font-size: 1.05em; color: #b0c4de; margin-bottom: 6px; }
+.hero .meta { font-size: 0.9em; color: #ff8800; margin-top: 8px; }
+.risk-badge {
+  display: inline-block; padding: 4px 16px; border-radius: 20px;
+  font-size: 0.85em; font-weight: 600; margin-top: 10px;
+}
+.risk-high { background: #e74c3c; color: #fff; }
+.risk-medium { background: #f39c12; color: #fff; }
+.risk-low { background: #27ae60; color: #fff; }
+.container { max-width: 860px; margin: 0 auto; padding: 30px 20px 80px; }
+.toc {
+  background: #fff; border-radius: 8px; padding: 22px 26px;
+  margin-bottom: 32px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.toc h2 { font-size: 1.15em; color: #2a5a8a; margin-bottom: 12px; border-bottom: 2px solid #667eea; padding-bottom: 6px; }
+.toc ol { padding-right: 22px; font-size: 0.93em; }
+.toc li { margin-bottom: 4px; }
+.toc a { color: #2a5a8a; text-decoration: none; }
+.toc a:hover { color: #ff8800; text-decoration: underline; }
+.section {
+  background: #fff; border-radius: 8px; padding: 28px 26px;
+  margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.section h2 { font-size: 1.4em; color: #1a1a2e; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #667eea; }
+.section h3 { font-size: 1.1em; color: #2a5a8a; margin: 18px 0 8px; }
+.section h4 { font-size: 1em; color: #444; margin: 14px 0 6px; }
+.section p { margin-bottom: 12px; text-align: justify; }
+.section ul, .section ol { padding-right: 22px; margin-bottom: 12px; }
+.section li { margin-bottom: 5px; }
+blockquote {
+  background: #f0f4fa; border-right: 4px solid #667eea;
+  padding: 12px 18px; margin: 12px 0; border-radius: 0 6px 6px 0;
+  font-size: 0.94em; color: #333;
+}
+.thesis {
+  background: #fff8f0; border-right: 3px solid #ff8800;
+  padding: 14px 18px; margin: 12px 0; border-radius: 0 5px 5px 0;
+  font-size: 0.96em; color: #6b4500;
+}
+table {
+  width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.91em;
+}
+th {
+  background: #667eea; color: #fff; padding: 8px 12px;
+  text-align: right; position: sticky; top: 44px; z-index: 5;
+}
+td {
+  padding: 7px 12px; border-bottom: 1px solid #e8e8e8;
+  text-align: right; vertical-align: top;
+}
+tr:nth-child(even) { background: #f8f9fc; }
+a { color: #2a5a8a; }
+a:hover { color: #ff8800; }
+.back-link {
+  display: inline-block; margin-bottom: 20px; padding: 6px 14px;
+  background: #667eea; color: #fff; border-radius: 4px;
+  text-decoration: none; font-size: 0.88em;
+}
+.back-link:hover { background: #5a6fd6; color: #fff; }
+footer {
+  text-align: center; padding: 30px 20px; color: #888; font-size: 0.85em;
+}
+strong { color: #1a1a2e; }
+code {
+  background: #f0f0f0; padding: 1px 5px; border-radius: 3px;
+  font-size: 0.9em;
+}
+.source-tag {
+  display: inline-block; background: #e8eef6; padding: 2px 8px;
+  border-radius: 10px; font-size: 0.78em; color: #2a5a8a;
+  margin: 2px 3px; text-decoration: none;
+}
+.source-tag:hover { background: #d0dff0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">דוח מחקר מעמיק</span>
+  <a href="../">חזרה לדירוג</a>
+  <a href="../research/">כל הדוחות</a>
+  <a href="#section-1">1. ORGANIZATIONAL ST</a> <a href="#section-2">2. FINANCIAL ANALYSI</a> <a href="#section-3">3. LEADERSHIP & POLI</a> <a href="#section-4">4. IDEOLOGY & PROGRA</a> <a href="#section-5">5. GOVERNMENT TIES &</a> <a href="#section-6">6. LEGAL ACTIONS & C</a> <a href="#section-7">7. INTERNATIONAL NET</a> <a href="#section-8">8. NETWORK MAP: Conn</a> <a href="#section-9">9. VALUES ALIGNMENT </a> <a href="#section-10">10. KEY OPEN QUESTIO</a> <a href="#section-11">SOURCE URLs</a>
+</nav>
+
+<div class="hero">
+  <h1>Havatzelet / HaShomer HaTzair</h1>
+  <div class="subtitle">חבצלת מוסדות תרבות וחנוך של השומר הצעיר (חל"צ)</div>
+  <div class="meta"></div>
+  
+</div>
+
+<div class="container">
+  <a href="../research/" class="back-link">← כל דוחות המחקר</a>
+  <div class="toc"><h2>תוכן עניינים</h2><ol><li><a href="#section-1">1. ORGANIZATIONAL STRUCTURE</a></li><li><a href="#section-2">2. FINANCIAL ANALYSIS</a></li><li><a href="#section-3">3. LEADERSHIP & POLITICAL CONNECTIONS</a></li><li><a href="#section-4">4. IDEOLOGY & PROGRAMS</a></li><li><a href="#section-5">5. GOVERNMENT TIES & INFLUENCE</a></li><li><a href="#section-6">6. LEGAL ACTIONS & CONTROVERSIES</a></li><li><a href="#section-7">7. INTERNATIONAL NETWORK</a></li><li><a href="#section-8">8. NETWORK MAP: Connected Entities and Alumni in Power</a></li><li><a href="#section-9">9. VALUES ALIGNMENT ASSESSMENT</a></li><li><a href="#section-10">10. KEY OPEN QUESTIONS</a></li><li><a href="#section-11">SOURCE URLs</a></li></ol></div>
+  <div class="section" id="section-1">
+<h2>1. ORGANIZATIONAL STRUCTURE</h2>
+<h3>1.1 The Havatzelet Parent Entity</h3>
+<table>
+<tr><th>Field</th><th>Detail</th></tr>
+<tr><td><strong>Legal Name</strong></td><td>חבצלת מוסדות תרבות וחנוך של השומר הצעיר (חל"צ)</td></tr>
+<tr><td><strong>Registration</strong></td><td>510490451</td></tr>
+<tr><td><strong>Type</strong></td><td>Public Benefit Company (חברה לתועלת הציבור)</td></tr>
+<tr><td><strong>Founded</strong></td><td>1967 by Kibbutz Artzi - HaShomer HaTzair</td></tr>
+<tr><td><strong>HQ</strong></td><td>Givat Haviva, Haifa District</td></tr>
+<tr><td><strong>Staff (2025)</strong></td><td>126 employees, 10 volunteers</td></tr>
+<tr><td><strong>Revenue (2025)</strong></td><td>NIS 49,357,121</td></tr>
+<tr><td><strong>Sector Ranking</strong></td><td>7th by revenue among culture/arts organizations in Israel</td></tr>
+<tr><td><strong>Website</strong></td><td>havatzelet.org.il</td></tr>
+</table>
+<p>Havatzelet was created in 1967 as the Kibbutz Artzi's "tool for action, involvement and influence in Israeli society." It functions as the umbrella holding company for the HaShomer HaTzair movement's educational, cultural, and archival institutions.</p>
+<h3>1.2 Subsidiary and Affiliated Entities</h3>
+<table>
+<tr><th>Entity</th><th>Relationship</th><th>Registration</th><th>Revenue</th></tr>
+<tr><td><strong>הסתדרות השומר הצעיר בישראל</strong> (Youth Movement)</td><td>Separate amuta, operationally linked</td><td>580001659</td><td>NIS 35,607,389 (2024)</td></tr>
+<tr><td><strong>גבעת חביבה</strong> (Givat Haviva campus)</td><td>Division of Havatzelet</td><td>Part of 510490451</td><td>Included in Havatzelet</td></tr>
+<tr><td><strong>מורשת - בית עדות ע"ש מרדכי אנילביץ</strong> (Moreshet)</td><td>Division of Havatzelet</td><td>Part of 510490451</td><td>Included in Havatzelet</td></tr>
+<tr><td><strong>יד יערי</strong> (Yad Yaari Archive)</td><td>Division of Havatzelet</td><td>Part of 510490451</td><td>Included in Havatzelet</td></tr>
+<tr><td><strong>צוותא</strong> (Tzavta Cultural Center, Tel Aviv)</td><td>Historically affiliated</td><td>Separate entity</td><td>Unknown</td></tr>
+<tr><td><strong>GHIS</strong> (Givat Haviva International School)</td><td>Part of Havatzelet/Givat Haviva</td><td>Part of 510490451</td><td>Included in Havatzelet</td></tr>
+<tr><td><strong>מכינה קדם צבאית חביבה רייק</strong> (Pre-military Academy)</td><td>On Givat Haviva campus</td><td>Unknown</td><td>Unknown</td></tr>
+<tr><td><strong>קשת איילון</strong></td><td>Historically supported</td><td>Unknown</td><td>Unknown</td></tr>
+<tr><td><strong>מקהלת הקיבוץ הארצי</strong> (Kibbutz Artzi Choir)</td><td>Historically supported</td><td>Unknown</td><td>Unknown</td></tr>
+<tr><td><strong>Friends of Givat Haviva (USA)</strong></td><td>US 501(c)(3) fundraising arm</td><td>EIN 13-2584337</td><td>$2,296,925 (2024)</td></tr>
+<tr><td><strong>American Friends of Moreshet</strong></td><td>US 501(c)(3)</td><td>EIN 26-1478354</td><td>Unknown</td></tr>
+<tr><td><strong>Canadian Friends of Givat Haviva</strong></td><td>Canadian charity</td><td>Unknown</td><td>Unknown</td></tr>
+</table>
+<h3>1.3 "Havatzelet HaChadasha" (The New Havatzelet)</h3>
+<p>In 2022, the Kibbutz Movement's 6th Convention approved the establishment of "Havatzelet HaChadasha" -- a new funding mechanism. In 2023, it distributed NIS 12 million (with an additional NIS 2M supplement) to organizations focused on youth movements, archives, cultural bodies, and "social influence activities." The Kibbutz Movement Council with 125 delegates from ~93 kibbutzim approved the budget. Notably, the 2023 resolution stipulated that funded organizations must "participate in and identify with the struggle" against the judicial overhaul -- an explicit politicization of grant funding.</p>
+<p><strong>Key Leadership of Havatzelet HaChadasha:</strong></p>
+<ul>
+<li>Chair: Amos Rabin (Kibbutz Yikum)</li>
+<li>CEO: Uzi Shash (Kibbutz Mizra)</li>
+</ul>
+<h3>1.4 The Kibbutz Artzi Connection</h3>
+<p>Kibbutz Artzi (הקיבוץ הארצי) was founded in 1927 as HaShomer HaTzair's settlement movement, establishing 85 kibbutzim. In 1999, Kibbutz Artzi merged with the United Kibbutz Movement (UKM) but maintained certain autonomy. Havatzelet holds the historical assets of the Kibbutz Artzi. The first Kibbutz Artzi kibbutz to privatize was Kibbutz Snir in 1994.</p>
+
+</div>
+<div class="section" id="section-2">
+<h2>2. FINANCIAL ANALYSIS</h2>
+<h3>2.1 Revenue Overview</h3>
+<p><strong>Havatzelet (510490451) -- Latest Year (2025): NIS 49,357,121</strong></p>
+<table>
+<tr><th>Revenue Source</th><th>Amount (NIS)</th><th>%</th></tr>
+<tr><td>Government transfers (3-year total)</td><td>33,078,093</td><td>~67% of annual revenue</td></tr>
+<tr><td>Contracts</td><td>20,015,876</td></tr>
+<tr><td>Support/Grants</td><td>13,062,217</td></tr>
+<tr><td>Other (donations, self-generated)</td><td>~16,279,028</td><td>~33%</td></tr>
+</table>
+<h3>2.2 Government Transfers by Ministry (3-Year Aggregate)</h3>
+<table>
+<tr><th>Ministry</th><th>Amount (NIS)</th><th>Key Categories</th></tr>
+<tr><td><strong>Israel Land Authority (רמ"י)</strong></td><td>20,000,000</td><td>Land compensation</td></tr>
+<tr><td><strong>Culture & Sports</strong></td><td>15,030,698</td><td>Archives, theater projects, cultural institutions</td></tr>
+<tr><td><strong>Education</strong></td><td>9,430,851</td><td>Activity support, Holocaust museums, coexistence programs</td></tr>
+<tr><td><strong>Treasury</strong></td><td>1,500,000</td><td>COVID-19 emergency assistance</td></tr>
+<tr><td><strong>Social Services</strong></td><td>106,955</td><td>Energy efficiency</td></tr>
+<tr><td><strong>Economy & Industry</strong></td><td>87,239</td><td>Energy efficiency</td></tr>
+<tr><td><strong>Central Bureau of Statistics</strong></td><td>30,000</td><td>Holocaust course contracts</td></tr>
+<tr><td><strong>Interior</strong></td><td>19,500</td><td>Conference catering</td></tr>
+<tr><td><strong>Foreign Ministry</strong></td><td>15,876</td><td>Exhibition production</td></tr>
+<tr><td><strong>Health</strong></td><td>1,900</td><td>Professional training</td></tr>
+</table>
+<p><strong>CRITICAL NOTE:</strong> The NIS 20M from Israel Land Authority for "land compensation" is the single largest government transfer. This likely relates to kibbutz land return agreements -- a pattern where kibbutzim return agricultural land to the state in exchange for compensation. The land authority paid NIS 2.4 billion to kibbutzim nationally since 2015 for returned agricultural land.</p>
+<h3>2.3 Youth Movement Financial Data</h3>
+<p><strong>Histadrut HaShomer HaTzair (580001659) -- 2024: NIS 35,607,389</strong></p>
+<table>
+<tr><th>Item</th><th>Detail</th></tr>
+<tr><td>Staff</td><td>140 employees, 300 volunteers</td></tr>
+<tr><td>Sector rank</td><td>9th highest government-funded in education</td></tr>
+<tr><td>3-year government total</td><td>NIS 53,809,290</td></tr>
+</table>
+<p><strong>Ministry of Education Breakdown (3-year):</strong></p>
+<ul>
+<li>Youth Movement Support: NIS 77,264,440</li>
+<li>Pre-Service Volunteers (Shinshirim): NIS 51,749,535</li>
+<li>Youth Activities/Maintenance: NIS 22,830,967</li>
+<li>Various Activity Support: NIS 14,329,002</li>
+</ul>
+<p><strong>Total Ministry of Education funding to youth movement (3 years): NIS 169,934,213</strong></p>
+<p>This is an extraordinary figure -- NIS ~57M/year from the Education Ministry alone to the youth movement entity. Combined with Havatzelet's NIS 9.4M from Education, the ecosystem receives approximately NIS 66M/year from the Ministry of Education.</p>
+<h3>2.4 US Fundraising (Friends of Givat Haviva -- EIN 13-2584337)</h3>
+<table>
+<tr><th>Year</th><th>Revenue (USD)</th><th>Expenses</th><th>Net</th><th>Assets</th></tr>
+<tr><td>2024</td><td>$2,296,925</td><td>$2,046,306</td><td>+$250,619</td><td>$1,987,322</td></tr>
+<tr><td>2023</td><td>$6,112,635</td><td>$5,500,112</td><td>+$612,523</td><td>$1,715,447</td></tr>
+<tr><td>2022</td><td>$1,679,058</td><td>$2,084,416</td><td>-$405,358</td><td>$1,103,532</td></tr>
+<tr><td>2021</td><td>$2,799,978</td><td>$1,527,128</td><td>+$1,272,850</td><td>$1,485,431</td></tr>
+</table>
+<p><strong>Notes:</strong></p>
+<ul>
+<li>Tax-exempt since July 1967 (same year as Havatzelet's founding)</li>
+<li>4/4 Star rating on Charity Navigator (92% score)</li>
+<li>99.3% of revenue from contributions</li>
+<li>Charity Navigator category: International Peace and Security</li>
+<li>Key staff: Sarah Baker Wacks (Development Coordinator, $79,297 compensation)</li>
+<li>Board: David Heller (Chair), Larry Garber (Treasurer), Judith Scheuer (Secretary) -- all uncompensated</li>
+<li>The 2023 spike to $6.1M suggests a major fundraising event or bequest</li>
+</ul>
+<h3>2.5 Aggregate Financial Estimate</h3>
+<table>
+<tr><th>Stream</th><th>Annual (NIS, estimated)</th></tr>
+<tr><td>Havatzelet revenue</td><td>49,400,000</td></tr>
+<tr><td>Youth movement revenue</td><td>35,600,000</td></tr>
+<tr><td>US fundraising (Friends of GH)</td><td>~8,000,000</td></tr>
+<tr><td>Havatzelet HaChadasha grants</td><td>14,000,000</td></tr>
+<tr><td>Other international "Friends" orgs</td><td>~3,000,000 (est.)</td></tr>
+<tr><td><strong>Estimated total ecosystem flow</strong></td><td><strong>~110,000,000</strong></td></tr>
+</table>
+
+</div>
+<div class="section" id="section-3">
+<h2>3. LEADERSHIP & POLITICAL CONNECTIONS</h2>
+<h3>3.1 Havatzelet Board of Directors (Current)</h3>
+<table>
+<tr><th>Name</th><th>Role</th></tr>
+<tr><td><strong>Amos Rabin</strong></td><td>Chairman (יו"ר)</td></tr>
+<tr><td><strong>Itamar Shvayika (Shvika)</strong></td><td>Director; CEO of Havatzelet Group; Chair of HaShomer HaTzair Steering Committee. From Kibbutz Barkai.</td></tr>
+<tr><td><strong>Avshalom (Abu) Vilan</strong></td><td>Director; Chairman of Keren Havatzelet. Former MK (Meretz, 15th-17th Knessets).</td></tr>
+<tr><td>Ben Tzvi Amir</td><td>Director</td></tr>
+<tr><td>Zeidenberg Itay Leonard</td><td>Director</td></tr>
+<tr><td>Madmoni Ella</td><td>Director</td></tr>
+<tr><td>Shani Ofek Yuval</td><td>Director</td></tr>
+<tr><td>Botansky Noga</td><td>Director</td></tr>
+<tr><td>Reuveni Hagar</td><td>Director</td></tr>
+<tr><td>Yaari Shachar</td><td>Director</td></tr>
+<tr><td>Kadem Shwartz Neta</td><td>Director</td></tr>
+<tr><td>Tzoran Michal</td><td>Director</td></tr>
+<tr><td>Givoni Roni</td><td>Director</td></tr>
+<tr><td>Kandel Yori (Yoram)</td><td>Director</td></tr>
+<tr><td>Marla Anat</td><td>Director</td></tr>
+<tr><td>Orlik Shana</td><td>Director</td></tr>
+<tr><td><strong>Shapira Elisha</strong></td><td>Senior</td></tr>
+<tr><td><strong>Marki Levi</strong></td><td>Senior</td></tr>
+<tr><td><strong>Chaim (James) Oron</strong></td><td>Senior. Former chairman of Meretz, former Minister of Agriculture, former MK (12th-18th Knessets).</td></tr>
+</table>
+<p><strong>Note on English-language page discrepancy:</strong> The English Havatzelet website still lists "Avshalom (Abu) Villen" as Chairman and "Uzi Shemesh" as CEO -- these appear to be outdated. The Hebrew board page shows Amos Rabin as current chairman.</p>
+<h3>3.2 Key HaShomer HaTzair Alumni in Politics</h3>
+<table>
+<tr><th>Name</th><th>HaShomer HaTzair Connection</th><th>Political Role</th></tr>
+<tr><td><strong>Chaim (James) Oron</strong></td><td>Secretary of HaShomer HaTzair (1964); Secretary of Kibbutz Artzi (1968)</td><td>MK (Mapam, then Meretz), Chairman of Meretz, Minister of Agriculture. Currently on Havatzelet board.</td></tr>
+<tr><td><strong>Avshalom (Abu) Vilan</strong></td><td>Emissary for HaShomer HaTzair to North America (1993-96); Secretary of Kibbutz Artzi (1996-99)</td><td>MK for Meretz (1999-2009). Co-founder of Peace Now. Currently on Havatzelet board and chairman of Keren Havatzelet.</td></tr>
+<tr><td><strong>Meir Yaari</strong></td><td>Co-founder and ideological leader of HaShomer HaTzair</td><td>Leader of Mapam, MK. Yad Yaari named after him.</td></tr>
+<tr><td><strong>Ya'akov Hazan</strong></td><td>Kibbutz Mishmar HaEmek (HaShomer HaTzair kibbutz)</td><td>Mapam MK (1st-7th Knessets, 1949-1973). Tzavta hall named after him.</td></tr>
+<tr><td><strong>Avi Dichter</strong></td><td>Youth member of HaShomer HaTzair</td><td>Director of Shin Bet, Minister of Internal Security, current MK (Likud).</td></tr>
+<tr><td><strong>Isser Harel</strong></td><td>HaShomer HaTzair member</td><td>Head of Mossad (1952-1963).</td></tr>
+<tr><td><strong>Abba Hushi</strong></td><td>HaShomer HaTzair alumni</td><td>Mayor of Haifa.</td></tr>
+</table>
+<p><strong>Political trajectory:</strong></p>
+<ul>
+<li>HaShomer HaTzair Party (1946) --> Mapam (1948, merger with Achdut HaAvoda-Poalei Zion) --> Meretz (1992, merger with Ratz and Shinui) --> Meretz collapsed (2022 elections, failed to pass threshold)</li>
+<li>The movement officially supported Meretz until the 18th Knesset elections</li>
+<li>Notable Meretz founders from the movement ecosystem: Shulamit Aloni, Yossi Sarid, Chaim Oron, Avshalom Vilan, Yossi Beilin, Naomi Chazan, Anat Maor</li>
+</ul>
+<h3>3.3 Avshalom (Abu) Vilan -- Key Figure Profile</h3>
+<ul>
+<li><strong>Born:</strong> February 11, 1951, Kibbutz Negba</li>
+<li><strong>Military:</strong> Sayeret Matkal (IDF's elite reconnaissance unit)</li>
+<li><strong>Co-founder:</strong> Peace Now (1978)</li>
+<li><strong>Mapam Secretary-General:</strong> 1990</li>
+<li><strong>HaShomer HaTzair Emissary to North America:</strong> 1993-1996</li>
+<li><strong>Secretary of Kibbutz Artzi:</strong> 1996-1999</li>
+<li><strong>MK (Meretz):</strong> 1999-2009 (15th-17th Knessets)</li>
+<li><strong>Knesset roles:</strong> Education Committee, Economics Committee, Finance Committee, State Audit Committee</li>
+<li><strong>Post-Knesset:</strong> Chairman of Israeli Farmers Federation; Chairman of Keren Havatzelet; Chairman of Tzavta for ~20 years (ended recently)</li>
+<li><strong>Currently:</strong> Director on Havatzelet board</li>
+</ul>
+
+</div>
+<div class="section" id="section-4">
+<h2>4. IDEOLOGY & PROGRAMS</h2>
+<h3>4.1 Core Ideology: The Three Pillars</h3>
+<p>HaShomer HaTzair's ideology rests on three pillars, symbolized in its movement emblem:</p>
+<ol>
+<li><strong>Zionism</strong> -- Connection to Jewish peoplehood and Israeli statehood. Described as "the most central value" in the movement's education.</li>
+<li><strong>Socialism</strong> -- Worker's dignity, cooperative living, kibbutz ideal. Originally Marxist (influenced by Ber Borochov), now described as "social justice."</li>
+<li><strong>Brotherhood of Nations</strong> (אחוות עמים) -- International solidarity and peace. In practice, this manifests as Jewish-Arab coexistence programs and anti-occupation positions.</li>
+</ol>
+<p><strong>Added value (centennial conference):</strong> Feminism and gender equality.</p>
+<h3>4.2 Educational Methodology</h3>
+<p>The movement combines <strong>experiential/scout-style education</strong> with <strong>ideological enrichment</strong>. Youth are organized into "kenim" (dens/branches) across 6 regional zones in Israel (~80 branches, ~10,000 active youth). Members progress through age-appropriate cohorts with Hebrew names.</p>
+<p><strong>Pre-military service year (שנת שירות/שנשינים):</strong> A major program where young adults volunteer for a year before IDF service. This program received NIS 51.7M over 3 years from the Education Ministry. In 2024, the movement warned that 25% cuts to this program would "harm national rehabilitation."</p>
+<h3>4.3 Givat Haviva Educational Programs</h3>
+<p><strong>Jewish-Arab Center for Peace (est. 1963):</strong></p>
+<ul>
+<li>The oldest and largest institution in Israel promoting Jewish-Arab reconciliation</li>
+<li>Reaches ~3,000 youth annually through dialogue programs</li>
+<li>Teacher training courses for "shared society" education</li>
+<li>Regional partnership programs between neighboring Jewish and Arab municipalities</li>
+<li>Empowerment initiatives for Arab communities including Hebrew language instruction</li>
+</ul>
+<p><strong>Gefen (Ministry of Education Approved) Programs:</strong></p>
+<ol>
+<li><strong>Children Teaching Children (CTC)</strong> -- Running for 34 years. Jewish and Arab student groups meet at Givat Haviva and in schools. Two-year civics program exploring national identity, community, conflicting narratives.</li>
+<li><strong>Connection for a Change</strong> -- Two-day seminar bringing Jewish and Arab students for "dialogue at eye level in a spirit of leadership."</li>
+<li><strong>Partnership and Belonging</strong> -- Educational journey breaking down barriers between Jewish and Arab youth through encounters.</li>
+<li><strong>Environmental Education</strong> -- Integrating 6th-grade students from neighboring Arab and Jewish communities in sustainability projects.</li>
+</ol>
+<p><strong>GHIS -- Givat Haviva International School (est. 2018):</strong></p>
+<ul>
+<li>IB Diploma Programme for grades 10-12</li>
+<li>Student composition: 25% Israeli Jewish, 25% Israeli Arab, 50% international</li>
+<li>Full boarding school on Givat Haviva campus</li>
+<li>Mission: "developing leaders for shared society and sustainable, just future"</li>
+<li>Part of Havatzelet group</li>
+</ul>
+<p><strong>Pre-Military Academy (Mechina):</strong></p>
+<ul>
+<li>Named after Haviva Reik (the paratrooper)</li>
+<li>Secular-humanist orientation</li>
+<li>Trains future IDF leaders with focus on humanistic leadership</li>
+<li>Located on Givat Haviva campus</li>
+</ul>
+<p><strong>Arabic Language Institute:</strong></p>
+<ul>
+<li>Courses in Arabic including distance learning</li>
+<li>Duration: weeks to six months</li>
+</ul>
+<p><strong>Moreshet (est. 1961):</strong></p>
+<ul>
+<li>Holocaust education center, named for Mordechai Anielewicz (Warsaw Ghetto uprising leader who was a HaShomer HaTzair member)</li>
+<li>Publications, study guides, educational tours</li>
+<li>Works with Ministry of Education via Gefen system</li>
+</ul>
+<p><strong>Yad Yaari (est. 1983):</strong></p>
+<ul>
+<li>Central archive of HaShomer HaTzair movement</li>
+<li>Named after Meir Yaari, the movement's ideological founder</li>
+<li>Houses over 100 years of movement documentation</li>
+<li>Research department for historical and social studies</li>
+</ul>
+<p><strong>Art Center:</strong></p>
+<ul>
+<li>Galleries, ceramics studios, sculpture gardens</li>
+<li>Community art programs</li>
+</ul>
+<h3>4.4 Semantic Displacement Analysis: Hebrew vs. English Messaging</h3>
+<table>
+<tr><th>Concept</th><th>Hebrew Messaging</th><th>English Messaging</th><th>Gap</th></tr>
+<tr><td><strong>Zionism</strong></td><td>"הציונות היא הערך המרכזי ביותר" (Zionism is THE most central value)</td><td>"Progressive-Zionist youth movement"</td><td>Hebrew is much stronger on Zionism as central; English softens to "progressive-Zionist"</td></tr>
+<tr><td><strong>Socialism</strong></td><td>סוציאליזם, כבוד העובד, חיי שיתוף (socialism, worker dignity, cooperative life)</td><td>"Social justice," "economic justice," "mutual responsibility"</td><td>Hebrew uses explicit socialist terminology; English translates to softer progressive language</td></tr>
+<tr><td><strong>Arab-Jewish relations</strong></td><td>חברה משותפת, אחוות עמים (shared society, brotherhood of nations)</td><td>"Shared society," "coexistence," "peace education"</td><td>Roughly aligned, though English adds "peace" framing absent in Hebrew</td></tr>
+<tr><td><strong>Political activism</strong></td><td>The 2023 Havatzelet HaChadasha required grantees to "participate in struggle against judicial overhaul"</td><td>US messaging emphasizes "democracy" and "liberal values"</td><td>Hebrew is explicitly partisan; English is coded in democratic values language</td></tr>
+<tr><td><strong>Military service</strong></td><td>Pre-military academy, service year (שנת שירות) are prominently featured</td><td>Barely mentioned on English sites</td><td>English audiences don't see the movement's deep IDF integration</td></tr>
+<tr><td><strong>Self-description</strong></td><td>"כלי לעשייה, מעורבות והשפעה בחברה הישראלית" (tool for action, involvement and influence)</td><td>"Education and Culture Institutions"</td><td>Hebrew is explicit about societal influence; English is neutral/institutional</td></tr>
+</table>
+<p><strong>Key finding:</strong> The English-language presentation systematically softens the movement's ideological intensity. Socialist language becomes "social justice." Zionist centrality is diluted. Political activism is reframed as democratic values. The pre-military and IDF connection -- a major component of the Israeli program -- is essentially invisible in English materials. This is a textbook case of <strong>semantic displacement</strong> for different donor/audience populations.</p>
+<h3>4.5 The "Dibrot" (Commandments) of HaShomer HaTzair</h3>
+<p>The movement maintains a set of principles called "Dibrot HaShomer HaTzair" (דברות השומר הצעיר) posted on their website. While the page blocked direct access during research, the known pillars include: Zionism, socialism, brotherhood of nations, feminism/gender equality, secular Judaism, and pioneering (חלוציות).</p>
+
+</div>
+<div class="section" id="section-5">
+<h2>5. GOVERNMENT TIES & INFLUENCE</h2>
+<h3>5.1 Ministry of Education Access Points</h3>
+<p>The Havatzelet ecosystem accesses Israeli schools through multiple channels:</p>
+<ol>
+<li><strong>Direct Youth Movement Funding:</strong> NIS ~57M/year from Education Ministry to the youth movement entity (580001659)</li>
+<li><strong>Gefen Program Catalog:</strong> Multiple Givat Haviva programs are approved in the Ministry of Education's Gefen catalog, allowing school principals to purchase Jewish-Arab encounter programs, Holocaust education, and environmental programs using Education Ministry budgets</li>
+<li><strong>Service Year (Shinshirim):</strong> NIS 51.7M over 3 years for pre-military volunteers placed in communities, essentially embedding movement-trained young adults throughout Israel</li>
+<li><strong>Holocaust Education:</strong> Moreshet runs Ministry-approved programs and contracts</li>
+<li><strong>Teacher Training:</strong> Givat Haviva trains teachers in "shared society education"</li>
+</ol>
+<h3>5.2 Other Government Funding Channels</h3>
+<ul>
+<li><strong>Israel Land Authority:</strong> NIS 20M for land compensation (kibbutz land return)</li>
+<li><strong>Ministry of Culture & Sports:</strong> NIS 15M (3-year) for archives (Yad Yaari), theater (Tzavta), cultural institutions</li>
+<li><strong>Ministry of Finance:</strong> NIS 1.5M COVID emergency</li>
+<li><strong>Settlement/National Missions Ministry:</strong> Not directly identified in obudget data for this entity, but the kibbutz movement broadly receives settlement-related funding</li>
+</ul>
+<h3>5.3 Non-Formal Education in Arab Society</h3>
+<p>Havatzelet operates a national service (שירות ארצי) track specifically for "non-formal education in Arab society" -- placing service-year volunteers in Arab communities for educational programming. This is listed on the Kol Sherut national service platform.</p>
+<h3>5.4 Advisory and Institutional Roles</h3>
+<ul>
+<li><strong>UNESCO Advisory Organization:</strong> Givat Haviva received advisory status to the UN in 2018</li>
+<li><strong>Knesset Committees:</strong> Multiple HaShomer HaTzair alumni served on Education, Culture & Sports committees</li>
+<li><strong>NIF Partnership:</strong> Givat Haviva collaborated with NIF (New Israel Fund) on the "State Education Guard" initiative to "protect the secular public education stream"</li>
+</ul>
+
+</div>
+<div class="section" id="section-6">
+<h2>6. LEGAL ACTIONS & CONTROVERSIES</h2>
+<h3>6.1 Transparency Rating</h3>
+<p>The user-referenced 63% transparency rating on GuideStar Israel could not be independently verified during this research. GuideStar Israel uses a proprietary scoring system. The organization's GuideStar page exists but is JavaScript-rendered and could not be fully scraped. The fact that the rating is reportedly only 63% (if accurate) is notable for an organization of this size receiving NIS 33M+ in government transfers.</p>
+<p><strong>Possible contributing factors to low transparency:</strong></p>
+<ul>
+<li>Complex multi-entity structure (institutions within a חל"צ rather than separate amutot)</li>
+<li>Limited public disclosure of internal fund allocation between divisions</li>
+<li>Board composition changes not consistently updated on English-language materials</li>
+</ul>
+<h3>6.2 Givat Haviva and Im Tirtzu</h3>
+<p>The right-wing organization Im Tirtzu has targeted organizations in the NIF ecosystem, of which Givat Haviva is a grantee. The broader Im Tirtzu campaign (2010) accused NIF-funded organizations of providing material for the Goldstone Report, a claim disputed by NIF (which stated only 1.3% of Goldstone citations came from NIF-supported groups).</p>
+<p>Im Tirtzu has also criticized cultural figures associated with leftist organizations. Givat Haviva, as an NIF grantee promoting Jewish-Arab coexistence, falls within the general category of organizations Im Tirtzu targets as "de-legitimizing" Israel.</p>
+<h3>6.3 Kibbutz Movement Transition Issues</h3>
+<p>The privatization of kibbutzim created tensions around Havatzelet's asset base. Keren Havatzelet holds historical assets of the Kibbutz Artzi, including the Givat Haviva campus and associated properties. The NIS 20M from Israel Land Authority for "land compensation" suggests land transactions in the kibbutz-to-state land return framework. The investigative outlet "Shomrim" has reported on "deal-karka" (land deals) that perpetuate land privileges for kibbutz members -- though no specific investigation of Havatzelet's land dealings was found.</p>
+<h3>6.4 Political Conditioning of Grants</h3>
+<p>The 2023 Havatzelet HaChadasha budget explicitly required funded organizations to "participate in and identify with the struggle against the judicial overhaul." This is a direct politicization of what is nominally a cultural/educational fund, and could raise legal questions about the tax-exempt status and public-benefit purpose of the entity.</p>
+<h3>6.5 Budget Cuts Controversy (2024)</h3>
+<p>In 2024, HaShomer HaTzair publicly warned about a 25% cut to Education Ministry support for the shinshirim (pre-military service year) program, worth NIS 17M. The movement stated it had received assurances from the Education Minister and Finance Ministry that cuts would not happen, calling the subsequent reversal "empty promises." The Ministry responded that the 2024 budget would be "similar to 2023."</p>
+<h3>6.6 Post-October 7 Context</h3>
+<p>During the 2023 war, Givat Haviva's campus provided shelter for approximately 300 evacuees from Ashkelon. A 2025 Haaretz article noted that "Jews and Arabs are flocking to Givat Haviva in masses -- yes, even after October 7th," suggesting the coexistence mission has become both more relevant and more contested.</p>
+<h3>6.7 State Comptroller Findings</h3>
+<p>No specific State Comptroller reports targeting Havatzelet or Givat Haviva directly were found during this research. This is itself notable -- an organization receiving NIS 33M+ in government transfers over 3 years would typically appear in routine comptroller reviews of ministry spending.</p>
+
+</div>
+<div class="section" id="section-7">
+<h2>7. INTERNATIONAL NETWORK</h2>
+<h3>7.1 HaShomer HaTzair World Movement</h3>
+<table>
+<tr><th>Country/Region</th><th>Presence</th></tr>
+<tr><td><strong>Israel</strong></td><td>80+ branches, ~10,000 youth</td></tr>
+<tr><td><strong>USA</strong></td><td>5 chapters, Camp Shomria (Liberty, NY), ~100 years of presence</td></tr>
+<tr><td><strong>Canada</strong></td><td>1 chapter, Camp Shomria (Perth, Ontario)</td></tr>
+<tr><td><strong>Mexico</strong></td><td>Active branch</td></tr>
+<tr><td><strong>Brazil</strong></td><td>6 branches (Rio x2, Sao Paulo, Florianopolis, Brasilia, Natal)</td></tr>
+<tr><td><strong>Argentina</strong></td><td>Active</td></tr>
+<tr><td><strong>Uruguay</strong></td><td>Active</td></tr>
+<tr><td><strong>Chile</strong></td><td>Active</td></tr>
+<tr><td><strong>Venezuela</strong></td><td>Active</td></tr>
+<tr><td><strong>France</strong></td><td>Active</td></tr>
+<tr><td><strong>Belgium</strong></td><td>Active</td></tr>
+<tr><td><strong>Netherlands</strong></td><td>Active</td></tr>
+<tr><td><strong>Germany</strong></td><td>Active</td></tr>
+<tr><td><strong>Switzerland</strong></td><td>Active</td></tr>
+<tr><td><strong>Spain</strong></td><td>Active</td></tr>
+<tr><td><strong>Italy</strong></td><td>Active</td></tr>
+<tr><td><strong>Austria</strong></td><td>Active</td></tr>
+<tr><td><strong>Poland</strong></td><td>Active</td></tr>
+<tr><td><strong>Hungary</strong></td><td>Active</td></tr>
+<tr><td><strong>Bulgaria</strong></td><td>Active</td></tr>
+<tr><td><strong>Ukraine</strong></td><td>Active</td></tr>
+<tr><td><strong>Belarus</strong></td><td>Active</td></tr>
+<tr><td><strong>Georgia</strong></td><td>Active</td></tr>
+<tr><td><strong>Kazakhstan</strong></td><td>Active</td></tr>
+<tr><td><strong>Uzbekistan</strong></td><td>Active</td></tr>
+<tr><td><strong>Australia</strong></td><td>Melbourne, established 1953</td></tr>
+</table>
+<p><strong>Total: 26 countries, 42+ branches abroad, 7,000+ members outside Israel</strong></p>
+<h3>7.2 "Friends of" Organizations</h3>
+<table>
+<tr><th>Entity</th><th>Country</th><th>EIN/Registration</th><th>Status</th></tr>
+<tr><td>Friends of Givat Haviva Inc.</td><td>USA</td><td>13-2584337</td><td>Active, 4-star Charity Navigator</td></tr>
+<tr><td>American Friends of Moreshet Inc.</td><td>USA</td><td>26-1478354</td><td>Active</td></tr>
+<tr><td>Canadian Friends of Givat Haviva</td><td>Canada</td><td>Unknown</td><td>Active</td></tr>
+<tr><td>Hashomer Hatzair / Camp Shomria</td><td>USA</td><td>Registered nonprofit</td><td>Active</td></tr>
+<tr><td>GHEF (Givat Haviva Educational Foundation)</td><td>USA</td><td>Same as Friends</td><td>Active</td></tr>
+</table>
+<h3>7.3 UNESCO Recognition</h3>
+<ul>
+<li><strong>2001:</strong> UNESCO Prize for Peace Education awarded to Givat Haviva's Jewish-Arab Center for Peace. Prize valued up to US$60,000.</li>
+<li><strong>2016:</strong> Jewish Education Prize from Tel Aviv University</li>
+<li><strong>2016:</strong> Educational Innovation Prize from Austria's Ministry of Foreign Affairs</li>
+<li><strong>2018:</strong> UN advisory organization status</li>
+</ul>
+
+</div>
+<div class="section" id="section-8">
+<h2>8. NETWORK MAP: Connected Entities and Alumni in Power</h2>
+<p><code>`</code></p>
+<p>HAVATZELET (חל"צ)</p>
+<p>510490451 | NIS 49.4M</p>
+<table>
+<tr></tr>
+</table>
+<p>+---------+-----------+-----------+----------+</p>
+<table>
+<tr></tr>
+</table>
+<p>Givat Haviva  Yad Yaari  Moreshet    GHIS    Tzavta (TLV)</p>
+<p>(campus)     (archive)  (Holocaust) (int'l   (culture</p>
+<p>UNESCO '01              school)     center)</p>
+<table>
+<tr></tr>
+</table>
+<p>+----+----+</p>
+<table>
+<tr></tr>
+</table>
+<p>CTC  Arabic  Pre-Military</p>
+<p>Program Institute Academy</p>
+<table>
+<tr></tr>
+</table>
+<p>Jewish-Arab</p>
+<p>Center for Peace</p>
+<p>(est. 1963)</p>
+<p>YOUTH MOVEMENT (separate amuta)</p>
+<p>580001659 | NIS 35.6M</p>
+<p>80 branches, 10,000 youth</p>
+<p>300 service-year volunteers</p>
+<p>42 branches in 21 countries</p>
+<p>HAVATZELET HACHADASHA</p>
+<p>NIS 14M grants (2023)</p>
+<p>Kibbutz Movement fund</p>
+<p>US FUNDRAISING</p>
+<p>Friends of GH: $2.3-6.1M/yr</p>
+<p>Am. Friends of Moreshet</p>
+<p>Camp Shomria USA/Canada</p>
+<p>POLITICAL ALUMNI</p>
+<p>Mapam --> Meretz</p>
+<p>Chaim Oron (Minister, MK)</p>
+<p>Avshalom Vilan (MK, Peace Now co-founder)</p>
+<p>Ya'akov Hazan (MK 1949-1973)</p>
+<p>Avi Dichter (Shin Bet, now Likud MK)</p>
+<p>Isser Harel (Mossad chief)</p>
+<p><code>`</code></p>
+
+</div>
+<div class="section" id="section-9">
+<h2>9. VALUES ALIGNMENT ASSESSMENT</h2>
+<table>
+<tr><th>Value</th><th>Score (1-5)</th><th>Notes</th></tr>
+<tr><td><strong>Transparency</strong></td><td>2/5</td><td>63% GuideStar rating (if accurate), multi-entity opacity, English/Hebrew messaging gap, no separate financial reporting for subdivisions</td></tr>
+<tr><td><strong>Educational quality</strong></td><td>4/5</td><td>UNESCO prize, 34-year CTC program track record, IB school, strong Holocaust education</td></tr>
+<tr><td><strong>Political neutrality</strong></td><td>1/5</td><td>Explicitly partisan (2023 anti-judicial-overhaul condition), Mapam-Meretz pipeline, movement ideology baked into educational programs</td></tr>
+<tr><td><strong>Financial accountability</strong></td><td>2/5</td><td>NIS 20M land compensation unexplained publicly, aggregate structure obscures internal allocation, Havatzelet HaChadasha grants conditional on political stance</td></tr>
+<tr><td><strong>Ideological honesty</strong></td><td>2/5</td><td>Systematic semantic displacement between Hebrew and English messaging. Hebrew is explicitly socialist-Zionist; English presents as neutral "education and culture"</td></tr>
+<tr><td><strong>Social contribution</strong></td><td>4/5</td><td>Genuine Jewish-Arab bridge programs, pre-military service, Holocaust education, youth development</td></tr>
+<tr><td><strong>Democratic governance</strong></td><td>3/5</td><td>Board elected by kibbutz movement delegates, but movement represents a narrow ideological slice of Israeli society</td></tr>
+</table>
+
+</div>
+<div class="section" id="section-10">
+<h2>10. KEY OPEN QUESTIONS</h2>
+<ol>
+<li><strong>NIS 20M from Israel Land Authority:</strong> What specific land was returned/compensated? What is the total real estate portfolio of Havatzelet/Givat Haviva campus? What is the estimated market value of the Givat Haviva campus and other movement properties?</li>
+</ol>
+<ol>
+<li><strong>Internal fund allocation:</strong> How exactly is the NIS 49.4M distributed among Givat Haviva, Yad Yaari, Moreshet, GHIS, and other subdivisions? No public breakdown exists.</li>
+</ol>
+<ol>
+<li><strong>Havatzelet HaChadasha political conditions:</strong> Is it legal for a public-benefit fund to condition grants on political activism (participation in anti-judicial-overhaul protests)?</li>
+</ol>
+<ol>
+<li><strong>Youth movement in schools:</strong> What is the exact mechanism by which HaShomer HaTzair branches operate inside public schools? Do they have formal agreements with the Ministry of Education? How does ideological content enter formally neutral school settings?</li>
+</ol>
+<ol>
+<li><strong>NIF funding pipeline:</strong> What is the total NIF funding to Givat Haviva over the past decade? The NIF page confirms a relationship but amounts are not public.</li>
+</ol>
+<ol>
+<li><strong>State Comptroller coverage gap:</strong> Why has an organization receiving NIS 33M+ in government transfers not been subject to a public State Comptroller review (or if it has, why are results not easily findable)?</li>
+</ol>
+<ol>
+<li><strong>GHIS international students:</strong> Where do the 50% international students come from? What is the tuition? Who funds scholarships? What happens to these students after graduation -- do they make aliyah?</li>
+</ol>
+<ol>
+<li><strong>Movement decline post-Meretz collapse:</strong> With Meretz failing to enter the Knesset in 2022, has the political pipeline been disrupted? Where do current HaShomer HaTzair alumni direct their political energy?</li>
+</ol>
+<ol>
+<li><strong>English website leadership discrepancy:</strong> The English Havatzelet page lists different leadership (Avshalom Vilan as Chair, Uzi Shemesh as CEO) than the Hebrew page (Amos Rabin as Chair, Itamar Shvika as CEO). When did leadership change, and why wasn't the English site updated?</li>
+</ol>
+<ol>
+<li><strong>Total alumni count in public positions:</strong> A comprehensive mapping of all current officeholders (municipal, governmental, civil service, academic, media) who are HaShomer HaTzair alumni would reveal the true scope of movement influence.</li>
+</ol>
+
+</div>
+<div class="section" id="section-11">
+<h2>SOURCE URLs</h2>
+<h3>Primary Data Sources</h3>
+<ul>
+<li>GuideStar Israel (Havatzelet): https://www.guidestar.org.il/organization/510490451</li>
+<li>GuideStar Israel (Youth Movement): https://www.guidestar.org.il/organization/580001659</li>
+<li>obudget.org (Havatzelet): https://next.obudget.org/i/org/association/510490451</li>
+<li>obudget.org (Youth Movement): https://next.obudget.org/i/org/association/580001659</li>
+<li>Havatzelet website (Hebrew): https://havatzelet.org.il/</li>
+<li>Havatzelet website (English): https://en.havatzelet.org.il/</li>
+<li>Givat Haviva (English): https://givathaviva.org.il/en/</li>
+<li>Givat Haviva Gefen Programs: https://givathaviva.org.il/en/gefen-programs/</li>
+<li>HaShomer HaTzair youth movement: https://hashomer-hatzair.org/</li>
+<li>GHIS International School: https://gh-is.org/about/</li>
+<li>Friends of Givat Haviva (USA): https://usfogh.org/</li>
+<li>ProPublica Nonprofit Explorer (Friends of GH): https://projects.propublica.org/nonprofits/organizations/132584337</li>
+<li>Charity Navigator (Friends of GH): https://www.charitynavigator.org/ein/132584337</li>
+</ul>
+<h3>Encyclopedic Sources</h3>
+<ul>
+<li>Hamichlol - Givat Haviva: https://www.hamichlol.org.il/%D7%92%D7%91%D7%A2%D7%AA_%D7%97%D7%91%D7%99%D7%91%D7%94</li>
+<li>Hamichlol - HaShomer HaTzair: https://www.hamichlol.org.il/%D7%94%D7%A9%D7%95%D7%9E%D7%A8_%D7%94%D7%A6%D7%A2%D7%99%D7%A8</li>
+<li>Hamichlol - Keren Havatzelet: https://www.hamichlol.org.il/%D7%A7%D7%A8%D7%9F_%D7%97%D7%91%D7%A6%D7%9C%D7%AA</li>
+<li>Hamichlol - Avshalom Vilan: https://www.hamichlol.org.il/%D7%90%D7%91%D7%A9%D7%9C%D7%95%D7%9D_%D7%95%D7%99%D7%9C%D7%9F</li>
+<li>Hamichlol - Chaim Oron: https://www.hamichlol.org.il/%D7%97%D7%99%D7%99%D7%9D_%D7%90%D7%95%D7%A8%D7%95%D7%9F</li>
+<li>Wikipedia - Hashomer Hatzair: https://en.wikipedia.org/wiki/Hashomer_Hatzair</li>
+<li>Wikipedia - Givat Haviva: https://en.wikipedia.org/wiki/Givat_Haviva</li>
+</ul>
+<h3>News Sources</h3>
+<ul>
+<li>Ynet - Budget cuts warning (2024): https://www.ynet.co.il/activism/article/rj6y8w00pr</li>
+<li>Kibbutz.org - Havatzelet HaChadasha 2023 budget: https://www.kibbutz.org.il/he/articles/...</li>
+<li>Haaretz - Givat Haviva post-Oct 7 (2025): https://www.haaretz.co.il/magazine/2025-07-23/...</li>
+<li>JPost - GHIS school opening (2018): https://www.jpost.com/Israel-News/Givat-Haviva-to-open-International-school-for-shared-society-leaders-545416</li>
+<li>Haaretz - UNESCO Prize (2001): https://www.haaretz.com/2001-09-06/ty-article/jewish-arab-center-wins-unesco-peace-prize/...</li>
+</ul>
+<h3>Organizational Listings</h3>
+<ul>
+<li>Kolsherut - Arab society non-formal education: https://www.kolsherut.org.il/c/7993b5ea</li>
+<li>NIF - Givat Haviva page: https://nif.org.il/organization/%D7%92%D7%91%D7%A2%D7%AA-%D7%97%D7%91%D7%99%D7%91%D7%94/</li>
+<li>Yad Yaari archive: https://www.yad-yaari.org.il/yaari</li>
+<li>Moreshet website: https://www.moreshet.org/en/</li>
+<li>Partners for Progressive Israel: https://www.progressiveisrael.org/hashomer-hatzair/</li>
+<li>Camp Shomria (USA): https://campshomria.com/</li>
+<li>Camp Shomria (Canada): https://www.hashomerhatzair.ca/</li>
+</ul>
+<p><em>Research conducted 2026-02-16 using Claude Opus 4.6. Data sourced from GuideStar Israel, obudget.org, ProPublica Nonprofit Explorer, Charity Navigator, organizational websites, and Hebrew/English news sources. Financial figures from most recent available filings.</em></p>
+
+</div>
+</div>
+
+<footer>
+  פרויקט זהות ציונית — דוח מחקר מעמיק | <a href="../">דירוג ערים</a> | <a href="../research/">כל הדוחות</a>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tikkun - Center for Encounter, Education and Social Change — דוח מחקר מעמיק</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background: #f5f5f8;
+  color: #1a1a2e;
+  direction: rtl;
+  line-height: 1.8;
+  font-size: 17px;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #1a1a2e; color: #fff;
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  overflow-x: auto; white-space: nowrap;
+}
+nav .brand { font-weight: 700; color: #ff8800; flex-shrink: 0; }
+nav a { color: #ccc; text-decoration: none; font-size: 0.85em; padding: 8px 4px; border-bottom: 2px solid transparent; flex-shrink: 0; }
+nav a:hover { color: #ff8800; border-bottom-color: #ff8800; }
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a5a8a 100%);
+  color: #fff; padding: 50px 20px 40px; text-align: center;
+}
+.hero h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+.hero .subtitle { font-size: 1.05em; color: #b0c4de; margin-bottom: 6px; }
+.hero .meta { font-size: 0.9em; color: #ff8800; margin-top: 8px; }
+.risk-badge {
+  display: inline-block; padding: 4px 16px; border-radius: 20px;
+  font-size: 0.85em; font-weight: 600; margin-top: 10px;
+}
+.risk-high { background: #e74c3c; color: #fff; }
+.risk-medium { background: #f39c12; color: #fff; }
+.risk-low { background: #27ae60; color: #fff; }
+.container { max-width: 860px; margin: 0 auto; padding: 30px 20px 80px; }
+.toc {
+  background: #fff; border-radius: 8px; padding: 22px 26px;
+  margin-bottom: 32px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.toc h2 { font-size: 1.15em; color: #2a5a8a; margin-bottom: 12px; border-bottom: 2px solid #667eea; padding-bottom: 6px; }
+.toc ol { padding-right: 22px; font-size: 0.93em; }
+.toc li { margin-bottom: 4px; }
+.toc a { color: #2a5a8a; text-decoration: none; }
+.toc a:hover { color: #ff8800; text-decoration: underline; }
+.section {
+  background: #fff; border-radius: 8px; padding: 28px 26px;
+  margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.section h2 { font-size: 1.4em; color: #1a1a2e; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #667eea; }
+.section h3 { font-size: 1.1em; color: #2a5a8a; margin: 18px 0 8px; }
+.section h4 { font-size: 1em; color: #444; margin: 14px 0 6px; }
+.section p { margin-bottom: 12px; text-align: justify; }
+.section ul, .section ol { padding-right: 22px; margin-bottom: 12px; }
+.section li { margin-bottom: 5px; }
+blockquote {
+  background: #f0f4fa; border-right: 4px solid #667eea;
+  padding: 12px 18px; margin: 12px 0; border-radius: 0 6px 6px 0;
+  font-size: 0.94em; color: #333;
+}
+.thesis {
+  background: #fff8f0; border-right: 3px solid #ff8800;
+  padding: 14px 18px; margin: 12px 0; border-radius: 0 5px 5px 0;
+  font-size: 0.96em; color: #6b4500;
+}
+table {
+  width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.91em;
+}
+th {
+  background: #667eea; color: #fff; padding: 8px 12px;
+  text-align: right; position: sticky; top: 44px; z-index: 5;
+}
+td {
+  padding: 7px 12px; border-bottom: 1px solid #e8e8e8;
+  text-align: right; vertical-align: top;
+}
+tr:nth-child(even) { background: #f8f9fc; }
+a { color: #2a5a8a; }
+a:hover { color: #ff8800; }
+.back-link {
+  display: inline-block; margin-bottom: 20px; padding: 6px 14px;
+  background: #667eea; color: #fff; border-radius: 4px;
+  text-decoration: none; font-size: 0.88em;
+}
+.back-link:hover { background: #5a6fd6; color: #fff; }
+footer {
+  text-align: center; padding: 30px 20px; color: #888; font-size: 0.85em;
+}
+strong { color: #1a1a2e; }
+code {
+  background: #f0f0f0; padding: 1px 5px; border-radius: 3px;
+  font-size: 0.9em;
+}
+.source-tag {
+  display: inline-block; background: #e8eef6; padding: 2px 8px;
+  border-radius: 10px; font-size: 0.78em; color: #2a5a8a;
+  margin: 2px 3px; text-decoration: none;
+}
+.source-tag:hover { background: #d0dff0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">דוח מחקר מעמיק</span>
+  <a href="../">חזרה לדירוג</a>
+  <a href="../research/">כל הדוחות</a>
+  <a href="#section-1">Part B: Extracted Fa</a> <a href="#section-2">Part C: Analysis</a>
+</nav>
+
+<div class="hero">
+  <h1>Tikkun - Center for Encounter, Education and Social Change</h1>
+  <div class="subtitle">Registration: 580334779 | Founded: 1999 | Revenue: NIS 5.34M (2023)</div>
+  <div class="meta"></div>
+  
+</div>
+
+<div class="container">
+  <a href="../research/" class="back-link">← כל דוחות המחקר</a>
+  <div class="toc"><h2>תוכן עניינים</h2><ol><li><a href="#section-1">Part B: Extracted Facts</a></li><li><a href="#section-2">Part C: Analysis</a></li></ol></div>
+  <div class="section" id="section-1">
+<h2>Part B: Extracted Facts</h2>
+<h3>B1. Organizational Structure</h3>
+<p><strong>Legal Identity:</strong></p>
+<ul>
+<li><strong>Full Name:</strong> תיקון - מרכז למפגש, חינוך ושינוי חברתי (ע"ר) [Source: GuideStar]</li>
+<li><strong>English Name:</strong> Tikkun - Center for Encounter, Education and Social Change [Source: tikkun.org.il]</li>
+<li><strong>Registration Number:</strong> 580334779 [Source: GuideStar]</li>
+<li><strong>Type:</strong> Registered Association (עמותה רשומה) [Source: GuideStar]</li>
+<li><strong>Founded:</strong> 1999 [Source: GuideStar, tikkun.org.il]</li>
+<li><strong>Address:</strong> Hatslef St. 2, Nof HaGalil, 1709848 [Source: obudget.org]</li>
+</ul>
+<p><strong>The Six Communities (Identified):</strong></p>
+<ol>
+<li><strong>Nof HaGalil</strong> (formerly Natzeret Illit) -- organizational headquarters [Source: GuideStar address + HaMichlol Kvutzot HaBchira]</li>
+<li><strong>Migdal HaEmek</strong> [Source: tikkun.org.il, HaMichlol Kvutzot HaBchira]</li>
+<li><strong>Rishon LeZion</strong> [Source: tikkun.org.il, HaMichlol Kvutzot HaBchira]</li>
+<li><strong>Bat Yam</strong> [Source: tikkun.org.il, HaMichlol Kvutzot HaBchira]</li>
+<li><strong>Na'aran</strong> (Kibbutz in Jordan Valley) [Source: tikkun.org.il, HaMichlol Kvutzot HaBchira]</li>
+<li><strong>Eilat</strong> [Source: tikkun.org.il, HaMichlol Kvutzot HaBchira]</li>
+</ol>
+<p><strong>Critical structural finding:</strong> These are the EXACT same 6 locations where Kvutzot HaBchira shel HaMahanot HaOlim (the alumni movement) maintains cooperative living communities. Tikkun is the operational/NGO arm of the HaMahanot HaOlim alumni network. [Source: Cross-reference of tikkun.org.il locations with HaMichlol Kvutzot HaBchira article]</p>
+<p><strong>Parent Movement:</strong></p>
+<ul>
+<li><strong>HaMahanot HaOlim</strong> (Registration 580240489, separate legal entity) [Source: IsraelGives]</li>
+<li>Youth movement founded 1926</li>
+<li>~45 branches, ~7,000 youth members [Source: HaMichlol]</li>
+<li>Established ~42 kibbutzim historically [Source: Globes/Ilan Gazit interview]</li>
+<li>Merged with Kvutzot HaBchira in 2005 [Source: HaMichlol Kvutzot HaBchira]</li>
+</ul>
+<p><strong>Urban Kibbutz "Meshul":</strong></p>
+<ul>
+<li>In 2007, alumni in Nof HaGalil and Migdal HaEmek declared an "urban kibbutz" informally called "Na'ema" (acronym for Natzeret Illit + Migdal HaEmek) [Source: HaMichlol Kvutzot HaBchira]</li>
+<li>Registered as "Kibbutz Meshul" with the Registrar of Associations in 2012 [Source: HaMichlol Kvutzot HaBchira]</li>
+<li>~80 members and ~40 children across 8 groups as of registration [Source: HaMichlol Kvutzot HaBchira]</li>
+</ul>
+<p><strong>Organizational Ecosystem (3 entities, 1 movement):</strong></p>
+<table>
+<tr><th>Entity</th><th>Registration</th><th>Function</th></tr>
+<tr><td>HaMahanot HaOlim</td><td>580240489</td><td>Youth movement (ages 9-18)</td></tr>
+<tr><td>Tikkun</td><td>580334779</td><td>NGO arm: education, programs, government contracts</td></tr>
+<tr><td>Kvutzot HaBchira</td><td>Part of HaMahanot HaOlim since 2005</td><td>Alumni cooperative communities</td></tr>
+<tr><td>Kibbutz Meshul</td><td>Registered 2012 (separate)</td><td>Urban kibbutz (Nof HaGalil/Migdal HaEmek)</td></tr>
+</table>
+<h3>B2. Financial Analysis</h3>
+<p><strong>Revenue:</strong></p>
+<ul>
+<li><strong>2023 Revenue:</strong> NIS 5,340,000 [Source: obudget.org]</li>
+<li><strong>Sector Median (Community & Society):</strong> NIS 739,442 -- Tikkun is ~7.2x the sector median [Source: obudget.org]</li>
+</ul>
+<p><strong>Government Transfers (Cumulative, All Years Available):</strong></p>
+<table>
+<tr><th>Ministry</th><th>Total Amount (NIS)</th><th>Purpose</th><th># Payments</th></tr>
+<tr><td>Settlement Ministry (משרד ההתיישבות)</td><td>2,632,454</td><td>Mission core management support</td><td>8</td></tr>
+<tr><td>Agriculture & Food Security</td><td>2,276,532</td><td>Urban mission cores</td><td>6</td></tr>
+<tr><td>Education Ministry</td><td>1,268,699</td><td>Youth-at-risk programs + Jewish culture</td><td>23</td></tr>
+<tr><td>Agriculture & Rural Development</td><td>1,154,490</td><td>Urban mission cores</td><td>4+</td></tr>
+<tr><td>Settlement Authority (רשות ההתיישבות)</td><td>648,440</td><td>Settlement cores</td><td>2</td></tr>
+<tr><td>Prime Minister's Office</td><td>281,733</td><td>Memorial organization support + council grants</td><td>11</td></tr>
+<tr><td>Negev/Galilee Development Authority</td><td>145,388</td><td>Cooperation support</td><td>3</td></tr>
+<tr><td>Health Ministry</td><td>23,459</td><td>Workshops contracts</td><td>2</td></tr>
+<tr><td><strong>TOTAL GOVERNMENT TRANSFERS</strong></td><td><strong>~8,431,195</strong></td></tr>
+</table>
+<p>[Source for all: obudget.org]</p>
+<p><strong>Key Financial Observations:</strong></p>
+<ol>
+<li>The Settlement Ministry is the single largest government funder at NIS 2.63M [Source: obudget.org]</li>
+<li>Agriculture Ministry (both departments combined) totals NIS 3.43M -- actually the largest combined source [Source: obudget.org]</li>
+<li>Only NIS 8,659 came via competitive contracts; NIS 8.42M+ came via support/grants (תמיכות) [Source: obudget.org]</li>
+<li>3-year government funding total was NIS 2,620,118 (meaning earlier years account for ~NIS 5.8M of the cumulative total) [Source: obudget.org]</li>
+</ol>
+<p><strong>Foreign/Foundation Funding:</strong></p>
+<ul>
+<li>No evidence found of NIF (New Israel Fund) funding [Source: web search, no results]</li>
+<li>No evidence found of EU funding [Source: web search, no results]</li>
+<li>No US-based 501(c)(3) entity identified for Tikkun specifically [Source: web search]</li>
+<li>HaMahanot HaOlim (parent movement) IS tax-deductible in US, UK, France [Source: IsraelGives]</li>
+<li>Revenue gap: NIS 5.34M total revenue minus ~NIS 2.6M government transfers (3-year) suggests NIS 2.7M+ from other sources (likely program fees, donations, parent movement) [Source: calculation]</li>
+</ul>
+<h3>B3. Leadership & Personnel</h3>
+<p><strong>Known Staff:</strong></p>
+<ul>
+<li><strong>Ilan Gazit</strong> -- Secretary-General (מזכ"ל) of HaMahanot HaOlim (parent movement) [Source: Globes interview]</li>
+<li><strong>Gefen Shapiro</strong> -- Resource Developer (מפתחת משאבים) at Tikkun [Source: LinkedIn]</li>
+<li><strong>Ron</strong> (surname unknown) -- Contact for service year programs, ron@eretz.org.il [Source: shinshinim.org]</li>
+<li><strong>Oz Avraham, Eyal Nir</strong> -- Contributors/authors on kvutzot.org.il [Source: kvutzot.org.il]</li>
+</ul>
+<p><strong>Board Members:</strong></p>
+<ul>
+<li>GuideStar page exists but board member names could not be extracted due to JS rendering [Source: GuideStar -- data exists but not accessible]</li>
+</ul>
+<p><strong>Movement Founders (Historical):</strong></p>
+<ul>
+<li>HaMahanot HaOlim founded 1926 by students of Herzliya Hebrew Gymnasium, Tel Aviv [Source: HaMichlol]</li>
+<li>Tikkun itself founded 1999 -- specific founders not identified in available sources</li>
+</ul>
+<p><strong>Notable Alumni of HaMahanot HaOlim:</strong></p>
+<ul>
+<li><strong>Aviv Kochavi</strong> -- Former IDF Chief of Staff [Source: Globes]</li>
+<li><strong>Norit Galron</strong> -- Cultural figure [Source: Globes]</li>
+<li><strong>Dvir Bendek</strong> -- Cultural personality [Source: Globes]</li>
+</ul>
+<h3>B4. Ideology & Programs</h3>
+<p><strong>Stated Organizational Goals (from obudget.org):</strong></p>
+<ul>
+<li>Establishing young leadership groups</li>
+<li>Supporting groups of educators and social change initiatives</li>
+<li>Fostering volunteering culture</li>
+<li>Democracy education through experiential learning</li>
+<li>Bridging population groups from different socioeconomic backgrounds</li>
+<li>Educational activities with at-risk children</li>
+<li>Cultural programming in Zionism, Judaism, and democracy [Source: obudget.org organization description]</li>
+</ul>
+<p><strong>Core Programs:</strong></p>
+<ol>
+<li><strong>Clubs for socially excluded children and youth</strong> [Source: tikkun.org.il]</li>
+<li><strong>Seminars and workshops at schools</strong> [Source: tikkun.org.il]</li>
+<li><strong>Educational Holocaust remembrance journeys to Poland</strong> [Source: tikkun.org.il]</li>
+<li><strong>Academic programs to train educators</strong> [Source: tikkun.org.il]</li>
+<li><strong>Youth-at-risk programs</strong> (funded by Education Ministry) [Source: obudget.org]</li>
+<li><strong>Jewish culture programs</strong> (funded by Education Ministry) [Source: obudget.org]</li>
+<li><strong>Mission core management</strong> (funded by Settlement Ministry) [Source: obudget.org]</li>
+<li><strong>Urban mission cores</strong> (funded by Agriculture Ministry) [Source: obudget.org]</li>
+<li><strong>Health workshops</strong> (funded by Health Ministry) [Source: obudget.org]</li>
+<li><strong>Memorial/commemoration programs</strong> (funded by PM Office) [Source: obudget.org]</li>
+</ol>
+<p><strong>Scale:</strong> 25,000+ children, youth, and adults participate annually [Source: tikkun.org.il]</p>
+<p><strong>Human Resources (2023):</strong> 51 employees, 400 volunteers [Source: obudget.org]</p>
+<p><strong>Parent Movement Ideology (HaMahanot HaOlim):</strong></p>
+<ul>
+<li>Self-defined as "pioneering-Zionist-socialist" [Source: HaMichlol]</li>
+<li>Seven core values: Equality, Solidarity, Love of the land and its people, Peace, Cooperation, Freedom, Labor [Source: HaMichlol]</li>
+<li>Five guiding anchors: Democracy, Pioneering spirit, Humanism, Socialism, Zionism [Source: HaMichlol]</li>
+</ul>
+<p><strong>Hebrew vs. English Messaging:</strong></p>
+<ul>
+<li>English site (tikkun.org.il?lang=en) emphasizes: "mission-driven communities," "social change," "encounter," "bridging social gaps," "just and democratic society" [Source: tikkun.org.il]</li>
+<li>Hebrew organizational goals include: "Zionism, Judaism and democracy" -- the Zionism and Judaism framing is notably more present in Hebrew descriptions [Source: obudget.org]</li>
+<li>The English messaging downplays the movement's socialist roots and emphasizes more universalist "encounter" and "social change" language [Source: comparison of tikkun.org.il English vs. obudget.org Hebrew goals]</li>
+</ul>
+<h3>B5. Government Ties</h3>
+<p><strong>Ministry Relationships:</strong></p>
+<ol>
+<li><strong>Settlement Ministry (משרד ההתיישבות והמשימות הלאומיות):</strong> NIS 2.63M for "mission core management support" -- this is the ministry's framework for funding mission-driven community groups (גרעינים משימתיים) that embed in development towns and periphery areas [Source: obudget.org, Peace Now budget analysis]</li>
+<li><strong>Agriculture Ministry (two departments):</strong> NIS 3.43M combined for "urban mission cores" -- the Agriculture Ministry historically funded kibbutz-affiliated groups expanding into urban settings [Source: obudget.org]</li>
+<li><strong>Education Ministry:</strong> NIS 1.27M across youth-at-risk programs and Jewish culture programming in schools [Source: obudget.org]</li>
+<li><strong>PM Office:</strong> NIS 282K for memorial organizations -- likely related to the Poland/Holocaust remembrance journeys [Source: obudget.org]</li>
+</ol>
+<p><strong>School Access Mechanism:</strong></p>
+<ul>
+<li>Through Education Ministry contracts/support for youth-at-risk programs and Jewish culture programs [Source: obudget.org]</li>
+<li>Through the Gefen (גפ"ן) system potentially, though Tikkun was NOT found in the Mishmar HaChinuch liberal democracy programs catalog or the Gefen vendor index [Source: mishmarhinuch.com, mygefen.co.il searches]</li>
+<li>Direct partnerships with schools in the 6 community locations [Source: tikkun.org.il program descriptions]</li>
+</ul>
+<p><strong>Mission Core Funding Context:</strong></p>
+<ul>
+<li>Nationally, ~360 mission cores exist (up from 140 in 2015) [Source: Mako]</li>
+<li>Total national allocation ~NIS 50.7M from Settlement Ministry alone [Source: Peace Now]</li>
+<li>Torah/religious cores average NIS 375K vs. secular mission cores NIS 167K [Source: Mako/Barak Katznelson Foundation report]</li>
+<li>Tikkun receives NIS 2.63M from Settlement Ministry alone -- well above the NIS 167K average for secular cores, suggesting it operates MULTIPLE cores under one organizational umbrella [Source: obudget.org + Mako context]</li>
+</ul>
+<h3>B6. Controversies</h3>
+<p><strong>Direct Controversies Found:</strong> None specific to Tikkun.</p>
+<ul>
+<li>No NGO Monitor coverage [Source: ngo-monitor.org site search]</li>
+<li>No Im Tirtzu campaign targeting Tikkun found [Source: web search]</li>
+<li>No State Comptroller audit findings [Source: web search]</li>
+<li>No Knesset investigation or committee hearing [Source: web search]</li>
+<li>No news articles about scandal, mismanagement, or ideological criticism [Source: comprehensive web search]</li>
+</ul>
+<p><strong>Contextual Controversies (affecting Tikkun's sector):</strong></p>
+<ol>
+<li><strong>Mission Core Funding Disparity:</strong> Torah-oriented cores receive double the funding of secular mission cores on average. Tikkun, as a secular-Zionist-socialist organization, operates in this contested funding landscape where the Settlement Ministry under Minister Orit Strock has been accused of favoring religious groups [Source: Mako, Calcalist]</li>
+<li><strong>Settlement Ministry Politicization:</strong> The ministry's budget grew from NIS 198.5M to NIS 400.5M (2025), with concerns about ideological allocation criteria [Source: Peace Now]</li>
+<li><strong>New Eligibility Criteria:</strong> ~100 cores were disqualified under new rules requiring 2 years of activity before funding -- this could affect Tikkun's ability to establish new community groups [Source: Calcalist]</li>
+</ol>
+
+</div>
+<div class="section" id="section-2">
+<h2>Part C: Analysis</h2>
+<h3>Thesis Statement</h3>
+<p>Tikkun is the operational NGO arm of the HaMahanot HaOlim youth movement's alumni network -- a secular-socialist-Zionist cooperative movement that has successfully institutionalized itself into Israel's government-funded "mission core" ecosystem. It channels approximately NIS 8.4M in cumulative government transfers to sustain six cooperative educator communities in Israel's socioeconomic periphery. The organization is structurally unremarkable as an NGO: it does real educational work, serves real communities, and operates transparently within the regulatory framework. Its significance lies not in controversy but in what it represents -- a surviving fragment of Israel's labor-Zionist kibbutz movement that has adapted to 21st-century urban life by repackaging cooperative communal living as "mission cores" eligible for government support.</p>
+<h3>Semantic Displacement Check</h3>
+<p><strong>Does Tikkun redefine common terms?</strong></p>
+<ol>
+<li><strong>"Encounter" (מפגש):</strong> In Tikkun's usage, this does not mean Arab-Jewish dialogue (as it does for organizations like Givat Haviva or Encounter Programs). Instead, it appears to mean encounter between different Jewish socioeconomic groups -- periphery and center, secular and traditional, educators and communities. This is a subtle but important distinction. The English word "encounter" carries connotations of conflict-resolution dialogue that the Hebrew "mifgash" does not necessarily carry.</li>
+</ol>
+<ol>
+<li><strong>"Social Change" (שינוי חברתי):</strong> Used in the labor-Zionist sense -- reducing socioeconomic gaps through education and community development -- rather than in the rights-based/progressive sense (gender, LGBTQ+, Palestinian rights). This aligns with the movement's socialist roots.</li>
+</ol>
+<ol>
+<li><strong>"Mission Core" (גרעין משימתי):</strong> This term is the government funding category. In Tikkun's case, these are secular cooperative communities of HaMahanot HaOlim graduates. The same term covers religious Torah cores (גרעינים תורניים) at the other end of the spectrum. The framing obscures a fundamental difference: Tikkun's "mission" is secular-socialist communal living and education; Torah cores' "mission" is religious community establishment.</li>
+</ol>
+<ol>
+<li><strong>Hebrew vs. English gap:</strong> The Hebrew materials foreground "Zionism, Judaism, and democracy" as program content. The English materials emphasize "encounter, education, and social change." The Zionist-Jewish identity work is somewhat muted in English, while the socialist-cooperative dimension is muted in Hebrew government descriptions. Neither is deceptive -- each audience receives the framing most relevant to it.</li>
+</ol>
+<p><strong>Verdict:</strong> Mild semantic displacement. The organization uses standard Israeli NGO language, and the Hebrew-English gap is common across the sector. No significant redefinition of terms detected.</p>
+<h3>Financial Flow Summary</h3>
+<p><strong>Entity-Level (Conservative, Verified):</strong></p>
+<ul>
+<li>Tikkun (580334779): NIS 5.34M annual revenue (2023)</li>
+<li>Government transfers to Tikkun: ~NIS 2.6M per year (3-year average)</li>
+</ul>
+<p><strong>Estimated Total Ecosystem Flow:</strong></p>
+<ul>
+<li>Tikkun: NIS 5.34M (2023)</li>
+<li>HaMahanot HaOlim youth movement (580240489): Revenue unknown but operates 45 branches with ~7,000 youth</li>
+<li>Kibbutz Meshul (urban kibbutz): Revenue unknown</li>
+<li>Kvutzot HaBchira (integrated into HaMahanot HaOlim): Internal accounting</li>
+<li><strong>Estimated total ecosystem:</strong> NIS 8-15M annually across all entities (speculative -- only Tikkun's revenue is confirmed)</li>
+</ul>
+<p><strong>Revenue Composition (Tikkun, estimated):</strong></p>
+<table>
+<tr><th>Source</th><th>Estimated Amount</th><th>Share</th></tr>
+<tr><td>Government transfers</td><td>~2,600,000</td><td>~49%</td></tr>
+<tr><td>Program fees/services</td><td>~1,500,000</td><td>~28%</td></tr>
+<tr><td>Donations/parent movement</td><td>~1,200,000</td><td>~23%</td></tr>
+<tr><td><strong>Total</strong></td><td><strong>~5,340,000</strong></td><td><strong>100%</strong></td></tr>
+</table>
+<p>Note: The program fees/donations split is estimated from the gap between known government transfers and total revenue. Actual breakdown requires access to audited financial statements.</p>
+<h3>Pattern Naming</h3>
+<p><strong>Pattern: "Institutionalized Kibbutz Movement"</strong></p>
+<p>Tikkun fits a recognizable pattern among Israeli social movements: a youth movement (HaMahanot HaOlim, est. 1926) that historically funneled members into kibbutzim has adapted to the decline of the kibbutz model by:</p>
+<ol>
+<li>Creating an NGO (Tikkun, 1999) to serve as the funding and operational vehicle</li>
+<li>Reframing cooperative communal living as "mission cores" eligible for government support</li>
+<li>Channeling members into education-sector employment in periphery communities</li>
+<li>Maintaining the cooperative economic structure (shared income, communal decision-making) within urban settings</li>
+</ol>
+<p>This is not unique to Tikkun -- other movements (notably Dror Israel/דרור ישראל) follow the same pattern at much larger scale. The key mechanism is that the Settlement Ministry and Agriculture Ministry fund "mission cores" as a tool for strengthening periphery communities, and both secular-socialist and religious-nationalist movements compete for this funding.</p>
+<p><strong>Evidence supporting this pattern:</strong></p>
+<ul>
+<li>Perfect overlap between Kvutzot HaBchira community locations and Tikkun's 6 communities</li>
+<li>Members "work primarily in education" per HaMichlol</li>
+<li>Urban kibbutz "Meshul" registered formally as cooperative</li>
+<li>Secretary-General Ilan Gazit explicitly describes shared income and communal economics (Globes)</li>
+<li>Government funding categorized as "mission core management" not "education" per se</li>
+</ul>
+<p><strong>Caveats:</strong> This pattern is legal, transparent, and serves a documented social function (education in periphery communities). It is not inherently problematic. The question is whether the mission-core funding framework adequately distinguishes between groups doing substantive community work (like Tikkun appears to be) and those primarily sustaining ideological communities with minimal external impact.</p>
+<h3>Values Alignment Assessment</h3>
+<table>
+<tr><th>Value</th><th>Score (1-5)</th><th>Evidence</th></tr>
+<tr><td>Democratic governance</td><td>4</td><td>"Democracy" is one of 5 guiding anchors; experiential democracy education in programs</td></tr>
+<tr><td>Transparency</td><td>3</td><td>GuideStar listing exists; obudget data available; parent movement only 59% transparency rating on IsraelGives</td></tr>
+<tr><td>Inclusivity</td><td>3</td><td>Programs serve "diverse populations" but primarily Jewish communities; no evidence of Arab-Jewish programming despite "encounter" branding</td></tr>
+<tr><td>Educational quality</td><td>3</td><td>25,000 participants/year with 51 employees suggests real programming; but not found in Gefen or Mishmar HaChinuch catalogs</td></tr>
+<tr><td>Community impact</td><td>4</td><td>6 functioning communities with cooperative structure in periphery cities</td></tr>
+<tr><td>Financial sustainability</td><td>4</td><td>~49% government-funded is within normal range for Israeli social-sector NGOs; multiple ministry sources reduces single-funder risk</td></tr>
+<tr><td>Political independence</td><td>2</td><td>Deeply rooted in labor-Zionist movement; ideology is explicit (socialism, Zionism); government funding from ideologically-driven Settlement Ministry</td></tr>
+<tr><td>Accountability</td><td>3</td><td>Regulated as amuta; must file with Registrar of Associations; no audit findings found; but limited public reporting</td></tr>
+</table>
+<h3>Network Connections Map</h3>
+<p><code>`</code></p>
+<p>HaMahanot HaOlim (Youth Movement, est. 1926)</p>
+<p>Registration: 580240489</p>
+<p>~45 branches, ~7,000 youth</p>
+<table>
+<tr></tr>
+</table>
+<p>|--- Service Year Programs (shinshinim.org)</p>
+<p>|       4 tracks: Urban, Kibbutz, Neighborhoods, Pioneer</p>
+<table>
+<tr></tr>
+</table>
+<p>|--- Kvutzot HaBchira (Alumni Movement, merged 2005)</p>
+<p>|       Cooperative communities in 6 cities</p>
+<table>
+<tr></tr>
+</table>
+<p>|       |--- Kibbutz Meshul (Urban Kibbutz, reg. 2012)</p>
+<p>|       |       ~80 members, Nof HaGalil/Migdal HaEmek</p>
+<table>
+<tr></tr>
+</table>
+<p>|       |--- TIKKUN (NGO Arm, est. 1999)</p>
+<p>|               Registration: 580334779</p>
+<p>|               NIS 5.34M revenue, 51 employees, 400 volunteers</p>
+<p>|               25,000 annual participants</p>
+<table>
+<tr></tr>
+</table>
+<p>|               |--- Programs:</p>
+<p>|               |   - Youth-at-risk clubs</p>
+<p>|               |   - School workshops</p>
+<p>|               |   - Holocaust journeys to Poland</p>
+<p>|               |   - Educator training</p>
+<p>|               |   - Jewish culture programs</p>
+<p>|               |   - Mission core management</p>
+<table>
+<tr></tr>
+</table>
+<p>|               |--- Government Funders:</p>
+<p>|                   - Settlement Ministry (NIS 2.6M)</p>
+<p>|                   - Agriculture Ministry (NIS 3.4M combined)</p>
+<p>|                   - Education Ministry (NIS 1.3M)</p>
+<p>|                   - PM Office (NIS 282K)</p>
+<p>|                   - Negev/Galilee Authority (NIS 145K)</p>
+<p>|                   - Health Ministry (NIS 23K)</p>
+<table>
+<tr></tr>
+</table>
+<p>|--- Broader Movement Ecosystem:</p>
+<ul>
+<li>Kibbutz Movement (התנועה הקיבוצית)</li>
+<li>Labor-Zionist political tradition</li>
+<li>~42 kibbutzim established historically <code>`</code></li>
+</ul>
+<h3>Open Questions for Further Investigation</h3>
+<ol>
+<li><strong>Board composition:</strong> Who sits on Tikkun's board? GuideStar has this data but it requires JS-rendered page access (Playwright scraper). Are board members also in HaMahanot HaOlim leadership? This would confirm the structural unity hypothesis.</li>
+</ol>
+<ol>
+<li><strong>Revenue breakdown:</strong> What portion of NIS 5.34M comes from program fees vs. donations vs. parent movement transfers? Audited financial statements (available from Registrar of Associations) would clarify.</li>
+</ol>
+<ol>
+<li><strong>Actual school penetration:</strong> How many schools does Tikkun operate in? Through what mechanism (direct Ministry of Education contracts, Gefen system, local authority agreements)? The Education Ministry NIS 1.27M suggests limited school access compared to larger players.</li>
+</ol>
+<ol>
+<li><strong>Holocaust journeys:</strong> Are Tikkun's Poland journeys funded by the PM Office memorial allocation (NIS 282K)? How many students participate? This is a significant program claim.</li>
+</ol>
+<ol>
+<li><strong>Kibbutz Na'aran specifics:</strong> Is the Na'aran community living ON Kibbutz Na'aran as members, or adjacent to it? What is their economic relationship with the kibbutz?</li>
+</ol>
+<ol>
+<li><strong>Political connections:</strong> HaMahanot HaOlim historically aligned with the labor-left. Do current or former leaders hold political positions? The notable alumni (Aviv Kochavi) suggest high-level networks.</li>
+</ol>
+<ol>
+<li><strong>Impact measurement:</strong> 25,000 annual participants across what types of activities? Are these one-time workshops or sustained engagement? 51 employees serving 25,000 suggests ~490 participants per employee, which points to large-scale events or workshops rather than deep mentoring.</li>
+</ol>
+<ol>
+<li><strong>Relationship to Dror Israel:</strong> Dror Israel (דרור ישראל) is a much larger organization (~NIS 88M revenue) in the same space -- secular-socialist youth movement operating mission cores. Are there collaborative or competitive dynamics?</li>
+</ol>
+<ol>
+<li><strong>Settlement Ministry funding under current government:</strong> Given the Strock ministry's preference for religious cores, has Tikkun's funding been stable, growing, or declining in recent years?</li>
+</ol>
+<ol>
+<li><strong>Foreign funding:</strong> HaMahanot HaOlim is tax-deductible in US, UK, France. Does money flow from diaspora donors through the movement to Tikkun? What entities in those countries facilitate this?</li>
+</ol>
+<p><em>Report generated 2026-02-16 by Claude Opus 4.6 using the org_research methodology. All facts attributed to sources. Analysis sections clearly marked as interpretive. This report has not been reviewed by human researchers and should be verified against primary sources before use in decision-making.</em></p>
+
+</div>
+</div>
+
+<footer>
+  פרויקט זהות ציונית — דוח מחקר מעמיק | <a href="../">דירוג ערים</a> | <a href="../research/">כל הדוחות</a>
+</footer>
+
+</body>
+</html>

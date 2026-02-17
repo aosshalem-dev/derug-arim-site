@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yesod -- Foundation for Advancing Basic Rights and Democracy — דוח מחקר מעמיק</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background: #f5f5f8;
+  color: #1a1a2e;
+  direction: rtl;
+  line-height: 1.8;
+  font-size: 17px;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #1a1a2e; color: #fff;
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  overflow-x: auto; white-space: nowrap;
+}
+nav .brand { font-weight: 700; color: #ff8800; flex-shrink: 0; }
+nav a { color: #ccc; text-decoration: none; font-size: 0.85em; padding: 8px 4px; border-bottom: 2px solid transparent; flex-shrink: 0; }
+nav a:hover { color: #ff8800; border-bottom-color: #ff8800; }
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a5a8a 100%);
+  color: #fff; padding: 50px 20px 40px; text-align: center;
+}
+.hero h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+.hero .subtitle { font-size: 1.05em; color: #b0c4de; margin-bottom: 6px; }
+.hero .meta { font-size: 0.9em; color: #ff8800; margin-top: 8px; }
+.risk-badge {
+  display: inline-block; padding: 4px 16px; border-radius: 20px;
+  font-size: 0.85em; font-weight: 600; margin-top: 10px;
+}
+.risk-high { background: #e74c3c; color: #fff; }
+.risk-medium { background: #f39c12; color: #fff; }
+.risk-low { background: #27ae60; color: #fff; }
+.container { max-width: 860px; margin: 0 auto; padding: 30px 20px 80px; }
+.toc {
+  background: #fff; border-radius: 8px; padding: 22px 26px;
+  margin-bottom: 32px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.toc h2 { font-size: 1.15em; color: #2a5a8a; margin-bottom: 12px; border-bottom: 2px solid #667eea; padding-bottom: 6px; }
+.toc ol { padding-right: 22px; font-size: 0.93em; }
+.toc li { margin-bottom: 4px; }
+.toc a { color: #2a5a8a; text-decoration: none; }
+.toc a:hover { color: #ff8800; text-decoration: underline; }
+.section {
+  background: #fff; border-radius: 8px; padding: 28px 26px;
+  margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.section h2 { font-size: 1.4em; color: #1a1a2e; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #667eea; }
+.section h3 { font-size: 1.1em; color: #2a5a8a; margin: 18px 0 8px; }
+.section h4 { font-size: 1em; color: #444; margin: 14px 0 6px; }
+.section p { margin-bottom: 12px; text-align: justify; }
+.section ul, .section ol { padding-right: 22px; margin-bottom: 12px; }
+.section li { margin-bottom: 5px; }
+blockquote {
+  background: #f0f4fa; border-right: 4px solid #667eea;
+  padding: 12px 18px; margin: 12px 0; border-radius: 0 6px 6px 0;
+  font-size: 0.94em; color: #333;
+}
+.thesis {
+  background: #fff8f0; border-right: 3px solid #ff8800;
+  padding: 14px 18px; margin: 12px 0; border-radius: 0 5px 5px 0;
+  font-size: 0.96em; color: #6b4500;
+}
+table {
+  width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.91em;
+}
+th {
+  background: #667eea; color: #fff; padding: 8px 12px;
+  text-align: right; position: sticky; top: 44px; z-index: 5;
+}
+td {
+  padding: 7px 12px; border-bottom: 1px solid #e8e8e8;
+  text-align: right; vertical-align: top;
+}
+tr:nth-child(even) { background: #f8f9fc; }
+a { color: #2a5a8a; }
+a:hover { color: #ff8800; }
+.back-link {
+  display: inline-block; margin-bottom: 20px; padding: 6px 14px;
+  background: #667eea; color: #fff; border-radius: 4px;
+  text-decoration: none; font-size: 0.88em;
+}
+.back-link:hover { background: #5a6fd6; color: #fff; }
+footer {
+  text-align: center; padding: 30px 20px; color: #888; font-size: 0.85em;
+}
+strong { color: #1a1a2e; }
+code {
+  background: #f0f0f0; padding: 1px 5px; border-radius: 3px;
+  font-size: 0.9em;
+}
+.source-tag {
+  display: inline-block; background: #e8eef6; padding: 2px 8px;
+  border-radius: 10px; font-size: 0.78em; color: #2a5a8a;
+  margin: 2px 3px; text-decoration: none;
+}
+.source-tag:hover { background: #d0dff0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">דוח מחקר מעמיק</span>
+  <a href="../">חזרה לדירוג</a>
+  <a href="../research/">כל הדוחות</a>
+  <a href="#section-1">1. Registration and </a> <a href="#section-2">2. Financial Analysi</a> <a href="#section-3">3. Leadership</a> <a href="#section-4">4. Programs and Educ</a> <a href="#section-5">5. Ideology and Fram</a> <a href="#section-6">6. Foreign Funding</a> <a href="#section-7">7. Controversies and</a> <a href="#section-8">8. Network and Conne</a> <a href="#section-9">9. Values Alignment </a> <a href="#section-10">10. Risk Summary and</a> <a href="#section-11">Source URLs</a>
+</nav>
+
+<div class="hero">
+  <h1>Yesod -- Foundation for Advancing Basic Rights and Democracy</h1>
+  <div class="subtitle">Executive Summary / Thesis</div>
+  <div class="meta"></div>
+  
+</div>
+
+<div class="container">
+  <a href="../research/" class="back-link">← כל דוחות המחקר</a>
+  <div class="toc"><h2>תוכן עניינים</h2><ol><li><a href="#section-1">1. Registration and Legal Identity</a></li><li><a href="#section-2">2. Financial Analysis</a></li><li><a href="#section-3">3. Leadership</a></li><li><a href="#section-4">4. Programs and Educational Content</a></li><li><a href="#section-5">5. Ideology and Framing</a></li><li><a href="#section-6">6. Foreign Funding</a></li><li><a href="#section-7">7. Controversies and Media Coverage</a></li><li><a href="#section-8">8. Network and Connections</a></li><li><a href="#section-9">9. Values Alignment Table</a></li><li><a href="#section-10">10. Risk Summary and Open Questions</a></li><li><a href="#section-11">Source URLs</a></li></ol></div>
+  <div class="section" id="section-1">
+<h2>1. Registration and Legal Identity</h2>
+<table>
+<tr><th>Field</th><th>Value</th></tr>
+<tr><td><strong>Legal Name</strong></td><td>יסוד - העמותה לקידום זכויות יסוד ודמוקרטיה (ע"ר)</td></tr>
+<tr><td><strong>English Name</strong></td><td>Yesod -- Association for the Advancement of Basic Rights and Democracy</td></tr>
+<tr><td><strong>GuideStar Israel Number</strong></td><td>580558997</td></tr>
+<tr><td><strong>Entity Type</strong></td><td>Amuta (Registered Association) / ע"ר</td></tr>
+<tr><td><strong>Founded</strong></td><td>2012</td></tr>
+<tr><td><strong>Registered Address</strong></td><td>Agnon St. 28, Tel Aviv-Yafo, 6936230</td></tr>
+<tr><td><strong>Operating Address</strong></td><td>Daniel Frish 3, Tel Aviv</td></tr>
+<tr><td><strong>Sector (GuideStar)</strong></td><td>Education, Training & Vocational Preparation</td></tr>
+<tr><td><strong>Phone</strong></td><td>+972-3-9499440</td></tr>
+<tr><td><strong>Email</strong></td><td>info@www.yesod.ngo</td></tr>
+<tr><td><strong>Website</strong></td><td>https://www.yesod.ngo (also yesodrights.org.il, which redirects)</td></tr>
+<tr><td><strong>Gefen Contact</strong></td><td>Orly Dein, 052-839-1961, Orly@yesodrights.org.il</td></tr>
+</table>
+<p><strong>Source:</strong> https://www.guidestar.org.il/organization/580558997, https://next.obudget.org/i/org/association/580558997</p>
+
+</div>
+<div class="section" id="section-2">
+<h2>2. Financial Analysis</h2>
+<h3>Revenue</h3>
+<table>
+<tr><th>Year</th><th>Revenue (NIS)</th><th>Sector Median</th></tr>
+<tr><td>2024</td><td>1,778,412</td><td>2,119,903</td></tr>
+</table>
+<p><strong>Source:</strong> https://next.obudget.org/i/org/association/580558997</p>
+<h3>Government Funding</h3>
+<p><strong>Zero.</strong> The obudget.org page explicitly states: "לא תועדו הכנסות של הארגון מכספי המדינה בשלוש השנים האחרונות" -- no government income was documented in the last three years.</p>
+<p>This is notable for an organization operating two programs in the Ministry of Education's Gefen catalog. Gefen programs are typically funded by the schools/municipalities purchasing them using their Gefen budget allocation -- the money flows from MoE to school to provider, rather than appearing as a direct government transfer. This may explain the zero figure on obudget.org while the organization still receives indirect government money.</p>
+<h3>Staffing (2024)</h3>
+<ul>
+<li><strong>Employees:</strong> 5</li>
+<li><strong>Volunteers:</strong> 4</li>
+</ul>
+<p>This is a very lean operation for an org claiming 76,000 student reach. The low employee count suggests heavy reliance on external facilitators or contracted educators.</p>
+<h3>Primary Funding Source: Moshe Yanai</h3>
+<p>The Wikipedia article and multiple sources confirm Yesod was founded "with funding from high-tech entrepreneur and philanthropist Moshe Yanai" (במימון יזם ההייטק והנדבן משה ינאי). No other major funders have been identified in any public source.</p>
+<h3>CRITICAL: Yanai's Bankruptcy (October 2025)</h3>
+<p>Moshe Yanai was declared bankrupt by Tel Aviv Magistrate's Court in October 2025:</p>
+<ul>
+<li><strong>Total debts:</strong> Over $120 million</li>
+<li><strong>Primary debt:</strong> $42M to Scintilla fund (Cayman Islands)</li>
+<li><strong>Additional debts:</strong> $7.5M to Tauman family; various other creditors</li>
+<li><strong>Restrictions imposed:</strong> Travel ban, limited banking, no corporate directorships</li>
+<li><strong>Infinidat sale:</strong> Lenovo acquired Infinidat (Jan 2025), but Yanai's personal proceeds estimated at only $3.5M</li>
+<li><strong>Between 2007-2023:</strong> Yanai reported cumulative personal income of NIS 790M (~NIS 46M/year avg)</li>
+</ul>
+<p><strong>Implication for Yesod:</strong> If Yanai was the primary/sole funder, Yesod faces an existential financial threat. With NIS 1.78M annual revenue and no government transfers, the organization's future depends on finding alternative funding sources.</p>
+<p><strong>Sources:</strong></p>
+<ul>
+<li>https://www.calcalist.co.il/local_news/article/bjohh00arxx</li>
+<li>https://www.calcalistech.com/ctechnews/article/izlrezriu</li>
+<li>https://www.calcalistech.com/ctechnews/article/bk700av11111l</li>
+<li>https://www.calcalistech.com/ctechnews/article/n300z2ne5</li>
+<li>https://blocksandfiles.com/2026/01/05/infinidat-founder-moshe-yanais-bankruptcy/</li>
+</ul>
+<h3>Foreign Funding</h3>
+<p><strong>No evidence found</strong> of funding from:</p>
+<ul>
+<li>New Israel Fund (NIF) -- not listed in NIF grantee databases</li>
+<li>European Union</li>
+<li>US foundations</li>
+<li>Any foreign government</li>
+</ul>
+<p><strong>No US 501(c)(3) entity identified</strong> ("American Friends of Yesod" or similar). Search of IRS databases and ProPublica Nonprofit Explorer returned no results.</p>
+<p>This is unusual for an Israeli human rights-adjacent NGO. The absence of foreign funding, if accurate, suggests this is genuinely a single-donor philanthropic venture.</p>
+
+</div>
+<div class="section" id="section-3">
+<h2>3. Leadership</h2>
+<h3>Founder and Funder</h3>
+<p><strong>Moshe Yanai</strong> (born 1949)</p>
+<ul>
+<li>Israeli electrical engineer, inventor, entrepreneur, philanthropist</li>
+<li>B.Sc. Electrical Engineering, Technion (1975)</li>
+<li>Joined EMC Corporation 1987; led development of EMC Symmetrix (flagship product, prevented NYSE chaos post-9/11)</li>
+<li>Founded XIV (sold to IBM for ~$300M in 2008)</li>
+<li>Founded Infinidat (2011) -- sold to Lenovo (Jan 2025)</li>
+<li>Donated $12M to Technion</li>
+<li>Declared bankrupt October 2025 (debts >$120M)</li>
+<li><strong>Political orientation:</strong> Not explicitly partisan. Philanthropy in education/democracy space, not affiliated with any party.</li>
+</ul>
+<p><strong>Source:</strong> https://en.wikipedia.org/wiki/Moshe_Yanai</p>
+<h3>Chairwoman of the Executive Board</h3>
+<p><strong>Adi Shay (עדי שי)</strong></p>
+<ul>
+<li>Attorney; founding partner of DSM Law firm (with Yigal Danino and Shlomit Moshe)</li>
+<li>Licensed since 2002</li>
+<li>Leads DSM's practice in administrative law, regulation, legislation, and human rights</li>
+<li>Education: MBA Tel Aviv University (2010); LL.M Bar-Ilan University (2006); B.A. Law + B.A. Business Administration, Reichman University (2001)</li>
+<li>Also serves as director of several private companies</li>
+<li>Quote: Yesod is "a blessed initiative focused on promoting dialogue and understanding of fundamental rights in society and enabling children's participation in decision-making processes"</li>
+</ul>
+<p><strong>Source:</strong> https://www.dsm-law.co.il/en/%D7%A2%D7%95%D7%A8%D7%9B%D7%99-%D7%94%D7%93%D7%99%D7%9F/</p>
+<h3>Executive Board Member</h3>
+<p><strong>Shlomit Moshe (שלומית משה)</strong></p>
+<ul>
+<li>Attorney; founding partner of DSM Law firm</li>
+<li>Leads cooperative societies and real estate practice</li>
+<li>Experience advising associations, trusts, public-benefit companies, municipalities, foundations, startups</li>
+</ul>
+<p><strong>Note:</strong> Both Adi Shay and Shlomit Moshe are partners at the same law firm (DSM). This means Yesod's executive board is at minimum partially controlled by a single law firm's partners.</p>
+<h3>Steering Committee (ועדת היגוי)</h3>
+<table>
+<tr><th>Name</th><th>Role/Background</th><th>Political Orientation</th></tr>
+<tr><td><strong>Gabriela Shalev</strong> (גבריאלה שלו)</td><td>Israel's first female UN Ambassador; law professor; served on boards of Maariv, Bank Hapoalim, IDI, Electric Corporation</td><td>Liberal-centrist</td></tr>
+<tr><td><strong>Dan Meridor</strong> (דן מרידור)</td><td>Former Deputy PM, Minister of Finance, Minister of Justice (Likud/Kadima); as Justice Minister, advanced Basic Law: Human Dignity and Liberty; President of Israel Council on Foreign Relations</td><td>Center-right origins, now liberal-centrist</td></tr>
+<tr><td><strong>Salim Joubran</strong> (סלים ג'ובראן)</td><td>Former Supreme Court Justice (14 years); champion of human rights in public law; first Arab permanent justice on the Supreme Court. Deceased 2024.</td><td>Liberal-judicial</td></tr>
+<tr><td><strong>Colette Avital</strong> (קולט אביטל)</td><td>Former MK (Labor/One Israel, 1999-2009); diplomat; VP of Socialist International; Holocaust survivor</td><td>Left-center (Labor)</td></tr>
+<tr><td><strong>Yaniv Roznai</strong> (יניב רוזנאי)</td><td>Associate Professor, Harry Radzyner Law School, Reichman University; constitutional law specialist; published on "abusive constitutionalism" and judicial overhaul</td><td>Liberal-academic, anti-judicial-overhaul</td></tr>
+<tr><td><strong>Dalia Tal</strong> (דליה טל)</td><td>Attorney (details limited)</td><td>Unknown</td></tr>
+<tr><td><strong>Avitar Manor</strong> (אביתר מנור)</td><td>Details limited</td><td>Unknown</td></tr>
+</table>
+<p><strong>Source:</strong> https://www.yesod.ngo/en/about/, https://he.wikipedia.org/wiki/%D7%A2%D7%9E%D7%95%D7%AA%D7%AA_%D7%99%D7%A1%D7%95%D7%93_%D7%9C%D7%A7%D7%99%D7%93%D7%95%D7%9D_%D7%96%D7%9B%D7%95%D7%99%D7%95%D7%AA_%D7%99%D7%A1%D7%95%D7%93</p>
+<h3>Political Affiliation Summary</h3>
+<p>The steering committee is heavily weighted toward the <strong>liberal-centrist and center-left</strong> political spectrum:</p>
+<ul>
+<li><strong>Dan Meridor</strong> originated in Likud/Begin camp but has become a prominent critic of the Netanyahu government and the judicial overhaul</li>
+<li><strong>Colette Avital</strong> is explicitly Labor/left</li>
+<li><strong>Yaniv Roznai</strong> has published extensively against the judicial overhaul, characterizing it as "populist constitutionalism" and "abusive constitutionalism"</li>
+<li><strong>Gabriela Shalev</strong> served on the IDI board (centrist institution)</li>
+<li><strong>Salim Joubran</strong> represented judicial independence and Arab integration</li>
+</ul>
+<p>No members of the steering committee are associated with the religious-Zionist, ultra-Orthodox, or right-wing political camp.</p>
+
+</div>
+<div class="section" id="section-4">
+<h2>4. Programs and Educational Content</h2>
+<h3>Gefen Catalog Programs</h3>
+<p><strong>Program #5915: "יסודות" (Yesodot / Foundations)</strong></p>
+<ul>
+<li>Category: Social-civic education</li>
+<li>Rating: 5/5</li>
+<li>Details: Civic education program for democracy and fundamental rights</li>
+</ul>
+<p><strong>Program #10661: "המצפן" (HaMatzpen / The Compass)</strong></p>
+<ul>
+<li>Category: Social-civic education</li>
+<li>Rating: 5/5</li>
+<li>Details: Democracy education program</li>
+</ul>
+<p>Both are available for schools to purchase using their Gefen budget allocation from the Ministry of Education.</p>
+<p><strong>Source:</strong> https://mishmarhinuch.com/gefen/</p>
+<h3>Program Categories in Gefen</h3>
+<p>Yesod's programs fall under:</p>
+<ul>
+<li>Social-value and community education (חינוך ערכי-חברתי וקהילתי)</li>
+<li>Living together in Israeli society / shared partnership (חיים משותפים בחברה הישראלית)</li>
+<li>Expert content development, professional development, consulting (פיתוח תכנים, פיתוח מקצועי, ייעוץ)</li>
+<li>Educational leadership for teaching staff and parents</li>
+<li>Specialized offerings for priority populations</li>
+</ul>
+<h3>The "Yesod Model" (מודל יסוד)</h3>
+<p>A pedagogical model promoting:</p>
+<ol>
+<li><strong>Personal and civic responsibility</strong> among children and youth</li>
+<li><strong>Knowledge and tools</strong> in fundamental rights, democratic values, Israeli law, the justice system, argumentation and persuasion</li>
+<li><strong>Critical thinking</strong> and dialogue skills</li>
+<li><strong>Active citizenship</strong> (activism education)</li>
+</ol>
+<h3>Core Educational Principle</h3>
+<p>"The State of Israel was founded as a democratic and Jewish state, ensuring social and equal civil and social rights for all its citizens, regardless of religion, race, or gender" -- language directly from the Declaration of Independence.</p>
+<h3>Specific Programs and Activities</h3>
+<ol>
+<li><strong>Children's Parliament (פרלמנט ילדים):</strong> Municipal-level youth parliaments. In Herzliya, called "M.A.Z." (מ.ע.ז -- Leadership, Values and Children's Rights). Involves ~120 representatives from grades 5-6 across all elementary schools. Operates through three municipal committees: urban, environment, and education. Run in partnership with Herzliya municipality and the Ministry of Education's national inspectorate for student rights.</li>
+</ol>
+<ol>
+<li><strong>Mock Trials:</strong> Judicial simulation exercises for students</li>
+</ol>
+<ol>
+<li><strong>Awareness Campaigns:</strong> Student-led civic campaigns</li>
+</ol>
+<ol>
+<li><strong>Knesset Committee Appearances:</strong> Students present before actual Knesset committees</li>
+</ol>
+<ol>
+<li><strong>Teacher and Instructor Training:</strong> Professional development workshops</li>
+</ol>
+<ol>
+<li><strong>Lesson Plans:</strong> Downloadable curricular materials</li>
+</ol>
+<ol>
+<li><strong>Annual Conference:</strong> Held in partnership with academic institutions (Reichman University / Rubinstein Center for Constitutional Challenges)</li>
+</ol>
+<h3>Scale of Operations</h3>
+<p>Per Wikipedia Hebrew article:</p>
+<ul>
+<li><strong>22 local authorities</strong> served</li>
+<li><strong>Hundreds of classrooms and groups</strong></li>
+<li><strong>76,000 students</strong> reached</li>
+<li><strong>250 schools</strong> served</li>
+<li>Programs in both <strong>Jewish and Arab communities</strong></li>
+</ul>
+<p><strong>Source:</strong> https://he.wikipedia.org/wiki/%D7%A2%D7%9E%D7%95%D7%AA%D7%AA_%D7%99%D7%A1%D7%95%D7%93, https://herzliya.mynet.co.il/local_news/article/rjuhoqt115, https://www.yesod.ngo/en/about/</p>
+
+</div>
+<div class="section" id="section-5">
+<h2>5. Ideology and Framing</h2>
+<h3>How Yesod Defines "Basic Rights"</h3>
+<p>Yesod's framework centers on:</p>
+<ul>
+<li>Rights enshrined in Israel's Declaration of Independence (equality regardless of religion, race, gender)</li>
+<li>The Basic Laws (particularly Basic Law: Human Dignity and Liberty)</li>
+<li>Democratic values: rule of law, separation of powers, judicial independence, minority rights</li>
+<li>Active citizenship and civic responsibility</li>
+</ul>
+<h3>Is Yesod Post-Zionist?</h3>
+<p><strong>No explicit post-Zionist framing was found.</strong> The organization:</p>
+<ul>
+<li>Refers to Israel as "a Jewish and democratic state"</li>
+<li>Grounds its curriculum in the Declaration of Independence</li>
+<li>Does not appear to address the Palestinian conflict, settlements, or occupation in its educational materials</li>
+<li>Focuses exclusively on internal Israeli democratic culture and citizen rights</li>
+</ul>
+<p>However, the <strong>practical emphasis</strong> is overwhelmingly on the "democratic" side of the "Jewish and democratic" equation. The curriculum emphasizes rights, equality, rule of law, and pluralism -- not Jewish national identity, Zionist narrative, or Jewish peoplehood. This is a common pattern in Israeli liberal civic education organizations.</p>
+<h3>Hebrew vs. English Messaging Gaps</h3>
+<p>The English website (yesod.ngo/en/) and Hebrew website (yesod.ngo/) are largely aligned. Both use the same core framing:</p>
+<ul>
+<li>Democracy education through the Declaration of Independence</li>
+<li>Empowering youth with civic tools</li>
+<li>Policy advancement for basic rights</li>
+</ul>
+<p><strong>No significant messaging gap</strong> was detected. The English site is a relatively faithful translation of the Hebrew content. This is unlike more politically charged organizations (e.g., B'Tselem) where Hebrew and English messaging can diverge significantly.</p>
+<h3>Semantic Displacement Analysis</h3>
+<p>Yesod does not appear to redefine standard terms. "Democracy," "basic rights," and "civic education" are used in their conventional Israeli-liberal meaning. The organization does not push a radical redefinition of Zionism or Jewish identity.</p>
+<h3>The Survey and Timing</h3>
+<p>In December 2022, Yesod commissioned a survey (conducted by Geocartography) of 621 university graduates and 202 youth (ages 16-18):</p>
+<ul>
+<li>60% of the Israeli public feared "the future of democracy in the Jewish state is at risk"</li>
+<li>94% agreed democracy is important</li>
+<li>75% believed schools inadequately teach democracy</li>
+<li>Sharp secular/religious divide on judicial authority</li>
+</ul>
+<p>This survey was released during the peak of the judicial reform crisis (January 2023), positioning Yesod's mission as urgently relevant. The timing and findings align with the anti-judicial-overhaul movement.</p>
+<p><strong>Source:</strong> https://www.jpost.com/israel-news/article-726000</p>
+
+</div>
+<div class="section" id="section-6">
+<h2>6. Foreign Funding</h2>
+<h3>New Israel Fund (NIF)</h3>
+<p><strong>No evidence found.</strong> Yesod does not appear in NIF's grantee listings or magen grant recipients.</p>
+<h3>European Union</h3>
+<p><strong>No evidence found</strong> of EU funding.</p>
+<h3>US Foundations</h3>
+<p><strong>No evidence found</strong> of US foundation funding. No 501(c)(3) "American Friends" entity identified.</p>
+<h3>Other Foreign Sources</h3>
+<p><strong>No evidence found</strong> of any foreign government or foundation funding.</p>
+<h3>Assessment</h3>
+<p>If this finding is accurate, Yesod is unusual among Israeli human-rights-adjacent NGOs in being entirely domestically funded. This may be a deliberate strategy to avoid the political toxicity of foreign funding in Israeli discourse (the "Foreign Agents Law" controversy). It may also simply reflect that the organization was a single-donor personal philanthropy project of Moshe Yanai.</p>
+
+</div>
+<div class="section" id="section-7">
+<h2>7. Controversies and Media Coverage</h2>
+<h3>Minimal Controversy Profile</h3>
+<p>Yesod has a notably <strong>low controversy profile</strong> compared to other Israeli democracy/rights organizations:</p>
+<ul>
+<li><strong>Not profiled by NGO Monitor</strong> (the primary watchdog of Israeli left-wing NGOs)</li>
+<li><strong>No Knesset investigation</strong> or debate found targeting the organization</li>
+<li><strong>No negative media coverage</strong> found in Israel Hayom, Maariv, or other right-wing media</li>
+<li><strong>No BDS connections</strong> or anti-Israel allegations</li>
+</ul>
+<h3>Possible Reasons for Low Profile</h3>
+<ol>
+<li><strong>No foreign funding</strong> = no "foreign agent" angle for critics</li>
+<li><strong>Small scale</strong> = below the radar of watchdog organizations</li>
+<li><strong>Education focus</strong> = less politically provocative than litigation (ACRI) or occupation documentation (B'Tselem)</li>
+<li><strong>Establishment figures</strong> on steering committee = Dan Meridor (former Likud minister) provides right-of-center credibility</li>
+<li><strong>Declaration of Independence framing</strong> = positions the org within mainstream Zionist consensus rather than anti-Zionist discourse</li>
+</ol>
+<h3>Ministry of Education Context</h3>
+<p>In September 2025, Israeli media reported that the Ministry of Education under the current government was removing chapters on liberal democracy from the civics matriculation exam and boosting nationalist content. This provides context for Yesod's work: the organization operates in a contested educational space where the definition of "democracy" and the scope of civic education are politically charged.</p>
+<p><strong>Source:</strong> https://www.haaretz.com/israel-news/2025-09-01/ty-article/.premium/key-liberal-democracy-chapters-cut-from-israels-civics-exam/</p>
+
+</div>
+<div class="section" id="section-8">
+<h2>8. Network and Connections</h2>
+<h3>Direct Organizational Partnerships</h3>
+<table>
+<tr><th>Partner</th><th>Nature of Relationship</th></tr>
+<tr><td><strong>Ministry of Education</strong></td><td>Gefen catalog provider; operates within formal education framework</td></tr>
+<tr><td><strong>Reichman University / Rubinstein Center for Constitutional Challenges</strong></td><td>Annual conference co-host; Yaniv Roznai (steering committee) is faculty there</td></tr>
+<tr><td><strong>Municipal authorities</strong> (e.g., Herzliya)</td><td>Children's Parliament programs; city-wide civic initiatives</td></tr>
+<tr><td><strong>MoE National Inspectorate for Student Rights</strong></td><td>Partner on Herzliya Children's Parliament</td></tr>
+</table>
+<h3>Steering Committee Cross-Memberships</h3>
+<table>
+<tr><th>Person</th><th>Other Organizations</th></tr>
+<tr><td><strong>Gabriela Shalev</strong></td><td>IDI (Israel Democracy Institute) board; Bank Hapoalim board; Hadassah Medical</td></tr>
+<tr><td><strong>Dan Meridor</strong></td><td>Israel Council on Foreign Relations (President); World Jewish Congress affiliations</td></tr>
+<tr><td><strong>Colette Avital</strong></td><td>Socialist International (VP); Yad Vashem activities; labor movement</td></tr>
+<tr><td><strong>Yaniv Roznai</strong></td><td>Reichman University faculty; extensive academic publications</td></tr>
+<tr><td><strong>Salim Joubran</strong></td><td>Hebrew University alumni network (deceased 2024)</td></tr>
+</table>
+<h3>Connection to Other Human Rights Orgs</h3>
+<p><strong>No direct institutional connections found</strong> to:</p>
+<ul>
+<li>ACRI (Association for Civil Rights in Israel)</li>
+<li>B'Tselem</li>
+<li>Adalah</li>
+<li>Shalom Achshav (Peace Now)</li>
+<li>Breaking the Silence</li>
+<li>Yesh Din</li>
+</ul>
+<p>Yesod operates in a distinct niche -- <strong>education, not litigation or documentation</strong>. It does not appear to be part of the "human rights coalition" that includes ACRI, B'Tselem, Adalah, etc. Its steering committee members may have personal connections to these organizations (e.g., Gabriela Shalev's IDI board service, Dan Meridor's liberal advocacy), but the org itself maintains separation.</p>
+<h3>Connection to Mishmar HaChinuch HaMemlachti</h3>
+<p>Yesod's programs appear in the Mishmar HaChinuch (State Education Guard) database of Gefen democracy education programs. Mishmar HaChinuch is an activist organization that monitors and advocates for humanistic, liberal, and social education in Israel's state school system. This placement suggests at minimum an ideological alignment, though a formal partnership was not documented.</p>
+<p><strong>Source:</strong> https://mishmarhinuch.com/gefen/</p>
+<h3>DSM Law Firm Connection</h3>
+<p>The executive board of Yesod is controlled by partners of DSM Law firm (Adi Shay and Shlomit Moshe). DSM specializes in administrative law, regulation, and human rights. This creates a tight link between the organization's governance and a specific legal practice.</p>
+
+</div>
+<div class="section" id="section-9">
+<h2>9. Values Alignment Table</h2>
+<table>
+<tr><th>Value</th><th>Yesod's Position</th><th>Evidence</th></tr>
+<tr><td><strong>Democratic governance</strong></td><td>Strongly pro</td><td>Core mission; survey on democracy fears; anti-overhaul alignment</td></tr>
+<tr><td><strong>Judicial independence</strong></td><td>Strongly pro</td><td>Steering committee includes former justices, constitutional scholars</td></tr>
+<tr><td><strong>Minority rights</strong></td><td>Pro</td><td>Programs in Arab sector; Declaration of Independence framing</td></tr>
+<tr><td><strong>Transparency</strong></td><td>Mixed</td><td>No foreign funding (positive), but sparse public financial reporting</td></tr>
+<tr><td><strong>Jewish identity / Zionism</strong></td><td>Neutral-to-liberal</td><td>"Jewish and democratic" framing, but emphasis on democratic side</td></tr>
+<tr><td><strong>Religious pluralism</strong></td><td>Implied pro</td><td>No explicit statements, but secular-liberal leadership</td></tr>
+<tr><td><strong>Settlements / occupation</strong></td><td>No position</td><td>Not addressed in any materials found</td></tr>
+<tr><td><strong>Political neutrality</strong></td><td>Claimed but questionable</td><td>Steering committee is uniformly liberal-centrist; no right-wing representation</td></tr>
+</table>
+
+</div>
+<div class="section" id="section-10">
+<h2>10. Risk Summary and Open Questions</h2>
+<h3>Key Risks</h3>
+<ol>
+<li><strong>Financial sustainability:</strong> Primary funder (Moshe Yanai) is bankrupt with $120M+ in debts. Will Yesod survive?</li>
+<li><strong>Single-point-of-failure governance:</strong> Executive board controlled by two partners of the same law firm</li>
+<li><strong>Scale claims vs. resources:</strong> 76,000 students / 250 schools / 22 authorities -- but only 5 employees? How?</li>
+<li><strong>Political one-sidedness:</strong> Steering committee is uniformly liberal. No right-wing, religious, or settler representation. Can the org credibly claim to teach "civic values" to all sectors?</li>
+</ol>
+<h3>Open Questions for Further Investigation</h3>
+<ol>
+<li><strong>What happens to Yesod funding post-Yanai bankruptcy?</strong> Has the org secured alternative donors? Is it in financial distress?</li>
+<li><strong>What are the actual Gefen program revenues?</strong> The NIS 1.78M total -- how much comes via Gefen purchases vs. direct donations from Yanai?</li>
+<li><strong>GuideStar financial reports:</strong> The full annual financial reports (not available via web scraping due to JS rendering) would show exact revenue breakdown by source. Manual access needed.</li>
+<li><strong>Program content review:</strong> The actual lesson plans and curricular materials should be reviewed for ideological framing. Are they genuinely balanced, or do they push a specific political viewpoint under the guise of "civic education"?</li>
+<li><strong>The Reichman/Rubinstein connection:</strong> How deep is the institutional relationship? Does Reichman University provide academic legitimacy in exchange for what?</li>
+<li><strong>Orly Dein:</strong> Listed as the Gefen contact. What is her full role? Is she the de facto operational leader?</li>
+<li><strong>Arab sector programs:</strong> How extensive are they really? Which Arab municipalities participate?</li>
+</ol>
+
+</div>
+<div class="section" id="section-11">
+<h2>Source URLs</h2>
+<h3>Primary Sources</h3>
+<ul>
+<li>GuideStar Israel: https://www.guidestar.org.il/organization/580558997</li>
+<li>Obudget.org: https://next.obudget.org/i/org/association/580558997</li>
+<li>Yesod website (English): https://www.yesod.ngo/en/about/</li>
+<li>Yesod website (Hebrew): https://www.yesod.ngo/</li>
+<li>Wikipedia Hebrew: https://he.wikipedia.org/wiki/%D7%A2%D7%9E%D7%95%D7%AA%D7%AA_%D7%99%D7%A1%D7%95%D7%93_%D7%9C%D7%A7%D7%99%D7%93%D7%95%D7%9D_%D7%96%D7%9B%D7%95%D7%99%D7%95%D7%AA_%D7%99%D7%A1%D7%95%D7%93</li>
+<li>Mishmar HaChinuch Gefen database: https://mishmarhinuch.com/gefen/</li>
+</ul>
+<h3>Financial / Bankruptcy</h3>
+<ul>
+<li>Calcalist (bankruptcy order): https://www.calcalist.co.il/local_news/article/bjohh00arxx</li>
+<li>Calcalist (debt details): https://www.calcalist.co.il/local_news/article/bkv400agtkx</li>
+<li>CTech (bankruptcy profile): https://www.calcalistech.com/ctechnews/article/izlrezriu</li>
+<li>CTech (collapse): https://www.calcalistech.com/ctechnews/article/bk700av11111l</li>
+<li>CTech (bankruptcy declared): https://www.calcalistech.com/ctechnews/article/n300z2ne5</li>
+<li>Blocks and Files: https://blocksandfiles.com/2026/01/05/infinidat-founder-moshe-yanais-bankruptcy/</li>
+<li>TheMarker: https://www.themarker.com/markets/2025-10-30/ty-article/.premium/</li>
+</ul>
+<h3>Leadership</h3>
+<ul>
+<li>DSM Law firm: https://www.dsm-law.co.il/en/%D7%A2%D7%95%D7%A8%D7%9B%D7%99-%D7%94%D7%93%D7%99%D7%9F/</li>
+<li>Moshe Yanai Wikipedia: https://en.wikipedia.org/wiki/Moshe_Yanai</li>
+<li>Colette Avital Wikipedia: https://en.wikipedia.org/wiki/Colette_Avital</li>
+<li>Gabriela Shalev JWA: https://jwa.org/encyclopedia/article/shalev-gabriela</li>
+<li>Yaniv Roznai Google Scholar: https://scholar.google.com/citations?user=mesht3QAAAAJ</li>
+</ul>
+<h3>Programs and Media</h3>
+<ul>
+<li>JPost survey article: https://www.jpost.com/israel-news/article-726000</li>
+<li>Herzliya Children's Parliament: https://herzliya.mynet.co.il/local_news/article/rjuhoqt115</li>
+<li>Haaretz civics exam changes: https://www.haaretz.com/israel-news/2025-09-01/ty-article/.premium/key-liberal-democracy-chapters-cut-from-israels-civics-exam/</li>
+<li>Times of Israel civics exam: https://www.timesofisrael.com/education-ministry-said-to-excise-principles-of-democracy-from-matriculation-exams/</li>
+</ul>
+<p><em>Report generated 2026-02-16 by Claude Opus 4.6 for org_research project.</em></p>
+
+</div>
+</div>
+
+<footer>
+  פרויקט זהות ציונית — דוח מחקר מעמיק | <a href="../">דירוג ערים</a> | <a href="../research/">כל הדוחות</a>
+</footer>
+
+</body>
+</html>

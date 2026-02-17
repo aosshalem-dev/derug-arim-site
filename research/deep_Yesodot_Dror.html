@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>יסודות לצמיחה דרור (Yesodot LeTzmicha Dror) — דוח מחקר מעמיק</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background: #f5f5f8;
+  color: #1a1a2e;
+  direction: rtl;
+  line-height: 1.8;
+  font-size: 17px;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #1a1a2e; color: #fff;
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  overflow-x: auto; white-space: nowrap;
+}
+nav .brand { font-weight: 700; color: #ff8800; flex-shrink: 0; }
+nav a { color: #ccc; text-decoration: none; font-size: 0.85em; padding: 8px 4px; border-bottom: 2px solid transparent; flex-shrink: 0; }
+nav a:hover { color: #ff8800; border-bottom-color: #ff8800; }
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a5a8a 100%);
+  color: #fff; padding: 50px 20px 40px; text-align: center;
+}
+.hero h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+.hero .subtitle { font-size: 1.05em; color: #b0c4de; margin-bottom: 6px; }
+.hero .meta { font-size: 0.9em; color: #ff8800; margin-top: 8px; }
+.risk-badge {
+  display: inline-block; padding: 4px 16px; border-radius: 20px;
+  font-size: 0.85em; font-weight: 600; margin-top: 10px;
+}
+.risk-high { background: #e74c3c; color: #fff; }
+.risk-medium { background: #f39c12; color: #fff; }
+.risk-low { background: #27ae60; color: #fff; }
+.container { max-width: 860px; margin: 0 auto; padding: 30px 20px 80px; }
+.toc {
+  background: #fff; border-radius: 8px; padding: 22px 26px;
+  margin-bottom: 32px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.toc h2 { font-size: 1.15em; color: #2a5a8a; margin-bottom: 12px; border-bottom: 2px solid #667eea; padding-bottom: 6px; }
+.toc ol { padding-right: 22px; font-size: 0.93em; }
+.toc li { margin-bottom: 4px; }
+.toc a { color: #2a5a8a; text-decoration: none; }
+.toc a:hover { color: #ff8800; text-decoration: underline; }
+.section {
+  background: #fff; border-radius: 8px; padding: 28px 26px;
+  margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.section h2 { font-size: 1.4em; color: #1a1a2e; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #667eea; }
+.section h3 { font-size: 1.1em; color: #2a5a8a; margin: 18px 0 8px; }
+.section h4 { font-size: 1em; color: #444; margin: 14px 0 6px; }
+.section p { margin-bottom: 12px; text-align: justify; }
+.section ul, .section ol { padding-right: 22px; margin-bottom: 12px; }
+.section li { margin-bottom: 5px; }
+blockquote {
+  background: #f0f4fa; border-right: 4px solid #667eea;
+  padding: 12px 18px; margin: 12px 0; border-radius: 0 6px 6px 0;
+  font-size: 0.94em; color: #333;
+}
+.thesis {
+  background: #fff8f0; border-right: 3px solid #ff8800;
+  padding: 14px 18px; margin: 12px 0; border-radius: 0 5px 5px 0;
+  font-size: 0.96em; color: #6b4500;
+}
+table {
+  width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.91em;
+}
+th {
+  background: #667eea; color: #fff; padding: 8px 12px;
+  text-align: right; position: sticky; top: 44px; z-index: 5;
+}
+td {
+  padding: 7px 12px; border-bottom: 1px solid #e8e8e8;
+  text-align: right; vertical-align: top;
+}
+tr:nth-child(even) { background: #f8f9fc; }
+a { color: #2a5a8a; }
+a:hover { color: #ff8800; }
+.back-link {
+  display: inline-block; margin-bottom: 20px; padding: 6px 14px;
+  background: #667eea; color: #fff; border-radius: 4px;
+  text-decoration: none; font-size: 0.88em;
+}
+.back-link:hover { background: #5a6fd6; color: #fff; }
+footer {
+  text-align: center; padding: 30px 20px; color: #888; font-size: 0.85em;
+}
+strong { color: #1a1a2e; }
+code {
+  background: #f0f0f0; padding: 1px 5px; border-radius: 3px;
+  font-size: 0.9em;
+}
+.source-tag {
+  display: inline-block; background: #e8eef6; padding: 2px 8px;
+  border-radius: 10px; font-size: 0.78em; color: #2a5a8a;
+  margin: 2px 3px; text-decoration: none;
+}
+.source-tag:hover { background: #d0dff0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">דוח מחקר מעמיק</span>
+  <a href="../">חזרה לדירוג</a>
+  <a href="../research/">כל הדוחות</a>
+  <a href="#section-1">Legal Entity & Relat</a> <a href="#section-2">Financial Analysis</a> <a href="#section-3">Leadership Map</a> <a href="#section-4">Programs & Pedagogy</a> <a href="#section-5">Geographic Presence</a> <a href="#section-6">Government Ties</a> <a href="#section-7">Controversies</a> <a href="#section-8">Values Alignment Tab</a> <a href="#section-9">Open Questions</a> <a href="#section-10">Sources</a>
+</nav>
+
+<div class="hero">
+  <h1>יסודות לצמיחה דרור (Yesodot LeTzmicha Dror)</h1>
+  <div class="subtitle">Executive Summary</div>
+  <div class="meta"></div>
+  
+</div>
+
+<div class="container">
+  <a href="../research/" class="back-link">← כל דוחות המחקר</a>
+  <div class="toc"><h2>תוכן עניינים</h2><ol><li><a href="#section-1">Legal Entity & Relationship to Dror Israel</a></li><li><a href="#section-2">Financial Analysis</a></li><li><a href="#section-3">Leadership Map</a></li><li><a href="#section-4">Programs & Pedagogy</a></li><li><a href="#section-5">Geographic Presence</a></li><li><a href="#section-6">Government Ties</a></li><li><a href="#section-7">Controversies</a></li><li><a href="#section-8">Values Alignment Table</a></li><li><a href="#section-9">Open Questions</a></li><li><a href="#section-10">Sources</a></li></ol></div>
+  <div class="section" id="section-1">
+<h2>Legal Entity & Relationship to Dror Israel</h2>
+<h3>Registration Details</h3>
+<table>
+<tr><th>Field</th><th>Value</th></tr>
+<tr><td>Full legal name</td><td>יסודות לצמיחה דרור (ע"ר)</td></tr>
+<tr><td>Registration #</td><td>580295533</td></tr>
+<tr><td>Type</td><td>Registered Association (Amuta)</td></tr>
+<tr><td>Founded</td><td>March 19, 1997</td></tr>
+<tr><td>Address</td><td>Derech HaHagana 34, Tel Aviv-Yafo 6772137</td></tr>
+<tr><td>Alt. address</td><td>Kibbutz Galuyot 120, Tel Aviv 66877 (per Kol Zchut)</td></tr>
+<tr><td>Sector</td><td>Community & Society</td></tr>
+<tr><td>Phone</td><td>03-5125802 / 054-9624002</td></tr>
+<tr><td>Email</td><td>yesodot@drorisrael.org.il</td></tr>
+<tr><td>Website</td><td>yesodot.co / drorisrael.org.il</td></tr>
+<tr><td>Gefen catalog org #</td><td>3383</td></tr>
+</table>
+<h3>Relationship to Parent Movement</h3>
+<p>Yesodot LeTzmicha Dror is <strong>not a subsidiary</strong> of Dror Israel -- it is one of three core operating entities that together constitute Dror Israel. The relationship is:</p>
+<ol>
+<li><strong>Yesodot LeTzmicha Dror (580295533)</strong> -- the community/educator entity. Operates educator kibbutzim, community programs, agricultural projects, cultural activities. Founded 1997.</li>
+<li><strong>Dror - Batei Chinuch (580015055)</strong> -- the formal education entity. Operates the school network (social high schools, boarding schools, preschools). Founded 1982.</li>
+<li><strong>HaNoar HaOved VeHaLomed (580297075)</strong> -- the youth movement entity. Operates 350+ branches, 90-130K members. Founded 1997.</li>
+</ol>
+<p>Additionally:</p>
+<ol>
+<li><strong>Habonim Dror (580067320)</strong> -- international youth movement arm. NIS 11.3M turnover.</li>
+<li><strong>Chasdei Dror (580743086)</strong> -- founded 2022, NIS 1.7M, unclear role.</li>
+<li><strong>USFODI (EIN 88-3346322)</strong> -- US fundraising vehicle. $1.69M cumulative.</li>
+</ol>
+<p>The movement itself was mentioned with registration 580141984, but that number does not appear in obudget.org or GuideStar -- it may be a dormant umbrella entity.</p>
+<h3>Official Description (from Registrar of Amutot)</h3>
+<blockquote>"Establishes and operates educational, community and cultural projects for infants, children, youth, young adults, adults and elderly people across the country, with an emphasis on geographic and social periphery. The projects span: education, community, culture, agriculture, sports and welfare to promote the values of Zionism, pioneering, human equality, democracy and peace. The projects are managed and directed by members of Kibutzei HaMechankim (Dror Israel movement)."</blockquote>
+<h3>Key Legal Observations</h3>
+<ol>
+<li><strong>The entity predates the movement.</strong> Yesodot was registered in 1997, nine years before "Dror Israel" was formally established (2006) and eleven years before its formal constitutional decision (2008). This suggests Yesodot was the original operating vehicle for what would later become the unified movement.</li>
+<li><strong>Two addresses on file.</strong> Different sources list different addresses (Derech HaHagana 34 vs. Kibbutz Galuyot 120), both in Tel Aviv. This likely reflects a physical relocation.</li>
+<li><strong>Email domain = movement domain.</strong> The official email is <code>yesodot@drorisrael.org.il</code>, confirming total integration with the movement.</li>
+<li><strong>Tax-deductible in 5 countries.</strong> Donations to Yesodot are tax-deductible in Israel, US, Canada, France, and UK -- indicating a sophisticated international fundraising apparatus.</li>
+<li><strong>IsraelGives transparency rating: 4/5 stars (84%).</strong> Decent but not maximum transparency.</li>
+</ol>
+
+</div>
+<div class="section" id="section-2">
+<h2>Financial Analysis</h2>
+<h3>Annual Revenue</h3>
+<table>
+<tr><th>Year</th><th>Turnover (NIS)</th><th>Source</th></tr>
+<tr><td>2024</td><td>34,787,771</td><td>obudget.org</td></tr>
+</table>
+<h3>Government Funding (3-Year Total)</h3>
+<p><strong>Total: NIS 49,618,164</strong></p>
+<ul>
+<li>Support payments (תמיכות): NIS 49,617,564</li>
+<li>Contracts (התקשרויות): NIS 600</li>
+</ul>
+<p>The near-total reliance on support payments (rather than contracts) is notable. Support payments are grants disbursed based on eligibility criteria, while contracts involve competitive bidding. This means Yesodot receives almost all its government money through non-competitive channels.</p>
+<h3>Government Funding by Ministry (Historical All-Time)</h3>
+<table>
+<tr><th>Ministry</th><th>Amount (NIS)</th></tr>
+<tr><td>Ministry of Education</td><td>108,322,128</td></tr>
+<tr><td>Ministry of Agriculture & Food Security</td><td>15,136,907</td></tr>
+<tr><td>Ministry of Agriculture & Rural Development</td><td>11,805,036</td></tr>
+<tr><td>Ministry of Settlement</td><td>8,267,035</td></tr>
+<tr><td>Settlement Division</td><td>2,123,187</td></tr>
+<tr><td>Ministry of Culture & Sport</td><td>1,444,817</td></tr>
+<tr><td>Development Authority for Negev, Galilee & Cooperation</td><td>832,279</td></tr>
+<tr><td>Ministry of Welfare & Social Security</td><td>600</td></tr>
+<tr><td><strong>TOTAL</strong></td><td><strong>~148,000,000</strong></td></tr>
+</table>
+<h3>Key Financial Observations</h3>
+<ol>
+<li><strong>Ministry of Education is dominant.</strong> NIS 108M all-time (73% of total historical government funding). This confirms education is the primary activity.</li>
+<li><strong>Agriculture funding is significant.</strong> NIS 27M combined from two agriculture ministries, reflecting the movement's agricultural/kibbutz activities and the educator kibbutzim in peripheral areas.</li>
+<li><strong>Settlement/periphery funding.</strong> NIS 10.4M combined from Settlement Ministry + Division, reflecting deployment in geographic periphery.</li>
+<li><strong>Minimal contract-based work.</strong> Only NIS 600 in contracts vs. NIS 49.6M in support payments. The organization almost exclusively receives non-competitive grants.</li>
+<li><strong>Ranking:</strong> 6th highest government funding in community & society sector; 4th in support payments.</li>
+</ol>
+<h3>Workforce</h3>
+<table>
+<tr><th>Category</th><th>Count (2024)</th></tr>
+<tr><td>Employees</td><td>207</td></tr>
+<tr><td>Volunteers</td><td>988</td></tr>
+</table>
+<p><strong>Note:</strong> The 988 "volunteers" likely includes movement members (kibbutz members) who receive only a minimal stipend (reportedly NIS 700/month per 2015 reports) rather than wages. This creates a significant question about whether these are truly "volunteers" or effectively below-minimum-wage workers subsidized by communal income-sharing.</p>
+<h3>Urban Kibbutz Financial Model (from Israel Hayom)</h3>
+<p>An Israel Hayom article provides a detailed picture of how the Be'er Sheva educator kibbutz operates financially:</p>
+<ul>
+<li>~27 members share 4 apartments</li>
+<li>No mortgages, no locks</li>
+<li>All income flows into a common treasury, primarily from educational work</li>
+<li>Single shared account covers daily expenses, vehicle purchases, medical treatments</li>
+<li>Members quoted: Nir Savo (33) describes "real partnership," Tali Karmel describes organic cooperation</li>
+<li>Culture cooperative, consumer store, elderly care programs, sports initiatives</li>
+<li>Philosophy framed as "updated Zionism" replacing agriculture with education</li>
+</ul>
+<h3>Combined Dror Israel Ecosystem Financial Picture</h3>
+<table>
+<tr><th>Entity</th><th>2024 Turnover</th><th>3yr Gov. Funding</th></tr>
+<tr><td>Dror Educational Institutions (580015055)</td><td>NIS 99.2M</td><td>NIS 170.1M</td></tr>
+<tr><td>HaNoar HaOved (580297075)</td><td>NIS 87.6M</td><td>NIS 164.2M</td></tr>
+<tr><td><strong>Yesodot LeTzmicha Dror (580295533)</strong></td><td><strong>NIS 34.8M</strong></td><td><strong>NIS 49.6M</strong></td></tr>
+<tr><td>Habonim Dror (580067320)</td><td>NIS 11.3M</td><td>NIS 2.4M</td></tr>
+<tr><td>Chasdei Dror (580743086)</td><td>NIS 1.7M</td><td>NIS 0</td></tr>
+<tr><td><strong>COMBINED</strong></td><td><strong>NIS 234.6M</strong></td><td><strong>NIS 386.3M</strong></td></tr>
+</table>
+<p>Yesodot represents ~15% of the movement's total annual turnover but serves a critical function: it is the entity through which the movement's communal members (the educator kibbutzim) are deployed and funded.</p>
+
+</div>
+<div class="section" id="section-3">
+<h2>Leadership Map</h2>
+<h3>Yesodot-Specific Leadership</h3>
+<p><strong>Director: Shai Rozen</strong> (שי רוזן) -- Listed on the official Dror Israel about page as "Yesodot Growth Organization Director" (מנהל ארגון יסודות לצמיחה). He is also quoted in the Israel Hayom urban kibbutz article describing the communal model. Rozen is a movement member who lives in the Be'er Sheva educator kibbutz.</p>
+<h3>Board of Dror Entities (from drorho.org.il)</h3>
+<p>The board governance structure found at drorho.org.il (which appears to serve Dror Educational Institutions) includes:</p>
+<table>
+<tr><th>Name</th><th>Role</th><th>Background</th><th>Since</th></tr>
+<tr><td><strong>Moshe Green</strong></td><td>Board Chair</td><td>Economic consultant, M.A. Economics & Business. Reserve Brigadier General.</td><td>Chair since 2004, member since 1998</td></tr>
+<tr><td><strong>Oded Levinton</strong></td><td>Finance Committee Chair</td><td>Economist, M.B.A. Tel Aviv University. 40+ years in budgeting.</td><td>2013</td></tr>
+<tr><td><strong>Gershon Bernai</strong></td><td>Professional Committee Chair</td><td>Senior rehabilitation social worker, M.A. Former National Insurance Institute.</td><td>2011</td></tr>
+<tr><td><strong>Daniella Oren</strong></td><td>Resource Development Committee Chair & Trustee</td><td>Travel consultant. International women's organization.</td><td>1991</td></tr>
+<tr><td><strong>Ornit Magnus</strong></td><td>Resource Development Committee</td><td>Business owner, M.A. Management & Negotiation (Bar-Ilan).</td><td>--</td></tr>
+<tr><td><strong>Jeffrey Moskowitz</strong></td><td>Resource Development Committee</td><td>Canadian-Israeli attorney, LL.B. Bar-Ilan. 30+ years commercial law. Raanana.</td><td>2013</td></tr>
+<tr><td><strong>Riki Label</strong></td><td>Organization Manager (staff)</td><td>--</td><td>--</td></tr>
+<tr><td><strong>Riki Lev</strong></td><td>Professional Manager (staff)</td><td>--</td><td>--</td></tr>
+<tr><td><strong>CPA Hanan Rabi</strong></td><td>Audit Committee</td><td>--</td><td>--</td></tr>
+<tr><td><strong>Eli Atgar</strong></td><td>Legal Counsel (volunteer attorney)</td><td>--</td><td>--</td></tr>
+</table>
+<p><strong>Note:</strong> GuideStar Israel lists Yesodot-specific board members at <code>guidestar.org.il/organization/580295533/people</code>, but the page is JavaScript-rendered and cannot be scraped. The above board is from the Dror school entity, but given the integrated nature of the movement, significant board overlap is expected.</p>
+<h3>Full Movement Leadership Team (from drorisrael.org.il/about-us/)</h3>
+<table>
+<tr><th>Name</th><th>Role</th><th>Notes</th></tr>
+<tr><td><strong>Pesach Haospeter</strong> (פסח האוספטר)</td><td>Dror Israel Coordinator (Secretary-General)</td><td>Led for 20+ years. No competitive elections. Lives at Kibbutz Ravid.</td></tr>
+<tr><td><strong>Shai Rozen</strong></td><td><strong>Yesodot LeTzmicha Organization Director</strong></td><td>Director of the entity under research. Lives in Be'er Sheva kibbutz.</td></tr>
+<tr><td><strong>Inbal Ron</strong> (ענבל רון)</td><td>Dror Schools Network Director (CEO)</td><td>Interviewed on Kan 11 (Nov 2023) re: emergency kindergartens for Kibbutz Be'eri children. Leads entity 580015055.</td></tr>
+<tr><td><strong>Roeey Yessod</strong></td><td>CEO, HaNoar HaOved / Dror Batei Chinuch</td><td>Per LinkedIn. North District.</td></tr>
+<tr><td><strong>Yoni Ben Dor</strong></td><td>Life Protection Sector Coordinator</td><td>--</td></tr>
+<tr><td><strong>Nitzan Rozenwaks-Ziv</strong></td><td>Youth Movement Co-Coordinator</td><td>--</td></tr>
+<tr><td><strong>Ofir Halva</strong></td><td>Youth Movement Co-Coordinator</td><td>--</td></tr>
+<tr><td><strong>Heleny Kol</strong></td><td>Adult Movement Outreach Coordinator</td><td>--</td></tr>
+<tr><td><strong>Itai Zadviil</strong></td><td>Adult Movement Outreach Coordinator</td><td>--</td></tr>
+<tr><td><strong>Omer Bart</strong></td><td>Communications</td><td>--</td></tr>
+<tr><td><strong>Tamir Zeyger</strong></td><td>HaMeorer Training Center Coordinator</td><td>--</td></tr>
+<tr><td><strong>Nati Wyman</strong></td><td>HaMeorer Training Center Coordinator</td><td>--</td></tr>
+<tr><td><strong>Tsruia Azuz</strong></td><td>Educational Innovation Center Coordinator</td><td>--</td></tr>
+<tr><td><strong>Gary Levi</strong></td><td>Diaspora Relations & Fundraising</td><td>--</td></tr>
+<tr><td><strong>Mirit Sulima</strong></td><td>Diaspora Relations & Fundraising</td><td>--</td></tr>
+<tr><td><strong>Dor An Eli</strong></td><td>Rujum Young Adults Program Coordinator</td><td>--</td></tr>
+<tr><td><strong>Omer Livnat</strong></td><td>HaChalutz Sports Education Coordinator</td><td>--</td></tr>
+</table>
+<h3>Educator Kibbutz Coordinators (Yesodot's operational arm)</h3>
+<p>These are the contact persons for each of the 14 urban educator kibbutzim. Since Yesodot funds and manages the educator kibbutzim, these are effectively Yesodot's field leadership:</p>
+<table>
+<tr><th>City</th><th>Coordinator</th></tr>
+<tr><td>Mitzpe Ramon</td><td>Tzur Wilman</td></tr>
+<tr><td>Be'er Sheva</td><td>Tamar Montano</td></tr>
+<tr><td>Rehovot</td><td>Ari Levi</td></tr>
+<tr><td>Rishon LeZion</td><td>Gal Chitiat</td></tr>
+<tr><td>Petah Tikva</td><td>Sonya Gershaft</td></tr>
+<tr><td>Tel Aviv</td><td>Aya Dotan</td></tr>
+<tr><td>Haifa</td><td>Mital Roth</td></tr>
+<tr><td>Acre (Akko)</td><td>Moran Cohen</td></tr>
+<tr><td>Afula</td><td>Yoav Levanter</td></tr>
+<tr><td>Karmiel</td><td>(not listed)</td></tr>
+<tr><td>Sderot</td><td>Penina Meirowitz</td></tr>
+<tr><td>Kiryat Shmona</td><td>(not listed)</td></tr>
+<tr><td>Ravid (rural)</td><td>(kibbutz settlement)</td></tr>
+<tr><td>Eshbal (rural)</td><td>(kibbutz settlement)</td></tr>
+</table>
+<h3>USFODI Board (US Fundraising Arm)</h3>
+<table>
+<tr><th>Name</th><th>Role</th></tr>
+<tr><td>Talya Nevo Hacohen</td><td>Board Chair</td></tr>
+<tr><td>Sophia Blumental</td><td>CFO (Israeli phone: 972-058-400 ext 6202)</td></tr>
+<tr><td>Doron Havassy</td><td>Officer</td></tr>
+<tr><td>Maud Rosenblatt</td><td>Officer</td></tr>
+<tr><td>Rinat Sharon</td><td>Secretary</td></tr>
+</table>
+<h3>Board Overlap Assessment</h3>
+<p>The movement operates as a single integrated entity across multiple amutot. The same ideological leadership (centered on Pesach Haospeter and his inner circle) effectively controls all entities. The educator kibbutz coordinators are movement members who live communally and share finances. There is no independent governance structure for Yesodot separate from the movement -- it is controlled by and for the movement.</p>
+
+</div>
+<div class="section" id="section-4">
+<h2>Programs & Pedagogy</h2>
+<h3>The "Social Pedagogy" Framework</h3>
+<p>Dror Israel's educational approach is explicitly labeled <strong>"Social Pedagogy"</strong> (פדגוגיה חברתית). The network's own website (drornet.org.il) uses this as its subtitle: "דרור בתי חינוך - פדגוגיה חברתית."</p>
+<h4>Intellectual Roots</h4>
+<p>The social pedagogy framework draws on two main theoretical traditions:</p>
+<ol>
+<li><strong>Paulo Freire's Critical Pedagogy</strong> -- Freire's "Pedagogy of the Oppressed" (1968) is explicitly referenced in Dror's theoretical articles. The framework adopts Freire's concept of education as a political act aimed at social liberation, and his critique of "banking model" education that reinforces existing power structures.</li>
+</ol>
+<ol>
+<li><strong>Martin Buber's Dialogical Philosophy</strong> -- Buber's "I-Thou" relationship model is used as the primary pedagogical methodology. This provides an Israeli/Jewish philosophical grounding for what is essentially Freirean critical pedagogy.</li>
+</ol>
+<p>Dror's own article "Social Pedagogy and Education for Utopia" (published on drornet.org.il) defines social pedagogy as: <em>"a pedagogy of encounters between relationships, groups and society with a responsible critical perspective and leadership action for comprehensive social change."</em></p>
+<h4>How Freire is Implemented</h4>
+<p>The connection to Freire is not merely theoretical. Dror explicitly asks whether social pedagogy should develop as "pedagogy of the oppressed, fighting for a different social reality within Israeli reality." Key Freirean elements in practice:</p>
+<ol>
+<li><strong>Dialogical education</strong> -- Rejection of teacher-as-authority ("banking model"). Students and teachers are co-learners.</li>
+<li><strong>Critical consciousness</strong> (conscientização) -- Students learn to analyze power structures in society and develop awareness of class, ethnic, and gender inequalities.</li>
+<li><strong>Education as liberation</strong> -- The explicit goal is social transformation, not knowledge transfer.</li>
+<li><strong>Praxis</strong> -- Theory and practice are united through community projects and social action.</li>
+</ol>
+<h4>Practical Implementation in Schools</h4>
+<p>From the school network's official descriptions:</p>
+<ul>
+<li><strong>No grades or exams</strong> -- Alternative assessment through continuous dialogical evaluation</li>
+<li><strong>Personal mentors</strong> -- Each student has a dedicated educator who follows them throughout their education</li>
+<li><strong>Project-based social learning</strong> -- Students work on real community challenges</li>
+<li><strong>Small groups</strong> -- Education in small, intimate settings with dedicated educators and social workers</li>
+<li><strong>Round-the-clock psycho-social support</strong> (in boarding schools)</li>
+<li><strong>Innovative programs</strong>: eco-agriculture, maker spaces, sound design, social media</li>
+<li><strong>Social salons within schools</strong> -- Spaces for dialogue about social issues</li>
+<li><strong>Student-led teaching and peer evaluation</strong></li>
+</ul>
+<h3>The "Beit Chinuch" (House of Education) Model</h3>
+<p>The Dror network operates what they call "Batei Chinuch" -- "Houses of Education" rather than traditional schools. This terminology is deliberate: it signals a holistic, life-encompassing educational approach rather than a subject-matter teaching institution. The model encompasses:</p>
+<ol>
+<li><strong>Social High Schools</strong> (9 institutions)</li>
+<li><strong>Social Preschools</strong> ("Beit HaDimyon HaYotzer" -- House of Creative Imagination)</li>
+<li><strong>Social Elementary Schools</strong></li>
+<li><strong>Youth Boarding Facilities</strong> (Pnimiyot)</li>
+<li><strong>Community Neighborhoods</strong></li>
+<li><strong>Yiftach Pre-Military Preparatory Program</strong></li>
+</ol>
+<h3>Formal School Network (Dror Batei Chinuch - Entity 580015055)</h3>
+<p>The formal school network operates under the <strong>separate</strong> entity "Dror - Batei Chinuch" (580015055), but many of its educators are Yesodot/movement members deployed from educator kibbutzim. Schools include:</p>
+<table>
+<tr><th>School</th><th>City</th><th>Notes</th></tr>
+<tr><td>Dror Social High School</td><td>Mitzpe Ramon</td><td>Boarding facility, culinary arts, tourism, guidance tracks</td></tr>
+<tr><td>Hoshen Social High School</td><td>Jerusalem</td><td>Rich social curriculum</td></tr>
+<tr><td>Dov Hoz Social High School</td><td>Tel Aviv-Jaffa</td><td>Under Ministry of Labor supervision</td></tr>
+<tr><td>Dror Galil</td><td>Kibbutz Ravid (Galilee)</td><td>"Tomorrow's Professions" focus</td></tr>
+<tr><td>Democratic Social High School</td><td>Kfar Dror</td><td>Democratic governance model</td></tr>
+<tr><td>Adam Society and Nature</td><td>Carmiel</td><td>Nature and society focus</td></tr>
+<tr><td>Social High School</td><td>Haifa</td><td>General social pedagogy</td></tr>
+<tr><td>Social High School</td><td>Kiryat Ata</td><td>Dialogical, open, democratic education</td></tr>
+<tr><td>Dror Eco-Technology</td><td>Neve Midbar</td><td>Eco-technology focus</td></tr>
+</table>
+<p>Additionally:</p>
+<ul>
+<li><strong>Ashibel Boarding School</strong> (dialogical residence for at-risk youth, Kibbutz Ashibel)</li>
+<li><strong>Mitzpe Ramon Boarding School</strong> (self-governance, academics, vocational tracks)</li>
+<li><strong>Dror Ramla</strong> (mentioned in HaMichlol)</li>
+</ul>
+<h3>Programs Run by Yesodot Specifically</h3>
+<p>Yesodot operates the following through its educator kibbutzim:</p>
+<ol>
+<li><strong>Community education programs</strong> across 14+ cities</li>
+<li><strong>Agricultural/rural programs</strong> (funded by Agriculture Ministry)</li>
+<li><strong>Cultural programs</strong> (funded by Culture & Sport Ministry)</li>
+<li><strong>Periphery development</strong> (funded by Negev/Galilee Authority)</li>
+<li><strong>Settlement/national service programs</strong> (funded by Settlement Division)</li>
+<li><strong>Emergency response activities</strong> (post-October 7, including 6 alternative kindergartens for Kibbutz Be'eri children, per Inbal Ron's Kan 11 interview Nov 2023)</li>
+<li><strong>Programs for elderly/retirees</strong> (~2,000 participants)</li>
+<li><strong>Youth centers and after-school programs</strong></li>
+<li><strong>HaChalutz</strong> (sports education for youth, founded 2010) -- operates in dozens of municipalities. Programs: annual sports groups, teen leagues, father-son activities, school programs, violence prevention. Registered as Gefen program #3383 under Yesodot. Vision: "promote equal, just, and tolerant society through grassroots sports." Coordinator: Omer Livnat.</li>
+<li><strong>HaMeorer</strong> (non-formal interdisciplinary education, founded 1996, 200 facilitators). Coordinators: Tamir Zeyger, Nati Wyman.</li>
+<li><strong>HaReshet</strong> (youth employment/education ages 14-25)</li>
+<li><strong>Beit HaYotzer</strong> (creative workshop centers/collective)</li>
+<li><strong>Batei Madaa VeEmda</strong> (Science and Perspective centers)</li>
+<li><strong>Rujum</strong> -- young adults program. Coordinator: Dor An Eli.</li>
+<li><strong>Educational Innovation Center</strong> -- Coordinator: Tsruia Azuz.</li>
+</ol>
+<h3>Social Pedagogy Seminar (Annual)</h3>
+<p>Dror holds an annual "Social Pedagogy Seminar" (סמינר הפדגוגיה החברתית) each August before the school year. Details:</p>
+<ul>
+<li><strong>Theme:</strong> "Education for Hope and Change"</li>
+<li><strong>Accreditation:</strong> 30 hours of professional development credit</li>
+<li><strong>Contact:</strong> Moran, 054-6734593</li>
+<li><strong>Content includes:</strong></li>
+</ul>
+<ol>
+<li>"I-Thou dialogue as basis for a world of trust" (Buber)</li>
+<li>Foundations of social group facilitation</li>
+<li>"Dialogical evaluation as alternative to grades and success-failure patterns" (anti-grading)</li>
+<li>Educational mission transforming reality -- students as mentors</li>
+<li>Critical examination of social reality with children/youth, developing compassion and responsibility</li>
+</ol>
+<ul>
+<li><strong>Alumni:</strong> Graduate educators return annually for advanced seminars</li>
+<li><strong>Significance:</strong> This seminar is the primary vector for training educators in Dror's social pedagogy. It explicitly teaches the rejection of grades and the adoption of critical social examination as educational methods.</li>
+</ul>
+<h3>Gefen Catalog Presence</h3>
+<p>Yesodot LeTzmicha Dror is registered as Gefen catalog supplier #3383. The following programs are registered in the Gefen catalog:</p>
+<p><strong>Under Yesodot LeTzmicha Dror (580295533, supplier #3383):</strong></p>
+<ul>
+<li><strong>"Coaches Strong Community"</strong> (מאמנים קהילה חזקה) -- Annual sports groups. This is the HaChalutz sports education program delivered through schools.</li>
+</ul>
+<p><strong>Under Dror Educational Institutions (580015055):</strong></p>
+<ul>
+<li><strong>"Classroom Accompaniment as a Significant Social Group"</strong> (ליווי הכיתה כקבוצה חברתית משמעותית, program #13652) -- Grades 1-12 + kindergarten. Core social pedagogy program featuring circular dialogue sessions, student committees, "Children's Hour" (peer teaching), and elimination of traditional classroom hierarchies. Classified under "social-values domain." NOT part of Ministry of Education framework.</li>
+</ul>
+<p>The Gefen catalog presence means schools can purchase these programs using Ministry-allocated budgets, giving Dror formal access to the public school system. The classification of the classroom program as "not affiliated with Ministry of Education framework" but available through the Gefen catalog is notable -- it means the content has Ministry approval for school use but operates independently of Ministry curriculum oversight.</p>
+
+</div>
+<div class="section" id="section-5">
+<h2>Geographic Presence</h2>
+<h3>Educator Kibbutzim: 14 Locations Across Israel</h3>
+<p>The movement operates 14 educator kibbutzim -- 12 urban and 2 rural:</p>
+<p><strong>Northern Israel:</strong></p>
+<ul>
+<li>Kiryat Shmona</li>
+<li>Carmiel</li>
+<li>Acre (Akko)</li>
+<li>Haifa (Hadar HaCarmel neighborhood)</li>
+<li>Afula</li>
+</ul>
+<p><strong>Central Israel:</strong></p>
+<ul>
+<li>Petah Tikva</li>
+<li>Tel Aviv</li>
+<li>Rishon LeZion</li>
+<li>Rehovot</li>
+</ul>
+<p><strong>Southern Israel:</strong></p>
+<ul>
+<li>Be'er Sheva</li>
+<li>Sderot</li>
+<li>Mitzpe Ramon</li>
+</ul>
+<p><strong>Rural:</strong></p>
+<ul>
+<li>Kibbutz Ravid (Galilee)</li>
+<li>Kibbutz Eshbal</li>
+</ul>
+<h3>School Network Cities</h3>
+<p>The formal Dror school network adds presence in:</p>
+<ul>
+<li>Jerusalem (Hoshen)</li>
+<li>Ramla</li>
+<li>Carmiel (Adam)</li>
+<li>Kiryat Ata</li>
+<li>Neve Midbar</li>
+<li>Kfar Dror (Beit Berl area)</li>
+</ul>
+<h3>Combined Geographic Reach</h3>
+<p>Combining educator kibbutzim + schools + youth movement branches, the Dror Israel ecosystem operates in what the movement describes as "hundreds of cities and settlements throughout Israel." The educator kibbutzim are concentrated in peripheral cities (80% in geographic/social periphery per movement claims), with strategic urban presence in Tel Aviv, Haifa, and Jerusalem.</p>
+<h3>City-by-City Assessment</h3>
+<table>
+<tr><th>City</th><th>Educator Kibbutz?</th><th>School?</th><th>Youth Movement?</th><th>Total Penetration</th></tr>
+<tr><td>Tel Aviv</td><td>Yes</td><td>Yes (Dov Hoz)</td><td>Yes</td><td>HIGH</td></tr>
+<tr><td>Jerusalem</td><td>No</td><td>Yes (Hoshen)</td><td>Yes</td><td>MEDIUM</td></tr>
+<tr><td>Haifa</td><td>Yes</td><td>Yes</td><td>Yes</td><td>HIGH</td></tr>
+<tr><td>Be'er Sheva</td><td>Yes</td><td>No</td><td>Yes</td><td>MEDIUM</td></tr>
+<tr><td>Carmiel</td><td>Yes</td><td>Yes (Adam)</td><td>Yes</td><td>HIGH</td></tr>
+<tr><td>Mitzpe Ramon</td><td>Yes</td><td>Yes (boarding)</td><td>Yes</td><td>HIGH</td></tr>
+<tr><td>Acre</td><td>Yes</td><td>No</td><td>Yes</td><td>MEDIUM</td></tr>
+<tr><td>Sderot</td><td>Yes</td><td>No</td><td>Yes</td><td>MEDIUM</td></tr>
+<tr><td>Kiryat Shmona</td><td>Yes</td><td>No</td><td>Yes</td><td>MEDIUM</td></tr>
+<tr><td>Afula</td><td>Yes</td><td>No</td><td>Yes</td><td>MEDIUM</td></tr>
+<tr><td>Rehovot</td><td>Yes</td><td>No</td><td>Yes</td><td>MEDIUM</td></tr>
+<tr><td>Rishon LeZion</td><td>Yes</td><td>No</td><td>Yes</td><td>MEDIUM</td></tr>
+<tr><td>Petah Tikva</td><td>Yes</td><td>No</td><td>Yes</td><td>MEDIUM</td></tr>
+<tr><td>Kiryat Ata</td><td>No</td><td>Yes</td><td>Yes</td><td>MEDIUM</td></tr>
+<tr><td>Ramla</td><td>No</td><td>Yes (Dror Ramla)</td><td>Yes</td><td>MEDIUM</td></tr>
+</table>
+<h3>Note on "49 Schools in 11 Cities"</h3>
+<p>The research brief stated "49 schools across 11 cities" as Yesodot's known presence. This specific figure was not confirmed in any public source found during research. The formal school network (under entity 580015055) operates approximately 9 social high schools, 2 boarding facilities, social preschools, and elementary schools. The "49" figure may refer to the total number of educational frameworks (including preschools, after-school programs, community centers, Yiftach branches) rather than formal schools alone, or it may include schools where Yesodot places educator-members but does not formally operate.</p>
+
+</div>
+<div class="section" id="section-6">
+<h2>Government Ties</h2>
+<h3>Ministry of Education</h3>
+<p><strong>Primary relationship.</strong> NIS 108M in historical transfers. Yesodot's educator groups are recognized as a legitimate framework for national service (sherut leumi) and as approved providers in the Gefen educational programs catalog (#3383). The Ministry funds:</p>
+<ul>
+<li>Educator group operations</li>
+<li>Youth education programs</li>
+<li>Jewish education initiatives</li>
+<li>Volunteer coordination</li>
+</ul>
+<h3>Ministry of Agriculture</h3>
+<p><strong>Second-largest funder.</strong> NIS 27M combined from two agriculture-related ministries. Funds agricultural education, educational farms, and urban mission groups. This reflects the kibbutz/agricultural dimension of the movement.</p>
+<h3>Ministry of Settlement / Settlement Division</h3>
+<p><strong>NIS 10.4M combined.</strong> Funds deployment of educator groups to peripheral communities. The "Settlement" framing is about populating the Negev and Galilee (not West Bank settlements), though some graduates have individually settled in the Jordan Valley (Beit Ha'arava, Almog).</p>
+<h3>Gefen Catalog Status</h3>
+<p>Yesodot is registered as supplier #3383 in the Ministry of Education's Gefen (גפ"ן) catalog of approved educational program providers. This means:</p>
+<ul>
+<li>Schools can purchase Yesodot's programs using Ministry-allocated budgets</li>
+<li>The programs have passed Ministry review for educational content</li>
+<li>There is a formal approval mechanism giving Yesodot access to the public school system</li>
+</ul>
+<h3>Government Dependency</h3>
+<p>Approximately NIS 16.5M/year in government funding (based on 3-year average of NIS 49.6M). Against a NIS 34.8M annual turnover, this means <strong>~47% of revenue comes from government sources</strong> for Yesodot alone. Across the entire Dror ecosystem, government dependency is ~55-60%.</p>
+<h3>Key Officials and Approval Mechanisms</h3>
+<p>The research did not identify specific Ministry of Education officials who approve Yesodot's programs. However, the Gefen catalog inclusion indicates formal review by the Ministry's pedagogical division. The movement's historical affiliation with the Labor political ecosystem and the Histadrut (through HaNoar HaOved) provides institutional connections to government bureaucracies.</p>
+
+</div>
+<div class="section" id="section-7">
+<h2>Controversies</h2>
+<h3>Controversies Specific to Yesodot</h3>
+<p>No controversies were found that are specific to the Yesodot entity separately from the broader Dror Israel movement. This is because Yesodot is operationally indistinguishable from the movement -- it is the movement's legal shell.</p>
+<h3>Recent Activity (2025-2026)</h3>
+<ul>
+<li><strong>"Torno" Project for Northern Evacuees:</strong> Dror Israel launched "Torno North" to support communities displaced by security operations on the northern border. Groups of ~20 young people (ages 22-35) live communally and work in informal education, care, and community development. Coordinator: Barak Gal. Previously launched in southern Israel post-October 7 communities. (Source: Maariv)</li>
+<li><strong>"Dror Prize":</strong> A prize called "Dror Prize" is administered by Shatil (New Israel Fund) for promoting social issues in media. Topics include democracy, human rights, media freedom, peace. <strong>Note:</strong> Despite the name, this appears to be a separate "Dror" (meaning "freedom") initiative by NIF/Shatil, not directly connected to Dror Israel the movement. The coincidence of naming warrants verification but no direct organizational link was found.</li>
+</ul>
+<h3>Inherited Movement Controversies</h3>
+<p>All controversies documented in the parent Dror Israel research apply:</p>
+<ol>
+<li><strong>Cult allegations (2015)</strong> -- Parents contacted the Israeli Center for Cult Victims. TheMarker published a major investigation. The center confirmed receiving "many inquiries." (Source: TheMarker, 2015-06-12)</li>
+</ol>
+<ol>
+<li><strong>Concentration of power</strong> -- Pesach Haospeter has led the movement for 20+ years with no contested elections. Critics describe centralized decision-making.</li>
+</ol>
+<ol>
+<li><strong>The "Three Prohibitions"</strong> -- Former members report restrictions on: university education (only Beit Berl allowed), non-Nahal military service, and post-army travel abroad.</li>
+</ol>
+<ol>
+<li><strong>NIS 30M financial discrepancy</strong> -- Ha-Makom investigation documented allegations that ~NIS 30M from the Kibbutzim youth branch "never arrived." Transportation funds (~NIS 2M over 10 years) received but not transferred. Led to 2018 Kibbutzim branch departure.</li>
+</ol>
+<ol>
+<li><strong>Labor practices</strong> -- Members reportedly receive NIS 700/month stipend while earnings go to communal funds. Yesodot reports 988 "volunteers" -- but these may be communal members working below minimum wage under the guise of volunteerism.</li>
+</ol>
+<ol>
+<li><strong>West Bank settlements</strong> -- Despite social justice rhetoric, some graduates settled in Beit Ha'arava and Almog (Jordan Valley).</li>
+</ol>
+<h3>Pedagogical Controversy</h3>
+<p>The adoption of Paulo Freire's critical pedagogy in Israeli public schools is itself controversial:</p>
+<ul>
+<li><strong>Critics argue</strong> that Freire's framework is inherently political, designed to radicalize students against existing power structures, and inappropriate for publicly-funded education.</li>
+<li><strong>The Hebrew repackaging</strong> -- Dror uses Martin Buber as the primary theoretical reference rather than Freire, providing Jewish/Israeli intellectual legitimacy for what is essentially a critical pedagogy framework. This is a form of semantic displacement: the same educational approach is presented with different intellectual genealogies depending on the audience.</li>
+<li><strong>No grades/no exams</strong> -- The rejection of standardized assessment, while presented as progressive pedagogy, also makes it difficult to measure educational outcomes or compare Dror schools to the wider system.</li>
+</ul>
+
+</div>
+<div class="section" id="section-8">
+<h2>Values Alignment Table</h2>
+<table>
+<tr><th>Value</th><th>Score (1-5)</th><th>Evidence</th></tr>
+<tr><td><strong>Democratic governance</strong></td><td>2/5</td><td>Organization controlled by unelected movement leadership. No independent board governance for Yesodot separate from the movement. Same individual has led for 20+ years.</td></tr>
+<tr><td><strong>Financial transparency</strong></td><td>3/5</td><td>Files required reports. obudget.org data available. But multi-entity structure obscures totals. NIS 30M discrepancy allegation unresolved. IsraelGives gives 84% transparency rating.</td></tr>
+<tr><td><strong>Academic freedom</strong></td><td>2/5</td><td>Members restricted to Beit Berl education track. Anti-university ideology. Students in schools have no grades or exams, making external comparison impossible.</td></tr>
+<tr><td><strong>Educational neutrality</strong></td><td>1/5</td><td>Education is explicitly defined as a political act for social transformation. Freire's "Pedagogy of the Oppressed" is a foundational text. The approach is inherently ideological, not neutral.</td></tr>
+<tr><td><strong>Labor practices</strong></td><td>2/5</td><td>988 "volunteers" may be communal members receiving below-minimum-wage stipends. NIS 700/month stipend while earnings go to communal fund raises compliance questions.</td></tr>
+<tr><td><strong>Jewish-Arab coexistence</strong></td><td>5/5</td><td>Genuinely serves Arab, Bedouin, Druze populations. 55+ youth movement branches in Arab communities. One of the strongest coexistence programs in Israel.</td></tr>
+<tr><td><strong>Periphery service</strong></td><td>5/5</td><td>80% of educator kibbutzim in geographic/social periphery. Active in Mitzpe Ramon, Sderot, Kiryat Shmona, Acre, Afula, Carmiel. Genuine service to underserved areas.</td></tr>
+<tr><td><strong>Government accountability</strong></td><td>2/5</td><td>~47% of revenue from government. Almost all through non-competitive support payments (NIS 49.6M support vs. NIS 600 contracts). No competitive bidding for most funding.</td></tr>
+</table>
+
+</div>
+<div class="section" id="section-9">
+<h2>Open Questions</h2>
+<ol>
+<li><strong>What additional Gefen catalog programs exist?</strong> One Yesodot program found ("Coaches Strong Community" / HaChalutz sports). One Dror Batei Chinuch program found ("Classroom Accompaniment as Social Group"). Are there more programs not surfaced?</li>
+</ol>
+<ol>
+<li><strong>Who are Yesodot's board members specifically?</strong> GuideStar lists them but the page is JavaScript-rendered. The board of the sister entity (Dror Batei Chinuch) was obtained -- chaired by Moshe Green since 2004. Yesodot's own board composition remains unknown.</li>
+</ol>
+<ol>
+<li><strong>Where does the "49 schools in 11 cities" figure come from?</strong> This was stated in the research brief but not confirmed in any public source. Is it from a Ministry of Education database? Internal movement documents?</li>
+</ol>
+<ol>
+<li><strong>What is the actual legal relationship between the three main entities?</strong> Are there formal agreements? Shared budgets? Cross-subsidization? The Ha-Makom investigation suggested internal fund transfers that were not transparent.</li>
+</ol>
+<ol>
+<li><strong>What happened to the NIS 30M Kibbutzim branch allegations?</strong> Was there an audit? Legal proceedings? Has this been resolved?</li>
+</ol>
+<ol>
+<li><strong>Is Pesach Haospeter still leading in 2026?</strong> Most recent media coverage found is from 2015-2018. Has there been any leadership transition?</li>
+</ol>
+<ol>
+<li><strong>How are the 988 "volunteers" classified for labor law purposes?</strong> If they are communal members receiving stipends while working full-time as educators, this may raise minimum wage compliance issues.</li>
+</ol>
+<ol>
+<li><strong>What is the actual curriculum content?</strong> The theoretical framework is documented, but what do students actually learn in Dror schools? What texts do they study? What social action projects do they undertake?</li>
+</ol>
+<ol>
+<li><strong>What are the educational outcomes?</strong> With no grades or standardized exams, how do Dror graduates perform on Bagrut (matriculation) exams? What are their university admission rates?</li>
+</ol>
+<ol>
+<li><strong>What oversight does the Ministry of Education exercise over Dror's Gefen programs?</strong> Is there content review? Site visits? Outcome measurement?</li>
+</ol>
+
+</div>
+<div class="section" id="section-10">
+<h2>Sources</h2>
+<h3>Official Sites</h3>
+<ul>
+<li><a href="https://drorisrael.org.il/education/yesodot-letzmicha/" target="_blank" rel="noopener">Dror Israel - Yesodot LeTzmicha</a></li>
+<li><a href="https://drornet.org.il/" target="_blank" rel="noopener">Dror Batei Chinuch</a></li>
+<li><a href="https://drornet.org.il/about/" target="_blank" rel="noopener">Dror Batei Chinuch - About</a></li>
+<li><a href="https://drornet.org.il/our-places/social-highschool/" target="_blank" rel="noopener">Dror Batei Chinuch - Social High Schools</a></li>
+<li><a href="https://drorisrael.org.il/community/kibutzei-mechanchim/" target="_blank" rel="noopener">Dror Israel - Educator Kibbutzim</a></li>
+<li><a href="https://www.drorisrael.org/" target="_blank" rel="noopener">Dror Israel English site</a></li>
+</ul>
+<h3>Registry & Financial</h3>
+<ul>
+<li><a href="https://www.guidestar.org.il/organization/580295533" target="_blank" rel="noopener">GuideStar Israel - 580295533</a></li>
+<li><a href="https://next.obudget.org/i/org/association/580295533" target="_blank" rel="noopener">obudget.org - Yesodot</a></li>
+<li><a href="https://www.israelgives.org/amuta/580295533" target="_blank" rel="noopener">IsraelGives - 580295533</a></li>
+<li><a href="https://www.kolzchut.org.il/he/%22%D7%99%D7%A1%D7%95%D7%93%D7%95%D7%AA_%D7%9C%D7%A6%D7%9E%D7%99%D7%97%D7%94_%D7%93%D7%A8%D7%95%D7%A8%22_%D7%A9%D7%9C_%D7%AA%D7%A0%D7%95%D7%A2%D7%AA_%D7%93%D7%A8%D7%95%D7%A8_%D7%99%D7%A9%D7%A8%D7%90%D7%9C" target="_blank" rel="noopener">Kol Zchut - Yesodot</a></li>
+</ul>
+<h3>Encyclopedia</h3>
+<ul>
+<li><a href="https://www.hamichlol.org.il/%D7%93%D7%A8%D7%95%D7%A8_%D7%91%D7%AA%D7%99_%D7%97%D7%99%D7%A0%D7%95%D7%9A" target="_blank" rel="noopener">HaMichlol - Dror Batei Chinuch</a></li>
+<li><a href="https://www.hamichlol.org.il/%D7%AA%D7%A0%D7%95%D7%A2%D7%AA_%D7%93%D7%A8%D7%95%D7%A8-%D7%99%D7%A9%D7%A8%D7%90%D7%9C" target="_blank" rel="noopener">HaMichlol - Dror Israel Movement</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Dror-Israel" target="_blank" rel="noopener">Wikipedia - Dror-Israel</a></li>
+</ul>
+<h3>Pedagogy Sources</h3>
+<ul>
+<li><a href="https://drornet.org.il/articles/%D7%A4%D7%93%D7%92%D7%95%D7%92%D7%99%D7%94-%D7%97%D7%91%D7%A8%D7%AA%D7%99%D7%AA-%D7%91%D7%A1%D7%99%D7%A1-%D7%9C%D7%97%D7%96%D7%95%D7%9F-%D7%97%D7%99%D7%A0%D7%95%D7%9B%D7%99-%D7%97%D7%93%D7%A9/" target="_blank" rel="noopener">Dror Batei Chinuch - Social Pedagogy as New Educational Vision</a></li>
+<li><a href="https://drornet.org.il/articles/%D7%97%D7%99%D7%A0%D7%95%D7%9A-%D7%9C%D7%90%D7%95%D7%98%D7%95%D7%A4%D7%99%D7%94-%D7%95%D7%A4%D7%93%D7%92%D7%95%D7%92%D7%99%D7%94-%D7%97%D7%91%D7%A8%D7%AA%D7%99%D7%AA/" target="_blank" rel="noopener">Dror Batei Chinuch - Social Pedagogy and Education for Utopia</a></li>
+</ul>
+<h3>Media</h3>
+<ul>
+<li><a href="https://www.israelhayom.co.il/article/515593" target="_blank" rel="noopener">Israel Hayom - The New Kibbutz of Dror Israel Members</a></li>
+<li><a href="https://www.maariv.co.il/news/israel/Article-1122468" target="_blank" rel="noopener">Maariv - Dror Israel "Torno" Project for Northern Evacuees</a></li>
+<li><a href="https://rehovot.mynet.co.il/good_to_know/article/SJZwvyOv00" target="_blank" rel="noopener">Rehovot mynet - Educator Kibbutz in Rehovot</a></li>
+<li><a href="https://www.hevrat-hanoar.co.il/dror" target="_blank" rel="noopener">Hevrat HaNoar - Dror Network</a></li>
+<li><a href="https://drorisrael.org.il/roninbal/" target="_blank" rel="noopener">Dror Israel - Inbal Ron Kan 11 Interview</a></li>
+</ul>
+<h3>Gefen Catalog</h3>
+<ul>
+<li><a href="https://www.2school.co.il/Tag/%D7%99%D7%A1%D7%95%D7%93%D7%95%D7%AA%20%D7%9C%D7%A6%D7%9E%D7%99%D7%97%D7%94%20%D7%93%D7%A8%D7%95%D7%A8" target="_blank" rel="noopener">2school.co.il - Yesodot Programs Tag</a></li>
+<li><a href="https://www.2school.co.il/InterData/aisre/" target="_blank" rel="noopener">2school.co.il - Classroom Accompaniment Program #13652</a></li>
+</ul>
+<h3>Board & Leadership</h3>
+<ul>
+<li><a href="https://drorho.org.il/%D7%97%D7%91%D7%A8%D7%99-%D7%94%D7%95%D7%95%D7%A2%D7%93-%D7%94%D7%9E%D7%A0%D7%94%D7%9C/" target="_blank" rel="noopener">Dror Batei Chinuch Board Members</a></li>
+<li><a href="https://drorisrael.org.il/about-us/" target="_blank" rel="noopener">Dror Israel - About Us / Leadership Team</a></li>
+<li><a href="https://www.linkedin.com/in/roeey-yessod-3a7154202/" target="_blank" rel="noopener">LinkedIn - Roeey Yessod, CEO HaNoar HaOved/Dror</a></li>
+</ul>
+<h3>Sports/HaChalutz</h3>
+<ul>
+<li><a href="https://hachaluz.org.il/" target="_blank" rel="noopener">HaChalutz Official Site</a></li>
+<li><a href="https://sports.walla.co.il/item/3651299" target="_blank" rel="noopener">Walla Sports - HaChalutz for hostages</a></li>
+</ul>
+<h3>Social Pedagogy Seminar</h3>
+<ul>
+<li><a href="https://drornet.org.il/process/pedagogy-convention/" target="_blank" rel="noopener">Dror Batei Chinuch - Social Pedagogy Seminar</a></li>
+</ul>
+<p><em>Report compiled 2026-02-16 as part of the דירוג ערים project. All financial figures in NIS unless otherwise noted. This report represents an analytical assessment based on available public sources and should be cross-referenced with primary documents (GuideStar filings, Ministry of Education approvals) before forming final conclusions.</em></p>
+
+</div>
+</div>
+
+<footer>
+  פרויקט זהות ציונית — דוח מחקר מעמיק | <a href="../">דירוג ערים</a> | <a href="../research/">כל הדוחות</a>
+</footer>
+
+</body>
+</html>

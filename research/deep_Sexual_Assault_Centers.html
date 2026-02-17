@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sexual Assault Support Centers Network in Israel — דוח מחקר מעמיק</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background: #f5f5f8;
+  color: #1a1a2e;
+  direction: rtl;
+  line-height: 1.8;
+  font-size: 17px;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #1a1a2e; color: #fff;
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  overflow-x: auto; white-space: nowrap;
+}
+nav .brand { font-weight: 700; color: #ff8800; flex-shrink: 0; }
+nav a { color: #ccc; text-decoration: none; font-size: 0.85em; padding: 8px 4px; border-bottom: 2px solid transparent; flex-shrink: 0; }
+nav a:hover { color: #ff8800; border-bottom-color: #ff8800; }
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a5a8a 100%);
+  color: #fff; padding: 50px 20px 40px; text-align: center;
+}
+.hero h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+.hero .subtitle { font-size: 1.05em; color: #b0c4de; margin-bottom: 6px; }
+.hero .meta { font-size: 0.9em; color: #ff8800; margin-top: 8px; }
+.risk-badge {
+  display: inline-block; padding: 4px 16px; border-radius: 20px;
+  font-size: 0.85em; font-weight: 600; margin-top: 10px;
+}
+.risk-high { background: #e74c3c; color: #fff; }
+.risk-medium { background: #f39c12; color: #fff; }
+.risk-low { background: #27ae60; color: #fff; }
+.container { max-width: 860px; margin: 0 auto; padding: 30px 20px 80px; }
+.toc {
+  background: #fff; border-radius: 8px; padding: 22px 26px;
+  margin-bottom: 32px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.toc h2 { font-size: 1.15em; color: #2a5a8a; margin-bottom: 12px; border-bottom: 2px solid #667eea; padding-bottom: 6px; }
+.toc ol { padding-right: 22px; font-size: 0.93em; }
+.toc li { margin-bottom: 4px; }
+.toc a { color: #2a5a8a; text-decoration: none; }
+.toc a:hover { color: #ff8800; text-decoration: underline; }
+.section {
+  background: #fff; border-radius: 8px; padding: 28px 26px;
+  margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.section h2 { font-size: 1.4em; color: #1a1a2e; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #667eea; }
+.section h3 { font-size: 1.1em; color: #2a5a8a; margin: 18px 0 8px; }
+.section h4 { font-size: 1em; color: #444; margin: 14px 0 6px; }
+.section p { margin-bottom: 12px; text-align: justify; }
+.section ul, .section ol { padding-right: 22px; margin-bottom: 12px; }
+.section li { margin-bottom: 5px; }
+blockquote {
+  background: #f0f4fa; border-right: 4px solid #667eea;
+  padding: 12px 18px; margin: 12px 0; border-radius: 0 6px 6px 0;
+  font-size: 0.94em; color: #333;
+}
+.thesis {
+  background: #fff8f0; border-right: 3px solid #ff8800;
+  padding: 14px 18px; margin: 12px 0; border-radius: 0 5px 5px 0;
+  font-size: 0.96em; color: #6b4500;
+}
+table {
+  width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.91em;
+}
+th {
+  background: #667eea; color: #fff; padding: 8px 12px;
+  text-align: right; position: sticky; top: 44px; z-index: 5;
+}
+td {
+  padding: 7px 12px; border-bottom: 1px solid #e8e8e8;
+  text-align: right; vertical-align: top;
+}
+tr:nth-child(even) { background: #f8f9fc; }
+a { color: #2a5a8a; }
+a:hover { color: #ff8800; }
+.back-link {
+  display: inline-block; margin-bottom: 20px; padding: 6px 14px;
+  background: #667eea; color: #fff; border-radius: 4px;
+  text-decoration: none; font-size: 0.88em;
+}
+.back-link:hover { background: #5a6fd6; color: #fff; }
+footer {
+  text-align: center; padding: 30px 20px; color: #888; font-size: 0.85em;
+}
+strong { color: #1a1a2e; }
+code {
+  background: #f0f0f0; padding: 1px 5px; border-radius: 3px;
+  font-size: 0.9em;
+}
+.source-tag {
+  display: inline-block; background: #e8eef6; padding: 2px 8px;
+  border-radius: 10px; font-size: 0.78em; color: #2a5a8a;
+  margin: 2px 3px; text-decoration: none;
+}
+.source-tag:hover { background: #d0dff0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">דוח מחקר מעמיק</span>
+  <a href="../">חזרה לדירוג</a>
+  <a href="../research/">כל הדוחות</a>
+  <a href="#section-1">1. Network Structure</a> <a href="#section-2">2. Registration Deta</a> <a href="#section-3">3. Finances</a> <a href="#section-4">4. Programs: "Togeth</a> <a href="#section-5">5. Ideology and Fram</a> <a href="#section-6">6. Foreign Funding —</a> <a href="#section-7">7. Leadership</a> <a href="#section-8">8. Controversies</a> <a href="#section-9">9. Risk and Ideology</a> <a href="#section-10">10. Open Questions f</a> <a href="#section-11">Sources</a>
+</nav>
+
+<div class="hero">
+  <h1>Sexual Assault Support Centers Network in Israel</h1>
+  <div class="subtitle">מרכזי סיוע לנפגעות תקיפה מינית — "יחד בהסכמה" (Together in Consent)</div>
+  <div class="meta"></div>
+  
+</div>
+
+<div class="container">
+  <a href="../research/" class="back-link">← כל דוחות המחקר</a>
+  <div class="toc"><h2>תוכן עניינים</h2><ol><li><a href="#section-1">1. Network Structure</a></li><li><a href="#section-2">2. Registration Details (GuideStar)</a></li><li><a href="#section-3">3. Finances</a></li><li><a href="#section-4">4. Programs: "Together in Consent" (יחד בהסכמה / ביחד)</a></li><li><a href="#section-5">5. Ideology and Framework Analysis</a></li><li><a href="#section-6">6. Foreign Funding — Detailed</a></li><li><a href="#section-7">7. Leadership</a></li><li><a href="#section-8">8. Controversies</a></li><li><a href="#section-9">9. Risk and Ideology Assessment</a></li><li><a href="#section-10">10. Open Questions for Further Investigation</a></li><li><a href="#section-11">Sources</a></li></ol></div>
+  <div class="section" id="section-1">
+<h2>1. Network Structure</h2>
+<h3>How Are the Centers Connected?</h3>
+<p>The centers operate as a <strong>federation model</strong>: each is an independent registered nonprofit (amuta/ע"ר) with its own legal identity, but they are united under a national umbrella organization.</p>
+<p><strong>Umbrella Organization:</strong></p>
+<ul>
+<li><strong>Name:</strong> איגוד מרכזי הסיוע לנפגעות תקיפה מינית ולנפגעי תקיפה מינית בישראל (Association of Rape Crisis Centers in Israel — ARCCI)</li>
+<li><strong>GuideStar:</strong> 580173730</li>
+<li><strong>Founded:</strong> 1990</li>
+<li><strong>Annual Revenue (2024):</strong> 16,445,238 NIS</li>
+<li><strong>Employees:</strong> 12 | <strong>Volunteers:</strong> 8</li>
+<li><strong>Role:</strong> National coordination, policy advocacy, Knesset lobbying, national campaigns, the 1202/1203/KolMila helplines, annual statistical reporting, and international representation (including UN submissions)</li>
+</ul>
+<h3>The Nine Member Centers</h3>
+<table>
+<tr><th>#</th><th>Center Name</th><th>Location</th><th>GuideStar #</th><th>Founded</th><th>Revenue 2024</th><th>Employees</th><th>Volunteers</th></tr>
+<tr><td>1</td><td>מרכז סיוע לנפגעות תקיפה מינית ואונס — גליל-גולן</td><td><strong>Kiryat Shmona</strong></td><td>580347862</td><td>1999</td><td>2,721,737</td><td>9</td><td>100</td></tr>
+<tr><td>2</td><td>נשים נגד אלימות (WAVO)</td><td><strong>Nazareth</strong></td><td>580207199</td><td>1992</td><td>~2,128,299*</td><td>—</td><td>—</td></tr>
+<tr><td>3</td><td>מרכז סיוע לנפגעות אונס ותקיפה מינית — חיפה והצפון (HRCC)</td><td><strong>Haifa</strong></td><td>580005767</td><td>1981</td><td>4,853,449</td><td>19</td><td>90</td></tr>
+<tr><td>4</td><td>מרכז סיוע לנפגעות ונפגעי תקיפה מינית — השרון</td><td><strong>Sharon region</strong></td><td>580107993</td><td>—</td><td>10,200,590</td><td>30</td><td>190</td></tr>
+<tr><td>5</td><td>מרכז סיוע לנפגעות ולנפגעי תקיפה מינית תל אביב</td><td><strong>Tel Aviv</strong></td><td>580037604</td><td>1982</td><td>7,142,508</td><td>18</td><td>250</td></tr>
+<tr><td>6</td><td>מרכז סיוע לנפגעות אונס ותקיפה מינית — ירושלים ע"ש לינדה פלדמן</td><td><strong>Jerusalem</strong></td><td>580001261</td><td>1981</td><td>5,824,535</td><td>18</td><td>60</td></tr>
+<tr><td>7</td><td>תהל — מרכז הסיוע לנשים וילדים דתיים</td><td><strong>National (religious/Haredi)</strong></td><td>580229979</td><td>1993</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>8</td><td>תאיר — מרכז סיוע לנפגעות ולנפגעי תקיפה והטרדה מינית</td><td><strong>Rehovot / Shfela</strong></td><td>580320265</td><td>1998</td><td>2,869,802</td><td>8</td><td>22</td></tr>
+<tr><td>9</td><td>מסל"ן — מרכז הסיוע לנפגעות ולנפגעי תקיפה מינית ואלימות, נגב</td><td><strong>Beer Sheva / Negev</strong></td><td>580141455</td><td>—</td><td>7,363,665</td><td>14</td><td>173</td></tr>
+</table>
+<p>*WAVO revenue estimated from obudget sector report; direct Nazareth center financial data not separately available.</p>
+<h3>Gefen Program Mapping</h3>
+<p>The five Gefen programs (#2032, #2370, #1121, #13483, #1502) map to five of these nine centers:</p>
+<table>
+<tr><th>Gefen #</th><th>Rating</th><th>Center</th><th>City</th></tr>
+<tr><td>#2032</td><td>R4</td><td>Sharon center (580107993)</td><td>Sharon</td></tr>
+<tr><td>#2370</td><td>R4</td><td>Jerusalem center (580001261)</td><td>Jerusalem</td></tr>
+<tr><td>#1121</td><td>R5</td><td>Haifa HRCC (580005767)</td><td>Haifa</td></tr>
+<tr><td>#13483</td><td>R4</td><td>Tel Aviv center (580037604)</td><td>Tel Aviv</td></tr>
+<tr><td>#1502</td><td>R3</td><td>Kiryat Shmona center (580347862)</td><td>Kiryat Shmona</td></tr>
+</table>
+
+</div>
+<div class="section" id="section-2">
+<h2>2. Registration Details (GuideStar)</h2>
+<p>All entities are registered as Israeli amutot (registered nonprofits / ע"ר) under the Registrar of Associations (רשם העמותות), Ministry of Justice.</p>
+<table>
+<tr><th>Entity</th><th>GuideStar Number</th><th>URL</th></tr>
+<tr><td>ARCCI (umbrella)</td><td>580173730</td><td>https://www.guidestar.org.il/organization/580173730</td></tr>
+<tr><td>Tel Aviv</td><td>580037604</td><td>https://www.guidestar.org.il/organization/580037604</td></tr>
+<tr><td>Jerusalem</td><td>580001261</td><td>https://www.guidestar.org.il/organization/580001261</td></tr>
+<tr><td>Haifa</td><td>580005767</td><td>https://www.guidestar.org.il/organization/580005767</td></tr>
+<tr><td>Sharon</td><td>580107993</td><td>https://www.guidestar.org.il/organization/580107993</td></tr>
+<tr><td>Kiryat Shmona</td><td>580347862</td><td>https://www.guidestar.org.il/organization/580347862</td></tr>
+<tr><td>Tair (Rehovot)</td><td>580320265</td><td>https://www.guidestar.org.il/organization/580320265</td></tr>
+<tr><td>Tahel (religious)</td><td>580229979</td><td>https://www.guidestar.org.il/organization/580229979</td></tr>
+<tr><td>Maslan (Negev)</td><td>580141455</td><td>https://www.guidestar.org.il/organization/580141455</td></tr>
+<tr><td>WAVO (Nazareth)</td><td>580207199</td><td>https://www.guidestar.org.il/organization/580207199</td></tr>
+</table>
+
+</div>
+<div class="section" id="section-3">
+<h2>3. Finances</h2>
+<h3>Sector Overview (obudget.org)</h3>
+<p>The entire sexual assault support sector in Israel (20 organizations) reports:</p>
+<ul>
+<li><strong>Total annual revenue:</strong> ~113.2 million NIS</li>
+<li><strong>Direct government funding (3-year):</strong> ~29.9 million NIS</li>
+<li><strong>Total employees:</strong> 351</li>
+<li><strong>Total volunteers:</strong> 1,191</li>
+</ul>
+<p>Source: https://next.obudget.org/i/reports/ngo-activity-report/סיוע%20לנפגעי%20תקיפה%20מינית</p>
+<h3>Revenue of the Five Gefen-Active Centers + ARCCI</h3>
+<table>
+<tr><th>Entity</th><th>Revenue 2024</th><th>Gov Funding (3yr)</th><th>Primary Gov Funder</th></tr>
+<tr><td>ARCCI (umbrella)</td><td>16,445,238</td><td>194,954 (all-time)</td><td>Ministry of Welfare (100K), Health (52K)</td></tr>
+<tr><td>Sharon</td><td>10,200,590</td><td>3,743,222</td><td>Ministry of Welfare (8M cumulative)</td></tr>
+<tr><td>Tel Aviv</td><td>7,142,508</td><td>4,788,221</td><td>Ministry of Welfare (12.7M cumulative)</td></tr>
+<tr><td>Jerusalem</td><td>5,824,535</td><td>5,478,602</td><td>Ministry of Welfare (13M cumulative)</td></tr>
+<tr><td>Haifa (HRCC)</td><td>4,853,449</td><td>0 (last 3 years)</td><td>No recent government income recorded</td></tr>
+<tr><td>Kiryat Shmona</td><td>2,721,737</td><td>1,863,748</td><td>Ministry of Welfare (4.5M cumulative)</td></tr>
+</table>
+<p><strong>Combined revenue of the 5 Gefen centers + ARCCI: ~47.2 million NIS (2024)</strong></p>
+<h3>Key Financial Observations</h3>
+<ol>
+<li><strong>Ministry of Welfare dominates government funding</strong> — it is by far the largest government funder for all centers, providing both "treatment services support" (תמיכה בשירותי טיפול) and "community services support" (תמיכה בשירותים קהילתיים).</li>
+</ol>
+<ol>
+<li><strong>ARCCI umbrella has high revenue (16.4M) but minimal government funding (195K total all-time)</strong>. This means the umbrella's income is overwhelmingly from <strong>donations and philanthropic grants</strong>, not government. The umbrella distributes funds to member centers and coordinates national programs.</li>
+</ol>
+<ol>
+<li><strong>Haifa HRCC reports zero government income in the last 3 years</strong> despite 4.85M revenue — suggesting it operates primarily on donations, fees, and foundation grants.</li>
+</ol>
+<ol>
+<li><strong>Sharon center is largest by revenue (10.2M)</strong> — ranked 4th by revenue in the sector, 1st in central district.</li>
+</ol>
+<ol>
+<li><strong>The 192,176 NIS Gefen budget is minuscule</strong> — less than 0.5% of the combined 47.2M revenue of the five operating centers. This is a token program relative to their main crisis-response operations.</li>
+</ol>
+<h3>Foreign/International Donors</h3>
+<p><strong>Confirmed donors to ARCCI and member centers:</strong></p>
+<table>
+<tr><th>Donor</th><th>Type</th><th>Amount (known)</th></tr>
+<tr><td><strong>New Israel Fund (NIF)</strong></td><td>US-based foundation</td><td>Historical primary funder (early years). Current status unclear</td></tr>
+<tr><td><strong>Hadassah Foundation</strong></td><td>US-based (Andrea Silagi Fund)</td><td>$25,000 (ombudsman training); $20,000 (post-Oct 7 discretionary)</td></tr>
+<tr><td><strong>Jewish Women's Collective Response Fund</strong></td><td>US-based</td><td>$25,000 (post-Oct 7 awareness)</td></tr>
+<tr><td><strong>Jewish Foundation Los Angeles</strong></td><td>US-based</td><td>Undisclosed grants</td></tr>
+<tr><td><strong>UJA-Federation of New York</strong></td><td>US-based</td><td>Documented support (amount unclear)</td></tr>
+<tr><td><strong>Dafna Fund</strong></td><td>Israel-based feminist fund</td><td>Research partnerships</td></tr>
+<tr><td><strong>Igul LeTova</strong> (Round Up for Good)</td><td>Israeli micro-donation platform</td><td>Ongoing (~10K participants rounding up purchases)</td></tr>
+</table>
+<p><strong>No evidence found of:</strong> EU funding, UNFPA funding, UN Women direct funding, or specific European government grants to ARCCI or member centers.</p>
+<p><strong>US Entity:</strong> No evidence of a US-registered 501(c)(3) for ARCCI. Donations are channeled through intermediaries (JGive, IsraelGives, Hadassah Foundation, etc.).</p>
+
+</div>
+<div class="section" id="section-4">
+<h2>4. Programs: "Together in Consent" (יחד בהסכמה / ביחד)</h2>
+<h3>Overview</h3>
+<p>The program appears in the Gefen catalog under slightly different names depending on the center. The Haifa center (HRCC) describes it as <strong>"ביחד" (Together)</strong> — a youth educational program for promoting "mutual sexuality" (מיניות הדדית) and preventing sexual violence.</p>
+<h3>Program Structure (per HRCC documentation)</h3>
+<ul>
+<li><strong>Format:</strong> 3 sessions of 90 minutes each per student group</li>
+<li><strong>Setting:</strong> Small groups, differentiated by age, conducted in schools and informal education settings</li>
+<li><strong>Target Population:</strong> Elementary through high school students, at-risk youth, educational staff, and parents</li>
+<li><strong>Reach:</strong> Professional instructors meet approximately <strong>200,000 youth annually</strong> across all centers nationally</li>
+<li><strong>Ministry of Education Approval:</strong> Listed as approved Gefen program (#1121 for Haifa)</li>
+</ul>
+<h3>Content Areas</h3>
+<p>Per the HRCC education page (https://www.hrcc.org.il/חינוך-הסברה-והכשרות/):</p>
+<ul>
+<li><strong>Boundaries in physical contact</strong> (גבולות במגע)</li>
+<li><strong>Sexuality</strong> — age-appropriate discussion of sexuality topics</li>
+<li><strong>Distinguishing flirtation from harassment</strong> (הבחנה בין פלירטוט להטרדה)</li>
+<li><strong>Clear consent and social responsibility</strong> (הסכמה חופשית ואחריות חברתית)</li>
+<li>Creates "an intimate and protected space enabling youth to raise the topic of sexual assault responsibly and with guidance"</li>
+<li>Includes <strong>support infrastructure for educational staff</strong> handling identified cases (i.e., if a child discloses abuse during the session, there is a protocol)</li>
+</ul>
+<h3>How Does a Sexual Assault Center Run School Programs?</h3>
+<p>This is a deliberate strategic choice. The centers operate on a <strong>prevention-to-response continuum</strong>:</p>
+<ol>
+<li><strong>Prevention</strong> — school programs teaching consent, boundaries, and healthy relationships (the Gefen programs)</li>
+<li><strong>Identification</strong> — workshops sometimes surface disclosures from children who are being abused</li>
+<li><strong>Crisis response</strong> — the same organization provides immediate support, counseling, and accompaniment</li>
+<li><strong>Treatment</strong> — long-term therapeutic services for survivors</li>
+</ol>
+<p>The school programs serve dual purposes: (a) primary prevention by educating youth about consent before they encounter situations of sexual violence, and (b) secondary prevention by creating safe spaces where existing victims may disclose and be connected to services. This model is standard internationally — RAINN in the US, Rape Crisis England & Wales, and similar networks all operate both crisis services and prevention education.</p>
+<h3>Additional Educational Programs</h3>
+<p>Beyond the Gefen-listed "Together in Consent," the centers operate:</p>
+<ul>
+<li><strong>"First Person" (בגוף ראשון)</strong> — sexual assault survivors share direct experiences with professional audiences (medical, legal, educational) to improve institutional responses</li>
+<li><strong>StandFor</strong> — workplace sexual harassment prevention for organizations</li>
+<li><strong>Professional training courses</strong> — 30-hour educator course (MoE continuing education credits), 56-hour therapist certification, community protection team training</li>
+<li><strong>KolMila</strong> — anonymous chat/WhatsApp service for teens (~4,000 inquiries/year on sexuality, relationships, sexual orientation)</li>
+</ul>
+
+</div>
+<div class="section" id="section-5">
+<h2>5. Ideology and Framework Analysis</h2>
+<h3>Feminist Foundation</h3>
+<p>The network is <strong>explicitly feminist</strong> in orientation. Key indicators:</p>
+<ol>
+<li><strong>Leadership:</strong> CEO Orit Sulitzeanu has a 20+ year career in feminist activism — former spokesperson for the <strong>Israel Women's Network (שדולת הנשים)</strong>, former chair of Gender Equality Committee at Hebrew University, member of <strong>Kol HaIsha</strong> (feminist organization)</li>
+<li><strong>Founding history:</strong> The earliest centers (Jerusalem 1981, Haifa 1981, Tel Aviv 1982) emerged from the <strong>second-wave feminist movement</strong> in Israel</li>
+<li><strong>Initial funding:</strong> The New Israel Fund was the primary early funder — NIF is explicitly associated with progressive/feminist causes in Israel</li>
+<li><strong>Advocacy positions:</strong> ARCCI publicly advocates for legislative reforms on sexual violence, campaigns against appointment of figures accused of sexual misconduct (e.g., Silvan Shalom), and submits reports to UN bodies</li>
+<li><strong>Rappaport Prize:</strong> Orit Sulitzeanu was recognized by the Rappaport Foundation for her work</li>
+</ol>
+<h3>Consent Framework</h3>
+<p>The program uses a <strong>consent-based framework</strong> (rather than a "refusal skills" or abstinence model). Key characteristics:</p>
+<ul>
+<li><strong>Affirmative consent</strong> — emphasis on "clear consent" (הסכמה חופשית), meaning consent must be actively given, not just absence of "no"</li>
+<li><strong>Social responsibility</strong> — places responsibility on all parties to ensure consent, not just on potential victims to resist</li>
+<li><strong>Boundary awareness</strong> — teaches recognition of personal boundaries and respect for others' boundaries</li>
+<li><strong>Flirtation vs. harassment distinction</strong> — age-appropriate discussion of the line between acceptable social interaction and harassment</li>
+</ul>
+<h3>Does It Include "Gender Ideology"?</h3>
+<p><strong>Based on available evidence:</strong></p>
+<ul>
+<li>The program content descriptions focus on <strong>consent, boundaries, and violence prevention</strong> rather than on gender theory, gender identity, or sexuality-spectrum topics</li>
+<li>The term "gender ideology" (אידאולוגיה מגדרית) does not appear in any of the program descriptions found</li>
+<li>The network does operate within a <strong>feminist theoretical framework</strong> (e.g., understanding sexual violence as rooted in power dynamics and gender inequality), but the school-facing program appears to be <strong>practically focused</strong> rather than theoretically ideological</li>
+<li>The KolMila chat service does handle questions about <strong>sexual orientation</strong> from teens, but this is a separate service, not part of the Gefen school program</li>
+<li><strong>No evidence found</strong> of LGBTQ+ content in the "Together in Consent" program specifically</li>
+</ul>
+<h3>Israeli vs. International Consent Education Models</h3>
+<table>
+<tr><th>Feature</th><th>Israeli "Together in Consent"</th><th>US (e.g., RAINN/Speak About It)</th><th>UK (PSHE curriculum)</th></tr>
+<tr><td>Taught by</td><td>External professionals (center staff)</td><td>Varies — school staff or NGOs</td><td>School staff (mandatory PSHE)</td></tr>
+<tr><td>Mandatory?</td><td>No — schools opt in via Gefen</td><td>Varies by state</td><td>Yes (since 2020)</td></tr>
+<tr><td>Age range</td><td>Elementary–high school</td><td>Primarily college/high school</td><td>All ages (age-adapted)</td></tr>
+<tr><td>Consent model</td><td>Affirmative ("clear consent")</td><td>Affirmative ("yes means yes")</td><td>Affirmative consent</td></tr>
+<tr><td>Gender/LGBTQ content</td><td>Minimal/absent from program</td><td>Often included</td><td>Explicitly included</td></tr>
+<tr><td>Operated by crisis centers?</td><td>Yes — integrated with support services</td><td>RAINN does both; varies</td><td>Separate from crisis services</td></tr>
+<tr><td>Government funding</td><td>Minimal (Gefen = school budget)</td><td>Federal grants (OVW, CDC)</td><td>Core school funding</td></tr>
+</table>
+
+</div>
+<div class="section" id="section-6">
+<h2>6. Foreign Funding — Detailed</h2>
+<h3>US-based Jewish Philanthropic Sources</h3>
+<p>The ARCCI network receives funding from multiple US Jewish foundations, but this is typical of Israeli social-service nonprofits and does not indicate unusual external influence:</p>
+<ul>
+<li><strong>New Israel Fund</strong> — documented historical primary funder. NIF "nurtured" ARCCI in its early years. NIF remains a listed partner. (Source: https://www.nif.org/tag/association-of-rape-crisis-centers/)</li>
+<li><strong>Hadassah Foundation</strong> — multiple documented grants ($25K for ombudsman training, $20K discretionary, $25K collective response fund post-Oct 7). Grants underwritten by the Andrea Silagi Fund. (Source: https://hadassahfoundation.org/grant-recipient/the-association-of-rape-crisis-centers-in-israel-arcci/)</li>
+<li><strong>Jewish Foundation Los Angeles</strong> — listed as a grant organization. (Source: https://www.jewishfoundationla.org/grant-org/association-of-rape-crisis-centers-in-israel/)</li>
+<li><strong>UJA-Federation of New York</strong> — documented validation/documentation project support. (Source: https://www.ujafedny.org/news/va-rape-crisis-centers)</li>
+<li><strong>JUF (Jewish United Fund)</strong> — documented sexual assault survivors project. (Source: https://www.juf.org/Israel_Office/tmpl-Impact.aspx?id=452897)</li>
+</ul>
+<h3>International (Non-Jewish) Funding</h3>
+<p><strong>No evidence found</strong> of direct funding from:</p>
+<ul>
+<li>European Union / European Commission</li>
+<li>UN Women or UNFPA</li>
+<li>European government bilateral aid</li>
+<li>Ford Foundation</li>
+<li>Open Society Foundation</li>
+</ul>
+<h3>Domestic Israeli Funding</h3>
+<ul>
+<li><strong>Government (Ministry of Welfare):</strong> Dominant funder for individual centers (not umbrella). Cumulative government transfers to the sector: ~27.5M NIS (3-year period per obudget.org)</li>
+<li><strong>Igul LeTova:</strong> Micro-donation platform (~10K participants)</li>
+<li><strong>Individual donors:</strong> Via IsraelGives, JGive platforms</li>
+</ul>
+
+</div>
+<div class="section" id="section-7">
+<h2>7. Leadership</h2>
+<h3>ARCCI Umbrella</h3>
+<table>
+<tr><th>Name</th><th>Role</th><th>Background</th></tr>
+<tr><td><strong>Orit Sulitzeanu (אורית סוליציאנו)</strong></td><td>CEO (since 2013)</td><td>BA East Asian Studies (Hebrew U, honors); MA Nonprofit Management (Hebrew U, cum laude); MA Communications (Hebrew U, cum laude). Former spokesperson Israel Women's Network (1992-2000). Former head of communications Hebrew University (2000-2013). Feminist activist. Born 1964, Jerusalem. Father: Prof. Dov-Bernard Sulitzeanu (immunologist, Hebrew U). Mother: Ada Sulitzeanu (biologist, Holocaust survivor).</td></tr>
+<tr><td><strong>Erez Klapon (ארז כלפון)</strong></td><td>Board Chair</td><td>—</td></tr>
+<tr><td><strong>Noga Berger</strong></td><td>Communications/Publications</td><td>Created 2025 annual report (per PDF metadata)</td></tr>
+</table>
+<h3>Individual Center Directors (where identified)</h3>
+<table>
+<tr><th>Center</th><th>Director</th><th>Notes</th></tr>
+<tr><td>Haifa (HRCC)</td><td><strong>Tali Eisenberg</strong></td><td>CEO</td></tr>
+<tr><td>Other centers</td><td>Not identified in this research</td><td>Available on GuideStar /people pages</td></tr>
+</table>
+
+</div>
+<div class="section" id="section-8">
+<h2>8. Controversies</h2>
+<h3>Specific to "Together in Consent" Program</h3>
+<p><strong>No specific controversies found</strong> about the content of the "יחד בהסכמה" school program. No documented parent complaints, no media reports of objectionable content, no legal challenges.</p>
+<h3>Broader Sex Education Controversies in Israel</h3>
+<p>The broader Israeli sex education landscape has significant controversies, but these are not specific to ARCCI's program:</p>
+<ol>
+<li><strong>2013: Removal from religious schools</strong> — All instruction about human reproduction was removed from the science curriculum of "state religious" (ממלכתי-דתי) public junior high schools. The Education Ministry asked publishers to eliminate chapters on reproduction, contraception, and STDs from religious school textbooks. (Source: https://www.deseret.com/2013/9/3/20524998/in-israel-sex-education-removed-from-junior-high-curriculum/)</li>
+</ol>
+<ol>
+<li><strong>2024: Far-right legislative proposal</strong> — Deputy Minister proposed barring teaching about sexual orientation before 9th grade. The Aguda (LGBTQ association) opposed this. (Source: https://www.timesofisrael.com/far-right-deputy-ministers-bill-would-bar-teaching-sex-orientation-before-9th-grade/)</li>
+</ol>
+<ol>
+<li><strong>Religious community tensions</strong> — 63% of children treated by social services for sexual abuse come from religious/Haredi families (1.4x their population proportion), yet these communities most resist sex education programs. (Source: https://www.ynet.co.il/judaism/article/rj1ybxwms)</li>
+</ol>
+<ol>
+<li><strong>Optional status</strong> — Sex education in Israel was not mandatory until recently. Starting 2023, the Ministry of Education announced mandatory sex education for all students, but enforcement and monitoring remain weak. (Source: https://www.ynet.co.il/news/article/byjlcmmc5)</li>
+</ol>
+<ol>
+<li><strong>Parental consent requirements</strong> — Legislative proposals have required 75% parental approval for sex education lessons, with all students in the class needing to consent.</li>
+</ol>
+<h3>ARCCI Political Advocacy (Not Education-Related)</h3>
+<p>ARCCI has taken public political positions that generated attention:</p>
+<ul>
+<li><strong>Opposed appointment of Silvan Shalom</strong> as Israel Aerospace Industries chairman, calling it "a slap in the face" to sexual assault survivors. (Source: https://www.israelhayom.co.il/news/politics/article/19666495)</li>
+<li><strong>Submitted report to UN</strong> on Hamas sexual violence during October 7, 2023 attack. (Source: https://www.gov.il/en/pages/arcci-submits-first-report-to-un-21-feb-2024)</li>
+<li><strong>Regular media presence</strong> — CEO Sulitzeanu frequently quoted in Haaretz, Ynet, Maariv on sexual violence policy issues.</li>
+</ul>
+<h3>Statistical Context (2024 Annual Report)</h3>
+<p>ARCCI's 2024 annual report (presented to Knesset) documents:</p>
+<ul>
+<li><strong>51,000+ inquiries</strong> received across all centers</li>
+<li><strong>12,757 new cases</strong></li>
+<li><strong>~4,000 additional teen chat inquiries</strong> via KolMila</li>
+<li><strong>81% of sexual offense cases closed without indictment</strong></li>
+<li><strong>317 reports of drug/alcohol-facilitated sexual assault</strong> (highest ever recorded)</li>
+<li><strong>30% increase in sexual offense reports from educational institutions</strong></li>
+<li>Only <strong>28% of convicted sex offenders</strong> placed in dedicated rehabilitation programs</li>
+</ul>
+
+</div>
+<div class="section" id="section-9">
+<h2>9. Risk and Ideology Assessment</h2>
+<h3>Values Alignment Table</h3>
+<table>
+<tr><th>Dimension</th><th>Assessment</th><th>Evidence</th></tr>
+<tr><td><strong>Transparency</strong></td><td>HIGH</td><td>All entities on GuideStar, financials on obudget, annual reports published and submitted to Knesset</td></tr>
+<tr><td><strong>Government accountability</strong></td><td>HIGH</td><td>Major government funding recipient, subject to oversight, Knesset committee appearances</td></tr>
+<tr><td><strong>Feminist ideology</strong></td><td>PRESENT</td><td>Explicit feminist orientation in leadership and organizational mission. Consent framework rooted in feminist theory of power dynamics</td></tr>
+<tr><td><strong>Gender ideology / gender theory</strong></td><td>NOT DETECTED in school programs</td><td>No evidence of gender identity, gender-spectrum, or queer theory content in Gefen programs specifically</td></tr>
+<tr><td><strong>LGBTQ content</strong></td><td>MINIMAL</td><td>KolMila chat handles orientation questions, but not part of Gefen school program. Separate from "Together in Consent"</td></tr>
+<tr><td><strong>Age-appropriateness</strong></td><td>NO CONCERNS RAISED</td><td>No documented complaints about content being too explicit for age groups. Programs are differentiated by age with small group formats</td></tr>
+<tr><td><strong>Foreign influence</strong></td><td>LOW</td><td>Funding is primarily domestic (government + Israeli donors). US Jewish foundation funding is typical for Israeli nonprofits. No unusual foreign government funding</td></tr>
+<tr><td><strong>Political advocacy</strong></td><td>PRESENT but SEPARATE</td><td>ARCCI umbrella engages in political advocacy (Knesset lobbying, UN submissions), but this is the umbrella org's function, not the school programs</td></tr>
+</table>
+<h3>Key Distinctions</h3>
+<ol>
+<li><strong>The school program is narrow; the organization is broad.</strong> The 192,176 NIS Gefen program is a tiny prevention-education arm. The bulk of the network's 113M+ NIS operation is crisis response, therapy, hotlines, and legal accompaniment.</li>
+</ol>
+<ol>
+<li><strong>Feminist orientation ≠ gender ideology.</strong> The program is feminist in the sense that it frames sexual violence as a societal problem requiring systemic change, not just individual risk avoidance. But it does not appear to teach gender theory, gender fluidity, or queer theory in the school programs.</li>
+</ol>
+<ol>
+<li><strong>Each center is independent.</strong> The five Gefen programs are run by five different legal entities. Content may vary. The Haifa center (R5 rated — highest) appears to have the most developed educational arm.</li>
+</ol>
+
+</div>
+<div class="section" id="section-10">
+<h2>10. Open Questions for Further Investigation</h2>
+<ol>
+<li><strong>Actual program content:</strong> The Gefen catalog descriptions and HRCC website give overviews, but the actual lesson plans/materials have not been reviewed. Obtaining the specific curriculum would require requesting from the centers or the Ministry of Education.</li>
+</ol>
+<ol>
+<li><strong>Why is Haifa rated R5 while others are R4 or R3?</strong> What distinguishes the Haifa program from the others?</li>
+</ol>
+<ol>
+<li><strong>WAVO (Nazareth) center:</strong> This center serves Arab women — does the program content differ for Arab schools? How is consent education adapted for conservative Arab communities?</li>
+</ol>
+<ol>
+<li><strong>Tahel (religious center):</strong> Not in the Gefen list — does the religious/Haredi center offer school programs at all? If so, how does content differ?</li>
+</ol>
+<ol>
+<li><strong>NIF current funding level:</strong> Historical primary funder, but current grant amounts not publicly disclosed.</li>
+</ol>
+<ol>
+<li><strong>ARCCI's 16.4M revenue composition:</strong> With only 195K from government all-time, where does the remaining ~16.2M come from? Annual donor report not publicly accessible.</li>
+</ol>
+
+</div>
+<div class="section" id="section-11">
+<h2>Sources</h2>
+<h3>GuideStar Israel</h3>
+<ul>
+<li>ARCCI: https://www.guidestar.org.il/organization/580173730</li>
+<li>Tel Aviv: https://www.guidestar.org.il/organization/580037604</li>
+<li>Jerusalem: https://www.guidestar.org.il/organization/580001261</li>
+<li>Haifa: https://www.guidestar.org.il/organization/580005767</li>
+<li>Sharon: https://www.guidestar.org.il/organization/580107993</li>
+<li>Kiryat Shmona: https://www.guidestar.org.il/organization/580347862</li>
+<li>Tair: https://www.guidestar.org.il/organization/580320265</li>
+<li>Tahel: https://www.guidestar.org.il/organization/580229979</li>
+<li>WAVO: https://www.guidestar.org.il/organization/580207199</li>
+</ul>
+<h3>obudget.org (Government Funding Data)</h3>
+<ul>
+<li>Tel Aviv: https://next.obudget.org/i/org/association/580037604</li>
+<li>Sharon: https://next.obudget.org/i/org/association/580107993</li>
+<li>Jerusalem: https://next.obudget.org/i/org/association/580001261</li>
+<li>Haifa: https://next.obudget.org/i/org/association/580005767</li>
+<li>Kiryat Shmona: https://next.obudget.org/i/org/association/580347862</li>
+<li>Maslan: https://next.obudget.org/i/org/association/580141455</li>
+<li>Tair: https://next.obudget.org/i/org/association/580320265</li>
+<li>ARCCI: https://next.obudget.org/i/org/association/580173730</li>
+<li>Sector report: https://next.obudget.org/i/reports/ngo-activity-report/סיוע%20לנפגעי%20תקיפה%20מינית</li>
+</ul>
+<h3>Program Information</h3>
+<ul>
+<li>HRCC Education Page: https://www.hrcc.org.il/חינוך-הסברה-והכשרות/</li>
+<li>KolMila Centers List: https://www.1202kolmila.org.il/centers/</li>
+<li>Gefen catalog: https://mosdot.education.gov.il/institutes/budget/gefen/</li>
+</ul>
+<h3>Funding Sources</h3>
+<ul>
+<li>NIF: https://www.nif.org/tag/association-of-rape-crisis-centers/</li>
+<li>Hadassah Foundation: https://hadassahfoundation.org/grant-recipient/the-association-of-rape-crisis-centers-in-israel-arcci/</li>
+<li>Jewish Foundation LA: https://www.jewishfoundationla.org/grant-org/association-of-rape-crisis-centers-in-israel/</li>
+<li>IsraelGives: https://israelgives.org/amuta/580173730</li>
+</ul>
+<h3>Leadership</h3>
+<ul>
+<li>Orit Sulitzeanu Wikipedia: https://he.wikipedia.org/wiki/אורית_סוליציאנו</li>
+<li>Sulitzeanu Rappaport Prize: https://www.rappaport-prize.org.il/en/orit-sulitzeanu</li>
+<li>Sulitzeanu Elluminate: https://elluminatewomen.org/initiatives/collective/2023-collective-members/orit-sulitzeanu/</li>
+</ul>
+<h3>Annual Reports and Statistics</h3>
+<ul>
+<li>2025 Annual Report (Knesset submission): https://fs.knesset.gov.il/25/Committees/25_cs_bg_10232712.pdf</li>
+<li>Knesset committee presentation: https://fs.knesset.gov.il/25/Committees/25_ci_bg_4271323.pdf</li>
+<li>Walla news report: https://news.walla.co.il/item/3705252</li>
+<li>Maariv 50K inquiries: https://www.maariv.co.il/news/israel/Article-879160</li>
+</ul>
+<h3>Controversies</h3>
+<ul>
+<li>Sex ed removed from religious schools (2013): https://www.deseret.com/2013/9/3/20524998/in-israel-sex-education-removed-from-junior-high-curriculum/</li>
+<li>Far-right bill on sexual orientation teaching: https://www.timesofisrael.com/far-right-deputy-ministers-bill-would-bar-teaching-sex-orientation-before-9th-grade/</li>
+<li>ARCCI vs Silvan Shalom: https://www.israelhayom.co.il/news/politics/article/19666495</li>
+<li>30% increase in school sex offenses: https://www.ynet.co.il/news/article/sjy6yeqgzx</li>
+</ul>
+
+</div>
+</div>
+
+<footer>
+  פרויקט זהות ציונית — דוח מחקר מעמיק | <a href="../">דירוג ערים</a> | <a href="../research/">כל הדוחות</a>
+</footer>
+
+</body>
+</html>

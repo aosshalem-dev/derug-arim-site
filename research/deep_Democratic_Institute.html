@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Democratic Institute (המכון הדמוקרטי - חברה וחינוך) — דוח מחקר מעמיק</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background: #f5f5f8;
+  color: #1a1a2e;
+  direction: rtl;
+  line-height: 1.8;
+  font-size: 17px;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #1a1a2e; color: #fff;
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  overflow-x: auto; white-space: nowrap;
+}
+nav .brand { font-weight: 700; color: #ff8800; flex-shrink: 0; }
+nav a { color: #ccc; text-decoration: none; font-size: 0.85em; padding: 8px 4px; border-bottom: 2px solid transparent; flex-shrink: 0; }
+nav a:hover { color: #ff8800; border-bottom-color: #ff8800; }
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a5a8a 100%);
+  color: #fff; padding: 50px 20px 40px; text-align: center;
+}
+.hero h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+.hero .subtitle { font-size: 1.05em; color: #b0c4de; margin-bottom: 6px; }
+.hero .meta { font-size: 0.9em; color: #ff8800; margin-top: 8px; }
+.risk-badge {
+  display: inline-block; padding: 4px 16px; border-radius: 20px;
+  font-size: 0.85em; font-weight: 600; margin-top: 10px;
+}
+.risk-high { background: #e74c3c; color: #fff; }
+.risk-medium { background: #f39c12; color: #fff; }
+.risk-low { background: #27ae60; color: #fff; }
+.container { max-width: 860px; margin: 0 auto; padding: 30px 20px 80px; }
+.toc {
+  background: #fff; border-radius: 8px; padding: 22px 26px;
+  margin-bottom: 32px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.toc h2 { font-size: 1.15em; color: #2a5a8a; margin-bottom: 12px; border-bottom: 2px solid #667eea; padding-bottom: 6px; }
+.toc ol { padding-right: 22px; font-size: 0.93em; }
+.toc li { margin-bottom: 4px; }
+.toc a { color: #2a5a8a; text-decoration: none; }
+.toc a:hover { color: #ff8800; text-decoration: underline; }
+.section {
+  background: #fff; border-radius: 8px; padding: 28px 26px;
+  margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.section h2 { font-size: 1.4em; color: #1a1a2e; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #667eea; }
+.section h3 { font-size: 1.1em; color: #2a5a8a; margin: 18px 0 8px; }
+.section h4 { font-size: 1em; color: #444; margin: 14px 0 6px; }
+.section p { margin-bottom: 12px; text-align: justify; }
+.section ul, .section ol { padding-right: 22px; margin-bottom: 12px; }
+.section li { margin-bottom: 5px; }
+blockquote {
+  background: #f0f4fa; border-right: 4px solid #667eea;
+  padding: 12px 18px; margin: 12px 0; border-radius: 0 6px 6px 0;
+  font-size: 0.94em; color: #333;
+}
+.thesis {
+  background: #fff8f0; border-right: 3px solid #ff8800;
+  padding: 14px 18px; margin: 12px 0; border-radius: 0 5px 5px 0;
+  font-size: 0.96em; color: #6b4500;
+}
+table {
+  width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.91em;
+}
+th {
+  background: #667eea; color: #fff; padding: 8px 12px;
+  text-align: right; position: sticky; top: 44px; z-index: 5;
+}
+td {
+  padding: 7px 12px; border-bottom: 1px solid #e8e8e8;
+  text-align: right; vertical-align: top;
+}
+tr:nth-child(even) { background: #f8f9fc; }
+a { color: #2a5a8a; }
+a:hover { color: #ff8800; }
+.back-link {
+  display: inline-block; margin-bottom: 20px; padding: 6px 14px;
+  background: #667eea; color: #fff; border-radius: 4px;
+  text-decoration: none; font-size: 0.88em;
+}
+.back-link:hover { background: #5a6fd6; color: #fff; }
+footer {
+  text-align: center; padding: 30px 20px; color: #888; font-size: 0.85em;
+}
+strong { color: #1a1a2e; }
+code {
+  background: #f0f0f0; padding: 1px 5px; border-radius: 3px;
+  font-size: 0.9em;
+}
+.source-tag {
+  display: inline-block; background: #e8eef6; padding: 2px 8px;
+  border-radius: 10px; font-size: 0.78em; color: #2a5a8a;
+  margin: 2px 3px; text-decoration: none;
+}
+.source-tag:hover { background: #d0dff0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">דוח מחקר מעמיק</span>
+  <a href="../">חזרה לדירוג</a>
+  <a href="../research/">כל הדוחות</a>
+  <a href="#section-1">1. ORGANIZATIONAL ST</a> <a href="#section-2">2. FINANCIAL ANALYSI</a> <a href="#section-3">3. LEADERSHIP & POLI</a> <a href="#section-4">4. IDEOLOGY & PROGRA</a> <a href="#section-5">5. GOVERNMENT TIES &</a> <a href="#section-6">6. LEGAL ACTIONS & C</a> <a href="#section-7">7. CONNECTION TO BRO</a> <a href="#section-8">8. VALUES ALIGNMENT </a> <a href="#section-9">9. KEY OPEN QUESTION</a> <a href="#section-10">SOURCES</a>
+</nav>
+
+<div class="hero">
+  <h1>The Democratic Institute (המכון הדמוקרטי - חברה וחינוך)</h1>
+  <div class="subtitle">THESIS</div>
+  <div class="meta"></div>
+  
+</div>
+
+<div class="container">
+  <a href="../research/" class="back-link">← כל דוחות המחקר</a>
+  <div class="toc"><h2>תוכן עניינים</h2><ol><li><a href="#section-1">1. ORGANIZATIONAL STRUCTURE</a></li><li><a href="#section-2">2. FINANCIAL ANALYSIS</a></li><li><a href="#section-3">3. LEADERSHIP & POLITICS</a></li><li><a href="#section-4">4. IDEOLOGY & PROGRAMS</a></li><li><a href="#section-5">5. GOVERNMENT TIES & INFLUENCE</a></li><li><a href="#section-6">6. LEGAL ACTIONS & CONTROVERSIES</a></li><li><a href="#section-7">7. CONNECTION TO BROADER DEMOCRATIC EDUCATION MOVEMENT</a></li><li><a href="#section-8">8. VALUES ALIGNMENT ASSESSMENT</a></li><li><a href="#section-9">9. KEY OPEN QUESTIONS</a></li><li><a href="#section-10">SOURCES</a></li></ol></div>
+  <div class="section" id="section-1">
+<h2>1. ORGANIZATIONAL STRUCTURE</h2>
+<h3>Legal Entity</h3>
+<ul>
+<li><strong>Full Legal Name:</strong> המכון הדמוקרטי - חברה וחינוך (ע"ר) / The Democratic Institute -- Society and Education (R.A.)</li>
+<li><strong>Registration Number:</strong> 580330660</li>
+<li><strong>Legal Type:</strong> Registered Association (Amuta), Non-profit</li>
+<li><strong>Founded:</strong> 1998 (some sources say 1996; Hecht founded IDE in 1996, formal registration may have been 1998)</li>
+<li><strong>Previous Name:</strong> המכון לחינוך דמוקרטי / The Institute for Democratic Education (until 2018)</li>
+<li><strong>Stated Mission:</strong> "Advancing human rights through democracy education and strengthening democracy in Israel and globally"</li>
+<li><strong>GuideStar Page:</strong> https://www.guidestar.org.il/organization/580330660</li>
+<li><strong>obudget Page:</strong> https://next.obudget.org/i/org/association/580330660</li>
+</ul>
+<h3>Offices</h3>
+<ul>
+<li><strong>Main Office:</strong> Yigal Alon 76, Tel Aviv-Yafo</li>
+<li><strong>Modiin Office:</strong> Lev HaIr 18, Modiin-Maccabim-Reut (listed as address on some records)</li>
+<li><strong>Email:</strong> di@democratic.co.il</li>
+<li><strong>Website:</strong> https://www.democratic.co.il (Hebrew) / https://www.democratic.co.il/en/ (English)</li>
+</ul>
+<h3>Staff Size</h3>
+<ul>
+<li><strong>69 employees</strong> (2024, per GuideStar/obudget)</li>
+<li><strong>0 volunteers</strong> reported</li>
+<li><strong>LinkedIn reports:</strong> 51-200 employees (may include contractors/fellows)</li>
+<li><strong>RocketReach reports:</strong> 19 employees (likely core staff only)</li>
+</ul>
+<h3>Governance</h3>
+<p>The organization practices what it preaches -- internal democratic governance:</p>
+<ul>
+<li><strong>Assembly of the Institute (אסיפת המכון):</strong> Monthly gathering of ALL staff, authorized to make substantial organizational decisions</li>
+<li><strong>Four Advisory Committees:</strong> Strategy, Budget/Finance, Human Resources, Pedagogy -- all employees participate, meeting ~7 times/year</li>
+<li><strong>Leadership Selection:</strong> Representative committee (3 management + 3 employee-elected) selects co-directors</li>
+<li><strong>Decentralized Structure:</strong> Autonomous departments with shared professional standards</li>
+</ul>
+<h3>Relationship to Democratic Schools Movement</h3>
+<p><strong>Direct lineage.</strong> Yaacov Hecht:</p>
+<ol>
+<li>Founded the Democratic School of Hadera (1987) -- first school in the world to call itself "democratic"</li>
+<li>Convened the first International Democratic Education Conference (IDEC) in Hadera (1993)</li>
+<li>Founded the Institute for Democratic Education (IDE) in 1996 to reform public school system</li>
+<li>Led IDE until 2010</li>
+<li>Founded Education Cities (ערי חינוך) in 2010, shifting focus to city-level educational innovation</li>
+</ol>
+<p>After Hecht's departure in 2010, the IDE continued under new leadership (Michal Gilboa-Ater and Yotam Tron from 2014). The 2018 name change reflects the post-Hecht era's broadening beyond "democratic education" as a school model.</p>
+<h3>Sister Organizations / Network</h3>
+<ul>
+<li><strong>Education Cities (ערי חינוך):</strong> Yaacov Hecht's current organization, focused on municipal education transformation. Separate entity but ideological sibling.</li>
+<li><strong>IDEC (International Democratic Education Conference):</strong> Annual global conference Hecht started; IDE/The Democratic Institute has hosted it in Israel.</li>
+<li><strong>Democratic schools in Israel:</strong> ~25+ state-recognized democratic schools exist. The Institute is NOT a school operator -- it is the movement's professional development and advocacy arm.</li>
+<li><strong>Demokida Wiki (דמוקידע):</strong> wiki.democratic.co.il -- the Institute's knowledge base on democratic education concepts.</li>
+</ul>
+<h3>No Known US Entity</h3>
+<p>No evidence of a parallel 501(c)(3) or US fundraising arm was found.</p>
+
+</div>
+<div class="section" id="section-2">
+<h2>2. FINANCIAL ANALYSIS</h2>
+<h3>Revenue (Annual Turnover)</h3>
+<table>
+<tr><th>Year</th><th>Revenue (NIS)</th><th>Source</th></tr>
+<tr><td>2024</td><td>10,627,378</td><td>obudget/GuideStar</td></tr>
+<tr><td>2022</td><td>11,409,821</td><td>obudget</td></tr>
+<tr><td>Field Median (2024)</td><td>2,119,903</td><td>Education, Training & Professional Development sector</td></tr>
+</table>
+<p><strong>Key observation:</strong> The Institute's revenue (~10.6M NIS) is approximately <strong>5x the sector median</strong> (2.1M NIS), making it a dominant player in the education training NGO space.</p>
+<h3>Government Contracts (Ministry of Education) -- Total: ~4,743,198 NIS</h3>
+<p>Breakdown of Ministry of Education contracts (from obudget):</p>
+<table>
+<tr><th>Contract Type</th><th>Amount (NIS)</th></tr>
+<tr><td>Training course execution (ביצוע קורסי הכשרה)</td><td>1,489,710</td></tr>
+<tr><td>Tender 12/5.2017 contracts (4 contracts)</td><td>1,290,240</td></tr>
+<tr><td>Period contract (23.4.18 - 31.10.18)</td><td>1,813,824</td></tr>
+<tr><td>Professional open course operation</td><td>149,184</td></tr>
+<tr><td>Other</td><td>240</td></tr>
+</table>
+<h3>Other Government Funding</h3>
+<ul>
+<li><strong>Ministry of Planning:</strong> 8,500 NIS -- "Dialogue circles and learning development for Holocaust Remembrance Day"</li>
+<li><strong>Total 3-year government transfers reported:</strong> 216,864 NIS (this appears to be a trailing 3-year figure from obudget, which may not capture all indirect contract flows)</li>
+</ul>
+<h3>Revenue Composition Analysis</h3>
+<ul>
+<li>Government contracts to Ministry of Education: ~4.7M NIS (~44% of revenue)</li>
+<li>The remaining ~56% (~5.9M NIS) likely comes from:</li>
+<li>Direct school/municipality purchases of training services</li>
+<li>GAFEN system purchases (schools buy from approved vendors)</li>
+<li>Philanthropic donations (amount unknown)</li>
+<li>Academic program partnerships (Kibbutzim College, Kaye College)</li>
+</ul>
+<h3>Foreign Funding</h3>
+<p><strong>No evidence found</strong> of NIF, EU, or other foreign government/foundation funding. The organization does not appear in NGO Monitor's lists of NIF grantees. This is notable -- it suggests the Institute is primarily self-sustaining through service contracts rather than advocacy grant-dependent.</p>
+<h3>Revenue Trend</h3>
+<p>The drop from 11.4M (2022) to 10.6M (2024) represents a modest ~7% decline, potentially related to the post-Oct 7 disruption to education system operations.</p>
+
+</div>
+<div class="section" id="section-3">
+<h2>3. LEADERSHIP & POLITICS</h2>
+<h3>Current Joint CEOs (since ~2024)</h3>
+<p><strong>Amit Gal-Osem (אמית גל אוסם)</strong></p>
+<ul>
+<li>25 years of managerial experience in education (private sector and third sector)</li>
+<li>Lecturer in education and psychology at Kinneret Academic College (Jordan Valley) for ~10 years</li>
+<li>Managed the Democratic Institute's northern Israel partnerships for 3 years before becoming co-CEO</li>
+<li>BA in Behavioral Sciences; MA in Counseling and Human Development (thesis on single women)</li>
+</ul>
+<p><strong>Guy Von-Raalte (גיא פון ראלטה)</strong></p>
+<ul>
+<li>Two decades in public service, including senior management positions at the Prime Minister's Office</li>
+<li>MA in Education Administration and Leadership, Tel Aviv University</li>
+<li>Graduate of the Mandel School for Educational Leadership</li>
+<li>Former elementary school principal</li>
+<li>Described as "a firm proponent of a humanistic approach to education, placing the individual at the center"</li>
+</ul>
+<h3>Former Joint CEOs (2014 - ~2024)</h3>
+<p><strong>Michal Gilboa-Ater (מיכל גלבוע אטר)</strong></p>
+<ul>
+<li>Graduate of Mandel Foundation's 8th cohort (completed 2001)</li>
+<li>Co-directed the Institute for approximately 10 years</li>
+<li>LinkedIn title: CO-CEO at DI The Democratic Institute</li>
+<li>Currently listed on Mandel Foundation graduates page</li>
+</ul>
+<p><strong>Yotam Tron (יותם טרון)</strong></p>
+<ul>
+<li>Maoz alumni (leadership development fellowship)</li>
+<li>After leaving the Democratic Institute, became Organizational Development Partner at Wix</li>
+<li>Co-directed with Gilboa-Ater from 2014</li>
+</ul>
+<h3>Board Members</h3>
+<p><strong>Rafael Yudlevitch (רפאל יודלביץ)</strong></p>
+<ul>
+<li>Board member since early 2017</li>
+<li>Retired Lieutenant-Colonel, IDF field forces</li>
+<li>Lives in Givat Ada, married with 3 children</li>
+<li>"Believes education is key to reducing social gaps and enabling equal opportunities"</li>
+</ul>
+<p>Full board list could not be extracted from GuideStar (JavaScript-rendered page).</p>
+<h3>Founder</h3>
+<p><strong>Yaacov Hecht (יעקב הכט)</strong> -- Born 1958, Hadera</p>
+<ul>
+<li>Founded Democratic School of Hadera (1987)</li>
+<li>Founded IDE (1996)</li>
+<li>Led IDE until 2010</li>
+<li>Founded Education Cities (2010)</li>
+<li>Published "Democratic Education: A Beginning of a Story" (book, published by IDE)</li>
+<li>Speaker at Council of Europe World Forum for Democracy (2016)</li>
+<li>No longer formally affiliated with the Democratic Institute</li>
+</ul>
+<h3>Political Connections & Orientation</h3>
+<ul>
+<li>The organization operates from a <strong>progressive, left-leaning perspective</strong> emphasizing social equality, dialogue, multiculturalism, and citizen participation.</li>
+<li><strong>Mandel Foundation pipeline:</strong> Both Gilboa-Ater (Mandel alumna) and Von-Raalte (Mandel School graduate) have Mandel connections. The Mandel Foundation is a major player in Israeli educational leadership development.</li>
+<li><strong>Maoz fellowship:</strong> Tron is a Maoz alum. Maoz develops "change makers in Israel's public sphere."</li>
+<li><strong>Kibbutz movement connection:</strong> Academic partnership with Kibbutzim College (founded by the kibbutz movement).</li>
+<li>No direct party-political connections found. The Institute appears to avoid overt political positioning.</li>
+</ul>
+
+</div>
+<div class="section" id="section-4">
+<h2>4. IDEOLOGY & PROGRAMS</h2>
+<h3>What "Democratic Education" Means -- Concretely</h3>
+<p>The Institute promotes four foundational principles:</p>
+<ol>
+<li><strong>Dialogue (דיאלוג):</strong> Disagreement creates space for dialogue enabling consensus on complex issues</li>
+<li><strong>Multiculturalism (רב-תרבותיות):</strong> Diversity generates abundance and opportunity</li>
+<li><strong>Community (קהילתיות):</strong> Community fosters individual and societal growth</li>
+<li><strong>Critical Thinking/Activism (חשיבה ביקורתית/אקטיביזם):</strong> Enables meaningful social participation</li>
+</ol>
+<p>In practice, this translates to:</p>
+<ul>
+<li><strong>Participatory decision-making</strong> in schools and organizations</li>
+<li><strong>Student choice</strong> in learning paths and activities</li>
+<li><strong>Multi-age learning</strong> environments</li>
+<li><strong>Democratic governance structures</strong> (parliament, committees, judicial bodies) in schools</li>
+<li><strong>Community integration</strong> -- learning happens outside the classroom too</li>
+</ul>
+<h3>Major Programs</h3>
+<p><strong>1. Halutz -- Educational Pioneer Program (חלוץ חינוכי)</strong></p>
+<ul>
+<li>Running since 2009</li>
+<li>5-year training program for young teachers to become school principals</li>
+<li>Focus: geographic and social periphery</li>
+<li>Partnership with Ministry of Education and philanthropic foundations</li>
+<li>As of 2022: 400+ graduates, ~270 active pioneers in ~70 schools</li>
+<li>2017: 53 participating schools</li>
+<li>Expanded to include Arab schools in northern region</li>
+<li>Addresses 40% teacher dropout rate within first 5 years</li>
+</ul>
+<p><strong>2. Early Childhood Programs</strong></p>
+<ul>
+<li><strong>Noah's Ark Project (תיבת נח):</strong> Encourages preschools to develop models advancing thinking, dialogue, cooperation</li>
+<li><strong>"This Kindergarten is Me" (הגן הזה הוא אני):</strong> Preschoolers design their own learning environments around curiosity, initiation, self-realization, belonging</li>
+</ul>
+<p><strong>3. Municipal Democracy (דמוקרטיה מוניציפלית)</strong></p>
+<ul>
+<li>Local governance and civic participation initiatives</li>
+<li>"Colors in the Neighborhood" program: diverse community groups work with local government on local needs</li>
+<li>Partnership between residents and local authorities</li>
+</ul>
+<p><strong>4. Academic Training Programs</strong></p>
+<ul>
+<li><strong>Kibbutzim College:</strong> "Social Educational Entrepreneurship Incubator" (HaHamama/Greenhouse) -- BA track training educators as democratic change agents</li>
+<li><strong>Kaye College (Beer Sheva):</strong> "Shvilim" (Paths) program -- combining democratic education with informal education and geography</li>
+<li><strong>Kaye College:</strong> "Netivim/Masarat" -- Bedouin student leadership development in the Negev</li>
+</ul>
+<p><strong>5. Democratix (דמוקרטיקס)</strong></p>
+<ul>
+<li>Community for social change leaders</li>
+<li>Project management tools for activists</li>
+</ul>
+<p><strong>6. Research & Evaluation</strong></p>
+<ul>
+<li>Uses YMA model (knowledge, skills, habits) for program assessment</li>
+<li>Internal research department</li>
+</ul>
+<p><strong>7. Psik (פסיק) Magazine</strong></p>
+<ul>
+<li>Online publication, 8+ issues</li>
+<li>Topics: democratic culture, multiculturalism, participatory practices, cooperation, democratic organizations, influence, dialogue, activism</li>
+</ul>
+<h3>WorldBlu Certification</h3>
+<ul>
+<li><strong>Certified in 2018</strong> as a WorldBlu Freedom-Centered Organization</li>
+<li><strong>First and only such certification in the Middle East</strong></li>
+<li>WorldBlu certifies organizations scoring 3.5+ on a 0-5.0 scale across 10 Principles of Organizational Democracy</li>
+<li>~200 companies worldwide have received this certification</li>
+<li>Certification validates the Institute practices internally what it advocates externally</li>
+</ul>
+<h3>Demokida Wiki (דמוקידע)</h3>
+<ul>
+<li>URL: https://wiki.democratic.co.il</li>
+<li>The Institute's educational knowledge base</li>
+<li>Contains entries on democratic schools, democratic education principles, governance structures</li>
+<li>Serves as resource for educators implementing democratic practices</li>
+<li>Includes articles like "What is democratic about the Democratic Institute?"</li>
+</ul>
+<h3>Hebrew vs. English Messaging Comparison</h3>
+<p><strong>Hebrew (democratic.co.il):</strong> Emphasizes "שינוי חברתי" (social change), "תרבות דמוקרטית" (democratic culture), and "ערכים" (values). The tone is more activist -- framing the work as building a democratic society.</p>
+<p><strong>English (democratic.co.il/en/):</strong> Emphasizes "innovation," "leadership," and "meaningful social change." The framing is more NGO/impact-oriented. Less ideological, more practical.</p>
+<p><strong>Gap:</strong> The English site under-represents the explicit social justice and equality framing present in Hebrew. The Hebrew messaging makes clearer that this is about reshaping Israeli society through education; the English version sounds more like a generic education innovation NGO.</p>
+<h3>Do They Redefine "Democracy"?</h3>
+<p>Yes, subtly. In their framework, "democracy" is not primarily about political systems or elections. It is about:</p>
+<ul>
+<li><strong>A culture of daily life</strong> -- how people interact, make decisions, share power</li>
+<li><strong>Organizational governance</strong> -- how workplaces and schools are structured</li>
+<li><strong>Individual development</strong> -- self-expression, choice, critical thinking</li>
+</ul>
+<p>This is a <strong>semantic expansion</strong> of "democracy" from the political to the personal/organizational. It is consistent with the international democratic education movement (Summerhill, Sudbury Valley, IDEC) but goes further by applying it to municipal governance and workplaces.</p>
+
+</div>
+<div class="section" id="section-5">
+<h2>5. GOVERNMENT TIES & INFLUENCE</h2>
+<h3>Ministry of Education Contracts</h3>
+<p>The Ministry of Education is the Institute's largest funder, providing ~44% of revenue through:</p>
+<ol>
+<li><strong>Tender 12/5.2017:</strong> Won 4 contracts totaling 1,290,240 NIS</li>
+<li><strong>Training course execution:</strong> 1,489,710 NIS</li>
+<li><strong>Period contract (April-October 2018):</strong> 1,813,824 NIS</li>
+<li><strong>Professional open course operation:</strong> 149,184 NIS</li>
+</ol>
+<h3>GAFEN System</h3>
+<p>The GAFEN (גפ"ן -- Flexibility in Pedagogical Management) system is the Ministry of Education's marketplace for educational programs. Schools receive per-student budgets (11,500 NIS/student) to purchase from approved vendors. The Democratic Institute is a registered GAFEN supplier, meaning any Israeli school can use Ministry funds to purchase their training programs.</p>
+<h3>How They Get Into Schools</h3>
+<ol>
+<li><strong>Direct Ministry contracts</strong> for teacher training courses</li>
+<li><strong>GAFEN marketplace</strong> -- schools choose to purchase their programs</li>
+<li><strong>Educational Pioneer Program</strong> -- places trained educators directly into peripheral schools</li>
+<li><strong>Academic pipelines</strong> -- graduates of their Kibbutzim College and Kaye College programs enter the school system with democratic education training</li>
+</ol>
+<h3>Advisory/Curriculum Role</h3>
+<p>No evidence found of formal advisory role to curriculum development. Their influence is indirect: training teachers and principals who then implement democratic education practices in their schools.</p>
+<h3>Government PDF Info Sheets</h3>
+<p>Two government info sheets exist (PDFs on govextra.gov.il, currently redirecting to maintenance page):</p>
+<ul>
+<li>"המכון הדמוקרטי – חברה וחינוך -- קשיתוף ציבור" (Public participation)</li>
+<li>"המכון הדמוקרטי – חברה וחינוך -- גיהון אנושי" (Human resources)</li>
+</ul>
+<p>These indicate the Institute provides formal government-recognized services.</p>
+
+</div>
+<div class="section" id="section-6">
+<h2>6. LEGAL ACTIONS & CONTROVERSIES</h2>
+<h3>Name Change (2018): Why?</h3>
+<p>The official explanation: "expansion of operational spaces from education to society broadly" -- the new name "expresses the broadening of our work from education to society in a comprehensive and broad manner."</p>
+<p><strong>Deeper analysis:</strong> Multiple factors likely drove this:</p>
+<ol>
+<li><strong>Market expansion:</strong> "Democratic Education" limited them to schools. "Democratic -- Society and Education" opens municipal, organizational, and workplace markets.</li>
+<li><strong>Avoiding the "democratic schools" stigma:</strong> Academic criticism (notably Arie Kizel, University of Haifa, 2012) characterized democratic schools as "selective" and potentially separatist -- serving middle/upper-middle class Ashkenazi populations. The name change distances the Institute from this critique.</li>
+<li><strong>Post-Hecht identity:</strong> With Hecht gone to Education Cities since 2010, the Institute needed its own identity beyond its founder's vision.</li>
+<li><strong>WorldBlu timing:</strong> The name change and WorldBlu certification both happened in 2018 -- suggesting a coordinated rebranding.</li>
+</ol>
+<h3>Academic Criticism of Democratic Education in Israel</h3>
+<p><strong>Arie Kizel (University of Haifa)</strong> published:</p>
+<ul>
+<li>"The Democratic Selective Education in Israel: Tikkun Olam or Separatism" (2012)</li>
+<li>"The Philosophy of Social Segregation in Israel's Democratic Schools"</li>
+</ul>
+<p>Key criticism: Democratic schools charge tuition (~$1,200/year), attract middle-to-upper-middle-class families, and may function as a socioeconomic sorting mechanism rather than a democratizing force.</p>
+<p><strong>Relevance to the Institute:</strong> The Institute's pivot toward peripheral schools (Educational Pioneer Program), Arab schools, Bedouin communities (Netivim/Masarat), and early childhood education directly addresses this criticism -- moving from serving affluent populations to underserved ones.</p>
+<h3>No Litigation Found</h3>
+<p>No lawsuits, regulatory actions, or State Comptroller findings were identified.</p>
+<h3>No Controversy in News</h3>
+<p>Searches of Hebrew and English news sources found no significant negative coverage of the Democratic Institute specifically.</p>
+
+</div>
+<div class="section" id="section-7">
+<h2>7. CONNECTION TO BROADER DEMOCRATIC EDUCATION MOVEMENT</h2>
+<h3>International Movement</h3>
+<p>The democratic education movement traces to:</p>
+<ul>
+<li><strong>A.S. Neill's Summerhill School</strong> (1921, UK) -- the original free school</li>
+<li><strong>Sudbury Valley School</strong> (1968, USA) -- student self-governance model</li>
+<li><strong>Yaacov Hecht's Democratic School of Hadera</strong> (1987) -- coined the term "democratic school"</li>
+<li><strong>IDEC</strong> (1993-present) -- annual global conference started by Hecht</li>
+</ul>
+<p>Israel is notable for being <strong>the first country to officially recognize democratic education as an education stream</strong>, with state-funded democratic schools.</p>
+<h3>The Institute's Place in the Movement</h3>
+<p>The Democratic Institute is the <strong>institutional backbone</strong> of the movement in Israel. It:</p>
+<ul>
+<li>Was founded by the movement's creator (Hecht)</li>
+<li>Trains teachers in democratic education through academic programs</li>
+<li>Operates the movement's knowledge wiki (Demokida)</li>
+<li>Hosts IDEC in Israel</li>
+<li>Holds WorldBlu certification (organizational democracy)</li>
+</ul>
+<p>But it has <strong>evolved beyond the movement</strong>: while democratic schools serve ~25 schools, the Institute works with 500+ institutions including conventional public schools. It has become a <strong>mainstreaming vehicle</strong> -- bringing democratic education principles into the regular school system rather than keeping them in alternative schools.</p>
+
+</div>
+<div class="section" id="section-8">
+<h2>8. VALUES ALIGNMENT ASSESSMENT</h2>
+<table>
+<tr><th>Value</th><th>Score (1-5)</th><th>Notes</th></tr>
+<tr><td><strong>Transparency</strong></td><td>3/5</td><td>GuideStar registered, but financial details hard to access; no published annual reports found online; donor sources opaque</td></tr>
+<tr><td><strong>Inclusion</strong></td><td>4/5</td><td>Active programs for periphery, Arab communities, Bedouin; expanded from elitist origins</td></tr>
+<tr><td><strong>Democratic Governance</strong></td><td>5/5</td><td>WorldBlu certified; practices internal democracy with assembly, committees, participatory leadership selection</td></tr>
+<tr><td><strong>Educational Innovation</strong></td><td>4/5</td><td>Pioneer Program, early childhood models, academic tracks are genuinely innovative; Harvard GEII recognition</td></tr>
+<tr><td><strong>Government Accountability</strong></td><td>3/5</td><td>Receives significant Ministry funds but limited public reporting on outcomes</td></tr>
+<tr><td><strong>Political Independence</strong></td><td>4/5</td><td>No party affiliations found; progressive orientation but not overtly political</td></tr>
+<tr><td><strong>Financial Sustainability</strong></td><td>4/5</td><td>10M+ NIS revenue, 5x sector median; diversified between government and service contracts</td></tr>
+<tr><td><strong>Social Impact</strong></td><td>4/5</td><td>400+ Pioneer graduates, 500+ institutions served, 10,000 students reached indirectly; but hard numbers on long-term outcomes sparse</td></tr>
+</table>
+
+</div>
+<div class="section" id="section-9">
+<h2>9. KEY OPEN QUESTIONS</h2>
+<ol>
+<li><strong>Donor Opacity:</strong> Who are the "philanthropic foundations" funding the Educational Pioneer Program? No foundation names are publicly disclosed. Is there NIF, foreign government, or other politically significant funding?</li>
+</ol>
+<ol>
+<li><strong>Revenue Trend:</strong> Revenue dropped from 11.4M (2022) to 10.6M (2024). Is this a temporary post-Oct 7 dip or a structural decline? What does the 2017-2021 trendline look like?</li>
+</ol>
+<ol>
+<li><strong>Outcome Data:</strong> The Institute claims 500+ institutions and thousands of change agents. Where is the independent evaluation? The YMA model is referenced but no published results found.</li>
+</ol>
+<ol>
+<li><strong>Hecht Relationship:</strong> How connected is Yaacov Hecht to the current organization? Does he sit on the board? Does Education Cities compete or collaborate?</li>
+</ol>
+<ol>
+<li><strong>Board Composition:</strong> Full board member list not accessible (GuideStar JavaScript rendering). Who else besides Rafael Yudlevitch sits on the board?</li>
+</ol>
+<ol>
+<li><strong>Leadership Transition:</strong> When exactly did Gilboa-Ater and Tron leave? Was the transition to Gal-Osem and Von-Raalte smooth?</li>
+</ol>
+<ol>
+<li><strong>GAFEN Revenue:</strong> How much of the ~5.9M non-government revenue comes through GAFEN school purchases vs. direct donations vs. academic program fees?</li>
+</ol>
+<ol>
+<li><strong>Name Change Motivation:</strong> The official explanation is "expansion." But did the democratic schools movement's elitism critique (Kizel) or internal strategic disagreements play a role?</li>
+</ol>
+<ol>
+<li><strong>Post-Oct 7 Activity:</strong> How has the organization adapted to the wartime and post-war education environment? The "dialogue" and "multiculturalism" framing faces headwinds in the current political climate.</li>
+</ol>
+<ol>
+<li><strong>Connection to Left Political Ecosystem:</strong> The progressive values, Mandel pipeline, kibbutz college partnerships, and focus on "democratic culture" place the Institute firmly in Israel's center-left civil society ecosystem. But unlike more overtly political NGOs, it operates through education rather than advocacy. Is this by design to maintain government contract eligibility?</li>
+</ol>
+
+</div>
+<div class="section" id="section-10">
+<h2>SOURCES</h2>
+<h3>Primary Sources</h3>
+<ul>
+<li>GuideStar Israel: https://www.guidestar.org.il/organization/580330660</li>
+<li>GuideStar Finances: https://www.guidestar.org.il/organization/580330660/finances</li>
+<li>GuideStar People: https://www.guidestar.org.il/organization/580330660/people</li>
+<li>obudget.org: https://next.obudget.org/i/org/association/580330660</li>
+<li>Official Website (Hebrew): https://www.democratic.co.il</li>
+<li>Official Website (English): https://www.democratic.co.il/en/ide/</li>
+<li>Demokida Wiki: https://wiki.democratic.co.il</li>
+</ul>
+<h3>Encyclopedia/Reference</h3>
+<ul>
+<li>HaMichlol: https://www.hamichlol.org.il/%D7%94%D7%9E%D7%9B%D7%95%D7%9F_%D7%94%D7%93%D7%9E%D7%95%D7%A7%D7%A8%D7%98%D7%99</li>
+<li>Hebrew Wikipedia: https://he.wikipedia.org/wiki/%D7%94%D7%9E%D7%9B%D7%95%D7%9F_%D7%94%D7%93%D7%9E%D7%95%D7%A7%D7%A8%D7%98%D7%99</li>
+<li>Yaacov Hecht Wikipedia: https://en.wikipedia.org/wiki/Yaacov_Hecht</li>
+</ul>
+<h3>WorldBlu Certification</h3>
+<ul>
+<li>https://www.worldblu.com/the-institute-for-democratic-education</li>
+<li>https://www.worldblu.com/certified</li>
+</ul>
+<h3>Academic/Harvard</h3>
+<ul>
+<li>Harvard GEII: https://globaled.gse.harvard.edu/institute-democratic-education-ide</li>
+</ul>
+<h3>Programs</h3>
+<ul>
+<li>Educational Pioneer Program: https://www.democratic.co.il/en/educational-pioneer-program/</li>
+<li>Academic Training Programs: https://www.democratic.co.il/en/academic-training-programs/</li>
+<li>Shvilim & Netivim: https://www.democratic.co.il/en/2018/01/04/shvilim_netivim/</li>
+</ul>
+<h3>Criticism/Academic</h3>
+<ul>
+<li>Kizel, A. (2012). "The Democratic Selective Education in Israel: Tikkun Olam or Separatism." https://cris.haifa.ac.il/en/publications/the-democratic-selective-education-in-israel-tikkun-olam-or-separ/</li>
+<li>Kizel, A. "The Philosophy of Social Segregation in Israel's Democratic Schools" (PhilPapers)</li>
+</ul>
+<h3>Government</h3>
+<ul>
+<li>Gov.il info sheet (public participation): https://govextra.gov.il/media/j00bkv34/ (currently redirecting)</li>
+<li>Gov.il info sheet (human resources): https://govextra.gov.il/media/r0tl1y32/ (currently redirecting)</li>
+<li>GAFEN system: https://pob.education.gov.il/budget/gefen-tashpa/</li>
+<li>GAFEN catalog: https://mygefen.co.il/catalog/</li>
+</ul>
+<h3>Leadership</h3>
+<ul>
+<li>Michal Gilboa-Ater LinkedIn: https://il.linkedin.com/in/michal-gilboa-ater-8b3721b0</li>
+<li>Michal Gilboa-Ater Mandel: https://graduates.mandelfoundation.org.il/Graduates/Pages/%D7%9E%D7%99%D7%9B%D7%9C-%D7%92%D7%9C%D7%91%D7%95%D7%A2-%D7%90%D7%98%D7%A8-8-2001.aspx</li>
+<li>Yotam Tron Maoz: https://maoz-il.org/en/alumni-projects/yotam-tron/</li>
+<li>Democratic Institute LinkedIn: https://il.linkedin.com/company/the-democratic-institute</li>
+</ul>
+<h3>Demokida Wiki Articles</h3>
+<ul>
+<li>"What is democratic about the Democratic Institute?": https://wiki.democratic.co.il/item/%D7%9E%D7%94-%D7%93%D7%9E%D7%95%D7%A7%D7%A8%D7%98%D7%99-%D7%91%D7%9E%D7%9B%D7%95%D7%9F-%D7%94%D7%93%D7%9E%D7%95%D7%A7%D7%A8%D7%98%D7%99/</li>
+<li>"Democratic School": https://wiki.democratic.co.il/item/%D7%91%D7%99%D7%AA-%D7%A1%D7%A4%D7%A8-%D7%93%D7%9E%D7%95%D7%A7%D7%A8%D7%98%D7%99/</li>
+</ul>
+<h3>Other</h3>
+<ul>
+<li>RocketReach: https://rocketreach.co/the-democratic-institute-society-and-education-hmkhvn-hdmvkrty-profile_b40efd19ffd92135</li>
+<li>Education Cities: https://www.education-cities.com</li>
+<li>IDEC: http://www.ideconline.org/</li>
+<li>MaCaM Portal (Pioneer Program): https://portal.macam.ac.il/article/%D7%AA%D7%9B%D7%A0%D7%99%D7%AA-%D7%94%D7%97%D7%9C%D7%95%D7%A5-%D7%94%D7%97%D7%99%D7%A0%D7%95%D7%9B%D7%99-%D7%A9%D7%9C-%D7%94%D7%9E%D7%9B%D7%95%D7%9F-%D7%9C%D7%97%D7%99%D7%A0%D7%95%D7%9A-%D7%93%D7%9E/</li>
+</ul>
+<p><em>Report generated 2026-02-16 by Claude Opus 4.6 deep research agent.</em></p>
+<p><em>Methodology: 30+ web searches and page fetches across Hebrew and English sources, following org_research team.json framework.</em></p>
+
+</div>
+</div>
+
+<footer>
+  פרויקט זהות ציונית — דוח מחקר מעמיק | <a href="../">דירוג ערים</a> | <a href="../research/">כל הדוחות</a>
+</footer>
+
+</body>
+</html>

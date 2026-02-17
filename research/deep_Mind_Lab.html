@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>אשכולות חשיבה / Mind Lab — דוח מחקר מעמיק</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background: #f5f5f8;
+  color: #1a1a2e;
+  direction: rtl;
+  line-height: 1.8;
+  font-size: 17px;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #1a1a2e; color: #fff;
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  overflow-x: auto; white-space: nowrap;
+}
+nav .brand { font-weight: 700; color: #ff8800; flex-shrink: 0; }
+nav a { color: #ccc; text-decoration: none; font-size: 0.85em; padding: 8px 4px; border-bottom: 2px solid transparent; flex-shrink: 0; }
+nav a:hover { color: #ff8800; border-bottom-color: #ff8800; }
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a5a8a 100%);
+  color: #fff; padding: 50px 20px 40px; text-align: center;
+}
+.hero h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+.hero .subtitle { font-size: 1.05em; color: #b0c4de; margin-bottom: 6px; }
+.hero .meta { font-size: 0.9em; color: #ff8800; margin-top: 8px; }
+.risk-badge {
+  display: inline-block; padding: 4px 16px; border-radius: 20px;
+  font-size: 0.85em; font-weight: 600; margin-top: 10px;
+}
+.risk-high { background: #e74c3c; color: #fff; }
+.risk-medium { background: #f39c12; color: #fff; }
+.risk-low { background: #27ae60; color: #fff; }
+.container { max-width: 860px; margin: 0 auto; padding: 30px 20px 80px; }
+.toc {
+  background: #fff; border-radius: 8px; padding: 22px 26px;
+  margin-bottom: 32px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.toc h2 { font-size: 1.15em; color: #2a5a8a; margin-bottom: 12px; border-bottom: 2px solid #667eea; padding-bottom: 6px; }
+.toc ol { padding-right: 22px; font-size: 0.93em; }
+.toc li { margin-bottom: 4px; }
+.toc a { color: #2a5a8a; text-decoration: none; }
+.toc a:hover { color: #ff8800; text-decoration: underline; }
+.section {
+  background: #fff; border-radius: 8px; padding: 28px 26px;
+  margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.section h2 { font-size: 1.4em; color: #1a1a2e; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #667eea; }
+.section h3 { font-size: 1.1em; color: #2a5a8a; margin: 18px 0 8px; }
+.section h4 { font-size: 1em; color: #444; margin: 14px 0 6px; }
+.section p { margin-bottom: 12px; text-align: justify; }
+.section ul, .section ol { padding-right: 22px; margin-bottom: 12px; }
+.section li { margin-bottom: 5px; }
+blockquote {
+  background: #f0f4fa; border-right: 4px solid #667eea;
+  padding: 12px 18px; margin: 12px 0; border-radius: 0 6px 6px 0;
+  font-size: 0.94em; color: #333;
+}
+.thesis {
+  background: #fff8f0; border-right: 3px solid #ff8800;
+  padding: 14px 18px; margin: 12px 0; border-radius: 0 5px 5px 0;
+  font-size: 0.96em; color: #6b4500;
+}
+table {
+  width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.91em;
+}
+th {
+  background: #667eea; color: #fff; padding: 8px 12px;
+  text-align: right; position: sticky; top: 44px; z-index: 5;
+}
+td {
+  padding: 7px 12px; border-bottom: 1px solid #e8e8e8;
+  text-align: right; vertical-align: top;
+}
+tr:nth-child(even) { background: #f8f9fc; }
+a { color: #2a5a8a; }
+a:hover { color: #ff8800; }
+.back-link {
+  display: inline-block; margin-bottom: 20px; padding: 6px 14px;
+  background: #667eea; color: #fff; border-radius: 4px;
+  text-decoration: none; font-size: 0.88em;
+}
+.back-link:hover { background: #5a6fd6; color: #fff; }
+footer {
+  text-align: center; padding: 30px 20px; color: #888; font-size: 0.85em;
+}
+strong { color: #1a1a2e; }
+code {
+  background: #f0f0f0; padding: 1px 5px; border-radius: 3px;
+  font-size: 0.9em;
+}
+.source-tag {
+  display: inline-block; background: #e8eef6; padding: 2px 8px;
+  border-radius: 10px; font-size: 0.78em; color: #2a5a8a;
+  margin: 2px 3px; text-decoration: none;
+}
+.source-tag:hover { background: #d0dff0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">דוח מחקר מעמיק</span>
+  <a href="../">חזרה לדירוג</a>
+  <a href="../research/">כל הדוחות</a>
+  <a href="#section-1">Financial Analysis</a> <a href="#section-2">Leadership Map</a> <a href="#section-3">Methodology & Progra</a> <a href="#section-4">Government Ties</a> <a href="#section-5">Controversies & Crit</a> <a href="#section-6">Values Alignment Tab</a> <a href="#section-7">Open Questions</a> <a href="#section-8">Data Sources Used</a>
+</nav>
+
+<div class="hero">
+  <h1>אשכולות חשיבה / Mind Lab</h1>
+  <div class="subtitle">Executive Summary</div>
+  <div class="meta"></div>
+  
+</div>
+
+<div class="container">
+  <a href="../research/" class="back-link">← כל דוחות המחקר</a>
+  <div class="toc"><h2>תוכן עניינים</h2><ol><li><a href="#section-1">Financial Analysis</a></li><li><a href="#section-2">Leadership Map</a></li><li><a href="#section-3">Methodology & Programs</a></li><li><a href="#section-4">Government Ties</a></li><li><a href="#section-5">Controversies & Criticism</a></li><li><a href="#section-6">Values Alignment Table</a></li><li><a href="#section-7">Open Questions</a></li><li><a href="#section-8">Data Sources Used</a></li></ol></div>
+  <div class="section">
+<p>-----|------|-------------|--------|-------|</p>
+<table>
+<tr><th>אשכולות חשיבה ישראל בע"מ</th><th>Private Company (חברה פרטית)</th><th>513099341</th><th>Active (פעילה)</th><th>Registered April 3, 2001. HQ: התע"ש 20, Kfar Saba. Last report filed: 2017. 51-100 employees (AllJobs).</th></tr>
+<tr><td>Mind Lab Group</td><td>International brand / holding</td><td>Unknown</td><td>Active</td><td>Global umbrella for 40+ countries. Tel Aviv operations.</td></tr>
+<tr><td>Mind Lab Brasil</td><td>Brazilian entity</td><td>Unknown (Sao Paulo)</td><td>Active</td><td>Founded 2007. 10,000 schools, 210,000+ teachers. CEO: Valmir J. Pereira</td></tr>
+<tr><td>Accelium</td><td>Digital platform company (EdTech)</td><td>Unknown (Tel Aviv)</td><td>Active</td><td>Co-founded 2015 by Ehud Shachar & Tzvika Feldfogel. 13 employees (Tracxn). Unfunded (no VC). Acquired EduK in 2022.</td></tr>
+</table>
+<h3>Key Observations</h3>
+<ul>
+<li><strong>NOT an amuta (nonprofit).</strong> This is a for-profit private company. This is significant: most organizations in the Gefen educational catalog are nonprofits or government agencies.</li>
+<li>The company registration date (2001) is 7 years after the claimed founding date (1994). This suggests the initial operations may have been under a different entity or as a sole proprietorship.</li>
+<li><strong>International expansion</strong> operates under two brands: "Mind Lab" (the physical classroom methodology) and "Accelium" (the digital/app-based platform launched in 2015).</li>
+<li>Accelium appears to be a separate but closely related entity, focused on digitizing the Mind Lab methodology into web and mobile games.</li>
+</ul>
+<h3>International Presence Claims</h3>
+<ul>
+<li>Claims operation in "over 40 countries" (some sources say 30+)</li>
+<li><strong>Brazil</strong> is the largest international market: 10,000 schools, 210,000+ teachers trained. Mind Lab Brasil established 2007 in Sao Paulo. Gave a "Mind Lab Prize" recognizing innovative educational policies in Brazilian cities.</li>
+<li><strong>Australia:</strong> Mind Lab Australia (Adelaide). Chris Ramsden named to The Educator K/12 Hot List 2018. Partners include Trinity College SA and St Peter's College SA.</li>
+<li><strong>Singapore:</strong> NuQuest-Accelium Pro SG</li>
+<li><strong>UK:</strong> Franchise model via Accelium EDU. Three tiers: Exclusive Distributor, Business Partner, Certified Facilitator. Min investment: GBP 6,500-20,500 + VAT.</li>
+<li><strong>Jordan:</strong> Mind Lab Jo (LinkedIn presence)</li>
+<li>Uses <strong>franchise model</strong> for international expansion (Accelium EDU listed as "Education Franchise" on what-franchise.com and pointfranchise.co.uk)</li>
+<li>International "Mind Lab Olympics" held annually -- thinking games competition for children from ~10 countries. Israeli sixth-graders won gold at the 7th annual championships.</li>
+</ul>
+
+</div>
+<div class="section" id="section-1">
+<h2>Financial Analysis</h2>
+<h3>Government Transfers (obudget.org data)</h3>
+<ul>
+<li><strong>Total documented government transfers:</strong> ₪138,748.78</li>
+<li><strong>Source:</strong> Ministry of Negev, Galilee and National Resilience (משרד הנגב, הגליל והחוסן הלאומי)</li>
+<li><strong>Purpose:</strong> "ערכות קורונה" (Corona kits) -- NOT educational services</li>
+<li><strong>Key insight:</strong> The direct government transfers are negligible. This means the company's revenue from education comes through a different channel.</li>
+</ul>
+<h3>Revenue Model</h3>
+<p>The company's primary revenue comes through the <strong>Gefen (גפ"ן) framework</strong>, which works as follows:</p>
+<ol>
+<li>Ministry of Education allocates budgets to schools for enrichment programs</li>
+<li>Schools select programs from the approved Gefen catalog</li>
+<li>Schools pay the providers directly from their Gefen allocation</li>
+<li>This means the money flows: Government → School → Eshcolot Hashiva</li>
+</ol>
+<p>This structure means government funding to the company is <strong>indirect</strong> and does NOT appear in obudget.org transfer records. The ₪595,116 figure from our Gefen mapping represents just 6 cities / 14 schools -- the total nationwide revenue is likely far higher.</p>
+<h3>Revenue Estimates</h3>
+<ul>
+<li>250 educational institutions (claimed)</li>
+<li>If average program cost per school is ~₪40,000/year (based on ₪595K / 14 schools ≈ ₪42,500): <strong>Total estimated Israel revenue: ~₪10-12M/year</strong></li>
+<li>International revenue via Mind Lab and Accelium franchise/licensing likely adds significantly</li>
+<li>Accelium has a subscription-based pricing model for its digital platform</li>
+</ul>
+<h3>Profit Margins (estimated)</h3>
+<ul>
+<li>As a service business with trained facilitators, margins are likely moderate (20-35%)</li>
+<li>The franchise model for international operations suggests licensing fees (high margin)</li>
+<li>No public financial filings available (private company, not required to publish)</li>
+</ul>
+<h3>International Financial Activity</h3>
+<ul>
+<li><strong>Mind Lab Brazil</strong> (based in Sao Paulo): Present in <strong>10,000 Brazilian schools</strong>. 210,000+ teachers trained. Established in Brazil in 2007. Co-founded by Valmir J. Pereira (CEO, local partner), Tzvika Feldfogel, and Ehud Shachar.</li>
+<li><strong>Accelium acquired EduK</strong> (Brazilian EdTech, also Sao Paulo-based) on March 22, 2022. EduK had raised <strong>$10M</strong> prior to acquisition. This suggests Accelium/Mind Lab Group has significant financial resources.</li>
+<li><strong>Accelium is listed as "unfunded"</strong> on Tracxn, meaning no external VC/PE investment disclosed. The acquisition was likely funded from internal revenue.</li>
+</ul>
+<h3>Financial Summary</h3>
+<table>
+<tr><th>Metric</th><th>Value</th><th>Source</th></tr>
+<tr><td>Direct gov transfers (Israel)</td><td>₪138,749</td><td>obudget.org</td></tr>
+<tr><td>Gefen allocation (6 cities)</td><td>₪595,116</td><td>דירוג ערים mapping</td></tr>
+<tr><td>Est. Israel revenue</td><td>₪10-12M/year</td><td>Calculated</td></tr>
+<tr><td>Brazil schools</td><td>10,000</td><td>Crunchbase/ZoomInfo</td></tr>
+<tr><td>EduK acquisition (2022)</td><td>~$10M target</td><td>PitchBook</td></tr>
+<tr><td>Claimed global learners</td><td>4,000,000+</td><td>Company website</td></tr>
+</table>
+
+</div>
+<div class="section" id="section-2">
+<h2>Leadership Map</h2>
+<h3>Founders & Key Executives</h3>
+<table>
+<tr><th>Name</th><th>Role</th><th>Background</th><th>Notes</th></tr>
+<tr><td><strong>Dan Gendelman</strong></td><td>Founder, Creator of Eshcolot Method</td><td>~38 years in game-based learning. Founded company at age 24 (born ~1970). World expert in integrating games into learning.</td><td>Appears to be the intellectual/methodological leader. NOTE: NOT the same Daniel Gendelman who founded Raya (dating app).</td></tr>
+<tr><td><strong>Ehud Shachar</strong></td><td>CEO, Mind Lab Group; Co-Founder & CEO, Accelium</td><td>Previously CEO of The Mind Lab Group. Also listed as founder of Eshcolot Hashiva on some profiles.</td><td>Operational/business leader. Co-founded Accelium in 2015.</td></tr>
+<tr><td><strong>Tzvika Feldfogel</strong></td><td>Co-Founder & CMO, Accelium; Co-Founder, Mind Lab</td><td>Also involved in Mind Lab Brazil founding. Related: Enrique Feldfogel (VP Global Sales at examPAL -- possible family connection)</td><td>Marketing/international expansion leader</td></tr>
+<tr><td><strong>Valmir J. Pereira</strong></td><td>CEO & Founder, Mind Lab Brasil</td><td>Education: Universidade Presbiteriana Mackenzie, Sao Paulo</td><td>Local Brazilian partner, co-founder of Mind Lab</td></tr>
+<tr><td><strong>Yael Lifschitz</strong></td><td>Manager, Financial at Accelium</td><td>Contact: y<em>*</em>@accelium.com</td><td>Financial operations</td></tr>
+<tr><td><strong>Chris Ramsden</strong></td><td>Education Consultant, Accelium/Mind Lab (Australia)</td><td>Named to The Educator K/12 Hot List 2018</td><td>Australian operations lead</td></tr>
+</table>
+<h3>Governance Observations</h3>
+<ul>
+<li><strong>Concentrated control:</strong> The same 2-3 people (Gendelman, Shachar, Feldfogel) appear across all entities (Eshcolot Israel, Mind Lab Group, Mind Lab Brazil, Accelium).</li>
+<li><strong>No board diversity visible.</strong> No independent directors or advisory board disclosed publicly.</li>
+<li><strong>Family connections possible:</strong> The Feldfogel surname appears at both Accelium (Tzvika) and examPAL (Enrique) -- may indicate family business network.</li>
+<li>Dan Gendelman appears to be the visionary/methodological creator, while Shachar and Feldfogel handle business operations and global expansion.</li>
+</ul>
+
+</div>
+<div class="section" id="section-3">
+<h2>Methodology & Programs</h2>
+<h3>Core Method: "Shitat Eshcolot" (שיטת אשכולות)</h3>
+<p>The Eshcolot Method uses strategy board games and thinking games as the primary educational tool. The pedagogical framework claims to integrate theories from:</p>
+<table>
+<tr><th>Theorist</th><th>Contribution</th><th>How Applied</th></tr>
+<tr><td><strong>John Dewey</strong></td><td>Constructivism, experiential learning</td><td>Learning through game experience</td></tr>
+<tr><td><strong>Reuven Feuerstein</strong></td><td>Mediated Learning, Instrumental Enrichment</td><td>Teaching thinking processes explicitly</td></tr>
+<tr><td><strong>David Perkins</strong></td><td>Transfer of learning</td><td>Connecting game strategies to real life</td></tr>
+<tr><td><strong>Robert Sternberg</strong></td><td>Successful Intelligence</td><td>Practical, creative, analytical thinking</td></tr>
+<tr><td><strong>Howard Gardner</strong></td><td>Multiple Intelligences</td><td>Accommodating diverse learning styles</td></tr>
+</table>
+<h3>Program Offerings (Israel)</h3>
+<ol>
+<li><strong>Core thinking skills program</strong> -- Integrated into school curriculum, K-12, weekly sessions throughout the year</li>
+<li><strong>Shachmatik (שחמטיק)</strong> -- Chess-based thinking program</li>
+<li><strong>"Back to the Future"</strong> -- Future-oriented skills program</li>
+<li><strong>Integration & Inclusion programs</strong> -- Aimed at reducing gaps</li>
+<li><strong>Mathematics games series</strong> -- "Mathmatics" branded</li>
+<li><strong>Teacher training</strong> -- Professional development for educators</li>
+<li><strong>Thinking Olympiad</strong> -- Annual national competition for students</li>
+<li><strong>Parent-child events</strong> -- Community engagement activities</li>
+<li><strong>Accelium Campus</strong> -- Digital platform for online learning</li>
+</ol>
+<h3>Academic Validation</h3>
+<p><strong>Claims made by the company:</strong></p>
+<ul>
+<li>"Field studies conducted in collaboration with researchers from Yale University, led by Professor Donald Green"</li>
+<li>Master's degree research studies</li>
+<li>Claims the method "significantly improves thinking skills and life skills"</li>
+</ul>
+<p><strong>Assessment of evidence quality:</strong></p>
+<ul>
+<li>Professor Donald Green (Yale) is a real, prominent political scientist, but his main expertise is in field experiments on political behavior, voter turnout, and prejudice reduction -- NOT cognitive development or educational psychology.</li>
+<li>Green also created a strategy board game called "Octi," which connects to his interest in strategy games and may explain his involvement with Mind Lab.</li>
+<li>The Accelium research page (accelium.com/accelium-reaserch) was non-functional (returned only JavaScript framework code, no actual research content).</li>
+<li>The Hebrew Wikipedia article on Eshcolot Hashiva contains multiple "[citation needed]" tags on effectiveness claims.</li>
+<li><strong>No independent, peer-reviewed publications found in major educational psychology journals</strong> validating the Eshcolot/Mind Lab method specifically.</li>
+<li>The claimed research appears to be <strong>company-commissioned</strong>, not independently initiated.</li>
+</ul>
+<h3>Ideology Assessment</h3>
+<ul>
+<li><strong>No political or social ideology detected</strong> in the curriculum.</li>
+<li>The methodology is explicitly about cognitive/metacognitive skills: problem-solving, decision-making, planning, creative thinking, teamwork.</li>
+<li>The theoretical framework (Dewey, Feuerstein, Perkins, Sternberg, Gardner) is mainstream educational psychology -- no ideological red flags.</li>
+<li>The "Thinking Olympiad" and competitive elements suggest a meritocratic, achievement-oriented culture.</li>
+<li>Marketing materials in Hebrew and English appear consistent -- no significant messaging gap detected.</li>
+</ul>
+<h3>Hebrew vs. English Comparison</h3>
+<ul>
+<li><strong>Hebrew site (eshcolot.co.il):</strong> Emphasizes the "battle for integration" (הקרב על ההשתלבות) program, Ministry of Education alignment, local school partnerships. More focused on Israel-specific programs.</li>
+<li><strong>English site (accelium.com):</strong> Emphasizes global reach, digital platform, AI-powered coaching, franchise opportunities. More corporate/tech-oriented messaging.</li>
+<li><strong>No ideological divergence</strong> between Hebrew and English materials. The difference is marketing audience, not ideology.</li>
+</ul>
+
+</div>
+<div class="section" id="section-4">
+<h2>Government Ties</h2>
+<h3>Ministry of Education Integration</h3>
+<ul>
+<li><strong>Gefen Catalog Status:</strong> Approved. Program number 1459 in the Gefen catalog.</li>
+<li><strong>Gefen Category:</strong> Educational program, external -- commercial sector.</li>
+<li><strong>Framework Alignment:</strong> Inclusion and integration (שילוב ושיתוף); special education.</li>
+<li><strong>Target:</strong> Grades 1-6, kindergarten, educational staff.</li>
+<li><strong>Organization Type in Gefen:</strong> "Business company" (חברה עסקית) -- explicitly categorized as commercial, not nonprofit.</li>
+</ul>
+<h3>Karav (קרב למעורבות בחינוך) Partnership</h3>
+<ul>
+<li>The <strong>primary partnership channel</strong> for Eshcolot Hashiva in Israel's education system is the <strong>Karav Program for Involvement in Education</strong>.</li>
+<li>Karav is a Ministry of Education initiative that enables enrichment programs in schools to reduce socioeconomic gaps.</li>
+<li>Through Karav, Eshcolot gains access to schools that might not independently select their programs.</li>
+<li>This is significant: Karav effectively acts as a distribution channel for Eshcolot's commercial services within the public school system.</li>
+</ul>
+<h3>Government Advocacy</h3>
+<ul>
+<li><strong>No specific political champions identified.</strong> Unlike ideologically-driven organizations, Eshcolot Hashiva does not appear to have named advocates in the Knesset or specific ministry officials pushing for its adoption.</li>
+<li>The company's integration appears to be market-driven (schools choosing from a catalog) rather than politically driven (top-down mandate).</li>
+<li>The Ministry of Negev, Galilee and National Resilience provided the only documented direct government contract (₪138K for Corona kits), which was a one-time emergency procurement, not an ongoing educational relationship.</li>
+</ul>
+<h3>Regulatory Notes</h3>
+<ul>
+<li><strong>Last annual report filed with Companies Authority: 2017</strong> (as of the most recent check). This is concerning -- Israeli private companies are required to file annual reports. A 7+ year gap may indicate non-compliance with corporate filing requirements.</li>
+<li>No GuideStar Israel profile found (GuideStar covers amutot, not private companies).</li>
+<li>No State Comptroller reports found mentioning the company.</li>
+</ul>
+
+</div>
+<div class="section" id="section-5">
+<h2>Controversies & Criticism</h2>
+<h3>Direct Controversies</h3>
+<p><strong>No major scandals, lawsuits, or public controversies found</strong> specifically targeting Eshcolot Hashiva / Mind Lab. This is notable -- a 30-year-old company operating in 500+ schools with zero public controversies is either very well-managed or very well-connected.</p>
+<h3>Academic Criticism (Indirect)</h3>
+<p>The broader field of "brain games" and "thinking skills training" faces significant academic skepticism:</p>
+<ul>
+<li>A 2016 large-scale study published by NPR found "little evidence that playing brain games improves underlying broad cognitive abilities."</li>
+<li>In 2014, a group of 70+ neuroscientists signed a consensus statement warning against "brain game hype" (published in Science/AAAS).</li>
+<li>However, the Mind Lab method is not identical to digital brain-training (like Lumosity). It involves physical board games with teacher-mediated discussion, which has some differentiated support in the literature for board games in education (Bayeck, 2020; PMC systematic review 2023).</li>
+</ul>
+<h3>Specific Concerns Identified in This Research</h3>
+<ol>
+<li><strong>Academic validation weakness:</strong> The primary researcher (Donald Green, Columbia/Yale) is a political scientist and board game inventor, not an educational psychologist. His involvement appears to stem from personal interest in game design (he invented Octi) rather than educational expertise. The company uses this association to claim "Yale/Columbia research" which may overstate the rigor.</li>
+</ol>
+<ol>
+<li><strong>For-profit in public education:</strong> Eshcolot Hashiva is one of very few <strong>for-profit private companies</strong> operating at scale within Israel's public education system via the Gefen framework. Most Gefen providers are amutot. The profit motive creates an inherent tension: are programs recommended because they work, or because they are commercially marketed well?</li>
+</ol>
+<ol>
+<li><strong>Opacity of financials:</strong> As a private company (not an amuta), Eshcolot has no obligation to publish financial reports. Combined with a 2017 last-filed annual report, there is effectively zero financial transparency. We cannot determine how much the company profits from public education funds.</li>
+</ol>
+<ol>
+<li><strong>Scale claims vs. current reality:</strong> The company has claimed "100,000 students in 500+ schools" (per ZoomInfo/Crunchbase profiles), but currently lists ~250 institutions on its website. This suggests significant contraction from peak, but the company has not publicly addressed this decline.</li>
+</ol>
+<ol>
+<li><strong>Accelium research page broken:</strong> The company's research page (accelium.com/accelium-reaserch -- note the misspelling of "research") returns only JavaScript framework code, not actual research content. This suggests either neglect or intentional removal of research claims.</li>
+</ol>
+
+</div>
+<div class="section" id="section-6">
+<h2>Values Alignment Table</h2>
+<table>
+<tr><th>Dimension</th><th>Score (1-5)</th><th>Notes</th></tr>
+<tr><td><strong>Neutrality</strong></td><td>5</td><td>No political, religious, or social ideology detected. Purely cognitive/metacognitive content.</td></tr>
+<tr><td><strong>Transparency</strong></td><td>2</td><td>Private company with no public financials. Last corporate filing: 2017. Research claims not independently verifiable.</td></tr>
+<tr><td><strong>Academic Rigor</strong></td><td>2</td><td>Cited researcher (Green) is not an educational psychologist. No peer-reviewed publications found. Wikipedia article flagged [citation needed].</td></tr>
+<tr><td><strong>Ideology Detected</strong></td><td><strong>No</strong></td><td>Clean. No embedded political or social messaging in curriculum content.</td></tr>
+<tr><td><strong>Government Dependence</strong></td><td>3</td><td>Operates via Gefen/Karav frameworks but no direct government funding of significance. Market-driven adoption.</td></tr>
+<tr><td><strong>Commercial Risk</strong></td><td>3</td><td>For-profit entity extracting revenue from public education budgets. Not inherently wrong, but creates misaligned incentives.</td></tr>
+<tr><td><strong>International Legitimacy</strong></td><td>4</td><td>Genuine 40+ country presence. Brazilian operation is substantial (10K schools). Franchise model validates market demand.</td></tr>
+</table>
+<h3>Risk Profile for דירוג ערים Project</h3>
+<p><strong>LOW IDEOLOGICAL RISK / MODERATE TRANSPARENCY RISK</strong></p>
+<p>For the city ranking project's purposes (measuring ideological exposure in education), Eshcolot Hashiva / Mind Lab represents a <strong>neutral</strong> program. Unlike organizations like ACRI, Hartman Institute, or Dror Israel, there is no ideological payload in the curriculum. The program teaches generic cognitive skills through games.</p>
+<p>The concern is purely commercial/governance: a for-profit company with opaque finances operating at scale in public schools. This is a policy question (should for-profit companies be in public education?) rather than an ideological one.</p>
+
+</div>
+<div class="section" id="section-7">
+<h2>Open Questions</h2>
+<ol>
+<li><strong>Who are the shareholders of אשכולות חשיבה ישראל בע"מ (513099341)?</strong> The Companies Authority should have this information, but it requires a paid lookup or in-person visit. Are Gendelman, Shachar, and Feldfogel all shareholders, or is ownership concentrated?</li>
+</ol>
+<ol>
+<li><strong>What is the relationship between the Israeli company (ח.פ 513099341) and Mind Lab Group?</strong> Is Mind Lab Group a separate legal entity that owns the Israeli company, or is it just a brand name used by the same entity?</li>
+</ol>
+<ol>
+<li><strong>Why was the last annual report filed in 2017?</strong> Is the company in violation of Companies Authority requirements? Has it restructured under a different entity?</li>
+</ol>
+<ol>
+<li><strong>What are the actual financials?</strong> With 250 schools at ~₪42K each, Israel revenue alone should be ~₪10M+. Combined with Brazil (10K schools) and 40+ country operations, total group revenue could be ₪50-100M+. Yet Accelium shows 13 employees and "unfunded" status. Where does the money flow?</li>
+</ol>
+<ol>
+<li><strong>What did the Donald Green studies actually find?</strong> The company cites "significant improvements" but the studies are not published in any accessible peer-reviewed journal. Were the results as strong as claimed? What were the control conditions?</li>
+</ol>
+<ol>
+<li><strong>Why the contraction from 500+ to ~250 schools?</strong> Was this due to competition, loss of Karav partnership, budget cuts, or quality issues? The company does not address this publicly.</li>
+</ol>
+<ol>
+<li><strong>Is there an EduK integration strategy?</strong> Accelium acquired EduK (a $10M Brazilian EdTech) in 2022. What happened to this acquisition? Is it being integrated into the Mind Lab platform?</li>
+</ol>
+<ol>
+<li><strong>Dan Gendelman's current role:</strong> Is he still active in the company, or has he stepped back? His LinkedIn shows he is in Israel and connected to Eshcolot, but Shachar appears to be the operational CEO.</li>
+</ol>
+
+</div>
+<div class="section" id="section-8">
+<h2>Data Sources Used</h2>
+<ul>
+<li><a href="https://next.obudget.org/i/org/company/513099341" target="_blank" rel="noopener">obudget.org - Company 513099341</a></li>
+<li><a href="https://www.hamichlol.org.il/%D7%90%D7%A9%D7%9B%D7%95%D7%9C%D7%95%D7%AA_%D7%97%D7%A9%D7%99%D7%91%D7%94" target="_blank" rel="noopener">HaMichlol (Hebrew encyclopedia)</a></li>
+<li><a href="https://eshcolot.co.il/" target="_blank" rel="noopener">Eshcolot official site (Hebrew)</a></li>
+<li><a href="https://eshcolot.co.il/en/homepage/" target="_blank" rel="noopener">Eshcolot official site (English)</a></li>
+<li><a href="https://www.accelium.com/" target="_blank" rel="noopener">Accelium Group</a></li>
+<li><a href="https://www.2school.co.il/InterData/aorm/" target="_blank" rel="noopener">Gefen catalog - 2school.co.il</a></li>
+<li><a href="https://israeli-companies.com/hevra/%D7%9E%D7%99%D7%93%D7%A2-%D7%A2%D7%9C-%D7%90%D7%A9%D7%9B%D7%95%D7%9C%D7%95%D7%AA-%D7%97%D7%A9%D7%99%D7%91%D7%94-%D7%99%D7%A9%D7%A8%D7%90%D7%9C-%D7%91%D7%A2%D7%9E/" target="_blank" rel="noopener">Israeli Companies registry</a></li>
+<li><a href="https://info.cap.co.il/israeli-companies/513099341/" target="_blank" rel="noopener">CAP company lookup</a></li>
+<li><a href="https://www.alljobs.co.il/Employer/HP/Default.aspx?cid=34965" target="_blank" rel="noopener">AllJobs employer profile</a></li>
+<li><a href="https://www.zoominfo.com/p/Ehud-Shachar/1158136585" target="_blank" rel="noopener">ZoomInfo - Ehud Shachar</a></li>
+<li><a href="https://www.crunchbase.com/organization/mind-lab" target="_blank" rel="noopener">Crunchbase - Mind Lab</a></li>
+<li><a href="https://www.crunchbase.com/organization/accelium" target="_blank" rel="noopener">Crunchbase - Accelium</a></li>
+<li><a href="https://tracxn.com/d/companies/accelium/__83i8-3cHGD14GRwiJj_WCvc89IPQZfE-GNxwtirtlb8" target="_blank" rel="noopener">Tracxn - Accelium</a></li>
+<li><a href="https://pitchbook.com/profiles/company/54184-33" target="_blank" rel="noopener">PitchBook - Accelium</a></li>
+<li><a href="https://www.what-franchise.com/franchise-opportunities/children-franchises/accelium-edu" target="_blank" rel="noopener">What-Franchise - Accelium EDU</a></li>
+<li><a href="https://www.israel21c.org/israeli-kids-take-gold-in-mindlab-olympics/" target="_blank" rel="noopener">Israel21c - Mind Lab Olympics</a></li>
+<li><a href="https://polisci.columbia.edu/content/donald-p-green" target="_blank" rel="noopener">Donald Green - Columbia University</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Donald_Green" target="_blank" rel="noopener">Wikipedia - Donald Green</a></li>
+<li><a href="https://israeltrade.org.au/2016/11/10/accelium/" target="_blank" rel="noopener">Israel Trade (Australia) - Accelium</a></li>
+</ul>
+<p><em>Research conducted: 2026-02-16</em></p>
+<p><em>Agent: Claude Opus 4.6 for דירוג ערים project</em></p>
+
+</div>
+</div>
+
+<footer>
+  פרויקט זהות ציונית — דוח מחקר מעמיק | <a href="../">דירוג ערים</a> | <a href="../research/">כל הדוחות</a>
+</footer>
+
+</body>
+</html>

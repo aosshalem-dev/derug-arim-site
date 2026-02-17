@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shalom Hartman Institute (מכון שלום הרטמן) — דוח מחקר מעמיק</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background: #f5f5f8;
+  color: #1a1a2e;
+  direction: rtl;
+  line-height: 1.8;
+  font-size: 17px;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #1a1a2e; color: #fff;
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  overflow-x: auto; white-space: nowrap;
+}
+nav .brand { font-weight: 700; color: #ff8800; flex-shrink: 0; }
+nav a { color: #ccc; text-decoration: none; font-size: 0.85em; padding: 8px 4px; border-bottom: 2px solid transparent; flex-shrink: 0; }
+nav a:hover { color: #ff8800; border-bottom-color: #ff8800; }
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a5a8a 100%);
+  color: #fff; padding: 50px 20px 40px; text-align: center;
+}
+.hero h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+.hero .subtitle { font-size: 1.05em; color: #b0c4de; margin-bottom: 6px; }
+.hero .meta { font-size: 0.9em; color: #ff8800; margin-top: 8px; }
+.risk-badge {
+  display: inline-block; padding: 4px 16px; border-radius: 20px;
+  font-size: 0.85em; font-weight: 600; margin-top: 10px;
+}
+.risk-high { background: #e74c3c; color: #fff; }
+.risk-medium { background: #f39c12; color: #fff; }
+.risk-low { background: #27ae60; color: #fff; }
+.container { max-width: 860px; margin: 0 auto; padding: 30px 20px 80px; }
+.toc {
+  background: #fff; border-radius: 8px; padding: 22px 26px;
+  margin-bottom: 32px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.toc h2 { font-size: 1.15em; color: #2a5a8a; margin-bottom: 12px; border-bottom: 2px solid #667eea; padding-bottom: 6px; }
+.toc ol { padding-right: 22px; font-size: 0.93em; }
+.toc li { margin-bottom: 4px; }
+.toc a { color: #2a5a8a; text-decoration: none; }
+.toc a:hover { color: #ff8800; text-decoration: underline; }
+.section {
+  background: #fff; border-radius: 8px; padding: 28px 26px;
+  margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.section h2 { font-size: 1.4em; color: #1a1a2e; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #667eea; }
+.section h3 { font-size: 1.1em; color: #2a5a8a; margin: 18px 0 8px; }
+.section h4 { font-size: 1em; color: #444; margin: 14px 0 6px; }
+.section p { margin-bottom: 12px; text-align: justify; }
+.section ul, .section ol { padding-right: 22px; margin-bottom: 12px; }
+.section li { margin-bottom: 5px; }
+blockquote {
+  background: #f0f4fa; border-right: 4px solid #667eea;
+  padding: 12px 18px; margin: 12px 0; border-radius: 0 6px 6px 0;
+  font-size: 0.94em; color: #333;
+}
+.thesis {
+  background: #fff8f0; border-right: 3px solid #ff8800;
+  padding: 14px 18px; margin: 12px 0; border-radius: 0 5px 5px 0;
+  font-size: 0.96em; color: #6b4500;
+}
+table {
+  width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.91em;
+}
+th {
+  background: #667eea; color: #fff; padding: 8px 12px;
+  text-align: right; position: sticky; top: 44px; z-index: 5;
+}
+td {
+  padding: 7px 12px; border-bottom: 1px solid #e8e8e8;
+  text-align: right; vertical-align: top;
+}
+tr:nth-child(even) { background: #f8f9fc; }
+a { color: #2a5a8a; }
+a:hover { color: #ff8800; }
+.back-link {
+  display: inline-block; margin-bottom: 20px; padding: 6px 14px;
+  background: #667eea; color: #fff; border-radius: 4px;
+  text-decoration: none; font-size: 0.88em;
+}
+.back-link:hover { background: #5a6fd6; color: #fff; }
+footer {
+  text-align: center; padding: 30px 20px; color: #888; font-size: 0.85em;
+}
+strong { color: #1a1a2e; }
+code {
+  background: #f0f0f0; padding: 1px 5px; border-radius: 3px;
+  font-size: 0.9em;
+}
+.source-tag {
+  display: inline-block; background: #e8eef6; padding: 2px 8px;
+  border-radius: 10px; font-size: 0.78em; color: #2a5a8a;
+  margin: 2px 3px; text-decoration: none;
+}
+.source-tag:hover { background: #d0dff0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">דוח מחקר מעמיק</span>
+  <a href="../">חזרה לדירוג</a>
+  <a href="../research/">כל הדוחות</a>
+  <a href="#section-1">1. ORGANIZATIONAL ST</a> <a href="#section-2">2. FINANCIAL ANALYSI</a> <a href="#section-3">3. LEADERSHIP & POLI</a> <a href="#section-4">4. IDEOLOGY & PROGRA</a> <a href="#section-5">5. GOVERNMENT TIES &</a> <a href="#section-6">6. LEGAL ACTIONS & C</a> <a href="#section-7">SYNTHESIS: VALUES AL</a> <a href="#section-8">KEY OPEN QUESTIONS</a> <a href="#section-9">SOURCE URLS</a>
+</nav>
+
+<div class="hero">
+  <h1>Shalom Hartman Institute (מכון שלום הרטמן)</h1>
+  <div class="subtitle">EXECUTIVE THESIS</div>
+  <div class="meta"></div>
+  
+</div>
+
+<div class="container">
+  <a href="../research/" class="back-link">← כל דוחות המחקר</a>
+  <div class="toc"><h2>תוכן עניינים</h2><ol><li><a href="#section-1">1. ORGANIZATIONAL STRUCTURE</a></li><li><a href="#section-2">2. FINANCIAL ANALYSIS</a></li><li><a href="#section-3">3. LEADERSHIP & POLITICS</a></li><li><a href="#section-4">4. IDEOLOGY & PROGRAMS</a></li><li><a href="#section-5">5. GOVERNMENT TIES & INFLUENCE</a></li><li><a href="#section-6">6. LEGAL ACTIONS & CONTROVERSIES</a></li><li><a href="#section-7">SYNTHESIS: VALUES ALIGNMENT ASSESSMENT</a></li><li><a href="#section-8">KEY OPEN QUESTIONS</a></li><li><a href="#section-9">SOURCE URLS</a></li></ol></div>
+  <div class="section" id="section-1">
+<h2>1. ORGANIZATIONAL STRUCTURE</h2>
+<h3>Israel Entity</h3>
+<ul>
+<li><strong>Legal Name:</strong> מכון שלום הרטמן-ישראל (חל"צ) -- Shalom Hartman Institute-Israel (Public Benefit Company)</li>
+<li><strong>Registration Number:</strong> 511021156</li>
+<li><strong>Established:</strong> 1976 (founded by David Hartman); registered as חל"צ 1984</li>
+<li><strong>Address:</strong> Gedalyahu Alon St. 11, Jerusalem 9108001</li>
+<li><strong>Employees:</strong> 282 (2025)</li>
+<li><strong>Annual Turnover:</strong> NIS 98,428,433 (~$27M USD at current rates)</li>
+<li><strong>GuideStar Profile:</strong> https://www.guidestar.org.il/organization/511021156</li>
+</ul>
+<h3>US Entity</h3>
+<ul>
+<li><strong>Legal Name:</strong> The Shalom Hartman Institute of North America</li>
+<li><strong>EIN:</strong> 13-3014387</li>
+<li><strong>Tax-Exempt Since:</strong> January 1980</li>
+<li><strong>Type:</strong> 501(c)(3) Public Charity</li>
+<li><strong>Address:</strong> 475 Riverside Dr, Suite 1800, New York, NY 10115</li>
+<li><strong>Revenue (FY 2024):</strong> $24,845,958</li>
+<li><strong>Total Assets (FY 2024):</strong> $40,775,226</li>
+<li><strong>Charity Navigator Rating:</strong> 4 Stars (100% score)</li>
+<li><strong>ProPublica Profile:</strong> https://projects.propublica.org/nonprofits/organizations/133014387</li>
+<li><strong>Charity Navigator:</strong> https://www.charitynavigator.org/ein/133014387</li>
+</ul>
+<h3>Canadian Entity</h3>
+<ul>
+<li><strong>Legal Name:</strong> Shalom Hartman Institute of Canada</li>
+<li><strong>Address:</strong> 71 Redpath Avenue, Toronto, ON M4S 0E1</li>
+</ul>
+<h3>Relationship Between Entities</h3>
+<p>The US entity's primary function is fundraising and North American programming. In FY 2024, "total giving" (grants transferred, primarily to Israel) was $10,570,050 -- meaning roughly 42% of US revenue flows to the Israel entity. The Israel entity receives this plus its own domestic revenue (government contracts, tuition, Israeli donations), creating a combined operation exceeding $120M when including pass-through flows.</p>
+<h3>Organizational Centers (Post-Reorganization)</h3>
+<ol>
+<li><strong>Kogod Research Center for Contemporary Jewish Thought</strong> -- Think tank with 50+ research fellows</li>
+<li><strong>David Hartman Center for Intellectual Excellence</strong> -- Next-generation thought leader development</li>
+<li><strong>Center for Israeli & Jewish Identity</strong> -- Israeli education system programs (Be'eri, Lev Aharon, high schools)</li>
+<li><strong>Center for Shared Society</strong> -- Jewish-Palestinian Israeli democracy building</li>
+<li><strong>Center for Judaism and State Policy</strong> -- Religion-state policy (marriage, conversion, Shabbat)</li>
+<li><strong>Wellspring</strong> -- Young adults and professionals</li>
+<li><strong>Rabbinic Leadership Programs</strong> -- Rabbinic training and enrichment</li>
+</ol>
+<h3>Educational Institutions Operated</h3>
+<ul>
+<li>Midrashiya High School for Girls (Jerusalem)</li>
+<li>Charles E. Smith High School for Boys (Jerusalem)</li>
+<li>Combined enrollment: 700+ students</li>
+</ul>
+
+</div>
+<div class="section" id="section-2">
+<h2>2. FINANCIAL ANALYSIS</h2>
+<h3>US Entity Revenue Trend (ProPublica data)</h3>
+<table>
+<tr><th>Year</th><th>Revenue</th><th>Expenses</th><th>Net Income</th><th>Total Assets</th></tr>
+<tr><td>2024</td><td>$24,845,958</td><td>$29,742,302</td><td>-$4,896,344</td><td>$40,775,226</td></tr>
+<tr><td>2023</td><td>$34,503,344</td><td>$25,139,012</td><td>+$9,364,332</td><td>$43,446,191</td></tr>
+<tr><td>2022</td><td>$28,361,662</td><td>$25,807,479</td><td>+$2,554,183</td><td>$33,555,133</td></tr>
+<tr><td>2021</td><td>$19,450,722</td><td>$20,097,880</td><td>-$647,158</td><td>$33,744,747</td></tr>
+<tr><td>2020</td><td>$16,306,133</td><td>$18,563,298</td><td>-$2,257,165</td><td>$33,544,814</td></tr>
+<tr><td>2019</td><td>$24,570,012</td><td>$19,937,290</td><td>+$4,632,722</td><td>$34,746,381</td></tr>
+<tr><td>2018</td><td>$24,714,219</td><td>$17,354,381</td><td>+$7,359,838</td><td>$27,922,229</td></tr>
+<tr><td>2017</td><td>$20,083,792</td><td>$16,313,890</td><td>+$3,769,902</td><td>$20,502,552</td></tr>
+<tr><td>2016</td><td>$14,590,914</td><td>$12,836,313</td><td>+$1,754,601</td><td>$15,926,358</td></tr>
+<tr><td>2015</td><td>$11,773,432</td><td>$10,556,693</td><td>+$1,216,739</td><td>$13,804,388</td></tr>
+<tr><td>2014</td><td>$11,603,422</td><td>$9,797,852</td><td>+$1,805,570</td><td>$12,915,582</td></tr>
+<tr><td>2013</td><td>$8,747,170</td><td>$7,883,012</td><td>+$864,158</td><td>$11,531,660</td></tr>
+<tr><td>2012</td><td>$7,678,315</td><td>$7,449,018</td><td>+$229,297</td><td>$6,966,715</td></tr>
+<tr><td>2011</td><td>$6,072,871</td><td>$6,514,564</td><td>-$441,693</td><td>$5,907,152</td></tr>
+</table>
+<p><strong>Key observation:</strong> Revenue quadrupled from $6M (2011) to $24.8M (2024). Assets grew 7x from $5.9M to $40.8M. This is extraordinary growth for a Jewish educational nonprofit.</p>
+<h3>US Revenue Composition (FY 2024)</h3>
+<ul>
+<li>Contributions: $23,545,965 (94.8%)</li>
+<li>Program Services: $832,409 (3.4%)</li>
+<li>Investment Income: $467,584 (1.9%)</li>
+</ul>
+<h3>US Grants Made (to Israel entity, primarily)</h3>
+<table>
+<tr><th>Year</th><th>Total Giving</th></tr>
+<tr><td>2024</td><td>$10,570,050</td></tr>
+<tr><td>2023</td><td>$10,016,250</td></tr>
+<tr><td>2022</td><td>$10,581,550</td></tr>
+<tr><td>2021</td><td>$9,226,000</td></tr>
+<tr><td>2020</td><td>$8,197,601</td></tr>
+<tr><td>2019</td><td>$8,022,545</td></tr>
+<tr><td>2018</td><td>$3,675,385</td></tr>
+<tr><td>2017</td><td>$4,540,762</td></tr>
+<tr><td>2016</td><td>$7,250,000</td></tr>
+<tr><td>2015</td><td>$5,250,000</td></tr>
+<tr><td>2014</td><td>$5,300,000</td></tr>
+<tr><td>2013</td><td>$3,800,000</td></tr>
+</table>
+<h3>Financial Efficiency (Charity Navigator)</h3>
+<ul>
+<li>Program Expense Ratio: 87.68%</li>
+<li>Fundraising Efficiency: $0.07 per dollar raised</li>
+<li>Liabilities to Assets: 8.78%</li>
+<li>Working Capital: 1.38 years of operations</li>
+<li>Compensation Ratio: 8.9x (highest to average -- within normal range of 1-24x)</li>
+</ul>
+<h3>Israel Entity -- Government Funding (obudget.org data)</h3>
+<ul>
+<li><strong>Annual Turnover:</strong> NIS 98,428,433</li>
+<li><strong>Ranking:</strong> 6th highest among educational program organizations in Israel</li>
+<li><strong>Ministry of Education:</strong> NIS 15,753,593 (largest government funder)</li>
+<li><strong>Ministry of Settlement:</strong> NIS 834,593 (pre-military academies)</li>
+<li><strong>Ministry of Culture & Sport:</strong> NIS 286,826</li>
+<li><strong>Ministry of Foreign Affairs:</strong> NIS 232,628</li>
+<li><strong>Other agencies:</strong> NIS 28,564</li>
+<li><strong>Last 3 years government total:</strong> NIS 1,646,799 (contracts NIS 750,204 + support NIS 896,595)</li>
+<li><strong>obudget.org:</strong> https://next.obudget.org/i/org/association/511021156</li>
+</ul>
+<p><strong>Note:</strong> The NIS 15.7M from Ministry of Education likely includes Be'eri program funding and potentially other educational service contracts. The NIS 98.4M total turnover far exceeds government funding alone, indicating heavy reliance on private philanthropy (especially from the US entity).</p>
+<h3>CLAWS Foundation: The Dominant Donor</h3>
+<ul>
+<li><strong>Total donated to Hartman:</strong> Over $25 million (2010-2020)</li>
+<li><strong>Annual amount:</strong> Typically $3.25 million per year</li>
+<li><strong>Percentage of private fundraising:</strong> In some years, one-third to one-half of total private US fundraising</li>
+<li><strong>Source:</strong> https://forward.com/news/534641/hartman-institute-received-major-donations-from-u-s-billionaires-funding-attack-on-israeli-judiciary/</li>
+</ul>
+<h3>Other Major Donors</h3>
+<ul>
+<li><strong>Russell Berrie Foundation:</strong> Nearly $7 million (2010-2012), led by Angelica Berrie (current Israel Board Chair)</li>
+<li><strong>Robert P. Kogod:</strong> Major donor; Kogod Research Center named after him; Chair Emeritus</li>
+</ul>
+<h3>Holistic Financial Picture (Estimated)</h3>
+<ul>
+<li>Israel entity revenue: ~NIS 98.4M (~$27M)</li>
+<li>US entity revenue: ~$24.8M</li>
+<li>US grants to Israel: ~$10.6M (already counted in US revenue)</li>
+<li><strong>Combined unique revenue estimate:</strong> ~$41-42M per year (avoiding double-count of transfers)</li>
+<li><strong>Total money flow (including pass-through):</strong> ~$52M</li>
+</ul>
+
+</div>
+<div class="section" id="section-3">
+<h2>3. LEADERSHIP & POLITICS</h2>
+<h3>Donniel Hartman -- Full Profile</h3>
+<ul>
+<li><strong>Title:</strong> President and Kaufman Family Chair in Jewish Philosophy</li>
+<li><strong>Education:</strong> Ph.D. Jewish Philosophy (Hebrew University); M.A. Political Philosophy (NYU); M.A. Religion (Temple University); Rabbinic ordination (Shalom Hartman Institute)</li>
+<li><strong>Family:</strong> Son of founder David Hartman; married to Adina; father of 3, grandfather of 7</li>
+<li><strong>Publications:</strong></li>
+<li><em>The Boundaries of Judaism</em></li>
+<li><em>Putting God Second: How to Save Religion from Itself</em></li>
+<li><em>Who Are the Jews -- And Who Can We Become?</em> (2023 Jewish Book Council Award Finalist)</li>
+<li><strong>Media:</strong> Co-hosts "For Heaven's Sake" podcast with Yossi Klein Halevi (top-ranked Judaism podcast)</li>
+<li><strong>Compensation (FY 2024):</strong> $405,140 salary + $96,927 other compensation = $502,067 total (as Executive Chair)</li>
+</ul>
+<h4>Political Positions</h4>
+<ul>
+<li>Self-describes as "troubled committed Zionist"</li>
+<li>Supports two-state solution</li>
+<li>Opposes judicial overhaul (protested in streets -- "first time in my life")</li>
+<li>"A country that is less democratic is less Jewish"</li>
+<li>"Even while facing a brutal enemy, we are forbidden to emulate its brutality"</li>
+<li>On CLAWS: "I don't talk about people I receive money from... people might be a little more complicated and a little more multidimensional than you give them credit for"</li>
+<li>Post-October 7: "Committed to the security of the Jewish people and a defensive war is morally right" while calling for ethical conduct and peace vision</li>
+</ul>
+<h3>Yehuda Kurtzer -- Co-President</h3>
+<ul>
+<li>Named co-President in 2023 (first non-Hartman family member in top leadership)</li>
+<li>Previously led Shalom Hartman Institute of North America</li>
+<li><strong>Compensation (FY 2024):</strong> $479,310 salary + $122,584 other = $601,894 total (highest-paid)</li>
+<li>Wikipedia: https://en.wikipedia.org/wiki/Yehuda_Kurtzer</li>
+</ul>
+<h3>Rachel Jacoby Rosenfield -- CEO, North America</h3>
+<ul>
+<li><strong>Compensation (FY 2024):</strong> $327,863 + $54,558 = $382,421</li>
+</ul>
+<h3>David Hartman (1931-2013) -- Founder Legacy</h3>
+<ul>
+<li>Born Brownsville, Brooklyn; studied at Yeshiva Chaim Berlin, Lubavitch Yeshiva</li>
+<li>Ordained at Yeshiva University (1953); studied under Rabbi Joseph B. Soloveitchik</li>
+<li>Ph.D. philosophy, Fordham University</li>
+<li>Congregational rabbi (Bronx, then Montreal); made aliyah 1971</li>
+<li>Founded institute 1976; named after his father Shalom Hartman</li>
+<li>Professor of Jewish Thought, Hebrew University (20+ years)</li>
+<li>National Jewish Book Award (1977, 1986)</li>
+<li>Described as founder of "Orthodox renewal movement" -- combining halakha with liberal/pluralistic values</li>
+<li>Rationalist in the Maimonidean tradition</li>
+<li>"Almost single-handedly cleared out a space for a new type of Jewish conversation"</li>
+<li>Source: https://www.tabletmag.com/sections/news/articles/the-rabbi-who-hated-lies</li>
+</ul>
+<h3>Key Research Fellows & Their Influence</h3>
+<p><strong>Yossi Klein Halevi</strong> -- Senior Fellow</p>
+<ul>
+<li>Best-selling author (<em>Letters to My Palestinian Neighbor</em>, <em>Like Dreamers</em>)</li>
+<li>Co-director of Muslim Leadership Initiative</li>
+<li>One of most-quoted voices on Israeli affairs in American Jewish media</li>
+</ul>
+<p><strong>Dr. Tal Becker</strong> -- Vice President</p>
+<ul>
+<li>Former Legal Adviser, Israeli Ministry of Foreign Affairs</li>
+<li>Instrumental in negotiating and drafting the Abraham Accords</li>
+<li>Direct line between Hartman scholarship and Israeli foreign policy</li>
+</ul>
+<p><strong>Micah Goodman</strong> -- Research Fellow</p>
+<ul>
+<li>Author of <em>Catch 67</em> (best-seller on Israeli-Palestinian conflict philosophy)</li>
+<li><strong>Served as unofficial philosophical advisor to PM Naftali Bennett</strong></li>
+<li>His "shrinking the conflict" concept became actual government policy</li>
+<li>Named among 50 most influential Jews (Jerusalem Post, 2017)</li>
+<li>Named among 100 most influential Israelis (Liberal Magazine, 2019)</li>
+<li>Source: https://www.npr.org/2021/08/25/1030886531/philosopher-micah-goodman-is-an-unofficial-counsel-to-israels-prime-minister</li>
+</ul>
+<p><strong>Tomer Persico</strong> -- Research Fellow</p>
+<ul>
+<li>Scholar of Israeli secularism and religion</li>
+<li>Regular Haaretz contributor</li>
+</ul>
+<h3>Board -- Notable Political Connections</h3>
+<p><strong>Israel Board:</strong></p>
+<ul>
+<li>Chair: Angelica Berrie (also President, Russell Berrie Foundation)</li>
+<li>Chair Emeritus: Robert P. Kogod (major donor, real estate)</li>
+<li>Wendy Singer (former AIPAC Israel director)</li>
+</ul>
+<p><strong>North America Board (33 independent members):</strong></p>
+<ul>
+<li>Chair: Donald Meltzer</li>
+<li>26 additional board members (mostly American Jewish philanthropists)</li>
+</ul>
+<p><strong>Canada Board:</strong></p>
+<ul>
+<li>Linda Frum -- former Canadian Senator (2009-2021), Conservative Party; currently Chair of UN Watch board</li>
+<li>Brent Belzberg -- prominent Canadian financier</li>
+</ul>
+
+</div>
+<div class="section" id="section-4">
+<h2>4. IDEOLOGY & PROGRAMS</h2>
+<h3>Core Ideology: "Pluralistic Judaism"</h3>
+<p>The Hartman Institute's core intellectual product is a specific definition of Jewish pluralism that:</p>
+<ol>
+<li>Treats all Jewish denominations (Orthodox, Conservative, Reform, secular) as legitimate expressions of Judaism</li>
+<li>Asserts that democracy and Judaism are not just compatible but mutually reinforcing</li>
+<li>Frames Zionism as requiring ethical engagement with Palestinian rights</li>
+<li>Advocates for separation of religion and state in key areas (marriage, conversion, Shabbat)</li>
+<li>Rejects both ultra-Orthodox monopoly on religious affairs AND full secularization</li>
+</ol>
+<h3>Semantic Analysis: How Hartman Redefines Key Terms</h3>
+<p><strong>"Zionism"</strong> -- Hartman redefines this away from both right-wing nationalist Zionism and anti-Zionist critiques. Their Zionism is explicitly liberal, democratic, and ethically bound. The iEngage curriculum asks "why a Jewish state is necessary" -- framing the question as requiring justification rather than being self-evident.</p>
+<p><strong>"Judaism"</strong> -- Treated as an evolving intellectual tradition rather than fixed halakhic law. David Hartman's legacy explicitly challenges Orthodox fundamentalism while remaining engaged with traditional texts.</p>
+<p><strong>"Pluralism"</strong> -- Their Hebrew site defines this in democratic terms: "הכרה בערך של קיומן של דעות, של השקפות שונות" (recognition of the value of different opinions and worldviews). In practice, this means treating Reform and Conservative Judaism as equal to Orthodoxy -- a position that is radical in the Israeli context where the Chief Rabbinate has a monopoly.</p>
+<h3>Hebrew vs. English Messaging Comparison</h3>
+<p><strong>English site</strong> (hartman.org.il): Emphasizes "enriching moral and spiritual life," "pluralism," "Israel's Jewish and democratic character," and "rebuilding the covenant between Israel and the Jewish world." Framing is warm, inclusive, aimed at diaspora Jewish donors and leaders.</p>
+<p><strong>Hebrew site</strong> (heb.hartman.org.il): Describes itself as "מרכז פלורליסטי למחקר, להגות, ולחינוך יהודי" (pluralistic center for research, thought, and Jewish education). The Hebrew framing is more direct about challenging the religion-state status quo: the Center for Judaism and State Policy explicitly works to "reshape policies" on marriage, conversion, Shabbat. The Israeli audience gets the policy-change agenda; the English audience gets the values-and-education framing.</p>
+<p><strong>Key difference:</strong> The English site has the "Center for Shared Society" (Jewish-Palestinian Israeli democracy) prominently listed. This is aimed at liberal diaspora audiences who care about Palestinian rights. The Hebrew site frames similar work through the lens of Israeli civic identity rather than Palestinian solidarity.</p>
+<h3>Key Programs</h3>
+<h4>iEngage (North America)</h4>
+<ul>
+<li>Video and podcast curricula for Jewish thought leaders</li>
+<li>Addresses: why a Jewish state is necessary, how power should be exercised, why diaspora Jews should care about Israel</li>
+<li>Used in synagogues, campus programs, community education</li>
+<li>Notable output: <em>Speaking iEngage</em> book (Hartman, Becker, Klein Halevi, Kurtzer)</li>
+<li><strong>Assessment:</strong> This is the primary vehicle for shaping how North American rabbis and Jewish educators talk about Israel. It occupies the center-left of American Jewish discourse.</li>
+</ul>
+<h4>Be'eri Initiative (Israel)</h4>
+<ul>
+<li>Pluralistic Jewish-Israeli identity education in public schools</li>
+<li>Active in 75+ Israeli public middle and high schools</li>
+<li>10 local authorities adopted it as municipal-wide program</li>
+<li>Works with Ministry of Education cooperation</li>
+<li>Teachers trained, curricula developed, professional development</li>
+<li>One-third of Israeli schools exposed to Be'eri materials</li>
+<li><strong>Assessment:</strong> This is the most significant vector for Hartman's influence on Israeli society. Through Be'eri, their definition of pluralistic Judaism enters the secular Israeli school system as quasi-official curriculum.</li>
+</ul>
+<h4>Lev Aharon (IDF)</h4>
+<ul>
+<li>Mandatory enrichment for IDF officers receiving promotion to Major</li>
+<li>Also seminars for Lieutenant Colonels and full Colonels</li>
+<li>1,000+ senior officers per year participate</li>
+<li>Three days at Hartman Institute as part of two-week enrichment</li>
+<li>Content: Jewish identity, Israeli identity, religious pluralism, morality in military leadership</li>
+<li>25+ cohorts completed</li>
+<li><strong>Assessment:</strong> This is perhaps Hartman's most strategically important program. It gives them direct ideological access to the IDF officer corps, shaping how senior military leaders understand Jewish identity and ethical military conduct.</li>
+</ul>
+<h4>Muslim Leadership Initiative (MLI)</h4>
+<ul>
+<li>13-month fellowship for North American Muslim leaders</li>
+<li>Academic study, Israel site visits, US programs</li>
+<li>Faculty includes Yossi Klein Halevi, Tal Becker</li>
+<li>Controversial (see Section 6)</li>
+</ul>
+<h4>Center for Judaism and State Policy</h4>
+<ul>
+<li>Directly supports Knesset members and policymakers</li>
+<li>Works on: civil marriage legislation, conversion reform, Shabbat in public sphere, "who is a Jew"</li>
+<li>Advances liberal/pluralistic agenda through advocacy, research, public campaigns</li>
+<li><strong>Assessment:</strong> This is an explicitly political operation, not just academic. They are actively trying to change Israeli law on religion-state matters.</li>
+</ul>
+<h4>High Schools</h4>
+<ul>
+<li>Midrashiya (girls) and Charles E. Smith (boys) in Jerusalem</li>
+<li>700+ students</li>
+<li>Model schools demonstrating pluralistic Jewish education in practice</li>
+</ul>
+<h4>Rabbinic Programs</h4>
+<ul>
+<li>Enrichment programs for rabbis from all denominations</li>
+<li>Melamdim Graduate School for Teacher Education</li>
+<li>Community Leadership Program (CLP)</li>
+</ul>
+
+</div>
+<div class="section" id="section-5">
+<h2>5. GOVERNMENT TIES & INFLUENCE</h2>
+<h3>Direct Government Funding</h3>
+<ul>
+<li><strong>Ministry of Education:</strong> NIS 15,753,593 (largest government relationship)</li>
+<li><strong>Ministry of Settlement:</strong> NIS 834,593</li>
+<li><strong>Ministry of Culture & Sport:</strong> NIS 286,826</li>
+<li><strong>Ministry of Foreign Affairs:</strong> NIS 232,628</li>
+<li><strong>Ranked 6th</strong> among educational program organizations in Israel by revenue</li>
+</ul>
+<h3>Influence Mechanisms</h3>
+<h4>IDF Officer Training (Lev Aharon)</h4>
+<p>The most direct government influence mechanism. By being embedded in the IDF promotion process, Hartman's pluralistic Jewish values are literally a requirement for advancement to Major and above. Over 25 years, this means tens of thousands of senior officers have been exposed to Hartman's framework. This is unparalleled access for any think tank or educational institution.</p>
+<h4>Ministry of Education Partnership (Be'eri)</h4>
+<p>The Be'eri program operates "in cooperation and coordination with the Ministry of Education." When an NGO's curriculum is used in one-third of public schools, the line between independent education and state-adopted ideology becomes blurred. The NIS 15.7M from the Ministry is the financial expression of this partnership.</p>
+<h4>Advisory Access to Politicians</h4>
+<ul>
+<li><strong>Micah Goodman</strong> served as unofficial philosophical advisor to PM Naftali Bennett; his "shrinking the conflict" framework became actual government policy</li>
+<li><strong>Tal Becker</strong> served as Legal Adviser to the Ministry of Foreign Affairs and helped draft the Abraham Accords</li>
+<li>The Center for Judaism and State Policy "directly supports leading members of Knesset, policymakers, influencers, and activists"</li>
+</ul>
+<h4>International Influence</h4>
+<ul>
+<li>The Ministry of Foreign Affairs pays NIS 232,628 for "educational materials for diaspora communities" -- indicating the government itself uses Hartman as a diaspora-relations tool</li>
+<li>iEngage shapes how thousands of North American rabbis frame Israel for their congregations</li>
+<li>Programs in London (LSJS partnership), Toronto, and across North America</li>
+<li>Content library of 3,500+ articles, videos, and podcasts</li>
+</ul>
+<h3>Assessment: Government Relationship</h3>
+<p>Hartman occupies a unique position as both recipient of government funding AND critic of government policy. They receive NIS 15.7M from the Ministry of Education while simultaneously operating a center that lobbies to change Israeli law on religion-state matters. This dual role -- inside the system but advocating for system change -- is their strategic genius and their political vulnerability.</p>
+
+</div>
+<div class="section" id="section-6">
+<h2>6. LEGAL ACTIONS & CONTROVERSIES</h2>
+<h3>CLAWS Foundation Dual Funding (Major Controversy)</h3>
+<p><strong>The Facts:</strong></p>
+<ul>
+<li>CLAWS Foundation donated $25M+ to Hartman (2010-2020), typically $3.25M/year</li>
+<li>CLAWS is controlled by Jeffrey Yass (net worth $65B) and Arthur Dantchik ($7B), co-founders of Susquehanna International Group</li>
+<li>The same CLAWS Foundation and its network funded the Kohelet Policy Forum, which designed Israel's judicial overhaul plan</li>
+<li>Funding to Kohelet flowed through intermediaries: CLAWS -> Silver Valley Research Foundation -> Central Fund of Israel -> Kohelet</li>
+<li>Kohelet received $7.7M (2021) and $8.5M (2022) through this route</li>
+<li>Dantchik donated approximately $220 million to CLAWS (2013-2020), with $110M in 2020 alone</li>
+</ul>
+<p><strong>The Paradox:</strong></p>
+<p>Hartman advocates for liberal democracy and pluralism; Kohelet advocates for judicial weakening and conservative-libertarian policies. The same billionaires funded both. In some years, CLAWS accounted for one-third to one-half of Hartman's private US fundraising.</p>
+<p><strong>Hartman's Response:</strong></p>
+<p>Donniel Hartman called CLAWS donors "very good friends" and insisted they had "no influence on the agenda." He stated: "Our record speaks for itself."</p>
+<p><strong>Resolution:</strong></p>
+<p>In August 2023, Arthur Dantchik announced he was cutting funding to Kohelet, citing "danger to future of Israel democracy." It is unclear whether CLAWS funding to Hartman continued after the controversy.</p>
+<p><strong>Analysis:</strong></p>
+<p>This is not a case of donor capture or ideological corruption. Yass and Dantchik are libertarians who support both educational pluralism (Hartman) and deregulation/judicial reform (Kohelet). The uncomfortable truth is that mega-donors often fund institutions across the ideological spectrum. However, the scale of CLAWS dependence ($3.25M/year in an organization with $11-24M revenue) represents a concentration risk that any governance expert would flag. The 4-star Charity Navigator rating notes 100% board independence, which mitigates concerns -- but financial dependence on a single donor family is distinct from board independence.</p>
+<p><strong>Sources:</strong></p>
+<ul>
+<li>Forward: https://forward.com/news/534641/hartman-institute-received-major-donations-from-u-s-billionaires-funding-attack-on-israeli-judiciary/</li>
+<li>Haaretz: https://www.haaretz.com/israel-news/2023-02-01/ty-article/.premium/hartman-institute-received-funds-from-u-s-billionaires-funding-attack-on-israeli-courts/00000186-0d9d-db1b-a1ce-cddde8ed0000</li>
+<li>Shomrim (Dantchik-Kohelet mechanism): https://www.shomrim.news/eng/danchik-kohelet</li>
+<li>CLAWS Foundation (InfluenceWatch): https://www.influencewatch.org/non-profit/claws-foundation/</li>
+</ul>
+<h3>Muslim Leadership Initiative (MLI) Controversy</h3>
+<p><strong>Critics include:</strong></p>
+<ul>
+<li>Jewish Voice for Peace: Accused MLI of "faithwashing" the occupation</li>
+<li>BDS movement supporters: MLI "undermines Muslim solidarity with Palestine"</li>
+<li>Former participants: Some publicly disassociated, calling it "divisive and harmful"</li>
+<li>Palestinian activists (Ali Abunimah): Conflation of Judaism and Zionism</li>
+<li>Petition campaign calling for MLI's halt</li>
+<li>Criticism that program is funded by groups accused of supporting Islamophobia</li>
+</ul>
+<p><strong>Hartman's response:</strong> FAQ page defending the program; continued operation</p>
+<p><strong>Sources:</strong></p>
+<ul>
+<li>JVP critique: https://www.jewishvoiceforpeace.org/2015/01/27/jewish-voice-for-peace-on-the-shalom-hartman-institutes-muslim-leadership-initiative/</li>
+<li>Former participant critique: https://muslimmatters.org/2018/06/06/why-i-left-the-muslim-leadership-initiative/</li>
+<li>Mondoweiss analysis: https://mondoweiss.net/2015/04/faithwashing-leadership-institute/</li>
+</ul>
+<h3>Orthodox/Haredi Criticism</h3>
+<p>No major organized public campaign against Hartman was found from Orthodox/Haredi institutions, Im Tirtzu, or NGO Monitor. This is notable -- it suggests Hartman operates in a space that the Israeli right has not prioritized for attack, possibly because:</p>
+<ol>
+<li>Hartman's IDF program is too embedded in the defense establishment to challenge</li>
+<li>The institute's academic framing provides cover</li>
+<li>Government funding creates political protection</li>
+<li>The right's attention has been focused on more adversarial organizations (B'Tselem, Breaking the Silence)</li>
+</ol>
+<h3>Academic vs. Advocacy Tension</h3>
+<p>The institute describes itself as a "research center" while simultaneously operating:</p>
+<ul>
+<li>A lobbying center (Judaism and State Policy)</li>
+<li>A values-formation pipeline (iEngage, Be'eri, Lev Aharon)</li>
+<li>Political advisory relationships (Goodman-Bennett)</li>
+</ul>
+<p>This is not unusual for think tanks (Brookings, Heritage Foundation do the same), but it means claims of pure academic neutrality should be understood in context.</p>
+
+</div>
+<div class="section" id="section-7">
+<h2>SYNTHESIS: VALUES ALIGNMENT ASSESSMENT</h2>
+<div class="thesis"><table>
+<tr><th>Value</th><th>Hartman Position</th><th>Score (1-5)</th><th>Evidence</th></tr>
+<tr><td>Democratic governance</td><td>Strong advocate</td><td>5/5</td><td>"Less democratic = less Jewish"; opposed judicial overhaul</td></tr>
+<tr><td>Religious pluralism</td><td>Core mission</td><td>5/5</td><td>All programs, both schools, Be'eri curriculum</td></tr>
+<tr><td>Palestinian rights</td><td>Moderate engagement</td><td>3/5</td><td>Two-state support but framed through Jewish lens; Center for Shared Society</td></tr>
+<tr><td>Financial transparency</td><td>Good but not perfect</td><td>4/5</td><td>4-star Charity Navigator; CLAWS dependency not proactively disclosed</td></tr>
+<tr><td>Academic independence</td><td>Partially compromised</td><td>3/5</td><td>Goodman-Bennett advisory; Judaism and State Policy lobbying; IDF embedding</td></tr>
+<tr><td>Gender equality</td><td>Strong signals</td><td>4/5</td><td>Girls' high school; women in leadership (Berrie, Rosenfield, Winter-Mersel)</td></tr>
+<tr><td>Arab-Jewish coexistence</td><td>Programmatic commitment</td><td>3.5/5</td><td>Center for Shared Society; but MLI controversy shows limits</td></tr>
+<tr><td>Donor independence</td><td>Structural concern</td><td>3/5</td><td>CLAWS was 30-50% of private fundraising for years; 100% independent board mitigates</td></tr>
+</table>
+</div>
+</div>
+<div class="section" id="section-8">
+<h2>KEY OPEN QUESTIONS</h2>
+<ol>
+<li><strong>CLAWS post-2020:</strong> Did CLAWS Foundation donations to Hartman continue after the 2023 Forward/Haaretz expose? What replaced this revenue if it stopped? The FY 2023 US revenue spike to $34.5M followed by FY 2024 decline to $24.8M may reflect transition.</li>
+</ol>
+<ol>
+<li><strong>Be'eri curriculum content:</strong> What specifically is taught? The actual textbooks and lesson plans are not publicly available in English. An analysis of the Hebrew-language Be'eri materials would reveal whether the "pluralistic" framing is genuinely multi-perspective or tilted.</li>
+</ol>
+<ol>
+<li><strong>IDF Lev Aharon syllabus:</strong> What exactly do 1,000+ officers per year study for three days? This is arguably the most consequential educational program in Israeli civil-military relations, yet its content is not transparent.</li>
+</ol>
+<ol>
+<li><strong>Micah Goodman's ongoing advisory role:</strong> After the Bennett government fell, does Goodman continue to advise political figures? His influence on the "shrinking the conflict" concept has outlasted the Bennett government.</li>
+</ol>
+<ol>
+<li><strong>Center for Judaism and State Policy -- legislative achievements:</strong> Which specific bills or policy changes can be attributed to this center's work? Lobbying disclosure in Israel is less rigorous than in the US.</li>
+</ol>
+<ol>
+<li><strong>Hebrew vs. English content gap:</strong> A systematic comparison of Hebrew-language and English-language publications would reveal whether Hartman presents different messages to Israeli vs. diaspora audiences (initial indicators suggest yes -- the policy-change agenda is more explicit in Hebrew).</li>
+</ol>
+<ol>
+<li><strong>Post-October 7 institutional response:</strong> How has the Gaza war affected Hartman's programming, donor base, and internal intellectual consensus? Donniel Hartman's public statements suggest a "support the war but demand ethics" position -- is this the institutional consensus?</li>
+</ol>
+<ol>
+<li><strong>Kohelet defunding aftereffects:</strong> Did Dantchik's withdrawal from Kohelet increase his giving to Hartman? The timing of the revenue fluctuations is suggestive.</li>
+</ol>
+
+</div>
+<div class="section" id="section-9">
+<h2>SOURCE URLS</h2>
+<h3>Official Institutional</h3>
+<ul>
+<li>Hartman English: https://www.hartman.org.il/</li>
+<li>Hartman Hebrew: https://heb.hartman.org.il/</li>
+<li>About page: https://www.hartman.org.il/about-the-hartman-institute/</li>
+<li>Board of Directors: https://www.hartman.org.il/program/board-of-directors/</li>
+<li>Programs: https://www.hartman.org.il/programs/</li>
+<li>iEngage: https://www.hartman.org.il/program/iengage/</li>
+<li>Be'eri: https://www.hartman.org.il/program/beeri-program-for-pluralistic-jewish-israeli-identity/</li>
+<li>Reorganization announcement: https://www.hartman.org.il/hartman-institute-announces-reorganization-for-growth/</li>
+<li>IDF program: https://www.hartman.org.il/25th-group-of-idf-majors-descends-on-hartman-institute/</li>
+<li>Judaism and State Policy: https://www.hartman.org.il/program/judaism-and-state-policy-center/</li>
+</ul>
+<h3>Financial & Registration</h3>
+<ul>
+<li>GuideStar Israel (511021156): https://www.guidestar.org.il/organization/511021156</li>
+<li>obudget.org: https://next.obudget.org/i/org/association/511021156</li>
+<li>ProPublica (EIN 133014387): https://projects.propublica.org/nonprofits/organizations/133014387</li>
+<li>Charity Navigator: https://www.charitynavigator.org/ein/133014387</li>
+<li>Instrumentl 990 data: https://www.instrumentl.com/990-report/shalom-hartman-institute-of-north-america-6c4b159b-a069-4874-a2e3-a22787270b30</li>
+<li>GuideStar US: https://www.guidestar.org/profile/13-3014387</li>
+</ul>
+<h3>News & Analysis</h3>
+<ul>
+<li>Forward (CLAWS controversy): https://forward.com/news/534641/hartman-institute-received-major-donations-from-u-s-billionaires-funding-attack-on-israeli-judiciary/</li>
+<li>Haaretz (CLAWS controversy): https://www.haaretz.com/israel-news/2023-02-01/ty-article/.premium/hartman-institute-received-funds-from-u-s-billionaires-funding-attack-on-israeli-courts/00000186-0d9d-db1b-a1ce-cddde8ed0000</li>
+<li>JTA (Dantchik defunds Kohelet): https://www.jta.org/2023/08/04/israel/wall-street-billionaire-ends-funding-for-think-tank-behind-netanyahus-judicial-overhaul-plan</li>
+<li>Times of Israel (Donniel Hartman): https://blogs.timesofisrael.com/author/donniel-hartman/</li>
+<li>Shomrim (Dantchik-Kohelet mechanism): https://www.shomrim.news/eng/danchik-kohelet</li>
+<li>NPR (Goodman-Bennett): https://www.npr.org/2021/08/25/1030886531/philosopher-micah-goodman-is-an-unofficial-counsel-to-israels-prime-minister</li>
+<li>Haaretz (Donniel Hartman 2025 interview): https://www.haaretz.com/jewish/2025-04-28/ty-article-magazine/.premium/rabbi-hartman-theres-no-talk-about-justice-we-dont-care-about-the-palestinians/00000196-7c15-dd54-a7d6-fd35c9690000</li>
+</ul>
+<h3>CLAWS Foundation</h3>
+<ul>
+<li>InfluenceWatch: https://www.influencewatch.org/non-profit/claws-foundation/</li>
+<li>ProPublica (EIN 201658710): https://projects.propublica.org/nonprofits/organizations/201658710</li>
+<li>SourceWatch: https://www.sourcewatch.org/index.php?title=Claws_Foundation</li>
+<li>Inside Philanthropy: https://www.insidephilanthropy.com/find-a-grant/grants-c/claws-foundation</li>
+</ul>
+<h3>Wikipedia</h3>
+<ul>
+<li>Shalom Hartman Institute: https://en.wikipedia.org/wiki/Shalom_Hartman_Institute</li>
+<li>David Hartman: https://en.wikipedia.org/wiki/David_Hartman_(rabbi)</li>
+<li>Donniel Hartman: https://en.wikipedia.org/wiki/Donniel_Hartman</li>
+<li>Yehuda Kurtzer: https://en.wikipedia.org/wiki/Yehuda_Kurtzer</li>
+<li>Muslim Leadership Initiative: https://en.wikipedia.org/wiki/Muslim_Leadership_Initiative</li>
+</ul>
+<h3>Criticism</h3>
+<ul>
+<li>JVP (MLI critique): https://www.jewishvoiceforpeace.org/2015/01/27/jewish-voice-for-peace-on-the-shalom-hartman-institutes-muslim-leadership-initiative/</li>
+<li>Muslim Matters (MLI departure): https://muslimmatters.org/2018/06/06/why-i-left-the-muslim-leadership-initiative/</li>
+<li>Mondoweiss (faithwashing): https://mondoweiss.net/2015/04/faithwashing-leadership-institute/</li>
+</ul>
+<p><em>Report generated 2026-02-16. Financial data as of most recent available filings (FY 2024 for US entity, 2025 for Israel entity). All amounts in original currency unless otherwise noted.</em></p>
+
+</div>
+</div>
+
+<footer>
+  פרויקט זהות ציונית — דוח מחקר מעמיק | <a href="../">דירוג ערים</a> | <a href="../research/">כל הדוחות</a>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>גשר - מפעלים חינוכיים (Gesher) — דוח מחקר מעמיק</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background: #f5f5f8;
+  color: #1a1a2e;
+  direction: rtl;
+  line-height: 1.8;
+  font-size: 17px;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #1a1a2e; color: #fff;
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  overflow-x: auto; white-space: nowrap;
+}
+nav .brand { font-weight: 700; color: #ff8800; flex-shrink: 0; }
+nav a { color: #ccc; text-decoration: none; font-size: 0.85em; padding: 8px 4px; border-bottom: 2px solid transparent; flex-shrink: 0; }
+nav a:hover { color: #ff8800; border-bottom-color: #ff8800; }
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a5a8a 100%);
+  color: #fff; padding: 50px 20px 40px; text-align: center;
+}
+.hero h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+.hero .subtitle { font-size: 1.05em; color: #b0c4de; margin-bottom: 6px; }
+.hero .meta { font-size: 0.9em; color: #ff8800; margin-top: 8px; }
+.risk-badge {
+  display: inline-block; padding: 4px 16px; border-radius: 20px;
+  font-size: 0.85em; font-weight: 600; margin-top: 10px;
+}
+.risk-high { background: #e74c3c; color: #fff; }
+.risk-medium { background: #f39c12; color: #fff; }
+.risk-low { background: #27ae60; color: #fff; }
+.container { max-width: 860px; margin: 0 auto; padding: 30px 20px 80px; }
+.toc {
+  background: #fff; border-radius: 8px; padding: 22px 26px;
+  margin-bottom: 32px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.toc h2 { font-size: 1.15em; color: #2a5a8a; margin-bottom: 12px; border-bottom: 2px solid #667eea; padding-bottom: 6px; }
+.toc ol { padding-right: 22px; font-size: 0.93em; }
+.toc li { margin-bottom: 4px; }
+.toc a { color: #2a5a8a; text-decoration: none; }
+.toc a:hover { color: #ff8800; text-decoration: underline; }
+.section {
+  background: #fff; border-radius: 8px; padding: 28px 26px;
+  margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.section h2 { font-size: 1.4em; color: #1a1a2e; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #667eea; }
+.section h3 { font-size: 1.1em; color: #2a5a8a; margin: 18px 0 8px; }
+.section h4 { font-size: 1em; color: #444; margin: 14px 0 6px; }
+.section p { margin-bottom: 12px; text-align: justify; }
+.section ul, .section ol { padding-right: 22px; margin-bottom: 12px; }
+.section li { margin-bottom: 5px; }
+blockquote {
+  background: #f0f4fa; border-right: 4px solid #667eea;
+  padding: 12px 18px; margin: 12px 0; border-radius: 0 6px 6px 0;
+  font-size: 0.94em; color: #333;
+}
+.thesis {
+  background: #fff8f0; border-right: 3px solid #ff8800;
+  padding: 14px 18px; margin: 12px 0; border-radius: 0 5px 5px 0;
+  font-size: 0.96em; color: #6b4500;
+}
+table {
+  width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.91em;
+}
+th {
+  background: #667eea; color: #fff; padding: 8px 12px;
+  text-align: right; position: sticky; top: 44px; z-index: 5;
+}
+td {
+  padding: 7px 12px; border-bottom: 1px solid #e8e8e8;
+  text-align: right; vertical-align: top;
+}
+tr:nth-child(even) { background: #f8f9fc; }
+a { color: #2a5a8a; }
+a:hover { color: #ff8800; }
+.back-link {
+  display: inline-block; margin-bottom: 20px; padding: 6px 14px;
+  background: #667eea; color: #fff; border-radius: 4px;
+  text-decoration: none; font-size: 0.88em;
+}
+.back-link:hover { background: #5a6fd6; color: #fff; }
+footer {
+  text-align: center; padding: 30px 20px; color: #888; font-size: 0.85em;
+}
+strong { color: #1a1a2e; }
+code {
+  background: #f0f0f0; padding: 1px 5px; border-radius: 3px;
+  font-size: 0.9em;
+}
+.source-tag {
+  display: inline-block; background: #e8eef6; padding: 2px 8px;
+  border-radius: 10px; font-size: 0.78em; color: #2a5a8a;
+  margin: 2px 3px; text-decoration: none;
+}
+.source-tag:hover { background: #d0dff0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">דוח מחקר מעמיק</span>
+  <a href="../">חזרה לדירוג</a>
+  <a href="../research/">כל הדוחות</a>
+  <a href="#section-1">Financial Analysis</a> <a href="#section-2">Leadership Map</a> <a href="#section-3">Programs & Curriculu</a> <a href="#section-4">Ideology Assessment</a> <a href="#section-5">Government Ties</a> <a href="#section-6">Donor Analysis</a> <a href="#section-7">Media & Public Perce</a> <a href="#section-8">Controversies</a> <a href="#section-9">Values Alignment Tab</a> <a href="#section-10">Open Questions</a> <a href="#section-11">Data Sources Used</a>
+</nav>
+
+<div class="hero">
+  <h1>גשר - מפעלים חינוכיים (Gesher)</h1>
+  <div class="subtitle">Executive Summary</div>
+  <div class="meta"></div>
+  
+</div>
+
+<div class="container">
+  <a href="../research/" class="back-link">← כל דוחות המחקר</a>
+  <div class="toc"><h2>תוכן עניינים</h2><ol><li><a href="#section-1">Financial Analysis</a></li><li><a href="#section-2">Leadership Map</a></li><li><a href="#section-3">Programs & Curriculum</a></li><li><a href="#section-4">Ideology Assessment</a></li><li><a href="#section-5">Government Ties</a></li><li><a href="#section-6">Donor Analysis</a></li><li><a href="#section-7">Media & Public Perception</a></li><li><a href="#section-8">Controversies</a></li><li><a href="#section-9">Values Alignment Table</a></li><li><a href="#section-10">Open Questions</a></li><li><a href="#section-11">Data Sources Used</a></li></ol></div>
+  <div class="section" id="section-1">
+<h2>Financial Analysis</h2>
+<h3>Annual Turnover</h3>
+<ul>
+<li><strong>2024 reported turnover</strong>: ₪22,836,267 (~$6.3M USD)</li>
+<li>This is <strong>330x larger</strong> than the ₪69,181 Gefen mapping budget, confirming Gefen captures only a tiny fraction of Gesher's educational operations</li>
+</ul>
+<h3>Government Funding (from obudget.org)</h3>
+<p><strong>Total identifiable government transfers</strong>: ~₪16.8M across all years tracked</p>
+<h4>By Ministry:</h4>
+<table>
+<tr><th>Ministry</th><th>Total Amount</th><th># Transfers</th><th>Notes</th></tr>
+<tr><td>Ministry of Education</td><td>₪9,845,156</td><td>26 payments</td><td>Largest: ₪469,090 for Jewish studies</td></tr>
+<tr><td>Ministry of Diaspora Affairs</td><td>₪4,438,336</td><td>2 contracts</td><td>Dialogue initiatives</td></tr>
+<tr><td>Prime Minister's Office</td><td>₪1,130,883</td><td>Multiple</td><td>Operations + Heritage Council</td></tr>
+<tr><td>Ministry of Religion</td><td>₪1,053,132</td><td>2 contracts</td><td>Implementation + meetings</td></tr>
+<tr><td>Ministry of Finance</td><td>₪132,760</td><td>1</td><td>Compensation fund</td></tr>
+<tr><td>Ministry of Settlement</td><td>₪101,505</td><td>1</td><td>Jewish studies support</td></tr>
+<tr><td>Foreign Ministry</td><td>₪50,000</td><td>1</td><td>TV mini-series production</td></tr>
+<tr><td>Prison Service</td><td>₪9,690</td><td>1</td><td>Staff workshops</td></tr>
+<tr><td>Youth Aliyah</td><td>₪8,500</td><td>1</td><td>Opening year conference</td></tr>
+</table>
+<h4>Recent 3-Year Summary:</h4>
+<ul>
+<li><strong>₪5,248,268</strong> total in most recent 3 years</li>
+<li>₪3,014,364 in support/grants (תמיכות)</li>
+<li>₪2,233,903 in contracts/procurement (רכש)</li>
+</ul>
+<h3>Revenue Structure Analysis</h3>
+<ul>
+<li>Government funding (~₪5.2M/3yr = ~₪1.7M/yr) represents only ~7.5% of annual turnover (₪22.8M)</li>
+<li>This means <strong>the majority of Gesher's funding comes from private donations</strong> (Israeli and foreign), with the US foundation being a primary channel</li>
+<li>This is a significant finding: unlike organizations that are primarily government-funded, Gesher has independent financial muscle from private donors</li>
+</ul>
+<h3>US Entity Financials (Gesher Foundation Inc, EIN 23-7029115)</h3>
+<p><strong>Charity Navigator Rating</strong>: 4/4 stars (96% score) -- high transparency rating</p>
+<p><strong>501(c)(3) since</strong>: June 1969</p>
+<p><strong>Location</strong>: 511 6th Ave Suite 444, New York, NY 10011</p>
+<p><strong>Employees</strong>: 1 (US entity is a pass-through fundraising vehicle)</p>
+<p><strong>NTEE Code</strong>: Q20 (International Exchanges, Cultural Understanding)</p>
+<h4>Year-by-Year Revenue (USD):</h4>
+<table>
+<tr><th>Year</th><th>Revenue</th><th>Expenses</th><th>Assets</th></tr>
+<tr><td>2024</td><td>$1,597,813</td><td>$1,381,357</td><td>$1,683,605</td></tr>
+<tr><td>2023</td><td>$1,642,871</td><td>$1,709,036</td><td>$1,397,229</td></tr>
+<tr><td>2022</td><td>$1,294,353</td><td>$1,268,315</td><td>$1,404,948</td></tr>
+<tr><td>2021</td><td>$1,359,999</td><td>$769,504</td><td>$1,381,916</td></tr>
+<tr><td>2020</td><td>$821,984</td><td>$839,937</td><td>$791,599</td></tr>
+<tr><td>2019</td><td>$1,075,301</td><td>$948,725</td><td>$805,934</td></tr>
+<tr><td>2018</td><td>$990,559</td><td>$905,236</td><td>$786,127</td></tr>
+<tr><td>2017</td><td>$1,090,986</td><td>$1,038,521</td><td>$818,917</td></tr>
+<tr><td>2016</td><td>$802,702</td><td>$863,790</td><td>$722,437</td></tr>
+<tr><td>2015</td><td>$755,903</td><td>$709,602</td><td>$730,274</td></tr>
+<tr><td>2014</td><td>$1,298,328</td><td>$854,147</td><td>$758,407</td></tr>
+<tr><td>2013</td><td>$420,366</td><td>$437,615</td><td>$319,564</td></tr>
+<tr><td>2012</td><td>$398,937</td><td>$485,501</td><td>$336,813</td></tr>
+<tr><td>2011</td><td>$336,534</td><td>$305,677</td><td>$429,301</td></tr>
+</table>
+<p><strong>Key observations</strong>:</p>
+<ul>
+<li>Revenue grew <strong>4.7x</strong> from 2011 ($337K) to 2024 ($1.6M)</li>
+<li>All officers report <strong>$0 compensation</strong> -- suggesting real compensation paid in Israel</li>
+<li>2024 revenue: 97.3% from contributions ($1.55M), only 2.7% from other sources</li>
+<li>Program expense ratio: 86.89% (high -- most funds go to programs)</li>
+</ul>
+<h4>Identified Major US Donors:</h4>
+<table>
+<tr><th>Donor</th><th>Amount</th><th>Purpose</th><th>Year</th></tr>
+<tr><td>William Davidson Foundation</td><td>$500,000</td><td>Ami Initiative</td><td>2023</td></tr>
+<tr><td>Ruderman Family Foundation</td><td>$126,000</td><td>General Purpose</td><td>2023</td></tr>
+<tr><td>Jewish Communal Fund</td><td>$65,810</td><td>General</td><td>2024</td></tr>
+<tr><td>Louis Kesten & Esther Kesten Foundation</td><td>$40,000</td><td>--</td><td>2024</td></tr>
+<tr><td>Slomo & Cindy Silvian Foundation</td><td>$15,000</td><td>--</td><td>2024</td></tr>
+<tr><td>BK Family Foundation</td><td>$25,000</td><td>--</td><td>2024</td></tr>
+</table>
+<p><strong>Total identified grants</strong>: 22+ sources, over $2M documented</p>
+<h3>Gesher Film Fund -- Separate Entity, Massive Government Funding</h3>
+<ul>
+<li><strong>Registration</strong>: 580358190 (separate amuta from Gesher main)</li>
+<li><strong>Est.</strong>: 1999/2000</li>
+<li><strong>GuideStar</strong>: https://www.guidestar.org.il/organization/580358190</li>
+<li><strong>2024 turnover</strong>: ₪13,957,043</li>
+<li><strong>Government funding (all-time)</strong>: ₪105,325,619 (!) -- all from Ministry of Culture & Sports under Cinema Law</li>
+<li><strong>3-year total</strong>: ₪28,558,284</li>
+<li><strong>Employees</strong>: 5</li>
+<li><strong>Rank</strong>: 4th among cinema organizations by government income</li>
+</ul>
+<p><strong>This is critical</strong>: The Gesher Film Fund alone has received over ₪105M from the government. While technically a separate legal entity, it was founded by Gesher and shares the "bridging" ideology. Combined with the main entity's funding, the total Gesher ecosystem has channeled well over ₪120M in government funds.</p>
+<h3>Holistic Financial Picture (Gesher Ecosystem)</h3>
+<table>
+<tr><th>Entity</th><th>Gov Funding (All-Time)</th><th>Annual Turnover (2024)</th></tr>
+<tr><td>Gesher Educational Enterprises</td><td>~₪16.8M</td><td>₪22.8M</td></tr>
+<tr><td>Gesher Film Fund</td><td>₪105.3M</td><td>₪14.0M</td></tr>
+<tr><td>Gesher Foundation Inc (US)</td><td>N/A (private donations)</td><td>~₪5.8M ($1.6M)</td></tr>
+<tr><td><strong>Total estimated</strong></td><td><strong>~₪122M gov + ~₪5.8M US</strong></td><td><strong>~₪42.6M/yr</strong></td></tr>
+</table>
+
+</div>
+<div class="section" id="section-2">
+<h2>Leadership Map</h2>
+<h3>Founder: Rabbi Dr. Daniel (Dani) Tropper</h3>
+<ul>
+<li><strong>Born</strong>: June 17, 1942, New York</li>
+<li><strong>Education</strong>: Ordained at Yeshiva University (1967) by Rabbi Joseph B. Soloveitchik; PhD in Jewish History (Second Temple administration)</li>
+<li><strong>Studied at</strong>: Merkaz HaRav Yeshiva in Jerusalem (1963) -- this is the flagship Religious Zionist yeshiva, associated with Rabbi Kook's philosophy</li>
+<li><strong>Immigrated to Israel</strong>: 1969 with family</li>
+<li><strong>Family</strong>: Married Faigy Landgarten (1967), 12 children, numerous grandchildren</li>
+<li><strong>Current role</strong>: President Emeritus and Founder</li>
+</ul>
+<h4>CRITICAL -- Political Activities:</h4>
+<ol>
+<li><strong>Co-founded "Midad" (מימד) movement (1988)</strong> with Rabbi Judah Amital -- a Religious Zionist moderate party</li>
+<li><strong>Headed the nominating committee of "The Jewish Home" (הבית היהודי) party</strong> before the 19th Knesset elections -- this is the key Religious Zionist party. His work contributed to the party growing from 3 to 12 mandates</li>
+<li><strong>Drafted the constitution</strong> of the Jewish Home party</li>
+<li><strong>Advisor to Education Minister Zvulun Hammer (1979-1984)</strong> on Jewish education in secular schools -- Hammer was a National Religious Party (Mafdal) leader</li>
+<li><strong>Developed the "Tal" curriculum program</strong> -- integrating Jewish-Zionist content into state (secular) schools</li>
+</ol>
+<p><strong>Assessment</strong>: Tropper is not a neutral bridge-builder. He is a Religious Zionist activist who founded a "bridging" organization as a vehicle to bring secular Israelis closer to Jewish tradition. His political career includes active work for the Religious Zionist political movement, including the party that later merged into the far-right coalition. The "bridging" is directional: from secular toward religious.</p>
+<h3>CEO: Ilan Geal-Dor (since 2011)</h3>
+<ul>
+<li><strong>Background</strong>: Grew up in the national-religious stream; studied at a religious high school and yeshiva in <strong>Karnei Shomron</strong> (a West Bank settlement)</li>
+<li><strong>Education</strong>: MBA from Hebrew University, BA in Psychology</li>
+<li><strong>Personal</strong>: Lives in <strong>Beit Shemesh</strong> for 25+ years, married, father of 6</li>
+<li><strong>Political</strong>: Former city councilor in Beit Shemesh (a city with major secular-Haredi tensions)</li>
+<li><strong>Board memberships</strong>: National Service Association, Eshkolot, Heled</li>
+<li><strong>Founded</strong>: Gesher Leadership Institute</li>
+<li><strong>Chairman</strong>: International Board of "Together Partnership" (Jewish Agency partnership communities)</li>
+</ul>
+<p><strong>Assessment</strong>: Like the founder, the CEO comes from the national-religious camp. The pattern is clear: leadership is drawn from religious Zionism, not from the secular side of the "bridge."</p>
+<h3>Chairperson: Retired Commissioner and Brigadier General Orit Adato</h3>
+<ul>
+<li>Former Commissioner of the Israel Prison Service</li>
+<li>Former Chief IDF Women's Corps Officer</li>
+<li>Currently heads consulting firm "Adato Consultants Ltd"</li>
+</ul>
+<h3>US Board (Gesher Foundation Inc):</h3>
+<ul>
+<li><strong>Chairman</strong>: Jonathan Tulkoff</li>
+<li><strong>Board member</strong>: Dr. Daniel Tropper (Founder, $0 compensation)</li>
+<li><strong>Board member</strong>: Richard M. Joel -- Former President of <strong>Yeshiva University</strong> (2003-2017), $0 compensation</li>
+<li><strong>Board member</strong>: Jerry Kestenbaum, $0 compensation</li>
+<li><strong>Board member</strong>: Shalom Bronstein, $0 compensation</li>
+<li>14 independent board members total</li>
+</ul>
+<p><strong>Assessment of US Board</strong>: Richard Joel's presence is significant. As former Yeshiva University president, he represents the Modern Orthodox establishment. The board is populated by American Jewish philanthropists with strong ties to Orthodox/Religious Zionist institutions.</p>
+<h3>Key Staff:</h3>
+<ul>
+<li><strong>Ilan Geal-Dor</strong> -- Executive Director / CEO</li>
+<li><strong>Chezki Feigin</strong> -- Director of Education</li>
+<li><strong>JJ Sussman</strong> -- International Director</li>
+<li><strong>Shira Sherez-Zik</strong> -- Director of Gesher Leadership Institute (also identified as founder of GLI)</li>
+<li><strong>Shlomit Mali</strong> -- Director of Ami (National Alliance)</li>
+</ul>
+
+</div>
+<div class="section" id="section-3">
+<h2>Programs & Curriculum</h2>
+<h3>1. School-Based Education (Gefen Mapping)</h3>
+<ul>
+<li>Present in <strong>11 schools across 5 cities</strong> (per Gefen data)</li>
+<li>Gefen budget: ₪69,181 (a tiny fraction of overall operations)</li>
+<li>Programs focus on Jewish identity, heritage, secular-religious encounter</li>
+</ul>
+<h3>2. Youth Seminars (Core Historical Program)</h3>
+<ul>
+<li>The original "Gesher seminar" format since 1969</li>
+<li>Brings together students from secular (mamlachti) and religious (mamlachti-dati) schools</li>
+<li>Multi-day residential encounters</li>
+<li>Hundreds of thousands of students have participated over 50+ years</li>
+</ul>
+<h3>3. Gesher Leadership Institute (Est. 2014)</h3>
+<p>Multiple courses targeting elite opinion leaders:</p>
+<ul>
+<li><strong>"Gesher Bridges" (גשר גשרים)</strong>: For senior professionals across communications, education, economics, security, academia. Participants undertake practical projects promoting Jewish unity</li>
+<li><strong>"Gesher.com"</strong>: Targets <strong>senior media figures</strong> specifically -- to shape Israeli journalism toward inter-community dialogue. This is notable: direct influence on media narratives</li>
+<li><strong>Leadership fellows</strong>: "Change agents" who are influential in their fields</li>
+</ul>
+<h3>4. IDF Programs</h3>
+<ul>
+<li><strong>6,000+ soldiers/year</strong> participate in officer training seminars</li>
+<li>Intensive weeklong seminar on leading diverse teams</li>
+<li>Integrated into formal IDF officer training curriculum</li>
+<li>Also sends IDF Majors on delegations to Diaspora Jewish communities (hundreds per year)</li>
+</ul>
+<h3>5. AMI (עמ"י) -- National Alliance</h3>
+<ul>
+<li>Joint venture with <strong>Ministry of Diaspora Affairs</strong></li>
+<li>Funded by government + <strong>Maimonides Fund</strong> + <strong>William Davidson Foundation</strong></li>
+<li>Purpose: Strengthen Israelis' connection to world Jewry</li>
+<li>Activates <strong>hundreds of thousands of youth</strong> to advocate for Israel on social media</li>
+<li>Produces videos and PR material as national Hasbara initiative</li>
+<li><strong>This is a government propaganda operation</strong> co-managed by an NGO</li>
+</ul>
+<h3>6. Gesher Film Fund (Separate Entity)</h3>
+<ul>
+<li><strong>Registration</strong>: 580358190</li>
+<li>Founded 2000 under Cinema Law</li>
+<li>Funds feature films, documentaries, animation, shorts, TV series with social/cultural content</li>
+<li>Prioritizes filmmakers from social/cultural/geographic periphery</li>
+<li>Has funded 100+ films</li>
+<li>Annual budget: ~₪14M (mostly government-funded)</li>
+</ul>
+<h3>7. "Tal" Curriculum (Historical)</h3>
+<ul>
+<li>Developed by founder Tropper while advising Education Minister Hammer (1979-84)</li>
+<li>Integrates Jewish-Zionist content into secular state school curriculum</li>
+<li>"Mikra Gesher" website for Torah study using modern technology</li>
+</ul>
+<h3>8. Gesher for Haredi Society</h3>
+<ul>
+<li>Outreach to ultra-Orthodox communities</li>
+<li>Bridge between Haredi and mainstream Israeli society</li>
+</ul>
+<h3>9. Jerusalem Prize for Israeli Unity</h3>
+<ul>
+<li>Annual prize co-founded with Jerusalem municipality (est. 2014)</li>
+<li>Named in memory of the three kidnapped teens (Eyal, Gilad, Naftali)</li>
+<li>Recent recipients include reserve soldiers organizations, social strengthening orgs</li>
+</ul>
+<h3>10. "Day of Unity" (יום האחדות)</h3>
+<ul>
+<li>Commemorated annually in Israel and Diaspora communities worldwide</li>
+<li>Originated from the 2014 kidnapping crisis</li>
+</ul>
+
+</div>
+<div class="section" id="section-4">
+<h2>Ideology Assessment</h2>
+<h3>The "Bridging" Direction</h3>
+<p>Gesher consistently frames itself as a neutral bridge between secular and religious. But examination reveals the bridge has a clear direction:</p>
+<ol>
+<li><strong>Founder's trajectory</strong>: Yeshiva University -> Merkaz HaRav -> Religious Zionist politics -> advising religious education ministers -> founding "bridging" NGO</li>
+<li><strong>CEO's trajectory</strong>: National-religious yeshiva in settlement -> Religious Zionist community activism -> runs "bridging" NGO</li>
+<li><strong>US board</strong>: Yeshiva University president, Orthodox philanthropists</li>
+<li><strong>Programs</strong>: Jewish identity deepening, Jewish-Zionist curriculum integration, sending secular youth to encounter religious tradition</li>
+</ol>
+<p><strong>The pattern</strong>: Gesher does not bring religious Israelis closer to secular values (secularism, liberalism, pluralism). It brings secular Israelis closer to Jewish tradition and identity. This is not a symmetrical bridge -- it is a one-way escalator from secular toward religious.</p>
+<h3>Semantic Displacement</h3>
+<p>Gesher uses several terms with non-standard meanings:</p>
+<ul>
+<li><strong>"Bridging"</strong>: Does not mean equal exchange. Means introducing secular Israelis to Jewish tradition</li>
+<li><strong>"Unity"</strong>: Does not mean accepting differences. Means finding common ground in Jewish identity/heritage</li>
+<li><strong>"Multicultural"</strong>: The Film Fund uses this term, but the "cultures" are Jewish sub-cultures, not Arab-Jewish multiculturalism</li>
+<li><strong>"Dialogue"</strong>: Structured encounters where the outcome is predetermined (greater appreciation for Jewish tradition)</li>
+</ul>
+<h3>Panim Membership -- Complexity</h3>
+<p>The membership in "Panim" (Jewish Renewal Union, which includes Reform and Conservative movements) complicates the picture. This suggests Gesher positions itself as "big-tent" Jewish rather than strictly Orthodox. However:</p>
+<ul>
+<li>The leadership comes from Orthodox/Religious Zionist backgrounds</li>
+<li>The programs emphasize traditional Jewish content</li>
+<li>The "pluralism" appears to be within the Jewish religious spectrum, not between religious and secular worldviews</li>
+</ul>
+<h3>"Hadata" (Religionization) Context</h3>
+<p>Gesher operates in the broader context of what secular Israelis call "הדתה" (hadata/religionization) -- the creep of religious content into secular state institutions. Key elements:</p>
+<ul>
+<li>External organizations entering secular schools with religious content</li>
+<li>Rabbis and national service volunteers (בנות שירות) introducing Orthodox programming</li>
+<li>Surveys show ~50% of secular Israelis believe hadata is significant in schools</li>
+<li>Activist groups have formed specifically to counter this trend</li>
+</ul>
+<p>Gesher would reject the "hadata" label, framing its work as "identity strengthening" rather than religious coercion. But the effect is the same: secular students exposed to religious content through state-funded channels.</p>
+
+</div>
+<div class="section" id="section-5">
+<h2>Government Ties</h2>
+<h3>Ministry of Education</h3>
+<ul>
+<li><strong>26 support payments</strong> totaling ₪9.8M</li>
+<li>Programs approved under Ministry curriculum frameworks</li>
+<li>Jewish studies programs in secular schools</li>
+<li>11 schools in Gefen educational programs mapping</li>
+</ul>
+<h3>Ministry of Diaspora Affairs</h3>
+<ul>
+<li><strong>₪4.4M</strong> in contracts for dialogue initiatives</li>
+<li>Joint AMI (National Alliance) initiative</li>
+<li>Hasbara/advocacy programming through youth mobilization</li>
+</ul>
+<h3>Prime Minister's Office</h3>
+<ul>
+<li><strong>₪1.1M</strong> in support for operations and Heritage Council</li>
+<li>PMO involvement suggests high-level political access</li>
+</ul>
+<h3>Ministry of Religion</h3>
+<ul>
+<li><strong>₪1.05M</strong> in contracts for implementation and meetings</li>
+<li>Direct relationship with religious affairs establishment</li>
+</ul>
+<h3>Ministry of Culture & Sports (via Film Fund)</h3>
+<ul>
+<li><strong>₪105.3M</strong> in Cinema Law funding to Gesher Film Fund</li>
+<li>4th-largest cinema organization by government income</li>
+</ul>
+<h3>IDF</h3>
+<ul>
+<li>Integrated into officer training curriculum</li>
+<li>6,000+ soldiers/year</li>
+<li>Sends officers on Diaspora delegations</li>
+<li>Not just a vendor -- embedded in military education</li>
+</ul>
+<h3>Municipal Partnerships</h3>
+<ul>
+<li>Jerusalem Prize co-founded with Jerusalem municipality</li>
+<li>CEO was Beit Shemesh city councilor</li>
+<li>Active in 130+ countries through diaspora partnerships</li>
+</ul>
+<h3>Historical Political Access</h3>
+<ul>
+<li>Tropper advised Education Minister Zvulun Hammer (NRP, 1979-84)</li>
+<li>Tropper headed Jewish Home party nominating committee (pre-19th Knesset)</li>
+<li>These are not arms-length government relationships -- the founder was directly inside the political system</li>
+</ul>
+
+</div>
+<div class="section" id="section-6">
+<h2>Donor Analysis</h2>
+<h3>US Foundation Donors (Identified):</h3>
+<table>
+<tr><th>Donor</th><th>Amount</th><th>Notes</th></tr>
+<tr><td><strong>William Davidson Foundation</strong></td><td>$500,000</td><td>Detroit-based, focus on Israel + Jewish education</td></tr>
+<tr><td><strong>Ruderman Family Foundation</strong></td><td>$126,000</td><td>Boston-based, disability inclusion + Israel-Diaspora relations</td></tr>
+<tr><td><strong>Jewish Communal Fund</strong></td><td>$65,810</td><td>DAF (donor-advised fund) -- individual donors anonymized</td></tr>
+<tr><td><strong>Louis Kesten Foundation</strong></td><td>$40,000</td><td>--</td></tr>
+<tr><td><strong>Slomo & Cindy Silvian Foundation</strong></td><td>$15,000</td><td>--</td></tr>
+<tr><td><strong>BK Family Foundation</strong></td><td>$25,000</td><td>--</td></tr>
+<tr><td><strong>Maimonides Fund</strong></td><td>Unknown</td><td>Co-funds AMI initiative, focus on Jewish identity + Haredi integration</td></tr>
+</table>
+<h3>Donor Profile Analysis</h3>
+<ul>
+<li><strong>William Davidson Foundation</strong>: Largest identified donor. A major Jewish philanthropic foundation focused on "advancing the Jewish people's shared future." Funds Israel programs, Jewish education, and civic vitality. Not overtly political but aligns with Jewish identity strengthening agenda.</li>
+<li><strong>Ruderman Family Foundation</strong>: Focuses on disability inclusion and Israel-American Jewish relations. Funds Haifa University American Jewish Studies program. Their grant to Gesher aligns with Diaspora relations work.</li>
+<li><strong>Maimonides Fund</strong>: Explicitly funds Jewish identity and education programs, including Haredi integration. Their involvement in the AMI initiative connects government hasbara to private philanthropy.</li>
+</ul>
+<h3>Revenue Composition</h3>
+<ul>
+<li><strong>~₪22.8M total annual revenue</strong> (Israeli entity, 2024)</li>
+<li><strong>~₪1.7M/yr from government</strong> (Israeli entity recent average)</li>
+<li><strong>~$1.6M/yr from US entity</strong> (~₪5.8M)</li>
+<li><strong>Remaining ~₪15.3M/yr</strong>: Israeli private donations + other sources (majority of funding)</li>
+<li><strong>Independent of government</strong>: Unlike many Israeli NGOs that depend on state funding, Gesher has diversified revenue. Government is only ~7.5% of the main entity's income. This gives the organization significant autonomy.</li>
+</ul>
+
+</div>
+<div class="section" id="section-7">
+<h2>Media & Public Perception</h2>
+<h3>Public Profile</h3>
+<ul>
+<li>Generally covered positively in Israeli mainstream media</li>
+<li>Positioned as the go-to "unity" organization during crises (2014 kidnappings, post-October 7)</li>
+<li>CEO Ilan Geal-Dor is a regular media commentator on social cohesion issues</li>
+<li>Featured on 103FM (Maariv), Arutz 7 (Israel National News), Srugim, Maariv</li>
+</ul>
+<h3>Media Training Program</h3>
+<ul>
+<li><strong>"Gesher.com" course targets senior media figures</strong> -- this means Gesher is not just covered by media but actively shapes how journalists think about secular-religious issues</li>
+<li>This is a significant influence mechanism that most NGOs do not have</li>
+</ul>
+<h3>Awards & Recognition</h3>
+<ul>
+<li>Jerusalem Prize for Israeli Unity (founded by Gesher)</li>
+<li>Charity Navigator 4/4 stars (US entity)</li>
+<li>50th anniversary celebrated with major conference in Jerusalem (2019)</li>
+<li>Founder received: Honorary doctorate (Yeshiva U), Jacob Agrest Prize, First Avi Chai Prize, Yekar Yerushalayim award (2018)</li>
+</ul>
+<h3>Criticism</h3>
+<ul>
+<li>No major scandals or public controversies found in search</li>
+<li>Not identified as a "hadata" organization by secular activist groups (unlike some more overtly religious organizations)</li>
+<li>The absence of criticism may itself be significant -- Gesher operates below the radar of secular watchdog groups because it packages religious content as "identity" and "unity" rather than as religious instruction</li>
+</ul>
+
+</div>
+<div class="section" id="section-8">
+<h2>Controversies</h2>
+<h3>No Major Public Controversies Found</h3>
+<p>This is notable in itself. Possible explanations:</p>
+<ol>
+<li>Gesher operates with genuine nuance and is not coercive</li>
+<li>Gesher's "bridging" framing is effective enough that critics don't identify it as a religious influence operation</li>
+<li>The Leadership Institute's media training creates sympathetic coverage</li>
+<li>The organization's focus on "unity" makes it politically costly to criticize</li>
+</ol>
+<h3>Potential Controversy Areas (Not Yet Surfaced):</h3>
+<ol>
+<li><strong>Tropper's simultaneous roles</strong>: Running a "neutral bridging" NGO while heading a Religious Zionist party's nominating committee is a clear conflict of interest that has not been publicly examined</li>
+<li><strong>AMI initiative as government propaganda</strong>: The joint venture with the Diaspora Ministry to mobilize youth for social media advocacy is effectively state-sponsored hasbara run through an NGO</li>
+<li><strong>Film Fund independence</strong>: Is a film fund that depends 100% on government money truly independent in selecting which "multicultural" stories to tell?</li>
+<li><strong>Asymmetric bridge</strong>: The consistent one-directional flow (secular->religious) has not been critically examined in Israeli media</li>
+</ol>
+
+</div>
+<div class="section" id="section-9">
+<h2>Values Alignment Table</h2>
+<p>(Assessed for דירוג ערים project -- measuring alignment with progressive/liberal values vs. religious-nationalist values)</p>
+<table>
+<tr><th>Value</th><th>Score (1-5)</th><th>Assessment</th></tr>
+<tr><td>Secular education</td><td>2/5</td><td>Introduces religious content into secular schools</td></tr>
+<tr><td>Democratic pluralism</td><td>3/5</td><td>Promotes dialogue but within Jewish framework only</td></tr>
+<tr><td>Church-state separation</td><td>2/5</td><td>Actively works to embed Jewish identity in state institutions</td></tr>
+<tr><td>Transparency</td><td>4/5</td><td>Strong financial transparency, Charity Navigator 4-star</td></tr>
+<tr><td>Inclusion (Arab citizens)</td><td>1/5</td><td>No evidence of Arab-Jewish bridging; "multicultural" means Jewish sub-cultures</td></tr>
+<tr><td>Gender equality</td><td>3/5</td><td>Female chairperson (Adato), but religious framework tends traditional</td></tr>
+<tr><td>Political neutrality</td><td>2/5</td><td>Founder active in Religious Zionist politics; "neutral" framing masks direction</td></tr>
+<tr><td>Educational autonomy</td><td>2/5</td><td>Curriculum integration reduces parental choice for secular education</td></tr>
+<tr><td>Free speech/media</td><td>2/5</td><td>Media training program shapes journalist perspectives on religion-state issues</td></tr>
+</table>
+<p><strong>Overall Assessment</strong>: Gesher scores low on progressive values alignment. Despite its "bridging" language, it functions as a religious identity strengthening organization that targets secular institutions.</p>
+
+</div>
+<div class="section" id="section-10">
+<h2>Open Questions</h2>
+<ol>
+<li><strong>What is the actual curriculum content?</strong> The research identified that Gesher operates in schools and with soldiers, but the specific lesson plans and materials were not accessible online. What exactly do students learn in a "Gesher seminar"?</li>
+</ol>
+<ol>
+<li><strong>Who are the full board members?</strong> The Israeli entity's board page loads dynamically and could not be scraped. A full board analysis might reveal additional political/religious connections.</li>
+</ol>
+<ol>
+<li><strong>What happened after Tropper?</strong> Tropper stepped back as active head around 2011 when Geal-Dor became CEO. Did the organization's direction change, or does the Religious Zionist orientation persist under new leadership? (Evidence suggests it persists -- Geal-Dor is also national-religious.)</li>
+</ol>
+<ol>
+<li><strong>Gesher Film Fund content analysis</strong>: What kinds of films does the fund support? Do they promote a particular ideological perspective? A content analysis of funded films would be revealing.</li>
+</ol>
+<ol>
+<li><strong>AMI initiative scale</strong>: How many youth are actually being mobilized for social media advocacy? The claim of "hundreds of thousands" is significant if true -- this would be one of the largest youth mobilization operations in Israel.</li>
+</ol>
+<ol>
+<li><strong>Relationship to Aish HaTorah</strong>: The search results mentioned "Aish Erber Family Gesher" -- is there a connection between Gesher and Aish HaTorah (a kiruv/outreach organization)? This needs investigation.</li>
+</ol>
+<ol>
+<li><strong>Full US donor list</strong>: The 22+ identified grants represent only partial data. A complete 990 Schedule B analysis would reveal the full donor base.</li>
+</ol>
+<ol>
+<li><strong>Midreshet Amiad</strong>: This offshoot was mentioned but could not be separately investigated. What is it and what does it teach?</li>
+</ol>
+
+</div>
+<div class="section" id="section-11">
+<h2>Data Sources Used</h2>
+<ul>
+<li>GuideStar Israel: https://www.guidestar.org.il/organization/580054062</li>
+<li>obudget.org: https://next.obudget.org/i/org/association/580054062</li>
+<li>ProPublica Nonprofit Explorer: https://projects.propublica.org/nonprofits/organizations/237029115</li>
+<li>Charity Navigator: https://www.charitynavigator.org/ein/237029115</li>
+<li>Cause IQ: https://www.causeiq.com/organizations/the-gesher-foundation,237029115/</li>
+<li>HaMichlol (Hebrew Wikipedia mirror): Daniel Tropper article, Gesher article</li>
+<li>Gesher official websites: gesher.co.il, gesherusa.org, gesherleaders.org</li>
+<li>Gesher Film Fund: gesherfilmfund.org.il</li>
+<li>obudget.org Film Fund: https://next.obudget.org/i/org/association/580358190</li>
+<li>Various Israeli news sources (Maariv, Arutz 7, Srugim, Ynet, 103FM)</li>
+</ul>
+
+</div>
+</div>
+
+<footer>
+  פרויקט זהות ציונית — דוח מחקר מעמיק | <a href="../">דירוג ערים</a> | <a href="../research/">כל הדוחות</a>
+</footer>
+
+</body>
+</html>

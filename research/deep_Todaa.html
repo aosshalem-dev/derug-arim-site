@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mahapach Todaati / Todaa Association — דוח מחקר מעמיק</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background: #f5f5f8;
+  color: #1a1a2e;
+  direction: rtl;
+  line-height: 1.8;
+  font-size: 17px;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #1a1a2e; color: #fff;
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  overflow-x: auto; white-space: nowrap;
+}
+nav .brand { font-weight: 700; color: #ff8800; flex-shrink: 0; }
+nav a { color: #ccc; text-decoration: none; font-size: 0.85em; padding: 8px 4px; border-bottom: 2px solid transparent; flex-shrink: 0; }
+nav a:hover { color: #ff8800; border-bottom-color: #ff8800; }
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a5a8a 100%);
+  color: #fff; padding: 50px 20px 40px; text-align: center;
+}
+.hero h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+.hero .subtitle { font-size: 1.05em; color: #b0c4de; margin-bottom: 6px; }
+.hero .meta { font-size: 0.9em; color: #ff8800; margin-top: 8px; }
+.risk-badge {
+  display: inline-block; padding: 4px 16px; border-radius: 20px;
+  font-size: 0.85em; font-weight: 600; margin-top: 10px;
+}
+.risk-high { background: #e74c3c; color: #fff; }
+.risk-medium { background: #f39c12; color: #fff; }
+.risk-low { background: #27ae60; color: #fff; }
+.container { max-width: 860px; margin: 0 auto; padding: 30px 20px 80px; }
+.toc {
+  background: #fff; border-radius: 8px; padding: 22px 26px;
+  margin-bottom: 32px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.toc h2 { font-size: 1.15em; color: #2a5a8a; margin-bottom: 12px; border-bottom: 2px solid #667eea; padding-bottom: 6px; }
+.toc ol { padding-right: 22px; font-size: 0.93em; }
+.toc li { margin-bottom: 4px; }
+.toc a { color: #2a5a8a; text-decoration: none; }
+.toc a:hover { color: #ff8800; text-decoration: underline; }
+.section {
+  background: #fff; border-radius: 8px; padding: 28px 26px;
+  margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.section h2 { font-size: 1.4em; color: #1a1a2e; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #667eea; }
+.section h3 { font-size: 1.1em; color: #2a5a8a; margin: 18px 0 8px; }
+.section h4 { font-size: 1em; color: #444; margin: 14px 0 6px; }
+.section p { margin-bottom: 12px; text-align: justify; }
+.section ul, .section ol { padding-right: 22px; margin-bottom: 12px; }
+.section li { margin-bottom: 5px; }
+blockquote {
+  background: #f0f4fa; border-right: 4px solid #667eea;
+  padding: 12px 18px; margin: 12px 0; border-radius: 0 6px 6px 0;
+  font-size: 0.94em; color: #333;
+}
+.thesis {
+  background: #fff8f0; border-right: 3px solid #ff8800;
+  padding: 14px 18px; margin: 12px 0; border-radius: 0 5px 5px 0;
+  font-size: 0.96em; color: #6b4500;
+}
+table {
+  width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.91em;
+}
+th {
+  background: #667eea; color: #fff; padding: 8px 12px;
+  text-align: right; position: sticky; top: 44px; z-index: 5;
+}
+td {
+  padding: 7px 12px; border-bottom: 1px solid #e8e8e8;
+  text-align: right; vertical-align: top;
+}
+tr:nth-child(even) { background: #f8f9fc; }
+a { color: #2a5a8a; }
+a:hover { color: #ff8800; }
+.back-link {
+  display: inline-block; margin-bottom: 20px; padding: 6px 14px;
+  background: #667eea; color: #fff; border-radius: 4px;
+  text-decoration: none; font-size: 0.88em;
+}
+.back-link:hover { background: #5a6fd6; color: #fff; }
+footer {
+  text-align: center; padding: 30px 20px; color: #888; font-size: 0.85em;
+}
+strong { color: #1a1a2e; }
+code {
+  background: #f0f0f0; padding: 1px 5px; border-radius: 3px;
+  font-size: 0.9em;
+}
+.source-tag {
+  display: inline-block; background: #e8eef6; padding: 2px 8px;
+  border-radius: 10px; font-size: 0.78em; color: #2a5a8a;
+  margin: 2px 3px; text-decoration: none;
+}
+.source-tag:hover { background: #d0dff0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">דוח מחקר מעמיק</span>
+  <a href="../">חזרה לדירוג</a>
+  <a href="../research/">כל הדוחות</a>
+  <a href="#section-1">1. REGISTRATION & LE</a> <a href="#section-2">2. FINANCES</a> <a href="#section-3">3. LEADERSHIP</a> <a href="#section-4">4. PROGRAMS</a> <a href="#section-5">5. IDEOLOGY: WHY 6 T</a> <a href="#section-6">6. CONTROVERSIES & C</a> <a href="#section-7">7. NETWORK CONNECTIO</a> <a href="#section-8">8. VALUES ALIGNMENT </a> <a href="#section-9">9. RISK ASSESSMENT</a> <a href="#section-10">10. OPEN QUESTIONS F</a> <a href="#section-11">SOURCES</a>
+</nav>
+
+<div class="hero">
+  <h1>Mahapach Todaati / Todaa Association</h1>
+  <div class="subtitle">(מהפך תודעתי / עמותת תודעה)</div>
+  <div class="meta"></div>
+  
+</div>
+
+<div class="container">
+  <a href="../research/" class="back-link">← כל דוחות המחקר</a>
+  <div class="toc"><h2>תוכן עניינים</h2><ol><li><a href="#section-1">1. REGISTRATION & LEGAL IDENTITY</a></li><li><a href="#section-2">2. FINANCES</a></li><li><a href="#section-3">3. LEADERSHIP</a></li><li><a href="#section-4">4. PROGRAMS</a></li><li><a href="#section-5">5. IDEOLOGY: WHY 6 THEME FLAGS?</a></li><li><a href="#section-6">6. CONTROVERSIES & CRITICISM</a></li><li><a href="#section-7">7. NETWORK CONNECTIONS</a></li><li><a href="#section-8">8. VALUES ALIGNMENT TABLE</a></li><li><a href="#section-9">9. RISK ASSESSMENT</a></li><li><a href="#section-10">10. OPEN QUESTIONS FOR FURTHER INVESTIGATION</a></li><li><a href="#section-11">SOURCES</a></li></ol></div>
+  <div class="section" id="section-1">
+<h2>1. REGISTRATION & LEGAL IDENTITY</h2>
+<table>
+<tr><th>Field</th><th>Value</th></tr>
+<tr><td><strong>Legal Name</strong></td><td>מהפך תודעתי (ע"ר) — Mahapach Todaati</td></tr>
+<tr><td><strong>Entity Type</strong></td><td>Registered Association (Amuta)</td></tr>
+<tr><td><strong>GuideStar Israel Number</strong></td><td>580396380</td></tr>
+<tr><td><strong>GuideStar URL</strong></td><td>https://www.guidestar.org.il/organization/580396380</td></tr>
+<tr><td><strong>Year Founded</strong></td><td>2002</td></tr>
+<tr><td><strong>Registered Address</strong></td><td>Kol Moshe Street 8, Tel Aviv</td></tr>
+<tr><td><strong>Operating Name</strong></td><td>עמותת תודעה (Todaa Association)</td></tr>
+<tr><td><strong>Website</strong></td><td>https://www.todaango.org.il/</td></tr>
+<tr><td><strong>Sector</strong></td><td>Community and Society</td></tr>
+<tr><td><strong>GuideStar Transparency</strong></td><td>49% (2/5 stars) -- LOW</td></tr>
+<tr><td><strong>Official Financial Report</strong></td><td>Not available on IsraelToremet (download_no.gif)</td></tr>
+</table>
+<p><strong>Key Note:</strong> The registered legal name is "מהפך תודעתי" (Consciousness Revolution) but the organization publicly operates under the brand "עמותת תודעה" (Todaa Association / Awareness Association). This dual naming is itself notable -- the legal name signals a revolutionary/transformative ideology while the public brand is softer.</p>
+<p><strong>Founders:</strong> Leah Greenpeter-Gold (לאה גרינפטר-גולד) and Nissan Ben-Ami (ניסן בן-עמי), founded 2002.</p>
+<p>Source: https://www.guidestar.org.il/organization/580396380, https://www.todaango.org.il/about-us</p>
+
+</div>
+<div class="section" id="section-2">
+<h2>2. FINANCES</h2>
+<h3>Government Funding (obudget.org)</h3>
+<table>
+<tr><th>Source</th><th>Type</th><th>Amount</th></tr>
+<tr><td>Ministry of Welfare</td><td>Support/grants</td><td>990,640 NIS</td></tr>
+<tr><td>Ministry of Welfare</td><td>Contracts</td><td>88,717 NIS</td></tr>
+<tr><td>Ministry of National Security</td><td>Conference grant</td><td>4,000 NIS</td></tr>
+<tr><td><strong>Total (3-year)</strong></td><td><strong>1,079,357 NIS</strong></td></tr>
+</table>
+<p><strong>Primary support program:</strong> "Treatment of prostitution survivors -- community-based" received 1,372,060 NIS across four allocations (505,233 | 381,420 | 301,787 | 183,620 NIS).</p>
+<p><strong>Contract work:</strong> 84,717 NIS for "operating a training framework for early identification and preventing deterioration in prostitution cycles."</p>
+<h3>2025 Government Contract (Sole Supplier, No Tender)</h3>
+<ul>
+<li><strong>Publication:</strong> https://mr.gov.il/ilgstorefront/he/p/4000598165</li>
+<li><strong>Amount:</strong> 129,600 NIS</li>
+<li><strong>Duration:</strong> Jan 20, 2025 - Dec 31, 2025</li>
+<li><strong>Purpose:</strong> "Expansion of engagement with Mahpach Todaati to operate early detection and prevention of deterioration into prostitution cycles" -- targeting police, LGBTQ+ workers, and medical teams</li>
+<li><strong>Exemption type:</strong> Single supplier (Regulation 3(29)), meaning the government claims no other entity can provide this service</li>
+<li><strong>Ministry contact:</strong> Dikla Nathanyan (DIKLAN@MOLSA.GOV.IL)</li>
+</ul>
+<h3>Organizational Scale</h3>
+<table>
+<tr><th>Metric</th><th>Value (2024)</th></tr>
+<tr><td>Annual Turnover</td><td>1,359,494 NIS</td></tr>
+<tr><td>Employees</td><td>5</td></tr>
+<tr><td>Volunteers</td><td>15</td></tr>
+</table>
+<p><strong>Assessment:</strong> This is a micro-organization by Israeli NGO standards. The 1.36M turnover and 5 employees place it in the smallest tier of Gefen suppliers. However, the sole-supplier government relationship is disproportionate to its size -- the Ministry of Welfare treats it as the exclusive provider for prostitution prevention training, which gives it outsized policy influence.</p>
+<p>Source: https://next.obudget.org/i/org/association/580396380, https://mr.gov.il/ilgstorefront/he/p/4000598165</p>
+
+</div>
+<div class="section" id="section-3">
+<h2>3. LEADERSHIP</h2>
+<h3>Current Director: Dr. Adva Berkowitz Romano (ד"ר אדוה ברקוביץ' רומנו)</h3>
+<table>
+<tr><th>Field</th><th>Detail</th></tr>
+<tr><td><strong>Title</strong></td><td>CEO / Director of Todaa Association</td></tr>
+<tr><td><strong>Education</strong></td><td>PhD from Ben-Gurion University of the Negev (dissertation on social worker perceptions of sexuality in work with girls); Social work degree from Tel Aviv University</td></tr>
+<tr><td><strong>Academic Affiliation</strong></td><td>Gender Studies Program & Department of Social Work, Ben-Gurion University</td></tr>
+<tr><td><strong>Prior Roles</strong></td><td>Program manager at JDC (Joint Distribution Committee / Brookdale Institute); managed national prevention initiatives</td></tr>
+<tr><td><strong>Parallel Role</strong></td><td>Education Director at Bonot Alternativa (בונות אלטרנטיבה) -- feminist political lobbying organization</td></tr>
+<tr><td><strong>Awards</strong></td><td>"Tamar" award for promoting protection among girls (2022)</td></tr>
+<tr><td><strong>Personal Website</strong></td><td>https://www.advaberko.com/</td></tr>
+<tr><td><strong>Key Publication</strong></td><td>"Talking about sexual desire: Social work practice with marginalized young women" (Women's Studies International Forum, Vol. 101, 2023) -- co-authored with Maya Lavie-Ajayi and Michal Krumer-Nevo</td></tr>
+<tr><td><strong>Research Focus</strong></td><td>Feminist social work, sexual agency/desire among marginalized minor women, gender-blind social policy</td></tr>
+<tr><td><strong>National Library</strong></td><td>Dissertation: "On gender blindness: Social policy in Israel regarding girls in distress"</td></tr>
+</table>
+<p><strong>Ideological Profile:</strong></p>
+<ul>
+<li>Dr. Romano explicitly frames sexuality education within a <strong>feminist critical pedagogy</strong> framework</li>
+<li>Her academic work argues social workers should engage with "elements of sexual pleasure and subjectivity" expressed by marginalized minor women -- a position at the progressive frontier of social work discourse</li>
+<li>She promotes "gender-aware education" (חינוך מודע מגדר) as an urban-level model, implemented in Ramat HaSharon</li>
+<li>She frames sexual violence prevention as requiring "cultural narrative and behavioral norm" change, not just legal compliance</li>
+<li>Her podcast appearances argue Israel ranks last among OECD countries in gender equality</li>
+<li>She explicitly connects gender inequality to sexual harassment</li>
+</ul>
+<p><strong>Knesset Testimony (2017):</strong></p>
+<p>Dr. Romano testified before the Knesset Committee for Advancement of Women's Status (Protocol 171, 20th Knesset, June 12, 2017) presenting the "Healthy Sexuality in a Safe Space" inter-ministerial program. Budget: 2.5M NIS over three years from JDC-Brookdale. Pilot in 5 municipalities (Be'er Sheva, Kiryat Malachi, Petah Tikva, Or Yehuda, + one Arab municipality).</p>
+<p>Source: https://www.learntech.co.il/podcast/pod9/, https://www.learntech.co.il/podcast/pod119/, https://cris.iucc.ac.il/en/publications/talking-about-sexual-desire-social-work-practice-with-marginalize-2, https://oknesset.org/meetings/2/0/2017121.html</p>
+<h3>Founder: Leah Greenpeter-Gold (לאה גרינפטר-גולד)</h3>
+<ul>
+<li>Described as director of "Todaa Institute for researching prostitution" (as of ~2008)</li>
+<li>Engaged in international advocacy against human trafficking -- presented Israel's trafficking policies before the UN and U.S. State Department</li>
+<li>Publicly clashed with Minister Meir Sheetrit (2008), who accused women's organizations of "speaking ill of the land" by publicizing Israel's human trafficking record internationally</li>
+<li>Pioneer in anti-prostitution advocacy in Israel</li>
+</ul>
+<p>Source: https://www.ynet.co.il/articles/0,7340,L-3494944,00.html</p>
+<h3>Co-Founder: Nissan Ben-Ami (ניסן בן-עמי)</h3>
+<ul>
+<li>Limited public information found. Co-founded the organization in 2002 with Greenpeter-Gold.</li>
+</ul>
+
+</div>
+<div class="section" id="section-4">
+<h2>4. PROGRAMS</h2>
+<h3>A. Gefen Program #13785: "חינוך למיניות מבחירה ומניעת ניצול מיני"</h3>
+<p>(Education for Sexuality by Choice and Prevention of Sexual Exploitation)</p>
+<p>Also known by its brand name: <strong>"כן בבית ספרנו"</strong> (Yes in Our School)</p>
+<p><strong>Also listed as Gefen Program #5389</strong> (possibly an older/parallel listing, status: inactive)</p>
+<table>
+<tr><th>Field</th><th>Detail</th></tr>
+<tr><td>Target Audience</td><td>Grades 9-13, parents, educational staff, school administrators</td></tr>
+<tr><td>Framework</td><td>Social-Values Education</td></tr>
+<tr><td>Source</td><td>External - Third Sector</td></tr>
+<tr><td>Format</td><td>5 sessions x 1.5 hours each, conducted by trained facilitators</td></tr>
+<tr><td>Service languages</td><td>Hebrew, Arabic, English</td></tr>
+</table>
+<p><strong>Workshop Topics Include:</strong></p>
+<ol>
+<li>Personal identity and adolescence</li>
+<li>Healthy and natural sexuality in adolescence</li>
+<li>Critical thinking about gender and sexuality norms</li>
+<li>Decision-making skills regarding sexual dilemmas</li>
+<li>Prostitution -- understanding the phenomenon</li>
+<li>Pornography -- critical media literacy</li>
+<li>Sharing sexual content on social networks</li>
+<li>Personal and others' boundaries / consent</li>
+<li>Human rights and children's rights</li>
+<li>Gender equality</li>
+<li>Recognizing personal trauma</li>
+<li><strong>Activism</strong> -- developing social responsibility</li>
+</ol>
+<p><strong>What "Sexuality by Choice" (מיניות מבחירה) Means:</strong></p>
+<p>This is the organization's core concept. It frames healthy sexuality as sexuality exercised through informed, autonomous choice -- as opposed to sexuality shaped by coercion, exploitation, social pressure, or ignorance. The concept encompasses:</p>
+<ul>
+<li>Understanding what consent means</li>
+<li>Distinguishing between chosen sexual behavior and exploitative situations</li>
+<li>Developing critical thinking about cultural/media sexuality messages</li>
+<li>Recognizing risk situations before they escalate</li>
+<li>Understanding prostitution as inherently non-choice-based</li>
+</ul>
+<h3>B. "Storiz" -- Digital Sexuality Simulator</h3>
+<table>
+<tr><th>Field</th><th>Detail</th></tr>
+<tr><td>Launch</td><td>2018</td></tr>
+<tr><td>Format</td><td>Interactive branching-narrative comic stories on mobile</td></tr>
+<tr><td>Target</td><td>Adolescents</td></tr>
+<tr><td>Hosted on</td><td>Hackaveret (הכוורת -- Israel's social entrepreneurship center)</td></tr>
+<tr><td>URL</td><td>https://www.todaango.org.il/storiz</td></tr>
+</table>
+<p><strong>How it works:</strong> Users encounter turning points in comic-format stories where they choose how the narrative continues. At the end, they receive feedback on their choices and see alternative paths. Includes anonymous chat with professional team.</p>
+<h3>C. "Nekudat Mifne" (נקודת מפנה -- Watershed/Turning Point)</h3>
+<p>Prevention program targeting entry into sex work. Details sparse on website but referenced as a distinct initiative.</p>
+<h3>D. Dating Site Certification Standard (תו תקן)</h3>
+<p>Todaa developed a voluntary certification standard for dating sites to maintain safety policies and protect users from exploitation. This extends the anti-trafficking mission into the digital dating space.</p>
+<h3>E. Ministry of Welfare Training Programs</h3>
+<p>Per the 2025 sole-supplier contract: training programs for police, LGBTQ+ workers, and medical teams on early detection of prostitution vulnerability and prevention.</p>
+<p>Source: https://www.2school.co.il/InterData/rinm/, https://hackaveret.org/projects/storiz/, https://www.todaango.org.il/storiz</p>
+
+</div>
+<div class="section" id="section-5">
+<h2>5. IDEOLOGY: WHY 6 THEME FLAGS?</h2>
+<p>The 6-flag trigger is the most unusual finding in the Gefen catalog data. Here's a flag-by-flag analysis of why each fires:</p>
+<h3>Flag 1: GENDER</h3>
+<p>The program explicitly teaches about gender norms, gender equality, critical analysis of gender constructions, and "gender-aware education." Dr. Romano's entire academic career is in Gender Studies. Her work at Bonot Alternativa focuses on feminist policy.</p>
+<h3>Flag 2: ACTIVISM</h3>
+<p>Unlike typical prevention programs that focus on individual risk reduction, Todaa's curriculum includes <strong>activism as a learning outcome</strong>. Students are expected to develop "social responsibility" and the capacity to advocate for change. The workshop topic list explicitly includes "activism." The organization itself was founded as an advocacy organization.</p>
+<h3>Flag 3: SEXUALITY</h3>
+<p>This is the core domain. The program covers sexuality comprehensively: consent, desire, pornography, prostitution, sexual exploitation, online sexual content, and healthy sexual development. Dr. Romano's academic work specifically argues for engaging with "sexual pleasure and subjectivity" -- not just risk avoidance.</p>
+<h3>Flag 4: ECOLOGICAL</h3>
+<p>This is the most surprising flag. There is no direct evidence of environmental/ecological content in Todaa's programs. However, the term "ecological" in the Gefen classification system may refer to <strong>ecological systems theory</strong> (Bronfenbrenner) -- the idea that sexuality education must address the entire ecosystem around the child (family, school, community, media, policy). Todaa explicitly uses a "holistic" approach working across multiple circles: youth, peers, educational staff, parents, community. This systemic/ecological framework would trigger the flag.</p>
+<h3>Flag 5: VIOLENCE PREVENTION</h3>
+<p>Core mission: preventing sexual violence, exploitation, trafficking, and prostitution. The organization was literally founded to combat human trafficking.</p>
+<h3>Flag 6: RELIGION/IDENTITY</h3>
+<p>The program operates across diverse Israeli populations: secular, Haredi (ultra-Orthodox), and Arab communities. Working in these communities inherently involves navigating religious and cultural identity around sexuality -- a topic where religion and sexuality directly intersect. The specialization in "Haredi communities" and "Arab society" would trigger this flag.</p>
+<h3>Summary: Is This New Age?</h3>
+<p><strong>No.</strong> Despite the name "Consciousness Revolution" (מהפך תודעתי), this is not a New Age organization. It is a <strong>feminist anti-prostitution and sexuality-education NGO</strong> rooted in:</p>
+<ul>
+<li>Critical feminist pedagogy (Paulo Freire lineage)</li>
+<li>Social work academic framework (Ben-Gurion University Gender Studies)</li>
+<li>Anti-trafficking activism (UN/State Department engagement)</li>
+<li>JDC-backed program methodology</li>
+</ul>
+<p>The word "consciousness" (תודעה) in this context means <strong>awareness/consciousness-raising</strong> in the feminist tradition (cf. consciousness-raising groups of second-wave feminism), not spiritual/New Age consciousness. The "revolution" (מהפך) refers to societal transformation of attitudes toward sexuality and exploitation -- a paradigm shift from tolerating prostitution/exploitation to actively preventing it.</p>
+
+</div>
+<div class="section" id="section-6">
+<h2>6. CONTROVERSIES & CRITICISM</h2>
+<h3>Found:</h3>
+<ol>
+<li><strong>Low transparency score:</strong> GuideStar rates the organization 49% (2/5 stars). Official financial reports are not available for download. For an organization receiving government funds via sole-supplier exemptions, this is concerning.</li>
+</ol>
+<ol>
+<li><strong>Sole-supplier status:</strong> The Ministry of Welfare grants contracts to Todaa without competitive tender, claiming it is the only entity that can provide this service (Regulation 3(29)). This creates a monopoly dynamic that deserves scrutiny.</li>
+</ol>
+<ol>
+<li><strong>2008 political controversy:</strong> Founder Leah Greenpeter-Gold was publicly attacked by Interior Minister Meir Sheetrit for "speaking ill of the land" after women's organizations (including Todaa) presented criticism of Israel's human trafficking record to the UN and U.S. State Department. This was a political controversy, not a substantive criticism of the organization's work.</li>
+</ol>
+<ol>
+<li><strong>Academic boundary-pushing:</strong> Dr. Romano's published research argues social workers should engage with "sexual pleasure and subjectivity" among marginalized minor women. While published in a peer-reviewed journal (Women's Studies International Forum), this framing could be controversial when applied to minors in educational settings.</li>
+</ol>
+<h3>Not Found:</h3>
+<ul>
+<li>No parent complaints or organized opposition found in web searches</li>
+<li>No conservative/religious criticism specifically targeting this organization (unlike some larger sex-ed providers)</li>
+<li>No media exposes or investigative journalism pieces</li>
+<li>No State Comptroller findings</li>
+<li>No legal actions</li>
+</ul>
+<p><strong>Assessment:</strong> The organization's small size (5 employees, 1 school in Gefen) likely keeps it below the radar of organized opposition. The low GuideStar transparency score is the most concrete concern.</p>
+
+</div>
+<div class="section" id="section-7">
+<h2>7. NETWORK CONNECTIONS</h2>
+<h3>Connected Organizations & Networks:</h3>
+<table>
+<tr><th>Organization</th><th>Connection Type</th></tr>
+<tr><td><strong>JDC / Brookdale Institute</strong></td><td>Dr. Romano's former employer; funded the 2.5M NIS inter-ministerial sexuality program</td></tr>
+<tr><td><strong>Bonot Alternativa (בונות אלטרנטיבה)</strong></td><td>Dr. Romano serves as Education Director; feminist political lobbying organization</td></tr>
+<tr><td><strong>Task Force on Human Trafficking and Prostitution (המטה למאבק בסחר בנשים ובזנות)</strong></td><td>Todaa is a member organization of this coalition</td></tr>
+<tr><td><strong>Israeli Association for Sex Education (האגודה לחינוך מיני / SEI)</strong></td><td>Todaa is listed as a member/affiliated organization</td></tr>
+<tr><td><strong>Hackaveret (הכוורת)</strong></td><td>Social entrepreneurship incubator hosting the Storiz project</td></tr>
+<tr><td><strong>Ministry of Welfare</strong></td><td>Exclusive service provider for prostitution prevention training</td></tr>
+<tr><td><strong>Knesset Committee for Women's Status</strong></td><td>Testified in 2017</td></tr>
+<tr><td><strong>Ben-Gurion University, Gender Studies Program</strong></td><td>Dr. Romano's academic home; research base</td></tr>
+</table>
+<h3>Sex Education Network in Israel:</h3>
+<p>Todaa operates within a broader network of sexuality-education providers, many of which also appear in the Gefen catalog:</p>
+<ul>
+<li><strong>Nekudat Mifgash (נקודת מפגש)</strong> -- "Promoting beneficial sexual maturation at eye level"</li>
+<li><strong>Maga BeTiaum (מגה בתיאום)</strong> -- For-profit sex ed provider (previously researched: revolving door from MoE, high risk)</li>
+<li><strong>Meyda Amin (מידע אמין)</strong> -- ~40 facilitators as sole proprietors (previously researched: high risk)</li>
+<li><strong>SEI (האגודה לחינוך מיני)</strong> -- Professional association for sex educators</li>
+<li><strong>Bonot Alternativa</strong> -- Feminist education and lobbying</li>
+</ul>
+<p><strong>The personnel overlap is significant:</strong> Dr. Romano simultaneously leads Todaa, directs education at Bonot Alternativa, maintains academic ties at BGU, and previously managed JDC programs. This is one person wearing many hats in a small, tightly networked ecosystem.</p>
+
+</div>
+<div class="section" id="section-8">
+<h2>8. VALUES ALIGNMENT TABLE</h2>
+<table>
+<tr><th>Value</th><th>Score (1-5)</th><th>Assessment</th></tr>
+<tr><td>Transparency</td><td>2</td><td>49% GuideStar, no public financials, sole-supplier exemptions</td></tr>
+<tr><td>Professional rigor</td><td>4</td><td>PhD-led, peer-reviewed research, JDC methodology</td></tr>
+<tr><td>Parental consent/involvement</td><td>3</td><td>Programs include parent workshops; but activism component teaches students to advocate independently</td></tr>
+<tr><td>Cultural sensitivity</td><td>4</td><td>Operates across secular, Haredi, and Arab communities in 3 languages</td></tr>
+<tr><td>Ideological neutrality</td><td>1</td><td>Explicitly feminist, gender-focused, activism-oriented; "Consciousness Revolution" name signals transformative agenda</td></tr>
+<tr><td>Government accountability</td><td>3</td><td>Sole-supplier relationship is concerning but legitimate under procurement law</td></tr>
+<tr><td>Scale/impact</td><td>2</td><td>Only 1 school in Gefen, 5 employees; micro-organization</td></tr>
+</table>
+
+</div>
+<div class="section" id="section-9">
+<h2>9. RISK ASSESSMENT</h2>
+<p><strong>Overall Risk Level: MEDIUM-HIGH</strong></p>
+<p><strong>Risk factors:</strong></p>
+<ol>
+<li><strong>Ideological saturation:</strong> 6/6 theme flags is unprecedented in the dataset. The program covers gender, activism, sexuality, ecological systems, violence prevention, AND religion/identity. This is the most ideologically dense program in the catalog.</li>
+<li><strong>Activism as pedagogy:</strong> Teaching students to become activists (not just informed citizens) crosses the line from education to mobilization.</li>
+<li><strong>Low transparency:</strong> 2/5 GuideStar score for a government-funded entity.</li>
+<li><strong>Sole-supplier monopoly:</strong> Government treats this 5-person organization as the only entity capable of providing prostitution prevention training.</li>
+<li><strong>Personnel concentration:</strong> One person (Dr. Romano) bridges academia, government programs (JDC), feminist lobbying (Bonot), and school education (Todaa). Conflicts of interest are structural.</li>
+<li><strong>Academic framing applied to minors:</strong> Research on "sexual pleasure and subjectivity" among marginalized minor women, when the same person designs school curricula, raises questions about age-appropriate boundaries.</li>
+</ol>
+<p><strong>Mitigating factors:</strong></p>
+<ol>
+<li>Legitimate founding mission: anti-trafficking and prostitution prevention is broadly supported.</li>
+<li>Human-reviewed Gefen rating of 5/5 suggests the program has been evaluated positively by MoE reviewers.</li>
+<li>Small footprint (1 school, 17,600 NIS) limits actual impact.</li>
+<li>22-year track record without major scandals.</li>
+<li>Multi-population reach (secular, Haredi, Arab) suggests adaptability.</li>
+</ol>
+
+</div>
+<div class="section" id="section-10">
+<h2>10. OPEN QUESTIONS FOR FURTHER INVESTIGATION</h2>
+<ol>
+<li><strong>Who are the current board members?</strong> GuideStar page is JS-rendered and couldn't be scraped. Manual lookup needed.</li>
+<li><strong>Why such low transparency?</strong> A 22-year-old organization with government funding should have public financials.</li>
+<li><strong>What happened to the founders?</strong> Leah Greenpeter-Gold was director as of ~2008. When did Dr. Romano take over? Did the organizational direction shift?</li>
+<li><strong>What does the "ecological" flag specifically refer to?</strong> Is there actual environmental content, or is this a classification artifact?</li>
+<li><strong>How does the Gefen program differ from the Welfare Ministry training?</strong> The school program (17,600 NIS) vs. government contracts (129,600+ NIS) suggest the school program is a small entry point for a larger operation.</li>
+<li><strong>What is the relationship between program #5389 (inactive) and #13785 (active)?</strong> Same program relisted, or different programs?</li>
+<li><strong>Are there evaluation/impact studies?</strong> The Knesset testimony mentioned need for evaluation. Have any been published?</li>
+</ol>
+
+</div>
+<div class="section" id="section-11">
+<h2>SOURCES</h2>
+<ul>
+<li>GuideStar Israel: https://www.guidestar.org.il/organization/580396380</li>
+<li>Todaa Website: https://www.todaango.org.il/</li>
+<li>obudget.org Financial Data: https://next.obudget.org/i/org/association/580396380</li>
+<li>IsraelToremet: https://www.israeltoremet.org//amuta/580396380</li>
+<li>Government Tender (2025): https://mr.gov.il/ilgstorefront/he/p/4000598165</li>
+<li>Gefen Catalog: https://www.2school.co.il/InterData/rinm/</li>
+<li>Dr. Romano's Website: https://www.advaberko.com/</li>
+<li>Academic Publication: https://cris.iucc.ac.il/en/publications/talking-about-sexual-desire-social-work-practice-with-marginalize-2</li>
+<li>Knesset Meeting Protocol: https://oknesset.org/meetings/2/0/2017121.html</li>
+<li>Ynet Article (Greenpeter-Gold): https://www.ynet.co.il/articles/0,7340,L-3494944,00.html</li>
+<li>Ynet Article (Sex Ed Legislation): https://www.ynet.co.il/news/article/H1qZm0NQD</li>
+<li>SEI (Sex Education Association): https://sei.org.il/%D7%AA%D7%95%D7%93%D7%A2%D7%94/</li>
+<li>TFHT (Anti-Trafficking Task Force): https://tfht.org/organizations/%D7%A2%D7%9E%D7%95%D7%AA%D7%AA-%D7%AA%D7%95%D7%93%D7%A2%D7%94-%D7%94%D7%A8%D7%A6%D7%90%D7%95%D7%AA/</li>
+<li>Hackaveret (Storiz): https://hackaveret.org/projects/storiz/</li>
+<li>Bonot Alternativa: https://www.bonot.org/en/events/hynwk-mwd-mgdr-mwdl-yrwny-dr-dwh-brqwbyz-rwmnw-mnhlt-thwm-hynwk-bwnwt-ltrntybh</li>
+<li>Podcast Episode 9 (LearnTech): https://www.learntech.co.il/podcast/pod9/</li>
+<li>Podcast Episode 119 (LearnTech): https://www.learntech.co.il/podcast/pod119/</li>
+<li>National Library (Dissertation): https://www.nli.org.il/en/dissertations/NNL_ALEPH990035206610205171/NLI</li>
+</ul>
+
+</div>
+</div>
+
+<footer>
+  פרויקט זהות ציונית — דוח מחקר מעמיק | <a href="../">דירוג ערים</a> | <a href="../research/">כל הדוחות</a>
+</footer>
+
+</body>
+</html>

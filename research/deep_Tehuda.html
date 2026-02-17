@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tehuda Training & Enrichment Ltd. (Chelatz) — דוח מחקר מעמיק</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background: #f5f5f8;
+  color: #1a1a2e;
+  direction: rtl;
+  line-height: 1.8;
+  font-size: 17px;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #1a1a2e; color: #fff;
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  overflow-x: auto; white-space: nowrap;
+}
+nav .brand { font-weight: 700; color: #ff8800; flex-shrink: 0; }
+nav a { color: #ccc; text-decoration: none; font-size: 0.85em; padding: 8px 4px; border-bottom: 2px solid transparent; flex-shrink: 0; }
+nav a:hover { color: #ff8800; border-bottom-color: #ff8800; }
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a5a8a 100%);
+  color: #fff; padding: 50px 20px 40px; text-align: center;
+}
+.hero h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+.hero .subtitle { font-size: 1.05em; color: #b0c4de; margin-bottom: 6px; }
+.hero .meta { font-size: 0.9em; color: #ff8800; margin-top: 8px; }
+.risk-badge {
+  display: inline-block; padding: 4px 16px; border-radius: 20px;
+  font-size: 0.85em; font-weight: 600; margin-top: 10px;
+}
+.risk-high { background: #e74c3c; color: #fff; }
+.risk-medium { background: #f39c12; color: #fff; }
+.risk-low { background: #27ae60; color: #fff; }
+.container { max-width: 860px; margin: 0 auto; padding: 30px 20px 80px; }
+.toc {
+  background: #fff; border-radius: 8px; padding: 22px 26px;
+  margin-bottom: 32px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.toc h2 { font-size: 1.15em; color: #2a5a8a; margin-bottom: 12px; border-bottom: 2px solid #667eea; padding-bottom: 6px; }
+.toc ol { padding-right: 22px; font-size: 0.93em; }
+.toc li { margin-bottom: 4px; }
+.toc a { color: #2a5a8a; text-decoration: none; }
+.toc a:hover { color: #ff8800; text-decoration: underline; }
+.section {
+  background: #fff; border-radius: 8px; padding: 28px 26px;
+  margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.section h2 { font-size: 1.4em; color: #1a1a2e; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #667eea; }
+.section h3 { font-size: 1.1em; color: #2a5a8a; margin: 18px 0 8px; }
+.section h4 { font-size: 1em; color: #444; margin: 14px 0 6px; }
+.section p { margin-bottom: 12px; text-align: justify; }
+.section ul, .section ol { padding-right: 22px; margin-bottom: 12px; }
+.section li { margin-bottom: 5px; }
+blockquote {
+  background: #f0f4fa; border-right: 4px solid #667eea;
+  padding: 12px 18px; margin: 12px 0; border-radius: 0 6px 6px 0;
+  font-size: 0.94em; color: #333;
+}
+.thesis {
+  background: #fff8f0; border-right: 3px solid #ff8800;
+  padding: 14px 18px; margin: 12px 0; border-radius: 0 5px 5px 0;
+  font-size: 0.96em; color: #6b4500;
+}
+table {
+  width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.91em;
+}
+th {
+  background: #667eea; color: #fff; padding: 8px 12px;
+  text-align: right; position: sticky; top: 44px; z-index: 5;
+}
+td {
+  padding: 7px 12px; border-bottom: 1px solid #e8e8e8;
+  text-align: right; vertical-align: top;
+}
+tr:nth-child(even) { background: #f8f9fc; }
+a { color: #2a5a8a; }
+a:hover { color: #ff8800; }
+.back-link {
+  display: inline-block; margin-bottom: 20px; padding: 6px 14px;
+  background: #667eea; color: #fff; border-radius: 4px;
+  text-decoration: none; font-size: 0.88em;
+}
+.back-link:hover { background: #5a6fd6; color: #fff; }
+footer {
+  text-align: center; padding: 30px 20px; color: #888; font-size: 0.85em;
+}
+strong { color: #1a1a2e; }
+code {
+  background: #f0f0f0; padding: 1px 5px; border-radius: 3px;
+  font-size: 0.9em;
+}
+.source-tag {
+  display: inline-block; background: #e8eef6; padding: 2px 8px;
+  border-radius: 10px; font-size: 0.78em; color: #2a5a8a;
+  margin: 2px 3px; text-decoration: none;
+}
+.source-tag:hover { background: #d0dff0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">דוח מחקר מעמיק</span>
+  <a href="../">חזרה לדירוג</a>
+  <a href="../research/">כל הדוחות</a>
+  <a href="#section-1">1. REGISTRATION & LE</a> <a href="#section-2">2. FINANCES</a> <a href="#section-3">3. LEADERSHIP</a> <a href="#section-4">4. PROGRAMS -- "Min </a> <a href="#section-5">5. IDEOLOGY & APPROA</a> <a href="#section-6">6. NETWORK & ECOSYST</a> <a href="#section-7">7. CONTROVERSIES & C</a> <a href="#section-8">8. SCOPE BEYOND GEFE</a> <a href="#section-9">VALUES ALIGNMENT TAB</a> <a href="#section-10">OPEN QUESTIONS FOR F</a> <a href="#section-11">METHODOLOGY NOTES</a>
+</nav>
+
+<div class="hero">
+  <h1>Tehuda Training & Enrichment Ltd. (Chelatz)</h1>
+  <div class="subtitle">(tehuda hakhshara v'ha'ashara b.a.m. (chelatz)) -- taHUDA hachshara v'haashara b"m (chalatz)</div>
+  <div class="meta"></div>
+  
+</div>
+
+<div class="container">
+  <a href="../research/" class="back-link">← כל דוחות המחקר</a>
+  <div class="toc"><h2>תוכן עניינים</h2><ol><li><a href="#section-1">1. REGISTRATION & LEGAL STRUCTURE</a></li><li><a href="#section-2">2. FINANCES</a></li><li><a href="#section-3">3. LEADERSHIP</a></li><li><a href="#section-4">4. PROGRAMS -- "Min Chinuch Shekaze" (A Kind of Sex Education)</a></li><li><a href="#section-5">5. IDEOLOGY & APPROACH</a></li><li><a href="#section-6">6. NETWORK & ECOSYSTEM</a></li><li><a href="#section-7">7. CONTROVERSIES & CRITICISM</a></li><li><a href="#section-8">8. SCOPE BEYOND GEFEN</a></li><li><a href="#section-9">VALUES ALIGNMENT TABLE</a></li><li><a href="#section-10">OPEN QUESTIONS FOR FURTHER INVESTIGATION</a></li><li><a href="#section-11">METHODOLOGY NOTES</a></li></ol></div>
+  <div class="section" id="section-1">
+<h2>1. REGISTRATION & LEGAL STRUCTURE</h2>
+<table>
+<tr><th>Field</th><th>Value</th></tr>
+<tr><td><strong>Legal Name</strong></td><td>Tehuda hakhshara v'ha'ashara b.a.m. (chelatz)</td></tr>
+<tr><td><strong>Brand Name</strong></td><td>Tehuda -- chinuch, hashpa'a, kehila (Education, Impact, Community)</td></tr>
+<tr><td><strong>Company Number</strong></td><td>515191955</td></tr>
+<tr><td><strong>Legal Structure</strong></td><td>Chevra l'to'elet ha'tzibur (chelatz) -- Public Benefit Company</td></tr>
+<tr><td><strong>Registrar</strong></td><td>Companies Registrar (rasham hachabarot), Ministry of Justice</td></tr>
+<tr><td><strong>Founding Year</strong></td><td>2015 (some sources say 2014)</td></tr>
+<tr><td><strong>GuideStar Israel Page</strong></td><td>https://www.guidestar.org.il/he/organization/515191955</td></tr>
+<tr><td><strong>obudget Page</strong></td><td>https://next.obudget.org/i/org/association/515191955</td></tr>
+<tr><td><strong>Field Classification</strong></td><td>hakhshara v'ha'taska (Training & Employment)</td></tr>
+<tr><td><strong>Status</strong></td><td>Active</td></tr>
+</table>
+<p><strong>Note on Legal Structure:</strong> A chelatz is a company registered under the Companies Law that operates for public benefit, similar to an amuta (non-profit association) but with a corporate governance framework. Unlike a sole proprietorship (osek), chelatz entities have some transparency requirements through the Companies Registrar and Guidestar, though less than full amutot.</p>
+<p><strong>Source URLs:</strong></p>
+<ul>
+<li>https://www.guidestar.org.il/he/organization/515191955</li>
+<li>https://next.obudget.org/i/org/association/515191955</li>
+<li>https://www.tehuda.org.il/</li>
+</ul>
+
+</div>
+<div class="section" id="section-2">
+<h2>2. FINANCES</h2>
+<table>
+<tr><th>Metric</th><th>Value</th><th>Year</th></tr>
+<tr><td><strong>Annual Revenue</strong></td><td>1,625,488 NIS</td><td>2025 (latest reported)</td></tr>
+<tr><td><strong>Sector Median</strong></td><td>2,009,339 NIS</td><td>Training & Employment sector</td></tr>
+<tr><td><strong>Employees</strong></td><td>26</td><td>2025</td></tr>
+<tr><td><strong>Volunteers</strong></td><td>0</td><td>2025</td></tr>
+<tr><td><strong>Government Income (last 3 years)</strong></td><td>None documented</td><td>Per obudget.org</td></tr>
+</table>
+<h3>Financial Analysis</h3>
+<p>Tehuda's 1.6M NIS revenue places it <strong>below the median</strong> for its sector. With 26 employees, this translates to roughly 62,500 NIS per employee per year in total revenue -- suggesting many staff are part-time facilitators or contract workers rather than full-time salaried employees. The zero volunteer count is notable for a chelatz.</p>
+<p>The absence of documented government income in the last three years is significant. This means the organization's sexuality education work is funded through:</p>
+<ol>
+<li><strong>Gefen catalog purchases</strong> -- schools use their Gefen budgets (11,500 NIS/student allocation) to buy programs from approved providers like Tehuda</li>
+<li><strong>Municipal contracts</strong> -- Modiin municipality lists Tehuda's training in its 2025-2026 learning center catalog</li>
+<li><strong>Direct institutional bookings</strong> -- workshops for parents, education teams, residential facilities</li>
+<li><strong>Vocational training contracts</strong> -- courses for special populations, prisoners, at-risk youth</li>
+</ol>
+<p>Listed clients include: Tel Aviv Municipality, Netanya Municipality, Holon Municipality, Herzliya Municipality, Israel Prisons Service, ORT, multiple local councils, drug rehabilitation centers.</p>
+<p><strong>Source URLs:</strong></p>
+<ul>
+<li>https://next.obudget.org/i/org/association/515191955</li>
+</ul>
+
+</div>
+<div class="section" id="section-3">
+<h2>3. LEADERSHIP</h2>
+<h3>Galit Milchen -- CEO & Founder of the Sexuality Education Program</h3>
+<table>
+<tr><th>Field</th><th>Value</th></tr>
+<tr><td><strong>Role at Tehuda</strong></td><td>CEO (manakelit) of "Tehuda -- Education, Impact, Community"</td></tr>
+<tr><td><strong>Role at SEI</strong></td><td>Chair of Audit Committee (vadat bikoret), Israeli Association for Sex Education</td></tr>
+<tr><td><strong>Education</strong></td><td>BA in Humanities, Film & Television, Tel Aviv University (with distinction)</td></tr>
+<tr><td><strong>Teaching Certificate</strong></td><td>Senior teaching studies, Kibbutz Seminar academic conversion program</td></tr>
+<tr><td><strong>Sex Ed Certification</strong></td><td>Certified sex educator and group facilitator through "Open Door" (delet ptucha) -- the Israeli Association for Family Planning, affiliated with IPPF</td></tr>
+<tr><td><strong>Prior Career</strong></td><td>Children's investigative journalist at Israeli Children's Channel</td></tr>
+<tr><td><strong>Other Background</strong></td><td>Tour guide, youth leader in Scouts, nature education coordinator in disadvantaged communities, high school educator</td></tr>
+<tr><td><strong>Residence</strong></td><td>Modiin</td></tr>
+<tr><td><strong>Personal</strong></td><td>Mother of three teenage daughters</td></tr>
+<tr><td><strong>Contact</strong></td><td>galit@tehuda.org.il, 050-4527777</td></tr>
+<tr><td><strong>Personal Website</strong></td><td>https://min-hinuch.co.il</td></tr>
+</table>
+<p><strong>Key Observation -- Self-Certification Loop:</strong> Milchen received her sex education certification from "Open Door" (delet ptucha), the Israeli Association for Family Planning (IPPF affiliate). She then founded her own program "Min Chinuch Shekaze" which operates under Tehuda. This program is now listed as one of the recognized training programs by SEI (the Israeli Association for Sex Education), on whose audit committee Milchen herself sits. This is a circular credentialing pattern: she is trained by the IPPF pipeline, creates her own program, and then sits on the governance of the body that certifies it.</p>
+<p><strong>Key Observation -- Qualifications:</strong> Milchen's formal education is in humanities, film, and television -- not psychology, social work, education sciences, or any clinical field. Her sex education certification comes from a non-academic professional training (Open Door/IPPF), not a university degree program. This is not inherently disqualifying -- the field of sex education in Israel largely operates through professional certifications rather than academic degrees -- but it means her expertise is practitioner-based rather than research-based.</p>
+<h3>Irit Shahar -- Coordinator, Sexuality Education Domain</h3>
+<table>
+<tr><th>Field</th><th>Value</th></tr>
+<tr><td><strong>Education</strong></td><td>MA in Education (Special Education focus), BA in Behavioral Sciences</td></tr>
+<tr><td><strong>Certifications</strong></td><td>Certified sexuality educator and group facilitator</td></tr>
+<tr><td><strong>Background</strong></td><td>Pedagogical advisor, parent educator, high school homeroom teacher and media coordinator</td></tr>
+<tr><td><strong>Contact</strong></td><td>irit@tehuda.org, 052-3638655</td></tr>
+</table>
+<h3>Smadar Malik -- Director of Training Programs</h3>
+<table>
+<tr><th>Field</th><th>Value</th></tr>
+<tr><td><strong>Education</strong></td><td>BA in Behavioral Sciences</td></tr>
+<tr><td><strong>Background</strong></td><td>Project manager, empowerment workshop facilitator, personal coach for youth with learning disabilities</td></tr>
+<tr><td><strong>Other</strong></td><td>Social leader (Ramon Foundation)</td></tr>
+</table>
+<p><strong>Source URLs:</strong></p>
+<ul>
+<li>https://www.tehuda.org.il/odot/</li>
+<li>https://min-hinuch.co.il/odotii/</li>
+<li>https://sei.org.il/galit-milcen/</li>
+</ul>
+
+</div>
+<div class="section" id="section-4">
+<h2>4. PROGRAMS -- "Min Chinuch Shekaze" (A Kind of Sex Education)</h2>
+<h3>Program Registration</h3>
+<ul>
+<li><strong>Gefen Program #1878</strong> -- "chinuch l'miniut nevona -- min chinuch shekaze"</li>
+<li><strong>Gefen Program #32710</strong> -- R1 (second program, details not found in public search)</li>
+<li><strong>MoE Classification:</strong> Social-emotional values, at-risk youth services, parental partnership, professional development</li>
+<li><strong>Languages:</strong> Hebrew, English, Arabic</li>
+</ul>
+<h3>Target Populations</h3>
+<ul>
+<li><strong>Elementary school students</strong> (younger adolescents)</li>
+<li><strong>Adolescents (grades 7-12)</strong></li>
+<li><strong>Young adults (ages 20-30)</strong></li>
+<li><strong>Parents</strong></li>
+<li><strong>Education staff</strong></li>
+<li><strong>Government officials and organizational representatives</strong></li>
+<li><strong>Special populations</strong> (at-risk youth, residential facilities)</li>
+</ul>
+<h3>Workshop Catalog</h3>
+<p><strong>For Students/Youth:</strong></p>
+<ol>
+<li><strong>"The Changing Body" (ha'guf ha'mishtane)</strong> -- For younger adolescents. Normalizes puberty discussions, provides age-appropriate physiological knowledge.</li>
+</ol>
+<ol>
+<li><strong>"Gender and Stereotypes" (migdar u'steratipim)</strong> -- Examines differences between genders, similarities, and societal expectations from women and men.</li>
+</ol>
+<ol>
+<li><strong>"Body Image" (tadmit guf)</strong> -- Counters unrealistic beauty standards. Examines media messages' impact on body perception.</li>
+</ol>
+<ol>
+<li><strong>"Dangers of Pornography" (sakhanot ha'pornografia)</strong> -- Addresses exposure to pornographic content through media and its effects on adolescent sexual development.</li>
+</ol>
+<ol>
+<li><strong>"Red Flags in Relationships" (degalim adumim b'yahasim)</strong> -- For older teenagers. Identifies signs of harmful relationships including sexual, physical, emotional, and economic abuse.</li>
+</ol>
+<ol>
+<li><strong>"Considerations for Sexual Relations" (shikulim l'yahasei min)</strong> -- Explores teens' perspectives on sexual intercourse and the role of emotions in value systems.</li>
+</ol>
+<ol>
+<li><strong>"Bat Mitzvah and Mothers" (bat mitzva v'imahot)</strong> -- Connects mothers and daughters at a formative age through intimate relationship-building.</li>
+</ol>
+<p><strong>For Educators:</strong></p>
+<ol>
+<li><strong>"Workshops for Education and Care Teams"</strong> -- Customizable workshops for school staff on addressing sexuality with students.</li>
+</ol>
+<ol>
+<li><strong>"Parent-Adolescent Relations" (yahasei horim-mitbagrim)</strong> -- Specialized format for parental groups on overcoming discomfort in discussing sexuality.</li>
+</ol>
+<p><strong>Professional Training (Facilitator Certification):</strong></p>
+<ol>
+<li><strong>"Training in Guiding Adolescent Sexuality" (hakhshara b'hanhaiat miniut noar)</strong> -- 110 academic hours total:</li>
+</ol>
+<ul>
+<li>84 hours in-person across 13 weekly sessions</li>
+<li>26 hours asynchronous (self-paced video content)</li>
+<li>Includes practical exercises with adolescents, field observation, group practice</li>
+<li>Leads to facilitator certification</li>
+<li>Listed in Modiin municipality's 2025-2026 learning center catalog</li>
+</ul>
+<h3>Methodology</h3>
+<ul>
+<li><strong>Workshop-based, participatory</strong> -- theory combined with experiential learning</li>
+<li><strong>"Open conversation with clear boundaries"</strong> -- emphasis on creating safe discussion spaces</li>
+<li><strong>Age-appropriate adaptation</strong> -- different content for elementary vs. high school vs. parents</li>
+<li><strong>Anti-pornography stance</strong> -- explicitly addresses harmful effects of porn exposure</li>
+<li><strong>Comprehensive (CSE) approach</strong> -- covers emotional, relational, physiological, and values dimensions</li>
+<li><strong>"Creative tools"</strong> -- facilitator training includes creative methodologies</li>
+</ul>
+<h3>Scale</h3>
+<ul>
+<li>Team of approximately <strong>20 sexuality educators</strong> working nationally</li>
+<li>Workshops delivered to <strong>"tens of thousands of teenagers"</strong> (per Milchen's claims)</li>
+<li>Listed in Gefen catalog for national purchasing by schools</li>
+<li>Also offered through municipal learning centers (confirmed: Modiin)</li>
+</ul>
+<p><strong>Source URLs:</strong></p>
+<ul>
+<li>https://www.tehuda.org.il/portfolio-items/chinuch-l-miniut-nevona/</li>
+<li>https://min-hinuch.co.il/sdnaot-v-hartzaot/</li>
+<li>https://sei.org.il/tehuda-chinuch-hashpaa-kehila-bam-chaltz-tochnit/</li>
+<li>https://www.tehuda.org.il/portfolio-items/hakhsharot-b-miniut-noar-l-anshei-nashim-chinuch-t/</li>
+</ul>
+
+</div>
+<div class="section" id="section-5">
+<h2>5. IDEOLOGY & APPROACH</h2>
+<h3>The Name: "Min Chinuch Shekaze" -- Semantic Analysis</h3>
+<p>The program name is a Hebrew wordplay: "min chinuch shekaze" literally means "such an education" but "min" also means "sex" (or "species/type"). So the name simultaneously reads as "such an education" and "sex education of this kind." This playful approach to a taboo topic is itself an ideological statement: <strong>sexuality should be discussable, approachable, even lighthearted</strong> -- not shameful or hidden.</p>
+<h3>Positioning on the Spectrum</h3>
+<p>Based on the curriculum topics, methodology, and institutional affiliations, the program positions itself in the <strong>progressive-liberal comprehensive sexuality education (CSE) framework</strong>:</p>
+<p><strong>Evidence of progressive positioning:</strong></p>
+<ul>
+<li>Covers <strong>sexual orientation</strong> and <strong>gender identity</strong> as listed topics on the SEI page</li>
+<li>Addresses <strong>"gender stereotypes"</strong> (implying critique of traditional gender roles)</li>
+<li>Uses <strong>gender-inclusive Hebrew language</strong> in website copy (e.g., "anshei.ot" with gender-neutral dot notation)</li>
+<li>Milchen's certification is from <strong>Open Door / IPPF</strong> -- the international Planned Parenthood network, which globally advocates for progressive CSE</li>
+<li>The program is recognized by <strong>SEI (Israeli Association for Sex Education)</strong>, founded in 2023 by CSE professionals</li>
+<li>Covers <strong>contraception</strong> as a topic</li>
+<li>Workshop topics align with WHO/UNESCO CSE framework</li>
+</ul>
+<p><strong>Evidence of moderate/mainstream positioning:</strong></p>
+<ul>
+<li><strong>Anti-pornography stance</strong> is prominent -- this aligns with both progressive and conservative concerns</li>
+<li><strong>Family communication</strong> emphasis -- workshops for parents alongside teens</li>
+<li><strong>Relationship violence prevention</strong> -- broadly accepted across the spectrum</li>
+<li>No explicit LGBTQ-focused programming found (unlike CHOSHEN/Hoshen which is specifically LGBTQ-focused)</li>
+<li><strong>No gender transition content</strong> found</li>
+<li>Program is accepted in the Gefen catalog which requires MoE approval</li>
+</ul>
+<p><strong>What is NOT clearly visible:</strong></p>
+<ul>
+<li>Whether workshops discuss non-binary identities</li>
+<li>Whether "gender identity" content goes beyond awareness to advocacy</li>
+<li>Whether content differs between Hebrew and English messaging (no English version of program found)</li>
+<li>Whether program content adapts for religious/traditional populations or maintains uniform content</li>
+</ul>
+<h3>Comparison with Known Approaches</h3>
+<table>
+<tr><th>Approach</th><th>Tehuda/"Min Chinuch Shekaze"</th><th>CHOSHEN/Hoshen (LGBTQ)</th><th>MoE "Miniut b'merhav batuach"</th></tr>
+<tr><td><strong>Sexual orientation</strong></td><td>Listed as topic</td><td>Core focus</td><td>Mentioned</td></tr>
+<tr><td><strong>Gender identity</strong></td><td>Listed as topic</td><td>Core focus</td><td>Cautious</td></tr>
+<tr><td><strong>Anti-pornography</strong></td><td>Prominent</td><td>Not primary focus</td><td>Included</td></tr>
+<tr><td><strong>Family involvement</strong></td><td>Strong (parent workshops)</td><td>Minimal</td><td>Included</td></tr>
+<tr><td><strong>Contraception</strong></td><td>Covered</td><td>Not primary</td><td>Covered</td></tr>
+<tr><td><strong>Religious adaptation</strong></td><td>Offered in Arabic</td><td>Yes (adapted versions)</td><td>Yes</td></tr>
+<tr><td><strong>Gefen listed</strong></td><td>Yes (#1878)</td><td>Yes (separate)</td><td>MoE-internal</td></tr>
+</table>
+<p><strong>Source URLs:</strong></p>
+<ul>
+<li>https://sei.org.il/tehuda-chinuch-hashpaa-kehila-bam-chaltz-tochnit/</li>
+<li>https://min-hinuch.co.il/</li>
+<li>https://www.tehuda.org.il/portfolio-items/chinuch-l-miniut-nevona/</li>
+</ul>
+
+</div>
+<div class="section" id="section-6">
+<h2>6. NETWORK & ECOSYSTEM</h2>
+<h3>The Israeli Sex Education Provider Ecosystem</h3>
+<p>Tehuda operates within a formalized ecosystem of sex education providers, all linked through the <strong>Israeli Association for Sex Education (SEI)</strong>, founded in March 2023. The SEI functions as a professional body that:</p>
+<ul>
+<li>Recognizes training programs</li>
+<li>Sets professional standards</li>
+<li>Maintains an organizational index</li>
+<li>Holds elections for governance positions</li>
+</ul>
+<p><strong>SEI Governance (elected January 30, 2026):</strong></p>
+<ul>
+<li><strong>Founding Chair:</strong> Dr. Chen Katzowitz-Farsler (researcher of sexuality, gender, sex education, and adolescence)</li>
+<li><strong>Audit Committee Chair:</strong> Galit Milchen (Tehuda CEO)</li>
+<li><strong>Ethics Committee Chair:</strong> Yael Tal Poa</li>
+<li><strong>Conferences Committee Chair:</strong> Zion Lutan</li>
+<li><strong>Professional Standards Committee Chair:</strong> Zehava Tamir</li>
+</ul>
+<h3>Organizations in the SEI Index (28 total)</h3>
+<p>Tehuda is one of 28 organizations that have "adopted the association's goals, vision and code of ethics." Key peer organizations include:</p>
+<table>
+<tr><th>Organization</th><th>Focus</th><th>Gefen Status</th></tr>
+<tr><td><strong>delet ptucha (Open Door)</strong></td><td>IPPF affiliate, oldest provider, comprehensive training</td><td>Likely</td></tr>
+<tr><td><strong>Mida Amin al Min (Reliable Info on Sex)</strong></td><td>CSE education, podcast, workshops</td><td>Likely -- also in Gefen</td></tr>
+<tr><td><strong>nekudat mifgash (Meeting Point)</strong></td><td>Adolescent sexuality, founded 2020, 50+ staff</td><td>Likely</td></tr>
+<tr><td><strong>Tehuda -- Min Chinuch Shekaze</strong></td><td>Adolescent sexuality, special populations</td><td>Yes (#1878)</td></tr>
+<tr><td><strong>Maga b'Tiaum (Touch in Coordination)</strong></td><td>Sex education provider</td><td>In SEI index</td></tr>
+<tr><td><strong>Ayana Center</strong></td><td>Early childhood sexuality education</td><td>Training recognized by SEI</td></tr>
+<tr><td><strong>LAVO</strong></td><td>Gender & sexuality facilitation</td><td>Training recognized by SEI</td></tr>
+<tr><td><strong>MyMoment</strong></td><td>Intimacy education for disabilities</td><td>Training recognized by SEI</td></tr>
+</table>
+<h3>Connection Map</h3>
+<p><code>`</code></p>
+<p>IPPF (International)</p>
+<table>
+<tr></tr>
+</table>
+<p>v</p>
+<p>Open Door / delet ptucha (Israeli Family Planning Assoc.)</p>
+<p>|-- Trains sex educators (including Galit Milchen)</p>
+<p>|-- Recognized by SEI</p>
+<table>
+<tr></tr>
+</table>
+<p>v</p>
+<p>SEI (Israeli Association for Sex Education, est. 2023)</p>
+<p>|-- Recognizes 8+ training programs</p>
+<p>|-- Index of 28 organizations</p>
+<p>|-- Governance: Milchen chairs Audit Committee</p>
+<table>
+<tr></tr>
+</table>
+<p>+--> Tehuda / "Min Chinuch Shekaze"</p>
+<p>|      |-- Gefen #1878, #32710</p>
+<p>|      |-- 20 facilitators nationwide</p>
+<p>|      |-- Milchen: CEO + SEI Audit Chair</p>
+<table>
+<tr></tr>
+</table>
+<p>+--> nekudat mifgash (Meeting Point)</p>
+<p>|      |-- 50+ staff, founded 2020</p>
+<p>|      |-- Avner Dafni (ex-CEO of Agudah) on team</p>
+<table>
+<tr></tr>
+</table>
+<p>+--> Mida Amin al Min</p>
+<p>|      |-- Training recognized by SEI</p>
+<table>
+<tr></tr>
+</table>
+<p>+--> Maga b'Tiaum</p>
+<p>|      |-- In SEI index</p>
+<table>
+<tr></tr>
+</table>
+<p>+--> CHOSHEN/Hoshen</p>
+<p>|-- LGBTQ-focused (not in SEI index, separate ecosystem)</p>
+<p>|-- Operates in schools separately</p>
+<p><code>`</code></p>
+<h3>Key Network Observations</h3>
+<ol>
+<li><strong>Self-certification loop confirmed:</strong> Milchen was trained by Open Door (IPPF). She founded Min Chinuch Shekaze at Tehuda. Her program is recognized by SEI. She chairs SEI's audit committee. This is a small, closed professional ecosystem where the same people train, certify, and oversee each other.</li>
+</ol>
+<ol>
+<li><strong>CHOSHEN/Hoshen is NOT in the SEI index</strong> -- it operates as a separate LGBTQ-focused organization. Tehuda and Hoshen are not directly linked through SEI, though both operate in schools through the Gefen system.</li>
+</ol>
+<ol>
+<li><strong>Maga b'Tiaum (Touch in Coordination)</strong> IS in the SEI organizational index but detailed Gefen program information was not found in public searches. Previous research (batch 2) identified Maga b'Tiaum as a sole proprietorship with limited transparency.</li>
+</ol>
+<ol>
+<li><strong>Meyda Amin (Reliable Info on Sex)</strong> -- also in the SEI ecosystem as both a training provider and organizational member. Previous research (batch 2) identified it as a sole proprietorship hiding approximately 40 facilitators behind a single registration.</li>
+</ol>
+<ol>
+<li><strong>Open Door (delet ptucha) is the IPPF pipeline entry point</strong> -- the only Israeli organization with IPPF certification, and the primary training provider that produced Milchen and many other sex education professionals in Israel.</li>
+</ol>
+<p><strong>Source URLs:</strong></p>
+<ul>
+<li>https://sei.org.il/organizations/</li>
+<li>https://sei.org.il/trainings/</li>
+<li>https://sei.org.il/association-staff/</li>
+<li>https://www.hoshen.org/education</li>
+</ul>
+
+</div>
+<div class="section" id="section-7">
+<h2>7. CONTROVERSIES & CRITICISM</h2>
+<h3>Direct Controversies Targeting Tehuda</h3>
+<p><strong>None found.</strong> No specific parent complaints, legal actions, media investigations, or formal objections targeting Tehuda or "Min Chinuch Shekaze" were discovered in web searches (Hebrew and English).</p>
+<h3>Milchen's Public Statements</h3>
+<p>In a 2020 Modiin local news article, Milchen stated: "I won't be surprised if in the coming months we identify a wave of teen abortions" -- referring to social isolation during COVID and teens' reduced access to sex education. This statement is attention-getting and somewhat alarmist, but appears to have been made in the context of advocating for continued sex education access.</p>
+<p>In a 2022 Haaretz article (sponsored/labeled content for educational institutions), the program is described with the quote: "We don't have the privilege to succumb to embarrassment" -- positioning the work as urgent and necessary.</p>
+<h3>Broader Ecosystem Controversies</h3>
+<p>The sex education ecosystem in Israel faces ongoing tension from multiple directions:</p>
+<ol>
+<li><strong>Religious/Ultra-Orthodox opposition:</strong> Sex education is implemented at lower rates in religious and ultra-Orthodox schools. Even when implemented, not all content is taught due to parental objections. A 2013 incident saw sex education removed from junior high curriculum under political pressure.</li>
+</ol>
+<ol>
+<li><strong>Gender Critical Israel (gc-israel.org):</strong> This movement objects to gender identity content in schools, arguing that schools are "cultivating gender identity in children" and providing "radical gender lessons for young children." They specifically target content about non-binary identities and gender transition.</li>
+</ol>
+<ol>
+<li><strong>Conservative opinion writers:</strong> Israel Hayom published an opinion piece by Arnon Itiel arguing that sex education is state overreach into parental authority, calling it inappropriate to discuss "seduction scenarios" with young girls.</li>
+</ol>
+<ol>
+<li><strong>Parental sovereignty concerns:</strong> Some parents object to exposure of their children to same-sex relationship content. In one documented case, parents complained about a math textbook illustration showing two women and a child on a balcony.</li>
+</ol>
+<h3>Risk Assessment for Tehuda Specifically</h3>
+<p>Tehuda's exposure to controversy is <strong>moderate</strong> due to:</p>
+<ul>
+<li>Its program covers gender identity and sexual orientation topics that are flashpoints for conservative criticism</li>
+<li>The self-certification loop (Milchen on SEI audit committee while her own program is SEI-recognized) creates a governance vulnerability if scrutinized</li>
+<li>The "Min Chinuch Shekaze" name itself is provocatively playful about sexuality, which could draw attention</li>
+<li>However: the program is MoE-approved through Gefen, mainstream in its content, and has an anti-pornography stance that provides conservative-friendly positioning</li>
+</ul>
+<p><strong>Source URLs:</strong></p>
+<ul>
+<li>https://modiin.mynet.co.il/local_news/article/rJxsFbqLL</li>
+<li>https://www.haaretz.co.il/labels/educational-institutions/2022-06-29/ty-article-labels/00000181-aea2-d2ac-af8b-aee7efe70000</li>
+<li>https://www.israelhayom.co.il/opinions/article/11895066</li>
+<li>https://gc-israel.org/school-gender/</li>
+</ul>
+
+</div>
+<div class="section" id="section-8">
+<h2>8. SCOPE BEYOND GEFEN</h2>
+<h3>Tehuda's Non-Sexuality Programs (Core Business)</h3>
+<p>Tehuda's original and broader mission is <strong>vocational training for special populations</strong>, which includes:</p>
+<p><strong>Vocational Courses:</strong></p>
+<ul>
+<li>Nail care and building</li>
+<li>Makeup artistry</li>
+<li>Technology courses (web design, phone repair, 3D printing, Microsoft, Cisco certifications)</li>
+<li>Environmental gardening/ecology</li>
+<li>Jewelry making (tzorfut)</li>
+<li>Business entrepreneurship and product development</li>
+<li>Labor market skills training</li>
+</ul>
+<p><strong>Target Populations for Vocational Training:</strong></p>
+<ul>
+<li>People with borderline intellectual functioning</li>
+<li>Muscular dystrophy patients</li>
+<li>People with mental health challenges</li>
+<li>Cerebral palsy survivors</li>
+<li>Teenagers and adults on the autism spectrum (high functioning)</li>
+<li>Children with developmental disabilities</li>
+<li>At-risk youth in residential facilities (pnimiyot)</li>
+<li>Incarcerated individuals in rehabilitation (Israel Prisons Service)</li>
+<li>Diverse ethnic/religious sectors (Arab, Haredi, Ethiopian)</li>
+</ul>
+<h3>Geographic Scope</h3>
+<p>Tehuda claims <strong>"national distribution" (prisa artzit)</strong> for both its vocational and sexuality programs. Confirmed locations include:</p>
+<ul>
+<li>Modiin (headquarters, municipal partnership)</li>
+<li>Tel Aviv, Netanya, Holon, Herzliya (listed as clients)</li>
+<li>Various residential facilities and prisons nationwide</li>
+</ul>
+<h3>Municipal Integration</h3>
+<p>Tehuda's sexuality training program is listed in Modiin municipality's official 2025-2026 "ir lomedet" (learning city) catalog, suggesting formal municipal endorsement beyond just Gefen inclusion.</p>
+<p><strong>Source URLs:</strong></p>
+<ul>
+<li>https://www.tehuda.org.il/</li>
+<li>https://www.tehuda.org.il/portfolio-items/hakhsharot-miktzoiot/</li>
+<li>https://www.modiin.muni.il/Magazine/MagazineYear2025/index.html</li>
+</ul>
+
+</div>
+<div class="section" id="section-9">
+<h2>VALUES ALIGNMENT TABLE</h2>
+<table>
+<tr><th>Value</th><th>Score (1-5)</th><th>Notes</th></tr>
+<tr><td><strong>Transparency</strong></td><td>2/5</td><td>Chelatz structure provides some visibility; no detailed financials publicly available; GuideStar page is JS-rendered (can't scrape)</td></tr>
+<tr><td><strong>Professional qualifications</strong></td><td>2/5</td><td>CEO has film/humanities degree, not clinical/academic background; certification from non-academic IPPF pipeline</td></tr>
+<tr><td><strong>Governance integrity</strong></td><td>2/5</td><td>Self-certification loop: CEO chairs audit committee of body that recognizes her own program</td></tr>
+<tr><td><strong>Content appropriateness</strong></td><td>3/5</td><td>Mainstream CSE content; anti-porn stance is positive; gender identity inclusion may concern some families</td></tr>
+<tr><td><strong>Parental sovereignty</strong></td><td>3/5</td><td>Includes parent workshops and family communication emphasis; however, program enters schools through Gefen without individual parental opt-in</td></tr>
+<tr><td><strong>Financial accountability</strong></td><td>2/5</td><td>Below-median revenue for sector; no government income documented; 26 employees on 1.6M NIS suggests thin margins or contract labor</td></tr>
+<tr><td><strong>Network independence</strong></td><td>2/5</td><td>Part of closed professional ecosystem (SEI/IPPF pipeline); circular credentialing</td></tr>
+<tr><td><strong>Scale verification</strong></td><td>2/5</td><td>Claims "tens of thousands" of teens reached; no independent verification available</td></tr>
+</table>
+
+</div>
+<div class="section" id="section-10">
+<h2>OPEN QUESTIONS FOR FURTHER INVESTIGATION</h2>
+<ol>
+<li><strong>Who are Tehuda's directors/board members?</strong> The chelatz must have directors registered with rasham hachabarot. These names are not publicly available without ordering a company extract (nesach chevra) -- paid service at ica.justice.gov.il.</li>
+</ol>
+<ol>
+<li><strong>What exactly is Gefen Program #32710 (R1)?</strong> This second program was mentioned in the user's request but no details were found in public searches. It may be a variant or sub-program of #1878.</li>
+</ol>
+<ol>
+<li><strong>What is Tehuda's full financial history?</strong> GuideStar Israel pages are JavaScript-rendered and cannot be scraped by WebFetch. A manual check of the GuideStar page could reveal multi-year revenue trends, government funding history, and board member lists.</li>
+</ol>
+<ol>
+<li><strong>What specific content is taught about gender identity?</strong> The SEI page lists "sexual orientation" and "gender identity" as covered topics, but the depth and approach are not publicly documented. Does the program teach gender as a spectrum? Does it use non-binary terminology with students?</li>
+</ol>
+<ol>
+<li><strong>How does content differ by population?</strong> Tehuda claims to serve Arabic-speaking communities and diverse sectors. Is the sexuality content adapted for traditional/religious populations, or is it uniform progressive CSE?</li>
+</ol>
+<ol>
+<li><strong>What is the relationship between Milchen's personal brand (min-hinuch.co.il) and the chelatz?</strong> The personal website and the organizational program appear to be the same offering under two brands. Is Milchen conducting personal work through the chelatz, or are these genuinely separate?</li>
+</ol>
+<ol>
+<li><strong>What happened to Tehuda's government funding?</strong> Obudget says no government income in the last 3 years, but there may have been prior government funding. What changed?</li>
+</ol>
+
+</div>
+<div class="section" id="section-11">
+<h2>METHODOLOGY NOTES</h2>
+<ul>
+<li>Searches conducted in both Hebrew and English</li>
+<li>Data sources: WebSearch, WebFetch of Tehuda website, min-hinuch.co.il, SEI (sei.org.il), obudget.org, GuideStar (JS-rendered -- limited), Modiin municipality catalog, Israel Hayom, Haaretz, Mynet Modiin, gc-israel.org</li>
+<li>GuideStar financial data was obtainable only through obudget.org aggregation due to JS rendering</li>
+<li>No Knesset research papers or State Comptroller reports found mentioning Tehuda specifically</li>
+<li>No US entities or international funding connections found beyond the IPPF certification pipeline through Open Door</li>
+</ul>
+
+</div>
+</div>
+
+<footer>
+  פרויקט זהות ציונית — דוח מחקר מעמיק | <a href="../">דירוג ערים</a> | <a href="../research/">כל הדוחות</a>
+</footer>
+
+</body>
+</html>

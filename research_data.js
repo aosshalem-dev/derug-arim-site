@@ -24,7 +24,7 @@ const RESEARCH = {
         "חדירה ל-14 קיבוצים עירוניים ברחבי הארץ"
       ],
       "chapters": [],
-      "report_url": "research/Dror_Israel_network.md",
+      "report_url": "research/Dror_Israel_network.html",
       "has_full_report": true
     },
     "gender_sexuality": {
@@ -54,7 +54,7 @@ const RESEARCH = {
         "אין מנגנון הסכמת הורים (opt-in) מזוהה"
       ],
       "chapters": [],
-      "report_url": "research/Gender_sexuality_education_providers.md",
+      "report_url": "research/Gender_sexuality_education_providers.html",
       "has_full_report": true
     },
     "political_activist": {
@@ -80,7 +80,7 @@ const RESEARCH = {
         "פעילות ב'אפשר אחרת' — מציגה חלופות פוליטיות בכיתות"
       ],
       "chapters": [],
-      "report_url": "research/Political-activist_orgs_in_education.md",
+      "report_url": "research/Political-activist_orgs_in_education.html",
       "has_full_report": true
     },
     "hartman": {
@@ -103,7 +103,7 @@ const RESEARCH = {
         "מקדם פלורליזם דתי שמאוניברסל את היהדות — יהדות = ליברליזם"
       ],
       "chapters": [],
-      "report_url": "research/Hartman_Institute_network.md",
+      "report_url": "research/Hartman_Institute_network.html",
       "has_full_report": true
     },
     "foreign_coexistence": {
@@ -128,7 +128,7 @@ const RESEARCH = {
         "חשד לארגון גג לא רשמי המתאם פעילות"
       ],
       "chapters": [],
-      "report_url": "research/Foreign-funded_coexistence_pluralism.md",
+      "report_url": "research/Foreign-funded_coexistence_pluralism.html",
       "has_full_report": true
     },
     "feminist": {
@@ -153,7 +153,7 @@ const RESEARCH = {
         "קשרים לקרנות אמריקאיות ליברליות דרך ג'וינט"
       ],
       "chapters": [],
-      "report_url": "research/Feminist_gender-agenda_orgs.md",
+      "report_url": "research/Feminist_gender-agenda_orgs.html",
       "has_full_report": true
     },
     "child_protection": {
@@ -178,7 +178,7 @@ const RESEARCH = {
         "חפיפות תפקודיות בין הארגונים למרות הפרדה משפטית"
       ],
       "chapters": [],
-      "report_url": "research/Child_protection_with_ideological_overlay.md",
+      "report_url": "research/Child_protection_with_ideological_overlay.html",
       "has_full_report": true
     }
   },

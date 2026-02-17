@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>יד ביד — המרכז לחינוך יהודי ערבי בישראל — דוח מחקר מעמיק</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background: #f5f5f8;
+  color: #1a1a2e;
+  direction: rtl;
+  line-height: 1.8;
+  font-size: 17px;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #1a1a2e; color: #fff;
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  overflow-x: auto; white-space: nowrap;
+}
+nav .brand { font-weight: 700; color: #ff8800; flex-shrink: 0; }
+nav a { color: #ccc; text-decoration: none; font-size: 0.85em; padding: 8px 4px; border-bottom: 2px solid transparent; flex-shrink: 0; }
+nav a:hover { color: #ff8800; border-bottom-color: #ff8800; }
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a5a8a 100%);
+  color: #fff; padding: 50px 20px 40px; text-align: center;
+}
+.hero h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+.hero .subtitle { font-size: 1.05em; color: #b0c4de; margin-bottom: 6px; }
+.hero .meta { font-size: 0.9em; color: #ff8800; margin-top: 8px; }
+.risk-badge {
+  display: inline-block; padding: 4px 16px; border-radius: 20px;
+  font-size: 0.85em; font-weight: 600; margin-top: 10px;
+}
+.risk-high { background: #e74c3c; color: #fff; }
+.risk-medium { background: #f39c12; color: #fff; }
+.risk-low { background: #27ae60; color: #fff; }
+.container { max-width: 860px; margin: 0 auto; padding: 30px 20px 80px; }
+.toc {
+  background: #fff; border-radius: 8px; padding: 22px 26px;
+  margin-bottom: 32px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.toc h2 { font-size: 1.15em; color: #2a5a8a; margin-bottom: 12px; border-bottom: 2px solid #667eea; padding-bottom: 6px; }
+.toc ol { padding-right: 22px; font-size: 0.93em; }
+.toc li { margin-bottom: 4px; }
+.toc a { color: #2a5a8a; text-decoration: none; }
+.toc a:hover { color: #ff8800; text-decoration: underline; }
+.section {
+  background: #fff; border-radius: 8px; padding: 28px 26px;
+  margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.section h2 { font-size: 1.4em; color: #1a1a2e; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #667eea; }
+.section h3 { font-size: 1.1em; color: #2a5a8a; margin: 18px 0 8px; }
+.section h4 { font-size: 1em; color: #444; margin: 14px 0 6px; }
+.section p { margin-bottom: 12px; text-align: justify; }
+.section ul, .section ol { padding-right: 22px; margin-bottom: 12px; }
+.section li { margin-bottom: 5px; }
+blockquote {
+  background: #f0f4fa; border-right: 4px solid #667eea;
+  padding: 12px 18px; margin: 12px 0; border-radius: 0 6px 6px 0;
+  font-size: 0.94em; color: #333;
+}
+.thesis {
+  background: #fff8f0; border-right: 3px solid #ff8800;
+  padding: 14px 18px; margin: 12px 0; border-radius: 0 5px 5px 0;
+  font-size: 0.96em; color: #6b4500;
+}
+table {
+  width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.91em;
+}
+th {
+  background: #667eea; color: #fff; padding: 8px 12px;
+  text-align: right; position: sticky; top: 44px; z-index: 5;
+}
+td {
+  padding: 7px 12px; border-bottom: 1px solid #e8e8e8;
+  text-align: right; vertical-align: top;
+}
+tr:nth-child(even) { background: #f8f9fc; }
+a { color: #2a5a8a; }
+a:hover { color: #ff8800; }
+.back-link {
+  display: inline-block; margin-bottom: 20px; padding: 6px 14px;
+  background: #667eea; color: #fff; border-radius: 4px;
+  text-decoration: none; font-size: 0.88em;
+}
+.back-link:hover { background: #5a6fd6; color: #fff; }
+footer {
+  text-align: center; padding: 30px 20px; color: #888; font-size: 0.85em;
+}
+strong { color: #1a1a2e; }
+code {
+  background: #f0f0f0; padding: 1px 5px; border-radius: 3px;
+  font-size: 0.9em;
+}
+.source-tag {
+  display: inline-block; background: #e8eef6; padding: 2px 8px;
+  border-radius: 10px; font-size: 0.78em; color: #2a5a8a;
+  margin: 2px 3px; text-decoration: none;
+}
+.source-tag:hover { background: #d0dff0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">דוח מחקר מעמיק</span>
+  <a href="../">חזרה לדירוג</a>
+  <a href="../research/">כל הדוחות</a>
+  <a href="#section-1">1. REGISTRATION & LE</a> <a href="#section-2">2. FINANCES</a> <a href="#section-3">3. LEADERSHIP</a> <a href="#section-4">4. SCHOOLS</a> <a href="#section-5">5. IDEOLOGY & CURRIC</a> <a href="#section-6">6. FOREIGN FUNDING</a> <a href="#section-7">7. CONTROVERSIES</a> <a href="#section-8">8. AWARDS & RECOGNIT</a> <a href="#section-9">9. IMPACT & ALUMNI</a> <a href="#section-10">10. MIDOT EFFECTIVEN</a> <a href="#section-11">11. VALUES ALIGNMENT</a> <a href="#section-12">12. GEFEN CONTEXT</a> <a href="#section-13">13. OPEN QUESTIONS F</a>
+</nav>
+
+<div class="hero">
+  <h1>יד ביד — המרכז לחינוך יהודי ערבי בישראל</h1>
+  <div class="subtitle">Hand in Hand: Center for Jewish-Arab Education in Israel</div>
+  <div class="meta"></div>
+  
+</div>
+
+<div class="container">
+  <a href="../research/" class="back-link">← כל דוחות המחקר</a>
+  <div class="toc"><h2>תוכן עניינים</h2><ol><li><a href="#section-1">1. REGISTRATION & LEGAL IDENTITY</a></li><li><a href="#section-2">2. FINANCES</a></li><li><a href="#section-3">3. LEADERSHIP</a></li><li><a href="#section-4">4. SCHOOLS</a></li><li><a href="#section-5">5. IDEOLOGY & CURRICULUM</a></li><li><a href="#section-6">6. FOREIGN FUNDING</a></li><li><a href="#section-7">7. CONTROVERSIES</a></li><li><a href="#section-8">8. AWARDS & RECOGNITION</a></li><li><a href="#section-9">9. IMPACT & ALUMNI</a></li><li><a href="#section-10">10. MIDOT EFFECTIVENESS SEAL</a></li><li><a href="#section-11">11. VALUES ALIGNMENT TABLE</a></li><li><a href="#section-12">12. GEFEN CONTEXT</a></li><li><a href="#section-13">13. OPEN QUESTIONS FOR FURTHER INVESTIGATION</a></li></ol></div>
+  <div class="section" id="section-1">
+<h2>1. REGISTRATION & LEGAL IDENTITY</h2>
+<table>
+<tr><th>Field</th><th>Value</th></tr>
+<tr><td><strong>Legal Name (Hebrew)</strong></td><td>יד ביד: המרכז לחינוך יהודי ערבי בישראל (ע"ר)</td></tr>
+<tr><td><strong>Legal Name (English)</strong></td><td>Hand in Hand: Center for Jewish-Arab Education in Israel</td></tr>
+<tr><td><strong>Entity Type</strong></td><td>עמותה (Registered Association / Amuta)</td></tr>
+<tr><td><strong>GuideStar Israel Number</strong></td><td>580293710</td></tr>
+<tr><td><strong>Founding Year</strong></td><td>1997 (first schools opened September 1998)</td></tr>
+<tr><td><strong>Registered Address</strong></td><td>Yad Haruzim 10, Jerusalem, 9342148</td></tr>
+<tr><td><strong>Website (Hebrew)</strong></td><td>https://www.hih.org.il</td></tr>
+<tr><td><strong>Website (English)</strong></td><td>https://www.handinhandk12.org</td></tr>
+<tr><td><strong>GuideStar IL Page</strong></td><td>https://www.guidestar.org.il/organization/580293710</td></tr>
+</table>
+<h3>US Entity (American Friends)</h3>
+<table>
+<tr><th>Field</th><th>Value</th></tr>
+<tr><td><strong>US Legal Name</strong></td><td>Hand in Hand: American Friends of the Center for Jewish-Arab Education in Israel</td></tr>
+<tr><td><strong>EIN</strong></td><td>93-1269590</td></tr>
+<tr><td><strong>Entity Type</strong></td><td>501(c)(3)</td></tr>
+<tr><td><strong>Tax-exempt since</strong></td><td>July 1999</td></tr>
+<tr><td><strong>Location</strong></td><td>Portland, OR</td></tr>
+<tr><td><strong>Category</strong></td><td>International Peace and Security</td></tr>
+<tr><td><strong>GuideStar US</strong></td><td>https://www.guidestar.org/profile/93-1269590</td></tr>
+<tr><td><strong>ProPublica</strong></td><td>https://projects.propublica.org/nonprofits/organizations/931269590</td></tr>
+<tr><td><strong>Charity Navigator Rating</strong></td><td>4/4 stars (98% overall score)</td></tr>
+</table>
+<h3>Additional Fundraising Channels</h3>
+<ul>
+<li><strong>Canada:</strong> Via Jerusalem Foundation of Canada (Charitable Number: 10808 5218 RR0001)</li>
+<li><strong>UK:</strong> Tax-deductible donations available (channel unspecified)</li>
+<li><strong>Australia:</strong> Via New Israel Fund Australia (https://www.nif.org.au/handinhand)</li>
+<li><strong>Israel direct:</strong> Jgive.com; P.O. Box 53528, Jerusalem 9153305</li>
+</ul>
+<p><strong>Sources:</strong></p>
+<ul>
+<li>https://www.guidestar.org.il/organization/580293710</li>
+<li>https://www.guidestar.org/profile/93-1269590</li>
+<li>https://projects.propublica.org/nonprofits/organizations/931269590</li>
+<li>https://www.charitynavigator.org/ein/931269590</li>
+</ul>
+
+</div>
+<div class="section" id="section-2">
+<h2>2. FINANCES</h2>
+<h3>Israeli Entity (Amuta 580293710)</h3>
+<table>
+<tr><th>Year</th><th>Annual Turnover (NIS)</th><th>Employees</th><th>Government Funding</th></tr>
+<tr><td>2024</td><td>45,095,891</td><td>270</td><td>None documented</td></tr>
+<tr><td>2023</td><td>43,013,570</td><td>~270</td><td>None documented</td></tr>
+</table>
+<ul>
+<li><strong>Median for education sector:</strong> 4,911,491 NIS -- Hand in Hand operates at ~9x the sector median</li>
+<li><strong>Government funding:</strong> obudget.org explicitly states: "No government funding sources were documented for this organization over the past three years"</li>
+<li><strong>Ministry of Education recognition:</strong> Schools ARE recognized, official, and supervised by the Ministry of Education; they receive per-student funding like any public school. But the <em>amuta itself</em> does not show direct government transfers in obudget records</li>
+</ul>
+<p><strong>Key insight:</strong> The schools receive Ministry of Education per-pupil funding as recognized public institutions, but the additional costs of the bilingual model (double teaching staff, multicultural programming, community work) are funded entirely through philanthropy and parent fees. Government funding flows to the schools as institutions, not to the amuta as an operator.</p>
+<h3>US Entity (EIN 93-1269590) -- ProPublica 990 Data</h3>
+<table>
+<tr><th>Year</th><th>Revenue (USD)</th><th>Expenses (USD)</th><th>Net Income</th><th>Grants Paid</th></tr>
+<tr><td>2024</td><td>$9,038,259</td><td>$7,953,161</td><td>$1,085,098</td><td>$7,027,800</td></tr>
+<tr><td>2023</td><td>$10,877,661</td><td>$7,102,544</td><td>$3,775,117</td><td>$6,520,000</td></tr>
+<tr><td>2022</td><td>$6,846,787</td><td>$6,404,160</td><td>$442,627</td><td>—</td></tr>
+<tr><td>2021</td><td>$5,718,164</td><td>$6,044,830</td><td>-$326,666</td><td>—</td></tr>
+<tr><td>2020</td><td>$5,365,703</td><td>$6,396,746</td><td>-$1,031,043</td><td>—</td></tr>
+<tr><td>2019</td><td>$6,781,647</td><td>$4,901,184</td><td>$1,880,463</td><td>—</td></tr>
+</table>
+<p><strong>US Entity Assets (2024):</strong> $7,972,655 total / $13,741 liabilities / $7,958,914 net assets</p>
+<p><strong>Revenue Sources (2024):</strong> 98.5% contributions ($8.9M) + 1.5% investment income ($133K)</p>
+<p><strong>Key insight:</strong> The US fundraising arm alone sends $7M+ per year to Israel. This is the primary funding pipeline. Combined with Israeli domestic revenue, the total operation exceeds 50M NIS equivalent.</p>
+<h3>Compensation (US Entity, 2024)</h3>
+<table>
+<tr><th>Name</th><th>Title</th><th>Compensation</th></tr>
+<tr><td>Lee Gordon</td><td>Co-Founder, Executive Director</td><td>$100,833</td></tr>
+<tr><td>Patricia Smith</td><td>Corporate Secretary/Office Manager</td><td>$58,333</td></tr>
+<tr><td>Board members</td><td>14 independent directors</td><td>$0</td></tr>
+</table>
+<p>Executive compensation represents 4.8% of total expenses -- extremely lean by nonprofit standards.</p>
+<p><strong>Sources:</strong></p>
+<ul>
+<li>https://next.obudget.org/i/org/association/580293710</li>
+<li>https://projects.propublica.org/nonprofits/organizations/931269590</li>
+<li>https://www.charitynavigator.org/ein/931269590</li>
+<li>https://www.causeiq.com/organizations/hand-in-hand-american-friends-of-center-for-jewish,931269590/</li>
+</ul>
+
+</div>
+<div class="section" id="section-3">
+<h2>3. LEADERSHIP</h2>
+<h3>Current Israeli Leadership</h3>
+<table>
+<tr><th>Name</th><th>Title</th><th>Background</th></tr>
+<tr><td><strong>Dr. Shahaf Gal</strong></td><td>CEO</td><td>Harvard Ed.D., 30+ years in education policy (Israel, US, Colombia, India, France). Previously CEO of the Movement for Quality Government in Israel. Resident of Kiryat Tivon.</td></tr>
+<tr><td><strong>Nadia Kinani</strong></td><td>Director of Education</td><td>Won Women Lead Change Award (2016) as Jerusalem School Principal</td></tr>
+<tr><td><strong>Leah Beinhaker</strong></td><td>Director of Resource Development</td><td>—</td></tr>
+<tr><td><strong>Shada Idrees</strong></td><td>Director of Communities</td><td>—</td></tr>
+<tr><td><strong>Mohamad Marzouk</strong></td><td>Director of Growth Initiatives</td><td>—</td></tr>
+<tr><td><strong>Ofer Matan</strong></td><td>Director of Communications</td><td>—</td></tr>
+<tr><td><strong>Moran Ofek</strong></td><td>Director of Operations</td><td>—</td></tr>
+<tr><td><strong>Ammar Kassem</strong></td><td>Director of Finance</td><td>—</td></tr>
+</table>
+<h3>Board (Israel)</h3>
+<table>
+<tr><th>Name</th><th>Role</th></tr>
+<tr><td><strong>Reem Younis</strong></td><td>Board Co-Chair</td></tr>
+<tr><td><strong>Eylon Penchas</strong></td><td>Board Co-Chair</td></tr>
+<tr><td>Danny Bar Giora</td><td>Board Member</td></tr>
+<tr><td>Jawad Boulus</td><td>Board Member</td></tr>
+<tr><td>Aied Eed</td><td>Board Member</td></tr>
+<tr><td>Mariam Kabaha</td><td>Board Member</td></tr>
+<tr><td>Hagai Shmueli</td><td>Board Member</td></tr>
+<tr><td>Lilli Stern</td><td>Board Member</td></tr>
+<tr><td>Dr. Shimshon Zelniker</td><td>Board Member</td></tr>
+<tr><td>+ 7 additional members</td><td>—</td></tr>
+</table>
+<h3>Leadership History</h3>
+<table>
+<tr><th>Period</th><th>CEO/Director</th><th>Notes</th></tr>
+<tr><td>1997-1998</td><td><strong>Amin Khalaf</strong> & <strong>Lee Gordon</strong> (Co-Founders)</td><td>Khalaf: Arab-Israeli educator; Gordon: Israeli-American (Portland, OR), Hebrew University MSW</td></tr>
+<tr><td>~2011-2017</td><td><strong>Shuli Dichter</strong></td><td>Previously co-executive director of Sikkuy (Jewish-Arab equality advocacy). Spoke at J Street, UT Austin. Now independent consultant</td></tr>
+<tr><td>2018-present</td><td><strong>Dani Elazar</strong> then <strong>Dr. Shahaf Gal</strong></td><td>Elazar succeeded Dichter Jan 2018; Gal is current CEO</td></tr>
+</table>
+<h3>US Leadership</h3>
+<table>
+<tr><th>Name</th><th>Title</th></tr>
+<tr><td><strong>Lee Gordon</strong></td><td>Co-Founder & Executive Director (American Friends)</td></tr>
+<tr><td><strong>Alon Shalev</strong></td><td>Executive Director ($0 compensation)</td></tr>
+<tr><td>Stuart Brown</td><td>Board member</td></tr>
+<tr><td>Emile Bendit</td><td>Board member</td></tr>
+<tr><td>Paula Blumenfeld</td><td>Board member</td></tr>
+</table>
+<p><strong>Sources:</strong></p>
+<ul>
+<li>https://www.handinhandk12.org/about/</li>
+<li>https://www.handinhandk12.org/team/shaf/</li>
+<li>https://www.hih.org.il/about/</li>
+<li>https://www.guidestar.org.il/organization/580293710/people</li>
+</ul>
+
+</div>
+<div class="section" id="section-4">
+<h2>4. SCHOOLS</h2>
+<h3>School Network (6 locations, 2024-25)</h3>
+<table>
+<tr><th>School</th><th>Location</th><th>Levels</th><th>Notes</th></tr>
+<tr><td><strong>Max Rayne Bilingual School</strong></td><td>Jerusalem (Pat neighborhood)</td><td>K-12 (kindergarten through high school)</td><td>Flagship campus. $11M campus built with Jerusalem Foundation, Rayne Foundation, European donors. Named "World's Best School for Overcoming Adversity" (T4 Education, 2024)</td></tr>
+<tr><td><strong>Galilee School</strong></td><td>Near Kibbutz Eshbal, Galilee</td><td>Elementary</td><td>Won National Education Prize (2022-23), Best School in the North, Presidential Distinction for Hope (2021)</td></tr>
+<tr><td><strong>Bridge Over the Wadi (גשר על הוואדי)</strong></td><td>Kafr Qara, Wadi Ara</td><td>Elementary</td><td>Founded ~2004. Faced severe Jewish enrollment decline (see Controversies). Now part of Beit Berl / Sharon campus</td></tr>
+<tr><td><strong>Haifa School</strong></td><td>Kiryat Eliezer, Haifa</td><td>Elementary</td><td>362 students moved into permanent building. Community active in promoting bilingual city services</td></tr>
+<tr><td><strong>Kulna Yahad (כולנא יחד)</strong></td><td>Tel Aviv-Jaffa</td><td>Elementary</td><td>Won Values-Based Education Award from Tel Aviv-Jaffa municipality (2019). High demand from Jaffa families</td></tr>
+<tr><td><strong>Alef Beit (אלף בית)</strong></td><td>Beit Berl area / Sharon & Southern Triangle</td><td>Elementary</td><td>Newer campus serving Sharon region</td></tr>
+</table>
+<h3>Demographics</h3>
+<ul>
+<li><strong>Total students:</strong> ~2,000+ (2024-25); ~1,800 (Hebrew site)</li>
+<li><strong>Demographic split:</strong> ~60% Arab / ~40% Jewish (consistent across recent years)</li>
+<li><strong>Waiting list:</strong> Arab families disproportionately on waiting lists</li>
+<li><strong>Community members:</strong> 3,000+ active adult community members</li>
+<li><strong>Indirect impact:</strong> 10,000+ people</li>
+</ul>
+<h3>Teaching Model</h3>
+<ul>
+<li><strong>Two teachers per classroom</strong> -- one Jewish (teaching in Hebrew), one Arab (teaching in Arabic)</li>
+<li>Teachers do NOT translate each other; students absorb both languages naturally</li>
+<li>All Jewish holidays, Muslim holidays, and Christian holidays celebrated</li>
+<li>Equal status for both languages, cultures, and national narratives</li>
+</ul>
+<p><strong>Sources:</strong></p>
+<ul>
+<li>https://www.hih.org.il/about/</li>
+<li>https://www.handinhandk12.org/about/integrated-education/</li>
+<li>https://zoha.org.il/127053/</li>
+<li>https://www.ynet.co.il/articles/0,7340,L-4026730,00.html</li>
+</ul>
+
+</div>
+<div class="section" id="section-5">
+<h2>5. IDEOLOGY & CURRICULUM</h2>
+<h3>Core Philosophy</h3>
+<p>Hand in Hand describes its mission as "promoting and developing a shared society for Arabs and Jews in Israel" (Hebrew site) and "building inclusion and equality between Arab and Jewish citizens" (English site).</p>
+<h3>What They Teach About the Conflict</h3>
+<p><strong>Dual-Narrative Approach:</strong></p>
+<ul>
+<li>Students learn the SAME historical events from BOTH perspectives</li>
+<li>The curriculum explicitly acknowledges that "what represents happiness for [Jewish children] is someone else's sadness" (re: Independence Day/Nakba)</li>
+<li>Dual-narrative history is taught: "learning about conflicts not just from one point of view, but from multiple ones -- to see how the same events can be shaped into different stories"</li>
+</ul>
+<p><strong>Memorial Day / Independence Day / Nakba Handling:</strong></p>
+<ul>
+<li><strong>Separate ceremonies</strong> for Jewish and Arab students on Memorial Day (~30 minutes each)</li>
+<li>Jewish students commemorate fallen Israeli soldiers and Israel's founding</li>
+<li>Arab students discuss the Nakba -- displacement of Palestinians in 1948</li>
+<li>Both groups wear white (Israeli school tradition)</li>
+<li>After separation, students <strong>reunite</strong> for a concluding event designed to "transition from pain to hope"</li>
+<li>Some schools release balloons as symbols of shared hope</li>
+<li>The school explicitly names and acknowledges the Nakba</li>
+</ul>
+<p><strong>Key quote (Shuli Dichter, former CEO):</strong> The structure provides "room for each one to be with their own pain and not be in a position of comparing how much space is being made to each side."</p>
+<h3>Hebrew vs English Messaging Comparison</h3>
+<table>
+<tr><th>Element</th><th>Hebrew Site (hih.org.il)</th><th>English Site (handinhandk12.org)</th></tr>
+<tr><td>Mission</td><td>"לקדם ולפתח חברה משותפת לערבים ויהודים בישראל"</td><td>"Building inclusion and equality between Arab and Jewish citizens"</td></tr>
+<tr><td>Identity framing</td><td>"יהודים וערבים" (Jews and Arabs)</td><td>"Jewish and Arab citizens of Israel"</td></tr>
+<tr><td>Political positioning</td><td>Emphasis on "shared citizenship" (אזרחות משותפת)</td><td>Emphasis on "equality and mutual respect"</td></tr>
+<tr><td>Conflict language</td><td>More restrained; focuses on "shared living"</td><td>More explicit about "multiple viewpoints" and "complicated issues"</td></tr>
+</table>
+<p><strong>Analysis:</strong> The messaging is broadly consistent, but the English site leans more into diversity/inclusion framing familiar to American donors, while the Hebrew site emphasizes civic partnership ("חברה משותפת" -- shared society). Neither site uses explicitly "post-Zionist" language. The framing is closer to "civic equality within the existing state" than to anti-Zionist ideology. However, the explicit acknowledgment of the Nakba and dual-narrative approach places them firmly outside Zionist-consensus education.</p>
+<h3>Is It Post-Zionist?</h3>
+<p><strong>Short answer:</strong> It is not explicitly post-Zionist, but it is certainly non-Zionist in educational practice.</p>
+<ul>
+<li>The schools operate within the Ministry of Education framework (recognized and supervised)</li>
+<li>They do not reject the State of Israel or advocate for a binational state</li>
+<li>However, they do treat Jewish and Arab/Palestinian narratives as equally valid</li>
+<li>The dual-narrative approach implicitly rejects Zionist historiography as the sole legitimate framework</li>
+<li>The 60/40 Arab-Jewish demographic split and the explicit Nakba commemoration place them well outside mainstream Israeli educational norms</li>
+</ul>
+<p>A 2011 Israeli law allows the finance minister to defund schools teaching the Nakba as a day of mourning -- this law was directly relevant to Hand in Hand's practice.</p>
+<p><strong>Sources:</strong></p>
+<ul>
+<li>https://www.hih.org.il/about/</li>
+<li>https://www.handinhandk12.org/about/</li>
+<li>https://forward.com/israel/340340/how-do-mixed-jewish-arab-schools-mark-memorial-and-independence-days/</li>
+<li>https://www.npr.org/2024/01/23/1221957556/israel-schools-arabs-jews-gaza-war</li>
+<li>https://www.peace-ed-campaign.org/hand-hand-schools/</li>
+</ul>
+
+</div>
+<div class="section" id="section-6">
+<h2>6. FOREIGN FUNDING</h2>
+<h3>Major International Donors (from Hand in Hand supporters page)</h3>
+<p><strong>Tier 1: "Visionaries" (largest donors)</strong></p>
+<ul>
+<li>Naomi and Nehemiah Cohen Foundation</li>
+<li>The DEAR Foundation (Switzerland)</li>
+<li>Warren and Mitzi Eisenberg</li>
+<li>Martha and Donald Freedman</li>
+<li>Kindermissionswerk 'Die Sternsinger' e.V. / Peace Foundation Jalil Schwarz (Germany -- Catholic children's mission!)</li>
+<li>Ronald S Roadburg Foundation</li>
+<li>The Edith Glick Shoolman Children's Foundation</li>
+<li><strong>USAID</strong> (US government agency -- now defunct as of 2025)</li>
+</ul>
+<p><strong>Tier 2: "Strategic Partners"</strong></p>
+<ul>
+<li>The Jerusalem Foundation</li>
+<li>The Rayne Trust (UK)</li>
+<li>Pears Foundation (UK)</li>
+<li>Schusterman Family Philanthropies -- Israel</li>
+<li>The Schocken Foundation</li>
+<li>UJA-Federation of New York</li>
+<li>The Harry and Jeanette Weinberg Foundation</li>
+<li>Dorot Foundation</li>
+<li>Sam Spiegel Foundation</li>
+<li>Various family foundations (Frankel, Gerson, Glazer, Margolies, Rapoport, Samuels, etc.)</li>
+</ul>
+<p><strong>Tier 3: "Major Partners"</strong></p>
+<ul>
+<li>62+ additional donors including:</li>
+<li>American Federation of Teachers (AFT -- US labor union)</li>
+<li>Multiple family foundations</li>
+</ul>
+<h3>Recent Grants to US Entity (from CauseIQ)</h3>
+<ul>
+<li>Connecting Kids Heart 2 Heart: $200,000</li>
+<li>DAFgiving360: $172,193</li>
+<li>Michael E. McGoldrick Charitable Foundation: $145,000</li>
+</ul>
+<h3>Key Funding Observations</h3>
+<ol>
+<li><strong>USAID was a core funder</strong> -- listed as a "Visionary" (top tier). USAID's closure in 2025 likely created a significant funding gap</li>
+<li><strong>New Israel Fund connection:</strong> NIF Australia specifically fundraises for Hand in Hand (https://www.nif.org.au/handinhand). NIF is a known funder</li>
+<li><strong>European funding:</strong> German Catholic mission (Sternsinger), UK foundations (Rayne Trust, Pears Foundation), Swiss DEAR Foundation. No direct EU government funding documented</li>
+<li><strong>US Jewish liberal establishment:</strong> UJA-Federation of New York, Schusterman, multiple liberal Jewish family foundations</li>
+<li><strong>No Abraham Fund listed</strong> as a direct donor (they are a separate shared-society org, not a funder of HiH)</li>
+<li><strong>$11M campus donation</strong> for Jerusalem school from Jerusalem Foundation, Rayne Foundation, and European donors</li>
+<li><strong>Government funding is ~0% of amuta revenue</strong> -- entirely philanthropy-funded beyond per-pupil Ministry allocations</li>
+</ol>
+<p><strong>Sources:</strong></p>
+<ul>
+<li>https://dev.handinhandk12.org/about/our-supporters/</li>
+<li>https://www.nif.org.au/handinhand</li>
+<li>https://www.causeiq.com/organizations/hand-in-hand-american-friends-of-center-for-jewish,931269590/</li>
+<li>https://thedearfoundation.ch/projects/israel-palestine/handinhandschools/</li>
+</ul>
+
+</div>
+<div class="section" id="section-7">
+<h2>7. CONTROVERSIES</h2>
+<h3>A. The 2014 Arson Attack (most serious incident)</h3>
+<p><strong>Date:</strong> November 29, 2014</p>
+<p><strong>Target:</strong> Max Rayne Hand in Hand School, Jerusalem (first-grade classroom)</p>
+<p><strong>What happened:</strong> Three Jewish extremists torched a classroom and spray-painted racist graffiti including:</p>
+<ul>
+<li>"There is no coexistence with cancer"</li>
+<li>"Death to the Arabs" (מוות לערבים)</li>
+<li>"Kahane was right"</li>
+</ul>
+<p><strong>Perpetrators:</strong></p>
+<ul>
+<li>Yitzhak Gabai</li>
+<li>Nahman Twitto</li>
+<li>Shlomo Twitto</li>
+<li>All linked to <strong>Lehava</strong> (anti-miscegenation organization)</li>
+</ul>
+<p><strong>Sentencing:</strong> Twitto brothers convicted via plea deal; sentenced to 2 and 2.5 years respectively; ordered to pay NIS 25,000 combined compensation.</p>
+<p><strong>Controversy within the controversy:</strong> Defendants were NOT charged with nationalistic/racist crimes (which could carry terrorism-level penalties in Israeli law). Mother of one arsonist publicly said she "would have done the same."</p>
+<p><strong>Political fallout:</strong> AJC, Israeli politicians, and international community condemned the attack. Jerusalem municipality later sued arsonists for damages. Police raided Lehava offices. The attack became a symbol of anti-coexistence extremism.</p>
+<p><strong>Sources:</strong></p>
+<ul>
+<li>https://www.nbcnews.com/storyline/middle-east-unrest/jerusalems-arab-jewish-school-hand-hand-torched-apparent-arson-attack-n258361</li>
+<li>https://www.timesofisrael.com/brothers-take-plea-deal-for-arson-at-bilingual-school/</li>
+<li>https://www.972mag.com/we-will-overcome-arson-mourning-at-jerusalems-bilingual-school/</li>
+<li>https://www.ynet.co.il/articles/0,7340,L-4597550,00.html</li>
+</ul>
+<h3>B. Jewish Student Enrollment Decline (Wadi Ara)</h3>
+<p>A major 2011 Ynet investigation titled "גשר צר מאוד: ביה"ס הדו-לשוני התרוקן מיהודים" (A Very Narrow Bridge: The Bilingual School Emptied of Jews) documented:</p>
+<ul>
+<li><strong>Bridge Over the Wadi school (Kafr Qara):</strong> Started with balanced enrollment</li>
+<li>By ~2011: Only 23 Jewish students vs. 105 Arab students (~82% Arab)</li>
+<li><strong>Reasons cited:</strong> Security concerns in Arab sector, political tensions, commute distance</li>
+<li>Parents' committee chair Hussam Abu-Bakr: "We face a real crisis... some classes have only Arab students, others just two or three Jewish students"</li>
+<li>Education Ministry confirmed the trend exists "across all bilingual schools"</li>
+<li>Dissenting view (Norit Maor-Shavit): Blame administrative instability, not politics</li>
+</ul>
+<p><strong>This is a structural vulnerability</strong> of the model. Arab families have high demand (waiting lists), while Jewish families face social pressure not to send children to "Arab" schools, especially in peripheral areas.</p>
+<p><strong>Source:</strong> https://www.ynet.co.il/articles/0,7340,L-4026730,00.html</p>
+<h3>C. Criticism from the Right</h3>
+<ul>
+<li>Lehava and affiliated groups see coexistence education as promoting "assimilation" between Jews and Arabs</li>
+<li>Spray-painting, harassment of students on buses documented</li>
+<li>No formal NGO Monitor report targeting Hand in Hand was found -- unusual for an organization of this profile. NGO Monitor may view it as educational rather than political-advocacy</li>
+<li>Im Tirtzu has not publicly targeted Hand in Hand in the way it has targeted ACRI or NIF-funded advocacy groups</li>
+<li>The 2011 Nakba Law (allowing defunding of schools marking the Nakba as mourning) was directly relevant to Hand in Hand's dual-narrative ceremonies</li>
+</ul>
+<h3>D. Criticism from the Left / Academic Critique</h3>
+<ul>
+<li>Haaretz op-ed (Mira Sucharov, 2016): "Are Israel's Jewish-Arab Coexistence Schools Setting Kids Up for a Cruel Fall?" -- argues graduates face a "very dissonant outside world" where coexistence skills have no real application in segregated Israeli society</li>
+<li>The question of whether dual-narrative education creates false hope in a structurally unequal society is a persistent academic concern</li>
+<li>Some Palestinian activists view participation in Israeli institutions (even bilingual ones) as normalization</li>
+</ul>
+<h3>E. October 7 War Impact</h3>
+<ul>
+<li>Families at Hand in Hand lost relatives both in Gaza and to the October 7 attacks</li>
+<li>Palestinian students faced societal harassment outside school; Hand in Hand became a "rare oasis of freedom"</li>
+<li>Vice Principal Engie Wattad: "For our students, this is a safe place... They feel here that they have freedom of speech"</li>
+<li>Palestinian parent Morad Muna called it "the one safe place right now for their kids"</li>
+<li>Despite enormous pressure, all six schools completed a full year of learning in 2024-25</li>
+</ul>
+<p><strong>Sources:</strong></p>
+<ul>
+<li>https://www.haaretz.com/opinion/.premium-are-jewish-arab-schools-setting-kids-up-for-a-cruel-fall-1.5438547</li>
+<li>https://www.npr.org/2024/01/23/1221957556/israel-schools-arabs-jews-gaza-war</li>
+<li>https://www.handinhandk12.org/year-in-review-2024-25/</li>
+</ul>
+
+</div>
+<div class="section" id="section-8">
+<h2>8. AWARDS & RECOGNITION</h2>
+<table>
+<tr><th>Year</th><th>Award</th><th>Recipient</th></tr>
+<tr><td>2024</td><td><strong>T4 World's Best School</strong> (Overcoming Adversity)</td><td>Max Rayne Jerusalem School</td></tr>
+<tr><td>2024</td><td><strong>Roger E. Joseph Prize</strong> (Hebrew Union College)</td><td>Hand in Hand organization</td></tr>
+<tr><td>2024</td><td>Ministry of Education Outstanding School</td><td>Max Rayne Jerusalem High School</td></tr>
+<tr><td>2022-23</td><td><strong>National Education Prize</strong></td><td>Galilee School</td></tr>
+<tr><td>2022-23</td><td>Best School in the North</td><td>Galilee School</td></tr>
+<tr><td>2021-22</td><td><strong>Global Pluralism Award</strong> (1 of 3 winners from 70+ countries)</td><td>Hand in Hand organization</td></tr>
+<tr><td>2020-21</td><td>Presidential Distinction for Hope in Israeli Education</td><td>Galilee School</td></tr>
+<tr><td>2018-19</td><td>Values-Based Education Award</td><td>Jaffa "Kulna" School</td></tr>
+<tr><td>2017-18</td><td>Breakthrough Prize for Innovative Education</td><td>Galilee School & Jaffa campus</td></tr>
+<tr><td>2016-17</td><td>Ministry of Education Top High Schools list (71 best nationally)</td><td>Max Rayne Jerusalem</td></tr>
+<tr><td>2015-16</td><td>Dror Prize for Social Change (honorable mention)</td><td>Hand in Hand</td></tr>
+<tr><td>2013-14</td><td>Matanel Prize for Education</td><td>Dr. Inas Deeb</td></tr>
+<tr><td>2010</td><td>BMW Group Intercultural Commitment Award</td><td>Hand in Hand</td></tr>
+<tr><td>2007</td><td>Victor J. Goldberg IIE Prize for Peace in Middle East</td><td>Amin Khalaf & Lee Gordon (founders)</td></tr>
+</table>
+<p><strong>Source:</strong> https://www.handinhandk12.org/about/awards/</p>
+
+</div>
+<div class="section" id="section-9">
+<h2>9. IMPACT & ALUMNI</h2>
+<h3>Quantified Outcomes</h3>
+<ul>
+<li><strong>700+ graduates</strong> have completed Hand in Hand schools</li>
+<li><strong>2,000+ current students</strong> (ages 3-18)</li>
+<li><strong>3,000+ active adult community members</strong></li>
+<li><strong>10,000+ indirect impact</strong> through community programming</li>
+</ul>
+<h3>Alumni Program</h3>
+<ul>
+<li>Supports graduates in being "civically active, advancing social change"</li>
+<li>Alumni serve as "ambassadors for shared living" in universities, service institutions, and workplaces</li>
+<li>No published data on specific career outcomes, military service choices, or political positions</li>
+</ul>
+<h3>Policy Impact</h3>
+<ul>
+<li>Municipal officials influenced to create bilingual government forms</li>
+<li>Arabic translations added at local businesses in Hand in Hand communities</li>
+<li>Tel Aviv-Jaffa education official: "You have changed Jaffa. There has never been such a massive demand"</li>
+<li>Bilingual children's programming expanded to libraries and daycare centers beyond Hand in Hand</li>
+</ul>
+<h3>Academic Note</h3>
+<p>No published longitudinal outcome study tracking Hand in Hand graduates' political positions, inter-group attitudes in adulthood, or career trajectories was found. This is a significant research gap for a 25+ year old educational experiment.</p>
+<p><strong>Source:</strong> https://www.handinhandk12.org/impact/</p>
+
+</div>
+<div class="section" id="section-10">
+<h2>10. MIDOT EFFECTIVENESS SEAL</h2>
+<p>Hand in Hand holds a <strong>Midot Seal of Effectiveness</strong> (תו מידות לאפקטיביות) from Midot -- Israel's leading nonprofit evaluator. The Midot page (https://www.midot.org.il/יד-ביד-המרכז-לחינוך-יהודי-ערבי-בישראל) returned 404 at time of research, so detailed scores could not be retrieved.</p>
+
+</div>
+<div class="section" id="section-11">
+<h2>11. VALUES ALIGNMENT TABLE</h2>
+<table>
+<tr><th>Value</th><th>Score (1-5)</th><th>Notes</th></tr>
+<tr><td><strong>Transparency</strong></td><td>4/5</td><td>GuideStar Israel profile complete; US entity 98% Charity Navigator; donors page public; financial reports available. Minor gap: no detailed Israeli financial breakdown</td></tr>
+<tr><td><strong>Ideological openness</strong></td><td>2/5</td><td>Explicitly dual-narrative; acknowledges Nakba; treats Palestinian narrative as equal to Israeli. This is either a 5/5 or 1/5 depending on political perspective</td></tr>
+<tr><td><strong>Government independence</strong></td><td>5/5</td><td>No government funding to amuta beyond standard per-pupil school allocations. Entirely philanthropy-driven</td></tr>
+<tr><td><strong>Foreign funding dependency</strong></td><td>1/5 (high dependency)</td><td>US arm sends $7M+/year; total foreign philanthropy likely accounts for 50%+ of all revenue</td></tr>
+<tr><td><strong>Domestic rootedness</strong></td><td>4/5</td><td>270 employees, 2,000 students, 6 campuses, community programs. Real operations on the ground</td></tr>
+<tr><td><strong>Academic rigor</strong></td><td>3/5</td><td>Ministry-recognized schools with strong test results and awards. However, no published longitudinal alumni study</td></tr>
+<tr><td><strong>Demographic sustainability</strong></td><td>2/5</td><td>60/40 Arab-Jewish split; Jewish enrollment flight documented; structural vulnerability in attracting/retaining Jewish families</td></tr>
+</table>
+
+</div>
+<div class="section" id="section-12">
+<h2>12. GEFEN CONTEXT</h2>
+<p>The Gefen catalog lists Hand in Hand under program #18489 "מנהיגות חינוכית רב תרבותית" (Multicultural Educational Leadership) at 107,860 NIS across 2 cities (Haifa, Jerusalem), 5 schools, rated 2/5.</p>
+<p><strong>This is a tiny window into a massive organization.</strong> The 108K NIS Gefen program is likely one small Ministry-funded training initiative, while the actual organizational budget is 45M NIS (420x larger). The Gefen rating of 2/5 for this specific program should not be confused with the organization's overall quality -- which has won national and international awards including the Global Pluralism Award and Ministry of Education recognition for multiple schools.</p>
+
+</div>
+<div class="section" id="section-13">
+<h2>13. OPEN QUESTIONS FOR FURTHER INVESTIGATION</h2>
+<ol>
+<li><strong>What is the exact government funding flow?</strong> obudget shows zero direct transfers, but schools ARE Ministry-recognized. How much per-pupil funding flows through municipalities vs. directly?</li>
+<li><strong>USAID closure impact:</strong> USAID was a top-tier "Visionary" donor. What was the annual amount, and how has its 2025 closure affected operations?</li>
+<li><strong>NIF funding quantum:</strong> NIF Australia fundraises for HiH; what is the total NIF contribution across all country offices?</li>
+<li><strong>EU funding:</strong> No direct EU government grants found, but German Sternsinger/Catholic mission and Swiss DEAR Foundation are EU-adjacent. Any direct Brussels grants?</li>
+<li><strong>Alumni tracking:</strong> With 700+ graduates, why is there no published longitudinal study? What do graduates actually do?</li>
+<li><strong>Jewish enrollment trends post-Oct 7:</strong> Has the 60/40 ratio shifted? Has demand from either community changed?</li>
+<li><strong>Gefen program specifics:</strong> What exactly is the "מנהיגות חינוכית רב תרבותית" program, and why is it rated 2/5?</li>
+<li><strong>Shahaf Gal's Movement for Quality Government tenure:</strong> What was his role there, and does this indicate a political network?</li>
+</ol>
+<p><em>Research conducted using WebSearch (Hebrew + English), WebFetch, and public databases including GuideStar Israel, GuideStar US, ProPublica Nonprofit Explorer, Charity Navigator, obudget.org, and organizational websites.</em></p>
+
+</div>
+</div>
+
+<footer>
+  פרויקט זהות ציונית — דוח מחקר מעמיק | <a href="../">דירוג ערים</a> | <a href="../research/">כל הדוחות</a>
+</footer>
+
+</body>
+</html>

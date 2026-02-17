@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>מגע בתיאום (Touch in Coordination) — דוח מחקר מעמיק</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background: #f5f5f8;
+  color: #1a1a2e;
+  direction: rtl;
+  line-height: 1.8;
+  font-size: 17px;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #1a1a2e; color: #fff;
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  overflow-x: auto; white-space: nowrap;
+}
+nav .brand { font-weight: 700; color: #ff8800; flex-shrink: 0; }
+nav a { color: #ccc; text-decoration: none; font-size: 0.85em; padding: 8px 4px; border-bottom: 2px solid transparent; flex-shrink: 0; }
+nav a:hover { color: #ff8800; border-bottom-color: #ff8800; }
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a5a8a 100%);
+  color: #fff; padding: 50px 20px 40px; text-align: center;
+}
+.hero h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+.hero .subtitle { font-size: 1.05em; color: #b0c4de; margin-bottom: 6px; }
+.hero .meta { font-size: 0.9em; color: #ff8800; margin-top: 8px; }
+.risk-badge {
+  display: inline-block; padding: 4px 16px; border-radius: 20px;
+  font-size: 0.85em; font-weight: 600; margin-top: 10px;
+}
+.risk-high { background: #e74c3c; color: #fff; }
+.risk-medium { background: #f39c12; color: #fff; }
+.risk-low { background: #27ae60; color: #fff; }
+.container { max-width: 860px; margin: 0 auto; padding: 30px 20px 80px; }
+.toc {
+  background: #fff; border-radius: 8px; padding: 22px 26px;
+  margin-bottom: 32px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.toc h2 { font-size: 1.15em; color: #2a5a8a; margin-bottom: 12px; border-bottom: 2px solid #667eea; padding-bottom: 6px; }
+.toc ol { padding-right: 22px; font-size: 0.93em; }
+.toc li { margin-bottom: 4px; }
+.toc a { color: #2a5a8a; text-decoration: none; }
+.toc a:hover { color: #ff8800; text-decoration: underline; }
+.section {
+  background: #fff; border-radius: 8px; padding: 28px 26px;
+  margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.section h2 { font-size: 1.4em; color: #1a1a2e; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #667eea; }
+.section h3 { font-size: 1.1em; color: #2a5a8a; margin: 18px 0 8px; }
+.section h4 { font-size: 1em; color: #444; margin: 14px 0 6px; }
+.section p { margin-bottom: 12px; text-align: justify; }
+.section ul, .section ol { padding-right: 22px; margin-bottom: 12px; }
+.section li { margin-bottom: 5px; }
+blockquote {
+  background: #f0f4fa; border-right: 4px solid #667eea;
+  padding: 12px 18px; margin: 12px 0; border-radius: 0 6px 6px 0;
+  font-size: 0.94em; color: #333;
+}
+.thesis {
+  background: #fff8f0; border-right: 3px solid #ff8800;
+  padding: 14px 18px; margin: 12px 0; border-radius: 0 5px 5px 0;
+  font-size: 0.96em; color: #6b4500;
+}
+table {
+  width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.91em;
+}
+th {
+  background: #667eea; color: #fff; padding: 8px 12px;
+  text-align: right; position: sticky; top: 44px; z-index: 5;
+}
+td {
+  padding: 7px 12px; border-bottom: 1px solid #e8e8e8;
+  text-align: right; vertical-align: top;
+}
+tr:nth-child(even) { background: #f8f9fc; }
+a { color: #2a5a8a; }
+a:hover { color: #ff8800; }
+.back-link {
+  display: inline-block; margin-bottom: 20px; padding: 6px 14px;
+  background: #667eea; color: #fff; border-radius: 4px;
+  text-decoration: none; font-size: 0.88em;
+}
+.back-link:hover { background: #5a6fd6; color: #fff; }
+footer {
+  text-align: center; padding: 30px 20px; color: #888; font-size: 0.85em;
+}
+strong { color: #1a1a2e; }
+code {
+  background: #f0f0f0; padding: 1px 5px; border-radius: 3px;
+  font-size: 0.9em;
+}
+.source-tag {
+  display: inline-block; background: #e8eef6; padding: 2px 8px;
+  border-radius: 10px; font-size: 0.78em; color: #2a5a8a;
+  margin: 2px 3px; text-decoration: none;
+}
+.source-tag:hover { background: #d0dff0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">דוח מחקר מעמיק</span>
+  <a href="../">חזרה לדירוג</a>
+  <a href="../research/">כל הדוחות</a>
+  <a href="#section-1">Company Identity & O</a> <a href="#section-2">Financial Analysis &</a> <a href="#section-3">Leadership Map & Rev</a> <a href="#section-4">Programs & Curriculu</a> <a href="#section-5">Ministry of Educatio</a> <a href="#section-6">Network Connections </a> <a href="#section-7">Parental Consent Mec</a> <a href="#section-8">Controversies</a> <a href="#section-9">Values Alignment Tab</a> <a href="#section-10">Open Questions</a> <a href="#section-11">Data Sources Used</a>
+</nav>
+
+<div class="hero">
+  <h1>מגע בתיאום (Touch in Coordination)</h1>
+  <div class="subtitle">Executive Summary</div>
+  <div class="meta"></div>
+  <span class="risk-badge risk-medium">סיכון בינוני</span>
+</div>
+
+<div class="container">
+  <a href="../research/" class="back-link">← כל דוחות המחקר</a>
+  <div class="toc"><h2>תוכן עניינים</h2><ol><li><a href="#section-1">Company Identity & Ownership</a></li><li><a href="#section-2">Financial Analysis & Business Model</a></li><li><a href="#section-3">Leadership Map & Revolving Door</a></li><li><a href="#section-4">Programs & Curriculum Content</a></li><li><a href="#section-5">Ministry of Education Relationship</a></li><li><a href="#section-6">Network Connections (Gender/Sexuality Cluster)</a></li><li><a href="#section-7">Parental Consent Mechanism</a></li><li><a href="#section-8">Controversies</a></li><li><a href="#section-9">Values Alignment Table</a></li><li><a href="#section-10">Open Questions</a></li><li><a href="#section-11">Data Sources Used</a></li></ol></div>
+  <div class="section" id="section-1">
+<h2>Company Identity & Ownership</h2>
+<h3>Registration Details</h3>
+<table>
+<tr><th>Field</th><th>Value</th></tr>
+<tr><td><strong>Hebrew Name</strong></td><td>מגע בתיאום בע"מ</td></tr>
+<tr><td><strong>English Name</strong></td><td>MAGA BETEUM LTD</td></tr>
+<tr><td><strong>Registration Number (ח"פ)</strong></td><td>516711488</td></tr>
+<tr><td><strong>Entity Type</strong></td><td>Israeli private company (חברה פרטית)</td></tr>
+<tr><td><strong>Status</strong></td><td>Active</td></tr>
+<tr><td><strong>Registration Date</strong></td><td>November 24, 2022</td></tr>
+<tr><td><strong>Registered Address</strong></td><td>התקווה 9, פרדס חנה-כרכור, 3717238</td></tr>
+<tr><td><strong>Corporate Purpose</strong></td><td>"לעסוק בכל עיסוק חוקי" (to engage in any lawful business activity)</td></tr>
+<tr><td><strong>Contact Email</strong></td><td>magabeteum@gmail.com</td></tr>
+<tr><td><strong>Contact Phone</strong></td><td>054-807-5742</td></tr>
+</table>
+<p><strong>Source:</strong> Israeli Companies Registrar (רשם החברות) via obudget.org entity page; sei.org.il listing; 2school.co.il Gefen catalog.</p>
+<h3>Ownership Structure</h3>
+<p><strong>Unknown.</strong> The company registrar provides basic information freely but shareholder details require a paid extract (נסח מלא). No public disclosure of shareholders has been identified.</p>
+<p><strong>Key Question:</strong> Who are the shareholders of this company? Given that the company was founded in November 2022, the likely shareholders are the founders Galia (Cohen) Ofer and/or Shiri Basin Savion, but this has not been verified through official records.</p>
+<h3>Gefen Catalog Entries</h3>
+<p>The company has <strong>two</strong> program entries in the Ministry of Education's Gefen (גפ"ן) catalog:</p>
+<table>
+<tr><th>Program #</th><th>Name</th><th>Category</th></tr>
+<tr><td>2930</td><td>מגע בתיאום (חינוך למיניות בריאה)</td><td>חברתי-ערכי (social-values)</td></tr>
+<tr><td>3027</td><td>מגע בתיאום גליה עופר (חינוך למיניות בריאה)</td><td>חברתי-ערכי (social-values)</td></tr>
+</table>
+<p><strong>Important:</strong> The 2school.co.il page explicitly states the company is "Not part of Ministry of Education framework" (i.e., not a direct MoE program), yet the sei.org.il page claims the program is "approved by the Ministry of Education." This discrepancy requires clarification.</p>
+<h3>Timeline Anomaly</h3>
+<p>The company was registered in <strong>November 2022</strong>, yet it already appears in the Gefen mapping with significant penetration (27 schools, 7 cities). This rapid scaling raises questions:</p>
+<ul>
+<li>Was the program operating before formal incorporation? If so, under what legal entity?</li>
+<li>Did the founders have pre-existing relationships with municipalities from before the company was formed?</li>
+<li>The founder's business page on bizmakebiz.co.il lists "מגע בתאום" (slightly different spelling) as a business, suggesting informal/freelance operation may have preceded the formal company.</li>
+</ul>
+
+</div>
+<div class="section" id="section-2">
+<h2>Financial Analysis & Business Model</h2>
+<h3>Documented Gefen Budget</h3>
+<p>From the Gefen mapping data, the following school-level payments to "מגע בתיאום" (program #2930) were identified:</p>
+<table>
+<tr><th>City</th><th>School</th><th>Budget (NIS)</th></tr>
+<tr><td>רעננה</td><td>ממ"ד בילו (413492)</td><td>22,975.92</td></tr>
+<tr><td>רעננה</td><td>זיו בו ציון (413906)</td><td>16,350.00</td></tr>
+<tr><td>הרצליה</td><td>ברנדיס (510388)</td><td>50,380.00</td></tr>
+<tr><td>אריאל</td><td>ממל' מילקין (414581)</td><td>11,960.00</td></tr>
+<tr><td>ראש העין</td><td>ממלכתי נופים (414896)</td><td>25,350.00</td></tr>
+</table>
+<p><strong>Identified total from data: ~127,016 NIS</strong> (5 documented school-level entries)</p>
+<p><strong>Full claimed presence:</strong> 27 schools across 7 cities (אריאל, הוד השרון, הרצליה, ראש העין, רמת השרון, רעננה, תל אביב-יפו), with a total Gefen budget of <strong>453,441 NIS</strong> as stated in the project's earlier mapping.</p>
+<h3>Business Model</h3>
+<p>The company operates as a <strong>B2G (business-to-government) service provider</strong>:</p>
+<ol>
+<li><strong>Revenue source:</strong> Schools and municipalities pay from their Gefen/supplementary education budgets</li>
+<li><strong>Delivery method:</strong> Workshops and lectures delivered by the company's trained facilitators</li>
+<li><strong>Per-school cost:</strong> Ranges from ~12,000 to ~50,000 NIS per school, suggesting variable scope (number of sessions, class sizes)</li>
+<li><strong>Average per school:</strong> ~16,800 NIS (based on total 453K / 27 schools)</li>
+</ol>
+<h3>Financial Transparency</h3>
+<table>
+<tr><th>Metric</th><th>Status</th></tr>
+<tr><td><strong>Public financial filings</strong></td><td>None (בע"מ, not required like amutot)</td></tr>
+<tr><td><strong>Government transfers (obudget.org)</strong></td><td>None recorded</td></tr>
+<tr><td><strong>GuideStar profile</strong></td><td>Not found (GuideStar covers amutot, not חברות בע"מ)</td></tr>
+<tr><td><strong>Annual revenue estimate</strong></td><td>453K+ NIS (from Gefen alone; may have additional revenue streams)</td></tr>
+</table>
+<p><strong>Critical gap:</strong> As a private company, מגע בתיאום has <strong>no public financial transparency obligations</strong> comparable to amutot. This means:</p>
+<ul>
+<li>No published annual reports</li>
+<li>No requirement to disclose donors or investors</li>
+<li>No registrar of amutot oversight</li>
+<li>Revenue, costs, and profit margins are entirely private</li>
+</ul>
+<p>This is a significant structural concern given that the company delivers sensitive educational content to children using public funds.</p>
+
+</div>
+<div class="section" id="section-3">
+<h2>Leadership Map & Revolving Door</h2>
+<h3>Key Personnel</h3>
+<p><strong>1. Galia (Cohen) Ofer -- Founder & Director (יוזמת ומנהלת)</strong></p>
+<table>
+<tr><th>Field</th><th>Details</th></tr>
+<tr><td><strong>Full name</strong></td><td>גליה כהן עופר (Galia Cohen Ofer)</td></tr>
+<tr><td><strong>Profession</strong></td><td>Social worker (עובדת סוציאלית)</td></tr>
+<tr><td><strong>Specialization</strong></td><td>Child and adolescent sexuality; treating sexually abused children</td></tr>
+<tr><td><strong>Training</strong></td><td>Rimmonim Center (מרכז רימונים) -- a treatment center for sexual assault survivors</td></tr>
+<tr><td><strong>Experience</strong></td><td>15+ years in healthy sexuality and sexual protection</td></tr>
+<tr><td><strong>Roles</strong></td><td>Founder of "מגע בתיאום"; therapist; group facilitator; lecturer</td></tr>
+<tr><td><strong>Lectures offered</strong></td><td>"Sex Education in Early Childhood"; normative vs. non-normative sexual behavior in young children; parental leadership</td></tr>
+</table>
+<p><strong>Assessment:</strong> Galia Ofer has legitimate professional credentials as a social worker specializing in child sexual abuse treatment. Her transition from clinical work to a for-profit educational company delivering content to schools represents a shift from treating at-risk children to universal "prevention" education for all children -- a significant scope expansion.</p>
+<p><strong>2. Shiri Basin Savion -- Professional Director (מנהלת מקצועית)</strong></p>
+<table>
+<tr><th>Field</th><th>Details</th></tr>
+<tr><td><strong>Profession</strong></td><td>Educational advisor (יועצת חינוכית)</td></tr>
+<tr><td><strong>Previous role</strong></td><td>Instructor in the Ministry of Education's Sexuality Unit (מדריכה ביחידה למיניות של משרד החינוך)</td></tr>
+<tr><td><strong>Current role</strong></td><td>Professional Director of מגע בתיאום בע"מ</td></tr>
+<tr><td><strong>Significance</strong></td><td>Classic revolving door -- moved from the regulatory body to the regulated entity</td></tr>
+</table>
+<h3>The Revolving Door</h3>
+<p>This is the most significant governance finding. Shiri Basin Savion's career path represents a textbook case of "regulatory capture" via revolving door:</p>
+<ol>
+<li><strong>At the Ministry:</strong> She worked in the unit that <strong>approves and oversees</strong> sexuality education programs in schools</li>
+<li><strong>At the company:</strong> She now <strong>directs</strong> a private company that delivers those same programs</li>
+<li><strong>The advantage:</strong> She brings insider knowledge of approval processes, personal relationships with decision-makers, and understanding of what the Ministry will accept</li>
+</ol>
+<p><strong>Critical questions that remain unanswered:</strong></p>
+<ul>
+<li>When exactly did Shiri Basin Savion leave the Ministry of Education?</li>
+<li>Did she approve or recommend מגע בתיאום programs while still at the Ministry?</li>
+<li>Is there a mandatory cooling-off period for MoE employees moving to private sector education companies?</li>
+<li>Did she bring any Ministry-developed materials or methodologies to the private company?</li>
+</ul>
+<h3>Staff Qualifications</h3>
+<p>The sei.org.il page states that the instructor team consists of "mostly educators and/or therapists, such as social workers and educational consultants" who possess "knowledge and expertise" in the field. However:</p>
+<ul>
+<li>No specific credential requirements are listed</li>
+<li>No verification by an independent professional body</li>
+<li>The "certification" comes through the האגודה לחינוך מיני, which is itself an ideologically aligned organization (not an independent accreditor)</li>
+</ul>
+
+</div>
+<div class="section" id="section-4">
+<h2>Programs & Curriculum Content</h2>
+<h3>Program Description (from Gefen catalog)</h3>
+<blockquote>"התכנית ועוסקת בנושא של מיניות בריאה ושמירה על המרחב האישי. התכנית מועברת בצורה חווייתית - באמצעות סיפור, הפעלות ומשחקים. נושאי התכנית: הכרת האיברים הפרטיים, הבחנה בין סוד טוב ורע, כללי התנהגות בבית הספר, מותר ואסור בתחום המיני, מה עושים אם נחשפים לתו..."</blockquote>
+<blockquote></blockquote>
+<blockquote>(The program deals with healthy sexuality and protecting personal space. The program is delivered experientially -- through stories, activities, and games. Program topics: recognition of private body parts, distinguishing between good and bad secrets, behavioral rules in school, what is permitted and forbidden in the sexual domain, what to do if exposed to...)</blockquote>
+<h3>Target Populations</h3>
+<p>From the sei.org.il listing:</p>
+<ul>
+<li><strong>Kindergarten children</strong> (ages 3-6)</li>
+<li><strong>Elementary school students</strong></li>
+<li><strong>Adolescents and pre-military cohorts</strong></li>
+<li><strong>Parents and educational teams</strong></li>
+<li><strong>Religious and secular populations</strong></li>
+</ul>
+<p>The range extends to <strong>grades 1-12</strong> according to the 2school.co.il listing.</p>
+<h3>Topics Covered (from sei.org.il)</h3>
+<p>The company addresses:</p>
+<ul>
+<li>Healthy sexuality</li>
+<li>Body image</li>
+<li>Physiological development</li>
+<li>Pregnancy prevention and contraception</li>
+<li>Sexual violence prevention</li>
+<li>Pornography</li>
+<li>Digital sex education</li>
+<li>Gender equality</li>
+<li>Early childhood through adolescent sexuality</li>
+<li>Special education and at-risk youth</li>
+</ul>
+<h3>Semantic Analysis of the Core Concept</h3>
+<p>The name "מגע בתיאום" (Touch in Coordination/Consensual Touch) is itself a conceptual framework:</p>
+<blockquote>"הילדים לומדים את המושג 'מגע בתיאום', וזאת על מנת להשריש <strong>תרבות</strong> לפיה כל מגע בינאישי בין ילדים ובין ילדים ומבוגרים, ייעשה בתיאום תוך בקשה או שאלה"</blockquote>
+<blockquote></blockquote>
+<blockquote>(Children learn the concept of 'touch in coordination,' in order to instill a <strong>culture</strong> in which all interpersonal touch between children, and between children and adults, is done in coordination through a request or question)</blockquote>
+<p><strong>Concern:</strong> This applies an adult consent framework (originally derived from sexual consent discourse) to all physical interactions of young children, including normal play, comforting, and spontaneous affection. While child safety is important, the universal application of "consent culture" to kindergarteners risks:</p>
+<ul>
+<li>Creating anxiety about normal physical interactions</li>
+<li>Disrupting spontaneous childhood play</li>
+<li>Pathologizing normal affection between children</li>
+<li>Introducing sexuality-adjacent concepts at developmentally inappropriate ages</li>
+</ul>
+<h3>Delivery Method</h3>
+<p>The programs use:</p>
+<ul>
+<li>Games, videos, puzzles, and dramatized scenarios</li>
+<li>Experiential/interactive format (not lecture-based)</li>
+<li>"Held and safe space" (מרחב מוחזק ובטוח) -- therapeutic terminology applied to educational settings</li>
+</ul>
+
+</div>
+<div class="section" id="section-5">
+<h2>Ministry of Education Relationship</h2>
+<h3>Approval Status</h3>
+<p>The company claims its programs are "approved by the Ministry of Education" (מאושר מטעם משרד החינוך). However, there is a contradiction:</p>
+<ul>
+<li>The 2school.co.il Gefen catalog page explicitly states: <strong>"Not part of Ministry of Education framework"</strong> (מסגרת שיוך: לא משויך)</li>
+<li>Yet the company presents itself as MoE-approved on the sei.org.il listing and elsewhere</li>
+</ul>
+<p>This suggests the company may have Gefen catalog listing (which allows schools to purchase programs from approved vendors) but not formal integration into the MoE's own curriculum.</p>
+<h3>The Gefen System</h3>
+<p>The Gefen (גפ"ן -- Gefen Programs Portal) is a catalog of external programs that schools can purchase. Being listed in Gefen means:</p>
+<ul>
+<li>The program passed some review process</li>
+<li>Schools can use their supplementary education budgets to pay for it</li>
+<li>It does NOT necessarily mean the Ministry endorses the specific content</li>
+</ul>
+<h3>Approval Process Opacity</h3>
+<p><strong>No public information is available about:</strong></p>
+<ul>
+<li>The specific criteria used to approve sexuality education programs for Gefen</li>
+<li>Whether competitive processes exist for this category</li>
+<li>Who within the Ministry reviews and approves these programs</li>
+<li>Whether the reviewers have ideological alignment with the providers</li>
+<li>Whether alternative approaches (religious, conservative, purely medical) have been offered and rejected</li>
+</ul>
+<h3>The Revolving Door's Impact on Approval</h3>
+<p>With Shiri Basin Savion having moved from the MoE's sexuality unit to מגע בתיאום, the company has a direct pipeline to the approval system:</p>
+<ul>
+<li>She knows what the reviewers look for</li>
+<li>She may have personal relationships with current reviewers</li>
+<li>She may have helped shape the criteria that her company now meets</li>
+</ul>
+<p>This represents a classic pattern of <strong>regulatory capture</strong> where the regulated entity effectively controls or heavily influences the regulatory process.</p>
+
+</div>
+<div class="section" id="section-6">
+<h2>Network Connections (Gender/Sexuality Cluster)</h2>
+<h3>The Ecology</h3>
+<p>"מגע בתיאום" is not an isolated company. It operates within a tightly connected ecosystem of organizations delivering sexuality education in Israeli schools. The research lens data identifies the following cluster:</p>
+<p><strong>Gender/Sexuality Education Cluster Members:</strong></p>
+<ol>
+<li><strong>מידע אמין על מין</strong> (Reliable Information About Sex) -- 15 cities, 136 schools, budget ~1.19M NIS</li>
+<li><strong>מגע בתיאום</strong> -- 7 cities, 27 schools, budget ~453K NIS</li>
+<li><strong>חוש"ן</strong> -- 6 cities</li>
+<li><strong>סדנאות מיניות ומוגנות</strong> (Sexuality and Safety Workshops)</li>
+<li><strong>תמורות</strong> (Temurot)</li>
+<li><strong>דפנה פייזר</strong> (independent facilitator)</li>
+<li><strong>ליטל סינקלר</strong> (independent facilitator)</li>
+<li><strong>לדעת לבחור נכון</strong> (Know How to Choose Right) -- amuta, ~1.35M NIS annual</li>
+<li><strong>האגודה לחינוך מיני</strong> (Israeli Association for Sex Education) -- umbrella body</li>
+</ol>
+<h3>Institutional Hub: האגודה לחינוך מיני</h3>
+<p>The Israeli Association for Sex Education (sei.org.il), established <strong>March 2023</strong> (notably, just months after מגע בתיאום's incorporation in November 2022), serves as:</p>
+<ol>
+<li><strong>Legitimation body</strong> -- all member organizations "adopted the association's goals, vision, and ethical code"</li>
+<li><strong>Self-certification system</strong> -- the association trains and certifies the facilitators who then deliver programs</li>
+<li><strong>Network coordinator</strong> -- 28 member organizations listed in the directory</li>
+</ol>
+<p><strong>Critical finding:</strong> מגע בתיאום is listed as one of 28 member organizations. Other cluster members also listed include:</p>
+<ul>
+<li>מידע אמין על מין (Shlomit Hebron is on the association's steering committee)</li>
+<li>לדעת לבחור נכון</li>
+<li>סייף סקול (SafeSchool)</li>
+<li>לגעת בזה, המעורר (Touch It, The Awakener)</li>
+</ul>
+<h3>Personnel Overlaps</h3>
+<p><strong>Shlomit Hebron</strong> -- co-director of מידע אמין על מין -- sits on the <strong>steering committee</strong> of the Association. This means the same people who deliver programs also govern the body that certifies them.</p>
+<h3>Relationship with לדעת לבחור נכון</h3>
+<p>The existing research identifies a "close relationship" (קשר הדוק) between מגע בתיאום and לדעת לבחור נכון. However:</p>
+<ul>
+<li>לדעת לבחור נכון is a registered amuta (580055911) with a ~1.35M NIS annual budget</li>
+<li>It can receive tax-deductible donations from Israel, USA, Canada, and the UK</li>
+<li>It was founded in 1976 (as S.H.I.L.A.)</li>
+<li>The nature of the relationship (financial? referral? shared methodology?) requires further investigation</li>
+</ul>
+<h3>Network Pattern</h3>
+<p>The pattern that emerges is a <strong>distributed network</strong> with shared ideology but separate legal entities:</p>
+<ul>
+<li>Some are amutot (tax benefits, donation-friendly)</li>
+<li>Some are חברות בע"מ (less transparency, profit-taking possible)</li>
+<li>One is a self-certifying professional association</li>
+<li>Independent facilitators operate as freelancers within the same ecosystem</li>
+</ul>
+<p>This structure makes financial tracking extremely difficult and provides multiple entry points into the school system.</p>
+
+</div>
+<div class="section" id="section-7">
+<h2>Parental Consent Mechanism</h2>
+<h3>The Problem</h3>
+<p><strong>No evidence of a parental opt-in mechanism has been found.</strong> The model appears to be:</p>
+<ol>
+<li>School/municipality decides to purchase the program</li>
+<li>The program is delivered to students</li>
+<li>Parents may be offered "lectures" (הרצאות להורים) as a separate track</li>
+<li>Parents are NOT given the actual curriculum materials in advance</li>
+<li>Parents are NOT asked for explicit consent (opt-in)</li>
+</ol>
+<h3>Evidence</h3>
+<p>From the existing research:</p>
+<blockquote>"בכל התיאורים, ההורים מוזכרים כ'קהל יעד' להרצאות, אך: אין מידע על האם ההורים רואים את התכנים המדויקים; אין דרישה להסכמה מפורשת (opt-in) של הורים; המודל הוא: המורים והמנחים החליטו, ההורים 'מוסברים'"</blockquote>
+<p>From the sei.org.il listing, target populations include "parents and educational teams" -- but this refers to separate lectures FOR parents, not parental consent ABOUT what children receive.</p>
+<h3>Parental Discovery</h3>
+<p>The existing research documents cases where:</p>
+<blockquote>"ילדיהם בגן למדו על 'מגע בתיאום' מבלי שידעו" (Their children in kindergarten learned about 'touch in coordination' without [the parents] knowing)</blockquote>
+<p>This is particularly concerning for:</p>
+<ul>
+<li>Religious families whose values may conflict with the program's framework</li>
+<li>Parents who have different views on age-appropriate sexuality education</li>
+<li>Parents who want to be the primary source of values-based education for their children</li>
+</ul>
+<h3>Legal Framework</h3>
+<p>In Israel, the Education Ministry does not require explicit parental consent for individual programs purchased through the Gefen system. The assumption is that the school administration acts in loco parentis. However:</p>
+<ul>
+<li>Sexuality education touches on deeply held religious and moral values</li>
+<li>The content goes beyond factual health education into values territory</li>
+<li>International best practice increasingly requires opt-in for sexuality education</li>
+</ul>
+
+</div>
+<div class="section" id="section-8">
+<h2>Controversies</h2>
+<h3>Direct Controversies for מגע בתיאום</h3>
+<p><strong>No direct media scandals or legal actions specifically targeting מגע בתיאום have been identified.</strong> This may be because:</p>
+<ul>
+<li>The company is very new (registered November 2022)</li>
+<li>Parents may not yet be aware of the specific content</li>
+<li>The company operates under the radar of investigative journalism</li>
+</ul>
+<h3>Related Controversy: Or Akiva Sex Education Scandal</h3>
+<p>While not directly involving מגע בתיאום, the <strong>Or Akiva incident</strong> is highly relevant as it illustrates the risks inherent in this sector:</p>
+<p>A sex education workshop for 7th graders in Or Akiva resulted in:</p>
+<ul>
+<li>Parents alleging the facilitator included explicit sexual vocabulary exercises, demonstrations of masturbation, and encouragement to watch pornography</li>
+<li>Gender-mixed settings (unusual for such workshops)</li>
+<li>Physical touching exercises between students</li>
+<li>A teacher blocking a distressed student from leaving</li>
+<li>The Education Minister ordered immediate cessation of all programs from that provider</li>
+<li>Investigation launched at district and central Ministry levels</li>
+</ul>
+<p><strong>Relevance to מגע בתיאום:</strong> This incident demonstrates what can happen when:</p>
+<ol>
+<li>External facilitators deliver sexuality content without adequate oversight</li>
+<li>There is no standardized content review</li>
+<li>Parents are not informed in advance</li>
+<li>The facilitator's personal ideology overrides age-appropriate boundaries</li>
+</ol>
+<h3>Potential Controversy Vectors</h3>
+<p>Based on the organizational analysis, the following risks exist:</p>
+<ol>
+<li><strong>Content leakage to younger ages</strong> -- the program serves kindergarten through high school; inappropriate content migration is a risk</li>
+<li><strong>Revolving door exposure</strong> -- if Shiri Basin Savion's Ministry-to-company transition becomes public knowledge, it could trigger regulatory scrutiny</li>
+<li><strong>For-profit model</strong> -- parents discovering that a private company profits from delivering sexuality education to their children may react negatively</li>
+<li><strong>Religious community backlash</strong> -- the program is marketed to both religious (ממ"ד) and secular schools, but the content appears to reflect secular/progressive values</li>
+</ol>
+
+</div>
+<div class="section" id="section-9">
+<h2>Values Alignment Table</h2>
+<table>
+<tr><th>Value Dimension</th><th>Score</th><th>Evidence</th></tr>
+<tr><td><strong>Parental authority</strong></td><td>-2</td><td>No opt-in; parents excluded from content decisions; children learn before parents are informed</td></tr>
+<tr><td><strong>Religious values (Jewish)</strong></td><td>-1</td><td>Content on gender identity, "healthy sexuality" framework conflicts with traditional values; marketed to ממ"ד schools</td></tr>
+<tr><td><strong>Child safety</strong></td><td>+1</td><td>Legitimate child protection component (preventing abuse, recognizing danger); founder has relevant clinical background</td></tr>
+<tr><td><strong>Financial transparency</strong></td><td>-2</td><td>Private company; no public filings; no disclosed revenue or profit; public funds with private opacity</td></tr>
+<tr><td><strong>Institutional integrity</strong></td><td>-2</td><td>Revolving door; self-certifying professional body; no independent quality assurance</td></tr>
+<tr><td><strong>Age-appropriate education</strong></td><td>-1</td><td>Kindergarten-age delivery of consent frameworks; unclear content differentiation by age</td></tr>
+<tr><td><strong>Professional standards</strong></td><td>0</td><td>Founder has social work credentials; but certification through ideologically aligned body, not independent accreditor</td></tr>
+<tr><td><strong>Democratic accountability</strong></td><td>-1</td><td>Ministry approval process opaque; no competitive bidding visible; no public reporting on outcomes</td></tr>
+</table>
+<p><strong>Overall alignment score: -8 (strongly misaligned with conservative/traditional values framework)</strong></p>
+
+</div>
+<div class="section" id="section-10">
+<h2>Open Questions</h2>
+<h3>Priority 1 (Require official records)</h3>
+<ol>
+<li><strong>Who are the shareholders of מגע בתיאום בע"מ (516711488)?</strong> -- requires paid company extract from רשם החברות</li>
+<li><strong>When did Shiri Basin Savion leave the Ministry of Education?</strong> -- requires freedom of information request</li>
+<li><strong>Did she approve/recommend מגע בתיאום programs while at the Ministry?</strong> -- requires freedom of information request</li>
+<li><strong>What is the company's actual revenue, profit, and cost structure?</strong> -- not publicly available for בע"מ</li>
+</ol>
+<h3>Priority 2 (Require investigation)</h3>
+<ol>
+<li><strong>What specific content is delivered at each age level?</strong> -- no curriculum documents are publicly available</li>
+<li><strong>What is the relationship between מגע בתיאום and לדעת לבחור נכון?</strong> -- financial? referral? personnel?</li>
+<li><strong>Was the program operating before the company was formally incorporated in November 2022?</strong> -- if so, under what entity?</li>
+<li><strong>Are there parent complaints in municipal records?</strong> -- requires freedom of information to municipalities</li>
+</ol>
+<h3>Priority 3 (Contextual)</h3>
+<ol>
+<li><strong>Has any school or municipality rejected the program?</strong> -- would indicate awareness of concerns</li>
+<li><strong>Are there competing (non-progressive) sexuality education providers in the Gefen catalog?</strong> -- tests for monopoly</li>
+<li><strong>What is the relationship between the registered address (Pardes Hanna) and the service areas (Sharon/central Israel)?</strong></li>
+<li><strong>Does the company have additional revenue streams beyond Gefen school programs?</strong></li>
+</ol>
+
+</div>
+<div class="section" id="section-11">
+<h2>Data Sources Used</h2>
+<ol>
+<li><strong>Israeli Companies Registrar</strong> (via obudget.org) -- registration date, address, status, company number</li>
+<li><strong>sei.org.il</strong> (האגודה לחינוך מיני) -- company profile, staff details, network membership</li>
+<li><strong>2school.co.il</strong> (Gefen catalog) -- program numbers, organization type, company number</li>
+<li><strong>greenbook.co.il</strong> -- Galia Ofer business profile</li>
+<li><strong>bizmakebiz.co.il</strong> -- Galia Ofer professional listing with testimonials</li>
+<li><strong>derug-arim-site/data.js</strong> -- Gefen budget data per school/city</li>
+<li><strong>derug-arim-site/research_data.js</strong> -- cluster classification</li>
+<li><strong>derug-arim-site/research/Gender_sexuality_education_providers.md</strong> -- existing deep research on the cluster</li>
+<li><strong>obudget.org</strong> -- government transfers check (none found)</li>
+<li><strong>Web searches</strong> -- Hebrew and English, multiple query strategies</li>
+</ol>
+<p><em>Report compiled 2026-02-16 by Claude Opus 4.6 deep research agent for the דירוג ערים project.</em></p>
+
+</div>
+</div>
+
+<footer>
+  פרויקט זהות ציונית — דוח מחקר מעמיק | <a href="../">דירוג ערים</a> | <a href="../research/">כל הדוחות</a>
+</footer>
+
+</body>
+</html>
