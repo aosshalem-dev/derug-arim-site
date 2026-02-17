@@ -985,7 +985,7 @@ const RESEARCH_ORGS = {
       ],
       "risk": "medium",
       "funding_sources": "קרן ירושלים, קרן מתנאל, תקציב משרד החינוך לתלמיד",
-      "report_url": "research/deep_Kedma.html",
+      "report_url": "research/deep_Kadma.html",
       "source_links": [
         {"label": "GuideStar IL", "url": "https://www.guidestar.org.il/organization/580320083"},
         {"label": "אתר העמותה", "url": "https://kedma-edu.org.il"},
