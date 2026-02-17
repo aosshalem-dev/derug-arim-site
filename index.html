@@ -522,7 +522,7 @@
                     <a href="https://votes25.bechirot.gov.il/" target="_blank" style="color:#2a5a8a">בחירות כנסת 25</a> |
                     <a href="https://news.google.com/?hl=iw&gl=IL" target="_blank" style="color:#2a5a8a">Google News</a> |
                     פרוטוקולי מועצות עיר |
-                    <a href="data/merged_city_ranking.json" target="_blank" style="color:#2a5a8a">נתונים גולמיים</a> |
+                    <a href="data/ranking.html" target="_blank" style="color:#2a5a8a">נתונים גולמיים</a> |
                     <a href="research/framework_insights.html" target="_blank" style="color:#2a5a8a">תובנות כלליות</a>
                 </div>
             </div>
@@ -685,8 +685,8 @@
                     </p>
                     <p style="font-size:0.85em;color:#666;margin-top:6px">
                         <strong>מקורות נוספים:</strong>
-                        <a href="data/research_lens.json" download style="color:#2a5a8a">מסגרת המחקר (JSON)</a> |
-                        <a href="data/methodology_computations.json" download style="color:#2a5a8a">חישובים סטטיסטיים</a> |
+                        <a href="data/research_lens.html" target="_blank" style="color:#2a5a8a">מסגרת המחקר</a> |
+                        <a href="data/methodology.html" target="_blank" style="color:#2a5a8a">חישובים סטטיסטיים</a> |
                         <a href="docs/METHODOLOGY.md" download style="color:#2a5a8a">מתודולוגיה מלאה</a>
                     </p>
                 </div>
@@ -766,17 +766,16 @@
             <a href="https://www.guidestar.org.il" target="_blank" class="source-tag">GuideStar — רשם העמותות</a>
             <a href="https://next.obudget.org" target="_blank" class="source-tag">obudget.org — תקציב פתוח</a>
             <a href="https://votes25.bechirot.gov.il/" target="_blank" class="source-tag">תוצאות בחירות כנסת 25</a>
-            <a href="research/" target="_blank" class="source-tag">33 דוחות מחקר מעמיק</a>
-            <a href="data/news/index.json" target="_blank" class="source-tag">ארכיון כתבות (5,095 כתבות, JSON)</a>
-            <a href="data/city_news_articles.json" target="_blank" class="source-tag">כתבות מלא — כל הערים (JSON)</a>
-            <a href="data/merged_city_ranking.json" target="_blank" class="source-tag">נתוני דירוג גולמיים (JSON)</a>
+            <a href="research/" target="_blank" class="source-tag">46 דוחות מחקר מעמיק</a>
+            <a href="data/news/" target="_blank" class="source-tag">ארכיון כתבות (5,095 כתבות)</a>
+            <a href="data/ranking.html" target="_blank" class="source-tag">נתוני דירוג גולמיים</a>
             <a href="https://www.ngo-monitor.org.il" target="_blank" class="source-tag">NGO Monitor</a>
         </div>
     </div>
 
     <footer>
         פרויקט זהות ציונית — דירוג ערים | עדכון אחרון: פברואר 2026<br>
-        מקורות: פרוטוקולים עירוניים (15 ערים) + תוכניות גפ"ן (20 ערים) + 33 דוחות מחקר מעמיק + בחירות כנסת 25 + 5,095 כתבות מקוטלגות
+        מקורות: פרוטוקולים עירוניים (15 ערים) + תוכניות גפ"ן (20 ערים) + 46 דוחות מחקר מעמיק + בחירות כנסת 25 + 5,095 כתבות מקוטלגות
     </footer>
 
     </div><!-- .main-content -->
@@ -1092,7 +1091,7 @@
                 <div style="font-size:0.8em;margin-top:4px">
                     מקור: פרוטוקולים של ישיבות מועצת העיר (${entry.protocol_coverage || ''} קבצים) |
                     <span style="cursor:pointer;color:#2a5a8a;text-decoration:underline" onclick="event.stopPropagation();switchTab('protocols',document.querySelectorAll('.nav-tab')[2])">צפה בפרוטוקולים מלאים</span> |
-                    <a href="data/merged_city_ranking.json" target="_blank" rel="noopener" style="color:#2a5a8a" onclick="event.stopPropagation()">נתונים גולמיים (JSON)</a>
+                    <a href="data/ranking.html" target="_blank" rel="noopener" style="color:#2a5a8a" onclick="event.stopPropagation()">נתוני דירוג גולמיים</a>
                 </div>`;
         }
 
@@ -1107,7 +1106,7 @@
                     <div style="margin-top:8px;font-size:0.8em">
                         מקור: <a href="https://apps.education.gov.il/gefen" target="_blank" rel="noopener" style="color:#2980b9">קטלוג גפ"ן — משרד החינוך</a>
                         &nbsp;|&nbsp; <a href="https://aosshalem-dev.github.io/educational-programs/" target="_blank" rel="noopener" style="color:#2980b9">ניתוח מלא: 2,859 תוכניות</a>
-                        &nbsp;|&nbsp; <a href="research/" target="_blank" rel="noopener" style="color:#2980b9">33 דוחות מחקר ארגונים</a>
+                        &nbsp;|&nbsp; <a href="research/" target="_blank" rel="noopener" style="color:#2980b9">46 דוחות מחקר ארגונים</a>
                     </div>
                 </div>`;
         }
@@ -1395,7 +1394,7 @@
             <div class="stat-item"><div class="stat-value">${highRisk}</div><div class="stat-label">סיכון גבוה (4-5)</div></div>
             <div class="stat-item"><div class="stat-value">\u20AA${(totalBudget/1000000).toFixed(1)} מיליון</div><div class="stat-label">תקציב כולל</div></div>
         `;
-        document.getElementById('edu-stats').innerHTML += '<div style="font-size:0.78em;color:#888;text-align:center;width:100%;margin-top:4px">מקור: <a href="https://apps.education.gov.il/gefen" target="_blank" rel="noopener" style="color:#2a5a8a">קטלוג גפ"ן — משרד החינוך</a> | <a href="https://aosshalem-dev.github.io/educational-programs/" target="_blank" rel="noopener" style="color:#2a5a8a">ניתוח מלא 2,859 תוכניות</a> | <a href="research/" target="_blank" rel="noopener" style="color:#2a5a8a">33 דוחות מחקר</a></div>';
+        document.getElementById('edu-stats').innerHTML += '<div style="font-size:0.78em;color:#888;text-align:center;width:100%;margin-top:4px">מקור: <a href="https://apps.education.gov.il/gefen" target="_blank" rel="noopener" style="color:#2a5a8a">קטלוג גפ"ן — משרד החינוך</a> | <a href="https://aosshalem-dev.github.io/educational-programs/" target="_blank" rel="noopener" style="color:#2a5a8a">ניתוח מלא 2,859 תוכניות</a> | <a href="research/" target="_blank" rel="noopener" style="color:#2a5a8a">46 דוחות מחקר</a></div>';
 
         const container = document.getElementById('edu-programs-list');
         container.innerHTML = `<div style="max-width:900px;margin:0 auto">
@@ -1431,7 +1430,7 @@
             <div class="stat-item"><div class="stat-value">${avgPoleB}</div><div class="stat-label">ממוצע ציר ב'</div></div>
             <div class="stat-item"><div class="stat-value">${redFlagCities}</div><div class="stat-label">ערים עם דגלים אדומים</div></div>
         `;
-        document.getElementById('proto-stats').innerHTML += '<div style="font-size:0.78em;color:#888;text-align:center;width:100%;margin-top:4px">מקור: פרוטוקולי מועצות עיר — סריקת מילות מפתח אוטומטית | <a href="data/merged_city_ranking.json" target="_blank" rel="noopener" style="color:#2a5a8a">נתונים גולמיים (JSON)</a></div>';
+        document.getElementById('proto-stats').innerHTML += '<div style="font-size:0.78em;color:#888;text-align:center;width:100%;margin-top:4px">מקור: פרוטוקולי מועצות עיר — סריקת מילות מפתח אוטומטית | <a href="data/ranking.html" target="_blank" rel="noopener" style="color:#2a5a8a">נתוני דירוג גולמיים</a></div>';
 
         // Find city name for each key
         const keyToCity = {};
@@ -1462,7 +1461,7 @@
                 </div>
                 <div style="font-size:0.78em;color:#999;margin-top:6px;border-top:1px solid #eee;padding-top:4px">
                     מקור: פרוטוקולי מועצת העיר |
-                    <a href="data/merged_city_ranking.json" target="_blank" rel="noopener" style="color:#2a5a8a">נתונים גולמיים</a> |
+                    <a href="data/ranking.html" target="_blank" rel="noopener" style="color:#2a5a8a">נתונים גולמיים</a> |
                     <a href="research/" target="_blank" rel="noopener" style="color:#2a5a8a">דוחות מחקר</a>
                 </div>
             </div>`;
@@ -1629,7 +1628,7 @@
             <div class="hero-stat"><div class="val">${protoCities}</div><div class="lbl">ערים עם פרוטוקולים</div></div>
             <div class="hero-stat"><div class="val">${clusterCount}</div><div class="lbl">אשכולות ארגוניים</div></div>
         `;
-        document.getElementById('hero-stats').innerHTML += '<div style="font-size:0.72em;color:rgba(255,255,255,0.6);text-align:center;width:100%;margin-top:6px">מקורות: <a href="https://apps.education.gov.il/gefen" target="_blank" style="color:rgba(255,255,255,0.8)">גפ"ן</a> · <a href="https://votes25.bechirot.gov.il/" target="_blank" style="color:rgba(255,255,255,0.8)">בחירות כנסת 25</a> · <a href="https://news.google.com/?hl=iw&gl=IL" target="_blank" style="color:rgba(255,255,255,0.8)">Google News</a> · פרוטוקולי מועצות · <a href="research/" target="_blank" style="color:rgba(255,255,255,0.8)">33 דוחות מחקר</a></div>';
+        document.getElementById('hero-stats').innerHTML += '<div style="font-size:0.72em;color:rgba(255,255,255,0.6);text-align:center;width:100%;margin-top:6px">מקורות: <a href="https://apps.education.gov.il/gefen" target="_blank" style="color:rgba(255,255,255,0.8)">גפ"ן</a> · <a href="https://votes25.bechirot.gov.il/" target="_blank" style="color:rgba(255,255,255,0.8)">בחירות כנסת 25</a> · <a href="https://news.google.com/?hl=iw&gl=IL" target="_blank" style="color:rgba(255,255,255,0.8)">Google News</a> · פרוטוקולי מועצות · <a href="research/" target="_blank" style="color:rgba(255,255,255,0.8)">46 דוחות מחקר</a></div>';
     }
 
     // ── Protocol Browser ──

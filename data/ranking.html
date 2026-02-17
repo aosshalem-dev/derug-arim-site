@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>נתוני דירוג גולמיים — דירוג ערים</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background: #f5f5f8; color: #1a1a2e;
+  direction: rtl; line-height: 1.7; font-size: 16px;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #1a1a2e; color: #fff;
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+nav .brand { font-weight: 700; color: #ff8800; }
+nav a { color: #ccc; text-decoration: none; font-size: 0.88em; }
+nav a:hover { color: #ff8800; }
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a5a8a 100%);
+  color: #fff; padding: 30px 20px 24px; text-align: center;
+}
+.hero h1 { font-size: 1.5em; margin-bottom: 6px; }
+.hero .sub { font-size: 0.95em; color: #b0c4de; }
+.container { max-width: 960px; margin: 0 auto; padding: 24px 16px 60px; }
+.card {
+  background: #fff; border-radius: 8px; padding: 20px;
+  margin-bottom: 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.card h2 { font-size: 1.2em; color: #1a1a2e; margin-bottom: 10px; border-bottom: 2px solid #667eea; padding-bottom: 6px; }
+.card h3 { font-size: 1em; color: #2a5a8a; margin: 12px 0 6px; }
+table { width: 100%; border-collapse: collapse; font-size: 0.9em; margin: 8px 0; }
+th { background: #667eea; color: #fff; padding: 8px 10px; text-align: right; }
+td { padding: 6px 10px; border-bottom: 1px solid #eee; text-align: right; vertical-align: top; }
+tr:nth-child(even) { background: #f8f9fc; }
+a { color: #2a5a8a; }
+a:hover { color: #ff8800; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; }
+.badge-high { background: #e74c3c; color: #fff; }
+.badge-med { background: #f39c12; color: #fff; }
+.badge-low { background: #27ae60; color: #fff; }
+.topic-tag {
+  display: inline-block; background: #e8eef6; padding: 3px 10px;
+  border-radius: 12px; font-size: 0.8em; color: #2a5a8a; margin: 2px;
+}
+.stats-row { display: flex; flex-wrap: wrap; gap: 12px; margin: 12px 0; }
+.stat-box { background: #f0f4fa; border-radius: 6px; padding: 10px 16px; text-align: center; flex: 1; min-width: 120px; }
+.stat-box .num { font-size: 1.4em; font-weight: 700; color: #2a5a8a; }
+.stat-box .label { font-size: 0.78em; color: #666; }
+.article-item { padding: 8px 0; border-bottom: 1px solid #f0f0f0; }
+.article-item:last-child { border-bottom: none; }
+.article-source { font-size: 0.78em; color: #888; }
+.article-date { font-size: 0.78em; color: #999; }
+.toggle-btn {
+  background: #667eea; color: #fff; border: none; padding: 6px 14px;
+  border-radius: 4px; cursor: pointer; font-size: 0.85em; margin: 4px 0;
+}
+.toggle-btn:hover { background: #5a6fd6; }
+.hidden { display: none; }
+footer { text-align: center; padding: 20px; color: #888; font-size: 0.82em; }
+@media (max-width: 768px) {
+  nav { padding: 8px 12px; gap: 8px; flex-wrap: wrap; }
+  .hero { padding: 18px 12px 14px; }
+  .hero h1 { font-size: 1.2em; }
+  .container { padding: 12px 8px 40px; }
+  .card { padding: 14px 12px; }
+  table { display: block; overflow-x: auto; font-size: 0.82em; }
+  th { position: static; }
+  body { font-size: 14px; }
+  .stats-row { gap: 6px; }
+  .stat-box { min-width: 90px; padding: 8px 10px; }
+  .stat-box .num { font-size: 1.1em; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">נתוני דירוג</span>
+  <a href="../">חזרה לדירוג</a>
+</nav>
+
+<div class="hero">
+  <h1>נתוני דירוג גולמיים — 15 ערים</h1>
+  <div class="sub">כל הנתונים שמרכיבים את הציון המשולב</div>
+</div>
+
+<div class="container">
+  <div class="card">
+    <h2>מפתח שדות</h2>
+    <table>
+      <tr><th>שדה</th><th>הסבר</th><th>משקל בציון</th></tr>
+      <tr><td>חשיפה חינוכית</td><td>ציון נורמלי (0-100) המבוסס על תוכניות גפ"ן שסומנו כפרוגרסיביות</td><td>35%</td></tr>
+      <tr><td>% תקציב מסומן</td><td>אחוז התקציב החינוכי שמופנה לתוכניות מסומנות</td><td>—</td></tr>
+      <tr><td>ציר ב' (פרוגרסיבי)</td><td>ציון מילות מפתח פרוגרסיביות בפרוטוקולים</td><td>15%</td></tr>
+      <tr><td>דגלים אדומים</td><td>ציון UNESCO, יועצים חיצוניים ומרכיבים חשודים</td><td>15%</td></tr>
+      <tr><td>ציר א' (זהות)</td><td>ציון מילות מפתח זהות יהודית/ציונית — לעיון בלבד</td><td>—</td></tr>
+      <tr><td>כיסוי</td><td>מספר פרוטוקולים שנסרקו / סה"כ פרוטוקולים</td><td>—</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>טבלת דירוג</h2>
+    <table>
+      <tr>
+        <th>#</th><th>עיר</th><th>ציון משולב</th><th>חשיפה חינוכית</th>
+        <th>% תקציב</th><th>ציר ב'</th><th>דגלים</th><th>ציר א'</th><th>כיסוי</th>
+      </tr>
+      <tr>
+  <td>1</td>
+  <td><strong>כרמיאל</strong></td>
+  <td>48.7 <span class="badge badge-med">גבוה</span></td>
+  <td>75.1</td>
+  <td>22.1%</td>
+  <td>0.58</td>
+  <td>0.04</td>
+  <td>4.29</td>
+  <td>49/162</td>
+</tr><tr>
+  <td>2</td>
+  <td><strong>גבעתיים</strong></td>
+  <td>44.1 <span class="badge badge-med">גבוה</span></td>
+  <td>32.6</td>
+  <td>8.8%</td>
+  <td>2.25</td>
+  <td>0.04</td>
+  <td>5.88</td>
+  <td>76/668</td>
+</tr><tr>
+  <td>3</td>
+  <td><strong>באר שבע</strong></td>
+  <td>34.5 <span class="badge badge-med">גבוה</span></td>
+  <td>30.2</td>
+  <td>6.4%</td>
+  <td>0.34</td>
+  <td>0.12</td>
+  <td>6.52</td>
+  <td>97/1027</td>
+</tr><tr>
+  <td>4</td>
+  <td><strong>הוד השרון</strong></td>
+  <td>32.8 <span class="badge badge-med">גבוה</span></td>
+  <td>30.0</td>
+  <td>9.5%</td>
+  <td>0.58</td>
+  <td>0.09</td>
+  <td>9.43</td>
+  <td>43/715</td>
+</tr><tr>
+  <td>5</td>
+  <td><strong>רעננה</strong></td>
+  <td>26.4 <span class="badge badge-low">נמוך</span></td>
+  <td>34.9</td>
+  <td>9.9%</td>
+  <td>0.63</td>
+  <td>0.02</td>
+  <td>3.02</td>
+  <td>82/968</td>
+</tr><tr>
+  <td>6</td>
+  <td><strong>הרצליה</strong></td>
+  <td>26.1 <span class="badge badge-low">נמוך</span></td>
+  <td>29.1</td>
+  <td>8.8%</td>
+  <td>0.89</td>
+  <td>0.02</td>
+  <td>5.72</td>
+  <td>66/1813</td>
+</tr><tr>
+  <td>7</td>
+  <td><strong>חיפה</strong></td>
+  <td>24.8 <span class="badge badge-low">נמוך</span></td>
+  <td>38.1</td>
+  <td>11.0%</td>
+  <td>0.44</td>
+  <td>0.01</td>
+  <td>4.06</td>
+  <td>93/1215</td>
+</tr><tr>
+  <td>8</td>
+  <td><strong>גבעת שמואל</strong></td>
+  <td>19.4 <span class="badge badge-low">נמוך</span></td>
+  <td>37.5</td>
+  <td>9.7%</td>
+  <td>0.07</td>
+  <td>0.00</td>
+  <td>4.74</td>
+  <td>68/392</td>
+</tr><tr>
+  <td>9</td>
+  <td><strong>אריאל</strong></td>
+  <td>17.1 <span class="badge badge-low">נמוך</span></td>
+  <td>26.6</td>
+  <td>10.8%</td>
+  <td>0.12</td>
+  <td>0.02</td>
+  <td>5.27</td>
+  <td>69/196</td>
+</tr><tr>
+  <td>10</td>
+  <td><strong>קרית אונו</strong></td>
+  <td>16.4 <span class="badge badge-low">נמוך</span></td>
+  <td>30.5</td>
+  <td>8.7%</td>
+  <td>0.12</td>
+  <td>0.00</td>
+  <td>3.92</td>
+  <td>67/233</td>
+</tr><tr>
+  <td>11</td>
+  <td><strong>ראש העין</strong></td>
+  <td>14.7 <span class="badge badge-low">נמוך</span></td>
+  <td>24.3</td>
+  <td>7.1%</td>
+  <td>0.26</td>
+  <td>0.00</td>
+  <td>3.92</td>
+  <td>100/457</td>
+</tr><tr>
+  <td>12</td>
+  <td><strong>קרית גת</strong></td>
+  <td>13.9 <span class="badge badge-low">נמוך</span></td>
+  <td>27.6</td>
+  <td>7.1%</td>
+  <td>0.01</td>
+  <td>0.00</td>
+  <td>0.61</td>
+  <td>17/222</td>
+</tr><tr>
+  <td>13</td>
+  <td><strong>אפרת</strong></td>
+  <td>6.3 <span class="badge badge-low">נמוך</span></td>
+  <td>3.5</td>
+  <td>0.0%</td>
+  <td>0.19</td>
+  <td>0.02</td>
+  <td>4.09</td>
+  <td>93/252</td>
+</tr><tr>
+  <td>14</td>
+  <td><strong>עמנואל</strong></td>
+  <td>3.7 <span class="badge badge-low">נמוך</span></td>
+  <td>1.2</td>
+  <td>0.0%</td>
+  <td>0.31</td>
+  <td>0.00</td>
+  <td>2.62</td>
+  <td>50/155</td>
+</tr><tr>
+  <td>15</td>
+  <td><strong>נתיבות</strong></td>
+  <td>2.8 <span class="badge badge-low">נמוך</span></td>
+  <td>3.2</td>
+  <td>1.0%</td>
+  <td>0.12</td>
+  <td>0.00</td>
+  <td>3.39</td>
+  <td>44/300</td>
+</tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>מקורות</h2>
+    <ul>
+      <li><a href="https://apps.education.gov.il/gefen" target="_blank">מערכת גפ"ן — משרד החינוך</a></li>
+      <li><a href="https://votes25.bechirot.gov.il/" target="_blank">תוצאות בחירות כנסת 25</a></li>
+      <li><a href="https://news.google.com/?hl=iw&gl=IL" target="_blank">Google News Hebrew</a></li>
+      <li>פרוטוקולי מועצות עיר (15 ערים)</li>
+      <li><a href="../research/" target="_blank">דוחות מחקר מעמיק</a></li>
+    </ul>
+  </div>
+</div>
+
+<footer>פרויקט זהות ציונית — נתוני דירוג גולמיים | <a href="../">דירוג ערים</a></footer>
+
+</body>
+</html>

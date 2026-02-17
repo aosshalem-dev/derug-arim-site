@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>מסגרת המחקר — דירוג ערים</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background: #f5f5f8; color: #1a1a2e;
+  direction: rtl; line-height: 1.7; font-size: 16px;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #1a1a2e; color: #fff;
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+nav .brand { font-weight: 700; color: #ff8800; }
+nav a { color: #ccc; text-decoration: none; font-size: 0.88em; }
+nav a:hover { color: #ff8800; }
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a5a8a 100%);
+  color: #fff; padding: 30px 20px 24px; text-align: center;
+}
+.hero h1 { font-size: 1.5em; margin-bottom: 6px; }
+.hero .sub { font-size: 0.95em; color: #b0c4de; }
+.container { max-width: 960px; margin: 0 auto; padding: 24px 16px 60px; }
+.card {
+  background: #fff; border-radius: 8px; padding: 20px;
+  margin-bottom: 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.card h2 { font-size: 1.2em; color: #1a1a2e; margin-bottom: 10px; border-bottom: 2px solid #667eea; padding-bottom: 6px; }
+.card h3 { font-size: 1em; color: #2a5a8a; margin: 12px 0 6px; }
+table { width: 100%; border-collapse: collapse; font-size: 0.9em; margin: 8px 0; }
+th { background: #667eea; color: #fff; padding: 8px 10px; text-align: right; }
+td { padding: 6px 10px; border-bottom: 1px solid #eee; text-align: right; vertical-align: top; }
+tr:nth-child(even) { background: #f8f9fc; }
+a { color: #2a5a8a; }
+a:hover { color: #ff8800; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; }
+.badge-high { background: #e74c3c; color: #fff; }
+.badge-med { background: #f39c12; color: #fff; }
+.badge-low { background: #27ae60; color: #fff; }
+.topic-tag {
+  display: inline-block; background: #e8eef6; padding: 3px 10px;
+  border-radius: 12px; font-size: 0.8em; color: #2a5a8a; margin: 2px;
+}
+.stats-row { display: flex; flex-wrap: wrap; gap: 12px; margin: 12px 0; }
+.stat-box { background: #f0f4fa; border-radius: 6px; padding: 10px 16px; text-align: center; flex: 1; min-width: 120px; }
+.stat-box .num { font-size: 1.4em; font-weight: 700; color: #2a5a8a; }
+.stat-box .label { font-size: 0.78em; color: #666; }
+.article-item { padding: 8px 0; border-bottom: 1px solid #f0f0f0; }
+.article-item:last-child { border-bottom: none; }
+.article-source { font-size: 0.78em; color: #888; }
+.article-date { font-size: 0.78em; color: #999; }
+.toggle-btn {
+  background: #667eea; color: #fff; border: none; padding: 6px 14px;
+  border-radius: 4px; cursor: pointer; font-size: 0.85em; margin: 4px 0;
+}
+.toggle-btn:hover { background: #5a6fd6; }
+.hidden { display: none; }
+footer { text-align: center; padding: 20px; color: #888; font-size: 0.82em; }
+@media (max-width: 768px) {
+  nav { padding: 8px 12px; gap: 8px; flex-wrap: wrap; }
+  .hero { padding: 18px 12px 14px; }
+  .hero h1 { font-size: 1.2em; }
+  .container { padding: 12px 8px 40px; }
+  .card { padding: 14px 12px; }
+  table { display: block; overflow-x: auto; font-size: 0.82em; }
+  th { position: static; }
+  body { font-size: 14px; }
+  .stats-row { gap: 6px; }
+  .stat-box { min-width: 90px; padding: 8px 10px; }
+  .stat-box .num { font-size: 1.1em; }
+}
+</style>
+</head>
+<body>
+<nav>
+  <span class="brand">מסגרת המחקר</span>
+  <a href="../">חזרה לדירוג</a>
+</nav>
+<div class="hero">
+  <h1>דירוג ערים — Ideological-Analytical Lens</h1>
+  <div class="sub">Framework extracted from the Dror Israel deep-dive (ניתוח עמותת דרור ישראל ערכית.docx). Every suspect org/program gets analyzed through these 9 chapters.</div>
+</div>
+<div class="container">
+  <div class="card"><h2>פרקי ניתוח</h2><p>כל ארגון חשוד עובר ניתוח ב-9 פרקים:</p></div>
+  <div class="card"><h2>1. זהות ארגונית, רשת עמותות ומבנה שליטה</h2><h3>Organizational identity, NGO network & control structure</h3><ul><li>Is this a single legal entity or a network of affiliated NGOs/companies?</li>
+<li>Who controls the network — is power centralized in a few people?</li>
+<li>Do the same people rotate across roles in different entities?</li>
+<li>Does the org operate a closed community model (urban kibbutz, communes, etc.)?</li></ul><p style="font-size:0.82em;color:#666;margin-top:8px"><strong>מקורות נתונים:</strong> GuideStar Israel (guidestar.org.il), Companies registrar (ica.justice.gov.il), NGO registrar</p></div><div class="card"><h2>2. ניתוח הנהגה וקשרים פוליטיים</h2><h3>Leadership analysis & political connections</h3><ul><li>Who are the key people (founders, CEO, board)?</li>
+<li>Do leaders have explicit political affiliations or activism history?</li>
+<li>Has the org or its leaders been involved in political campaigns?</li>
+<li>Any SLAPP lawsuits (defamation suits to silence critics)?</li></ul><p style="font-size:0.82em;color:#666;margin-top:8px"><strong>מקורות נתונים:</strong> LinkedIn, news archives, court records, political party records</p></div><div class="card"><h2>3. ניתוח כספי ומקורות מימון</h2><h3>Financial analysis & funding sources</h3><ul><li>What is the annual budget? What % comes from government vs foreign donors?</li>
+<li>Are there connections to politically-oriented foreign foundations (NIF, Ford Foundation, etc.)?</li>
+<li>Is emergency/crisis funding used to bypass normal channels?</li>
+<li>Any financial irregularities, audit findings, or unexplained budget gaps?</li></ul><p style="font-size:0.82em;color:#666;margin-top:8px"><strong>מקורות נתונים:</strong> GuideStar financials, gov.il open data (takziv.gov.il), NGO Monitor, IRS 990 (for US friends-of orgs), Instrumentl</p></div><div class="card"><h2>4. אידיאולוגיה ופדגוגיה — חדירת הפדגוגיה הביקורתית</h2><h3>Ideology & pedagogy — critical pedagogy infiltration</h3><ul><li>Does the org use critical pedagogy (Paulo Freire, bell hooks, etc.)?</li>
+<li>Is there 'semantic shifting' — using traditional terms (Zionism, Judaism) but loading them with progressive content?</li>
+<li>Does the pedagogy frame existing society as a system of oppression to be dismantled?</li>
+<li>Are concepts like 'social justice', 'equity', 'decolonization' central to the curriculum?</li></ul><p style="font-size:0.82em;color:#666;margin-top:8px"><strong>מקורות נתונים:</strong> </p></div><div class="card"><h2>5. תכנים בעייתיים והשפעה על חינוך וערכים</h2><h3>Problematic content & impact on education/values</h3><ul><li>Does the program introduce sexual/gender content to minors without adequate parental consent?</li>
+<li>Is there content that undermines family structure, national identity, or religious tradition?</li>
+<li>Are facilitators trained in ideology rather than child psychology?</li>
+<li>Does the org use national memory/trauma (e.g. Rabin assassination) for political framing?</li></ul><p style="font-size:0.82em;color:#666;margin-top:8px"><strong>מקורות נתונים:</strong> </p></div><div class="card"><h2>6. פרשות, חשדות ואי-סדרים</h2><h3>Scandals, suspicions & irregularities</h3><ul><li>Any media investigations or exposés?</li>
+<li>Any financial scandals, embezzlement allegations?</li>
+<li>Has the org silenced critics through legal threats?</li>
+<li>Any complaints from parents, teachers, or former members?</li></ul><p style="font-size:0.82em;color:#666;margin-top:8px"><strong>מקורות נתונים:</strong> news archives (ha-makom, makor rishon, channel 14), court records</p></div><div class="card"><h2>7. השפעה על מדיניות ציבורית וקשרים עם הממשל</h2><h3>Influence on public policy & government relations</h3><ul><li>Does the org have no-bid contracts with government ministries?</li>
+<li>Does it position itself as essential during crises (wars, COVID)?</li>
+<li>Are org alumni embedded in Ministry of Education or local government?</li>
+<li>Does the org influence curriculum or teacher training at scale?</li></ul><p style="font-size:0.82em;color:#666;margin-top:8px"><strong>מקורות נתונים:</strong> </p></div><div class="card"><h2>8. ניתוח לפי עולם הערכים — התאמה וסתירה</h2><h3>Values alignment analysis — compatibility & contradiction</h3><ul></ul><p style="font-size:0.82em;color:#666;margin-top:8px"><strong>מקורות נתונים:</strong> </p></div><div class="card"><h2>9. סיכום ומסקנות — מפת הסיכונים</h2><h3>Summary & conclusions — risk map</h3><ul></ul><p style="font-size:0.82em;color:#666;margin-top:8px"><strong>מקורות נתונים:</strong> </p></div>
+  <div class='card'><h2>אשכולות חשודים</h2></div><div class="card"><h2></h2><h3></h3><ul></ul></div><div class="card"><h2></h2><h3></h3><ul></ul></div><div class="card"><h2></h2><h3></h3><ul></ul></div><div class="card"><h2></h2><h3></h3><ul></ul></div><div class="card"><h2></h2><h3></h3><ul></ul></div><div class="card"><h2></h2><h3></h3><ul></ul></div><div class="card"><h2></h2><h3></h3><ul></ul></div>
+</div>
+<footer>פרויקט זהות ציונית — מסגרת המחקר | <a href="../">דירוג ערים</a></footer>
+</body>
+</html>
