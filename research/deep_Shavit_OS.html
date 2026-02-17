@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>שביט או.אס בע"מ — תכנית "דמויות מופת — גיבורות תרבות" — דוח מחקר מעמיק</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background: #f5f5f8;
+  color: #1a1a2e;
+  direction: rtl;
+  line-height: 1.8;
+  font-size: 17px;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #1a1a2e; color: #fff;
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  overflow-x: auto; white-space: nowrap;
+}
+nav .brand { font-weight: 700; color: #ff8800; flex-shrink: 0; }
+nav a { color: #ccc; text-decoration: none; font-size: 0.85em; padding: 8px 4px; border-bottom: 2px solid transparent; flex-shrink: 0; }
+nav a:hover { color: #ff8800; border-bottom-color: #ff8800; }
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a5a8a 100%);
+  color: #fff; padding: 50px 20px 40px; text-align: center;
+}
+.hero h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+.hero .subtitle { font-size: 1.05em; color: #b0c4de; margin-bottom: 6px; }
+.hero .meta { font-size: 0.9em; color: #ff8800; margin-top: 8px; }
+.risk-badge {
+  display: inline-block; padding: 4px 16px; border-radius: 20px;
+  font-size: 0.85em; font-weight: 600; margin-top: 10px;
+}
+.risk-high { background: #e74c3c; color: #fff; }
+.risk-medium { background: #f39c12; color: #fff; }
+.risk-low { background: #27ae60; color: #fff; }
+.container { max-width: 860px; margin: 0 auto; padding: 30px 20px 80px; }
+.toc {
+  background: #fff; border-radius: 8px; padding: 22px 26px;
+  margin-bottom: 32px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.toc h2 { font-size: 1.15em; color: #2a5a8a; margin-bottom: 12px; border-bottom: 2px solid #667eea; padding-bottom: 6px; }
+.toc ol { padding-right: 22px; font-size: 0.93em; }
+.toc li { margin-bottom: 4px; }
+.toc a { color: #2a5a8a; text-decoration: none; }
+.toc a:hover { color: #ff8800; text-decoration: underline; }
+.section {
+  background: #fff; border-radius: 8px; padding: 28px 26px;
+  margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.section h2 { font-size: 1.4em; color: #1a1a2e; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #667eea; }
+.section h3 { font-size: 1.1em; color: #2a5a8a; margin: 18px 0 8px; }
+.section h4 { font-size: 1em; color: #444; margin: 14px 0 6px; }
+.section p { margin-bottom: 12px; text-align: justify; }
+.section ul, .section ol { padding-right: 22px; margin-bottom: 12px; }
+.section li { margin-bottom: 5px; }
+blockquote {
+  background: #f0f4fa; border-right: 4px solid #667eea;
+  padding: 12px 18px; margin: 12px 0; border-radius: 0 6px 6px 0;
+  font-size: 0.94em; color: #333;
+}
+.thesis {
+  background: #fff8f0; border-right: 3px solid #ff8800;
+  padding: 14px 18px; margin: 12px 0; border-radius: 0 5px 5px 0;
+  font-size: 0.96em; color: #6b4500;
+}
+table {
+  width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.91em;
+}
+th {
+  background: #667eea; color: #fff; padding: 8px 12px;
+  text-align: right; position: sticky; top: 44px; z-index: 5;
+}
+td {
+  padding: 7px 12px; border-bottom: 1px solid #e8e8e8;
+  text-align: right; vertical-align: top;
+}
+tr:nth-child(even) { background: #f8f9fc; }
+a { color: #2a5a8a; }
+a:hover { color: #ff8800; }
+.back-link {
+  display: inline-block; margin-bottom: 20px; padding: 6px 14px;
+  background: #667eea; color: #fff; border-radius: 4px;
+  text-decoration: none; font-size: 0.88em;
+}
+.back-link:hover { background: #5a6fd6; color: #fff; }
+footer {
+  text-align: center; padding: 30px 20px; color: #888; font-size: 0.85em;
+}
+strong { color: #1a1a2e; }
+code {
+  background: #f0f0f0; padding: 1px 5px; border-radius: 3px;
+  font-size: 0.9em;
+}
+.source-tag {
+  display: inline-block; background: #e8eef6; padding: 2px 8px;
+  border-radius: 10px; font-size: 0.78em; color: #2a5a8a;
+  margin: 2px 3px; text-decoration: none;
+}
+.source-tag:hover { background: #d0dff0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">דוח מחקר מעמיק</span>
+  <a href="../">חזרה לדירוג</a>
+  <a href="../research/">כל הדוחות</a>
+  <a href="#section-1">2. תיאור התכנית</a> <a href="#section-2">3. האם מדובר בחינוך </a> <a href="#section-3">4. מבנה פיננסי ומימו</a> <a href="#section-4">5. מנהיגות ואנשים</a> <a href="#section-5">6. קהל יעד</a> <a href="#section-6">7. קשר לארגונים פמינ</a> <a href="#section-7">8. אישור ממשלתי — קט</a> <a href="#section-8">9. סיכום ממצאים</a> <a href="#section-9">10. המלצות למחקר נוס</a>
+</nav>
+
+<div class="hero">
+  <h1>שביט או.אס בע"מ — תכנית "דמויות מופת — גיבורות תרבות"</h1>
+  <div class="subtitle">1. רישום וזיהוי החברה</div>
+  <div class="meta"></div>
+  
+</div>
+
+<div class="container">
+  <a href="../research/" class="back-link">← כל דוחות המחקר</a>
+  <div class="toc"><h2>תוכן עניינים</h2><ol><li><a href="#section-1">2. תיאור התכנית</a></li><li><a href="#section-2">3. האם מדובר בחינוך פמיניסטי / אידיאולוגיה מגדרית?</a></li><li><a href="#section-3">4. מבנה פיננסי ומימון</a></li><li><a href="#section-4">5. מנהיגות ואנשים</a></li><li><a href="#section-5">6. קהל יעד</a></li><li><a href="#section-6">7. קשר לארגונים פמיניסטיים</a></li><li><a href="#section-7">8. אישור ממשלתי — קטלוג גפ"ן</a></li><li><a href="#section-8">9. סיכום ממצאים</a></li><li><a href="#section-9">10. המלצות למחקר נוסף</a></li></ol></div>
+  <div class="section">
+<p>---|------|</p>
+<table>
+<tr><th>שם בעברית</th><th>שביט או.אס בע"מ</th></tr>
+<tr><td>שם באנגלית</td><td>SHAVIT O.S LTD</td></tr>
+<tr><td>ח.פ</td><td><strong>513887166</strong></td></tr>
+<tr><td>סוג</td><td>חברה פרטית ישראלית</td></tr>
+<tr><td>סטטוס</td><td><strong>פעילה</strong></td></tr>
+<tr><td>תאריך התאגדות</td><td><strong>26 באוקטובר 2006</strong></td></tr>
+<tr><td>כתובת רשומה</td><td>קליל החורש 15, <strong>גבעת עדה</strong> (מיקוד 3780800)</td></tr>
+<tr><td>מטרת חברה</td><td>"לעסוק בכל עיסוק חוקי"</td></tr>
+<tr><td>איש קשר ברשם</td><td><strong>דותן שביט</strong></td></tr>
+</table>
+<p><strong>מקור:</strong> <a href="https://www.checkid.co.il/company/%D7%A9%D7%91%D7%99%D7%98-%D7%90%D7%95.%D7%90%D7%A1-%D7%91%D7%A2~%D7%9E-513887166" target="_blank" rel="noopener">CheckID.co.il</a>, <a href="https://next.obudget.org/i/org/company/513887166" target="_blank" rel="noopener">Obudget.org</a></p>
+<h3>מה ידוע על הבעלים</h3>
+<ul>
+<li><strong>דותן שביט</strong> — רשום כאיש הקשר של החברה ברשם החברות. לא נמצא פרופיל ציבורי, לינקדאין, פייסבוק, או כל מידע מקצועי עליו.</li>
+<li><strong>אורלי שביט</strong> — קיימת אורלי שביט מגבעת אלה (סמוך לגבעת עדה), בעלת M.Ed, רשומה כ"מטפלת מוסמכת" לטיפול זוגי ומשפחתי באגודה הישראלית, ומתמחה בייעוץ חינוכי. טלפון: 054-2021725. <strong>ייתכן שזו בעלת החברה או שותפה — אותו שם משפחה, אותו אזור גיאוגרפי, רקע בחינוך.</strong></li>
+<li><strong>אורלי שביט-מימרן</strong> — מפקחת בחינוך מיוחד, מחוז ירושלים, משרד החינוך. כתובת: ששת הימים 9, מבשרת ציון. טלפון: 050-6427553. דוא"ל: orlysh4@education.gov.il. מרצה בנושאי "פיתוח חוסן והטמעת מוקדי עבודת החינוך המיוחד". <strong>זו דמות שונה — גרה במבשרת ציון, לא בגבעת עדה.</strong> שם המשפחה הכפול "שביט-מימרן" מרמז על נישואין, לא על זהות עם "שביט" של גבעת עדה.</li>
+</ul>
+<p><strong>הערה קריטית:</strong> לא ניתן לאשר באופן סופי מי עומד/ת מאחורי החברה ללא נסח חברה מרשם החברות (עלות 11 ש"ח). שם המשפחה "שביט" נפוץ בישראל, וקיימים מספר אנשים בשם זה בתחום החינוך.</p>
+
+</div>
+<div class="section" id="section-1">
+<h2>2. תיאור התכנית</h2>
+<h3>פרטי רישום בגפ"ן</h3>
+<table>
+<tr><th>שדה</th><th>ערך</th></tr>
+<tr><td>שם התכנית</td><td><strong>דמויות מופת — גיבורות תרבות</strong></td></tr>
+<tr><td>תת-כותרת</td><td>תכנית לעידוד קריאה והכרת נשים פורצות דרך</td></tr>
+<tr><td>מספר בגפ"ן</td><td><strong>26307</strong></td></tr>
+<tr><td>מסלול</td><td><strong>מכרז המאגר (מסלול רכש)</strong></td></tr>
+<tr><td>תחום</td><td><strong>חברתי-ערכי</strong></td></tr>
+<tr><td>מקור</td><td><strong>חיצוני — מגזר עסקי</strong></td></tr>
+<tr><td>ספק</td><td>שביט או.אס בע"מ</td></tr>
+</table>
+<p><strong>מקור:</strong> <a href="https://www.2school.co.il/InterData/esiht/" target="_blank" rel="noopener">קטלוג גפ"ן - 2school.co.il</a></p>
+<h3>תיאור התכנית (כפי שמופיע בקטלוג)</h3>
+<p>תכנית "חדשנית ופורצת דרך" להכרת <strong>נשים שעשו היסטוריה ופרצו דרך לעולמות המדע, התרבות, האמנות והחברה.</strong> התכנית היא חוויתית ומשלבת:</p>
+<ul>
+<li>עולם הקריאה (סדרת ספרים "דמויות מופת")</li>
+<li>לימוד מושגים וקשרם בפועלה של הדמות</li>
+<li>חינוך ערכי</li>
+</ul>
+<h3>הערכים המוצהרים (ציטוט מהקטלוג)</h3>
+<p>התכנית יוצרת חיבור בין עולם הספרות בסדרת "דמויות מופת" לערכים הנלמדים במסגרת בית הספר:</p>
+<ol>
+<li><strong>בחירה חופשית</strong></li>
+<li><strong>שוויון הזדמנויות מגדרי</strong></li>
+<li><strong>שינוי תבניות מחשבתיות מגדריות</strong></li>
+<li><strong>הרחבת המודלים לחיקוי</strong></li>
+<li><strong>קבלת השראה מעולמות אחרים ושונים</strong></li>
+<li><strong>קידום ערכים של צדק חברתי</strong></li>
+</ol>
+<h3>על הספרים</h3>
+<p>בספרים "ניתן לראות מסרים של שוויון מגדרי, נחישות ורצון, ונשים ששינו את פני ההיסטוריה." הגישה מוגדרת כ"קריאה ביקורתית של מציאות מגדרית" שנועדה "להחליף תפיסות 'מקובלות' בתפיסות שוויוניות, המאפשרות גם לבנים וגם לבנות מימוש עצמי מלא ללא חסמים."</p>
+<p><strong>הערה:</strong> הסדרה הספציפית "דמויות מופת" לא אותרה כסדרת הוצאה לאור מסחרית. לא ברור אם מדובר בספרים שנכתבו ע"י החברה עצמה או ספרים קיימים שמשולבים בתכנית.</p>
+
+</div>
+<div class="section" id="section-2">
+<h2>3. האם מדובר בחינוך פמיניסטי / אידיאולוגיה מגדרית?</h2>
+<h3>ניתוח התוכן</h3>
+<p><strong>התשובה הקצרה: כן, באופן מפורש.</strong></p>
+<p>התכנית אינה מסתפקת בהצגת נשים מעוררות השראה — היא מגדירה את עצמה כתכנית ל:</p>
+<ul>
+<li>"<strong>שינוי תבניות מחשבתיות מגדריות</strong>" — מטרה מפורשת לשנות את האופן שבו תלמידים חושבים על מגדר</li>
+<li>"<strong>שוויון הזדמנויות מגדרי</strong>" — מסגרת ערכית פמיניסטית מובהקת</li>
+<li>"<strong>קריאה ביקורתית של מציאות מגדרית</strong>" — שפה אקדמית-פמיניסטית</li>
+<li>"<strong>צדק חברתי</strong>" — מונח מטען מתחום הפמיניזם המודרני</li>
+</ul>
+<p><strong>השוואה למסגרת משרד החינוך:</strong></p>
+<p>התכנית משתלבת באופן מלא עם היחידה לשוויון בין המינים של משרד החינוך (<a href="https://pop.education.gov.il/tchumey_daat/global-subjects/gender-and-gender-equality/about-gender-equaliy-unit/" target="_blank" rel="noopener">מקור</a>), שמטרותיה כוללות:</p>
+<ul>
+<li>"קידום שוויון מגדרי במערכת החינוך"</li>
+<li>"העלאת מודעות למבנים חברתיים מגדריים"</li>
+<li>"שינוי עמדות הדורשות שינוי"</li>
+<li>"הרחבת טווח אפשרויות ההתנהגות והבחירות האישיות לבנים ולבנות"</li>
+</ul>
+<p><strong>מה שלא ידוע:</strong></p>
+<ul>
+<li>האם התכנית עוסקת בזהות מגדרית (gender identity) מעבר לשוויון בין המינים — לא ניתן לקבוע מהתיאור בקטלוג</li>
+<li>האם התכנית מציגה עמדות פוליטיות ספציפיות</li>
+<li>איזה "גיבורות תרבות" מוצגות — האם כולן ישראליות? בינלאומיות? מהתנועה הפמיניסטית?</li>
+</ul>
+
+</div>
+<div class="section" id="section-3">
+<h2>4. מבנה פיננסי ומימון</h2>
+<h3>העברות ממשלתיות (מ-obudget.org)</h3>
+<table>
+<tr><th>שנה</th><th>מקור</th><th>סכום</th><th>תיאור</th></tr>
+<tr><td>2016</td><td>המשרד לביטחון הפנים</td><td><strong>3,510 ש"ח</strong></td><td>"הרצאה ליום המגדר 2016"</td></tr>
+</table>
+<p><strong>סה"כ העברות ממשלתיות ידועות: 3,510 ש"ח (כל הזמנים)</strong></p>
+<h3>ממצאים נוספים</h3>
+<ul>
+<li><strong>אין דיווחים כספיים ציבוריים</strong> — כחברה פרטית (לא עמותה), אין חובת פרסום דוחות כספיים</li>
+<li><strong>אין מידע על מימון חיצוני</strong> — לא נמצא קשר לקרנות, עמותות, או גופי מימון</li>
+<li><strong>מודל הכנסה:</strong> ככל הנראה, ההכנסה באה מרכישת התכנית ע"י בתי ספר דרך תקציב גפ"ן שלהם</li>
+<li><strong>היקף פעילות ידוע:</strong> 2 ערים, 7 בתי ספר, תקציב 10,761 ש"ח</li>
+</ul>
+<h3>ניתוח</h3>
+<p>סכום של 10,761 ש"ח ל-7 בתי ספר (כ-1,537 ש"ח לבית ספר) מצביע על פעילות קטנה מאוד — ככל הנראה הרצאה או סדנה חד-פעמית בכל בית ספר, לא תכנית שנתית מקיפה. זהו היקף פעילות שולי מבחינה כספית.</p>
+
+</div>
+<div class="section" id="section-4">
+<h2>5. מנהיגות ואנשים</h2>
+<h3>אנשי קשר ידועים</h3>
+<table>
+<tr><th>שם</th><th>תפקיד</th><th>מקור</th></tr>
+<tr><td><strong>דותן שביט</strong></td><td>איש קשר ברשם החברות</td><td>obudget.org</td></tr>
+<tr><td>אורלי שביט (גבעת אלה)</td><td><strong>ייתכן</strong> — בעלת M.Ed, יועצת חינוכית, מטפלת זוגית/משפחתית</td><td>mishpaha.org.il</td></tr>
+</table>
+<h3>פרטי יצירת קשר של התכנית</h3>
+<ul>
+<li><strong>וואטסאפ:</strong> 972-52-830-8144</li>
+<li><strong>דוא"ל:</strong> 345mail@gmail.com</li>
+</ul>
+<p><strong>הערות:</strong></p>
+<ul>
+<li>שימוש בדוא"ל Gmail גנרי (345mail) ולא דוא"ל מקצועי — מצביע על עסק קטן/ביתי</li>
+<li>אין אתר אינטרנט לחברה</li>
+<li>אין עמודים ברשתות חברתיות</li>
+<li>אין לינקדאין של החברה או הבעלים</li>
+</ul>
+
+</div>
+<div class="section" id="section-5">
+<h2>6. קהל יעד</h2>
+<p><strong>מתוך הנתונים הזמינים:</strong></p>
+<ul>
+<li>התכנית מופיעה בקטלוג גפ"ן, שמשרת בתי ספר יסודיים וחטיבות ביניים</li>
+<li>ספר ה"דמויות מופת" שנמצא ב-Calameo (<a href="https://www.calameo.com/books/00672029179ae6b2f08f7" target="_blank" rel="noopener">מקור</a>) מיועד ל<strong>כיתה ה'</strong> (שכבת גיל 10-11)</li>
+<li>הדגש על "קריאה" ו"ספרות" מתאים לגילאי יסודי</li>
+<li>התכנית הרשומה כ"חברתית-ערכית" — לא כתכנית לימודית פדגוגית</li>
+</ul>
+<p><strong>הערכה:</strong> גילאי 9-12 (כיתות ד'-ו'), כאשר הדגש הוא על חטיבה עליונה של בית הספר היסודי.</p>
+
+</div>
+<div class="section" id="section-6">
+<h2>7. קשר לארגונים פמיניסטיים</h2>
+<h3>קשרים ישירים שנמצאו</h3>
+<p><strong>אין.</strong> לא נמצא קשר מתועד בין שביט או.אס לבין:</p>
+<ul>
+<li>ארגוני נשים (נעמ"ת, ויצ"ו, שדולת הנשים, וכו')</li>
+<li>עמותות פמיניסטיות</li>
+<li>קרנות מימון פמיניסטיות</li>
+<li>רשתות אקטיביזם מגדרי</li>
+</ul>
+<h3>קשרים עקיפים</h3>
+<ul>
+<li><strong>משרד לביטחון פנים — "יום המגדר 2016":</strong> החברה קיבלה 3,510 ש"ח מהמשרד לביטחון הפנים עבור הרצאה ב"יום המגדר" בשנת 2016. "יום המגדר" הוא ככל הנראה אירוע פנימי של המשרד לקידום שוויון מגדרי.</li>
+<li><strong>יחידה לשוויון בין המינים, משרד החינוך:</strong> השפה והמטרות של התכנית זהות כמעט מילה במילה ליעדי היחידה לשוויון בין המינים של משרד החינוך. זה לא מפתיע — התכנית עברה אישור לקטלוג גפ"ן, שמשמעו עמידה בקריטריונים של משרד החינוך.</li>
+<li><strong>"תרבות שווה":</strong> הארגון "תרבות שווה" (<a href="https://equality-time.co.il/best/" target="_blank" rel="noopener">equality-time.co.il</a>) מקדם ספרות שוויונית לילדים ומעניק "חותם מנהיגות" לספרים. לא ברור אם הספרים בסדרת "דמויות מופת" כלולים ברשימה שלהם.</li>
+</ul>
+
+</div>
+<div class="section" id="section-7">
+<h2>8. אישור ממשלתי — קטלוג גפ"ן</h2>
+<h3>מצב אישור</h3>
+<p><strong>התכנית מאושרת ופעילה בקטלוג גפ"ן</strong> (מאגר התוכניות והמענים החינוכיים של משרד החינוך).</p>
+<h3>מה משמעות האישור</h3>
+<ul>
+<li><strong>מסלול רכש</strong> — התכנית עברה מכרז וכלולה במאגר הספקים המורשים</li>
+<li><strong>תחום חברתי-ערכי</strong> — מסווגת תחת חינוך חברתי-ערכי, לא תחום פדגוגי-לימודי</li>
+<li><strong>מקור חיצוני-עסקי</strong> — לא גוף ממשלתי או עמותה, אלא חברה פרטית</li>
+<li>בתי ספר יכולים לרכוש את התכנית מתקציב גפ"ן שלהם</li>
+<li>האישור אינו מהווה "המלצה" אלא <strong>הכללה במאגר</strong> שממנו בתי ספר בוחרים</li>
+</ul>
+<h3>הערה על מנגנון גפ"ן</h3>
+<p>גפ"ן (גמישות פדגוגית-ניהולית) מעביר לבתי ספר תקציב ומאפשר להם לבחור תכניות מקטלוג מאושר. הביקורת על המנגנון היא שהאישור למאגר אינו מבטיח בקרה מספקת על תכני התכניות — הוא בעיקר מבטיח עמידה בתנאי מכרז (כשירות עסקית, ביטוחים, הסמכות).</p>
+
+</div>
+<div class="section" id="section-8">
+<h2>9. סיכום ממצאים</h2>
+<h3>מה ידוע</h3>
+<ol>
+<li><strong>שביט או.אס בע"מ</strong> היא חברה פרטית קטנה, רשומה מ-2006, מגבעת עדה</li>
+<li><strong>איש הקשר הרשום: דותן שביט</strong> — אין עליו מידע ציבורי</li>
+<li><strong>התכנית "דמויות מופת — גיבורות תרבות"</strong> מקדמת באופן מפורש חינוך מגדרי-פמיניסטי</li>
+<li><strong>השפה של התכנית</strong> זהה לשפה של היחידה לשוויון בין המינים במשרד החינוך</li>
+<li><strong>היקף הפעילות שולי</strong> — 2 ערים, 7 בתי ספר, כ-10,761 ש"ח</li>
+<li><strong>אין נוכחות דיגיטלית</strong> — לא אתר, לא רשתות חברתיות, לא לינקדאין</li>
+<li><strong>דוא"ל יצירת קשר גנרי:</strong> 345mail@gmail.com</li>
+</ol>
+<h3>מה לא ידוע (פערי מידע)</h3>
+<ol>
+<li><strong>מי באמת מפעיל את החברה</strong> — דותן שביט? אורלי שביט? שניהם? אחרים?</li>
+<li><strong>רקע מקצועי של המפעיל/ה</strong> — האם יש הסמכה בחינוך? בלימודי מגדר?</li>
+<li><strong>תוכן ספציפי</strong> — איזה "גיבורות תרבות" מוצגות? מאיזה זרם פמיניסטי?</li>
+<li><strong>האם מעבר לשוויון בין המינים</strong> — האם התכנית נוגעת בזהות מגדרית (transgender, non-binary) או רק בשוויון נשים</li>
+<li><strong>מקורות מימון</strong> — אין שקיפות פיננסית (חברה פרטית)</li>
+<li><strong>קשרים ארגוניים</strong> — האם יש קשר לגופים פמיניסטיים/אקטיביסטיים</li>
+</ol>
+<h3>הערכת סיכון מעודכנת</h3>
+<table>
+<tr><th>קריטריון</th><th>ציון</th><th>הערה</th></tr>
+<tr><td>תוכן מגדרי מפורש</td><td><strong>4/5</strong></td><td>השפה חד-משמעית — "שינוי תבניות מגדריות", "קריאה ביקורתית של מציאות מגדרית"</td></tr>
+<tr><td>אטימות ארגונית</td><td><strong>4/5</strong></td><td>חברה פרטית ללא נוכחות ציבורית, דוא"ל Gmail, אין אתר</td></tr>
+<tr><td>היקף חשיפה</td><td><strong>2/5</strong></td><td>7 בתי ספר, 2 ערים — שולי מאוד</td></tr>
+<tr><td>אישור מוסדי</td><td><strong>נמוך</strong></td><td>נמצא בקטלוג גפ"ן — לגיטימי אך לא מרמז על בקרת תוכן</td></tr>
+<tr><td>קשר לגופים חיצוניים</td><td><strong>1/5</strong></td><td>לא נמצא — ייתכן שזו יוזמה עצמאית</td></tr>
+</table>
+<p><strong>דירוג מעודכן: 3.5/5</strong> — התוכן המגדרי מפורש יותר ממה שהדירוג המקורי מרמז, אך ההיקף זעום. הסיכון העיקרי הוא לא בהשפעה הישירה (קטנה מדי) אלא בכך שזהו דגם של תכנית שיכולה לגדול דרך מנגנון גפ"ן ללא בקרה מספקת.</p>
+
+</div>
+<div class="section" id="section-9">
+<h2>10. המלצות למחקר נוסף</h2>
+<ol>
+<li><strong>נסח חברה מרשם החברות</strong> (11 ש"ח) — יחשוף בעלי מניות, דירקטורים, כתובת עדכנית</li>
+<li><strong>בקשת מידע מגפ"ן</strong> — פרטי האישור, מהלך הבדיקה, דוחות ביצוע</li>
+<li><strong>יצירת קשר ישיר</strong> — WhatsApp 052-830-8144 או 345mail@gmail.com — לבקש סילבוס מפורט</li>
+<li><strong>בדיקת הספרים</strong> — אם סדרת "דמויות מופת" היא הוצאה עצמית, זה מעלה שאלות על בקרה על תכנים</li>
+<li><strong>שיחה עם מנהלי בתי ספר</strong> שרכשו את התכנית — מה למעשה מועבר בכיתה?</li>
+</ol>
+<p><em>מחקר זה בוצע באמצעות חיפושי אינטרנט ב-17.2.2026. חלק מהנתונים מבוססים על מקורות ציבוריים ועשויים להיות לא מעודכנים.</em></p>
+
+</div>
+</div>
+
+<footer>
+  פרויקט זהות ציונית — דוח מחקר מעמיק | <a href="../">דירוג ערים</a> | <a href="../research/">כל הדוחות</a>
+</footer>
+
+</body>
+</html>

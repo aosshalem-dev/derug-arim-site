@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gali Braverman & "Seeds of Awareness" (זרעים של מודעות) — דוח מחקר מעמיק</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background: #f5f5f8;
+  color: #1a1a2e;
+  direction: rtl;
+  line-height: 1.8;
+  font-size: 17px;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #1a1a2e; color: #fff;
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  overflow-x: auto; white-space: nowrap;
+}
+nav .brand { font-weight: 700; color: #ff8800; flex-shrink: 0; }
+nav a { color: #ccc; text-decoration: none; font-size: 0.85em; padding: 8px 4px; border-bottom: 2px solid transparent; flex-shrink: 0; }
+nav a:hover { color: #ff8800; border-bottom-color: #ff8800; }
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a5a8a 100%);
+  color: #fff; padding: 50px 20px 40px; text-align: center;
+}
+.hero h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+.hero .subtitle { font-size: 1.05em; color: #b0c4de; margin-bottom: 6px; }
+.hero .meta { font-size: 0.9em; color: #ff8800; margin-top: 8px; }
+.risk-badge {
+  display: inline-block; padding: 4px 16px; border-radius: 20px;
+  font-size: 0.85em; font-weight: 600; margin-top: 10px;
+}
+.risk-high { background: #e74c3c; color: #fff; }
+.risk-medium { background: #f39c12; color: #fff; }
+.risk-low { background: #27ae60; color: #fff; }
+.container { max-width: 860px; margin: 0 auto; padding: 30px 20px 80px; }
+.toc {
+  background: #fff; border-radius: 8px; padding: 22px 26px;
+  margin-bottom: 32px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.toc h2 { font-size: 1.15em; color: #2a5a8a; margin-bottom: 12px; border-bottom: 2px solid #667eea; padding-bottom: 6px; }
+.toc ol { padding-right: 22px; font-size: 0.93em; }
+.toc li { margin-bottom: 4px; }
+.toc a { color: #2a5a8a; text-decoration: none; }
+.toc a:hover { color: #ff8800; text-decoration: underline; }
+.section {
+  background: #fff; border-radius: 8px; padding: 28px 26px;
+  margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.section h2 { font-size: 1.4em; color: #1a1a2e; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #667eea; }
+.section h3 { font-size: 1.1em; color: #2a5a8a; margin: 18px 0 8px; }
+.section h4 { font-size: 1em; color: #444; margin: 14px 0 6px; }
+.section p { margin-bottom: 12px; text-align: justify; }
+.section ul, .section ol { padding-right: 22px; margin-bottom: 12px; }
+.section li { margin-bottom: 5px; }
+blockquote {
+  background: #f0f4fa; border-right: 4px solid #667eea;
+  padding: 12px 18px; margin: 12px 0; border-radius: 0 6px 6px 0;
+  font-size: 0.94em; color: #333;
+}
+.thesis {
+  background: #fff8f0; border-right: 3px solid #ff8800;
+  padding: 14px 18px; margin: 12px 0; border-radius: 0 5px 5px 0;
+  font-size: 0.96em; color: #6b4500;
+}
+table {
+  width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.91em;
+}
+th {
+  background: #667eea; color: #fff; padding: 8px 12px;
+  text-align: right; position: sticky; top: 44px; z-index: 5;
+}
+td {
+  padding: 7px 12px; border-bottom: 1px solid #e8e8e8;
+  text-align: right; vertical-align: top;
+}
+tr:nth-child(even) { background: #f8f9fc; }
+a { color: #2a5a8a; }
+a:hover { color: #ff8800; }
+.back-link {
+  display: inline-block; margin-bottom: 20px; padding: 6px 14px;
+  background: #667eea; color: #fff; border-radius: 4px;
+  text-decoration: none; font-size: 0.88em;
+}
+.back-link:hover { background: #5a6fd6; color: #fff; }
+footer {
+  text-align: center; padding: 30px 20px; color: #888; font-size: 0.85em;
+}
+strong { color: #1a1a2e; }
+code {
+  background: #f0f0f0; padding: 1px 5px; border-radius: 3px;
+  font-size: 0.9em;
+}
+.source-tag {
+  display: inline-block; background: #e8eef6; padding: 2px 8px;
+  border-radius: 10px; font-size: 0.78em; color: #2a5a8a;
+  margin: 2px 3px; text-decoration: none;
+}
+.source-tag:hover { background: #d0dff0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">דוח מחקר מעמיק</span>
+  <a href="../">חזרה לדירוג</a>
+  <a href="../research/">כל הדוחות</a>
+  <a href="#section-1">1. Who is Gali Brave</a> <a href="#section-2">2. What is "Seeds of</a> <a href="#section-3">3. Methodology Analy</a> <a href="#section-4">4. Lia Arad (ליאה אר</a> <a href="#section-5">5. Does the Program </a> <a href="#section-6">6. Why the 5/5 Risk </a> <a href="#section-7">7. Social Media Pres</a> <a href="#section-8">8. Connections to Ot</a> <a href="#section-9">9. Government Approv</a> <a href="#section-10">10. Risk Summary</a> <a href="#section-11">Open Questions for F</a> <a href="#section-12">Sources</a>
+</nav>
+
+<div class="hero">
+  <h1>Gali Braverman & "Seeds of Awareness" (זרעים של מודעות)</h1>
+  <div class="subtitle"></div>
+  <div class="meta"></div>
+  
+</div>
+
+<div class="container">
+  <a href="../research/" class="back-link">← כל דוחות המחקר</a>
+  <div class="toc"><h2>תוכן עניינים</h2><ol><li><a href="#section-1">1. Who is Gali Braverman?</a></li><li><a href="#section-2">2. What is "Seeds of Awareness" (זרעים של מודעות)?</a></li><li><a href="#section-3">3. Methodology Analysis: What Approach is This?</a></li><li><a href="#section-4">4. Lia Arad (ליאה ארד) -- The Source</a></li><li><a href="#section-5">5. Does the Program Include Gender/Sexuality Content?</a></li><li><a href="#section-6">6. Why the 5/5 Risk Rating?</a></li><li><a href="#section-7">7. Social Media Presence</a></li><li><a href="#section-8">8. Connections to Other Consciousness/Awareness Organizations</a></li><li><a href="#section-9">9. Government Approval -- Gefen Catalog Entry</a></li><li><a href="#section-10">10. Risk Summary</a></li><li><a href="#section-11">Open Questions for Further Investigation</a></li><li><a href="#section-12">Sources</a></li></ol></div>
+  <div class="section" id="section-1">
+<h2>1. Who is Gali Braverman?</h2>
+<h3>Known Facts</h3>
+<ul>
+<li><strong>Full name:</strong> Gali Braverman (גלי ברוורמן)</li>
+<li><strong>Family:</strong> Married to Yiftach; mother of Yuval, Michael, and Abigail</li>
+<li><strong>Education:</strong></li>
+<li>BA in Business Administration</li>
+<li>MA in Art Therapy, with studies in trauma and psychotherapy</li>
+<li><strong>Professional credentials:</strong> No psychology license found. Not listed on hebpsy.net, Infomed, or the Israeli Psychological Association registry. Art therapy in Israel does not require licensure as a psychologist.</li>
+<li><strong>Business structure:</strong> Listed in Gefen under her personal name ("גלי ברוורמן"), not under an amuta or company name. This strongly indicates she operates as a sole proprietor (עוסק מורשה).</li>
+<li><strong>Organization:</strong> AWseeds (awseeds.com), listed on LinkedIn as a "Nonprofit" with 11-50 employees, headquartered at Beit Berl, Israel.</li>
+<li><strong>Social media presence:</strong> No public Facebook or Instagram profile found under her name. The AWseeds website is built on Wix and does not render via standard web scraping (JavaScript-only rendering).</li>
+</ul>
+<h3>What is NOT Known</h3>
+<ul>
+<li>Which institution granted her MA in Art Therapy</li>
+<li>Whether she has any coaching/NLP/facilitation certification</li>
+<li>Whether "11-50 employees" on LinkedIn is accurate or aspirational</li>
+<li>Her relationship to Lia Arad (student? licensee? business partner?)</li>
+</ul>
+
+</div>
+<div class="section" id="section-2">
+<h2>2. What is "Seeds of Awareness" (זרעים של מודעות)?</h2>
+<h3>Official Gefen Catalog Description</h3>
+<blockquote>"זרעים של מודעות הינה תכנית ייחודית ואפקטיבית ללמידה בדרך קלה ופשוטה על עולמנו הפנימי וכיצד להתנהל בתוכו. היא מביאה לשיפור הביטחון ותחושת הערך העצמי של המורים והתלמידים, דרך הקניית כלים פרקטיים רבים המשפרים את היכולת לתקשורת רגשית, לקבלת החלטות, להתמודדות עם מחסומים, קונפליקטים, פחדים ואמונות מגבילות."</blockquote>
+<p><strong>Translation:</strong> "Seeds of Awareness is a unique and effective program for learning in a simple and easy way about our inner world and how to navigate within it. It brings improvement to the self-confidence and self-worth of teachers and students, through imparting many practical tools that improve the ability for emotional communication, decision-making, and coping with blockages, conflicts, fears, and limiting beliefs."</p>
+<h3>Program Structure</h3>
+<ul>
+<li><strong>Format:</strong> ~10 sessions of 1.5 hours each (per LinkedIn/web data), OR ~8 meetings (per website)</li>
+<li><strong>Group size:</strong> Up to 20 students</li>
+<li><strong>Target audience:</strong> Grades 8-12, also pre-military preparatory programs (mechinot) and national service</li>
+<li><strong>Also offered to:</strong> Teachers and educational staff (separate track)</li>
+<li><strong>Gefen field classification:</strong> "אחר" (Other) -- not classified under any standard educational domain</li>
+</ul>
+<h3>Origin</h3>
+<ul>
+<li>Created in 2017 by adapting "The Journey to Myself" (המסע אל עצמי) workshop language and tools for teenagers</li>
+<li>"The Journey to Myself" is an adult personal development seminar that has been running for ~18 years at Beit Berl (near Kfar Saba), founded by Lia Arad</li>
+<li>Lia Arad's center also trains facilitators and coaches in her methodology</li>
+</ul>
+
+</div>
+<div class="section" id="section-3">
+<h2>3. Methodology Analysis: What Approach is This?</h2>
+<h3>NOT Evidence-Based SEL</h3>
+<p>Despite using the term "SEL" (Social-Emotional Learning) in its marketing, the program's methodology does not appear to follow evidence-based SEL frameworks such as CASEL. The key differences:</p>
+<table>
+<tr><th>Feature</th><th>Evidence-Based SEL (CASEL)</th><th>Seeds of Awareness</th></tr>
+<tr><td><strong>Framework</strong></td><td>5 competencies: self-awareness, self-management, social awareness, relationship skills, responsible decision-making</td><td>"Inner world" exploration, releasing blockages, overcoming limiting beliefs</td></tr>
+<tr><td><strong>Evidence base</strong></td><td>Randomized controlled trials, meta-analyses</td><td>No published research found</td></tr>
+<tr><td><strong>Practitioner requirements</strong></td><td>Trained educators, school psychologists</td><td>Graduates of Lia Arad's coaching program</td></tr>
+<tr><td><strong>Language</strong></td><td>Cognitive-behavioral, developmental psychology</td><td>Consciousness, awareness, inner world, blockages, fears</td></tr>
+<tr><td><strong>Theoretical roots</strong></td><td>Developmental psychology, CBT</td><td>Holistic psychology, guided imagery, Bach flowers, meditation</td></tr>
+</table>
+<h3>What It Actually Is</h3>
+<p>Based on the language and origin, this is best classified as a <strong>Large Group Awareness Training (LGAT) derivative</strong> or a <strong>coaching/personal development workshop</strong> adapted for children. Key markers:</p>
+<ol>
+<li><strong>"Limiting beliefs" (אמונות מגבילות)</strong> -- This is NLP/coaching terminology, not clinical psychology language</li>
+<li><strong>"Releasing blockages" (שחרור מחסומים)</strong> -- Holistic/alternative therapy terminology</li>
+<li><strong>"Inner world management" (ניהול העולם הפנימי)</strong> -- Consciousness/awareness terminology</li>
+<li><strong>Origin in adult personal development seminars</strong> -- The program was adapted from an adult workshop, not developed from child development research</li>
+<li><strong>Lia Arad's practice includes Bach flower essences, guided imagery, meditation, movement therapy</strong> -- These are alternative/complementary therapies, not evidence-based interventions for children</li>
+<li><strong>Lia Arad's center also offers numerology workshops</strong> -- This is pseudoscience</li>
+</ol>
+<h3>Methodology Classification</h3>
+<p><strong>Primary:</strong> Coaching/Personal Development (adapted for adolescents)</p>
+<p><strong>Secondary influences:</strong> NLP, holistic psychology, guided imagery, mindfulness</p>
+<p><strong>NOT:</strong> CBT, evidence-based SEL, clinical psychology</p>
+
+</div>
+<div class="section" id="section-4">
+<h2>4. Lia Arad (ליאה ארד) -- The Source</h2>
+<h3>Credentials</h3>
+<ul>
+<li><strong>Title:</strong> Educational Psychologist Specialist (פסיכולוגית חינוכית מומחית)</li>
+<li><strong>License:</strong> #27-3266 (verified on hebpsy.net)</li>
+<li><strong>Listed on:</strong> hebpsy.net, Infomed, LinkedIn</li>
+<li><strong>Location:</strong> Sharon/Samaria region (clinic), Beit Berl (center)</li>
+<li><strong>Experience:</strong> 35+ years</li>
+</ul>
+<h3>Practice Description (from hebpsy.net)</h3>
+<p>"Holistic psychotherapy integrating Bach flower essences, guided imagery and meditation, trauma processing, movement and voice work."</p>
+<h3>Programs at the Center</h3>
+<ol>
+<li>"The Journey to Myself" (המסע אל עצמי) -- flagship adult workshop, 15 sessions x 3 hours</li>
+<li>"I and the World" (אני והעולם)</li>
+<li>"I Create Myself" (אני יוצר/ת את עצמי)</li>
+<li>School for Coaches (בית ספר למאמנים)</li>
+<li>Growth groups for the general public</li>
+<li>Professional groups for psychologists</li>
+<li>Practitioner groups for alternative/holistic therapists</li>
+<li>Short workshops: parenting, couples, <strong>numerology</strong>, meditation</li>
+<li>Personal coaching</li>
+<li>Trauma healing</li>
+</ol>
+<h3>Critical Assessment of Lia Arad</h3>
+<p>She IS a licensed psychologist, which gives legitimacy. However:</p>
+<ul>
+<li>Her practice is explicitly <strong>holistic</strong>, incorporating alternative modalities (Bach flowers, numerology) alongside legitimate psychology</li>
+<li>Her center trains <strong>coaches</strong>, not psychologists -- the facilitators who deliver "Seeds of Awareness" in schools are likely coach-trained, not clinically trained</li>
+<li>Her center offers <strong>numerology workshops</strong> -- this is pseudoscience being offered alongside psychology</li>
+</ul>
+<h3>Known Team Members (Lia Arad Center)</h3>
+<ul>
+<li>Eti Maeiri -- facilitator, coach; background in math/CS and hi-tech</li>
+<li>Nir Kraouze -- facilitator</li>
+<li>Ofra Ben Yosef -- facilitator, personal coach; former TV industry</li>
+<li>Hiya Golan Shason -- facilitator</li>
+<li>Hadas Hotnik -- facilitator (~10 years)</li>
+</ul>
+<p><strong>Gali Braverman is NOT listed on the Lia Arad Center team page.</strong> This suggests she may be an independent licensee/graduate who took the methodology and created a separate entity (AWseeds).</p>
+
+</div>
+<div class="section" id="section-5">
+<h2>5. Does the Program Include Gender/Sexuality Content?</h2>
+<p><strong>No evidence found.</strong> The program description focuses on "inner world," emotional communication, self-confidence, decision-making, fears, and limiting beliefs. No mention of gender, sexuality, LGBTQ, or related topics was found in any source.</p>
+<p>The Gefen field classification is "אחר" (Other), not "מגדר" or "מיניות."</p>
+
+</div>
+<div class="section" id="section-6">
+<h2>6. Why the 5/5 Risk Rating?</h2>
+<h3>The Rating Sources</h3>
+<ul>
+<li><strong>Human reviewer ("human_tzvi"):</strong> Rated 5/5 -- this is the highest risk score</li>
+<li><strong>Automated Agent A:</strong> Rated 1/5 (misclassified as academic/STEM)</li>
+<li><strong>Automated Agent B:</strong> Rated 1/5 (misclassified as academic/STEM)</li>
+</ul>
+<h3>Why the Automated Agents Got It Wrong</h3>
+<p>The automated classification system appears to have been misled by:</p>
+<ul>
+<li>The program name not containing obvious trigger words</li>
+<li>The organization name being a personal name (not a known ideology-linked org)</li>
+<li>The field classification being "אחר" (Other)</li>
+<li>Small scale (1 school, 1 city)</li>
+</ul>
+<h3>Why the Human Rating of 5/5 is Defensible</h3>
+<p>The human reviewer likely identified:</p>
+<ol>
+<li><strong>Pseudoscientific origin:</strong> The program derives from a holistic psychology practice that includes Bach flowers and numerology</li>
+<li><strong>Unregulated practitioner pipeline:</strong> Facilitators are trained through a coaching school, not clinical programs</li>
+<li><strong>"Limiting beliefs" language in schools:</strong> This NLP/coaching concept applied to children is problematic -- it implies children's beliefs need to be "released," which could conflict with family values, religious beliefs, or simply be psychologically inappropriate</li>
+<li><strong>"Inner world" manipulation:</strong> Teaching children to "manage their inner world" through a non-evidence-based framework raises safeguarding concerns</li>
+<li><strong>Sole proprietor structure:</strong> No organizational accountability, no board, no public reporting</li>
+<li><strong>No published evidence:</strong> No peer-reviewed studies on the program's efficacy or safety</li>
+</ol>
+
+</div>
+<div class="section" id="section-7">
+<h2>7. Social Media Presence</h2>
+<h3>AWseeds</h3>
+<ul>
+<li><strong>Website:</strong> awseeds.com (Wix-based, JavaScript-rendered, not scrape-able)</li>
+<li><strong>LinkedIn:</strong> il.linkedin.com/company/awseeds -- listed as Nonprofit, 11-50 employees, Education industry, Beit Berl</li>
+<li><strong>Known LinkedIn employee:</strong> Tomer Braier (Technical Program Manager at Aidoc -- likely unrelated, or a volunteer/board member)</li>
+<li><strong>Facebook:</strong> No dedicated page found</li>
+<li><strong>Instagram:</strong> No dedicated account found</li>
+</ul>
+<h3>Gali Braverman</h3>
+<ul>
+<li><strong>No public social media profiles found</strong> under her name</li>
+<li>No LinkedIn personal profile found connected to AWseeds</li>
+</ul>
+<h3>Lia Arad Center</h3>
+<ul>
+<li><strong>Website:</strong> liaarad.co.il (Wix-based)</li>
+<li><strong>Alternative:</strong> masa1.co.il (dedicated to "Journey to Myself")</li>
+<li><strong>LinkedIn:</strong> linkedin.com/in/lia-arad/ -- "Owner, Lia Arad Center"</li>
+<li><strong>Listed on:</strong> hebpsy.net (profile #209), Infomed (#132784), bodyways.org</li>
+</ul>
+
+</div>
+<div class="section" id="section-8">
+<h2>8. Connections to Other Consciousness/Awareness Organizations</h2>
+<h3>Direct Connection: Lia Arad Center</h3>
+<ul>
+<li>AWseeds/Seeds of Awareness is a direct derivative of Lia Arad's "Journey to Myself" program</li>
+<li>Created in 2017 by adapting the adult methodology for teenagers</li>
+<li>Lia Arad is described as a "partner" in the AWseeds initiative</li>
+</ul>
+<h3>Indirect Connections</h3>
+<ul>
+<li><strong>NLPflix:</strong> The "Journey to Myself" is reviewed/promoted on NLPflix (nlpflix.yudkoren.co.il), a website associated with Yud Koren, an NLP trainer. This places the methodology in the NLP ecosystem.</li>
+<li><strong>Bodyways (דרך גוף):</strong> Lia Arad Center is listed on bodyways.org, a directory of alternative/holistic body-mind therapies.</li>
+<li><strong>Beit Berl location:</strong> Both AWseeds and Lia Arad Center operate from Beit Berl, an academic college campus. This lends an air of academic legitimacy to what is essentially a private coaching practice.</li>
+</ul>
+<h3>No Direct Connection Found to:</h3>
+<ul>
+<li>Todaa (תודעה) organization</li>
+<li>Landmark Forum / EST</li>
+<li>Specific New Age movements</li>
+<li>Foreign-funded NGOs</li>
+</ul>
+
+</div>
+<div class="section" id="section-9">
+<h2>9. Government Approval -- Gefen Catalog Entry</h2>
+<h3>Entry Details</h3>
+<ul>
+<li><strong>Program ID:</strong> 7618</li>
+<li><strong>Program Name:</strong> זרעים של מודעות</li>
+<li><strong>Provider/Org:</strong> גלי ברוורמן (personal name, not organization)</li>
+<li><strong>Field:</strong> אחר (Other)</li>
+<li><strong>Currently active:</strong> Yes (appears in current Gefen data)</li>
+<li><strong>Deployment:</strong> 1 school (Netivei Am, Beer Sheva), 1 city</li>
+</ul>
+<h3>The School: Netivei Am (נתיבי עם)</h3>
+<ul>
+<li><strong>Code:</strong> 613430</li>
+<li><strong>Type:</strong> Elementary school (grades 1-6), state-secular (ממלכתי)</li>
+<li><strong>Location:</strong> Sderot Yerushalayim 70, Beer Sheva</li>
+<li><strong>Founded:</strong> 1986</li>
+<li><strong>Students:</strong> ~369</li>
+<li><strong>Principal:</strong> Orli Koka Ashari</li>
+<li><strong>Philosophy:</strong> "Bridging gaps based on ethnicity, gender, and culture through mutual respect and love of humanity according to Jewish values"</li>
+<li><strong>Notable:</strong> The school has had issues with violence (a b7net article reports a "significant decrease in violence incidents" at the school, implying previous problems)</li>
+</ul>
+<h3>Gefen Approval Concerns</h3>
+<p>The Gefen catalog is a <strong>marketplace</strong>, not a quality certification. Programs enter Gefen by winning a tender (מכרז), not by undergoing pedagogical review. The fact that a program is "in Gefen" does not mean the Ministry of Education endorses its methodology. This is a common misunderstanding exploited by providers.</p>
+
+</div>
+<div class="section" id="section-10">
+<h2>10. Risk Summary</h2>
+<table>
+<tr><th>Factor</th><th>Assessment</th></tr>
+<tr><td><strong>Methodology</strong></td><td>Not evidence-based. Derived from holistic/NLP/coaching adult workshop. Pseudoscientific elements in origin (Bach flowers, numerology).</td></tr>
+<tr><td><strong>Practitioner qualifications</strong></td><td>Braverman has MA in Art Therapy (not psychology). Facilitators are coach-trained, not clinically trained.</td></tr>
+<tr><td><strong>Target population vulnerability</strong></td><td>Adolescents (grades 8-12) -- vulnerable to influence, especially around "beliefs" and "inner world" concepts.</td></tr>
+<tr><td><strong>Organizational accountability</strong></td><td>Sole proprietor. No board, no public reporting, no amuta transparency.</td></tr>
+<tr><td><strong>Scale</strong></td><td>Currently tiny (1 school, ~NIS 15K). Low absolute impact but concerning if it scales.</td></tr>
+<tr><td><strong>Gender/sexuality content</strong></td><td>No evidence found.</td></tr>
+<tr><td><strong>Financial transparency</strong></td><td>Zero. Sole proprietor has no public financial reporting obligation.</td></tr>
+<tr><td><strong>Evidence of efficacy</strong></td><td>None published. No peer-reviewed studies.</td></tr>
+<tr><td><strong>Gefen classification</strong></td><td>"Other" -- does not fit standard educational categories.</td></tr>
+</table>
+<h3>Overall Risk Assessment: 4/5 (HIGH)</h3>
+<p>The 5/5 human rating is reasonable but slightly aggressive for a program this small. The core concerns are:</p>
+<ol>
+<li><strong>Pseudoscientific methodology</strong> being delivered to children as if it were legitimate psychology</li>
+<li><strong>Unqualified facilitators</strong> (coaching-trained, not clinically trained) working with adolescents on emotional/psychological topics</li>
+<li><strong>"Limiting beliefs" framework</strong> applied to children is conceptually inappropriate and potentially harmful</li>
+<li><strong>Zero accountability</strong> -- sole proprietor, no published evidence, no supervision structure</li>
+<li><strong>Misleading SEL branding</strong> -- the program uses SEL terminology but does not follow CASEL or any evidence-based SEL framework</li>
+</ol>
+
+</div>
+<div class="section" id="section-11">
+<h2>Open Questions for Further Investigation</h2>
+<ol>
+<li>Which institution granted Braverman's MA in Art Therapy?</li>
+<li>What is her exact relationship with Lia Arad? Is she a graduate of the coaching school? A licensee?</li>
+<li>Are the facilitators who deliver the program in schools trained only through Lia Arad's coaching school, or do they have other qualifications?</li>
+<li>How did this program pass the Gefen tender process?</li>
+<li>Is the program still active in the current school year (tashpaz)?</li>
+<li>Are there parent complaints about the program?</li>
+<li>Does the program include any assessment/evaluation component?</li>
+<li>Is Tomer Braier (listed on LinkedIn as AWseeds employee) actually involved, or is this a LinkedIn data error?</li>
+</ol>
+
+</div>
+<div class="section" id="section-12">
+<h2>Sources</h2>
+<ul>
+<li><a href="https://www.awseeds.com/" target="_blank" rel="noopener">AWseeds Website</a></li>
+<li><a href="https://il.linkedin.com/company/awseeds" target="_blank" rel="noopener">AWseeds LinkedIn</a></li>
+<li><a href="https://liaarad.co.il/" target="_blank" rel="noopener">Lia Arad Center</a></li>
+<li><a href="https://www.masa1.co.il/" target="_blank" rel="noopener">The Journey to Myself</a></li>
+<li><a href="https://www.hebpsy.net/showprofile.asp?id=209" target="_blank" rel="noopener">Lia Arad - hebpsy.net Profile</a></li>
+<li><a href="https://www.infomed.co.il/experts/132784/" target="_blank" rel="noopener">Lia Arad - Infomed Profile</a></li>
+<li><a href="https://www.linkedin.com/in/lia-arad/" target="_blank" rel="noopener">Lia Arad - LinkedIn</a></li>
+<li><a href="https://www.bodyways.org/index/flyer_index.asp?details_new_id=7568" target="_blank" rel="noopener">Lia Arad Center - Bodyways</a></li>
+<li><a href="https://www.madlan.co.il/education/school/613430" target="_blank" rel="noopener">Netivei Am School - Madlan</a></li>
+<li><a href="https://www.allschool.co.il/%D7%9E%D7%95%D7%A1%D7%93%D7%95%D7%AA/613430/%D7%A0%D7%AA%D7%99%D7%91%D7%99-%D7%A2%D7%9D-%D7%91%D7%90%D7%A8-%D7%A9%D7%91%D7%A2" target="_blank" rel="noopener">Netivei Am School - AllSchool</a></li>
+<li><a href="https://outcomes.edu.gov.il/school/613430" target="_blank" rel="noopener">Netivei Am - RAMA Outcomes</a></li>
+<li><a href="https://mygefen.co.il/catalog/" target="_blank" rel="noopener">Gefen Catalog - MyGefen</a></li>
+<li><a href="https://www.2school.co.il/" target="_blank" rel="noopener">Gefen Catalog - 2school</a></li>
+<li><a href="https://shefi.education.gov.il/top-topics/sel/" target="_blank" rel="noopener">Ministry of Education SEL Portal</a></li>
+<li>Derug-Arim project data files: <code>data.js</code>, <code>program_lookup.json</code>, <code>city_details.json</code></li>
+</ul>
+
+</div>
+</div>
+
+<footer>
+  פרויקט זהות ציונית — דוח מחקר מעמיק | <a href="../">דירוג ערים</a> | <a href="../research/">כל הדוחות</a>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>מרקם — רשת הקהילות המעורבות (Markam — Network of Mixed Communities) — דוח מחקר מעמיק</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background: #f5f5f8;
+  color: #1a1a2e;
+  direction: rtl;
+  line-height: 1.8;
+  font-size: 17px;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #1a1a2e; color: #fff;
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  overflow-x: auto; white-space: nowrap;
+}
+nav .brand { font-weight: 700; color: #ff8800; flex-shrink: 0; }
+nav a { color: #ccc; text-decoration: none; font-size: 0.85em; padding: 8px 4px; border-bottom: 2px solid transparent; flex-shrink: 0; }
+nav a:hover { color: #ff8800; border-bottom-color: #ff8800; }
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a5a8a 100%);
+  color: #fff; padding: 50px 20px 40px; text-align: center;
+}
+.hero h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+.hero .subtitle { font-size: 1.05em; color: #b0c4de; margin-bottom: 6px; }
+.hero .meta { font-size: 0.9em; color: #ff8800; margin-top: 8px; }
+.risk-badge {
+  display: inline-block; padding: 4px 16px; border-radius: 20px;
+  font-size: 0.85em; font-weight: 600; margin-top: 10px;
+}
+.risk-high { background: #e74c3c; color: #fff; }
+.risk-medium { background: #f39c12; color: #fff; }
+.risk-low { background: #27ae60; color: #fff; }
+.container { max-width: 860px; margin: 0 auto; padding: 30px 20px 80px; }
+.toc {
+  background: #fff; border-radius: 8px; padding: 22px 26px;
+  margin-bottom: 32px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.toc h2 { font-size: 1.15em; color: #2a5a8a; margin-bottom: 12px; border-bottom: 2px solid #667eea; padding-bottom: 6px; }
+.toc ol { padding-right: 22px; font-size: 0.93em; }
+.toc li { margin-bottom: 4px; }
+.toc a { color: #2a5a8a; text-decoration: none; }
+.toc a:hover { color: #ff8800; text-decoration: underline; }
+.section {
+  background: #fff; border-radius: 8px; padding: 28px 26px;
+  margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.section h2 { font-size: 1.4em; color: #1a1a2e; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #667eea; }
+.section h3 { font-size: 1.1em; color: #2a5a8a; margin: 18px 0 8px; }
+.section h4 { font-size: 1em; color: #444; margin: 14px 0 6px; }
+.section p { margin-bottom: 12px; text-align: justify; }
+.section ul, .section ol { padding-right: 22px; margin-bottom: 12px; }
+.section li { margin-bottom: 5px; }
+blockquote {
+  background: #f0f4fa; border-right: 4px solid #667eea;
+  padding: 12px 18px; margin: 12px 0; border-radius: 0 6px 6px 0;
+  font-size: 0.94em; color: #333;
+}
+.thesis {
+  background: #fff8f0; border-right: 3px solid #ff8800;
+  padding: 14px 18px; margin: 12px 0; border-radius: 0 5px 5px 0;
+  font-size: 0.96em; color: #6b4500;
+}
+table {
+  width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.91em;
+}
+th {
+  background: #667eea; color: #fff; padding: 8px 12px;
+  text-align: right; position: sticky; top: 44px; z-index: 5;
+}
+td {
+  padding: 7px 12px; border-bottom: 1px solid #e8e8e8;
+  text-align: right; vertical-align: top;
+}
+tr:nth-child(even) { background: #f8f9fc; }
+a { color: #2a5a8a; }
+a:hover { color: #ff8800; }
+.back-link {
+  display: inline-block; margin-bottom: 20px; padding: 6px 14px;
+  background: #667eea; color: #fff; border-radius: 4px;
+  text-decoration: none; font-size: 0.88em;
+}
+.back-link:hover { background: #5a6fd6; color: #fff; }
+footer {
+  text-align: center; padding: 30px 20px; color: #888; font-size: 0.85em;
+}
+strong { color: #1a1a2e; }
+code {
+  background: #f0f0f0; padding: 1px 5px; border-radius: 3px;
+  font-size: 0.9em;
+}
+.source-tag {
+  display: inline-block; background: #e8eef6; padding: 2px 8px;
+  border-radius: 10px; font-size: 0.78em; color: #2a5a8a;
+  margin: 2px 3px; text-decoration: none;
+}
+.source-tag:hover { background: #d0dff0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">דוח מחקר מעמיק</span>
+  <a href="../">חזרה לדירוג</a>
+  <a href="../research/">כל הדוחות</a>
+  <a href="#section-1">2. What Is "Mixed Co</a> <a href="#section-2">3. The "סיור פני אדם</a> <a href="#section-3">4. Financial Analysi</a> <a href="#section-4">5. Leadership</a> <a href="#section-5">6. Connection to Coe</a> <a href="#section-6">7. Gender Content — </a> <a href="#section-7">8. Government Ties</a> <a href="#section-8">9. Network Diagram</a> <a href="#section-9">10. Open Questions f</a> <a href="#section-10">11. Values Alignment</a> <a href="#section-11">SOURCE URLS</a>
+</nav>
+
+<div class="hero">
+  <h1>מרקם — רשת הקהילות המעורבות (Markam — Network of Mixed Communities)</h1>
+  <div class="subtitle">Executive Summary / Thesis</div>
+  <div class="meta"></div>
+  
+</div>
+
+<div class="container">
+  <a href="../research/" class="back-link">← כל דוחות המחקר</a>
+  <div class="toc"><h2>תוכן עניינים</h2><ol><li><a href="#section-1">2. What Is "Mixed Communities"? (Entity A Analysis)</a></li><li><a href="#section-2">3. The "סיור פני אדם" (Human Faces Tour) Program</a></li><li><a href="#section-3">4. Financial Analysis</a></li><li><a href="#section-4">5. Leadership</a></li><li><a href="#section-5">6. Connection to Coexistence Movement</a></li><li><a href="#section-6">7. Gender Content — Why Flagged?</a></li><li><a href="#section-7">8. Government Ties</a></li><li><a href="#section-8">9. Network Diagram</a></li><li><a href="#section-9">10. Open Questions for Further Investigation</a></li><li><a href="#section-10">11. Values Alignment Assessment</a></li><li><a href="#section-11">SOURCE URLS</a></li></ol></div>
+  <div class="section">
+<p>----|-------|</p>
+<table>
+<tr><th>GuideStar Number</th><th>**580541910**</th></tr>
+<tr><td>Legal Name</td><td>מרקם - רשת הקהילות המעורבות (ע"ר)</td></tr>
+<tr><td>Entity Type</td><td>Registered Association (עמותה)</td></tr>
+<tr><td>Founded</td><td><strong>2011</strong> (registered), initiative launched <strong>June 2009</strong> at Knesset founding conference</td></tr>
+<tr><td>Origin</td><td>Joint initiative of <strong>Gesher</strong> (גשר) and <strong>Tzav Piyus</strong> (צו פיוס), established August 2008</td></tr>
+<tr><td>Address</td><td>Yarkoni 165, Tel Aviv-Yafo, 6345323</td></tr>
+<tr><td>Revenue (2023)</td><td><strong>NIS 2,033,716</strong> (2.7x sector median)</td></tr>
+<tr><td>Employees</td><td>5</td></tr>
+<tr><td>Volunteers</td><td>8</td></tr>
+<tr><td>Government Funding</td><td><strong>NONE</strong> in last 3 years</td></tr>
+<tr><td>GuideStar</td><td>https://www.guidestar.org.il/organization/580541910</td></tr>
+<tr><td>Obudget</td><td>https://next.obudget.org/i/org/association/580541910</td></tr>
+</table>
+<p><strong>Goals:</strong> Strengthening, establishing, and expanding mixed communities for religious and secular Jews. Over 20 communities participate across Israel.</p>
+<p><strong>Knesset patrons at founding:</strong> MK Uri Orbach (z"l) and MK Eitan Kabel — co-heads of the Knesset Religious-Secular Relations Caucus.</p>
+<h3>Entity B: למרחב לשינוי חברתי (ע"ר) — operates "המרחב החברתי"</h3>
+<table>
+<tr><th>Field</th><th>Value</th></tr>
+<tr><td>GuideStar Number</td><td><strong>580354538</strong></td></tr>
+<tr><td>Legal Name</td><td>למרחב לשינוי חברתי (ע"ר)</td></tr>
+<tr><td>Entity Type</td><td>Registered Association (עמותה)</td></tr>
+<tr><td>Founded</td><td><strong>2000</strong> (legal registration — 19 years before the Social Space opened)</td></tr>
+<tr><td>Address</td><td>Rav Biton 8, Hod HaSharon, 4540104</td></tr>
+<tr><td>Revenue (2024)</td><td><strong>NIS 3,370,629</strong> (4.6x sector median)</td></tr>
+<tr><td>Employees</td><td>11</td></tr>
+<tr><td>Volunteers</td><td>15</td></tr>
+<tr><td>Government Funding</td><td><strong>NIS 162,896</strong> (Ministry of Welfare — at-risk youth program) = 4.8% of revenue</td></tr>
+<tr><td>GuideStar</td><td>https://www.guidestar.org.il/organization/580354538</td></tr>
+<tr><td>Obudget</td><td>https://next.obudget.org/i/org/association/580354538</td></tr>
+</table>
+<p><strong>This is the entity that actually operates "המרחב החברתי" (The Social Space) and the "סיור פני אדם" (Human Faces Tour) program in the Gefen catalog.</strong></p>
+<p><strong>Open question:</strong> What did "למרחב לשינוי חברתי" do for the 19 years between registration (2000) and the Social Space opening (2019/2020)?</p>
+<h3>Entity C: כל אחד ממקומו בע"מ (חל"צ)</h3>
+<table>
+<tr><th>Field</th><th>Value</th></tr>
+<tr><td>Company Registration</td><td><strong>515497121</strong></td></tr>
+<tr><td>Legal Name</td><td>כל אחד ממקומו בע"מ (חל"צ)</td></tr>
+<tr><td>Entity Type</td><td>Public Benefit Company (חברה לתועלת הציבור)</td></tr>
+<tr><td>Founded</td><td><strong>November 23, 2016</strong></td></tr>
+<tr><td>Address</td><td>Ben Yehuda 60, Tel Aviv-Yafo, 6343106</td></tr>
+<tr><td>Revenue (2021)</td><td><strong>~NIS 2,338,536</strong></td></tr>
+<tr><td>Status</td><td>Active</td></tr>
+<tr><td>Managed by</td><td><strong>Yakir Shagev</strong></td></tr>
+</table>
+<p><strong>Note:</strong> The Gefen catalog page for program #31655 lists the amuta number as <strong>515497121</strong> — this entity, NOT 580541910 or 580354538. Yet the catalog supplier name says "מרקם". This entity appears to be the formal legal vehicle through which the Social Space operates in the Ministry of Education context.</p>
+<h3>Entity D: מרקם חברתי (ע"ר)</h3>
+<table>
+<tr><th>Field</th><th>Value</th></tr>
+<tr><td>GuideStar Number</td><td><strong>580672350</strong></td></tr>
+<tr><td>Legal Name</td><td>מרקם חברתי (ע"ר)</td></tr>
+<tr><td>Entity Type</td><td>Registered Association (עמותה)</td></tr>
+<tr><td>Founded</td><td><strong>November 22, 2018</strong></td></tr>
+<tr><td>Address</td><td>Ras Asmaeil 14, Yaffa (Yafi'a), 1695500</td></tr>
+<tr><td>Revenue (2024)</td><td><strong>NIS 177,343</strong> (below sector median)</td></tr>
+<tr><td>Employees</td><td>2</td></tr>
+<tr><td>Volunteers</td><td>0</td></tr>
+<tr><td>Government Funding</td><td><strong>NONE</strong></td></tr>
+<tr><td>GuideStar</td><td>https://www.guidestar.org.il/organization/580672350</td></tr>
+</table>
+<p><strong>Goals:</strong> Promoting social equality through workshops in schools on legal topics. Tiny operation — likely unrelated to the other entities, but shares the "מרקם" name.</p>
+<h3>Entity Relationship Summary</h3>
+<p><code>`</code></p>
+<p>Gefen Catalog Entry #31655:</p>
+<p>Supplier Name: "מרקם"</p>
+<p>Listed Amuta: 515497121 (= כל אחד ממקומו, חל"צ)</p>
+<p>Contact: Omer Kinnan (054-6783432)</p>
+<p>Actual Program Operator:</p>
+<p>"המרחב החברתי" (The Social Space)</p>
+<p>Legal entity: למרחב לשינוי חברתי (580354538)</p>
+<p>CEO: Keren Labia</p>
+<p>Board Chair: Yakir Shagev (same person managing Entity C)</p>
+<p>Name Collision:</p>
+<p>"מרקם - רשת הקהילות המעורבות" (580541910) — DIFFERENT org</p>
+<p>"מרקם חברתי" (580672350) — DIFFERENT org in Yaffa</p>
+<p><code>`</code></p>
+<p><strong>The key puzzle:</strong> The Gefen supplier is listed as "מרקם" with registration 515497121 ("כל אחד ממקומו"). The board chair of Entity C (515497121) is Yakir Shagev, who is ALSO the board chair of The Social Space. This confirms the operational connection. But the use of the "מרקם" brand name in Gefen while being a completely different legal entity from "מרקם - רשת הקהילות המעורבות" (580541910) is confusing and potentially misleading.</p>
+
+</div>
+<div class="section" id="section-1">
+<h2>2. What Is "Mixed Communities"? (Entity A Analysis)</h2>
+<p><strong>"Mixed" means religious-secular Jewish coexistence</strong> — specifically dati (religious/observant) and hiloni (secular) Jews choosing to live together in the same settlements/neighborhoods.</p>
+<p>This is NOT:</p>
+<ul>
+<li>Jewish-Arab coexistence (that would be Hand in Hand / יד ביד)</li>
+<li>Mixed socioeconomic (that would be urban renewal initiatives)</li>
+<li>Mixed Ashkenazi-Mizrahi (no such framework exists formally)</li>
+</ul>
+<p><strong>The movement emerged from:</strong></p>
+<ul>
+<li><strong>Gesher</strong> (גשר) — a decades-old organization bridging religious-secular divides</li>
+<li><strong>Tzav Piyus</strong> (צו פיוס) — reconciliation initiative, led by Aliza Gershon</li>
+<li>Founded after community members from both movements discovered growing tensions between religious and secular neighbors and decided to create a formal support network</li>
+</ul>
+<p><strong>Over 20 communities</strong> participate in the network, including:</p>
+<ul>
+<li>Tzofim (near Qalqilya)</li>
+<li>Shalphim (Meiyot Valley)</li>
+<li>Aliyav (Lachish region)</li>
+<li>Various urban communities</li>
+</ul>
+<p><strong>Core philosophy:</strong> People with different religious lifestyles can share communities, education, and celebrations. Not about compromise but about active coexistence — secular families participate in communal Shabbat meals; religious families accept that neighbors may drive on Shabbat.</p>
+
+</div>
+<div class="section" id="section-2">
+<h2>3. The "סיור פני אדם" (Human Faces Tour) Program</h2>
+<h3>What It Is</h3>
+<p>An immersive audio headphone tour inside the <strong>former "Pussycat" (הפוסיקט) strip club</strong> at the <strong>Colosseum building, Kikar Atarim (Atarim Square)</strong>, Tel Aviv.</p>
+<h3>How It Works</h3>
+<ol>
+<li>Students receive individual headphones</li>
+<li>They enter the three-story building, including underground levels</li>
+<li>Audio installation created by <strong>artist Alit Kraiz</strong> (עלית קרייז), based on a concept by <strong>"Otzarot" (אוצרות)</strong> company</li>
+<li>The audio tells stories of women who worked at the strip club, from multiple perspectives (workers, customers)</li>
+<li><strong>Different audio tours are provided for male and female participants</strong> (gender-separated content)</li>
+<li>Students walk through the actual rooms where the club operated</li>
+<li>Post-tour <strong>processing workshop</strong> addresses:</li>
+</ol>
+<ul>
+<li>Choice vs. coercion</li>
+<li>Healthy sexuality (מיניות בריאה)</li>
+<li>Boundaries in digital and physical spaces</li>
+<li>Gender equality</li>
+<li>Social responsibility and involved citizenship</li>
+</ul>
+<h3>Target Audience (from Gefen)</h3>
+<ul>
+<li>Grades 9-13 (high school)</li>
+<li>IDF soldiers</li>
+<li>Parents</li>
+<li>Education staff and administrators</li>
+</ul>
+<h3>Program Duration</h3>
+<p>1.5-2 hours depending on group size</p>
+<h3>Building History</h3>
+<ul>
+<li>The Colosseum building at Kikar Atarim housed the "Pussycat" strip club from <strong>2012-2019</strong></li>
+<li>In 2019, <strong>JTLV</strong> real estate company (led by Amir Biram, Ariel Roter, investor Shalom Fisher) purchased the property and shut down the club</li>
+<li>JTLV donated the building for social use</li>
+<li><strong>"המרחב החברתי" (The Social Space)</strong> opened in <strong>2020</strong> as a social incubator and visitor center</li>
+<li>Crowdfunding campaign "Rising from the Ruins" (קמים מהחורבות) helped launch it</li>
+<li>Approximately <strong>1,200 weekly visitors</strong> as of latest data</li>
+<li>~2,500 monthly visitors including corporate, government, and educational tourism groups</li>
+</ul>
+
+</div>
+<div class="section" id="section-3">
+<h2>4. Financial Analysis</h2>
+<h3>Why Only ₪726 Budget?</h3>
+<p><strong>The ₪726 is NOT the total program budget.</strong> It is the budget allocation for ONE specific school deployment at the <strong>Kiryat Ono Democratic High School</strong> (תיכון דמוקרטי ק.אונו, institution code 499699).</p>
+<h3>Full Budget Breakdown by School</h3>
+<table>
+<tr><th>City</th><th>Institution</th><th>Budget (NIS)</th><th>Level</th></tr>
+<tr><td>ירושלים (Jerusalem)</td><td>תורני נסויי הרטמן - 144220</td><td>2,420</td><td>חט"ב</td></tr>
+<tr><td>תל אביב-יפו (Tel Aviv)</td><td>עירוני ט' - 540195</td><td>11,660</td><td>חט"ע</td></tr>
+<tr><td>הרצליה (Herzliya)</td><td>מפתן הרצליה - 530683</td><td>4,200</td><td>חט"ע</td></tr>
+<tr><td>רמת השרון (Ramat HaSharon)</td><td>חקלאי הכפר הירוק - 580019</td><td>8,946</td><td>חט"ב</td></tr>
+<tr><td>רמת השרון (Ramat HaSharon)</td><td>מקיף השרון עש רוטברג - 770842</td><td>16,501</td><td>חט"ע</td></tr>
+<tr><td>קרית אונו (Kiryat Ono)</td><td>תיכון דמוקרטי ק.אונו - 499699</td><td><strong>726</strong></td><td>חט"ע</td></tr>
+<tr><td><strong>TOTAL</strong></td><td><strong>₪44,453</strong></td></tr>
+</table>
+<p><strong>The ₪726 at Kiryat Ono is likely a partial allocation</strong> — possibly a pilot, a supplementary add-on, or a per-student pricing for a small group.</p>
+<h3>Entity-Level Financial Summary</h3>
+<table>
+<tr><th>Entity</th><th>Revenue</th><th>Gov't Funding</th><th>% Gov't</th><th>Employees</th></tr>
+<tr><td>A: מרקם (580541910)</td><td>2,033,716 (2023)</td><td>0</td><td>0%</td><td>5</td></tr>
+<tr><td>B: למרחב לשינוי חברתי (580354538)</td><td>3,370,629 (2024)</td><td>162,896</td><td>4.8%</td><td>11</td></tr>
+<tr><td>C: כל אחד ממקומו (515497121)</td><td>~2,338,536 (2021)</td><td>Unknown</td><td>Unknown</td><td>Unknown</td></tr>
+<tr><td>D: מרקם חברתי (580672350)</td><td>177,343 (2024)</td><td>0</td><td>0%</td><td>2</td></tr>
+</table>
+<h3>Key Financial Observations</h3>
+<ol>
+<li><strong>Entity B has NIS 3.37M revenue with only 4.8% from government.</strong> The remaining ~NIS 3.2M comes from non-governmental sources that are not publicly itemized. This is a significant transparency gap.</li>
+</ol>
+<ol>
+<li><strong>Revenue sources likely include:</strong></li>
+</ol>
+<ul>
+<li>Real estate company building donations (in-kind)</li>
+<li>Gefen program fees (NIS 44,453 from this one program, possibly more programs)</li>
+<li>Public tour ticket sales (via Funzing, toMix, etc.)</li>
+<li>Crowdfunding revenue</li>
+<li>Corporate events and rentals</li>
+<li>Philanthropic donations (not publicly disclosed)</li>
+</ul>
+<ol>
+<li><strong>Entity A has NIS 2M revenue with ZERO government funding.</strong> Revenue likely comes from parent organizations (Gesher, Tzav Piyus) and philanthropic donors.</li>
+</ol>
+<ol>
+<li><strong>The relationship between Entity B and Entity C is financially unclear.</strong> They share the same board chair (Yakir Shagev). Do they share budgets? Does money flow between them?</li>
+</ol>
+
+</div>
+<div class="section" id="section-4">
+<h2>5. Leadership</h2>
+<h3>המרחב החברתי (The Social Space) — Entities B & C</h3>
+<table>
+<tr><th>Role</th><th>Name</th><th>Notes</th></tr>
+<tr><td><strong>CEO / Director</strong></td><td><strong>Keren Labia</strong> (קרן לביא)</td><td>Also identified as Keren Greengrass on LinkedIn</td></tr>
+<tr><td><strong>Board Chair</strong></td><td><strong>Yakir Shagev</strong> (יקיר שגב)</td><td>Also manages Entity C (515497121). <strong>MAOZ Network alumni</strong> — discovered the Pussycat building and pitched the conversion idea to real estate developers. Researcher/curator of Jewish and Israeli art and design.</td></tr>
+<tr><td><strong>Board Members</strong></td><td>Mirav Shlitine, Ariel Schwarzberg, Sharon Ben Shem Gorin, Nitay Alush Even, Theodore Landau, Vered Ulfiner, <strong>Eyal Biram</strong></td></tr>
+<tr><td><strong>VP Sales / Gefen Contact</strong></td><td><strong>Omer Kinnan</strong> (עומר קינן)</td><td>Age ~28, employed since 2022</td></tr>
+<tr><td><strong>Co-founder</strong></td><td><strong>Liko Friedler</strong></td></tr>
+</table>
+<p><strong>Note on Eyal Biram (board member):</strong> The surname Biram also appears in JTLV, the real estate company (Amir Biram) that donated the building. Possible family/business connection.</p>
+<p><strong>Note on Yakir Shagev:</strong> He is a <strong>MAOZ Network</strong> alumni — MAOZ is a prestigious Israeli leadership development program. He is credited with initiating the transformation of the Pussycat building into a social center.</p>
+<p><strong>Note on Omer Kinnan name collision:</strong> There is a <strong>Dr. Omer Kinnan</strong> featured on Shatil (NIF's action arm) website as a researcher on digital activism at Sapir and Bar-Ilan. This appears to be a <strong>different person</strong> from the 28-year-old VP.</p>
+<h3>מרקם - רשת הקהילות המעורבות — Entity A</h3>
+<table>
+<tr><th>Role</th><th>Name</th><th>Notes</th></tr>
+<tr><td><strong>Network Coordinator (2009)</strong></td><td><strong>Asaf Hirshfeld</strong> (אסף הירשפלד)</td><td>Resident of "Gesher" community in Mitzpe Bityah</td></tr>
+<tr><td><strong>Knesset Sponsors</strong></td><td>MK <strong>Uri Orbach</strong> (z"l) + MK <strong>Eitan Kabel</strong></td><td>Co-heads of Religious-Secular Relations Caucus</td></tr>
+<tr><td><strong>Tzav Piyus Director</strong></td><td><strong>Aliza Gershon</strong></td><td>Led founding conference</td></tr>
+<tr><td><strong>Idea Originator</strong></td><td><strong>David Bar-Dav</strong></td><td>From the Ascher community</td></tr>
+</table>
+
+</div>
+<div class="section" id="section-5">
+<h2>6. Connection to Coexistence Movement</h2>
+<h3>Entity A (מרקם) — Connected Organizations</h3>
+<table>
+<tr><th>Organization</th><th>Relationship</th></tr>
+<tr><td><strong>Gesher</strong> (גשר)</td><td><strong>Co-founder.</strong> Religious-secular bridge org. Provides financial, organizational, and advisory support.</td></tr>
+<tr><td><strong>Tzav Piyus</strong> (צו פיוס)</td><td><strong>Co-founder.</strong> Reconciliation initiative.</td></tr>
+<tr><td><strong>Neemanei Torah VeAvodah</strong> (נאמני תורה ועבודה)</td><td>Hosts מרקם content on website. Moderate religious Zionist movement. Ideological ally.</td></tr>
+<tr><td><strong>MAKOM</strong> (מועצת הקהילות)</td><td>Umbrella for ~15 community networks. מרקם is likely a member.</td></tr>
+<tr><td><strong>Meitarim</strong> (מיתרים)</td><td>Network of mixed Jewish education communities. Overlapping concept. Provides professional support for communities.</td></tr>
+<tr><td><strong>Panim</strong> (פנים)</td><td>Civil society org — hosts מרקם profile page.</td></tr>
+<tr><td><strong>Community Forward</strong></td><td>Organization of Israeli community managers.</td></tr>
+</table>
+<h3>NOT Connected To (Jewish-Arab coexistence movement)</h3>
+<table>
+<tr><th>Organization</th><th>Connection Status</th></tr>
+<tr><td><strong>Hand in Hand / Yad B'Yad</strong> (יד ביד)</td><td><strong>NO connection.</strong> Hand in Hand runs Arab-Jewish bilingual schools. Completely different domain.</td></tr>
+<tr><td><strong>Sikkuy-Aufoq</strong></td><td><strong>NO connection.</strong> Deals with Jewish-Arab equality.</td></tr>
+<tr><td><strong>Givat Haviva</strong></td><td><strong>NO connection.</strong> Arab-Jewish education.</td></tr>
+<tr><td><strong>Abraham Fund</strong></td><td><strong>NO connection.</strong> Promotes coexistence between Arab and Jewish citizens.</td></tr>
+</table>
+<p><strong>Key insight:</strong> "Mixed communities" in the מרקם context is strictly intra-Jewish (religious-secular). The Arab-Jewish coexistence movement is a completely separate ecosystem with different organizations, different funding, and different ideology.</p>
+<h3>Entity B (המרחב החברתי) — Connected Organizations</h3>
+<table>
+<tr><th>Organization</th><th>Relationship</th></tr>
+<tr><td><strong>JTLV</strong> (real estate)</td><td>Building donor. Led by Amir Biram, Ariel Roter, Shalom Fisher.</td></tr>
+<tr><td><strong>MAOZ Network</strong></td><td>Board chair Yakir Shagev is a MAOZ alumni.</td></tr>
+<tr><td><strong>עמותת תודעה</strong> (Toda'a)</td><td>Runs sexuality education workshops at the Social Space.</td></tr>
+<tr><td><strong>Masa Israel</strong></td><td>Promotes tours for diaspora program participants.</td></tr>
+<tr><td><strong>IDF/Reserves</strong></td><td>Collaboration hosting activities for soldiers and reservists.</td></tr>
+<tr><td><strong>Tel Aviv Municipality</strong></td><td>Promotes the Social Space tour on municipal website.</td></tr>
+<tr><td><strong>Shatil/NIF</strong></td><td>Weak connection: Dr. Omer Kinnan (different person from VP) featured on Shatil testimonials.</td></tr>
+</table>
+
+</div>
+<div class="section" id="section-6">
+<h2>7. Gender Content — Why Flagged?</h2>
+<h3>The Flagging Mechanism</h3>
+<p>In the Gefen scoring model, program #31655 was flagged because:</p>
+<ol>
+<li><strong>Themes detected:</strong> gender, activism, violence_prevention, sexuality, disability_inclusion</li>
+<li><strong>The gender+sexuality theme combination has a 19x lift</strong> for R4+5 programs (the strongest predictor of ideological content in the entire model)</li>
+<li><strong>Rating source:</strong> <code>org_inherited:מרקם - רשת הקהילות המעורבות</code> — meaning the rating was inherited from the organization name, not from direct investigation of the program content</li>
+</ol>
+<h3>What the Program Actually Contains</h3>
+<p>The program explicitly teaches:</p>
+<ul>
+<li><strong>"Healthy sexuality"</strong> (מיניות בריאה) — including discussion of choice, consent, boundaries</li>
+<li><strong>Gender equality</strong> — the former strip club as evidence of patriarchal exploitation</li>
+<li><strong>Anti-prostitution / anti-trafficking</strong> framing — women who worked at the club are presented as victims of systemic exploitation</li>
+<li><strong>Digital responsibility</strong> — connecting to social media pressures on youth</li>
+<li><strong>Social activism</strong> — encouraging students to become "involved citizens"</li>
+</ul>
+<h3>Why This Is Contentious</h3>
+<ol>
+<li><strong>Taking minors (ages 14-18) into a former strip club</strong> and exposing them to narratives about sex work, even in an "educational" framework</li>
+<li><strong>Gender-differentiated tours</strong> — male and female students hear different audio content, raising questions about what messaging each gender receives</li>
+<li><strong>The program presents a specific ideological position</strong> on prostitution (abolitionist/radical feminist) as though it were the only perspective</li>
+<li><strong>Post-tour workshops on "healthy sexuality"</strong> with teenagers in a loaded environment</li>
+<li><strong>The program name is misleading</strong>: "סיור פני אדם" (Human Faces Tour) sounds like a generic cultural tour; parents may not realize it involves sexuality content in a former strip club</li>
+</ol>
+<h3>Rating Assessment</h3>
+<p>The 4/5 rating inherited from the org name is <strong>somewhat misdirected</strong> (it was inherited from "מרקם - רשת הקהילות המעורבות" which is a different entity). However, based on the actual program content — explicit gender/sexuality education with an ideological frame, delivered in a provocative setting — <strong>a rating of 3-4 is appropriate on content grounds alone</strong>.</p>
+
+</div>
+<div class="section" id="section-7">
+<h2>8. Government Ties</h2>
+<h3>Entity A (מרקם - רשת הקהילות המעורבות)</h3>
+<ul>
+<li><strong>Government funding: NONE</strong> in last 3 years</li>
+<li><strong>Knesset connection:</strong> Founded under patronage of MKs Uri Orbach and Eitan Kabel (Religious-Secular Relations Caucus)</li>
+<li>No ongoing government programs</li>
+</ul>
+<h3>Entity B (למרחב לשינוי חברתי)</h3>
+<ul>
+<li><strong>Ministry of Welfare:</strong> NIS 162,896 — National program for at-risk youth</li>
+<li><strong>Ministry of Education (indirect):</strong> The Gefen program is funded through school budgets that originate from MoE</li>
+<li><strong>Tel Aviv Municipality:</strong> Promotes the Social Space on municipal website</li>
+<li><strong>IDF:</strong> Collaboration with soldiers/reservists programs</li>
+</ul>
+<h3>Entity C (כל אחד ממקומו)</h3>
+<ul>
+<li><strong>Registered as Gefen supplier</strong> with Ministry of Education</li>
+<li>No other government ties documented</li>
+</ul>
+<h3>Entity D (מרקם חברתי)</h3>
+<ul>
+<li><strong>Government funding: NONE</strong></li>
+</ul>
+
+</div>
+<div class="section" id="section-8">
+<h2>9. Network Diagram</h2>
+<p><code>`</code></p>
+<p>PARENT MOVEMENTS</p>
+<p>Gesher ─────────┐</p>
+<p>Tzav Piyus ─────┤</p>
+<p>▼</p>
+<p>Entity A: מרקם - רשת הקהילות המעורבות (580541910)</p>
+<p>[Religious-secular coexistence, 20+ communities, NIS 2M revenue]</p>
+<p>[NO direct connection to the Gefen program]</p>
+<p>REAL ESTATE</p>
+<p>JTLV (Biram, Roter, Fisher) ──── Building donation ────┐</p>
+<p>▼</p>
+<p>Entity B: למרחב לשינוי חברתי (580354538)</p>
+<p>[Operates "המרחב החברתי", NIS 3.37M revenue, 11 employees]</p>
+<p>[CEO: Keren Labia | Board Chair: Yakir Shagev]</p>
+<p>│</p>
+<p>│ Shared board chair (Yakir Shagev)</p>
+<p>▼</p>
+<p>Entity C: כל אחד ממקומו (515497121, חל"צ)</p>
+<p>[MAOZ Network alumni project | Registered Gefen supplier as "מרקם"]</p>
+<p>[NIS 2.3M revenue (2021)]</p>
+<p>UNRELATED</p>
+<p>Entity D: מרקם חברתי (580672350) — Yaffa, legal education, NIS 177K</p>
+<p><code>`</code></p>
+
+</div>
+<div class="section" id="section-9">
+<h2>10. Open Questions for Further Investigation</h2>
+<ol>
+<li><strong>Why does Entity C (כל אחד ממקומו) use the supplier name "מרקם" in the Gefen catalog?</strong> This creates confusion with Entity A (מרקם - רשת הקהילות המעורבות). Is this a deliberate brand strategy, a legacy name, or an error?</li>
+</ol>
+<ol>
+<li><strong>What is the financial flow between Entity B (580354538) and Entity C (515497121)?</strong> They share board leadership but are separate legal entities.</li>
+</ol>
+<ol>
+<li><strong>What did Entity B (למרחב לשינוי חברתי) do from 2000 to 2019?</strong> 19 years of existence before the Social Space opened.</li>
+</ol>
+<ol>
+<li><strong>Who are the private donors providing ~NIS 3.2M/year to Entity B?</strong> 95% of revenue is non-governmental and non-transparent.</li>
+</ol>
+<ol>
+<li><strong>Is board member Eyal Biram related to JTLV's Amir Biram?</strong> If so, the building "donation" may involve conflicts of interest.</li>
+</ol>
+<ol>
+<li><strong>Are there documented parent complaints</strong> about the sexuality content for minors?</li>
+</ol>
+<ol>
+<li><strong>What exactly is different between the male and female audio tours?</strong> The gender-differentiated content raises pedagogical questions.</li>
+</ol>
+<ol>
+<li><strong>Does Entity A (the real מרקם, 580541910) know that another entity is using their brand name in the Ministry of Education system?</strong></li>
+</ol>
+
+</div>
+<div class="section" id="section-10">
+<h2>11. Values Alignment Assessment</h2>
+<table>
+<tr><th>Value</th><th>Entity A (מרקם Network)</th><th>Entity B/C (Social Space)</th></tr>
+<tr><td>Transparency</td><td>Medium — no government funding to track, private donors unknown</td><td><strong>Low</strong> — 95% private funding, no public donor list, complex multi-entity structure</td></tr>
+<tr><td>Educational appropriateness</td><td>N/A — not an education provider</td><td><strong>Contested</strong> — immersive experience in former strip club, sexuality content for minors</td></tr>
+<tr><td>Ideological neutrality</td><td>Low-medium — promotes specific vision of Jewish pluralism</td><td><strong>Low</strong> — presents abolitionist/feminist position as the default; activism-oriented</td></tr>
+<tr><td>Democratic values</td><td>High — promotes coexistence and dialogue</td><td>Medium — promotes social engagement but from a specific ideological frame</td></tr>
+<tr><td>Parental consent clarity</td><td>N/A</td><td><strong>Questionable</strong> — program name ("Human Faces Tour") does not signal sexuality content</td></tr>
+<tr><td>Financial integrity</td><td>Unclear</td><td><strong>Unclear</strong> — multiple entities, shared leadership, opaque funding</td></tr>
+</table>
+
+</div>
+<div class="section" id="section-11">
+<h2>SOURCE URLS</h2>
+<h3>GuideStar Israel</h3>
+<ul>
+<li>Entity A: https://www.guidestar.org.il/organization/580541910</li>
+<li>Entity A Finances: https://www.guidestar.org.il/organization/580541910/finances</li>
+<li>Entity A People: https://www.guidestar.org.il/organization/580541910/people</li>
+<li>Entity B: https://www.guidestar.org.il/organization/580354538</li>
+<li>Entity C: https://www.guidestar.org.il/organization/515497121</li>
+<li>Entity C People: https://www.guidestar.org.il/organization/515497121/people</li>
+<li>Entity D: https://www.guidestar.org.il/organization/580672350</li>
+</ul>
+<h3>Obudget (Government Transfers)</h3>
+<ul>
+<li>Entity A: https://next.obudget.org/i/org/association/580541910</li>
+<li>Entity B: https://next.obudget.org/i/org/association/580354538</li>
+<li>Entity D: https://next.obudget.org/i/org/association/580672350</li>
+</ul>
+<h3>Program & Catalog</h3>
+<ul>
+<li>Gefen Catalog Entry: https://www.2school.co.il/InterData/etsmh/</li>
+<li>Social Space Official Site: https://www.socialspace.org.il/</li>
+<li>Social Space About: https://www.socialspace.org.il/%D7%90%D7%95%D7%93%D7%95%D7%AA</li>
+</ul>
+<h3>Media & Encyclopedia</h3>
+<ul>
+<li>Ynet Founding Article (2009): https://www.ynet.co.il/articles/0,7340,L-3736241,00.html</li>
+<li>HaMichlol (מרקם): https://www.hamichlol.org.il/%D7%9E%D7%A8%D7%A7%22%D7%9D</li>
+<li>HaMichlol (המרחב החברתי): https://www.hamichlol.org.il/%D7%94%D7%9E%D7%A8%D7%97%D7%91_%D7%94%D7%97%D7%91%D7%A8%D7%AA%D7%99</li>
+<li>Tel Aviv Municipality Tour Page: https://www.tel-aviv.gov.il/Pages/MainItemPage.aspx?WebID=3af57d92-807c-43c5-8d5f-6fd455eb2776&ListID=9dd2da03-5c43-462a-b5b2-d087c179b16c&ItemID=4396</li>
+<li>Apple Podcasts (Keren Labia interview): https://podcasts.apple.com/us/podcast/id1561168869?i=1000568714291</li>
+</ul>
+<h3>Organization Connections</h3>
+<ul>
+<li>Neemanei Torah VeAvodah: https://toravoda.org.il/%D7%9E%D7%A8%D7%A7%D7%9D-%D7%9E%D7%99%D7%96%D7%9D-%D7%A8%D7%A9%D7%AA-%D7%A7%D7%94%D7%99%D7%9C%D7%95%D7%AA-%D7%9E%D7%A2%D7%95%D7%A8%D7%91%D7%95%D7%AA/</li>
+<li>MAOZ Network (Yakir Segev): https://maoz-il.org/en/alumni-projects/yakir-segev/</li>
+<li>עמותת תודעה Workshops: https://www.todaango.org.il/socialspace</li>
+<li>Shatil/NIF (Dr. Omer Kinnan): https://shatil.org.il/testimonials/%D7%93%D7%A8-%D7%A2%D7%95%D7%9E%D7%A8-%D7%A7%D7%99%D7%A0%D7%9F</li>
+<li>Israeli Companies (Entity C): https://israeli-companies.com/hevra/%D7%9E%D7%99%D7%93%D7%A2-%D7%A2%D7%9C-%D7%9B%D7%9C-%D7%90%D7%97%D7%93-%D7%9E%D7%9E%D7%A7%D7%95%D7%9E%D7%95-%D7%91%D7%A2%D7%9E-%D7%97%D7%9C%D7%A6/</li>
+<li>SBA (Small Business Agency): https://www.sba.org.il/hb/AidPrograms/milu/Pages/pr17.aspx</li>
+</ul>
+<h3>Data Files (internal project)</h3>
+<ul>
+<li>Gefen metadata: derug-arim-site/data/gefen_metadata.json</li>
+<li>Program ratings: projects/EDUCATIONAL_PROGRAMS/all_programs_rated.json (program ID 31655)</li>
+<li>City-program mapping: projects/EDUCATIONAL_PROGRAMS/city_program_mapping.json</li>
+<li>Manual metadata: projects/דירוג_ערים/manual_metadata.json</li>
+</ul>
+<p><em>Research conducted 2026-02-17. Updated from prior research (2026-02-16). All financial figures in NIS unless noted.</em></p>
+
+</div>
+</div>
+
+<footer>
+  פרויקט זהות ציונית — דוח מחקר מעמיק | <a href="../">דירוג ערים</a> | <a href="../research/">כל הדוחות</a>
+</footer>
+
+</body>
+</html>

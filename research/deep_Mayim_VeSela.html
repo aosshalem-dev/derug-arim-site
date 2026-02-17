@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>סלע אברהם מיכאל — מים וסלע (Water and Rock) — דוח מחקר מעמיק</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background: #f5f5f8;
+  color: #1a1a2e;
+  direction: rtl;
+  line-height: 1.8;
+  font-size: 17px;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #1a1a2e; color: #fff;
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  overflow-x: auto; white-space: nowrap;
+}
+nav .brand { font-weight: 700; color: #ff8800; flex-shrink: 0; }
+nav a { color: #ccc; text-decoration: none; font-size: 0.85em; padding: 8px 4px; border-bottom: 2px solid transparent; flex-shrink: 0; }
+nav a:hover { color: #ff8800; border-bottom-color: #ff8800; }
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a5a8a 100%);
+  color: #fff; padding: 50px 20px 40px; text-align: center;
+}
+.hero h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+.hero .subtitle { font-size: 1.05em; color: #b0c4de; margin-bottom: 6px; }
+.hero .meta { font-size: 0.9em; color: #ff8800; margin-top: 8px; }
+.risk-badge {
+  display: inline-block; padding: 4px 16px; border-radius: 20px;
+  font-size: 0.85em; font-weight: 600; margin-top: 10px;
+}
+.risk-high { background: #e74c3c; color: #fff; }
+.risk-medium { background: #f39c12; color: #fff; }
+.risk-low { background: #27ae60; color: #fff; }
+.container { max-width: 860px; margin: 0 auto; padding: 30px 20px 80px; }
+.toc {
+  background: #fff; border-radius: 8px; padding: 22px 26px;
+  margin-bottom: 32px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.toc h2 { font-size: 1.15em; color: #2a5a8a; margin-bottom: 12px; border-bottom: 2px solid #667eea; padding-bottom: 6px; }
+.toc ol { padding-right: 22px; font-size: 0.93em; }
+.toc li { margin-bottom: 4px; }
+.toc a { color: #2a5a8a; text-decoration: none; }
+.toc a:hover { color: #ff8800; text-decoration: underline; }
+.section {
+  background: #fff; border-radius: 8px; padding: 28px 26px;
+  margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.section h2 { font-size: 1.4em; color: #1a1a2e; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #667eea; }
+.section h3 { font-size: 1.1em; color: #2a5a8a; margin: 18px 0 8px; }
+.section h4 { font-size: 1em; color: #444; margin: 14px 0 6px; }
+.section p { margin-bottom: 12px; text-align: justify; }
+.section ul, .section ol { padding-right: 22px; margin-bottom: 12px; }
+.section li { margin-bottom: 5px; }
+blockquote {
+  background: #f0f4fa; border-right: 4px solid #667eea;
+  padding: 12px 18px; margin: 12px 0; border-radius: 0 6px 6px 0;
+  font-size: 0.94em; color: #333;
+}
+.thesis {
+  background: #fff8f0; border-right: 3px solid #ff8800;
+  padding: 14px 18px; margin: 12px 0; border-radius: 0 5px 5px 0;
+  font-size: 0.96em; color: #6b4500;
+}
+table {
+  width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.91em;
+}
+th {
+  background: #667eea; color: #fff; padding: 8px 12px;
+  text-align: right; position: sticky; top: 44px; z-index: 5;
+}
+td {
+  padding: 7px 12px; border-bottom: 1px solid #e8e8e8;
+  text-align: right; vertical-align: top;
+}
+tr:nth-child(even) { background: #f8f9fc; }
+a { color: #2a5a8a; }
+a:hover { color: #ff8800; }
+.back-link {
+  display: inline-block; margin-bottom: 20px; padding: 6px 14px;
+  background: #667eea; color: #fff; border-radius: 4px;
+  text-decoration: none; font-size: 0.88em;
+}
+.back-link:hover { background: #5a6fd6; color: #fff; }
+footer {
+  text-align: center; padding: 30px 20px; color: #888; font-size: 0.85em;
+}
+strong { color: #1a1a2e; }
+code {
+  background: #f0f0f0; padding: 1px 5px; border-radius: 3px;
+  font-size: 0.9em;
+}
+.source-tag {
+  display: inline-block; background: #e8eef6; padding: 2px 8px;
+  border-radius: 10px; font-size: 0.78em; color: #2a5a8a;
+  margin: 2px 3px; text-decoration: none;
+}
+.source-tag:hover { background: #d0dff0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">דוח מחקר מעמיק</span>
+  <a href="../">חזרה לדירוג</a>
+  <a href="../research/">כל הדוחות</a>
+  <a href="#section-1">1. Who is Michael Se</a> <a href="#section-2">2. What is "Wisdom o</a> <a href="#section-3">3. Circle Methodolog</a> <a href="#section-4">4. Is This a Sole Pr</a> <a href="#section-5">5. Program Content: </a> <a href="#section-6">6. Financial Structu</a> <a href="#section-7">7. Government Approv</a> <a href="#section-8">8. Connection to Cir</a> <a href="#section-9">9. Risk Assessment S</a> <a href="#section-10">Sources</a>
+</nav>
+
+<div class="hero">
+  <h1>סלע אברהם מיכאל — מים וסלע (Water and Rock)</h1>
+  <div class="subtitle">Program: חכמת המעגל (Wisdom of the Circle) + המעגל השלם (The Complete Circle)</div>
+  <div class="meta"></div>
+  
+</div>
+
+<div class="container">
+  <a href="../research/" class="back-link">← כל דוחות המחקר</a>
+  <div class="toc"><h2>תוכן עניינים</h2><ol><li><a href="#section-1">1. Who is Michael Sela Abraham?</a></li><li><a href="#section-2">2. What is "Wisdom of the Circle" (חכמת המעגל)?</a></li><li><a href="#section-3">3. Circle Methodology: Origins and Analysis</a></li><li><a href="#section-4">4. Is This a Sole Proprietor? Business Structure</a></li><li><a href="#section-5">5. Program Content: Ideological Analysis</a></li><li><a href="#section-6">6. Financial Structure</a></li><li><a href="#section-7">7. Government Approval — Gefen Catalog Status</a></li><li><a href="#section-8">8. Connection to Circle/Council/Restorative Justice Movements</a></li><li><a href="#section-9">9. Risk Assessment Summary</a></li><li><a href="#section-10">Sources</a></li></ol></div>
+  <div class="section" id="section-1">
+<h2>1. Who is Michael Sela Abraham?</h2>
+<h3>What We Know</h3>
+<ul>
+<li><strong>Full name:</strong> מיכאל סלע אברהם (also rendered as סלע אברהם מיכאל in official records)</li>
+<li><strong>Role:</strong> Founder, owner, and director of "מים וסלע — העשרה חינוכית" (Water and Rock — Educational Enrichment)</li>
+<li><strong>Self-description:</strong> Teacher, educator, and educational entrepreneur</li>
+<li><strong>Contact phone:</strong> 054-767-1297</li>
+<li><strong>Email for staff recruitment:</strong> msmadrihim@gmail.com</li>
+<li><strong>Location:</strong> Based in Carmiel (כרמיאל), northern Israel</li>
+</ul>
+<h3>What We Don't Know (Gaps)</h3>
+<ul>
+<li><strong>No discoverable academic credentials</strong> — no university degrees, no certifications in psychology, counseling, social work, or education found online</li>
+<li><strong>No LinkedIn profile found</strong> matching this person</li>
+<li><strong>No Facebook presence found</strong> for the business or personal profile</li>
+<li><strong>No media interviews, conference appearances, or published articles</strong> found</li>
+<li><strong>No professional association memberships</strong> found (not listed in the Israeli Association of Family Counselors and Therapists, no NLP certification found)</li>
+<li><strong>Training background</strong> in circle facilitation methodology is unverified — no connection to Uriel Center (the main Israeli Way of Council training center), no connection to Ojai Foundation</li>
+</ul>
+<p><strong>Assessment:</strong> The operator is effectively invisible outside his own website and the Gefen catalog. For someone claiming 15+ years and 500,000 children, this is a notably thin public profile. This is not inherently suspicious (many small Gefen suppliers are low-profile), but it means independent verification of qualifications is not possible from public sources.</p>
+
+</div>
+<div class="section" id="section-2">
+<h2>2. What is "Wisdom of the Circle" (חכמת המעגל)?</h2>
+<h3>Gefen Catalog Entry (#5454)</h3>
+<ul>
+<li><strong>Program type:</strong> ירוק (Green track — process-educational)</li>
+<li><strong>Target audience:</strong> Kindergarten through 8th grade (גן — כיתה ח')</li>
+<li><strong>Classification areas:</strong></li>
+<li>Social-emotional learning</li>
+<li>Climate optimization (school climate, not weather)</li>
+<li>Life skills</li>
+<li>Risk behavior prevention</li>
+<li>Inclusion and integration</li>
+<li>At-risk youth support</li>
+<li><strong>Methodology:</strong> Process-based, experiential learning through circle-based group activities</li>
+</ul>
+<h3>Program Structure (from website)</h3>
+<p>Three tiers of engagement:</p>
+<ol>
+<li><strong>תהליך ממוקד (Focused Process)</strong> — 6-8 sessions, introductory exposure</li>
+<li><strong>צידה לדרך (Journey Provisions)</strong> — 12-16 sessions, foundation-building</li>
+<li><strong>תהליך עומק (Deep Process)</strong> — 20+ sessions, comprehensive implementation</li>
+</ol>
+<p>Plus standalone events:</p>
+<ol>
+<li><strong>הפנינג המעגל (Circle Happening)</strong> — School-wide event</li>
+<li><strong>פדגוגית המעגל (Circle Pedagogy)</strong> — Teacher training component</li>
+</ol>
+<h3>Materials Included</h3>
+<ul>
+<li>Speaking sticks (מקלות דיבור)</li>
+<li>Bracelets (צמידים)</li>
+<li>Reflection notebooks (מחברות השתקפות)</li>
+<li>Guidance documents for teachers</li>
+</ul>
+<h3>Second Gefen Program: המעגל השלם (#26623)</h3>
+<ul>
+<li><strong>Full name:</strong> המעגל השלם — חינוך אקלימי-חברתי (The Complete Circle — Climate-Social Education)</li>
+<li><strong>Target audience:</strong> Grades 3-12 + education staff</li>
+<li><strong>Content:</strong> Interdisciplinary program connecting climate science with emotional-social development</li>
+<li><strong>Three circles framework:</strong> Self, others, nature/ecology</li>
+<li><strong>Subjects integrated:</strong> Sciences, math, literacy, geography, civics, history, sociology, psychology</li>
+<li><strong>Goals:</strong> Build scientific knowledge, prevent climate anxiety, develop emotional resilience, improve communication, foster global literacy, encourage social activism and entrepreneurship</li>
+</ul>
+
+</div>
+<div class="section" id="section-3">
+<h2>3. Circle Methodology: Origins and Analysis</h2>
+<h3>What Is the Circle Tradition?</h3>
+<p>The "circle" or "council" methodology in education has multiple roots:</p>
+<ul>
+<li><strong>Way of Council</strong> — Developed by Jack Zimmerman and Virginia Coyle at the Ojai Foundation (California), drawing on Native American talking circle traditions</li>
+<li><strong>Restorative Justice Circles</strong> — Used in schools for conflict resolution, community building</li>
+<li><strong>Talking Circles</strong> — Broader practice using a talking piece (stick, stone) passed around a circle, ensuring each person speaks without interruption</li>
+</ul>
+<h3>How Does חכמת המעגל Fit?</h3>
+<p>The program uses the following recognizable elements from the circle tradition:</p>
+<ul>
+<li><strong>Speaking stick (מקל דיבור)</strong> — A physical object passed around the circle; only the holder may speak</li>
+<li><strong>Circle seating</strong> — All participants sit in a circle with no hierarchy</li>
+<li><strong>Equal voice</strong> — "Each child has a place in the circle and the right to be different and unique"</li>
+<li><strong>Transition from competition to cooperation</strong> — Core value</li>
+<li><strong>Reflective dialogue</strong> — Structured sharing, active listening</li>
+</ul>
+<h3>Connection to Israeli "Way of Council" Movement?</h3>
+<p>Israel has an established Way of Council community:</p>
+<ul>
+<li><strong>עמותת מעגל הקשבה</strong> (Listening Circle Association) — Founded by Ronit Rinit, affiliated with Ojai Foundation</li>
+<li><strong>מרכז אוריאל</strong> (Uriel Center) — Founded 2001 by Nuria and Eiran Levy, trains circle facilitators</li>
+<li><strong>No evidence of direct connection</strong> between Michael Sela Abraham and either of these organizations</li>
+</ul>
+<h3>Is This Laitman/Kabbalah?</h3>
+<p>A book titled "חכמת המעגל" was published by <strong>Michael Laitman</strong> (Bnei Baruch Kabbalah movement). This book describes workshop methods for "revealing the Creator through shared desire."</p>
+<p><strong>Finding: NO connection detected.</strong> The Mayim VeSela program and the Laitman book share only a name. The Mayim VeSela content is secular SEL methodology with no Kabbalistic content visible in any materials reviewed. Different author (מיכאל סלע vs. מיכאל לייטמן), different publisher, different methodology.</p>
+
+</div>
+<div class="section" id="section-4">
+<h2>4. Is This a Sole Proprietor? Business Structure</h2>
+<h3>Confirmed: Sole Proprietorship (עוסק מורשה)</h3>
+<ul>
+<li><strong>Business number:</strong> 21390919</li>
+<li><strong>Business name:</strong> סלע אברהם מיכאל — מים וסלע</li>
+<li><strong>Legal structure:</strong> Licensed business operator (osek mursheh), NOT an amuta (registered association) or company (חברה בע"מ)</li>
+<li><strong>Not found on GuideStar Israel</strong> — Consistent with being a sole proprietorship rather than an amuta</li>
+<li><strong>AllJobs profile says 11-50 employees</strong> — Suggests a moderate operation with field instructors</li>
+</ul>
+<h3>Implications of Sole Proprietorship</h3>
+<ul>
+<li><strong>No transparency requirements</strong> — Unlike amutot, sole proprietors do not publish annual financial reports, board member lists, or government service details on GuideStar</li>
+<li><strong>No public board or governance</strong> — All decisions rest with the owner</li>
+<li><strong>Financial opacity</strong> — Revenue, government funding received, and profit margins are not publicly accessible</li>
+<li><strong>Common pattern</strong> — This is the same structure used by Mind Lab, Maga BeTiaum, and Meyda Amin (previously researched entities that also operate as sole proprietorships within the Gefen system)</li>
+</ul>
+
+</div>
+<div class="section" id="section-5">
+<h2>5. Program Content: Ideological Analysis</h2>
+<h3>Values Explicitly Promoted</h3>
+<p>From the website and Gefen catalog:</p>
+<ul>
+<li><strong>Cooperation over competition</strong> — Repeated as a core principle</li>
+<li><strong>Inclusion</strong> — "Each child has a place in the circle"</li>
+<li><strong>Empathy and emotional intelligence</strong></li>
+<li><strong>Social responsibility</strong> — Described as a program goal</li>
+<li><strong>Sustainability and environmental awareness</strong> (in המעגל השלם / program #26623)</li>
+<li><strong>Social activism and entrepreneurship</strong> (in המעגל השלם / program #26623)</li>
+<li><strong>"Living in partnership"</strong> — Described as a way of life philosophy</li>
+</ul>
+<h3>Ideological Red Flags / Notable Elements</h3>
+<table>
+<tr><th>Element</th><th>Assessment</th></tr>
+<tr><td>Social justice language</td><td>Moderate — "social responsibility," "social activism," "inclusion" are present but framed as generic SEL, not critical theory</td></tr>
+<tr><td>Gender/sexuality content</td><td><strong>None detected</strong> — No gender topics in any reviewed materials</td></tr>
+<tr><td>Political content</td><td><strong>None detected</strong> — No partisan messaging found</td></tr>
+<tr><td>Religious/spiritual content</td><td><strong>None detected</strong> — Entirely secular framing</td></tr>
+<tr><td>Climate activism</td><td><strong>Present</strong> — המעגל השלם explicitly promotes climate awareness, sustainability, and prevention of "climate anxiety"</td></tr>
+<tr><td>New Age/spiritual elements</td><td><strong>Low</strong> — The "water and rock" symbolism (flow vs. stability, soul vs. body) has a mild holistic/spiritual flavor but is not prominent in the educational content</td></tr>
+<tr><td>Critical pedagogy</td><td><strong>Low-moderate</strong> — The emphasis on "cooperation over competition" and circle-based flat hierarchy aligns with progressive pedagogical philosophy but is not overtly political</td></tr>
+</table>
+<h3>The "Water and Rock" Philosophy</h3>
+<p>The business name symbolism (from the parent website maim-sela.co.il):</p>
+<ul>
+<li><strong>Water</strong> = flow, change, renewal, creation, spirit, desire to move/learn/advance/connect</li>
+<li><strong>Rock</strong> = stability, pause, reflection, body, desire to be present in "here and now"</li>
+<li><strong>Goal:</strong> "Balance between opposing forces — body and soul, child and adult, inner and outer, self and society"</li>
+<li><strong>Mission statement:</strong> "Wishing everyone the readiness and courage to walk the path of life and merge within themselves the different qualities in peace and love"</li>
+</ul>
+<p>This language has a mild holistic/wellness tone but is not overtly ideological.</p>
+
+</div>
+<div class="section" id="section-6">
+<h2>6. Financial Structure</h2>
+<h3>What We Know</h3>
+<ul>
+<li><strong>Current contract scope:</strong> 3 cities, 3 schools, NIS 30,000 budget</li>
+<li><strong>Business employs 11-50 people</strong> (AllJobs data)</li>
+<li><strong>Gefen supplier</strong> — Revenue primarily from school contracts through the Gefen catalog system</li>
+<li><strong>No public financial data</strong> — Sole proprietorship, no GuideStar filings</li>
+<li><strong>Job listings indicate national operations</strong> — Hiring in Negev region (Netivot, Bni Shemon, Ashkelon coast), suggesting geographic reach beyond Carmiel base</li>
+<li><strong>"15+ years, 500,000 children"</strong> — If accurate, this represents substantial cumulative scale</li>
+</ul>
+<h3>Financial Estimates (Speculative)</h3>
+<ul>
+<li>A NIS 30,000 contract for 3 schools is modest per-school spending (~NIS 10,000/school)</li>
+<li>If the business operates in many cities simultaneously (as the 500K claim suggests), aggregate annual revenue could be significantly higher</li>
+<li><strong>Cannot verify without business tax records or obudget data</strong> — No government transfer records found on obudget.org</li>
+</ul>
+
+</div>
+<div class="section" id="section-7">
+<h2>7. Government Approval — Gefen Catalog Status</h2>
+<h3>Confirmed Gefen Programs</h3>
+<table>
+<tr><th>Program</th><th>Gefen #</th><th>Type</th><th>Target</th><th>Status</th></tr>
+<tr><td>חכמת המעגל</td><td>5454</td><td>ירוק (Green)</td><td>K-8</td><td>Active</td></tr>
+<tr><td>המעגל השלם</td><td>26623</td><td>Not specified</td><td>3-12 + staff</td><td>Active</td></tr>
+</table>
+<h3>Second Gefen Entry: #16490</h3>
+<p>A search result also referenced Gefen #16490 for "חכמת המעגל" under "Educational Leadership" — focused on school teams and parents, covering "resilience and psychological wellbeing." This may be a teacher-training variant of the same program.</p>
+<h3>What Gefen Approval Means</h3>
+<ul>
+<li>The program passed Ministry of Education vetting for the Gefen catalog</li>
+<li>It is classified under recognized categories (SEL, life skills, school climate)</li>
+<li>Schools can use their Gefen budget allocation to purchase this program</li>
+<li><strong>Gefen approval does NOT imply endorsement of content quality</strong> — it means the program meets formal criteria for inclusion in the catalog</li>
+</ul>
+
+</div>
+<div class="section" id="section-8">
+<h2>8. Connection to Circle/Council/Restorative Justice Movements</h2>
+<h3>Summary of Ecosystem</h3>
+<table>
+<tr><th>Movement</th><th>Israel Presence</th><th>Connection to Mayim VeSela</th></tr>
+<tr><td>Way of Council (Ojai Foundation)</td><td>עמותת מעגל הקשבה, Uriel Center</td><td><strong>No evidence of connection</strong></td></tr>
+<tr><td>Restorative Justice Circles</td><td>Various school programs</td><td><strong>No evidence of connection</strong></td></tr>
+<tr><td>CASEL SEL Framework</td><td>Ministry of Education adopting</td><td><strong>Program uses SEL language</strong></td></tr>
+<tr><td>Laitman/Bnei Baruch "Wisdom of Circle"</td><td>Book published by Laitman</td><td><strong>No connection — name coincidence</strong></td></tr>
+</table>
+<p>The program uses the <strong>language and techniques</strong> of the circle tradition (talking stick, flat hierarchy, cooperative dialogue) but does not appear to be formally affiliated with any established circle training organization. Michael Sela Abraham appears to be an <strong>independent practitioner</strong> who has adapted circle principles into a branded educational product.</p>
+
+</div>
+<div class="section" id="section-9">
+<h2>9. Risk Assessment Summary</h2>
+<h3>Risk Factors (supporting the 4/5 rating)</h3>
+<ol>
+<li><strong>Operator opacity</strong> — No verifiable professional credentials, no public profile, no media presence</li>
+<li><strong>Sole proprietorship structure</strong> — No financial transparency, no governance oversight</li>
+<li><strong>Unverifiable claims</strong> — "15+ years, 500,000 children" cannot be independently confirmed</li>
+<li><strong>Climate activism component</strong> — המעגל השלם explicitly promotes climate activism and social entrepreneurship as educational goals</li>
+<li><strong>Progressive pedagogical philosophy</strong> — Cooperation-over-competition framework, flat hierarchy, "social responsibility" emphasis</li>
+<li><strong>No clear training lineage</strong> — Facilitator qualifications are unverifiable; no connection to established circle training institutions</li>
+</ol>
+<h3>Mitigating Factors</h3>
+<ol>
+<li><strong>Gefen approved</strong> — Multiple programs in the Ministry of Education catalog</li>
+<li><strong>No partisan political content detected</strong> — No evidence of party politics, NGO network affiliations, or advocacy campaigns</li>
+<li><strong>No gender/sexuality content detected</strong> — None found in any materials</li>
+<li><strong>No religious/spiritual content detected</strong> — Secular framework throughout</li>
+<li><strong>No Kabbalah/Laitman connection</strong> — Name coincidence only</li>
+<li><strong>Established business</strong> — 15+ years, AllJobs presence, multiple Gefen programs suggest a real operational track record</li>
+</ol>
+<h3>Open Questions for Further Investigation</h3>
+<ol>
+<li><strong>What are Michael Sela Abraham's actual qualifications?</strong> — Formal education, facilitation training, teaching certification?</li>
+<li><strong>What is the actual annual revenue?</strong> — Sole proprietorship opacity prevents verification</li>
+<li><strong>Who are the 11-50 employees?</strong> — What training do facilitators receive? The job listing mentions creative backgrounds (theater, movement, arts, mindfulness) but no formal SEL certification</li>
+<li><strong>What happens in the actual sessions?</strong> — The website describes methodology but not specific content delivered in classrooms. Parent observations or school evaluations would be more informative than marketing materials</li>
+<li><strong>Is the climate activism component age-appropriate?</strong> — "Social activism and entrepreneurship" as educational goals for grade 3+ may warrant content review</li>
+<li><strong>Why no social media presence at all?</strong> — For a business claiming 500K children served, the complete absence of Facebook/Instagram is unusual</li>
+</ol>
+
+</div>
+<div class="section" id="section-10">
+<h2>Sources</h2>
+<ul>
+<li><a href="https://circle.maim-sela.co.il/" target="_blank" rel="noopener">חכמת המעגל — Main Website</a></li>
+<li><a href="https://circle.maim-sela.co.il/programs/" target="_blank" rel="noopener">חכמת המעגל — Programs Page</a></li>
+<li><a href="https://mygefen.co.il/program/5454/" target="_blank" rel="noopener">חכמת המעגל — Gefen Catalog #5454</a></li>
+<li><a href="https://www.2school.co.il/InterData/essei/" target="_blank" rel="noopener">המעגל השלם — 2School Gefen Catalog #26623</a></li>
+<li><a href="http://www.maim-sela.co.il/" target="_blank" rel="noopener">מים וסלע — Parent Website</a></li>
+<li><a href="http://www.maim-sela.co.il/15021497-14881504149915041493.html" target="_blank" rel="noopener">מים וסלע — "Who We Are" Page</a></li>
+<li><a href="https://www.alljobs.co.il/Employer/HP/Default.aspx?cid=301710" target="_blank" rel="noopener">מים וסלע — AllJobs Employer Page</a></li>
+<li><a href="https://www.mem.org.il/he/node/8113" target="_blank" rel="noopener">מים וסלע — Job Listing (Negev)</a></li>
+<li><a href="https://hakshava.org/" target="_blank" rel="noopener">עמותת מעגל הקשבה — Way of Council Israel</a></li>
+<li><a href="https://www.urielcenter.co.il/" target="_blank" rel="noopener">מרכז אוריאל — Way of Council Training</a></li>
+<li><a href="https://www.michaellaitman.com/he/books/%D7%97%D7%9B%D7%9E%D7%AA-%D7%94%D7%9E%D7%A2%D7%92%D7%9C-%D7%9E%D7%99%D7%9B%D7%90%D7%9C-%D7%9C%D7%99%D7%99%D7%98%D7%9E%D7%9F/" target="_blank" rel="noopener">חכמת המעגל — Laitman Book (NOT connected)</a></li>
+<li><a href="https://circle.maim-sela.co.il/programs/%D7%AA%D7%94%D7%9C%D7%99%D7%9A-%D7%9E%D7%9E%D7%95%D7%A7%D7%93/" target="_blank" rel="noopener">Focused Process Page</a></li>
+</ul>
+
+</div>
+</div>
+
+<footer>
+  פרויקט זהות ציונית — דוח מחקר מעמיק | <a href="../">דירוג ערים</a> | <a href="../research/">כל הדוחות</a>
+</footer>
+
+</body>
+</html>

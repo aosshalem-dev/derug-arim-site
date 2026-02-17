@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>חלום חדש בע"מ (New Dream Ltd.) — דוח מחקר מעמיק</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background: #f5f5f8;
+  color: #1a1a2e;
+  direction: rtl;
+  line-height: 1.8;
+  font-size: 17px;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #1a1a2e; color: #fff;
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  overflow-x: auto; white-space: nowrap;
+}
+nav .brand { font-weight: 700; color: #ff8800; flex-shrink: 0; }
+nav a { color: #ccc; text-decoration: none; font-size: 0.85em; padding: 8px 4px; border-bottom: 2px solid transparent; flex-shrink: 0; }
+nav a:hover { color: #ff8800; border-bottom-color: #ff8800; }
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a5a8a 100%);
+  color: #fff; padding: 50px 20px 40px; text-align: center;
+}
+.hero h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+.hero .subtitle { font-size: 1.05em; color: #b0c4de; margin-bottom: 6px; }
+.hero .meta { font-size: 0.9em; color: #ff8800; margin-top: 8px; }
+.risk-badge {
+  display: inline-block; padding: 4px 16px; border-radius: 20px;
+  font-size: 0.85em; font-weight: 600; margin-top: 10px;
+}
+.risk-high { background: #e74c3c; color: #fff; }
+.risk-medium { background: #f39c12; color: #fff; }
+.risk-low { background: #27ae60; color: #fff; }
+.container { max-width: 860px; margin: 0 auto; padding: 30px 20px 80px; }
+.toc {
+  background: #fff; border-radius: 8px; padding: 22px 26px;
+  margin-bottom: 32px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.toc h2 { font-size: 1.15em; color: #2a5a8a; margin-bottom: 12px; border-bottom: 2px solid #667eea; padding-bottom: 6px; }
+.toc ol { padding-right: 22px; font-size: 0.93em; }
+.toc li { margin-bottom: 4px; }
+.toc a { color: #2a5a8a; text-decoration: none; }
+.toc a:hover { color: #ff8800; text-decoration: underline; }
+.section {
+  background: #fff; border-radius: 8px; padding: 28px 26px;
+  margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.section h2 { font-size: 1.4em; color: #1a1a2e; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #667eea; }
+.section h3 { font-size: 1.1em; color: #2a5a8a; margin: 18px 0 8px; }
+.section h4 { font-size: 1em; color: #444; margin: 14px 0 6px; }
+.section p { margin-bottom: 12px; text-align: justify; }
+.section ul, .section ol { padding-right: 22px; margin-bottom: 12px; }
+.section li { margin-bottom: 5px; }
+blockquote {
+  background: #f0f4fa; border-right: 4px solid #667eea;
+  padding: 12px 18px; margin: 12px 0; border-radius: 0 6px 6px 0;
+  font-size: 0.94em; color: #333;
+}
+.thesis {
+  background: #fff8f0; border-right: 3px solid #ff8800;
+  padding: 14px 18px; margin: 12px 0; border-radius: 0 5px 5px 0;
+  font-size: 0.96em; color: #6b4500;
+}
+table {
+  width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.91em;
+}
+th {
+  background: #667eea; color: #fff; padding: 8px 12px;
+  text-align: right; position: sticky; top: 44px; z-index: 5;
+}
+td {
+  padding: 7px 12px; border-bottom: 1px solid #e8e8e8;
+  text-align: right; vertical-align: top;
+}
+tr:nth-child(even) { background: #f8f9fc; }
+a { color: #2a5a8a; }
+a:hover { color: #ff8800; }
+.back-link {
+  display: inline-block; margin-bottom: 20px; padding: 6px 14px;
+  background: #667eea; color: #fff; border-radius: 4px;
+  text-decoration: none; font-size: 0.88em;
+}
+.back-link:hover { background: #5a6fd6; color: #fff; }
+footer {
+  text-align: center; padding: 30px 20px; color: #888; font-size: 0.85em;
+}
+strong { color: #1a1a2e; }
+code {
+  background: #f0f0f0; padding: 1px 5px; border-radius: 3px;
+  font-size: 0.9em;
+}
+.source-tag {
+  display: inline-block; background: #e8eef6; padding: 2px 8px;
+  border-radius: 10px; font-size: 0.78em; color: #2a5a8a;
+  margin: 2px 3px; text-decoration: none;
+}
+.source-tag:hover { background: #d0dff0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">דוח מחקר מעמיק</span>
+  <a href="../">חזרה לדירוג</a>
+  <a href="../research/">כל הדוחות</a>
+  <a href="#section-1">1. COMPANY REGISTRAT</a> <a href="#section-2">2. LEADERSHIP</a> <a href="#section-3">3. PROGRAMS IN GEFEN</a> <a href="#section-4">4. EDUCATIONAL PHILO</a> <a href="#section-5">5. FINANCIAL ANALYSI</a> <a href="#section-6">6. GOVERNMENT TIES</a> <a href="#section-7">7. CONTROVERSIES</a> <a href="#section-8">8. SDG / UNESCO / IN</a> <a href="#section-9">9. VALUES ALIGNMENT </a> <a href="#section-10">10. RISK SUMMARY</a> <a href="#section-11">SOURCES</a>
+</nav>
+
+<div class="hero">
+  <h1>חלום חדש בע"מ (New Dream Ltd.)</h1>
+  <div class="subtitle">Israeli Educational Company — Sustainability Education in Schools</div>
+  <div class="meta"></div>
+  
+</div>
+
+<div class="container">
+  <a href="../research/" class="back-link">← כל דוחות המחקר</a>
+  <div class="toc"><h2>תוכן עניינים</h2><ol><li><a href="#section-1">1. COMPANY REGISTRATION & LEGAL STRUCTURE</a></li><li><a href="#section-2">2. LEADERSHIP</a></li><li><a href="#section-3">3. PROGRAMS IN GEFEN CATALOG</a></li><li><a href="#section-4">4. EDUCATIONAL PHILOSOPHY — IDEOLOGICAL ANALYSIS</a></li><li><a href="#section-5">5. FINANCIAL ANALYSIS</a></li><li><a href="#section-6">6. GOVERNMENT TIES</a></li><li><a href="#section-7">7. CONTROVERSIES</a></li><li><a href="#section-8">8. SDG / UNESCO / INTERNATIONAL FRAMEWORK CONNECTIONS</a></li><li><a href="#section-9">9. VALUES ALIGNMENT TABLE</a></li><li><a href="#section-10">10. RISK SUMMARY</a></li><li><a href="#section-11">SOURCES</a></li></ol></div>
+  <div class="section" id="section-1">
+<h2>1. COMPANY REGISTRATION & LEGAL STRUCTURE</h2>
+<table>
+<tr><th>Field</th><th>Value</th></tr>
+<tr><td><strong>Legal Name</strong></td><td>חלום חדש בע"מ</td></tr>
+<tr><td><strong>Company Number (ח.פ.)</strong></td><td><strong>516512746</strong></td></tr>
+<tr><td><strong>Legal Form</strong></td><td>חברה בע"מ (Private Limited Company) — for-profit</td></tr>
+<tr><td><strong>Registered Address</strong></td><td>Emek / עמקה area (Western Galilee)</td></tr>
+<tr><td><strong>Website</strong></td><td>https://halomhadash.com</td></tr>
+<tr><td><strong>Phone</strong></td><td>073-374-5538</td></tr>
+<tr><td><strong>WhatsApp (Gefen contact)</strong></td><td>+972-52-830-8144</td></tr>
+<tr><td><strong>Email (Gefen contact)</strong></td><td>345mail@gmail.com</td></tr>
+<tr><td><strong>Email (General)</strong></td><td>contact@halomhadash.com</td></tr>
+<tr><td><strong>LinkedIn</strong></td><td>https://www.linkedin.com/company/halomhadash/</td></tr>
+<tr><td><strong>Founded</strong></td><td>2014</td></tr>
+<tr><td><strong>Classification in Gefen</strong></td><td>External — Private Sector (ספק חיצוני — מגזר פרטי)</td></tr>
+</table>
+<p><strong>Key point:</strong> This is a <strong>for-profit company</strong>, not an NGO/amuta. It operates as a commercial vendor to schools and municipalities through the Ministry of Education's Gefen reform system. The for-profit structure means it avoids amuta transparency requirements — no GuideStar filings, no public financial reports, no board disclosures. The Gefen contact email (345mail@gmail.com) is a personal Gmail address, not a corporate one, which is common among small operators.</p>
+<p><strong>Not found on obudget.org</strong> — indicating it may receive government funds only indirectly through the Gefen school budget allocation mechanism, not through direct government transfers.</p>
+
+</div>
+<div class="section" id="section-2">
+<h2>2. LEADERSHIP</h2>
+<h3>Founders (Co-CEOs until August 2024)</h3>
+<p><strong>Gonen Rozner</strong> — Co-founder</p>
+<ul>
+<li>From the Western Galilee</li>
+<li>Lived in an off-grid ecological community/village</li>
+<li>Described as the "strategic leader and primary spokesperson"</li>
+<li>Left day-to-day management in August 2024</li>
+<li>LinkedIn profile not publicly prominent</li>
+</ul>
+<p><strong>Yoav Nahari</strong> — Co-founder</p>
+<ul>
+<li>Childhood friend of Rozner from the Western Galilee</li>
+<li>Also lived in an off-grid ecological village</li>
+<li>In 2013, after global travels and learning, decided with Rozner to "channel their gifts to benefit the environment and society"</li>
+<li>Stepped back from CEO role in August 2024</li>
+</ul>
+<h3>Current CEO (since August 2024)</h3>
+<p><strong>Niv Cohen</strong> — CEO</p>
+<ul>
+<li><strong>Education:</strong> Architecture & Urban Planning (Technion), plus two degrees in business administration</li>
+<li><strong>Previous role:</strong> Head of Economic Development and Strategy Division, Western Galilee Regional Council Cluster</li>
+<li>Led public-private partnerships, including the "Jerusalem Gateway" national project and first PPP "umbrella agreement" in Kiryat Gat</li>
+<li>Experience working with government ministries, local authorities, and philanthropic organizations</li>
+<li>Personal interests: 5 AM club member, certified pastry chef, certified fitness trainer, former weightlifting champion</li>
+</ul>
+<h3>Full Team (from website)</h3>
+<table>
+<tr><th>Name</th><th>Role</th></tr>
+<tr><td>Yoav Nahari</td><td>Co-CEO (transitioning)</td></tr>
+<tr><td>Gonen Rozner</td><td>Co-CEO (transitioning)</td></tr>
+<tr><td>Niv Cohen</td><td>CEO</td></tr>
+<tr><td>Arez Vadro</td><td>Customer Relations Manager</td></tr>
+<tr><td>Gabriel Stratikovsky</td><td>Project Manager</td></tr>
+<tr><td>Samuel Trigger</td><td>Project Manager</td></tr>
+<tr><td>Elkana Hazan</td><td>Project Manager</td></tr>
+<tr><td>Nisim Pachima</td><td>Builder</td></tr>
+<tr><td>Liav Djampi</td><td>Builder</td></tr>
+<tr><td>Yitzhak Barnea</td><td>Builder</td></tr>
+<tr><td>Leslie-Ann Korobel</td><td>Communication Strategies Manager</td></tr>
+</table>
+<p><strong>Analysis:</strong> The team is ~11 people. Most are construction/project management. The pedagogical direction appears to come primarily from the founders. The new CEO (Niv Cohen) brings government and business development background — likely a scaling hire. His Western Galilee Regional Council connection suggests the company has close municipal relationships in that region.</p>
+
+</div>
+<div class="section" id="section-3">
+<h2>3. PROGRAMS IN GEFEN CATALOG</h2>
+<p>חלום חדש operates <strong>6 programs</strong> registered in the Ministry of Education's Gefen catalog:</p>
+<table>
+<tr><th>Program Code</th><th>Program Name</th><th>Category</th></tr>
+<tr><td><strong>2054</strong></td><td><strong>הנהגה ירוקה</strong> (Green Leadership)</td><td>Social-Values</td></tr>
+<tr><td><strong>32003</strong></td><td><strong>סביבות למידה חוץ כיתתיות</strong> (Outdoor Learning Environments)</td><td>Social-Values</td></tr>
+<tr><td><strong>3723</strong></td><td><strong>בשביל הקיימות</strong> (For Sustainability — natural learning space)</td><td>--</td></tr>
+<tr><td><strong>4537</strong></td><td><strong>גינה אורגנית לימודית</strong> (Educational Organic Garden)</td><td>--</td></tr>
+<tr><td><strong>4565</strong></td><td><strong>גן החושים</strong> (Sensory Garden — outdoor learning space)</td><td>--</td></tr>
+<tr><td><strong>32626</strong></td><td><strong>בשבילי הקיימות</strong> (Pathways of Sustainability — outdoor learning)</td><td>--</td></tr>
+</table>
+<h3>Program Details</h3>
+<p><strong>הנהגה ירוקה (Green Leadership) — Code 2054</strong></p>
+<ul>
+<li>Target: Grades 1-14 (elementary through high school)</li>
+<li>Promotes "ecological awareness while empowering participants individually"</li>
+<li>Students learn: practical tools, teamwork techniques, environmental action methods</li>
+<li>Creates "an environmental body operating to promote sustainability domains in schools"</li>
+<li>Fulfills <strong>60 hours of "social involvement"</strong> requirement for bagrut certification</li>
+<li>Content areas: environmental education, sustainability, civic engagement, decision-making, leadership development, community action</li>
+<li>Community participation including parents</li>
+</ul>
+<p><strong>סביבות למידה חוץ כיתתיות (Outdoor Learning) — Code 32003</strong></p>
+<ul>
+<li>Works with schools to identify and analyze needs for outdoor learning</li>
+<li>Trains educational staff with customized teaching methods</li>
+<li>Includes physical installations: outdoor classrooms, teepees, green pergolas, observation towers, outdoor libraries, natural study areas</li>
+</ul>
+<h3>Additional Named Programs (from Waldorf site)</h3>
+<ul>
+<li><strong>דור מתעורר</strong> (Awakening Generation) — sustainability workshop for children and youth</li>
+<li><strong>רכבת החושים</strong> (Sensory Train) — sensory experience program</li>
+</ul>
+
+</div>
+<div class="section" id="section-4">
+<h2>4. EDUCATIONAL PHILOSOPHY — IDEOLOGICAL ANALYSIS</h2>
+<p>This is the most important section. The company does not hide its ideological framework — it states it clearly on its website.</p>
+<h3>4.1 Eco-Pedagogy (אקו-פדגוגיה)</h3>
+<p>The company explicitly declares its educational model is based on <strong>eco-pedagogy</strong>. From their website:</p>
+<blockquote>"ארגון חלום חדש שואב השראה מאקו-פדגוגיה, השמה דגש על הסתכלות ביקורתית על מצב העולם ובמרכזו הסביבה הטבעית"</blockquote>
+<blockquote>("The organization draws inspiration from eco-pedagogy, which emphasizes <strong>a critical perspective on the state of the world</strong> with the natural environment at its center.")</blockquote>
+<p><strong>What is eco-pedagogy?</strong> Per academic literature and Wikipedia:</p>
+<ul>
+<li>An <strong>outgrowth of critical pedagogy</strong>, the educational philosophy of <strong>Paulo Freire</strong> (author of "Pedagogy of the Oppressed")</li>
+<li>Grew out of discussions at the 1992 Rio Earth Summit</li>
+<li>The Earth Charter was ratified in 2000 at the First International Symposium on the Earth Charter, organized by the <strong>Instituto Paulo Freire</strong> in collaboration with the Earth Council and <strong>UNESCO</strong></li>
+<li>Ecopedagogy's mission is to "develop a robust appreciation for the collective potentials of being human and to <strong>foster social justice</strong> throughout the world, as part of a <strong>future-oriented, ecological political vision that radically opposes the globalization of ideologies such as neoliberalism and imperialism</strong>"</li>
+<li>It critiques mainstream environmental education and "education for sustainable development" as <strong>insufficient</strong> — mere cosmetic reforms</li>
+<li>It aims to create <strong>"planetary consciousness"</strong> through revolutionary teaching</li>
+</ul>
+<h3>4.2 The Earth Charter (אמנת כדור הארץ)</h3>
+<p>חלום חדש explicitly endorses the principles of the Earth Charter on its educational model page. The Earth Charter advocates:</p>
+<ul>
+<li>Environmental quality</li>
+<li>Animal welfare</li>
+<li>Environmental integrity</li>
+<li><strong>Social and economic justice</strong></li>
+<li><strong>Democracy</strong></li>
+<li><strong>Non-violence and peace</strong></li>
+</ul>
+<p>The Earth Charter was developed by the Earth Council (Mikhail Gorbachev, Maurice Strong) and has been closely associated with UNESCO's sustainability education agenda. It is the foundational document of the eco-pedagogy movement.</p>
+<h3>4.3 Three-Pillar Sustainability Framework</h3>
+<p>From the Waldorf education site description of חלום חדש's programs:</p>
+<ol>
+<li><strong>Environmental:</strong> Ecology, sustainable agriculture, recycling, waste separation, energy efficiency</li>
+<li><strong>Social/Community:</strong> <strong>Multiculturalism, coexistence, community engagement, conscious consumption</strong></li>
+<li><strong>Personal:</strong> Individual development, identifying student strengths ("gifts"), empowerment, motivation for meaningful action</li>
+</ol>
+<p><strong>The social pillar is where ideological content enters.</strong> "Multiculturalism" (רב-תרבותיות) and "coexistence" (דו-קיום) are not environmentally neutral terms in the Israeli educational context — they are associated with specific progressive social frameworks.</p>
+<h3>4.4 Dialogical Education</h3>
+<p>The company states it practices "dialogical education" — they don't provide "pre-made answers" but help participants "raise questions and investigate them." This is directly from Freire's methodology, which opposes the "banking model" of education (teacher deposits knowledge into passive students) in favor of consciousness-raising through dialogue.</p>
+<h3>4.5 Connection to Waldorf Education</h3>
+<p>The company is listed on the <strong>Israeli Waldorf Education website</strong> (waldorf.co.il) under the "אדם ואדמה" (Man and Earth) curriculum section. Waldorf education (Rudolf Steiner) has its own controversial history but the connection here primarily reflects shared interest in experiential/nature-based learning.</p>
+<h3>4.6 Semantic Displacement Analysis</h3>
+<table>
+<tr><th>Term Used</th><th>Apparent Meaning</th><th>Actual Framework</th></tr>
+<tr><td>"קיימות" (Sustainability)</td><td>Environmental responsibility</td><td>Full SDG/Earth Charter framework including social justice</td></tr>
+<tr><td>"הנהגה ירוקה" (Green Leadership)</td><td>Environmental stewardship</td><td>Student activism body promoting "sustainability domains" (including social)</td></tr>
+<tr><td>"אקו-פדגוגיה" (Eco-pedagogy)</td><td>Nature education</td><td>Paulo Freire's critical pedagogy applied to environment — anti-neoliberal political vision</td></tr>
+<tr><td>"הסתכלות ביקורתית" (Critical perspective)</td><td>Critical thinking</td><td>Critical pedagogy — consciousness-raising about systemic injustice</td></tr>
+<tr><td>"קיימות חברתית" (Social sustainability)</td><td>Community wellbeing</td><td>Multiculturalism, coexistence, social-economic justice</td></tr>
+<tr><td>"חינוך דיאלוגי" (Dialogical education)</td><td>Discussion-based learning</td><td>Freirean methodology — rejection of authority-based knowledge transmission</td></tr>
+<tr><td>"אזרחות פעילה" (Active citizenship)</td><td>Civic responsibility</td><td>Environmental and social activism</td></tr>
+</table>
+
+</div>
+<div class="section" id="section-5">
+<h2>5. FINANCIAL ANALYSIS</h2>
+<h3>5.1 Revenue Model</h3>
+<p>חלום חדש earns revenue through:</p>
+<ol>
+<li><strong>Gefen program purchases</strong> — Schools and municipalities use their Gefen budget allocation to purchase חלום חדש programs. The company is listed as an external private-sector provider. Total Gefen allocation nationwide: ~NIS 2.4 billion/year.</li>
+</ol>
+<ol>
+<li><strong>Physical installations</strong> — Design, construction, and installation of outdoor classrooms, gardens, greenhouses, musical gardens, ecological pools, etc. These are tangible products sold to schools and municipalities.</li>
+</ol>
+<ol>
+<li><strong>Teacher training</strong> — Professional development workshops for educators on outdoor learning pedagogy.</li>
+</ol>
+<ol>
+<li><strong>Ministry of Education grants</strong> — The company assists schools in applying for MoE "קול קורא" (call for proposals) grants of up to <strong>NIS 500,000 per school</strong> for yard development. In 2019, they accompanied 7 schools through this process. Total annual MoE budget for this: ~NIS 15 million.</li>
+</ol>
+<h3>5.2 Known Financial Data</h3>
+<table>
+<tr><th>Metric</th><th>Value</th></tr>
+<tr><td>Budget in Gefen mapping (your data)</td><td>NIS 143,164</td></tr>
+<tr><td>MoE grant per school (max)</td><td>NIS 500,000</td></tr>
+<tr><td>Schools assisted for MoE grants (2019)</td><td>7</td></tr>
+<tr><td>Total MoE outdoor learning budget</td><td>~NIS 15 million/year</td></tr>
+<tr><td>Matching fund requirement from municipalities</td><td>10-40% depending on socioeconomic ranking</td></tr>
+</table>
+<h3>5.3 Financial Opacity</h3>
+<p>As a בע"מ (private limited company), חלום חדש has <strong>no obligation to publish financial reports publicly</strong>. Unlike an amuta, there are:</p>
+<ul>
+<li>No GuideStar filings</li>
+<li>No public annual reports</li>
+<li>No board meeting minutes</li>
+<li>No public breakdown of revenues by source</li>
+</ul>
+<p>The NIS 143,164 from the Gefen mapping likely represents only the direct Gefen program budget, not the company's total revenue which would include physical installations, grants, and direct municipal contracts.</p>
+
+</div>
+<div class="section" id="section-6">
+<h2>6. GOVERNMENT TIES</h2>
+<h3>6.1 Ministry of Education Integration</h3>
+<ul>
+<li><strong>6 programs approved</strong> in the Gefen catalog (program codes: 2054, 32003, 3723, 4537, 4565, 32626)</li>
+<li>Programs classified as "Social-Values" category</li>
+<li>Company assists schools in applying for MoE grants</li>
+<li>Operates within the <strong>Gefen reform framework</strong> — the MoE's system for external educational program providers</li>
+</ul>
+<h3>6.2 Green School Certification Connection</h3>
+<p>The MoE and Ministry of Environmental Protection jointly run the "Green School" certification program. One of the 6 certification criteria is <strong>"הנהגה ירוקה" (Green Leadership)</strong> — the same name as חלום חדש's program (code 2054). This suggests חלום חדש's Green Leadership program may directly serve schools seeking green certification, making the company a <strong>pipeline for the government's green school initiative</strong>.</p>
+<p>Green-certified schools receive up to NIS 13,000 for green infrastructure and staff training.</p>
+<h3>6.3 Municipal Relationships</h3>
+<p>Known municipal/institutional partnerships (from testimonials and case studies):</p>
+<ul>
+<li><strong>Me'ona</strong> — Maaleh HaGalil School (Western Galilee Regional Council)</li>
+<li><strong>Ramla</strong> — Ort Ramla</li>
+<li><strong>Kibbutz Sharid</strong> — Shagia School (Jezreel Valley)</li>
+<li><strong>Levon</strong> — HaRakess School</li>
+<li><strong>Afula</strong> — Beit Ori (special needs community center)</li>
+<li><strong>Rehovot</strong> — Nitsaney HaMada Elementary School</li>
+</ul>
+<p>The TheMarker article (Feb 2026) states they work with "hundreds of educational institutions in dozens of local municipalities."</p>
+<h3>6.4 New CEO's Government Background</h3>
+<p>Niv Cohen (CEO since August 2024) previously led the Economic Development and Strategy Division at the <strong>Western Galilee Regional Council Cluster</strong>, working directly with government ministries. This suggests strong institutional connections for future government contract acquisition.</p>
+
+</div>
+<div class="section" id="section-7">
+<h2>7. CONTROVERSIES</h2>
+<p><strong>No public controversies found.</strong> No negative press coverage, no complaints, no legal actions, no critical articles. The search returned only positive testimonials and self-published content.</p>
+<p>This is notable but not necessarily exculpatory — the company is relatively small and operates in a niche (outdoor learning infrastructure) that rarely generates controversy. The ideological concerns are embedded in the pedagogical framework, not in visible scandals.</p>
+
+</div>
+<div class="section" id="section-8">
+<h2>8. SDG / UNESCO / INTERNATIONAL FRAMEWORK CONNECTIONS</h2>
+<table>
+<tr><th>Framework</th><th>Connection</th></tr>
+<tr><td><strong>Earth Charter</strong></td><td>Explicitly endorsed on educational model page</td></tr>
+<tr><td><strong>Eco-pedagogy</strong></td><td>Explicitly stated as foundational methodology</td></tr>
+<tr><td><strong>Paulo Freire / Instituto Paulo Freire</strong></td><td>Intellectual ancestor — eco-pedagogy created by Freire Institute</td></tr>
+<tr><td><strong>UNESCO</strong></td><td>Indirect — Earth Charter developed in collaboration with UNESCO; eco-pedagogy presented at UNESCO events</td></tr>
+<tr><td><strong>UN SDGs</strong></td><td>Not explicitly referenced by name, but the three-pillar sustainability framework (environmental, social, personal) maps to SDG principles</td></tr>
+<tr><td><strong>Waldorf Education</strong></td><td>Listed on Israeli Waldorf site under "Man and Earth" curriculum</td></tr>
+<tr><td><strong>Green School Certification</strong></td><td>Aligned with MoE/Ministry of Environmental Protection certification program</td></tr>
+</table>
+
+</div>
+<div class="section" id="section-9">
+<h2>9. VALUES ALIGNMENT TABLE</h2>
+<p>Scoring framework for ideological assessment in Israeli educational context:</p>
+<table>
+<tr><th>Value</th><th>Score (1-5)</th><th>Evidence</th></tr>
+<tr><td><strong>Transparency</strong></td><td>2/5</td><td>For-profit structure avoids public financial disclosure; Gmail contact for Gefen; no published financials</td></tr>
+<tr><td><strong>Political neutrality</strong></td><td>2/5</td><td>Eco-pedagogy is explicitly anti-neoliberal and pro-social-justice; Earth Charter endorsement includes social-economic justice</td></tr>
+<tr><td><strong>Environmental education</strong></td><td>5/5</td><td>Core competency; physical installations are genuinely useful; outdoor learning is well-supported by evidence</td></tr>
+<tr><td><strong>Parental choice/awareness</strong></td><td>2/5</td><td>Parents likely see "outdoor classroom" and "garden" — not "eco-pedagogy" or "critical perspective on world conditions"</td></tr>
+<tr><td><strong>Ideological disclosure</strong></td><td>3/5</td><td>The website openly states the eco-pedagogy framework — it's not hidden, but requires digging past the product catalog</td></tr>
+<tr><td><strong>SDG/UNESCO alignment</strong></td><td>5/5</td><td>Full alignment through Earth Charter and eco-pedagogy lineage</td></tr>
+<tr><td><strong>Social engineering content</strong></td><td>3/5</td><td>"Multiculturalism," "coexistence," "social-economic justice" as part of "social sustainability" pillar</td></tr>
+<tr><td><strong>Academic rigor</strong></td><td>3/5</td><td>Eco-pedagogy is a legitimate academic field, but its political orientation is contested</td></tr>
+</table>
+
+</div>
+<div class="section" id="section-10">
+<h2>10. RISK SUMMARY</h2>
+<h3>What this company IS:</h3>
+<ul>
+<li>A for-profit company selling outdoor learning infrastructure (physical products) and pedagogical training to schools</li>
+<li>Genuinely useful physical products: outdoor classrooms, gardens, greenhouses</li>
+<li>Approved by Ministry of Education in the Gefen system</li>
+<li>~11 employees, based in Western Galilee</li>
+<li>Operating since 2014, "hundreds of projects" in "dozens of municipalities"</li>
+</ul>
+<h3>What this company ALSO is:</h3>
+<ul>
+<li>An explicit practitioner of <strong>eco-pedagogy</strong> — a political educational philosophy rooted in Paulo Freire's critical pedagogy</li>
+<li>An endorser of the <strong>Earth Charter</strong> including social-economic justice and peace principles</li>
+<li>A framework that embeds <strong>social justice, multiculturalism, and coexistence</strong> alongside environmental education under the umbrella of "sustainability"</li>
+<li>A <strong>for-profit entity</strong> that avoids the transparency requirements of the amuta system</li>
+<li>A pipeline between MoE green certification, Gefen budgets, and an ideologically-grounded pedagogical approach</li>
+</ul>
+<h3>The core question:</h3>
+<p>When a school purchases "outdoor classrooms" or "green leadership" from חלום חדש, are they getting:</p>
+<p>(a) Garden beds and benches, or</p>
+<p>(b) A Freirean pedagogical framework that treats environmental education as inseparable from social justice activism?</p>
+<p><strong>The answer appears to be both.</strong> The physical products are real and useful. The pedagogy is real and ideological. The NIS 143,164 in Gefen budgets funds both.</p>
+<h3>Open questions for further investigation:</h3>
+<ol>
+<li><strong>Actual classroom content:</strong> What do facilitators teach in the 60-hour "Green Leadership" program? Request curriculum materials.</li>
+<li><strong>Ownership structure:</strong> Who holds shares in the בע"מ? Companies Registrar search needed (ח.פ. 516512746).</li>
+<li><strong>Total revenue:</strong> The NIS 143,164 Gefen figure is likely a fraction of total revenue. What are installation costs per school?</li>
+<li><strong>Founder backgrounds:</strong> Gonen Rozner and Yoav Nahari's ecological village background — which village? What community?</li>
+<li><strong>Earth Charter alignment:</strong> Does the "Green Leadership" program explicitly teach Earth Charter principles to students?</li>
+<li><strong>Municipal procurement:</strong> How does the company win contracts — competitive tender or direct Gefen selection?</li>
+</ol>
+
+</div>
+<div class="section" id="section-11">
+<h2>SOURCES</h2>
+<ul>
+<li><a href="https://halomhadash.com/" target="_blank" rel="noopener">חלום חדש — Homepage</a></li>
+<li><a href="https://halomhadash.com/our-vision" target="_blank" rel="noopener">חלום חדש — Our Vision</a></li>
+<li><a href="https://halomhadash.com/our-educational-model/" target="_blank" rel="noopener">חלום חדש — Educational Model (Eco-Pedagogy)</a></li>
+<li><a href="https://halomhadash.com/meet-the-team/" target="_blank" rel="noopener">חלום חדש — Meet the Team</a></li>
+<li><a href="https://halomhadash.com/new-ceo-niv-cohen/" target="_blank" rel="noopener">חלום חדש — New CEO Niv Cohen</a></li>
+<li><a href="https://halomhadash.com/gefen-reform/" target="_blank" rel="noopener">חלום חדש — Gefen Reform</a></li>
+<li><a href="https://halomhadash.com/budget-upgrading-school-yard/" target="_blank" rel="noopener">חלום חדש — Budget for School Yards</a></li>
+<li><a href="https://halomhadash.com/recommendations/" target="_blank" rel="noopener">חלום חדש — Recommendations</a></li>
+<li><a href="https://halomhadash.com/nitsaney-hamada-school-rehovot/" target="_blank" rel="noopener">חלום חדש — Case Study: Nitsaney HaMada, Rehovot</a></li>
+<li><a href="https://www.themarker.com/labels/educatio/2026-02-01/ty-article-labels/0000019b-fed9-d58f-a9db-ffd91b860000" target="_blank" rel="noopener">TheMarker — חלום חדש article (Feb 2026)</a></li>
+<li><a href="https://www.waldorf.co.il/%D7%97%D7%9C%D7%95%D7%9D-%D7%97%D7%93%D7%A9-%D7%A4%D7%A8%D7%95%D7%99%D7%99%D7%A7%D7%98-%D7%97%D7%99%D7%A0%D7%95%D7%9A-%D7%9C%D7%A7%D7%99%D7%99%D7%9E%D7%95%D7%AA/" target="_blank" rel="noopener">Waldorf Israel — חלום חדש project</a></li>
+<li><a href="https://www.2school.co.il/InterData/ehro/" target="_blank" rel="noopener">Gefen Catalog — הנהגה ירוקה (Code 2054)</a></li>
+<li><a href="https://www.2school.co.il/InterData/iehhi/" target="_blank" rel="noopener">Gefen Catalog — סביבות למידה חוץ כיתתיות (Code 32003)</a></li>
+<li><a href="https://pob.education.gov.il/edu-info/green-school/" target="_blank" rel="noopener">MoE — Green School Certification</a></li>
+<li><a href="https://pop.education.gov.il/teaching-tools/teaching-practices/search-teaching-practices/non-classroom-learning-environments/" target="_blank" rel="noopener">MoE — Outdoor Learning Environments</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Ecopedagogy" target="_blank" rel="noopener">Ecopedagogy — Wikipedia</a></li>
+<li><a href="https://www.linkedin.com/company/halomhadash/" target="_blank" rel="noopener">LinkedIn — חלום חדש</a></li>
+<li><a href="https://www.rashuiot.co.il/html5/portalLookup.taf?_id=68471&did=1118&G=8834&SM=8817" target="_blank" rel="noopener">Municipal Portal — חלום חדש</a></li>
+</ul>
+
+</div>
+</div>
+
+<footer>
+  פרויקט זהות ציונית — דוח מחקר מעמיק | <a href="../">דירוג ערים</a> | <a href="../research/">כל הדוחות</a>
+</footer>
+
+</body>
+</html>

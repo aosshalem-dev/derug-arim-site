@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NIR (NEAR) Association (ע"ר) — דוח מחקר מעמיק</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background: #f5f5f8;
+  color: #1a1a2e;
+  direction: rtl;
+  line-height: 1.8;
+  font-size: 17px;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #1a1a2e; color: #fff;
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  overflow-x: auto; white-space: nowrap;
+}
+nav .brand { font-weight: 700; color: #ff8800; flex-shrink: 0; }
+nav a { color: #ccc; text-decoration: none; font-size: 0.85em; padding: 8px 4px; border-bottom: 2px solid transparent; flex-shrink: 0; }
+nav a:hover { color: #ff8800; border-bottom-color: #ff8800; }
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a5a8a 100%);
+  color: #fff; padding: 50px 20px 40px; text-align: center;
+}
+.hero h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+.hero .subtitle { font-size: 1.05em; color: #b0c4de; margin-bottom: 6px; }
+.hero .meta { font-size: 0.9em; color: #ff8800; margin-top: 8px; }
+.risk-badge {
+  display: inline-block; padding: 4px 16px; border-radius: 20px;
+  font-size: 0.85em; font-weight: 600; margin-top: 10px;
+}
+.risk-high { background: #e74c3c; color: #fff; }
+.risk-medium { background: #f39c12; color: #fff; }
+.risk-low { background: #27ae60; color: #fff; }
+.container { max-width: 860px; margin: 0 auto; padding: 30px 20px 80px; }
+.toc {
+  background: #fff; border-radius: 8px; padding: 22px 26px;
+  margin-bottom: 32px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.toc h2 { font-size: 1.15em; color: #2a5a8a; margin-bottom: 12px; border-bottom: 2px solid #667eea; padding-bottom: 6px; }
+.toc ol { padding-right: 22px; font-size: 0.93em; }
+.toc li { margin-bottom: 4px; }
+.toc a { color: #2a5a8a; text-decoration: none; }
+.toc a:hover { color: #ff8800; text-decoration: underline; }
+.section {
+  background: #fff; border-radius: 8px; padding: 28px 26px;
+  margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.section h2 { font-size: 1.4em; color: #1a1a2e; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #667eea; }
+.section h3 { font-size: 1.1em; color: #2a5a8a; margin: 18px 0 8px; }
+.section h4 { font-size: 1em; color: #444; margin: 14px 0 6px; }
+.section p { margin-bottom: 12px; text-align: justify; }
+.section ul, .section ol { padding-right: 22px; margin-bottom: 12px; }
+.section li { margin-bottom: 5px; }
+blockquote {
+  background: #f0f4fa; border-right: 4px solid #667eea;
+  padding: 12px 18px; margin: 12px 0; border-radius: 0 6px 6px 0;
+  font-size: 0.94em; color: #333;
+}
+.thesis {
+  background: #fff8f0; border-right: 3px solid #ff8800;
+  padding: 14px 18px; margin: 12px 0; border-radius: 0 5px 5px 0;
+  font-size: 0.96em; color: #6b4500;
+}
+table {
+  width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.91em;
+}
+th {
+  background: #667eea; color: #fff; padding: 8px 12px;
+  text-align: right; position: sticky; top: 44px; z-index: 5;
+}
+td {
+  padding: 7px 12px; border-bottom: 1px solid #e8e8e8;
+  text-align: right; vertical-align: top;
+}
+tr:nth-child(even) { background: #f8f9fc; }
+a { color: #2a5a8a; }
+a:hover { color: #ff8800; }
+.back-link {
+  display: inline-block; margin-bottom: 20px; padding: 6px 14px;
+  background: #667eea; color: #fff; border-radius: 4px;
+  text-decoration: none; font-size: 0.88em;
+}
+.back-link:hover { background: #5a6fd6; color: #fff; }
+footer {
+  text-align: center; padding: 30px 20px; color: #888; font-size: 0.85em;
+}
+strong { color: #1a1a2e; }
+code {
+  background: #f0f0f0; padding: 1px 5px; border-radius: 3px;
+  font-size: 0.9em;
+}
+.source-tag {
+  display: inline-block; background: #e8eef6; padding: 2px 8px;
+  border-radius: 10px; font-size: 0.78em; color: #2a5a8a;
+  margin: 2px 3px; text-decoration: none;
+}
+.source-tag:hover { background: #d0dff0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">דוח מחקר מעמיק</span>
+  <a href="../">חזרה לדירוג</a>
+  <a href="../research/">כל הדוחות</a>
+  <a href="#section-1">1. REGISTRATION DETA</a> <a href="#section-2">2. WHAT IS TEC4SCHOO</a> <a href="#section-3">3. FINANCIAL ANALYSI</a> <a href="#section-4">4. LEADERSHIP</a> <a href="#section-5">5. IDEOLOGY: "MULTIC</a> <a href="#section-6">6. INTERNATIONAL CON</a> <a href="#section-7">7. GOVERNMENT APPROV</a> <a href="#section-8">8. CONNECTION TO YAD</a> <a href="#section-9">9. VALUES ALIGNMENT </a> <a href="#section-10">10. RISK ASSESSMENT</a> <a href="#section-11">SOURCES</a>
+</nav>
+
+<div class="hero">
+  <h1>NIR (NEAR) Association (ע"ר)</h1>
+  <div class="subtitle">TEC4Schools Program for Online Multicultural Collaborative Learning</div>
+  <div class="meta">Research Date: 2026-02-17</div>
+  
+</div>
+
+<div class="container">
+  <a href="../research/" class="back-link">← כל דוחות המחקר</a>
+  <div class="toc"><h2>תוכן עניינים</h2><ol><li><a href="#section-1">1. REGISTRATION DETAILS</a></li><li><a href="#section-2">2. WHAT IS TEC4SCHOOLS? THE PROGRAM IN DETAIL</a></li><li><a href="#section-3">3. FINANCIAL ANALYSIS</a></li><li><a href="#section-4">4. LEADERSHIP</a></li><li><a href="#section-5">5. IDEOLOGY: "MULTICULTURAL" -- WHAT VALUES DOES IT PROMOTE?</a></li><li><a href="#section-6">6. INTERNATIONAL CONNECTIONS</a></li><li><a href="#section-7">7. GOVERNMENT APPROVAL -- GEFEN STATUS</a></li><li><a href="#section-8">8. CONNECTION TO YAD B'YAD (HAND IN HAND) AND OTHER COEXISTENCE ORGANIZATIONS</a></li><li><a href="#section-9">9. VALUES ALIGNMENT TABLE</a></li><li><a href="#section-10">10. RISK ASSESSMENT</a></li><li><a href="#section-11">SOURCES</a></li></ol></div>
+  <div class="section" id="section-1">
+<h2>1. REGISTRATION DETAILS</h2>
+<table>
+<tr><th>Field</th><th>Value</th></tr>
+<tr><td><strong>Organization Name (Hebrew)</strong></td><td>ניר (ע''ר)</td></tr>
+<tr><td><strong>Organization Name (English)</strong></td><td>NIR / NEAR</td></tr>
+<tr><td><strong>Amuta Number</strong></td><td>580634996</td></tr>
+<tr><td><strong>Year Established</strong></td><td>2017</td></tr>
+<tr><td><strong>Registered Address</strong></td><td>1 Galil Yam Street, 4690500 (Glil Yam, near Herzliya)</td></tr>
+<tr><td><strong>Legal Status</strong></td><td>Registered Association (עמותה רשומה)</td></tr>
+<tr><td><strong>Sector</strong></td><td>Education, Training & Professional Development</td></tr>
+<tr><td><strong>Website</strong></td><td>https://www.near.org.il</td></tr>
+<tr><td><strong>GuideStar Page</strong></td><td>https://www.guidestar.org.il/organization/580634996</td></tr>
+</table>
+<p><strong>Note on naming:</strong> "NIR" is the Hebrew name (ניר), commemorating Nir Diskin. "NEAR" is the English branding, playing on the dual meaning -- the name Nir and the concept of bringing people "near" to each other. The registered address at Glil Yam is a kibbutz in the Herzliya area, which is also where the Diskin family company (DISKIN Ltd.) is located, suggesting family roots in this community.</p>
+<p><strong>Founding context:</strong> The organization was established in 2017 in memory of Nir Diskin, who died at age 30 after a long battle with cancer. According to the TEC Center website, "Nir believed strongly in social justice and was passionate about promoting ideals of tolerance and acceptance." The amuta was established by the Diskin family together with the three founders/directors of the TEC Center.</p>
+
+</div>
+<div class="section" id="section-2">
+<h2>2. WHAT IS TEC4SCHOOLS? THE PROGRAM IN DETAIL</h2>
+<h3>Origin and Timeline</h3>
+<ul>
+<li><strong>TEC Center</strong> was established in <strong>2004</strong> as a collaborative initiative of three teacher education colleges representing different cultural sectors: Seminar Hakibbutzim (secular Jewish), Al-Qasemi Academic College (Arab Muslim), and Talpiot College of Education (religious Jewish).</li>
+<li>From <strong>2011</strong>, the TEC Center has been housed at the <strong>Mofet Institute</strong> (מכון מופ"ת), a national center for research and development in teacher education.</li>
+<li><strong>TEC4Schools</strong> specifically has been operating since <strong>2013</strong>, targeting elementary school children (primarily 5th grade).</li>
+<li>The <strong>NEAR Association</strong> was registered in <strong>2017</strong>, formalizing the organizational and technological infrastructure that supports TEC4Schools.</li>
+</ul>
+<h3>How the Program Works</h3>
+<p>TEC4Schools operates on the <strong>TOCE model</strong> (Trust Building in Online Collaborative Environments), which is an adaptation of <strong>Allport's Contact Hypothesis</strong> to online environments. The key elements:</p>
+<ol>
+<li><strong>Cluster formation:</strong> Three classes from different cultural sectors are grouped into a "cluster." Each cluster contains one class from each of three sectors (e.g., secular Jewish, religious Jewish, Arab).</li>
+</ol>
+<ol>
+<li><strong>Mixed small groups:</strong> Students within each cluster are divided into groups of 6 -- two students from each sector. These mixed groups work together throughout the school year.</li>
+</ol>
+<ol>
+<li><strong>Progressive communication model:</strong> Communication begins text-only (to neutralize visual prejudices and stereotypes), then progresses through audio, images, and video. This deliberate progression builds trust before revealing identity markers.</li>
+</ol>
+<ol>
+<li><strong>Automatic translation:</strong> The NEAR platform includes built-in translation capabilities so each child types in their mother tongue and the text is displayed in the other language. The system recognizes the user's mother tongue automatically.</li>
+</ol>
+<ol>
+<li><strong>Face-to-face meeting:</strong> After months of online collaboration, students finally meet in person -- by which time trust has already been established.</li>
+</ol>
+<ol>
+<li><strong>TEC Island:</strong> A virtual 3D world where students meet as avatars and learn about different religions and cultures in Israel through games and collaborative activities.</li>
+</ol>
+<h3>Who Participates -- The "Multicultural" Question</h3>
+<p>The program explicitly connects students from different population sectors in Israel:</p>
+<ul>
+<li><strong>Secular Jewish</strong> students</li>
+<li><strong>Religious Jewish</strong> students</li>
+<li><strong>Arab Muslim</strong> students</li>
+<li>(Potentially Druze, Bedouin, and Christian Arab students as well, though the primary documented trio is secular-Jewish / religious-Jewish / Arab)</li>
+</ul>
+<p><strong>This is NOT international multicultural education.</strong> The "multicultural" framing refers to <strong>intra-Israeli</strong> diversity -- bridging the deep sectoral divides within Israeli society. The partner populations are primarily Jewish (secular and religious) and Arab citizens of Israel.</p>
+<h3>Scale (as of latest data)</h3>
+<ul>
+<li><strong>3,200+ students</strong> per year</li>
+<li><strong>120+ classes</strong></li>
+<li><strong>100+ elementary schools</strong> across Israel</li>
+<li>Study tracks include: heritage, English, sciences, geography-human-environment</li>
+<li>Primarily <strong>5th grade</strong> students</li>
+<li><strong>13,000+ children total</strong> have participated (cumulative since 2013)</li>
+<li><strong>3,000+ college/university students</strong> have participated in TEC academic programs</li>
+<li><strong>400+ teachers</strong> have been involved</li>
+</ul>
+
+</div>
+<div class="section" id="section-3">
+<h2>3. FINANCIAL ANALYSIS</h2>
+<table>
+<tr><th>Metric</th><th>Value</th></tr>
+<tr><td><strong>Annual Turnover (2023)</strong></td><td>1,010,068 NIS</td></tr>
+<tr><td><strong>Sector Median</strong></td><td>2,119,903 NIS</td></tr>
+<tr><td><strong>Employees</strong></td><td>5</td></tr>
+<tr><td><strong>Volunteers</strong></td><td>20</td></tr>
+<tr><td><strong>Government Transfers (past 3 years)</strong></td><td><strong>ZERO</strong> -- no government funding recorded</td></tr>
+</table>
+<h3>Financial Assessment</h3>
+<p>The NIR/NEAR association is financially small -- about half the median for its sector. Key observations:</p>
+<ol>
+<li><strong>No government funding:</strong> This is notable. The organization receives zero direct government transfers despite operating in education. This means the program is funded through other channels -- likely Mofet Institute support, academic grants, foundation donations, and/or Diskin family funding.</li>
+</ol>
+<ol>
+<li><strong>Institutional embedding:</strong> The TEC Center is housed within the Mofet Institute, which is a government-funded body. This means significant infrastructure costs (salaries of the three directors, office space, research support) are borne by Mofet/the colleges, NOT by NIR/NEAR's own budget. The 1M NIS budget likely covers the technology platform (NEAR network), program coordination, and field operations.</li>
+</ol>
+<ol>
+<li><strong>The 2,000 NIS Gefen entry:</strong> The user notes a Gefen catalog listing at 2,000 NIS for 2 schools in 2 cities. This is an extremely low per-school cost, suggesting schools pay a nominal fee while the real program costs are subsidized. At 2,000 NIS total for 2 schools, this is 1,000 NIS per school -- barely covering administrative overhead.</li>
+</ol>
+<ol>
+<li><strong>True cost is hidden:</strong> The real cost of TEC4Schools includes:</li>
+</ol>
+<ul>
+<li>Salaries of 3 TEC Center directors (paid by their respective colleges)</li>
+<li>Mofet Institute overhead</li>
+<li>Technology platform development and maintenance</li>
+<li>EU Horizon2020 research grants (KIDS4ALLL project)</li>
+<li>Academic research funding The 1M NIS amuta budget is just the visible tip.</li>
+</ul>
+<ol>
+<li><strong>No US entity found:</strong> Unlike many Israeli education NGOs, no US-based Friends of NEAR or similar was found.</li>
+</ol>
+
+</div>
+<div class="section" id="section-4">
+<h2>4. LEADERSHIP</h2>
+<h3>NEAR Association Founders</h3>
+<p>The NEAR association was founded by the <strong>Diskin family</strong> together with three academics:</p>
+<table>
+<tr><th>Person</th><th>Role</th><th>Affiliation</th><th>Background</th></tr>
+<tr><td><strong>Dr. Miri Shonfeld</strong></td><td>TEC Center Head; NEAR co-founder</td><td>Kibbutzim College of Education, Tel Aviv; Mofet Institute</td><td>Professor; Secretary General of IAIE (International Association for Intercultural Education); LinkedIn active</td></tr>
+<tr><td><strong>Dr. Elaine Hoter</strong></td><td>TEC Center co-founder; NEAR co-founder</td><td>Talpiot College of Education (religious Jewish)</td><td>Co-founder since 2004; listed on ZoomInfo as TEC Center co-founder</td></tr>
+<tr><td><strong>Dr. Asmaa N. Ganayem</strong></td><td>TEC Center co-founder; NEAR co-founder</td><td>Al-Qasemi Academic College of Education, Baqa al-Gharbiyye</td><td>Head of academic courses at TEC Center; head of Technological Center at Al-Qasemi</td></tr>
+<tr><td><strong>Diskin Family</strong></td><td>Founding family</td><td>Based in Glil Yam</td><td>Established NEAR in memory of Nir Diskin; company DISKIN Ltd. located in Glil Yam</td></tr>
+</table>
+<h3>About Nir Diskin</h3>
+<p>Nir Diskin died at age 30 after a long battle with cancer. He "believed strongly in social justice and was passionate about promoting ideals of tolerance and acceptance." The diskin.com website has a dedicated page about the NEAR education system, suggesting the family maintains active involvement. The ZoomInfo records show a Nir Diskin who was a computer science teacher at Ein Gedi High School -- this may be the same person (education + technology background), though this cannot be confirmed.</p>
+<h3>Awards</h3>
+<p>In <strong>2018</strong>, President Reuven Rivlin presented <strong>The Jerusalem Unity Prize</strong> to Dr. Miri Shonfeld, Dr. Elaine Hoter, Dr. Asmaa N. Ganayem, and the NEAR Educational Organization. The prize committee described the NEAR method as "an innovative model for forming relationships between different sectors and creating constructive dialogue among thousands of participants."</p>
+
+</div>
+<div class="section" id="section-5">
+<h2>5. IDEOLOGY: "MULTICULTURAL" -- WHAT VALUES DOES IT PROMOTE?</h2>
+<h3>Stated Mission (from GuideStar)</h3>
+<p>The organization's registered goals include:</p>
+<ul>
+<li>"Initiating and encouraging dialogue and understanding between different cultures in Israeli society" (ייזום ועידוד שיח והבנה בין התרבויות השונות בחברה הישראלית)</li>
+<li>Developing intercultural relationships based on <strong>democratic and pluralistic values</strong></li>
+<li>Leading to "change in mutual perceptions between different streams in Israeli society"</li>
+<li>Promoting "joint creative and innovative work rooted in trust and mutual respect"</li>
+</ul>
+<h3>Theoretical Framework</h3>
+<p>The program is explicitly built on <strong>Allport's Contact Hypothesis</strong> (1954), which posits that intergroup contact under certain conditions (equal status, common goals, institutional support, no competition) reduces prejudice. The TEC adaptation applies this to online environments, creating a gradual trust-building process.</p>
+<h3>Ideological Assessment</h3>
+<p><strong>What it IS:</strong></p>
+<ul>
+<li>Classical coexistence/contact-theory work, adapted to the digital age</li>
+<li>Focused on reducing prejudice and building trust between Israeli population sectors</li>
+<li>Academically rigorous -- based on decades of contact hypothesis research</li>
+<li>Uses technology to create "neutral ground" where initial contact is text-only, removing visual identity markers</li>
+<li>Aims to create "agents of social change" -- students who carry tolerance into adulthood</li>
+</ul>
+<p><strong>What it is NOT (based on available evidence):</strong></p>
+<ul>
+<li>Not explicitly post-nationalist or anti-Zionist</li>
+<li>Not politically radical -- it operates within the education system, uses Ministry of Education portals, and was awarded a prize by the President of Israel</li>
+<li>Not identical to Hand in Hand's bilingual school model -- TEC4Schools is virtual/online, not physical co-location</li>
+<li>Does not appear to advocate for specific political solutions to the Israeli-Palestinian conflict</li>
+</ul>
+<p><strong>Semantic displacement analysis (per methodology):</strong></p>
+<p>The term "multicultural" (רב-תרבותי) here means intra-Israeli diversity across sectors -- secular Jewish, religious Jewish, Arab. It does NOT use the more politically loaded terms like "shared society" (חברה משותפת), "binational" (דו-לאומי), or "post-Zionist" (פוסט-ציוני). The framing is closer to "pluralism" (פלורליזם) and "tolerance" (סובלנות).</p>
+<p><strong>Hebrew vs. English messaging comparison:</strong> Both are consistent -- no significant messaging gap was detected. The English-language academic publications and the Hebrew TEC Center materials use similar framing.</p>
+<h3>Research Findings on Impact</h3>
+<p>Peer-reviewed research on TEC programs (published in ERIC, ResearchGate, Frontiers, Taylor & Francis) consistently shows:</p>
+<ul>
+<li><strong>Significant reduction in negative attitudes</strong> toward other cultural groups among participants</li>
+<li>Participants become "technology-proficient agents of social change"</li>
+<li>The progressive communication model (text-first, then voice, then video, then face-to-face) is effective at building trust before identity markers are revealed</li>
+</ul>
+
+</div>
+<div class="section" id="section-6">
+<h2>6. INTERNATIONAL CONNECTIONS</h2>
+<h3>Direct Connections</h3>
+<table>
+<tr><th>Network / Project</th><th>Nature of Connection</th><th>Details</th></tr>
+<tr><td><strong>IAIE (International Association for Intercultural Education)</strong></td><td>Dr. Miri Shonfeld is <strong>Secretary General</strong></td><td>iaie.org -- Global network for intercultural education research and practice</td></tr>
+<tr><td><strong>KIDS4ALLL (Horizon2020)</strong></td><td>EU research project, Israel participated</td><td>Focused on migrant children integration; Israel represented by Levinsky College of Education; comparative study with Turkey</td></tr>
+<tr><td><strong>Frontiers in Human Dynamics</strong></td><td>Published research on Israel-Turkey comparison</td><td>"Navigating collaborative learning across national boundaries" (2024)</td></tr>
+<tr><td><strong>InFo-TED</strong></td><td>International Forum for Teacher Educator Development</td><td>TEC projects featured</td></tr>
+<tr><td><strong>Silver Lining for Learning</strong></td><td>Podcast/webinar series</td><td>Episode 228: "Virtual Bridges for Intercultural Learning: The TEC Center Story"</td></tr>
+<tr><td><strong>MOOC Island</strong></td><td>Virtual learning environment</td><td>Team includes TEC Center members</td></tr>
+</table>
+<h3>Academic Publications (Selected)</h3>
+<ol>
+<li>Ganayem, A., Hoter, E., & Shonfeld, M. -- "Lessons Learned From 15 Years of Multicultural Online Collaborative Learning in Israel" (Taylor & Francis, 2020)</li>
+<li>"TEC Center: Linking Technology, Education and Cultural Diversity" (ERIC, Journal of Educational Technology, 2012)</li>
+<li>"Connecting Cultures in Conflict through ICT in Israel" (ResearchGate, 2017)</li>
+<li>"Using ICT to increase equity and intercultural competence" (ResearchGate, 2015)</li>
+<li>"Empowering children as messengers of peace: time matters" (Intercultural Education, Vol 35, No 4, 2024)</li>
+<li>"Learning in digital environments: a model for cross-cultural alignment" (PMC/NIH, 2021)</li>
+</ol>
+<h3>Assessment of International Network</h3>
+<p>Dr. Shonfeld's role as Secretary General of IAIE places the TEC Center at the heart of the global intercultural education community. The KIDS4ALLL Horizon2020 project (14 partner organizations from 10+ countries) further embeds the methodology in European educational research. This is a legitimate academic network, not a covert political operation.</p>
+
+</div>
+<div class="section" id="section-7">
+<h2>7. GOVERNMENT APPROVAL -- GEFEN STATUS</h2>
+<p><strong>Gefen (גפ"ן) Catalog:</strong> TEC4Schools appears in the Ministry of Education's portal for teaching practitioners (pop.education.gov.il) under "ICT services in education > collaborative learning." It also appears on the official MoE educational practices search page.</p>
+<p><strong>Key observations:</strong></p>
+<ul>
+<li>The program has a dedicated page on the Ministry of Education's teaching portal (pop.education.gov.il)</li>
+<li>The user data indicates a Gefen listing at 2,000 NIS for 2 schools / 2 cities -- this is a very small allocation</li>
+<li>A specific Gefen catalog number was not found in web searches</li>
+<li>The program appears to operate primarily through academic/institutional channels (Mofet Institute) rather than as a commercial Gefen vendor</li>
+</ul>
+<p><strong>Regulatory status:</strong> The program operates within the formal education system, has Ministry of Education recognition (portal presence), and was honored with a presidential prize. There are no known regulatory issues, state comptroller findings, or legal actions against the organization.</p>
+
+</div>
+<div class="section" id="section-8">
+<h2>8. CONNECTION TO YAD B'YAD (HAND IN HAND) AND OTHER COEXISTENCE ORGANIZATIONS</h2>
+<h3>Direct comparison with Hand in Hand (יד ביד)</h3>
+<table>
+<tr><th>Dimension</th><th>NEAR/TEC4Schools</th><th>Hand in Hand (יד ביד)</th></tr>
+<tr><td><strong>Model</strong></td><td>Virtual/online collaborative learning</td><td>Physical bilingual schools</td></tr>
+<tr><td><strong>Student interaction</strong></td><td>Online via NEAR platform; one face-to-face meeting per year</td><td>Daily in-person co-learning</td></tr>
+<tr><td><strong>Scale</strong></td><td>3,200+ students, 100+ schools</td><td>~2,000 students, 7 schools</td></tr>
+<tr><td><strong>Registration</strong></td><td>Amuta 580634996</td><td>Amuta 580293710</td></tr>
+<tr><td><strong>Budget</strong></td><td>~1M NIS</td><td>Much larger (multi-million NIS)</td></tr>
+<tr><td><strong>Government funding</strong></td><td>Zero direct transfers</td><td>Receives significant government funding</td></tr>
+<tr><td><strong>Language</strong></td><td>Each student types in mother tongue (auto-translated)</td><td>Full bilingual instruction (Hebrew + Arabic)</td></tr>
+<tr><td><strong>Ideology</strong></td><td>Contact Hypothesis / pluralism</td><td>"Shared society" / binational education</td></tr>
+<tr><td><strong>Political profile</strong></td><td>Low -- academic/educational framing</td><td>Higher -- politically identified with left/liberal</td></tr>
+</table>
+<h3>Organizational connections found</h3>
+<p><strong>No direct organizational link</strong> was found between NEAR/NIR and Hand in Hand, Yad B'Yad, or other specific coexistence organizations. The search found:</p>
+<ul>
+<li>NEAR operates independently through the TEC Center/Mofet Institute framework</li>
+<li>The ideological space is adjacent (both work on Jewish-Arab contact in education) but the models, structures, and networks are different</li>
+<li>NEAR is more academically oriented (university-based founders, peer-reviewed research, IAIE connection)</li>
+<li>Hand in Hand is more community/politically oriented (bilingual schools, shared communities, larger public profile)</li>
+</ul>
+
+</div>
+<div class="section" id="section-9">
+<h2>9. VALUES ALIGNMENT TABLE</h2>
+<table>
+<tr><th>Value</th><th>NEAR/TEC4Schools Position</th><th>Evidence</th></tr>
+<tr><td><strong>Jewish-Arab coexistence</strong></td><td>Strongly promotes</td><td>Core mission; mixed Jewish-Arab student groups</td></tr>
+<tr><td><strong>Democratic values</strong></td><td>Explicitly stated</td><td>GuideStar mission: "democratic and pluralistic values"</td></tr>
+<tr><td><strong>Tolerance/acceptance</strong></td><td>Central principle</td><td>Named after Nir Diskin's commitment to "tolerance and acceptance"</td></tr>
+<tr><td><strong>Academic rigor</strong></td><td>Strong</td><td>Peer-reviewed research, university-based founders</td></tr>
+<tr><td><strong>Transparency</strong></td><td>Moderate</td><td>GuideStar page exists but financial details limited</td></tr>
+<tr><td><strong>Zionism/national identity</strong></td><td>Neutral/silent</td><td>Program does not address national identity questions explicitly</td></tr>
+<tr><td><strong>Post-nationalism</strong></td><td>No evidence found</td><td>No anti-national or post-Zionist language detected</td></tr>
+<tr><td><strong>Political activism</strong></td><td>Low</td><td>Academic framing, not politically activist</td></tr>
+<tr><td><strong>Religious respect</strong></td><td>Embedded in model</td><td>Religious Jewish, secular Jewish, and Muslim students participate as equals</td></tr>
+<tr><td><strong>Government alignment</strong></td><td>Compatible</td><td>MoE portal presence; presidential prize; no conflicts found</td></tr>
+</table>
+
+</div>
+<div class="section" id="section-10">
+<h2>10. RISK ASSESSMENT</h2>
+<h3>Risk Rating: 3/5 (user-assigned) -- Assessment</h3>
+<p><strong>Factors supporting moderate risk:</strong></p>
+<ul>
+<li>"Multicultural" and "coexistence" framing may introduce subtle normalization of "shared society" narratives</li>
+<li>International network connections (IAIE, EU Horizon2020) embed the program in European intercultural education paradigms that may diverge from Israeli mainstream values</li>
+<li>The progressive trust-building model (hide identity first, reveal later) could be seen as training students to suppress cultural/national identity markers</li>
+<li>Zero government funding despite operating in public schools raises questions about funding sources (family? foundations? EU grants?)</li>
+</ul>
+<p><strong>Factors reducing risk:</strong></p>
+<ul>
+<li>Solidly grounded in mainstream social psychology (Allport's Contact Hypothesis -- 70+ years of research)</li>
+<li>Honored with Jerusalem Unity Prize by President Rivlin (2018) -- highest-level government recognition</li>
+<li>Operates within MoE framework, not outside it</li>
+<li>Very small budget (1M NIS) and scope (2 schools, 2,000 NIS in the user's context)</li>
+<li>Academic rather than political orientation</li>
+<li>No connection found to politically radical organizations</li>
+<li>Three founders represent all three sectors (secular Jewish, religious Jewish, Arab) -- balanced</li>
+</ul>
+<p><strong>Open questions for further investigation:</strong></p>
+<ol>
+<li>Detailed funding sources -- who provides the 1M NIS? Diskin family? Mofet Institute pass-through? EU grants?</li>
+<li>Which specific schools in which cities are using the program in the Gefen context?</li>
+<li>Teacher training content -- what specific materials do teachers receive? Are there ideological components beyond the contact-hypothesis framework?</li>
+<li>Post-October 7 impact -- has the program continued? Changed? How are Jewish-Arab tensions handled?</li>
+<li>What is the content of the "heritage" study track? Does it present Israeli/Jewish/Arab heritage in a balanced way?</li>
+</ol>
+
+</div>
+<div class="section" id="section-11">
+<h2>SOURCES</h2>
+<h3>Primary Sources</h3>
+<ul>
+<li><a href="https://www.guidestar.org.il/organization/580634996" target="_blank" rel="noopener">GuideStar Israel -- NIR (580634996)</a></li>
+<li><a href="https://www.near.org.il" target="_blank" rel="noopener">NEAR Official Website</a></li>
+<li><a href="https://mofet-web.macam.ac.il/tec/en/%D7%A2%D7%9E%D7%95%D7%AA%D7%AA-%D7%A0%D7%99%D7%A8/" target="_blank" rel="noopener">TEC Center -- About NEAR Educational Organization</a></li>
+<li><a href="https://mofet-web.macam.ac.il/tec/en/tec4schools/" target="_blank" rel="noopener">TEC Center -- TEC4Schools Program</a></li>
+<li><a href="https://pop.education.gov.il/sherutey-tiksuv-bachinuch/lemida-shitofit1/tec4schools/" target="_blank" rel="noopener">Ministry of Education Portal -- TEC4Schools</a></li>
+<li><a href="https://www.diskin.com/near-educationsystem" target="_blank" rel="noopener">Diskin.com -- NEAR Education System</a></li>
+</ul>
+<h3>Academic Sources</h3>
+<ul>
+<li><a href="https://files.eric.ed.gov/fulltext/EJ1102021.pdf" target="_blank" rel="noopener">ERIC -- TEC Center: Linking Technology, Education and Cultural Diversity (2012)</a></li>
+<li><a href="https://www.frontiersin.org/journals/human-dynamics/articles/10.3389/fhumd.2024.1364693/full" target="_blank" rel="noopener">Frontiers -- Navigating collaborative learning: Israel and Turkey comparative study (2024)</a></li>
+<li><a href="https://www.taylorfrancis.com/chapters/edit/10.4324/9780367821661-3/lessons-learned-15-years-multicultural-online-collaborative-learning-israel-asmaa-ganayem-elaine-hoter-miri-shonfeld" target="_blank" rel="noopener">Taylor & Francis -- Lessons Learned From 15 Years of Multicultural Online Collaborative Learning</a></li>
+<li><a href="https://www.researchgate.net/profile/Miri-Shonfeld" target="_blank" rel="noopener">ResearchGate -- Miri Shonfeld Profile</a></li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7906085/" target="_blank" rel="noopener">PMC/NIH -- Learning in digital environments: cross-cultural alignment model</a></li>
+<li><a href="https://www.tandfonline.com/doi/abs/10.1080/14675986.2024.2386182" target="_blank" rel="noopener">Intercultural Education -- Empowering children as messengers of peace (2024)</a></li>
+</ul>
+<h3>International Network Sources</h3>
+<ul>
+<li><a href="https://iaie.org/team-members/miri-shonfeld" target="_blank" rel="noopener">IAIE -- Miri Shonfeld Profile</a></li>
+<li><a href="https://www.kids4alll.eu/project" target="_blank" rel="noopener">KIDS4ALLL EU Horizon2020 Project</a></li>
+<li><a href="https://cordis.europa.eu/project/id/101004807" target="_blank" rel="noopener">CORDIS -- KIDS4ALLL Fact Sheet</a></li>
+<li><a href="https://info-ted.eu/collaborative-learning-and-the-tec-tecnology-education-and-cultural-diversity-projects/" target="_blank" rel="noopener">InFo-TED -- TEC Collaborative Learning Projects</a></li>
+<li><a href="https://silverliningforlearning.org/episode-228-virtual-bridges-for-intercultural-learning-the-tec-center-story/" target="_blank" rel="noopener">Silver Lining for Learning -- Episode 228: TEC Center Story</a></li>
+</ul>
+<h3>Awards</h3>
+<ul>
+<li><a href="https://unityday.org.il/the-jerusalem-unity-prize/past-winners/" target="_blank" rel="noopener">Jerusalem Unity Prize -- Past Winners</a></li>
+</ul>
+<h3>Other</h3>
+<ul>
+<li><a href="https://next.obudget.org/i/org/association/580634996" target="_blank" rel="noopener">obudget.org -- NIR (no government transfers found)</a></li>
+<li><a href="https://www.linkedin.com/in/miri-shonfeld-89787434/" target="_blank" rel="noopener">Miri Shonfeld LinkedIn</a></li>
+<li><a href="https://www.zoominfo.com/p/Elaine-Hoter/255382782" target="_blank" rel="noopener">Elaine Hoter ZoomInfo</a></li>
+</ul>
+<p><em>Report compiled 2026-02-17 by Claude Opus 4.6 agent. Research methodology per teams/org_research/team.json.</em></p>
+
+</div>
+</div>
+
+<footer>
+  פרויקט זהות ציונית — דוח מחקר מעמיק | <a href="../">דירוג ערים</a> | <a href="../research/">כל הדוחות</a>
+</footer>
+
+</body>
+</html>

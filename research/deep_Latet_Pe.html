@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>לתת פה (Latet Pe / "Dare to Share") — דוח מחקר מעמיק</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background: #f5f5f8;
+  color: #1a1a2e;
+  direction: rtl;
+  line-height: 1.8;
+  font-size: 17px;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #1a1a2e; color: #fff;
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  overflow-x: auto; white-space: nowrap;
+}
+nav .brand { font-weight: 700; color: #ff8800; flex-shrink: 0; }
+nav a { color: #ccc; text-decoration: none; font-size: 0.85em; padding: 8px 4px; border-bottom: 2px solid transparent; flex-shrink: 0; }
+nav a:hover { color: #ff8800; border-bottom-color: #ff8800; }
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a5a8a 100%);
+  color: #fff; padding: 50px 20px 40px; text-align: center;
+}
+.hero h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+.hero .subtitle { font-size: 1.05em; color: #b0c4de; margin-bottom: 6px; }
+.hero .meta { font-size: 0.9em; color: #ff8800; margin-top: 8px; }
+.risk-badge {
+  display: inline-block; padding: 4px 16px; border-radius: 20px;
+  font-size: 0.85em; font-weight: 600; margin-top: 10px;
+}
+.risk-high { background: #e74c3c; color: #fff; }
+.risk-medium { background: #f39c12; color: #fff; }
+.risk-low { background: #27ae60; color: #fff; }
+.container { max-width: 860px; margin: 0 auto; padding: 30px 20px 80px; }
+.toc {
+  background: #fff; border-radius: 8px; padding: 22px 26px;
+  margin-bottom: 32px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.toc h2 { font-size: 1.15em; color: #2a5a8a; margin-bottom: 12px; border-bottom: 2px solid #667eea; padding-bottom: 6px; }
+.toc ol { padding-right: 22px; font-size: 0.93em; }
+.toc li { margin-bottom: 4px; }
+.toc a { color: #2a5a8a; text-decoration: none; }
+.toc a:hover { color: #ff8800; text-decoration: underline; }
+.section {
+  background: #fff; border-radius: 8px; padding: 28px 26px;
+  margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.section h2 { font-size: 1.4em; color: #1a1a2e; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #667eea; }
+.section h3 { font-size: 1.1em; color: #2a5a8a; margin: 18px 0 8px; }
+.section h4 { font-size: 1em; color: #444; margin: 14px 0 6px; }
+.section p { margin-bottom: 12px; text-align: justify; }
+.section ul, .section ol { padding-right: 22px; margin-bottom: 12px; }
+.section li { margin-bottom: 5px; }
+blockquote {
+  background: #f0f4fa; border-right: 4px solid #667eea;
+  padding: 12px 18px; margin: 12px 0; border-radius: 0 6px 6px 0;
+  font-size: 0.94em; color: #333;
+}
+.thesis {
+  background: #fff8f0; border-right: 3px solid #ff8800;
+  padding: 14px 18px; margin: 12px 0; border-radius: 0 5px 5px 0;
+  font-size: 0.96em; color: #6b4500;
+}
+table {
+  width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.91em;
+}
+th {
+  background: #667eea; color: #fff; padding: 8px 12px;
+  text-align: right; position: sticky; top: 44px; z-index: 5;
+}
+td {
+  padding: 7px 12px; border-bottom: 1px solid #e8e8e8;
+  text-align: right; vertical-align: top;
+}
+tr:nth-child(even) { background: #f8f9fc; }
+a { color: #2a5a8a; }
+a:hover { color: #ff8800; }
+.back-link {
+  display: inline-block; margin-bottom: 20px; padding: 6px 14px;
+  background: #667eea; color: #fff; border-radius: 4px;
+  text-decoration: none; font-size: 0.88em;
+}
+.back-link:hover { background: #5a6fd6; color: #fff; }
+footer {
+  text-align: center; padding: 30px 20px; color: #888; font-size: 0.85em;
+}
+strong { color: #1a1a2e; }
+code {
+  background: #f0f0f0; padding: 1px 5px; border-radius: 3px;
+  font-size: 0.9em;
+}
+.source-tag {
+  display: inline-block; background: #e8eef6; padding: 2px 8px;
+  border-radius: 10px; font-size: 0.78em; color: #2a5a8a;
+  margin: 2px 3px; text-decoration: none;
+}
+.source-tag:hover { background: #d0dff0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">דוח מחקר מעמיק</span>
+  <a href="../">חזרה לדירוג</a>
+  <a href="../research/">כל הדוחות</a>
+  <a href="#section-1">1. Registration Deta</a> <a href="#section-2">2. Financial Analysi</a> <a href="#section-3">3. Leadership</a> <a href="#section-4">4. Programs — What I</a> <a href="#section-5">5. "יש לי למי לספר" </a> <a href="#section-6">6. Connection to MoE</a> <a href="#section-7">7. Foreign Funding /</a> <a href="#section-8">8. Connection to Oth</a> <a href="#section-9">9. Controversies and</a> <a href="#section-10">10. Values Alignment</a> <a href="#section-11">11. Open Questions f</a> <a href="#section-12">12. Source List</a>
+</nav>
+
+<div class="hero">
+  <h1>לתת פה (Latet Pe / "Dare to Share")</h1>
+  <div class="subtitle">Amuta 580617223 | Child Protection / "Muganut" Programs</div>
+  <div class="meta">Research Date: 2026-02-17</div>
+  
+</div>
+
+<div class="container">
+  <a href="../research/" class="back-link">← כל דוחות המחקר</a>
+  <div class="toc"><h2>תוכן עניינים</h2><ol><li><a href="#section-1">1. Registration Details</a></li><li><a href="#section-2">2. Financial Analysis</a></li><li><a href="#section-3">3. Leadership</a></li><li><a href="#section-4">4. Programs — What Is Taught Under "Muganut" (מוגנות)</a></li><li><a href="#section-5">5. "יש לי למי לספר" (I Have Someone to Tell) — Analysis</a></li><li><a href="#section-6">6. Connection to MoE Program #2322</a></li><li><a href="#section-7">7. Foreign Funding / Schusterman / JDC Connection</a></li><li><a href="#section-8">8. Connection to Other Child-Protection-Framed Organizations</a></li><li><a href="#section-9">9. Controversies and Parental Pushback</a></li><li><a href="#section-10">10. Values Alignment Table</a></li><li><a href="#section-11">11. Open Questions for Further Investigation</a></li><li><a href="#section-12">12. Source List</a></li></ol></div>
+  <div class="section" id="section-1">
+<h2>1. Registration Details</h2>
+<table>
+<tr><th>Field</th><th>Value</th></tr>
+<tr><td><strong>Legal Name</strong></td><td>לתת פה - תכניות מוגנות לילדים ונוער (ע"ר)</td></tr>
+<tr><td><strong>English Name</strong></td><td>Latet Pe – Dare to Share</td></tr>
+<tr><td><strong>Amuta Number</strong></td><td><strong>580617223</strong> (NOTE: user queried 580573489 — this appears to be incorrect; all official sources list 580617223)</td></tr>
+<tr><td><strong>Registration Date</strong></td><td>May 11, 2015</td></tr>
+<tr><td><strong>Address</strong></td><td>Ben Tabai 8, Jerusalem 9359108 (Haruv Children's Campus, Mt. Scopus)</td></tr>
+<tr><td><strong>Type</strong></td><td>Registered Association (ע"ר)</td></tr>
+<tr><td><strong>Status</strong></td><td>Active, proper management certification</td></tr>
+<tr><td><strong>Sector</strong></td><td>Education, Training</td></tr>
+<tr><td><strong>GuideStar</strong></td><td>https://www.guidestar.org.il/organization/580617223</td></tr>
+<tr><td><strong>obudget</strong></td><td>https://next.obudget.org/i/org/association/580617223</td></tr>
+<tr><td><strong>Website</strong></td><td>https://www.latetpe.org.il</td></tr>
+<tr><td><strong>Knesset</strong></td><td>Approved under Section 46 (tax-deductible donations) in May 2018 Finance Committee session</td></tr>
+</table>
+<p><strong>Note on Amuta Number Discrepancy:</strong> The user queried amuta 580573489. All official registries (GuideStar, obudget, serviced.co.il, Knesset records) list Latet Pe as 580617223. The number 580573489 may be a typo or may belong to a different entity.</p>
+
+</div>
+<div class="section" id="section-2">
+<h2>2. Financial Analysis</h2>
+<h3>Revenue (from obudget.org and GuideStar)</h3>
+<table>
+<tr><th>Year</th><th>Revenue (NIS)</th><th>Source</th></tr>
+<tr><td>2024</td><td><strong>4,337,270</strong></td><td>obudget.org</td></tr>
+<tr><td>2023</td><td>Est. ~3.5-4M</td><td>Extrapolated from growth trajectory</td></tr>
+<tr><td>2020</td><td>Est. ~1M</td><td>Based on 400% growth claim</td></tr>
+</table>
+<p><strong>Sector median</strong> (comparable educational programs): 1,345,480 NIS — meaning Latet Pe operates at <strong>3.2x the sector median</strong>.</p>
+<h3>Government Funding: Almost None</h3>
+<table>
+<tr><th>Source</th><th>Amount</th><th>Details</th></tr>
+<tr><td>Ministry of Health</td><td>1,200 NIS</td><td>Single lecture contract</td></tr>
+<tr><td><strong>Total government</strong></td><td><strong>1,200 NIS</strong></td><td><strong>0.03% of revenue</strong></td></tr>
+</table>
+<p>This is a critical finding: <strong>99.97% of revenue comes from non-government sources</strong> — primarily private donations. For an organization operating in 600+ schools under MoE program #2322, the near-total absence of government funding is unusual. Most Gefen catalog organizations receive significant government transfers.</p>
+<h3>Staff</h3>
+<table>
+<tr><th>Year</th><th>Employees</th><th>Facilitators (contractors?)</th><th>Volunteers</th></tr>
+<tr><td>2024</td><td>9 (salaried)</td><td>~70-80</td><td>0</td></tr>
+<tr><td>2023</td><td>~60 facilitators reported</td></tr>
+</table>
+<p>The discrepancy between 9 salaried employees and 70-80 facilitators suggests the facilitators are independent contractors, which has implications for training oversight and content control.</p>
+<h3>Financial Opacity Assessment</h3>
+<ul>
+<li><strong>Revenue growth</strong>: ~400% over 2020-2023 (from organizational claims)</li>
+<li><strong>Primary funding</strong>: Private donations (identity of major donors unknown)</li>
+<li><strong>Government funding</strong>: Negligible (1,200 NIS total)</li>
+<li><strong>No US 501(c)(3) entity found</strong> for Latet Pe specifically</li>
+<li><strong>Physical co-location</strong> with Schusterman-funded campus (see Section 7)</li>
+</ul>
+<p><strong>Open question</strong>: Who are the major private donors funding 4.3M NIS annually? This data is not publicly available.</p>
+
+</div>
+<div class="section" id="section-3">
+<h2>3. Leadership</h2>
+<h3>Founders & Executives</h3>
+<table>
+<tr><th>Name</th><th>Role</th><th>Background</th></tr>
+<tr><td><strong>רן יהושע (Ran Yehoshua)</strong></td><td>CEO / Co-Founder</td><td>Entrepreneur, group facilitator, lecturer on healthy sexuality, educator, actor, musician. Published articles on child protection at EdNow (הגיע זמן חינוך). Writes for Zman Yisrael.</td></tr>
+<tr><td><strong>שניאור וולקר (Shnior Volker/Walker)</strong></td><td>Educational Director / Co-Founder</td><td>MA in Psychodrama. Certified specialist in sexual abuse treatment for children. <strong>Registered facilitator with the Israel Association for Sexual Education (SEI / האגודה לחינוך מיני)</strong>. 20 years experience. Works in Hebrew and English.</td></tr>
+</table>
+<h3>Key Staff</h3>
+<table>
+<tr><th>Name</th><th>Role</th></tr>
+<tr><td>Eidit Vider</td><td>Office Manager</td></tr>
+<tr><td>Tal Arlich</td><td>Client Manager</td></tr>
+<tr><td>Natalie Kadum</td><td>Finance Coordinator</td></tr>
+<tr><td>Sheina Adel Markus</td><td>Deputy Director of Projects</td></tr>
+<tr><td>Suzy Sharbit</td><td>Training Coordinator</td></tr>
+<tr><td>Shira Filber</td><td>Operations Coordinator</td></tr>
+<tr><td>Itay Aviaor</td><td>Content Coordinator</td></tr>
+</table>
+<h3>Board Members</h3>
+<p>GuideStar page for board members exists at https://www.guidestar.org.il/organization/580617223/people but is JavaScript-rendered (Salesforce) and cannot be scraped. Board member names not retrievable via web tools.</p>
+<h3>Shnior Volker's SEI Connection — Significance</h3>
+<p>Shnior Volker is listed on the <strong>Israel Association for Sexual Education (SEI)</strong> website as a facilitator: https://sei.org.il/שניאור-וולקר/</p>
+<p>SEI (founded March 2023) is an organization whose stated scope includes:</p>
+<ul>
+<li>Healthy sexuality</li>
+<li>Sexual orientation and gender identity</li>
+<li>LGBTQ+ content</li>
+<li>Pornography education</li>
+<li>Gender equality</li>
+<li>Masturbation and body exploration</li>
+</ul>
+<p>SEI's founding steering committee explicitly included "LGBTQ+ organizations." While Latet Pe's own materials do not overtly include LGBTQ content, <strong>the educational director's professional affiliation places him within this ecosystem</strong>. This is relevant context for parents evaluating what "healthy sexuality" means in Latet Pe's curriculum.</p>
+
+</div>
+<div class="section" id="section-4">
+<h2>4. Programs — What Is Taught Under "Muganut" (מוגנות)</h2>
+<h3>Program Categories</h3>
+<ol>
+<li><strong>Sexual Protection (מוגנות מינית)</strong> — Grades 1-6 and youth</li>
+<li><strong>Online Protection (מוגנות ברשת)</strong> — Internet safety, grades 7-9</li>
+<li><strong>Healthy Sexuality (מיניות בריאה)</strong> — Puberty, adolescent development</li>
+<li><strong>Emergency Protection</strong> — Post-Oct 7 programs for evacuees</li>
+<li><strong>Inclusion Programs</strong> — Aligned with MoE inclusion/integration framework</li>
+</ol>
+<h3>Elementary School Program (Grades 1-6) — Three Stages</h3>
+<p><strong>Stage 1: Lectures for Parents and Educators</strong></p>
+<ul>
+<li>"From Chaos to Order" presentations</li>
+<li>What is "normal and abnormal" behavior</li>
+<li>Warning signs, secrets, suspected abuse</li>
+</ul>
+<p><strong>Stage 2: Parent-Child Workshops</strong></p>
+<ul>
+<li>"Protecting What's Good" — parent-child dialogue</li>
+<li>Identifying "confusing situations"</li>
+<li>Teaching rules in "clear, age-appropriate language"</li>
+<li>"Creating Anchors" (grades 3-6) — physical and emotional anchors for handling confusing situations</li>
+</ul>
+<p><strong>Stage 3: Musical Performance — "יש לי למי לספר" (I Have Someone to Tell)</strong></p>
+<ul>
+<li>50-minute theatrical show for up to 200 children</li>
+<li>Addresses sexual protection, bullying, online safety</li>
+<li>Adapted for grades 1-3 and 4-6</li>
+</ul>
+<h3>Youth Programs</h3>
+<ul>
+<li>"Together to Grow Up" (יחד להתבגר) — puberty and adolescent development</li>
+<li>Online safety for teens (grades 7-9)</li>
+<li>"Healthy sexuality" content</li>
+</ul>
+<h3>Haredi Sector Programs (since 2018)</h3>
+<ul>
+<li>Content adapted with rabbis (Rabbi Moshe Levi, Rabbi Shai Fink)</li>
+<li>Father-son and mother-daughter sessions</li>
+<li>Training for yeshiva principals, groom/bride instructors</li>
+<li>Branded separately as "את פתח לו" (Open to Him)</li>
+</ul>
+<h3>Content Assessment — Does It Include Sexuality Content?</h3>
+<p><strong>Yes, explicitly.</strong> Despite the "protection" framing, the organization's own materials list three content domains:</p>
+<ol>
+<li>Sexual protection (מוגנות מינית) — abuse prevention</li>
+<li>Online protection (מוגנות ברשת) — internet safety</li>
+<li><strong>Healthy sexuality (מיניות בריאה)</strong> — this is sexuality education proper</li>
+</ol>
+<p>The "healthy sexuality" category includes:</p>
+<ul>
+<li>"Childhood sexuality — normal and abnormal" (מיניות ילדית — נורמלי ולא נורמלי)</li>
+<li>Books about puberty for youth</li>
+<li>"Talking with adolescents" about sexual development</li>
+<li>FAQ section advising parents on "how to answer children's difficult questions about sex"</li>
+<li>A "four-step model for responding to children's questions on sexual topics"</li>
+</ul>
+<p><strong>The Gefen catalog description (program #2322) uses broader language</strong> — "emotional and behavioral challenges, distress, and vulnerabilities" — which obscures the sexuality content from parents who only read the official program description.</p>
+
+</div>
+<div class="section" id="section-5">
+<h2>5. "יש לי למי לספר" (I Have Someone to Tell) — Analysis</h2>
+<h3>The Song</h3>
+<p>The flagship song teaches children: <strong>"There's always someone just for me who listens, loves and helps."</strong></p>
+<p>The song covers:</p>
+<ul>
+<li>Physical incidents at school</li>
+<li>Social exclusion</li>
+<li>Confusing online content encountered accidentally</li>
+<li>General encouragement to disclose to "trusted adults"</li>
+</ul>
+<h3>Does This Bypass Parents?</h3>
+<p><strong>Partially.</strong> The song does not specifically say "tell your parents." It says "I have someone to tell" — which could be a parent, teacher, counselor, or friend. The organization's broader methodology <em>does</em> emphasize parent-child dialogue and positions parents as primary trusted contacts. However:</p>
+<ol>
+<li>The workshops create a framework where children identify <em>multiple</em> trusted adults — not exclusively parents</li>
+<li>The 2023 research found that 25% of children shared concerns during workshops that they had NOT previously shared with parents — meaning the program created disclosure channels that bypassed existing parental awareness</li>
+<li>The organization celebrates the metric of 350% increase in student disclosures — meaning children are telling school staff about things they weren't telling anyone before</li>
+<li>Post-intervention, 70% of disclosures were "parent-initiated" — meaning the program prompts parents to ask, and children respond to parental prompting rather than independently choosing to tell parents</li>
+</ol>
+<p><strong>Assessment:</strong> The program's design is dual-track: it genuinely empowers parents AND creates alternative disclosure channels through schools. For cases of actual abuse (especially intra-familial), alternative channels are necessary. The concern arises when "confusing situations" are defined broadly enough to include normal family dynamics or religious practices that the facilitator considers problematic.</p>
+<h3>The Other Songs</h3>
+<ol>
+<li><strong>"הלב הוא לא מחסן" (The Heart is Not a Storage)</strong> — Encourages children to open up emotionally, not suppress feelings. Uses characters (Ori, Ne'a, Libby) to illustrate emotional suppression. Message: "don't be afraid, believe, open the door for me."</li>
+</ol>
+<ol>
+<li><strong>"חבר אמיתי" (True Friend)</strong> — Distinguishes genuine friends from casual peers. Emphasizes being authentic, resisting peer pressure.</li>
+</ol>
+
+</div>
+<div class="section" id="section-6">
+<h2>6. Connection to MoE Program #2322</h2>
+<table>
+<tr><th>Field</th><th>Details</th></tr>
+<tr><td><strong>Gefen Catalog Number</strong></td><td>2322</td></tr>
+<tr><td><strong>Target Grades</strong></td><td>K through 12th grade</td></tr>
+<tr><td><strong>Target Audiences</strong></td><td>Students, parents, teaching staff</td></tr>
+<tr><td><strong>Framework</strong></td><td>Wellness and emotional well-being; also aligned with Inclusion and Integration (הכלה והשתלבות) program</td></tr>
+<tr><td><strong>Provider Type</strong></td><td>Third-sector NGO (external creator)</td></tr>
+<tr><td><strong>Scope</strong></td><td>600+ schools, youth movements, communities nationwide</td></tr>
+<tr><td><strong>Reported Reach</strong></td><td>~150,000-250,000 beneficiaries annually</td></tr>
+</table>
+<p>The Gefen catalog listing describes the program in neutral language: "emotional and behavioral challenges, distress, and vulnerabilities that children and youth experience." It mentions "violence, sexual violence, abuse and neglect" but does NOT specifically mention the "healthy sexuality" component or the puberty/adolescent development workshops.</p>
+<p><strong>This means schools ordering program #2322 may not realize the full scope of content includes sexuality education beyond abuse prevention.</strong></p>
+
+</div>
+<div class="section" id="section-7">
+<h2>7. Foreign Funding / Schusterman / JDC Connection</h2>
+<h3>Direct Funding — Not Confirmed</h3>
+<p>No direct evidence was found of Schusterman Foundation, JFNA, or NIF directly funding Latet Pe.</p>
+<h3>Indirect Connection — Haruv Campus</h3>
+<p>Latet Pe is <strong>physically housed on the Haruv Children's Campus</strong> at Mt. Scopus, Jerusalem. This campus was:</p>
+<ul>
+<li><strong>Built and funded by</strong>: Charles and Lynn Schusterman Family Foundation (primary funder, >80% of construction cost) and JDC-Israel</li>
+<li><strong>Additional support</strong>: Ministry of Welfare and Social Affairs, National Insurance Institute, Jerusalem Municipality</li>
+<li><strong>Operated by</strong>: The Haruv Institute (amuta 580470706)</li>
+<li><strong>Lynn Schusterman</strong> personally inaugurated the campus</li>
+</ul>
+<p>The campus houses 9 organizations including Latet Pe. Other tenants include:</p>
+<ol>
+<li>Schusterman Emergency Center</li>
+<li>Beit Lynn Child Protection Center</li>
+<li>Israel National Council for the Child</li>
+<li>Meital Center (sexual abuse treatment)</li>
+<li>Toni Eliashar – SHEKEL Therapeutic Center</li>
+<li>Ma'avarim Center (family counseling)</li>
+<li>Center for Medical Simulation</li>
+<li>Goshen Program (child health)</li>
+<li><strong>Latet Pe</strong></li>
+</ol>
+<h3>Haruv USA — American Friends Entity</h3>
+<ul>
+<li><strong>Entity</strong>: American Friends of Haruv Mehalev Association Ltd</li>
+<li><strong>EIN</strong>: 82-2310935</li>
+<li><strong>Location</strong>: Tulsa, Oklahoma (Schusterman's home base)</li>
+<li><strong>Tax-Exempt Since</strong>: March 2018</li>
+<li><strong>990 filings available</strong> on ProPublica but financial details not extractable via web tools</li>
+</ul>
+<p><strong>Assessment:</strong> While no direct grant from Schusterman to Latet Pe was found, the physical infrastructure, institutional partnership, and shared ecosystem strongly suggest indirect support. The Haruv campus provides Latet Pe with:</p>
+<ul>
+<li>Physical office space (at what cost?)</li>
+<li>Institutional credibility</li>
+<li>Professional network</li>
+<li>Proximity to Schusterman-funded programs</li>
+</ul>
+<p><strong>The Tulsa, Oklahoma registration of Haruv's US friends entity is notable</strong> — Tulsa is the headquarters of the Schusterman Family Foundation.</p>
+<h3>NIF — No Connection Found</h3>
+<p>No evidence of New Israel Fund involvement with Latet Pe.</p>
+<h3>JFNA — No Direct Connection Found</h3>
+<p>No direct JFNA grants to Latet Pe found. JDC is a Haruv Campus funder, which provides indirect benefit.</p>
+
+</div>
+<div class="section" id="section-8">
+<h2>8. Connection to Other Child-Protection-Framed Organizations</h2>
+<h3>Network Map</h3>
+<table>
+<tr><th>Organization</th><th>Connection to Latet Pe</th></tr>
+<tr><td><strong>Haruv Institute</strong></td><td>Physical co-location, institutional partner, lists Latet Pe as campus unit</td></tr>
+<tr><td><strong>SEI (האגודה לחינוך מיני)</strong></td><td>Co-founder Shnior Volker is registered facilitator</td></tr>
+<tr><td><strong>Ne'emanei Torah VeAvoda</strong></td><td>Lists Latet Pe as affiliated external organization on their website</td></tr>
+<tr><td><strong>Max Impact</strong></td><td>Conducted effectiveness research for Latet Pe</td></tr>
+<tr><td><strong>Ben-Gurion University</strong></td><td>Conducted 2023 impact study across 59 schools</td></tr>
+</table>
+<h3>Matzmichim</h3>
+<p>No direct connection found between Latet Pe and Matzmichim in this research. They operate in the same ecosystem (child-focused programs in schools through Gefen catalog) but appear to be separate organizations.</p>
+<h3>ELI (Israel Association for Child Protection)</h3>
+<p>ELI (amuta 580030500) operates separately but in the same domain. No direct organizational connection found with Latet Pe, though both operate on child protection and are listed on IsraelGives.</p>
+<h3>SafeSchool / בית ספר בטוח</h3>
+<p>No connection found.</p>
+<h3>Ne'emanei Torah VeAvoda (נאמני תורה ועבודה)</h3>
+<p>Latet Pe appears on the Torah VeAvoda website as an affiliated external organization under "Managers - External Companies, Suppliers and Organizations." Torah VeAvoda is a modern-Orthodox movement promoting liberal values within religious Zionism, including gender issues. This affiliation suggests Latet Pe's approach aligns with the liberal religious-Zionist camp rather than the conservative religious camp.</p>
+
+</div>
+<div class="section" id="section-9">
+<h2>9. Controversies and Parental Pushback</h2>
+<h3>Identified Controversies: None Found</h3>
+<p>Extensive searching in both Hebrew and English yielded <strong>no media reports of parental pushback, formal complaints, or organized opposition</strong> to Latet Pe specifically.</p>
+<h3>Possible Explanations:</h3>
+<ol>
+<li><strong>The "protection" framing is extremely effective</strong> — it's very difficult to publicly oppose a child sexual abuse prevention program without appearing to enable abuse</li>
+<li><strong>Parent-child workshops create buy-in</strong> — parents who participate in Stage 2 workshops feel ownership of the program</li>
+<li><strong>Haredi adaptation shows cultural sensitivity</strong> — the "את פתח לו" branding, rabbi involvement, and gender-separated sessions preempt religious objections</li>
+<li><strong>The organization is relatively young</strong> (founded 2015) and may not yet have attracted the level of scrutiny that larger organizations face</li>
+<li><strong>Media coverage is uniformly positive</strong> — Arutz 7 (right-wing), Zman Yisrael, CBN News all covered the organization favorably</li>
+</ol>
+<h3>Knesset Activity</h3>
+<ul>
+<li><strong>May 2018</strong>: Latet Pe received Section 46 approval (tax-deductible donations) from the Knesset Finance Committee. It was listed among 84 organizations and received conditional one-year approval.</li>
+<li><strong>Ran Yehoshua</strong> has written op-eds but no Knesset testimony was found.</li>
+</ul>
+<h3>October 7 / Evacuee Context</h3>
+<p>Latet Pe and Shnior Volker were quoted in a Mako/N12 investigation about "the dark side of evacuee hotels" — the article discussed dangers to evacuated children in hotel settings. Latet Pe was presented as an expert organization providing emergency protection services, not as a subject of criticism.</p>
+
+</div>
+<div class="section" id="section-10">
+<h2>10. Values Alignment Table</h2>
+<table>
+<tr><th>Dimension</th><th>Assessment</th><th>Score (1-5, 5=concerning)</th></tr>
+<tr><td><strong>Parental authority</strong></td><td>Programs include parents but also create alternative disclosure channels. Song doesn't specifically say "tell your parents."</td><td>3</td></tr>
+<tr><td><strong>Content transparency</strong></td><td>Gefen catalog description (#2322) omits "healthy sexuality" component. Full scope not visible to ordering schools.</td><td>4</td></tr>
+<tr><td><strong>Funding transparency</strong></td><td>99.97% private donations, donor identity unknown, Schusterman campus co-location.</td><td>4</td></tr>
+<tr><td><strong>Ideological positioning</strong></td><td>Co-founder in SEI (includes LGBTQ scope), affiliation with Torah VeAvoda (liberal religious). Not overtly ideological.</td><td>3</td></tr>
+<tr><td><strong>Sexuality content scope</strong></td><td>Goes beyond abuse prevention into "healthy sexuality" education including "childhood sexuality — normal and abnormal."</td><td>4</td></tr>
+<tr><td><strong>Cultural sensitivity</strong></td><td>Adapts programs for Haredi, Arab, secular communities. Works with rabbis.</td><td>2</td></tr>
+<tr><td><strong>Research evidence</strong></td><td>External research by Ben-Gurion University and Max Impact. Results show measurable impact.</td><td>1</td></tr>
+<tr><td><strong>Government oversight</strong></td><td>MoE approved (Gefen #2322) but receives almost zero government funding — meaning less financial oversight.</td><td>3</td></tr>
+</table>
+
+</div>
+<div class="section" id="section-11">
+<h2>11. Open Questions for Further Investigation</h2>
+<ol>
+<li><strong>Who are the major private donors?</strong> 4.3M NIS in annual revenue with 0.03% from government means large private funders exist. GuideStar financial filings (only accessible via logged-in portal) may reveal this.</li>
+</ol>
+<ol>
+<li><strong>What does the Haruv campus tenancy cost?</strong> If Latet Pe occupies space below market rate on a Schusterman-funded campus, this is a de facto subsidy.</li>
+</ol>
+<ol>
+<li><strong>What is the full "healthy sexuality" curriculum?</strong> The website lists the topic but does not publish detailed content. A parent enrolling their child for "protection" may not know the full curriculum includes sexuality education.</li>
+</ol>
+<ol>
+<li><strong>Does the youth program ("יחד להתבגר") include gender identity or sexual orientation content?</strong> The educational director is affiliated with SEI which covers these topics. The program titles suggest puberty/development content but specifics are not publicly available.</li>
+</ol>
+<ol>
+<li><strong>What oversight exists for the 70-80 facilitators?</strong> With only 9 salaried employees and 70-80 facilitators (likely contractors), what quality control ensures consistent messaging?</li>
+</ol>
+<ol>
+<li><strong>What is Ran Yehoshua's religious/ideological background?</strong> His profile doesn't specify, which is unusual for Israeli public figures. The organization works across all sectors but is affiliated with Torah VeAvoda (liberal religious Zionism).</li>
+</ol>
+<ol>
+<li><strong>Haruv USA (EIN 82-2310935) 990 filings</strong> should reveal whether US-based foundations channel money through Haruv to campus tenants like Latet Pe.</li>
+</ol>
+
+</div>
+<div class="section" id="section-12">
+<h2>12. Source List</h2>
+<h3>Primary Sources</h3>
+<ul>
+<li>GuideStar Israel: https://www.guidestar.org.il/organization/580617223</li>
+<li>obudget.org: https://next.obudget.org/i/org/association/580617223</li>
+<li>Latet Pe official website: https://www.latetpe.org.il</li>
+<li>Latet Pe about page: https://www.latetpe.org.il/about</li>
+<li>Latet Pe Haredi programs: https://latetpe.org.il/haredi-projects/</li>
+<li>Latet Pe training content: https://latetpe.org.il/hakshara2025/</li>
+<li>Latet Pe elementary programs: https://latetpe.org.il/plans/schools/</li>
+<li>Latet Pe songs: https://latetpe.org.il/all-our-songs/</li>
+<li>Latet Pe FAQ: https://latetpe.org.il/popular-questions/</li>
+<li>Latet Pe Haredi site ("את פתח לו"): https://latetpe.org.il/torahweb/</li>
+<li>Latet Pe emergency programs: https://latetpe.org.il/herum-harvot/</li>
+<li>Gefen Catalog listing (#2322): https://www.2school.co.il/InterData/eiee/</li>
+</ul>
+<h3>Secondary Sources</h3>
+<ul>
+<li>HaMichlol encyclopedia: https://www.hamichlol.org.il/לתת_פה</li>
+<li>Wikipedia Hebrew: https://he.wikipedia.org/wiki/לתת_פה</li>
+<li>Max Impact research: https://maximpact.org.il/associations/לתת-פה/</li>
+<li>Haruv Institute campus: https://haruv.org.il/en/projects/the-haruv-childrens-campus/</li>
+<li>Haruv — Latet Pe unit: https://haruv.org.il/en/projects/יחידות-הקמפוס/latet-pe-dare-to-share/</li>
+<li>Schusterman campus announcement: https://www.schusterman.org/announcement/first-global-child-abuse-center-combining-research-and-treatment-opens-in-jerusalem</li>
+<li>Shnior Volker SEI profile: https://sei.org.il/שניאור-וולקר/</li>
+<li>Ne'emanei Torah VeAvoda: https://toravoda.org.il/לתת-פה-תוכניות-מוגנות-לילדים/</li>
+<li>Arutz 7 interview with Volker: https://www.inn.co.il/news/665217</li>
+<li>CBN News ("Dare to Share"): https://www1.cbn.com/cbnnews/israel/2022/august/new-dare-to-share-program-helps-jerusalem-school-children-fight-sexual-abuse</li>
+<li>Ran Yehoshua EdNow profile: https://www.edunow.org.il/teacher/659</li>
+<li>Ran Yehoshua Zman Yisrael: https://www.zman.co.il/260383/</li>
+<li>American Friends of Haruv (ProPublica): https://projects.propublica.org/nonprofits/organizations/822310935/202331929349200438/full</li>
+<li>Open Knesset (Section 46 approval): https://oknesset.org/meetings/2/0/2068927.html</li>
+<li>SEI (Israel Association for Sexual Education): https://sei.org.il/</li>
+<li>Schusterman Israel grantees: https://www.schusterman.org/what-we-do/funding-in-israel/our-grantees</li>
+</ul>
+<p><em>Research conducted 2026-02-17. GuideStar Israel financial details are JavaScript-rendered (Salesforce) and could not be scraped — manual lookup recommended for detailed year-by-year financials and board member names.</em></p>
+
+</div>
+</div>
+
+<footer>
+  פרויקט זהות ציונית — דוח מחקר מעמיק | <a href="../">דירוג ערים</a> | <a href="../research/">כל הדוחות</a>
+</footer>
+
+</body>
+</html>

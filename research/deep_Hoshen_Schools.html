@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hoshen School Programs — דוח מחקר מעמיק</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background: #f5f5f8;
+  color: #1a1a2e;
+  direction: rtl;
+  line-height: 1.8;
+  font-size: 17px;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #1a1a2e; color: #fff;
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  overflow-x: auto; white-space: nowrap;
+}
+nav .brand { font-weight: 700; color: #ff8800; flex-shrink: 0; }
+nav a { color: #ccc; text-decoration: none; font-size: 0.85em; padding: 8px 4px; border-bottom: 2px solid transparent; flex-shrink: 0; }
+nav a:hover { color: #ff8800; border-bottom-color: #ff8800; }
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a5a8a 100%);
+  color: #fff; padding: 50px 20px 40px; text-align: center;
+}
+.hero h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+.hero .subtitle { font-size: 1.05em; color: #b0c4de; margin-bottom: 6px; }
+.hero .meta { font-size: 0.9em; color: #ff8800; margin-top: 8px; }
+.risk-badge {
+  display: inline-block; padding: 4px 16px; border-radius: 20px;
+  font-size: 0.85em; font-weight: 600; margin-top: 10px;
+}
+.risk-high { background: #e74c3c; color: #fff; }
+.risk-medium { background: #f39c12; color: #fff; }
+.risk-low { background: #27ae60; color: #fff; }
+.container { max-width: 860px; margin: 0 auto; padding: 30px 20px 80px; }
+.toc {
+  background: #fff; border-radius: 8px; padding: 22px 26px;
+  margin-bottom: 32px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.toc h2 { font-size: 1.15em; color: #2a5a8a; margin-bottom: 12px; border-bottom: 2px solid #667eea; padding-bottom: 6px; }
+.toc ol { padding-right: 22px; font-size: 0.93em; }
+.toc li { margin-bottom: 4px; }
+.toc a { color: #2a5a8a; text-decoration: none; }
+.toc a:hover { color: #ff8800; text-decoration: underline; }
+.section {
+  background: #fff; border-radius: 8px; padding: 28px 26px;
+  margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.section h2 { font-size: 1.4em; color: #1a1a2e; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #667eea; }
+.section h3 { font-size: 1.1em; color: #2a5a8a; margin: 18px 0 8px; }
+.section h4 { font-size: 1em; color: #444; margin: 14px 0 6px; }
+.section p { margin-bottom: 12px; text-align: justify; }
+.section ul, .section ol { padding-right: 22px; margin-bottom: 12px; }
+.section li { margin-bottom: 5px; }
+blockquote {
+  background: #f0f4fa; border-right: 4px solid #667eea;
+  padding: 12px 18px; margin: 12px 0; border-radius: 0 6px 6px 0;
+  font-size: 0.94em; color: #333;
+}
+.thesis {
+  background: #fff8f0; border-right: 3px solid #ff8800;
+  padding: 14px 18px; margin: 12px 0; border-radius: 0 5px 5px 0;
+  font-size: 0.96em; color: #6b4500;
+}
+table {
+  width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.91em;
+}
+th {
+  background: #667eea; color: #fff; padding: 8px 12px;
+  text-align: right; position: sticky; top: 44px; z-index: 5;
+}
+td {
+  padding: 7px 12px; border-bottom: 1px solid #e8e8e8;
+  text-align: right; vertical-align: top;
+}
+tr:nth-child(even) { background: #f8f9fc; }
+a { color: #2a5a8a; }
+a:hover { color: #ff8800; }
+.back-link {
+  display: inline-block; margin-bottom: 20px; padding: 6px 14px;
+  background: #667eea; color: #fff; border-radius: 4px;
+  text-decoration: none; font-size: 0.88em;
+}
+.back-link:hover { background: #5a6fd6; color: #fff; }
+footer {
+  text-align: center; padding: 30px 20px; color: #888; font-size: 0.85em;
+}
+strong { color: #1a1a2e; }
+code {
+  background: #f0f0f0; padding: 1px 5px; border-radius: 3px;
+  font-size: 0.9em;
+}
+.source-tag {
+  display: inline-block; background: #e8eef6; padding: 2px 8px;
+  border-radius: 10px; font-size: 0.78em; color: #2a5a8a;
+  margin: 2px 3px; text-decoration: none;
+}
+.source-tag:hover { background: #d0dff0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">דוח מחקר מעמיק</span>
+  <a href="../">חזרה לדירוג</a>
+  <a href="../research/">כל הדוחות</a>
+  <a href="#section-1">1. What Actually Hap</a> <a href="#section-2">2. Age Groups: What </a> <a href="#section-3">3. The "Keshet" Prog</a> <a href="#section-4">4. Facilitator Train</a> <a href="#section-5">5. Parental Consent </a> <a href="#section-6">6. MoE Relationship:</a> <a href="#section-7">7. Legal Challenges</a> <a href="#section-8">8. Parent Testimonie</a> <a href="#section-9">9. What Happened Aft</a> <a href="#section-10">10. Content Comparis</a> <a href="#section-11">11. Additional Findi</a> <a href="#section-12">12. Open Questions S</a> <a href="#section-13">Source Index</a>
+</nav>
+
+<div class="hero">
+  <h1>Hoshen School Programs</h1>
+  <div class="subtitle">חוש"ן -- חינוך ושינוי: School Programs Deep Dive</div>
+  <div class="meta"></div>
+  
+</div>
+
+<div class="container">
+  <a href="../research/" class="back-link">← כל דוחות המחקר</a>
+  <div class="toc"><h2>תוכן עניינים</h2><ol><li><a href="#section-1">1. What Actually Happens in a Hoshen Workshop</a></li><li><a href="#section-2">2. Age Groups: What 12-Year-Olds Get vs. 17-Year-Olds</a></li><li><a href="#section-3">3. The "Keshet" Program -- Clarification</a></li><li><a href="#section-4">4. Facilitator Training -- Who Are These People?</a></li><li><a href="#section-5">5. Parental Consent -- The Structural Gap</a></li><li><a href="#section-6">6. MoE Relationship: How Hoshen Got SHaFI Recognition</a></li><li><a href="#section-7">7. Legal Challenges</a></li><li><a href="#section-8">8. Parent Testimonies and Complaints</a></li><li><a href="#section-9">9. What Happened After November 2022 MoE LGBTQ Guidelines</a></li><li><a href="#section-10">10. Content Comparison: Hebrew vs. English Materials</a></li><li><a href="#section-11">11. Additional Findings</a></li><li><a href="#section-12">12. Open Questions Still Unanswered</a></li><li><a href="#section-13">Source Index</a></li></ol></div>
+  <div class="section" id="section-1">
+<h2>1. What Actually Happens in a Hoshen Workshop</h2>
+<h3>The "Personal Story" (הסיפור האישי) -- Core Methodology</h3>
+<p>The flagship program is a 90-minute session in which <strong>two LGBTQ+ volunteers</strong> enter a classroom and:</p>
+<ol>
+<li><strong>Share their personal coming-out narratives</strong>: Each facilitator tells their story of discovering their sexual orientation or gender identity, the process of "coming out of the closet," their personal struggles, family reactions, and the social consequences they experienced.</li>
+</ol>
+<ol>
+<li><strong>Q&A session</strong>: Students are given open floor to ask questions about what it is like to be LGBTQ+. The volunteers answer personal questions about their lives, relationships, and identities.</li>
+</ol>
+<ol>
+<li><strong>Discussion about terminology</strong>: The workshop includes educational content distinguishing between sexual orientation, gender identity, and sexual practice (three separate dimensions).</li>
+</ol>
+<ol>
+<li><strong>"Safe space" framing</strong>: Students are asked to reflect on their collective responsibility for creating a safe environment for LGBTQ+ peers.</li>
+</ol>
+<p><strong>Quote from Hoshen's own description (Hebrew):</strong> "מפגש אינטימי ובלתי אמצעי, שבו מספרים מנחות ומנחים להט"בים על התמודדותם האישית עם גילוי המשיכה המינית והזהות המגדרית ותהליך היציאה מהארון" -- "An intimate and unmediated meeting, in which LGBTQ+ facilitators tell about their personal experience with discovering their sexual attraction and gender identity and the process of coming out."</p>
+<h3>Other Workshop Types</h3>
+<table>
+<tr><th>Workshop Name</th><th>Hebrew</th><th>Target</th><th>Content</th></tr>
+<tr><td><strong>The Personal Story</strong></td><td>הסיפור האישי</td><td>Grades 9-12</td><td>Two LGBTQ+ volunteers share coming-out stories + Q&A</td></tr>
+<tr><td><strong>The Social Story</strong></td><td>הסיפור החברתי</td><td>Grades 9-12</td><td>Focuses on collective responsibility for "safe spaces"; addresses inclusive language</td></tr>
+<tr><td><strong>The Israeli Story</strong></td><td>הסיפור הישראלי</td><td>Grades 9-12</td><td>Explores LGBTQ+ issues in Israel through media items and personal narratives. Covers lesbian parenthood, trans discrimination in military, Pride parades</td></tr>
+<tr><td><strong>LGBT for Middle School</strong></td><td>להט"ב לחט"ב</td><td>Grades 7-9</td><td>Uses storytelling CARDS (not live personal stories) about daily lives of LGBTQ+ youth and children from same-sex families. Explores gender roles through students' own experiences</td></tr>
+<tr><td><strong>Elementary Staff Workshop</strong></td><td>סדנת חדר מורות יסודי</td><td>Elementary teachers</td><td>Training for elementary school educators</td></tr>
+<tr><td><strong>Parental Training</strong></td><td>הכשרה להורים</td><td>Parents</td><td>Training for parents of LGBTQ+ children</td></tr>
+<tr><td><strong>Kindergarten Teacher Training</strong></td><td>הכשרה לגננות</td><td>Kindergarten teachers</td><td>Training on "dealing with children raised in LGBT families"</td></tr>
+<tr><td><strong>Civic Studies Program</strong></td><td>תוכנית אזרחות</td><td>High school</td><td>33-meeting curriculum on LGBT history, activists, civil rights equality</td></tr>
+</table>
+<p><strong>All workshops last 90 minutes and cost up to NIS 1,000 each.</strong></p>
+<h3>What Happens in the Middle School Version (Grades 7-9)</h3>
+<p>The middle school program (Gefen catalog #15862 "להט"ב לחט"ב") uses a <strong>different methodology</strong> from the high school program:</p>
+<ul>
+<li>Instead of live personal stories, it uses <strong>storytelling cards</strong> (כרטיסיות סיפורים)</li>
+<li>Cards describe the daily experiences of LGBTQ+ youth</li>
+<li>Cards describe children growing up in same-sex families ("משפחות גאות")</li>
+<li>Discussion prompts explore <strong>gender roles and expectations</strong> through students' own experiences</li>
+<li>Designed for adolescent developmental stage (ages 12-15)</li>
+</ul>
+<p><strong>Critical note:</strong> The specific content of these storytelling cards is not publicly available. No independent audit of what the cards contain has been published. What "daily experiences of LGBTQ+ youth" means when presented to 12-year-olds is not documented in any publicly accessible source.</p>
+<h3>What Happens in a Follow-Up Session</h3>
+<p>Hoshen offers a continuation activity ("פעילות המשך") that:</p>
+<ul>
+<li>Raises awareness among participants about the situation of LGBTQ+ students in their school</li>
+<li>Emphasizes the concept of "safe space" (מרחב בטוח)</li>
+<li>Asks students to reflect on their school's climate toward LGBTQ+ individuals</li>
+</ul>
+<p><strong>Sources:</strong></p>
+<ul>
+<li><a href="https://www.hoshen.org/education" target="_blank" rel="noopener">Hoshen Education Page</a></li>
+<li><a href="https://ha-migdalor.co.il/organizations/hoshen/" target="_blank" rel="noopener">HaMigdalor - Hoshen</a></li>
+<li><a href="https://wdg.co.il/%D7%97%D7%95%D7%A9%D7%9F-%D7%97%D7%99%D7%A0%D7%95%D7%9A-%D7%95%D7%A9%D7%99%D7%A0%D7%95%D7%99/" target="_blank" rel="noopener">WDG - Hoshen Profile</a></li>
+</ul>
+
+</div>
+<div class="section" id="section-2">
+<h2>2. Age Groups: What 12-Year-Olds Get vs. 17-Year-Olds</h2>
+<h3>Age Breakdown</h3>
+<table>
+<tr><th>Age/Grade</th><th>Program Type</th><th>Content Approach</th></tr>
+<tr><td><strong>Kindergarten teachers</strong></td><td>Staff training only</td><td>Training kindergarten teachers to "deal with children raised in LGBT families." Introduced in 2012 at Oranim Academic College and Kibbutzim College of Education. No direct student contact.</td></tr>
+<tr><td><strong>Elementary teachers</strong></td><td>Staff training only</td><td>"Elementary staff room workshop" (סדנת חדר מורות יסודי). Trains teachers on LGBTQ+ youth issues. No direct student contact.</td></tr>
+<tr><td><strong>Grades 7-9 (ages 12-15)</strong></td><td>Storytelling cards</td><td>Indirect: Cards about LGBTQ+ youth daily life and same-sex families. Discussion on gender roles. No live personal stories from activists.</td></tr>
+<tr><td><strong>Grades 9-12 (ages 14-18)</strong></td><td>Live personal stories</td><td>Direct: Two LGBTQ+ volunteers share their coming-out narratives in person. Open Q&A about LGBTQ+ life.</td></tr>
+<tr><td><strong>Grades 10-12 (ages 15-18)</strong></td><td>Civic Studies program</td><td>33-meeting extended curriculum on LGBT history, activists, and civil rights equality.</td></tr>
+</table>
+<h3>The Age Creep Pattern</h3>
+<p>Hoshen's school programs have expanded downward over time:</p>
+<ul>
+<li><strong>1976-2004</strong>: Lectures primarily to adult audiences</li>
+<li><strong>2004-2012</strong>: High school workshops (grades 10-12)</li>
+<li><strong>2012</strong>: Kindergarten teacher training introduced at two academic colleges</li>
+<li><strong>Gefen catalog</strong>: Middle school program (grades 7-9) approved with storytelling cards</li>
+<li><strong>2016-2017</strong>: Tel Aviv Municipality extended Hoshen programs to <strong>preschool and elementary school teacher training</strong> -- described as "gender-related training led by the Hoshen NGO for educators of younger kids, after 12 years of middle- and high-school activities" (Haaretz)</li>
+</ul>
+<p><strong>Note on current regulations:</strong> Under the pre-Maoz regulations, sexual orientation content was authorized starting in <strong>grade 7</strong> (age 12). Maoz proposed raising this to grade 9 (age 14-15), which would have eliminated Hoshen's middle school program entirely. The bill did not pass.</p>
+<p><strong>Sources:</strong></p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Hoshen_(organization" target="_blank" rel="noopener">Wikipedia - Hoshen</a>)</li>
+<li><a href="https://www.haaretz.com/israel-news/.premium-t-a-to-extend-lgbt-programs-to-preschool-primary-school-teachers-1.5425602" target="_blank" rel="noopener">Haaretz - Tel Aviv Preschool Extension</a></li>
+<li><a href="https://www.timesofisrael.com/far-right-deputy-ministers-bill-would-bar-teaching-sex-orientation-before-9th-grade/" target="_blank" rel="noopener">Times of Israel - Maoz Bill</a></li>
+</ul>
+
+</div>
+<div class="section" id="section-3">
+<h2>3. The "Keshet" Program -- Clarification</h2>
+<h3>Finding: "Keshet" Is Likely a Misidentification</h3>
+<p>Based on extensive search, <strong>Hoshen does not appear to operate a program named "Keshet"</strong> in Israeli schools. The confusion likely stems from:</p>
+<ol>
+<li><strong>Keshet (קשת) -- American organization</strong>: Keshet is a Boston-based American nonprofit advocating for LGBTQ+ inclusion in Jewish communities. It operates in US Jewish day schools and camps, NOT in Israeli public schools. Website: keshetonline.org.</li>
+</ol>
+<ol>
+<li><strong>Keshet (קשת) -- Emotional learning program</strong>: An unrelated Israeli program (קשת -- למידה מבוססת רגש) promoting emotional literacy in schools, unrelated to LGBTQ+ content. Website: m-keshet.co.il.</li>
+</ol>
+<ol>
+<li><strong>The word "keshet" (rainbow)</strong>: Used in LGBTQ+ contexts generically, which may create confusion.</li>
+</ol>
+<p>If the user is asking about a specific Hoshen program referred to informally as "Keshet/Rainbow," the closest match is the <strong>middle school program (להט"ב לחט"ב)</strong>, which addresses "the spectrum (קשת) of identities in the LGBTQ+ community."</p>
+<p><strong>Gap:</strong> If there is a specific Hoshen program branded "Keshet," it is not documented on any public-facing website, news article, or Gefen catalog entry found in this research.</p>
+
+</div>
+<div class="section" id="section-4">
+<h2>4. Facilitator Training -- Who Are These People?</h2>
+<h3>Facilitator Profile</h3>
+<table>
+<tr><th>Criterion</th><th>Detail</th></tr>
+<tr><td><strong>Identity requirement</strong></td><td>Must identify as LGBTQ+</td></tr>
+<tr><td><strong>Minimum age</strong></td><td>23 years old</td></tr>
+<tr><td><strong>Availability</strong></td><td>One day per month during school year (Monday-Friday mornings)</td></tr>
+<tr><td><strong>Professional background</strong></td><td>NO pedagogical training requirement. NO education degree required. NO teaching certificate required.</td></tr>
+<tr><td><strong>Screening</strong></td><td>Selection interviews (content of screening unknown)</td></tr>
+<tr><td><strong>Training</strong></td><td>Weekend seminar (starts Friday at 4:00 PM)</td></tr>
+<tr><td><strong>Training content</strong></td><td>Personal narrative development + classroom simulation exercises</td></tr>
+<tr><td><strong>Background check</strong></td><td>NOT documented in any public source. Israeli law (חוק למניעת העסקת עברייני מין במוסדות חינוך) requires background checks for anyone working in educational institutions, but whether Hoshen volunteers are classified as "employees" under this law is unclear.</td></tr>
+<tr><td><strong>Number of volunteers</strong></td><td>~250 across Israel</td></tr>
+</table>
+<h3>Training Process (from WDG profile)</h3>
+<ol>
+<li><strong>Selection interviews</strong>: LGBTQ+ individuals apply and are screened (criteria not public)</li>
+<li><strong>Weekend seminar</strong>: A single weekend training session, starting Friday afternoon</li>
+<li><strong>Personal story development</strong>: Each volunteer crafts their coming-out narrative</li>
+<li><strong>Classroom simulation</strong>: Practice delivery of their story</li>
+</ol>
+<h3>Advancement Track</h3>
+<p>After gaining experience, volunteers can advance to:</p>
+<ul>
+<li>Seminar facilitation teams</li>
+<li>Volunteer mentoring roles</li>
+<li>Selection committee (screening new applicants)</li>
+<li>Narrative-building teams (helping new volunteers craft their stories)</li>
+<li>Advanced educational presentations</li>
+<li><strong>Parent volunteers</strong> can train to conduct workshops for early childhood education teams</li>
+</ul>
+<h3>Critical Assessment</h3>
+<p><strong>These are activists, not educators.</strong> The training amounts to a weekend course in public speaking about their personal identity. There is no:</p>
+<ul>
+<li>Pedagogical training</li>
+<li>Child psychology education</li>
+<li>Training on age-appropriate communication</li>
+<li>Ongoing professional supervision (at least none documented publicly)</li>
+<li>External certification or accreditation</li>
+</ul>
+<p>The Hebrew Wikipedia article describes them as "שגרירי הסברה של הקהילה הגאה" -- literally "advocacy ambassadors of the gay community." This language explicitly frames them as representatives of a community advancing a cause, not neutral educators.</p>
+<p><strong>Sources:</strong></p>
+<ul>
+<li><a href="https://wdg.co.il/%D7%97%D7%95%D7%A9%D7%9F-%D7%97%D7%99%D7%A0%D7%95%D7%9A-%D7%95%D7%A9%D7%99%D7%A0%D7%95%D7%99/" target="_blank" rel="noopener">WDG - Hoshen Profile</a></li>
+<li><a href="https://ha-migdalor.co.il/organizations/hoshen/" target="_blank" rel="noopener">HaMigdalor - Hoshen</a></li>
+</ul>
+
+</div>
+<div class="section" id="section-5">
+<h2>5. Parental Consent -- The Structural Gap</h2>
+<h3>Finding: There Is No Parental Consent Mechanism for Hoshen Workshops</h3>
+<p><strong>The Gefen system does not require parental consent for external programs.</strong> Here is how the system works:</p>
+<ol>
+<li><strong>The Ministry of Education</strong> approves programs into the Gefen catalog through pedagogical and administrative review.</li>
+<li><strong>School principals</strong> select programs from the catalog using their allocated Gefen budget.</li>
+<li><strong>Parents are not notified</strong> of which specific external programs will operate in the school, and there is no opt-in or opt-out mechanism.</li>
+<li><strong>Until July 2025</strong>, parents could not even see retroactively which programs had operated in their children's schools. A <strong>court-ordered transparency system</strong> was finally launched on July 14, 2025, following a lawsuit by the Movement for Freedom of Information (תנועה לחופש המידע) and Israel Hofsheet (ישראל חופשית). Judge Abraham Rubin ordered the MoE to publish program data from the 2023/24 school year.</li>
+</ol>
+<h3>What Maoz Proposed (Not Enacted)</h3>
+<p>Avi Maoz's "Students Rights Law" bill would have required:</p>
+<ul>
+<li><strong>75% of parents</strong> to provide written consent before LGBTQ+ content could be taught</li>
+<li><strong>All students</strong> in the class to consent</li>
+<li><strong>Principal</strong> to provide written justification for the lesson</li>
+<li><strong>No sexual orientation teaching before grade 9</strong></li>
+</ul>
+<p>This bill did not pass. <strong>The current system remains: the principal decides, parents are not asked.</strong></p>
+<h3>The Transparency System (2025)</h3>
+<p>As of July 2025, parents can:</p>
+<ul>
+<li>Visit the Ministry of Education website</li>
+<li>Select their child's school</li>
+<li>See which external programs were purchased under the 2.5-billion-shekel Gefen budget in the previous school year</li>
+</ul>
+<p>This is retroactive transparency, not prospective consent. Parents can see what happened <strong>last year</strong>, but cannot block programs <strong>this year</strong>.</p>
+<p><strong>Sources:</strong></p>
+<ul>
+<li><a href="https://www.calcalist.co.il/local_news/article/sjsl8ezuxx" target="_blank" rel="noopener">Calcalist - Transparency System Launch (July 2025)</a></li>
+<li><a href="https://www.timesofisrael.com/far-right-deputy-ministers-bill-would-bar-teaching-sex-orientation-before-9th-grade/" target="_blank" rel="noopener">Times of Israel - Maoz Bill</a></li>
+<li><a href="https://www.ynet.co.il/news/article/bymjdfksje" target="_blank" rel="noopener">Ynet - Maoz Transparency System</a></li>
+</ul>
+
+</div>
+<div class="section" id="section-6">
+<h2>6. MoE Relationship: How Hoshen Got SHaFI Recognition</h2>
+<h3>The Approval Chain</h3>
+<p>Hoshen achieved Ministry of Education institutional embedding through a multi-step process:</p>
+<p><strong>Step 1: SHaFI Recognition (שפ"י -- השירות הפסיכולוגי ייעוצי)</strong></p>
+<p>The Educational Psychological Advisory Service (SHaFI) of the Ministry of Education officially recognized Hoshen. SHaFI is the body that advises schools on psychological and social issues. This recognition means:</p>
+<ul>
+<li>SHaFI vouches for the programs' appropriateness</li>
+<li>Schools can cite SHaFI endorsement when selecting Hoshen programs</li>
+<li>Hoshen materials appear on SHaFI's official pages (the MoE PDF from 2017 is hosted on SHaFI's subdomain: meyda.education.gov.il/files/<strong>shefi</strong>/)</li>
+</ul>
+<p><strong>Who at SHaFI approved it:</strong> Not publicly documented. The approval process is administrative, not legislative. No Knesset vote, no public hearing, no named official is associated with the approval in any public record found.</p>
+<p><strong>Step 2: 2016 Treasury Agreement</strong></p>
+<p>Finance Minister Moshe Kahlon led a cross-ministerial agreement allocating NIS 10M for LGBTQ+ community services, including NIS 1.5M specifically for "school lectures/information." This created the financial infrastructure for Hoshen's institutional presence.</p>
+<p><strong>Step 3: Dedicated MoE Budget Line (2017)</strong></p>
+<p>A specific budget line was opened in the Ministry of Education for "activities regarding sexual orientation and gender identity" (פעילויות בנושא נטייה מינית וזהות מגדרית). This converted ad hoc funding into a structural budget item.</p>
+<p><strong>Step 4: Gefen Catalog Listing</strong></p>
+<p>With SHaFI recognition and dedicated budget, 6 programs were approved for the Gefen catalog, all gender-flagged:</p>
+<ul>
+<li>All 6 programs address gender/sexuality exclusively</li>
+<li>Gefen rating: 3/5</li>
+<li>Current deployments: <strong>Zero</strong> (per available data)</li>
+</ul>
+<p><strong>The November 2022 Guidelines -- Context</strong></p>
+<p>Under Education Minister Yifat Shasha-Biton, the MoE issued first-ever guidelines for schools on LGBTQ+ students (November 2022). These were developed by SHaFI in consultation with LGBTQ+ organizations (Hoshen among them), academics, and the National Leadership of Parents. The guidelines require:</p>
+<ul>
+<li>Staff training on LGBTQ+ issues</li>
+<li>Asking students about preferred pronouns</li>
+<li>Rules prohibiting discrimination based on sexual orientation</li>
+<li>Accommodations: gendered language adjustments, PE accommodations, bathroom access matching gender identity, uniform matching gender identity</li>
+</ul>
+<p><strong>These guidelines went further than Hoshen's programs</strong> -- they embedded LGBTQ+ accommodation into school policy infrastructure, not just external workshops.</p>
+<p><strong>Sources:</strong></p>
+<ul>
+<li><a href="https://www.jpost.com/israel-news/article-723055" target="_blank" rel="noopener">JPost - November 2022 Guidelines</a></li>
+<li><a href="https://www.haaretz.com/israel-news/2022-11-22/ty-article/.premium/in-first-israel-issues-guidelines-to-schools-for-dealing-with-lgbtq-students/00000184-9fc4-d6b9-a9b7-fffd473b0000" target="_blank" rel="noopener">Haaretz - Guidelines Published</a></li>
+<li><a href="https://meyda.education.gov.il/files/shefi/miniutumeniatpgia/yom_hahavana2017/hoshen.pdf" target="_blank" rel="noopener">MoE SHaFI - Hoshen PDF (2017)</a></li>
+</ul>
+
+</div>
+<div class="section" id="section-7">
+<h2>7. Legal Challenges</h2>
+<h3>Direct Legal Challenges to Hoshen's School Access</h3>
+<p><strong>Finding: No court case has directly challenged Hoshen's right to enter schools.</strong> The legal battles have been about the broader framework:</p>
+<h3>Case 1: Lavi Organization Petition (December 2022)</h3>
+<ul>
+<li><strong>Petitioner:</strong> Lavi (לביא) -- right-wing organization</li>
+<li><strong>Target:</strong> The November 2022 LGBTQ guidelines issued by the outgoing Shasha-Biton government</li>
+<li><strong>Argument:</strong> Guidelines were adopted "quickly and in a rush after the caretaker government lost the Knesset's confidence"</li>
+<li><strong>Court action:</strong> Justice Yael Willner ordered the Education Ministry to respond within 14 days</li>
+<li><strong>Outcome:</strong> Not publicly documented in search results. The incoming Netanyahu government effectively sidelined the guidelines by appointing Maoz to oversee external programs.</li>
+</ul>
+<h3>Case 2: Avi Maoz's "Students Rights Law" (2023)</h3>
+<ul>
+<li><strong>Nature:</strong> Legislative proposal, not a court case</li>
+<li><strong>Content:</strong> Ban LGBTQ+ teaching before grade 9; require 75% parental consent</li>
+<li><strong>Hoshen's response:</strong> Called Maoz's characterization of their work "evil" (מרשע), arguing he portrayed their programs as harmful rather than protective</li>
+<li><strong>Status:</strong> The bill did not pass into law</li>
+</ul>
+<h3>Case 3: Transparency System Lawsuit (2024-2025)</h3>
+<ul>
+<li><strong>Petitioners:</strong> Movement for Freedom of Information + Israel Hofsheet</li>
+<li><strong>Target:</strong> Ministry of Education's refusal to publish data on which external programs operated in schools</li>
+<li><strong>Court:</strong> Jerusalem Administrative Court, Judge Abraham Rubin</li>
+<li><strong>Outcome:</strong> Settlement requiring MoE to publish Gefen program data by July 15, 2025, with annual publication thereafter</li>
+<li><strong>Significance for Hoshen:</strong> Parents can now retroactively see if Hoshen programs operated in their children's schools</li>
+</ul>
+<h3>Case 4: Trans Student Removal (2022-2023)</h3>
+<ul>
+<li><strong>Location:</strong> Religious school in central Israel</li>
+<li><strong>Facts:</strong> Trans boy was outed to the community in September 2022 without consent. Parents staged anti-LGBTQ+ protests. MoE decided to remove the child in January 2023.</li>
+<li><strong>Hoshen's involvement:</strong> Public statement condemning the removal, saying "the ministry decided that political and social considerations are more important than the safety and wellbeing of a small boy"</li>
+<li><strong>Legal outcome:</strong> Parents of the child announced intent to appeal</li>
+</ul>
+<h3>Case 5: 200+ Principals' Petition (December 2022)</h3>
+<ul>
+<li><strong>Nature:</strong> Administrative petition, not a court case</li>
+<li><strong>Content:</strong> Over 200 school principals signed a petition against the coalition deal transferring authority over external programs to Avi Maoz</li>
+<li><strong>Significance:</strong> Demonstrated the education establishment's support for organizations like Hoshen</li>
+</ul>
+<p><strong>Sources:</strong></p>
+<ul>
+<li><a href="https://www.haaretz.com/israel-news/2022-12-01/ty-article/.premium/education-min-told-to-respond-to-petition-against-regulating-treatment-of-lgbtq-students/00000184-cf50-d8a0-a9dc-cffe25f70000" target="_blank" rel="noopener">Haaretz - Lavi Petition</a></li>
+<li><a href="https://www.haaretz.com/israel-news/2022-12-04/ty-article/.premium/over-200-israeli-principals-petition-against-far-right-lawmakers-control-over-education/00000184-d980-d6c7-a7ce-dfb0b94b0000" target="_blank" rel="noopener">Haaretz - 200 Principals</a></li>
+<li><a href="https://www.calcalist.co.il/local_news/article/sjsl8ezuxx" target="_blank" rel="noopener">Calcalist - Transparency Lawsuit</a></li>
+</ul>
+
+</div>
+<div class="section" id="section-8">
+<h2>8. Parent Testimonies and Complaints</h2>
+<h3>Finding: Remarkably Few Public Testimonies in Either Direction</h3>
+<p><strong>No specific documented parent complaints</strong> against Hoshen workshops were found in web research -- Hebrew or English. This is striking given the political controversy. Possible explanations:</p>
+<ol>
+<li><strong>Parents don't know</strong> the workshop happened (no notification mechanism until 2025 transparency system)</li>
+<li><strong>Parents who object</strong> are in communities (religious, traditional) that opt out of state education or whose schools would not select these programs anyway</li>
+<li><strong>The political battle was fought at the institutional level</strong> (Maoz, Knesset, principals) rather than at the individual-parent level</li>
+<li><strong>Israeli parenting forums</strong> do not appear to have significant threads about Hoshen-specific experiences</li>
+</ol>
+<h3>The Tal Gilboa Controversy (2022)</h3>
+<p>The most prominent public criticism from a "regular citizen" came from <strong>Tal Gilboa</strong>, an animal rights activist and media personality:</p>
+<ul>
+<li><strong>Her complaint:</strong> "People from the entire LGBTQ spectrum, transgender people and others, regularly visit the school and spend whole days talking to the students." She asked: "What gives you the right to put such things in my daughter's head?"</li>
+<li><strong>Notably:</strong> Gilboa said she personally supports her 13-year-old daughter's lesbian identity, but opposed LGBTQ+ representatives entering schools without parental choice</li>
+<li><strong>Hoshen's response:</strong> "We will continue to enter schools to promote independent, accepting and tolerant thinking towards any person, whether trans or bisexual."</li>
+<li><strong>Aftermath:</strong> Gilboa faced massive social media backlash for her position</li>
+</ul>
+<h3>The 50+ Local Authorities Boycott (December 2022)</h3>
+<p>Over 50 local authorities declared they would boycott Maoz's policies, effectively siding with organizations like Hoshen. However, this was a political action by municipal officials, not a reflection of individual parent views.</p>
+<p><strong>Sources:</strong></p>
+<ul>
+<li><a href="https://www.jpost.com/opinion/article-696855" target="_blank" rel="noopener">JPost Opinion - LGBTQ Education and Israel's Illiberal Left</a></li>
+<li><a href="https://www.jpost.com/israel-news/politics-and-diplomacy/article-723975" target="_blank" rel="noopener">JPost - 50 Authorities Boycott</a></li>
+</ul>
+
+</div>
+<div class="section" id="section-9">
+<h2>9. What Happened After November 2022 MoE LGBTQ Guidelines</h2>
+<h3>Timeline of Events</h3>
+<table>
+<tr><th>Date</th><th>Event</th></tr>
+<tr><td><strong>November 22, 2022</strong></td><td>Education Minister Yifat Shasha-Biton (Shasha-Biton's last days as minister) publishes first-ever LGBTQ guidelines for schools, developed by SHaFI with LGBTQ organizations</td></tr>
+<tr><td><strong>Late November 2022</strong></td><td>Lavi organization files High Court petition to block the guidelines</td></tr>
+<tr><td><strong>December 1, 2022</strong></td><td>Justice Yael Willner orders MoE to respond within 14 days</td></tr>
+<tr><td><strong>December 4, 2022</strong></td><td>200+ principals sign petition against Maoz's authority over external programs</td></tr>
+<tr><td><strong>December 2022</strong></td><td>50+ local authorities declare boycott of Maoz's policies</td></tr>
+<tr><td><strong>January 2023</strong></td><td>New government forms; Maoz officially appointed deputy minister with authority over external programs in schools</td></tr>
+<tr><td><strong>January 2023</strong></td><td>Trans boy removed from religious school; Hoshen issues public condemnation</td></tr>
+<tr><td><strong>May 2023</strong></td><td>Cabinet approves Maoz's return to role overseeing school programming and "Jewish identity"</td></tr>
+<tr><td><strong>May 2023</strong></td><td>Maoz proposes "Shaveh" transparency system for external programs</td></tr>
+<tr><td><strong>2023</strong></td><td>Maoz proposes "Students Rights Law" requiring 75% parental consent and banning LGBTQ content before grade 9 -- does not pass</td></tr>
+<tr><td><strong>2024</strong></td><td>Tolerance Program budget cut 85%: NIS 3M to NIS 300K. 4,200 Hoshen workshops canceled.</td></tr>
+<tr><td><strong>July 2025</strong></td><td>Court-ordered transparency system launches -- parents can see which external programs operated in their children's schools for the first time</td></tr>
+</table>
+<h3>Net Effect</h3>
+<p>The November 2022 guidelines were a <strong>high-water mark</strong> for LGBTQ+ integration in Israeli schools that was almost immediately undermined by the incoming government:</p>
+<ul>
+<li>The guidelines technically remain on the books but were issued by a caretaker government</li>
+<li>The practical infrastructure (budget, external programs, political backing) was dismantled</li>
+<li>Hoshen's operational capacity was devastated: from ~2,000 workshops/year to potentially very few</li>
+<li>The organization describes itself as in "existential crisis"</li>
+<li>The guidelines may have actually <strong>accelerated</strong> the political backlash by providing a tangible target</li>
+</ul>
+
+</div>
+<div class="section" id="section-10">
+<h2>10. Content Comparison: Hebrew vs. English Materials</h2>
+<h3>Hebrew Self-Description</h3>
+<table>
+<tr><th>Hebrew Term</th><th>Literal Translation</th><th>Significance</th></tr>
+<tr><td><strong>ארגון החינוך וההסברה של הקהילה הגאה</strong></td><td>"The education and <strong>advocacy</strong> organization of the gay community"</td><td>Explicitly uses "hasbara" (הסברה) -- the same word used for Israeli state propaganda/advocacy. Positions the organization as advancing a cause.</td></tr>
+<tr><td><strong>שינוי עמדות שליליות</strong></td><td>"Changing negative attitudes"</td><td>Explicitly acknowledges attitude modification as the goal</td></tr>
+<tr><td><strong>שגרירי הסברה</strong></td><td>"Advocacy ambassadors"</td><td>Volunteers are described as ambassadors of a community, not educators</td></tr>
+<tr><td><strong>מרכז החינוך וההסברה</strong></td><td>"The education and advocacy center"</td><td>Education and advocacy are presented as inseparable</td></tr>
+</table>
+<h3>English Self-Description</h3>
+<table>
+<tr><th>English Term</th><th>Significance</th></tr>
+<tr><td>"Education and information center"</td><td>"Advocacy" is replaced with "information" -- much softer</td></tr>
+<tr><td>"Advancing tolerance and understanding"</td><td>The goal is framed as tolerance, not attitude change</td></tr>
+<tr><td>"Create a safe and understanding space"</td><td>Passive, supportive framing</td></tr>
+<tr><td>"Non-profit volunteer organization"</td><td>Emphasizes altruistic volunteer nature</td></tr>
+<tr><td>"Combat stereotypes"</td><td>Fighting against something (prejudice) rather than changing people's views toward something</td></tr>
+</table>
+<h3>Specific Messaging Gaps</h3>
+<table>
+<tr><th>Topic</th><th>Hebrew Version</th><th>English Version</th></tr>
+<tr><td><strong>Organizational identity</strong></td><td>"Advocacy organization" (ארגון הסברה)</td><td>"Education and information center"</td></tr>
+<tr><td><strong>Goal</strong></td><td>"Changing negative attitudes"</td><td>"Advancing tolerance"</td></tr>
+<tr><td><strong>Volunteers</strong></td><td>"Advocacy ambassadors" (שגרירי הסברה)</td><td>"Volunteers"</td></tr>
+<tr><td><strong>Target audience</strong></td><td>"From kindergarten through high school" (מגיל הגן ועד התיכון)</td><td>Grades 7-12, with educator training mentioned separately</td></tr>
+<tr><td><strong>Kindergarten programs</strong></td><td>Explicitly mentioned</td><td>Downplayed or omitted</td></tr>
+<tr><td><strong>Budget crisis</strong></td><td>Emphasized as existential threat</td><td>Fundraising framing: "support them today"</td></tr>
+</table>
+<h3>Fundraising Materials (English)</h3>
+<p>Via <strong>A Wider Bridge</strong> (US-based donor conduit), Hoshen is described as:</p>
+<ul>
+<li>"The information and education center of the LGBT movement in Israel"</li>
+<li>"A nationwide, non-profit volunteer organization"</li>
+<li>"Combating stereotypes regarding sexual orientation and gender identity"</li>
+</ul>
+<p><strong>Missing from English fundraising materials:</strong></p>
+<ul>
+<li>The word "advocacy" (הסברה)</li>
+<li>The goal of "changing attitudes"</li>
+<li>The kindergarten teacher training programs</li>
+<li>The specific methodology (volunteers sharing coming-out stories to students)</li>
+<li>The NIS 1,000 per workshop revenue model</li>
+<li>The lack of parental consent</li>
+<li>The age-12 entry point</li>
+</ul>
+<p><strong>Sources:</strong></p>
+<ul>
+<li><a href="https://www.hoshen.org/" target="_blank" rel="noopener">Hoshen Hebrew Homepage</a></li>
+<li><a href="https://www.hoshen.org/english" target="_blank" rel="noopener">Hoshen English Page</a></li>
+<li><a href="https://awiderbridge.org/impact-grants/" target="_blank" rel="noopener">A Wider Bridge - Impact Grants</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Hoshen_(organization" target="_blank" rel="noopener">Wikipedia English - Hoshen</a>)</li>
+</ul>
+
+</div>
+<div class="section" id="section-11">
+<h2>11. Additional Findings</h2>
+<h3>The Sagi Golan Memorial Program</h3>
+<p>Prior research mentioned a "Sagi Golan Memorial Program." Research found:</p>
+<ul>
+<li>Maj. Sagi Golan, 30, was an openly gay IDF officer killed at Kibbutz Be'eri on October 7, 2023, 13 days before his planned wedding to his boyfriend</li>
+<li>His partner Omer Ohana successfully lobbied to amend the Bereaved Families Law to recognize LGBTQ+ widows/widowers</li>
+<li><strong>No school program named after him was independently verified</strong> in this research. The prior report may have confused a general Hoshen program with memorial naming.</li>
+</ul>
+<h3>IMPACT-SE Analysis of Israeli Textbooks</h3>
+<p>The Institute for Monitoring Peace and Cultural Tolerance in School Education (IMPACT-SE) examined Israeli textbooks and found:</p>
+<ul>
+<li>LGBT content is "generally not included in textbooks" but provided as "online supplementary materials"</li>
+<li>Textbook references are "almost exclusively limited to heterosexuality and cisgender persons"</li>
+<li>LGBTQ+ education happens through external programs (like Hoshen), not through the regular curriculum</li>
+<li>This means Hoshen fills a vacuum -- there is no textbook-based alternative</li>
+</ul>
+<h3>Academic Research on Effectiveness</h3>
+<p>One peer-reviewed study (2016): "Changing Attitudes of High School Students in Israel toward Homosexuality"</p>
+<ul>
+<li>Sample: 272 students, 3 high schools</li>
+<li>Method: Pre/post questionnaires around Hoshen workshops</li>
+<li>Findings: Improvement in emotional, cognitive, and behavioral subscales</li>
+<li><strong>Limitations:</strong> Study measured Hoshen's own workshops; unclear if independent or commissioned; no long-term follow-up; no control group methodology documented; single study in 18+ years of operation</li>
+</ul>
+<h3>Hoshen's IDF Training</h3>
+<p>For 15+ years, Hoshen has provided LGBTQ+ education to IDF soldiers of all ranks. In 2023, A Wider Bridge called on the IDF to reconsider a policy shift that reduced LGBTQ+ education for soldiers, indicating the military training was being scaled back similarly to school programs.</p>
+
+</div>
+<div class="section" id="section-12">
+<h2>12. Open Questions Still Unanswered</h2>
+<ol>
+<li><strong>What exactly do the storytelling cards say?</strong> The middle school program cards describing "daily lives of LGBTQ+ youth" to 12-year-olds have never been publicly reviewed or published.</li>
+</ol>
+<ol>
+<li><strong>Is there a background check for volunteers?</strong> Israeli law requires background checks for anyone working in educational institutions. Whether Hoshen's volunteers undergo these checks is not documented.</li>
+</ol>
+<ol>
+<li><strong>What happens during Q&A?</strong> Students can ask anything. Are there guidelines for what volunteers should and should not answer? Is sexual content discussed? What happens when a 12-year-old asks explicit questions?</li>
+</ol>
+<ol>
+<li><strong>Who at SHaFI approved the programs?</strong> No named individual is associated with the approval. The decision was administrative, not subject to public review.</li>
+</ol>
+<ol>
+<li><strong>Why is the Gefen rating only 3/5?</strong> What criteria were used, and what shortcomings were identified?</li>
+</ol>
+<ol>
+<li><strong>Do volunteers have ongoing supervision?</strong> After the weekend training, is there professional oversight of what happens in classrooms?</li>
+</ol>
+<ol>
+<li><strong>What do the 33 civic studies meetings contain?</strong> A 33-meeting curriculum on LGBT history and civil rights activism for high schoolers -- but the curriculum outline is not publicly available.</li>
+</ol>
+<ol>
+<li><strong>Current operational status?</strong> With the 85% budget cut and zero Gefen deployments recorded, is Hoshen still operating in schools at all?</li>
+</ol>
+<ol>
+<li><strong>Board member identities?</strong> Who governs the organization? What are their professional backgrounds?</li>
+</ol>
+<ol>
+<li><strong>Revenue from workshops vs. donations?</strong> At NIS 1,000/workshop x 2,000 workshops = up to NIS 2M in fee revenue, but this is just an estimate.</li>
+</ol>
+
+</div>
+<div class="section" id="section-13">
+<h2>Source Index</h2>
+<h3>Official/Institutional</h3>
+<ul>
+<li><a href="https://www.hoshen.org/" target="_blank" rel="noopener">Hoshen Official Website (Hebrew)</a></li>
+<li><a href="https://www.hoshen.org/english" target="_blank" rel="noopener">Hoshen English Page</a></li>
+<li><a href="https://www.hoshen.org/education" target="_blank" rel="noopener">Hoshen Education Page</a></li>
+<li><a href="https://www.hoshen.org/our-activities" target="_blank" rel="noopener">Hoshen Activities Page</a></li>
+<li><a href="https://meyda.education.gov.il/files/shefi/miniutumeniatpgia/yom_hahavana2017/hoshen.pdf" target="_blank" rel="noopener">MoE SHaFI - Hoshen PDF (2017)</a></li>
+<li><a href="https://www.guidestar.org.il/organization/513544494" target="_blank" rel="noopener">GuideStar Israel - Hoshen (513544494)</a></li>
+</ul>
+<h3>Organizational Profiles</h3>
+<ul>
+<li><a href="https://ha-migdalor.co.il/organizations/hoshen/" target="_blank" rel="noopener">HaMigdalor - Hoshen</a></li>
+<li><a href="https://wdg.co.il/%D7%97%D7%95%D7%A9%D7%9F-%D7%97%D7%99%D7%A0%D7%95%D7%9A-%D7%95%D7%A9%D7%99%D7%A0%D7%95%D7%99/" target="_blank" rel="noopener">WDG - Hoshen</a></li>
+<li><a href="https://www.kolzchut.org.il/he/%D7%97%D7%95%D7%A9%D7%9F_(%D7%97%D7%99%D7%A0%D7%95%D7%9A_%D7%95%D7%A9%D7%99%D7%A0%D7%95%D7%99" target="_blank" rel="noopener">Kol-Zchut - Hoshen</a>)</li>
+<li><a href="https://shittah.org/organization/%D7%97%D7%95%D7%A9%D7%9F-%D7%97%D7%99%D7%A0%D7%95%D7%9A-%D7%95%D7%A9%D7%99%D7%A0%D7%95%D7%99/" target="_blank" rel="noopener">Shittah Institute - Hoshen</a></li>
+</ul>
+<h3>Wikipedia</h3>
+<ul>
+<li><a href="https://he.wikipedia.org/wiki/%D7%97%D7%95%D7%A9%22%D7%9F_-_%D7%97%D7%99%D7%A0%D7%95%D7%9A_%D7%95%D7%A9%D7%99%D7%A0%D7%95%D7%99" target="_blank" rel="noopener">Hebrew Wikipedia - Hoshen</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Hoshen_(organization" target="_blank" rel="noopener">English Wikipedia - Hoshen</a>)</li>
+</ul>
+<h3>News: November 2022 Guidelines</h3>
+<ul>
+<li><a href="https://www.jpost.com/israel-news/article-723055" target="_blank" rel="noopener">JPost - First-ever LGBTQ Guidelines</a></li>
+<li><a href="https://www.haaretz.com/israel-news/2022-11-22/ty-article/.premium/in-first-israel-issues-guidelines-to-schools-for-dealing-with-lgbtq-students/00000184-9fc4-d6b9-a9b7-fffd473b0000" target="_blank" rel="noopener">Haaretz - Guidelines Published</a></li>
+<li><a href="https://www.haaretz.com/israel-news/2022-12-01/ty-article/.premium/education-min-told-to-respond-to-petition-against-regulating-treatment-of-lgbtq-students/00000184-cf50-d8a0-a9dc-cffe25f70000" target="_blank" rel="noopener">Haaretz - Lavi Petition</a></li>
+</ul>
+<h3>News: Avi Maoz Controversy</h3>
+<ul>
+<li><a href="https://www.timesofisrael.com/far-right-deputy-ministers-bill-would-bar-teaching-sex-orientation-before-9th-grade/" target="_blank" rel="noopener">Times of Israel - Maoz Bill</a></li>
+<li><a href="https://www.timesofisrael.com/deal-gives-far-right-homophobe-maoz-authority-over-outside-programming-in-schools/" target="_blank" rel="noopener">Times of Israel - Maoz Authority</a></li>
+<li><a href="https://www.haaretz.com/israel-news/2023-05-28/ty-article/.premium/avi-maoz-is-back-in-school-anti-lgbtq-lawmaker-will-monitor-curriculum-administrators/00000188-6177-dde3-abf9-f97fa4f60000" target="_blank" rel="noopener">Haaretz - Maoz Back in Schools</a></li>
+<li><a href="https://www.haaretz.com/israel-news/2022-12-04/ty-article/.premium/over-200-israeli-principals-petition-against-far-right-lawmakers-control-over-education/00000184-d980-d6c7-a7ce-dfb0b94b0000" target="_blank" rel="noopener">Haaretz - 200 Principals Petition</a></li>
+<li><a href="https://www.jpost.com/israel-news/politics-and-diplomacy/article-723975" target="_blank" rel="noopener">JPost - 50 Authorities Boycott</a></li>
+<li><a href="https://www.ynet.co.il/news/article/bymjdfksje" target="_blank" rel="noopener">Ynet - Maoz Transparency System</a></li>
+</ul>
+<h3>News: Budget Cuts and Crisis</h3>
+<ul>
+<li><a href="https://www.jpost.com/israel-news/article-794666" target="_blank" rel="noopener">JPost - 85% Budget Cut</a></li>
+<li><a href="https://ejewishphilanthropy.com/israeli-lgbtq-groups-see-budgets-slashed-as-community-faces-growing-challenges/" target="_blank" rel="noopener">eJewish Philanthropy - LGBTQ Budget Slashed</a></li>
+</ul>
+<h3>News: Parental Transparency</h3>
+<ul>
+<li><a href="https://www.calcalist.co.il/local_news/article/sjsl8ezuxx" target="_blank" rel="noopener">Calcalist - Parents Can Now See External Programs (July 2025)</a></li>
+</ul>
+<h3>News: Kindergarten Extension</h3>
+<ul>
+<li><a href="https://www.haaretz.com/israel-news/.premium-t-a-to-extend-lgbt-programs-to-preschool-primary-school-teachers-1.5425602" target="_blank" rel="noopener">Haaretz - Tel Aviv Preschool Extension</a></li>
+</ul>
+<h3>News: Critics</h3>
+<ul>
+<li><a href="https://www.jpost.com/opinion/article-696855" target="_blank" rel="noopener">JPost Opinion - LGBTQ Education and Israel's Illiberal Left</a></li>
+</ul>
+<h3>Academic</h3>
+<ul>
+<li><a href="https://eric.ed.gov/?id=EJ1099750" target="_blank" rel="noopener">ERIC - Changing Attitudes Study (2016)</a></li>
+<li><a href="https://www.impact-se.org/wp-content/uploads/A-Look-at-Gender-Representation-and-LGBT-Inclusive-Education-in-Israeli-Textbooks.pdf" target="_blank" rel="noopener">IMPACT-SE - Gender and LGBT in Israeli Textbooks</a></li>
+<li><a href="https://www.researchgate.net/publication/372212908_History_of_Exclusion_Queer_Representation_in_Israeli_High_School_Textbooks" target="_blank" rel="noopener">ResearchGate - Queer Representation in Israeli Textbooks</a></li>
+</ul>
+<h3>Donor/Network</h3>
+<ul>
+<li><a href="https://awiderbridge.org/impact-grants/" target="_blank" rel="noopener">A Wider Bridge - Impact Grants</a></li>
+<li><a href="https://awiderbridge.org/2019pridemissionisrael/" target="_blank" rel="noopener">A Wider Bridge - Pride Mission</a></li>
+<li><a href="https://nif.org/tag/ministry-of-education/" target="_blank" rel="noopener">NIF Israel</a></li>
+</ul>
+<h3>Sagi Golan</h3>
+<ul>
+<li><a href="https://www.timesofisrael.com/cpt-sagi-golan-30-killed-13-days-before-wedding-to-his-boyfriend/" target="_blank" rel="noopener">Times of Israel - Sagi Golan</a></li>
+<li><a href="https://www.washingtonblade.com/2024/10/09/hundreds-attend-gay-idf-soldiers-memorial-service/" target="_blank" rel="noopener">Washington Blade - Memorial Service</a></li>
+</ul>
+
+</div>
+</div>
+
+<footer>
+  פרויקט זהות ציונית — דוח מחקר מעמיק | <a href="../">דירוג ערים</a> | <a href="../research/">כל הדוחות</a>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>קריבוס אור (Krivus Or) — "שפיץ לבני נוער" — דוח מחקר מעמיק</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background: #f5f5f8;
+  color: #1a1a2e;
+  direction: rtl;
+  line-height: 1.8;
+  font-size: 17px;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #1a1a2e; color: #fff;
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  overflow-x: auto; white-space: nowrap;
+}
+nav .brand { font-weight: 700; color: #ff8800; flex-shrink: 0; }
+nav a { color: #ccc; text-decoration: none; font-size: 0.85em; padding: 8px 4px; border-bottom: 2px solid transparent; flex-shrink: 0; }
+nav a:hover { color: #ff8800; border-bottom-color: #ff8800; }
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a5a8a 100%);
+  color: #fff; padding: 50px 20px 40px; text-align: center;
+}
+.hero h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+.hero .subtitle { font-size: 1.05em; color: #b0c4de; margin-bottom: 6px; }
+.hero .meta { font-size: 0.9em; color: #ff8800; margin-top: 8px; }
+.risk-badge {
+  display: inline-block; padding: 4px 16px; border-radius: 20px;
+  font-size: 0.85em; font-weight: 600; margin-top: 10px;
+}
+.risk-high { background: #e74c3c; color: #fff; }
+.risk-medium { background: #f39c12; color: #fff; }
+.risk-low { background: #27ae60; color: #fff; }
+.container { max-width: 860px; margin: 0 auto; padding: 30px 20px 80px; }
+.toc {
+  background: #fff; border-radius: 8px; padding: 22px 26px;
+  margin-bottom: 32px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.toc h2 { font-size: 1.15em; color: #2a5a8a; margin-bottom: 12px; border-bottom: 2px solid #667eea; padding-bottom: 6px; }
+.toc ol { padding-right: 22px; font-size: 0.93em; }
+.toc li { margin-bottom: 4px; }
+.toc a { color: #2a5a8a; text-decoration: none; }
+.toc a:hover { color: #ff8800; text-decoration: underline; }
+.section {
+  background: #fff; border-radius: 8px; padding: 28px 26px;
+  margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.section h2 { font-size: 1.4em; color: #1a1a2e; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #667eea; }
+.section h3 { font-size: 1.1em; color: #2a5a8a; margin: 18px 0 8px; }
+.section h4 { font-size: 1em; color: #444; margin: 14px 0 6px; }
+.section p { margin-bottom: 12px; text-align: justify; }
+.section ul, .section ol { padding-right: 22px; margin-bottom: 12px; }
+.section li { margin-bottom: 5px; }
+blockquote {
+  background: #f0f4fa; border-right: 4px solid #667eea;
+  padding: 12px 18px; margin: 12px 0; border-radius: 0 6px 6px 0;
+  font-size: 0.94em; color: #333;
+}
+.thesis {
+  background: #fff8f0; border-right: 3px solid #ff8800;
+  padding: 14px 18px; margin: 12px 0; border-radius: 0 5px 5px 0;
+  font-size: 0.96em; color: #6b4500;
+}
+table {
+  width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.91em;
+}
+th {
+  background: #667eea; color: #fff; padding: 8px 12px;
+  text-align: right; position: sticky; top: 44px; z-index: 5;
+}
+td {
+  padding: 7px 12px; border-bottom: 1px solid #e8e8e8;
+  text-align: right; vertical-align: top;
+}
+tr:nth-child(even) { background: #f8f9fc; }
+a { color: #2a5a8a; }
+a:hover { color: #ff8800; }
+.back-link {
+  display: inline-block; margin-bottom: 20px; padding: 6px 14px;
+  background: #667eea; color: #fff; border-radius: 4px;
+  text-decoration: none; font-size: 0.88em;
+}
+.back-link:hover { background: #5a6fd6; color: #fff; }
+footer {
+  text-align: center; padding: 30px 20px; color: #888; font-size: 0.85em;
+}
+strong { color: #1a1a2e; }
+code {
+  background: #f0f0f0; padding: 1px 5px; border-radius: 3px;
+  font-size: 0.9em;
+}
+.source-tag {
+  display: inline-block; background: #e8eef6; padding: 2px 8px;
+  border-radius: 10px; font-size: 0.78em; color: #2a5a8a;
+  margin: 2px 3px; text-decoration: none;
+}
+.source-tag:hover { background: #d0dff0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">דוח מחקר מעמיק</span>
+  <a href="../">חזרה לדירוג</a>
+  <a href="../research/">כל הדוחות</a>
+  <a href="#section-1">1. Who/What is קריבו</a> <a href="#section-2">2. What is "שפיץ" (S</a> <a href="#section-3">3. Does "Empowerment</a> <a href="#section-4">4. Financial Structu</a> <a href="#section-5">5. Leadership</a> <a href="#section-6">6. Target Audience</a> <a href="#section-7">7. Government Approv</a> <a href="#section-8">8. Connections to Ot</a> <a href="#section-9">Risk Assessment</a> <a href="#section-10">Open Questions for F</a> <a href="#section-11">Sources</a>
+</nav>
+
+<div class="hero">
+  <h1>קריבוס אור (Krivus Or) — "שפיץ לבני נוער"</h1>
+  <div class="subtitle">Program: שפיץ לבני נוער — תכנית העצמה אישית וקבוצתית</div>
+  <div class="meta">Date: 2026-02-17</div>
+  
+</div>
+
+<div class="container">
+  <a href="../research/" class="back-link">← כל דוחות המחקר</a>
+  <div class="toc"><h2>תוכן עניינים</h2><ol><li><a href="#section-1">1. Who/What is קריבוס אור?</a></li><li><a href="#section-2">2. What is "שפיץ" (Shpitz)?</a></li><li><a href="#section-3">3. Does "Empowerment" Include Feminist/Gender/Social Justice Content?</a></li><li><a href="#section-4">4. Financial Structure</a></li><li><a href="#section-5">5. Leadership</a></li><li><a href="#section-6">6. Target Audience</a></li><li><a href="#section-7">7. Government Approval — Gefen Status</a></li><li><a href="#section-8">8. Connections to Other Organizations</a></li><li><a href="#section-9">Risk Assessment</a></li><li><a href="#section-10">Open Questions for Further Investigation</a></li><li><a href="#section-11">Sources</a></li></ol></div>
+  <div class="section" id="section-1">
+<h2>1. Who/What is קריבוס אור?</h2>
+<h3>Entity Type</h3>
+<ul>
+<li><strong>Legal structure:</strong> עוסק מורשה (Licensed/Authorized Dealer = sole proprietor)</li>
+<li><strong>Organization number:</strong> 36415149</li>
+<li><strong>Source classification in Gefen:</strong> חיצוני - מגזר עסקי (External - Business Sector)</li>
+<li><strong>NOT an amuta (association/NGO)</strong> — this is a for-profit individual business</li>
+</ul>
+<h3>The Individual: Or Krybus</h3>
+<ul>
+<li><strong>LinkedIn profile:</strong> Or Krybus (אור קריבוס) — Innovation Developer and Implementer, Project Manager at ORT Israel, Technology & Science Educational Network</li>
+<li><strong>Education:</strong> Ben-Gurion University of the Negev</li>
+<li><strong>Location:</strong> Ramat Gan</li>
+<li><strong>Connections:</strong> 500+ on LinkedIn</li>
+</ul>
+<p>The name "קריבוס אור" in the Gefen catalog follows the Israeli convention for sole proprietors: surname first, given name second (i.e., "Krybus, Or"). The LinkedIn profile confirms this individual exists and works in the education technology sector.</p>
+<h3>Contact Details (from Gefen catalog page)</h3>
+<ul>
+<li><strong>Email:</strong> 345mail@gmail.com</li>
+<li><strong>WhatsApp:</strong> +972-52-830-8144</li>
+</ul>
+<h3>What We Could NOT Find</h3>
+<ul>
+<li>No dedicated website for the program</li>
+<li>No social media presence for the program</li>
+<li>No news articles, press coverage, or testimonials</li>
+<li>No GuideStar Israel page (not an amuta)</li>
+<li>No obudget.org government transfer records found</li>
+<li>The email (345mail@gmail.com) and phone number returned zero web results — extremely low digital footprint</li>
+</ul>
+
+</div>
+<div class="section" id="section-2">
+<h2>2. What is "שפיץ" (Shpitz)?</h2>
+<h3>Program Details (from Gefen Catalog — 2school.co.il)</h3>
+<ul>
+<li><strong>Gefen Program Number:</strong> 5964</li>
+<li><strong>Route:</strong> במכרז המאגר (Tender Pool)</li>
+<li><strong>Ministry Framework:</strong> הכלה והשתלבות (Inclusion and Integration)</li>
+<li><strong>Subject Area:</strong> חברתי - ערכי (Social-Values Education)</li>
+<li><strong>Target Grades:</strong> ה', ו', ז', ח', ט', י', י"א, י"ב, י"ג, י"ד + education staff</li>
+<li><strong>Budget:</strong> ₪17,200 total across 4 cities, 5 schools (per user's data)</li>
+</ul>
+<h3>Program Description (as stated in catalog)</h3>
+<p>The program describes itself as a "unique program helping participants identify their uniqueness among peers, build strong self-identity, identify their strengths and inspire those around them."</p>
+<h3>Stated Goals</h3>
+<ol>
+<li>Significantly improve academic and social capabilities</li>
+<li>Create a winning school climate</li>
+<li>Find personal uniqueness</li>
+<li>Develop sense of competence and high self-worth</li>
+<li>Take personal and social responsibility</li>
+<li>Reduce cases of violence and encourage community spirit</li>
+<li>Set goals and achieve them</li>
+<li>Strengthen family relationships</li>
+<li>Create an optimal climate in the participant's environment</li>
+<li>Build proper community conduct</li>
+<li>Standing before an audience and self-advocacy</li>
+</ol>
+<h3>Catalog Tags</h3>
+<p>Leadership development, life skills, violence prevention, dropout prevention, academic advancement, self-confidence, resilience, inclusion, acceptance of difference, youth mentorship.</p>
+<h3>Methodology</h3>
+<p>The catalog states the program uses:</p>
+<ul>
+<li>Exercises and experiences from daily life</li>
+<li>Experiential learning</li>
+<li>Goal-setting and responsibility-taking</li>
+<li>Development of personal and social competence</li>
+</ul>
+<p><strong>No specific named methodology is disclosed.</strong> No mention of any recognized therapeutic or pedagogical framework (CBT, PBL, SEL, etc.). No facilitator qualification requirements are listed in the catalog.</p>
+
+</div>
+<div class="section" id="section-3">
+<h2>3. Does "Empowerment" Include Feminist/Gender/Social Justice Content?</h2>
+<h3>Finding: NO EVIDENCE of ideological content</h3>
+<p>Based on extensive searching:</p>
+<ul>
+<li>The program description uses "העצמה" (empowerment) strictly in the personal/psychological sense: self-confidence, self-worth, goal-setting, violence prevention</li>
+<li><strong>No mention of:</strong> feminism, gender, sexuality, social justice, equality, rights, political awareness, activism, identity politics</li>
+<li>The Ministry framework is "הכלה והשתלבות" (Inclusion and Integration) — this is a standard MoE category for programs that help students with integration difficulties, not an ideological designation</li>
+<li>The subject area "חברתי - ערכי" (Social-Values) is the generic MoE category for programs addressing social skills and basic values</li>
+</ul>
+<h3>Comparison with Known Ideological Programs</h3>
+<p>Unlike programs from organizations like Shaar Shivion (שער שוויון) or Meyda Amin (מידע אמין), which explicitly focus on gender identity and social justice, this program's language is entirely about generic personal development. The catalog tags do not include any gender, feminist, or social justice terminology.</p>
+
+</div>
+<div class="section" id="section-4">
+<h2>4. Financial Structure</h2>
+<h3>Budget Scale</h3>
+<ul>
+<li><strong>Total known budget:</strong> ₪17,200 (per user's data)</li>
+<li><strong>Deployment:</strong> 4 cities, 5 schools</li>
+<li><strong>Average per school:</strong> ~₪3,440</li>
+</ul>
+<p>This is an extremely small operation. For context:</p>
+<ul>
+<li>Typical Gefen programs range from ₪5,000 to ₪50,000+ per school</li>
+<li>₪17,200 total suggests minimal hours per school (possibly 5-10 sessions total)</li>
+<li>The budget suggests this is supplementary income for an individual, not a primary business</li>
+</ul>
+<h3>Financial Transparency</h3>
+<ul>
+<li><strong>As a sole proprietor (עוסק מורשה), there are NO public financial disclosure requirements</strong> — unlike amutot which must file with the Registrar of Associations</li>
+<li>No GuideStar page exists</li>
+<li>No obudget.org records found</li>
+<li>The business number (36415149) appears to be a personal ID number used as a business registration, not a corporate entity number</li>
+</ul>
+<h3>Revenue Estimation</h3>
+<ul>
+<li>₪17,200 across 5 schools is the only known revenue from Gefen</li>
+<li>The individual also works at ORT Israel (per LinkedIn), suggesting this is a side business</li>
+<li>No other Gefen programs registered under this business number</li>
+</ul>
+
+</div>
+<div class="section" id="section-5">
+<h2>5. Leadership</h2>
+<h3>Or Krybus — Profile Reconstruction</h3>
+<table>
+<tr><th>Field</th><th>Detail</th></tr>
+<tr><td><strong>Name</strong></td><td>Or Krybus (אור קריבוס)</td></tr>
+<tr><td><strong>Primary employment</strong></td><td>Innovation Developer and Implementer, Project Manager — ORT Israel</td></tr>
+<tr><td><strong>Education</strong></td><td>Ben-Gurion University of the Negev</td></tr>
+<tr><td><strong>Location</strong></td><td>Ramat Gan</td></tr>
+<tr><td><strong>Side business</strong></td><td>"קריבוס אור" — Gefen supplier (עוסק מורשה #36415149)</td></tr>
+<tr><td><strong>Program</strong></td><td>"שפיץ לבני נוער" — Gefen #5964</td></tr>
+<tr><td><strong>Contact</strong></td><td>345mail@gmail.com, WhatsApp: +972-52-830-8144</td></tr>
+</table>
+<h3>ORT Israel Connection</h3>
+<p>ORT Israel is one of Israel's largest educational networks, focused on technology and science education. Or Krybus's title — "Innovation Developer and Implementer" — suggests a role in developing educational programs or tools. It is plausible that the "שפיץ" program was developed as a personal side project leveraging education sector experience. ORT Israel recently took over operation of the new Navon campus in Hadera.</p>
+<h3>Krybus Family in Israel (possible connections — NOT confirmed as relatives)</h3>
+<ul>
+<li><strong>Michael Krybus (מיכאל קריבוס)</strong> — Author of "Visual Pathways" / "איך להפוך מצב לארנב", time management and project management consultant, 32 years in tech, lectures since 2018 to 6,000+ attendees</li>
+<li><strong>Shmulik Krybus (שמוליק קריבוס)</strong> — Director at Deloitte Israel, 17+ years in IT and project management, leads healthcare sector and managed services</li>
+<li><strong>Prof. Avi Krybus (אברהם קריבוס)</strong> — Faculty at Tel Aviv University, School of Mechanical Engineering, renewable energy researcher</li>
+</ul>
+<p>The surname "קריבוס" is uncommon in Israel. The concentration of Krybus individuals in technology, project management, and consulting is notable. Whether these are direct family members is unconfirmed.</p>
+<h3>Note: Aviram Shpitz — NOT the same entity</h3>
+<p>A separate web search revealed "אבירם שפיץ" who runs "שפיץ — אימון וחיזוק מנטלי" (mental coaching) from Hadera since 2012. This is a DIFFERENT business — a mental coach for athletes and business owners, not the Gefen program. The name "שפיץ" in the Gefen program appears to be an independent branding choice by Or Krybus, not a franchise of Aviram Shpitz's business.</p>
+
+</div>
+<div class="section" id="section-6">
+<h2>6. Target Audience</h2>
+<h3>As Stated in Gefen Catalog</h3>
+<ul>
+<li><strong>Grades:</strong> 5th through 14th (elementary through post-high-school)</li>
+<li><strong>Population type:</strong> The catalog lists it under "הכלה והשתלבות" (Inclusion and Integration), which typically covers:</li>
+<li>Students with integration difficulties</li>
+<li>At-risk youth</li>
+<li>Students from disadvantaged backgrounds</li>
+<li>Students with special needs in mainstream settings</li>
+</ul>
+<h3>Analysis</h3>
+<p>The program tags include "dropout prevention" and "violence prevention" alongside "leadership" and "life skills." This dual targeting (both at-risk and general population) is common in Gefen programs — it allows the supplier to serve any school regardless of student population.</p>
+<p>The ₪17,200 budget across 5 schools suggests the program is being purchased as a supplementary enrichment, not as a core intervention for at-risk students.</p>
+
+</div>
+<div class="section" id="section-7">
+<h2>7. Government Approval — Gefen Status</h2>
+<h3>Gefen Catalog Approval</h3>
+<ul>
+<li><strong>Status:</strong> Listed in the Gefen catalog (הקטלוג לתוכניות גפן)</li>
+<li><strong>Route:</strong> במכרז המאגר (Tender Pool) — meaning the program went through the standard Gefen approval process</li>
+<li><strong>Program number:</strong> 5964</li>
+</ul>
+<h3>What Gefen Approval Means</h3>
+<p>Gefen (גפ"ן — גמישות פדגוגית ניהולית) is the Ministry of Education's framework for giving school principals flexibility to choose educational programs. To enter the Gefen catalog:</p>
+<ol>
+<li>The supplier submits a program proposal</li>
+<li>The proposal is reviewed for alignment with MoE educational goals</li>
+<li>If approved, the program appears in the catalog</li>
+<li>Individual schools can then choose to purchase it</li>
+</ol>
+<p><strong>Important caveats:</strong></p>
+<ul>
+<li>Gefen approval does NOT mean the MoE endorses the program content</li>
+<li>Gefen approval does NOT mean the program has been evaluated for effectiveness</li>
+<li>The MoE allocates ~₪11,500 per student to schools, and principals choose how to spend it</li>
+<li>There is no mandatory evaluation or outcome reporting</li>
+<li>Any registered business (עוסק מורשה, חברה, עמותה) can apply</li>
+</ul>
+<h3>Comparison to Other Programs</h3>
+<p>The program is classified as:</p>
+<ul>
+<li><strong>Framework:</strong> הכלה והשתלבות (same category as programs for students with disabilities and integration needs)</li>
+<li><strong>Subject:</strong> חברתי - ערכי (same category as both neutral life-skills programs and ideologically-charged programs)</li>
+</ul>
+
+</div>
+<div class="section" id="section-8">
+<h2>8. Connections to Other Organizations</h2>
+<h3>Direct Connections Found</h3>
+<ul>
+<li><strong>ORT Israel</strong> — Or Krybus's primary employer. ORT is a major educational network (not itself ideological in the relevant sense). The connection is employment, not program endorsement.</li>
+</ul>
+<h3>Connections NOT Found</h3>
+<ul>
+<li>No connection to any feminist, gender, or social justice organizations</li>
+<li>No connection to known empowerment/activist networks</li>
+<li>No connection to Shaar Shivion, Meyda Amin, or similar organizations from previous research</li>
+<li>No connection to known social change movements</li>
+<li>No connection to foreign funding sources</li>
+<li>No connection to NIF, Ford Foundation, or similar funders</li>
+</ul>
+<h3>Network Absence</h3>
+<p>The most notable finding is the <strong>absence of a network.</strong> Unlike organizations like ACRI, Dror Israel, or Gesher — which have extensive cross-organizational connections, board interlocks, and funding chains — "קריבוס אור" appears to be an isolated individual business with no discernible organizational network.</p>
+
+</div>
+<div class="section" id="section-9">
+<h2>Risk Assessment</h2>
+<h3>Overall Risk Rating: LOW (1.5/5) — Lower Than Initially Assigned</h3>
+<p>The initial risk rating of 3/5 may have been based on:</p>
+<ul>
+<li>The word "העצמה" (empowerment) in the program name</li>
+<li>The unknown operator identity</li>
+<li>The sole-proprietor opacity</li>
+</ul>
+<p>After research, the risk factors break down as:</p>
+<table>
+<tr><th>Factor</th><th>Rating</th><th>Notes</th></tr>
+<tr><td><strong>Ideological content</strong></td><td>1/5</td><td>No evidence of feminist, gender, or social justice content</td></tr>
+<tr><td><strong>Financial opacity</strong></td><td>3/5</td><td>Sole proprietor = zero public financial transparency</td></tr>
+<tr><td><strong>Scale of influence</strong></td><td>1/5</td><td>₪17,200 across 5 schools = minimal footprint</td></tr>
+<tr><td><strong>Organizational network</strong></td><td>1/5</td><td>No connections to activist/NGO networks</td></tr>
+<tr><td><strong>Methodology transparency</strong></td><td>2/5</td><td>No named methodology, no facilitator qualifications listed</td></tr>
+<tr><td><strong>Digital presence</strong></td><td>2/5</td><td>Near-zero online footprint — cannot verify claims</td></tr>
+</table>
+<h3>Key Risks</h3>
+<ol>
+<li><strong>Opacity:</strong> Cannot verify what actually happens in sessions because there is no website, no testimonials, no methodology documentation, and no evaluation reports</li>
+<li><strong>Unqualified facilitator risk:</strong> No facilitator qualifications are listed. Is Or Krybus personally running sessions? With what training?</li>
+<li><strong>Side-project risk:</strong> This appears to be a side business for someone whose primary job is at ORT Israel. Commitment and quality may be limited.</li>
+</ol>
+<h3>Key Mitigants</h3>
+<ol>
+<li>Tiny scale — even if problematic, impact is minimal</li>
+<li>Generic empowerment language — no ideological red flags</li>
+<li>Gefen catalog listing provides minimal quality floor</li>
+<li>The ORT Israel connection suggests education sector experience</li>
+</ol>
+
+</div>
+<div class="section" id="section-10">
+<h2>Open Questions for Further Investigation</h2>
+<ol>
+<li><strong>What are Or Krybus's coaching/facilitation qualifications?</strong> The Gefen listing shows no requirements. Does Or Krybus have formal training in group facilitation, therapy, coaching, or education?</li>
+<li><strong>What is the actual session content?</strong> The catalog description is generic. What activities, exercises, and discussions actually occur in sessions?</li>
+<li><strong>Is this a one-person operation?</strong> Does Or Krybus personally facilitate all sessions, or are there sub-contracted facilitators?</li>
+<li><strong>What is the relationship between this side business and ORT Israel employment?</strong> Does ORT know/approve? Is there any overlap?</li>
+<li><strong>How was the program evaluated for Gefen approval?</strong> What documentation was submitted?</li>
+<li><strong>Which 4 cities and 5 schools are currently using this program?</strong></li>
+</ol>
+
+</div>
+<div class="section" id="section-11">
+<h2>Sources</h2>
+<ul>
+<li><a href="https://www.2school.co.il/InterData/rmso/" target="_blank" rel="noopener">Gefen Catalog Page — שפיץ לבני נוער</a></li>
+<li><a href="https://www.linkedin.com/in/or-krybus-%D7%90%D7%95%D7%A8-%D7%A7%D7%A8%D7%99%D7%91%D7%95%D7%A1-189781a0/" target="_blank" rel="noopener">Or Krybus LinkedIn Profile</a></li>
+<li><a href="https://coach-shpits.wixsite.com/coach" target="_blank" rel="noopener">Aviram Shpitz — Mental Coaching (separate entity)</a></li>
+<li><a href="https://standardhome.co.il/aviramshpits/" target="_blank" rel="noopener">Aviram Shpitz — Standard Home profile</a></li>
+<li><a href="https://www.ort.org.il/schoolsandcolleges/" target="_blank" rel="noopener">ORT Israel — Schools and Colleges</a></li>
+<li><a href="https://citynews.co.il/%D7%A8%D7%A9%D7%AA-%D7%90%D7%95%D7%A8%D7%98-%D7%AA%D7%A4%D7%A2%D7%99%D7%9C-%D7%90%D7%AA-%D7%A7%D7%A8%D7%99%D7%99%D7%AA-%D7%94%D7%97%D7%99%D7%A0%D7%95%D7%9A-%D7%94%D7%97%D7%93%D7%A9%D7%94-%D7%A2/" target="_blank" rel="noopener">ORT Israel — Navon Campus, Hadera</a></li>
+<li><a href="https://www.visualpathways.net/" target="_blank" rel="noopener">Michael Krybus — Visual Pathways</a></li>
+<li><a href="https://lifedev.net/2017/11/06/visual-pathways-michael-kribus-interview/" target="_blank" rel="noopener">Michael Krybus — LifeDev Interview</a></li>
+<li><a href="https://www2.deloitte.com/il/he/profiles/shmulik-krybus-.html" target="_blank" rel="noopener">Shmulik Krybus — Deloitte Israel</a></li>
+<li><a href="https://engineering.tau.ac.il/profile/kribus" target="_blank" rel="noopener">Prof. Avi Krybus — Tel Aviv University</a></li>
+<li><a href="https://pob.education.gov.il/municipal-services/education-volunteering/cooperative-governance/" target="_blank" rel="noopener">Gefen System Overview — Ministry of Education</a></li>
+<li><a href="https://meyda.education.gov.il/files/mosdot/gefen-instructions-tashpad.pdf" target="_blank" rel="noopener">Gefen Guide (PDF)</a></li>
+<li><a href="https://il.near-place.com/spyz-ymwn-wywz-mntly-3820023-herbert-samuel-street-100-hadera" target="_blank" rel="noopener">il.near-place — שפיץ Hadera Contact</a></li>
+</ul>
+
+</div>
+</div>
+
+<footer>
+  פרויקט זהות ציונית — דוח מחקר מעמיק | <a href="../">דירוג ערים</a> | <a href="../research/">כל הדוחות</a>
+</footer>
+
+</body>
+</html>

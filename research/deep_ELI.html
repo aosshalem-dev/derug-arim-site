@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>אל"י — האגודה להגנת הילד — דוח מחקר מעמיק</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background: #f5f5f8;
+  color: #1a1a2e;
+  direction: rtl;
+  line-height: 1.8;
+  font-size: 17px;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #1a1a2e; color: #fff;
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  overflow-x: auto; white-space: nowrap;
+}
+nav .brand { font-weight: 700; color: #ff8800; flex-shrink: 0; }
+nav a { color: #ccc; text-decoration: none; font-size: 0.85em; padding: 8px 4px; border-bottom: 2px solid transparent; flex-shrink: 0; }
+nav a:hover { color: #ff8800; border-bottom-color: #ff8800; }
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a5a8a 100%);
+  color: #fff; padding: 50px 20px 40px; text-align: center;
+}
+.hero h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+.hero .subtitle { font-size: 1.05em; color: #b0c4de; margin-bottom: 6px; }
+.hero .meta { font-size: 0.9em; color: #ff8800; margin-top: 8px; }
+.risk-badge {
+  display: inline-block; padding: 4px 16px; border-radius: 20px;
+  font-size: 0.85em; font-weight: 600; margin-top: 10px;
+}
+.risk-high { background: #e74c3c; color: #fff; }
+.risk-medium { background: #f39c12; color: #fff; }
+.risk-low { background: #27ae60; color: #fff; }
+.container { max-width: 860px; margin: 0 auto; padding: 30px 20px 80px; }
+.toc {
+  background: #fff; border-radius: 8px; padding: 22px 26px;
+  margin-bottom: 32px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.toc h2 { font-size: 1.15em; color: #2a5a8a; margin-bottom: 12px; border-bottom: 2px solid #667eea; padding-bottom: 6px; }
+.toc ol { padding-right: 22px; font-size: 0.93em; }
+.toc li { margin-bottom: 4px; }
+.toc a { color: #2a5a8a; text-decoration: none; }
+.toc a:hover { color: #ff8800; text-decoration: underline; }
+.section {
+  background: #fff; border-radius: 8px; padding: 28px 26px;
+  margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.section h2 { font-size: 1.4em; color: #1a1a2e; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #667eea; }
+.section h3 { font-size: 1.1em; color: #2a5a8a; margin: 18px 0 8px; }
+.section h4 { font-size: 1em; color: #444; margin: 14px 0 6px; }
+.section p { margin-bottom: 12px; text-align: justify; }
+.section ul, .section ol { padding-right: 22px; margin-bottom: 12px; }
+.section li { margin-bottom: 5px; }
+blockquote {
+  background: #f0f4fa; border-right: 4px solid #667eea;
+  padding: 12px 18px; margin: 12px 0; border-radius: 0 6px 6px 0;
+  font-size: 0.94em; color: #333;
+}
+.thesis {
+  background: #fff8f0; border-right: 3px solid #ff8800;
+  padding: 14px 18px; margin: 12px 0; border-radius: 0 5px 5px 0;
+  font-size: 0.96em; color: #6b4500;
+}
+table {
+  width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.91em;
+}
+th {
+  background: #667eea; color: #fff; padding: 8px 12px;
+  text-align: right; position: sticky; top: 44px; z-index: 5;
+}
+td {
+  padding: 7px 12px; border-bottom: 1px solid #e8e8e8;
+  text-align: right; vertical-align: top;
+}
+tr:nth-child(even) { background: #f8f9fc; }
+a { color: #2a5a8a; }
+a:hover { color: #ff8800; }
+.back-link {
+  display: inline-block; margin-bottom: 20px; padding: 6px 14px;
+  background: #667eea; color: #fff; border-radius: 4px;
+  text-decoration: none; font-size: 0.88em;
+}
+.back-link:hover { background: #5a6fd6; color: #fff; }
+footer {
+  text-align: center; padding: 30px 20px; color: #888; font-size: 0.85em;
+}
+strong { color: #1a1a2e; }
+code {
+  background: #f0f0f0; padding: 1px 5px; border-radius: 3px;
+  font-size: 0.9em;
+}
+.source-tag {
+  display: inline-block; background: #e8eef6; padding: 2px 8px;
+  border-radius: 10px; font-size: 0.78em; color: #2a5a8a;
+  margin: 2px 3px; text-decoration: none;
+}
+.source-tag:hover { background: #d0dff0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">דוח מחקר מעמיק</span>
+  <a href="../">חזרה לדירוג</a>
+  <a href="../research/">כל הדוחות</a>
+  <a href="#section-1">1. Registration Deta</a> <a href="#section-2">2. Financial Analysi</a> <a href="#section-3">3. Leadership</a> <a href="#section-4">4. Programs</a> <a href="#section-5">5. Ideological Evolu</a> <a href="#section-6">6. International Con</a> <a href="#section-7">7. Connection to Oth</a> <a href="#section-8">8. GuideStar Transpa</a> <a href="#section-9">9. Government Ties</a> <a href="#section-10">10. Controversies</a> <a href="#section-11">Values Alignment Ass</a> <a href="#section-12">Open Questions for F</a> <a href="#section-13">Summary</a> <a href="#section-14">Sources</a>
+</nav>
+
+<div class="hero">
+  <h1>אל"י — האגודה להגנת הילד</h1>
+  <div class="subtitle">ELI — The Israel Association for Child Protection</div>
+  <div class="meta"></div>
+  
+</div>
+
+<div class="container">
+  <a href="../research/" class="back-link">← כל דוחות המחקר</a>
+  <div class="toc"><h2>תוכן עניינים</h2><ol><li><a href="#section-1">1. Registration Details</a></li><li><a href="#section-2">2. Financial Analysis</a></li><li><a href="#section-3">3. Leadership</a></li><li><a href="#section-4">4. Programs</a></li><li><a href="#section-5">5. Ideological Evolution</a></li><li><a href="#section-6">6. International Connections</a></li><li><a href="#section-7">7. Connection to Other Israeli Child-Protection Organizations</a></li><li><a href="#section-8">8. GuideStar Transparency Score</a></li><li><a href="#section-9">9. Government Ties</a></li><li><a href="#section-10">10. Controversies</a></li><li><a href="#section-11">Values Alignment Assessment</a></li><li><a href="#section-12">Open Questions for Further Investigation</a></li><li><a href="#section-13">Summary</a></li><li><a href="#section-14">Sources</a></li></ol></div>
+  <div class="section" id="section-1">
+<h2>1. Registration Details</h2>
+<table>
+<tr><th>Field</th><th>Value</th></tr>
+<tr><td><strong>Legal Name (Hebrew)</strong></td><td>אל"י- האגודה להגנת הילד מייסודה של ד"ר חניתה צימרין (ע"ר)</td></tr>
+<tr><td><strong>English Name</strong></td><td>ELI — The Israel Association for Child Protection</td></tr>
+<tr><td><strong>Amuta Number</strong></td><td>580030500</td></tr>
+<tr><td><strong>Type</strong></td><td>עמותה רשומה (Registered Association)</td></tr>
+<tr><td><strong>Founded</strong></td><td>1979</td></tr>
+<tr><td><strong>Founder</strong></td><td>Dr. Hanita Zimrin (ד"ר חניתה צימרין)</td></tr>
+<tr><td><strong>GuideStar IL</strong></td><td><a href="https://www.guidestar.org.il/organization/580030500" target="_blank" rel="noopener">guidestar.org.il/organization/580030500</a></td></tr>
+<tr><td><strong>Gefen (MoE) Program Numbers</strong></td><td>1731, 13928, 11187, 11189</td></tr>
+<tr><td><strong>Address</strong></td><td>9 Beit Alfa Street, Tel Aviv 6721909</td></tr>
+<tr><td><strong>Phone</strong></td><td>03-6091920 (main), *6935 (crisis hotline)</td></tr>
+<tr><td><strong>Website</strong></td><td><a href="https://www.eli.org.il/" target="_blank" rel="noopener">eli.org.il</a></td></tr>
+</table>
+<h3>US Entity</h3>
+<table>
+<tr><th>Field</th><th>Value</th></tr>
+<tr><td><strong>US Legal Name</strong></td><td>Eli-American Friends of the Israel Association for Child Protection Inc.</td></tr>
+<tr><td><strong>EIN</strong></td><td>52-2171745</td></tr>
+<tr><td><strong>Address</strong></td><td>P.O. Box 12, Merion, PA 19066</td></tr>
+<tr><td><strong>IRS Ruling Year</strong></td><td>1999</td></tr>
+<tr><td><strong>NTEE Code</strong></td><td>Q33 (International Relief)</td></tr>
+<tr><td><strong>Tax Status</strong></td><td>501(c)(3)</td></tr>
+<tr><td><strong>Website</strong></td><td><a href="http://eli-usa.org" target="_blank" rel="noopener">ELI-USA.ORG</a></td></tr>
+</table>
+<h3>Founding History</h3>
+<p>ELI was founded in 1979 by Dr. Hanita Zimrin (born Hanita Goldschmid, March 17, 1945 – May 4, 2021). Zimrin was a Jerusalem native who became the <strong>first person in Israel to receive a PhD in Social Work</strong> (1978). She served as a professor at Tel Aviv University's School of Social Work for 20 years (1970–1988), heading the Children and Youth Unit.</p>
+<p>In 1979, she established ELI as the <strong>first voluntary organization in Israel</strong> dedicated specifically to child abuse, at a time when the subject was not publicly acknowledged in Israeli society. She is credited with putting child abuse on the national agenda.</p>
+<p><strong>Important note:</strong> The user asked about a 1948 founding. This is incorrect. ELI was founded in <strong>1979</strong>, not 1948. The confusion may stem from Israel's founding year. ELI is 45+ years old, not 75+.</p>
+
+</div>
+<div class="section" id="section-2">
+<h2>2. Financial Analysis</h2>
+<h3>Israeli Entity (Amuta 580030500)</h3>
+<table>
+<tr><th>Metric</th><th>Value</th><th>Source</th></tr>
+<tr><td><strong>Annual Turnover (2023)</strong></td><td>7,658,350 NIS (~$2.1M)</td><td>obudget.org</td></tr>
+<tr><td><strong>Government Funding (Last 3 Years)</strong></td><td>~5,000 NIS</td><td>obudget.org</td></tr>
+<tr><td><strong>Government Funding (All-Time)</strong></td><td>~16,000 NIS (7 contracts, all Ministry of Justice)</td><td>obudget.org</td></tr>
+<tr><td><strong>Government Funding as % of Revenue</strong></td><td>~0.07%</td><td>Calculated</td></tr>
+</table>
+<p><strong>Key Insight:</strong> ELI is overwhelmingly <strong>donation-funded</strong>. Government funding is negligible — 5,000 NIS over three years against a ~7.6M annual turnover. This is unusual for an organization of its size and scope. The Ministry of Justice contracts are for specific expert services (psychological evaluations, sexual risk assessments, court-ordered consultations).</p>
+<p>However, ELI also receives <strong>indirect government funding</strong> through the Ministry of Social Services and National Insurance Institute (Bituach Leumi), which fund treatments provided through local social service bureaus. These payments go through the municipalities, not directly to ELI, and therefore may not appear on obudget.org as direct transfers.</p>
+<h3>US Entity (EIN 52-2171745) — ProPublica 990 Data</h3>
+<table>
+<tr><th>Fiscal Year</th><th>Revenue ($)</th><th>Expenses ($)</th><th>Net Income ($)</th><th>Total Assets ($)</th></tr>
+<tr><td><strong>2024</strong></td><td>592,959</td><td>463,202</td><td>+129,757</td><td>241,717</td></tr>
+<tr><td><strong>2023</strong></td><td>698,838</td><td>687,374</td><td>+11,464</td><td>111,960</td></tr>
+<tr><td><strong>2022</strong></td><td>424,739</td><td>625,791</td><td>-201,052</td><td>100,496</td></tr>
+<tr><td><strong>2021</strong></td><td>327,164</td><td>125,784</td><td>+201,380</td><td>301,548</td></tr>
+<tr><td><strong>2020</strong></td><td>273,032</td><td>207,895</td><td>+65,137</td><td>100,168</td></tr>
+<tr><td><strong>2019</strong></td><td>273,350</td><td>275,428</td><td>-2,078</td><td>35,031</td></tr>
+<tr><td><strong>2018</strong></td><td>216,924</td><td>224,585</td><td>-7,661</td><td>37,109</td></tr>
+<tr><td><strong>2016</strong></td><td>195,847</td><td>197,049</td><td>-1,202</td><td>61,210</td></tr>
+</table>
+<p><strong>Revenue Source:</strong> 100% contributions (2024 filing). Zero earned revenue.</p>
+<p><strong>Officer Compensation:</strong> $0 across all years for all officers.</p>
+<p><strong>Liabilities:</strong> $0 across all years.</p>
+<h3>Grants Sent to Israel (from US entity)</h3>
+<table>
+<tr><th>Year</th><th>Amount ($)</th></tr>
+<tr><td>2024</td><td>431,907</td></tr>
+<tr><td>2023</td><td>670,000</td></tr>
+<tr><td>2022</td><td>610,000</td></tr>
+<tr><td>2021</td><td>120,000</td></tr>
+<tr><td>2020</td><td>195,000</td></tr>
+</table>
+<p><strong>Trend:</strong> Strong upward trajectory, especially post-October 7 (2023 spike to $670K, 2022 already at $610K).</p>
+<h3>Known Donors/Funders</h3>
+<ul>
+<li><strong>Jacob and Hilda Blaustein Foundation</strong> — $50,000 grant (2024, 2-year term). Listed under "Strengthening Israeli Democracy" program area.</li>
+<li><strong>American Friends of ELI</strong> (US 501(c)(3)) — Primary conduit for US donations.</li>
+<li><strong>Individual donors</strong> — Via IsraelGives, website, PayPal, and events.</li>
+</ul>
+<h3>Aggregate Financial Picture</h3>
+<table>
+<tr><th>Source</th><th>Annual Estimate</th></tr>
+<tr><td>Israeli amuta total turnover</td><td>~7.6M NIS (~$2.1M)</td></tr>
+<tr><td>US entity grants to Israel</td><td>~$432K–670K (varies by year)</td></tr>
+<tr><td>Government direct transfers</td><td>Negligible (~2K NIS/year)</td></tr>
+<tr><td>Government indirect (via municipalities)</td><td>Unknown but significant — funds treatments</td></tr>
+<tr><td><strong>Estimated total money flow</strong></td><td><strong>~$2.1M–2.5M annually</strong></td></tr>
+</table>
+
+</div>
+<div class="section" id="section-3">
+<h2>3. Leadership</h2>
+<h3>Current Leadership</h3>
+<table>
+<tr><th>Role</th><th>Name</th><th>Notes</th></tr>
+<tr><td><strong>President & CEO</strong></td><td><strong>Eran Zimrin</strong> (ערן צימרין)</td><td>Son of founder Dr. Hanita Zimrin. Serves as both CEO of Israeli entity and VP of US entity. Regularly quoted in Israeli media.</td></tr>
+<tr><td><strong>Program Director</strong></td><td><strong>Limor Greenberg</strong> (לימור גרינברג)</td><td>Runs the school-based prevention programs. Contact: limor@eli.org.il</td></tr>
+<tr><td><strong>Administrative contact</strong></td><td><strong>Irit</strong></td><td>Referenced via irit@eli.org.il. Role not publicly specified; likely administrative director.</td></tr>
+</table>
+<h3>US Board (American Friends of ELI)</h3>
+<table>
+<tr><th>Role</th><th>Name</th></tr>
+<tr><td>President</td><td>Beth W. Galinsky</td></tr>
+<tr><td>Vice President</td><td>Eran Zimrin</td></tr>
+<tr><td>Treasurer/Secretary</td><td>Alan B. Fogel</td></tr>
+<tr><td>Director</td><td>Wendy Borodkin</td></tr>
+</table>
+<p><strong>All officers receive $0 compensation.</strong></p>
+<h3>Governance Concerns</h3>
+<ul>
+<li><strong>Charity Navigator rating: 2 out of 4 stars (72%)</strong> — "Needs Improvement"</li>
+<li><strong>0% independent board members</strong> (0/8 points for independence)</li>
+<li><strong>No conflict of interest policy</strong> (0/4 points)</li>
+<li><strong>No whistleblower policy</strong> (0/4 points)</li>
+<li><strong>No document retention policy</strong> (0/4 points)</li>
+<li><strong>No financial audit/review/compilation</strong> (0/15 points)</li>
+<li><strong>Form 990 not posted on website</strong> (0/4 points)</li>
+</ul>
+<p>However:</p>
+<ul>
+<li><strong>Impact & Measurement: 97/100</strong></li>
+<li><strong>Culture & Community: 100/100</strong></li>
+<li><strong>Leadership & Adaptability: 100/100</strong></li>
+<li><strong>Program Expense Ratio: 96.56%</strong> (excellent — nearly all funds go to programs)</li>
+<li><strong>Liabilities to Assets: 0%</strong> (no debt)</li>
+</ul>
+<p><strong>Pattern:</strong> This is a classic family-run charity — excellent at its mission, poor at governance formalities. The board appears to be personal/family associates rather than independent professionals. This does not necessarily indicate wrongdoing but is a structural transparency weakness.</p>
+<h3>Political Affiliations</h3>
+<p><strong>None found.</strong> No evidence of partisan political activity, Knesset lobbying beyond child welfare issues, or alignment with political movements. ELI operates as a professional/clinical organization, not a political advocacy group. This contrasts sharply with other child-adjacent organizations (e.g., ACRI, Dror Israel) that have explicit political dimensions.</p>
+<h3>Founder Biography</h3>
+<p><strong>Dr. Hanita Zimrin</strong> (1945–2021):</p>
+<ul>
+<li>Born Hanita Goldschmid in Jerusalem, grew up in Beit HaKerem</li>
+<li>First Israeli PhD in Social Work (1978)</li>
+<li>Professor at Tel Aviv University School of Social Work (1970–1988)</li>
+<li>Founded ELI in 1979</li>
+<li>Received <strong>ISPCAN Distinguished Career Award</strong> (1996) from the International Society for Prevention of Child Abuse and Neglect</li>
+<li>Member of the editorial board of <em>The International Journal of Child Abuse and Neglect</em> (US)</li>
+<li>Published extensively on child abuse in Israel</li>
+<li>Died May 4, 2021, age 76, after illness. Resided in Herzliya.</li>
+</ul>
+
+</div>
+<div class="section" id="section-4">
+<h2>4. Programs</h2>
+<h3>4.1 Clinical Treatment Center</h3>
+<ul>
+<li><strong>Main center:</strong> Rishon LeZion (serves surrounding municipalities)</li>
+<li><strong>New center (2023):</strong> Ra'anana</li>
+<li>Branches in multiple cities</li>
+<li><strong>20 new therapy rooms</strong> opened post-October 7 to handle war-related trauma</li>
+<li><strong>12,000 therapy hours annually</strong></li>
+<li><strong>80% success rate</strong> (clients returning to normal functioning)</li>
+<li>Treatment modalities: individual, group, dyadic, family therapy</li>
+<li>Populations served:</li>
+<li>Children/adolescents who experienced abuse</li>
+<li>Adults abused in childhood</li>
+<li>Parents who perpetrate abuse (treatment for abusers)</li>
+<li>Minors with inappropriate/harmful sexual behavior</li>
+<li>Children with disabilities</li>
+<li>Arabic-speaking populations</li>
+<li>Russian-speaking populations</li>
+<li>Ultra-Orthodox communities (closed communities)</li>
+<li>Family crises (adolescence, depression, loss, divorce)</li>
+</ul>
+<h3>4.2 School-Based Prevention (ELI on Stage)</h3>
+<ul>
+<li><strong>~100,000 children annually</strong> through theatrical education</li>
+<li><strong>~100 schools, ~300 activities per year</strong></li>
+<li><strong>Disclosure rate:</strong> 1.5% of children participating either disclose abuse or are identified as at risk</li>
+<li>Operating in schools since 1978/1979</li>
+</ul>
+<p><strong>Performance titles by age:</strong></p>
+<ul>
+<li><strong>Kindergarten:</strong> "Yael Learns to Protect Her Body" (יעל לומדת לשמור על הגוף שלה) — body safety</li>
+<li><strong>Primary school:</strong> "Bad Film" (סרט רע), "Mystery on the Web" (סוד ברשת) — cyberbullying, online safety</li>
+<li><strong>Middle/High school:</strong> "Something of You in Me" (משהו ממך בי) — abuse awareness</li>
+</ul>
+<p><strong>Content focus:</strong> Body boundaries, physical and sexual abuse prevention, cyberbullying, online safety, social exclusion. Performances adapted for religious-national and ultra-Orthodox sectors.</p>
+<p><strong>Post-performance protocol:</strong> Social workers and counselors lead discussions after each show to identify at-risk children.</p>
+<p><strong>KEY FINDING — SEL and Gender Content:</strong></p>
+<ul>
+<li>ELI's school programs are <strong>NOT SEL (Social-Emotional Learning)</strong> frameworks. They are narrowly focused on abuse prevention and detection.</li>
+<li>The organization does address "healthy sexuality" (מיניות בריאה) in its teacher training, but this refers to <strong>age-appropriate sexual development awareness</strong> for educators — not gender ideology or identity programming.</li>
+<li>The training covers: natural developmental stages, privacy boundaries, social media behavior, recognizing abuse indicators, mandatory reporting.</li>
+<li><strong>No evidence found</strong> of gender identity content, pronoun education, LGBTQ+ programming, or values-based social engineering in ELI's school programs.</li>
+<li>However, the US GuideStar profile lists alignment with SDG 5 "Gender Equality" — this appears to be a standard Candid/GuideStar classification rather than a programmatic focus.</li>
+</ul>
+<h3>4.3 Training Center</h3>
+<ul>
+<li><strong>Recognized by the Ministry of Social Services</strong> for therapist training</li>
+<li>Professional development for therapists, welfare workers, medical professionals, legal professionals, educators</li>
+<li>Lectures, seminars, customized training programs</li>
+<li><strong>Two training tracks for educators:</strong></li>
+</ul>
+<ol>
+<li>Healthy sexuality (age-appropriate development, boundaries)</li>
+<li>Protection and sexual abuse prevention (identification, response, mandatory reporting)</li>
+</ol>
+<h3>4.4 ELI/IDF Partnership</h3>
+<ul>
+<li><strong>ELI is the only civilian organization permitted to treat IDF soldiers</strong></li>
+<li>Provides supervision to army therapists and mental health officers</li>
+<li>Treats soldiers who are victims of sexual violence or misconduct</li>
+<li>Trains IDF officers in abuse detection</li>
+<li>Influences IDF policy on abuse prevention</li>
+</ul>
+<h3>4.5 Crisis Hotline</h3>
+<ul>
+<li><strong>Phone:</strong> *6935 (24/7)</li>
+<li><strong>10,000+ contacts annually</strong></li>
+<li>85% come through online channels</li>
+<li>Anonymous contact accepted</li>
+<li><strong>"Purple Button" (הכפתור הסגול):</strong> WhatsApp-based 24/7 reporting tool on the website</li>
+</ul>
+<h3>4.6 Mobile Therapy Unit</h3>
+<ul>
+<li>ELI claims to be <strong>the only organization in the world</strong> using a Mobile Therapy Unit to reach abuse victims who cannot afford to travel to treatment centers.</li>
+</ul>
+<h3>4.7 Safe Parenting Schools</h3>
+<ul>
+<li>Parenting education program (details limited in public sources)</li>
+</ul>
+<h3>4.8 Post-October 7 Emergency Response</h3>
+<ul>
+<li>Emergency fund activated by Eran Zimrin immediately after October 7</li>
+<li><strong>30% increase</strong> in requests for assistance in 2023</li>
+<li><strong>2,000+ terror victims treated</strong>, including:</li>
+<li>~700 children</li>
+<li>~1,300 adults</li>
+<li>~100 foreign workers</li>
+<li>~200 elderly</li>
+<li>~40 Holocaust survivors</li>
+<li>16.5% of all 2023 requests were for children of October 7 terror victims</li>
+<li>2,000+ emergency trauma treatments for residents of the Gaza envelope</li>
+</ul>
+
+</div>
+<div class="section" id="section-5">
+<h2>5. Ideological Evolution</h2>
+<h3>Original Mission (1979)</h3>
+<p>Clinical child abuse prevention, treatment, and professional training. No political or ideological agenda.</p>
+<h3>Current Mission (2025)</h3>
+<p>Clinical child abuse prevention, treatment, professional training, school-based prevention, IDF partnership. <strong>No political or ideological agenda.</strong></p>
+<h3>Assessment: Has the Mission Shifted?</h3>
+<p><strong>No significant ideological drift detected.</strong> ELI has <em>expanded</em> its scope (adding school programs, IDF partnership, mobile therapy, cyberbullying) but has not <em>shifted</em> its core mission. Key observations:</p>
+<ol>
+<li><strong>No political advocacy.</strong> Unlike ACRI or the National Council for the Child (המועצה הלאומית לשלום הילד), ELI does not engage in policy lobbying beyond child protection issues.</li>
+<li><strong>No values-based programming.</strong> ELI's school programs teach body safety and abuse detection, not social values or identity frameworks.</li>
+<li><strong>Sector-neutral.</strong> ELI adapts programs for secular, religious-national, and ultra-Orthodox populations. This indicates pragmatic service delivery, not ideological targeting.</li>
+<li><strong>Clinical focus maintained.</strong> The organization's primary identity remains as a clinical treatment provider, not an advocacy organization.</li>
+<li><strong>No Hebrew/English messaging gap.</strong> Both language versions describe the same mission: child protection from abuse. No semantic displacement detected.</li>
+</ol>
+<p>The Blaustein Foundation grant being classified under "Strengthening Israeli Democracy" is a <strong>funder classification</strong>, not ELI's self-identification. ELI does not position itself as a democracy organization.</p>
+
+</div>
+<div class="section" id="section-6">
+<h2>6. International Connections</h2>
+<table>
+<tr><th>Organization</th><th>Connection</th><th>Evidence</th></tr>
+<tr><td><strong>ISPCAN</strong> (International Society for Prevention of Child Abuse & Neglect)</td><td>Strong. Founder received ISPCAN Distinguished Career Award (1996). Founder sat on editorial board of ISPCAN's journal.</td><td>Confirmed via JTA archives, academic records</td></tr>
+<tr><td><strong>UNICEF</strong></td><td>No direct affiliation found</td><td>Searched Hebrew and English; no partnership documentation</td></tr>
+<tr><td><strong>WHO</strong></td><td>No direct affiliation found</td><td>No evidence of formal connection</td></tr>
+<tr><td><strong>Candid (GuideStar US)</strong></td><td>Platinum Seal of Transparency (2025)</td><td>Confirmed — fewer than 1% of US nonprofits achieve this</td></tr>
+<tr><td><strong>SDG Alignment</strong></td><td>Listed for SDGs 3, 5, 10, 16, 17 on US GuideStar</td><td>Standard Candid classification</td></tr>
+<tr><td><strong>Awesome Foundation</strong></td><td>Listed/profiled</td><td>Minor mention</td></tr>
+</table>
+<p><strong>Assessment:</strong> ELI's international connections are through professional networks (ISPCAN) and its US fundraising entity, not through policy organizations or UN bodies. This is consistent with a clinical organization rather than an advocacy one.</p>
+
+</div>
+<div class="section" id="section-7">
+<h2>7. Connection to Other Israeli Child-Protection Organizations</h2>
+<table>
+<tr><th>Organization</th><th>Relationship</th><th>Evidence</th></tr>
+<tr><td><strong>המועצה הלאומית לשלום הילד</strong> (National Council for the Child)</td><td><strong>Separate, different organization.</strong> No evidence of formal partnership. The Council is a policy/advocacy body (amuta 580000818); ELI is clinical.</td><td>Searched specifically — no partnership found</td></tr>
+<tr><td><strong>Latet Pe</strong></td><td>No connection found</td><td>No search results linking them</td></tr>
+<tr><td><strong>Matzmichim</strong></td><td>No connection found</td><td>No search results linking them</td></tr>
+<tr><td><strong>SafeSchool</strong></td><td>No connection found</td><td>No search results linking them</td></tr>
+<tr><td><strong>Haruv Campus (קמפוס חרוב)</strong></td><td>Possible connection — Haruv is a training center for child protection professionals</td><td>Indirect, both in same ecosystem</td></tr>
+<tr><td><strong>Kav LaHinuch</strong></td><td>ELI listed in their directory</td><td>Informational only</td></tr>
+<tr><td><strong>Kol Sherut</strong></td><td>ELI listed for wartime services</td><td>Service directory</td></tr>
+<tr><td><strong>Kol Zchut</strong></td><td>ELI listed as a service organization</td><td>Informational</td></tr>
+</table>
+<p><strong>Assessment:</strong> ELI operates relatively independently. It does not appear to be part of a larger network of ideologically aligned organizations. Its connections are professional (same field) rather than political.</p>
+
+</div>
+<div class="section" id="section-8">
+<h2>8. GuideStar Transparency Score</h2>
+<h3>GuideStar Israel</h3>
+<ul>
+<li><strong>Registration:</strong> 580030500</li>
+<li><strong>Status:</strong> Listed (GuideStar IL is JS-rendered; cannot scrape the transparency score remotely)</li>
+<li><strong>Known:</strong> The organization has a GuideStar profile with disclosed financial data (annual turnover 7.6M NIS for 2023)</li>
+</ul>
+<h3>Candid (US GuideStar)</h3>
+<ul>
+<li><strong>Seal:</strong> <strong>Platinum Seal of Transparency (2025)</strong> — highest level</li>
+<li><strong>Significance:</strong> Fewer than 1% of US nonprofits achieve Platinum status</li>
+<li><strong>Requires:</strong> Full disclosure of finances, impact metrics, governance, DEI, strategic plan</li>
+</ul>
+<h3>Charity Navigator</h3>
+<ul>
+<li><strong>Overall Rating:</strong> <strong>2/4 stars (72%)</strong> — "Needs Improvement"</li>
+<li><strong>Accountability & Finance:</strong> 54/100 (dragged down by zero independent board members, missing policies)</li>
+<li><strong>Impact & Measurement:</strong> 97/100 (strong)</li>
+<li><strong>Culture & Community:</strong> 100/100</li>
+<li><strong>Leadership & Adaptability:</strong> 100/100</li>
+<li><strong>Program Expense Ratio:</strong> 96.56% (excellent)</li>
+</ul>
+<p><strong>Interpretation:</strong> The low Charity Navigator score reflects governance structure weaknesses (family board, missing formal policies) — NOT financial mismanagement or low impact. The Candid Platinum seal and the 96.56% program expense ratio indicate strong financial stewardship.</p>
+
+</div>
+<div class="section" id="section-9">
+<h2>9. Government Ties</h2>
+<h3>Ministry of Social Services (Welfare)</h3>
+<ul>
+<li><strong>Recognized</strong> as a therapist training body</li>
+<li><strong>Funded indirectly</strong> — treatments provided through local social service bureaus are funded by the Ministry and Bituach Leumi (National Insurance)</li>
+<li>ELI collaborates with local welfare offices nationwide</li>
+</ul>
+<h3>Ministry of Justice</h3>
+<ul>
+<li><strong>Direct contracts:</strong> 7 contracts totaling ~16,000 NIS all-time</li>
+<li>For: Expert psychological evaluations, sexual risk assessments, court-ordered consultations</li>
+<li>This is minimal — essentially expert witness/assessment fees</li>
+</ul>
+<h3>Ministry of Education</h3>
+<ul>
+<li><strong>Gefen-approved programs:</strong> Numbers 1731, 13928, 11187, 11189</li>
+<li>ELI's school programs are in the MoE's program catalog (Sal Tarbut)</li>
+<li>This means schools can order ELI's theatrical performances through official channels</li>
+</ul>
+<h3>IDF (Israel Defense Forces)</h3>
+<ul>
+<li>Only civilian organization permitted to treat soldiers</li>
+<li>Provides supervision, training, and direct therapy</li>
+<li>Influences IDF policy on sexual abuse</li>
+</ul>
+<h3>Assessment</h3>
+<p>ELI has <strong>functional government relationships</strong> (service provider, approved vendor) but is <strong>not government-dependent</strong> financially. Government direct funding is negligible. The organization's independence from government money is notable — it means ELI is not beholden to political appointees or shifting ministry priorities.</p>
+
+</div>
+<div class="section" id="section-10">
+<h2>10. Controversies</h2>
+<h3>Found</h3>
+<p><strong>None.</strong> An extensive search in both Hebrew and English turned up no:</p>
+<ul>
+<li>State Comptroller (מבקר המדינה) audit findings against ELI</li>
+<li>Legal actions against the organization</li>
+<li>Media exposés or investigative journalism targeting ELI</li>
+<li>Accusations of financial impropriety</li>
+<li>Complaints about inappropriate content in school programs</li>
+<li>Political controversies</li>
+</ul>
+<h3>Structural Concerns (Noted, Not Controversial)</h3>
+<ol>
+<li><strong>Family governance:</strong> Organization founded by Dr. Hanita Zimrin, now led by her son Eran Zimrin. Zero independent board members on the US entity. This is a structural governance weakness, though not inherently problematic.</li>
+<li><strong>Charity Navigator score (2/4):</strong> Low score due to governance formalities, not financial issues.</li>
+<li><strong>Small scale relative to problem:</strong> 12,000 therapy hours and 10,000 hotline contacts per year against hundreds of thousands of children in Israel. The organization's reach, while meaningful, is modest.</li>
+</ol>
+
+</div>
+<div class="section" id="section-11">
+<h2>Values Alignment Assessment</h2>
+<table>
+<tr><th>Value</th><th>Score (1-5)</th><th>Notes</th></tr>
+<tr><td><strong>Child safety (core mission)</strong></td><td>5/5</td><td>Entire mission focused here. 45 years of consistent work.</td></tr>
+<tr><td><strong>Political neutrality</strong></td><td>5/5</td><td>No political activity, no partisan affiliations, no advocacy beyond child welfare</td></tr>
+<tr><td><strong>Transparency</strong></td><td>3/5</td><td>Candid Platinum but poor governance formalities; family board</td></tr>
+<tr><td><strong>Ideological neutrality in schools</strong></td><td>5/5</td><td>Programs teach body safety, not values/identity. Adapts for all sectors.</td></tr>
+<tr><td><strong>Financial integrity</strong></td><td>4/5</td><td>96.56% program expense ratio; no audit/review but no red flags</td></tr>
+<tr><td><strong>Independence from government</strong></td><td>5/5</td><td>Almost entirely donor-funded. Not beholden to political shifts.</td></tr>
+<tr><td><strong>Professional credibility</strong></td><td>5/5</td><td>Founder's ISPCAN recognition, MoE approval, MoSS training recognition, IDF partnership</td></tr>
+</table>
+
+</div>
+<div class="section" id="section-12">
+<h2>Open Questions for Further Investigation</h2>
+<ol>
+<li><strong>Israeli GuideStar transparency score</strong> — Cannot be scraped remotely (JS-rendered). Would need manual lookup to confirm the score ("ניקוד שקיפות").</li>
+<li><strong>Full Israeli financial filings</strong> — The 7.6M NIS turnover is from obudget.org metadata. A detailed breakdown (donations vs. service income vs. government) requires the actual annual financial report from the Registrar of Associations.</li>
+<li><strong>Board composition of Israeli entity</strong> — US board is known (4 members, all $0 comp). Israeli board members are on the GuideStar people page but couldn't be scraped.</li>
+<li><strong>Exact relationship between Eran Zimrin's CEO and President titles</strong> — He appears to hold both roles, which is unusual. Is there a separate board chair?</li>
+<li><strong>Scope of IDF partnership</strong> — How many soldiers are treated? What is the contractual arrangement? Is there compensation?</li>
+<li><strong>"Sex education for girls"</strong> program mentioned on US GuideStar — What is this exactly? Needs investigation. Could be a body-safety program marketed differently for US donors, or could be a newer program.</li>
+</ol>
+
+</div>
+<div class="section" id="section-13">
+<h2>Summary</h2>
+<p>ELI is a small, family-run, clinically focused child protection organization. It does what it says it does: treat abuse victims, train professionals, and run prevention programs in schools. There is no evidence of ideological agenda, political activism, mission drift, or controversial content in its programs. Its governance is weak (family board, no independent oversight) but its operational integrity appears strong (Platinum transparency seal, 96.56% program ratio, ISPCAN recognition, IDF trust). Among the organizations researched in this series, ELI is notable for its <strong>absence of red flags</strong>.</p>
+
+</div>
+<div class="section" id="section-14">
+<h2>Sources</h2>
+<h3>Primary Sources</h3>
+<ul>
+<li><a href="https://www.guidestar.org.il/organization/580030500" target="_blank" rel="noopener">GuideStar Israel — ELI Profile (580030500)</a></li>
+<li><a href="https://www.guidestar.org.il/organization/580030500/people" target="_blank" rel="noopener">GuideStar Israel — ELI People/Board</a></li>
+<li><a href="https://next.obudget.org/i/org/association/580030500" target="_blank" rel="noopener">obudget.org — ELI Government Transfers</a></li>
+<li><a href="https://www.eli.org.il/about/" target="_blank" rel="noopener">ELI Official Website — About</a></li>
+<li><a href="https://www.eli.org.il/" target="_blank" rel="noopener">ELI Official Website — Homepage</a></li>
+<li><a href="https://www.eli.org.il/performances/" target="_blank" rel="noopener">ELI — Performances</a></li>
+<li><a href="https://www.eli.org.il/services/%D7%94%D7%9B%D7%A9%D7%A8%D7%95%D7%AA-%D7%9C%D7%A6%D7%95%D7%95%D7%AA%D7%99-%D7%97%D7%99%D7%A0%D7%95%D7%9A/" target="_blank" rel="noopener">ELI — Training for Education Teams</a></li>
+</ul>
+<h3>US Entity Sources</h3>
+<ul>
+<li><a href="https://www.guidestar.org/profile/52-2171745" target="_blank" rel="noopener">GuideStar US / Candid — ELI Profile (EIN 52-2171745)</a></li>
+<li><a href="https://app.candid.org/profile/7787418/eli-israel-association-for-child-protection-52-2171745" target="_blank" rel="noopener">Candid Profile</a></li>
+<li><a href="https://projects.propublica.org/nonprofits/organizations/522171745" target="_blank" rel="noopener">ProPublica Nonprofit Explorer — 990 Filings</a></li>
+<li><a href="https://www.instrumentl.com/990-report/eli-american-friends-of-the-israel-associatn-for-child-protection-inc" target="_blank" rel="noopener">Instrumentl — 990 Report</a></li>
+<li><a href="https://www.charitynavigator.org/ein/522171745" target="_blank" rel="noopener">Charity Navigator — Rating</a></li>
+</ul>
+<h3>Media Sources</h3>
+<ul>
+<li><a href="https://www.maariv.co.il/news/israel/article-978338" target="_blank" rel="noopener">Maariv — Surge in Abuse Cases</a></li>
+<li><a href="https://www.israelhayom.co.il/news/welfare/article/15026302" target="_blank" rel="noopener">Israel Hayom — 30% Increase Post-War</a></li>
+<li><a href="https://www.israelhayom.co.il/news/welfare/article/17072023" target="_blank" rel="noopener">Israel Hayom — 10,000+ Referrals in 2024</a></li>
+<li><a href="https://www.israelhayom.co.il/news/education/article/19402734" target="_blank" rel="noopener">Israel Hayom — 1 in 5 Children Experience Violence in Schools</a></li>
+<li><a href="https://www.ice.co.il/financial-gossip/news/article/972818" target="_blank" rel="noopener">ICE — ELI Expands to Ra'anana</a></li>
+<li><a href="https://www.maariv.co.il/news/Education/Article-1097106" target="_blank" rel="noopener">Maariv — Purple Button Launch</a></li>
+<li><a href="https://www.jpost.com/israel-news/article-821962" target="_blank" rel="noopener">Jerusalem Post — ELI Fighting Child Abuse</a></li>
+<li><a href="https://www.jpost.com/israel-news/article-819212" target="_blank" rel="noopener">Jerusalem Post — Child Abuse Among Displaced Families</a></li>
+<li><a href="https://www.jns.org/wire/eli-opens-20-new-therapy-rooms-to-support-israels-children-impacted-by-war/" target="_blank" rel="noopener">JNS — 20 New Therapy Rooms</a></li>
+<li><a href="https://www.cbs42.com/business/press-releases/ein-presswire/868812738/eli-the-israel-association-for-child-protection-earns-2025-platinum-seal-of-transparency-from-candid/" target="_blank" rel="noopener">Candid Platinum Seal Press Release</a></li>
+<li><a href="https://www.tzomet-hrz.co.il/news/45740" target="_blank" rel="noopener">Tzomet HaSharon — Dr. Hanita Zimrin Obituary</a></li>
+</ul>
+<h3>Reference Sources</h3>
+<ul>
+<li><a href="https://www.kolzchut.org.il/he/%D7%90%D7%9C%22%D7%99_-_%D7%94%D7%90%D7%92%D7%95%D7%93%D7%94_%D7%9C%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%99%D7%9C%D7%93" target="_blank" rel="noopener">Kol Zchut — ELI</a></li>
+<li><a href="https://self-help.org.il/organizations/%D7%90%D7%9C%D7%99-%D7%94%D7%90%D7%92%D7%95%D7%93%D7%94-%D7%9C%D7%94%D7%92%D7%A0%D7%AA-%D7%94%D7%99%D7%9C%D7%93" target="_blank" rel="noopener">Self-Help — ELI</a></li>
+<li><a href="https://blaufund.org/eli-the-israel-association-for-child-protection-2/" target="_blank" rel="noopener">Blaustein Foundation — ELI Grant</a></li>
+<li><a href="https://jewishlink.news/eli-an-israel-association-for-child-protection/" target="_blank" rel="noopener">Jewish Link — ELI Profile</a></li>
+<li><a href="https://anglo-list.com/eli-child-protection-services/" target="_blank" rel="noopener">Anglo-List — ELI</a></li>
+<li><a href="https://www.jta.org/archive/behind-the-headlines-child-abuse-in-israel" target="_blank" rel="noopener">JTA Archives — Child Abuse in Israel</a></li>
+<li><a href="https://lilith.org/articles/israels-abused-children/" target="_blank" rel="noopener">Lilith — Israel's Abused Children</a></li>
+</ul>
+
+</div>
+</div>
+
+<footer>
+  פרויקט זהות ציונית — דוח מחקר מעמיק | <a href="../">דירוג ערים</a> | <a href="../research/">כל הדוחות</a>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>נעמה מונק (Naama Monk) — דוח מחקר מעמיק</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background: #f5f5f8;
+  color: #1a1a2e;
+  direction: rtl;
+  line-height: 1.8;
+  font-size: 17px;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #1a1a2e; color: #fff;
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  overflow-x: auto; white-space: nowrap;
+}
+nav .brand { font-weight: 700; color: #ff8800; flex-shrink: 0; }
+nav a { color: #ccc; text-decoration: none; font-size: 0.85em; padding: 8px 4px; border-bottom: 2px solid transparent; flex-shrink: 0; }
+nav a:hover { color: #ff8800; border-bottom-color: #ff8800; }
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a5a8a 100%);
+  color: #fff; padding: 50px 20px 40px; text-align: center;
+}
+.hero h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+.hero .subtitle { font-size: 1.05em; color: #b0c4de; margin-bottom: 6px; }
+.hero .meta { font-size: 0.9em; color: #ff8800; margin-top: 8px; }
+.risk-badge {
+  display: inline-block; padding: 4px 16px; border-radius: 20px;
+  font-size: 0.85em; font-weight: 600; margin-top: 10px;
+}
+.risk-high { background: #e74c3c; color: #fff; }
+.risk-medium { background: #f39c12; color: #fff; }
+.risk-low { background: #27ae60; color: #fff; }
+.container { max-width: 860px; margin: 0 auto; padding: 30px 20px 80px; }
+.toc {
+  background: #fff; border-radius: 8px; padding: 22px 26px;
+  margin-bottom: 32px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.toc h2 { font-size: 1.15em; color: #2a5a8a; margin-bottom: 12px; border-bottom: 2px solid #667eea; padding-bottom: 6px; }
+.toc ol { padding-right: 22px; font-size: 0.93em; }
+.toc li { margin-bottom: 4px; }
+.toc a { color: #2a5a8a; text-decoration: none; }
+.toc a:hover { color: #ff8800; text-decoration: underline; }
+.section {
+  background: #fff; border-radius: 8px; padding: 28px 26px;
+  margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.section h2 { font-size: 1.4em; color: #1a1a2e; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #667eea; }
+.section h3 { font-size: 1.1em; color: #2a5a8a; margin: 18px 0 8px; }
+.section h4 { font-size: 1em; color: #444; margin: 14px 0 6px; }
+.section p { margin-bottom: 12px; text-align: justify; }
+.section ul, .section ol { padding-right: 22px; margin-bottom: 12px; }
+.section li { margin-bottom: 5px; }
+blockquote {
+  background: #f0f4fa; border-right: 4px solid #667eea;
+  padding: 12px 18px; margin: 12px 0; border-radius: 0 6px 6px 0;
+  font-size: 0.94em; color: #333;
+}
+.thesis {
+  background: #fff8f0; border-right: 3px solid #ff8800;
+  padding: 14px 18px; margin: 12px 0; border-radius: 0 5px 5px 0;
+  font-size: 0.96em; color: #6b4500;
+}
+table {
+  width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.91em;
+}
+th {
+  background: #667eea; color: #fff; padding: 8px 12px;
+  text-align: right; position: sticky; top: 44px; z-index: 5;
+}
+td {
+  padding: 7px 12px; border-bottom: 1px solid #e8e8e8;
+  text-align: right; vertical-align: top;
+}
+tr:nth-child(even) { background: #f8f9fc; }
+a { color: #2a5a8a; }
+a:hover { color: #ff8800; }
+.back-link {
+  display: inline-block; margin-bottom: 20px; padding: 6px 14px;
+  background: #667eea; color: #fff; border-radius: 4px;
+  text-decoration: none; font-size: 0.88em;
+}
+.back-link:hover { background: #5a6fd6; color: #fff; }
+footer {
+  text-align: center; padding: 30px 20px; color: #888; font-size: 0.85em;
+}
+strong { color: #1a1a2e; }
+code {
+  background: #f0f0f0; padding: 1px 5px; border-radius: 3px;
+  font-size: 0.9em;
+}
+.source-tag {
+  display: inline-block; background: #e8eef6; padding: 2px 8px;
+  border-radius: 10px; font-size: 0.78em; color: #2a5a8a;
+  margin: 2px 3px; text-decoration: none;
+}
+.source-tag:hover { background: #d0dff0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">דוח מחקר מעמיק</span>
+  <a href="../">חזרה לדירוג</a>
+  <a href="../research/">כל הדוחות</a>
+  <a href="#section-1">1. Practitioner Iden</a> <a href="#section-2">2. SEI Certification</a> <a href="#section-3">3. What Does "מודעות</a> <a href="#section-4">4. Age Groups & Cont</a> <a href="#section-5">5. Financial Structu</a> <a href="#section-6">6. Government Approv</a> <a href="#section-7">7. Social Media Pres</a> <a href="#section-8">8. Connections to Ot</a> <a href="#section-9">9. Risk Assessment &</a> <a href="#section-10">10. Open Questions f</a> <a href="#section-11">Data Sources Used</a> <a href="#section-12">Comparison to Meyda </a>
+</nav>
+
+<div class="hero">
+  <h1>נעמה מונק (Naama Monk)</h1>
+  <div class="subtitle">Program: "חינוך למיניות בריאה ומודעות מגדרית" (Education for Healthy Sexuality and Gender Awareness)</div>
+  <div class="meta"></div>
+  
+</div>
+
+<div class="container">
+  <a href="../research/" class="back-link">← כל דוחות המחקר</a>
+  <div class="toc"><h2>תוכן עניינים</h2><ol><li><a href="#section-1">1. Practitioner Identity</a></li><li><a href="#section-2">2. SEI Certification & Network Position</a></li><li><a href="#section-3">3. What Does "מודעות מגדרית" Mean in Her Program?</a></li><li><a href="#section-4">4. Age Groups & Content</a></li><li><a href="#section-5">5. Financial Structure & Business Model</a></li><li><a href="#section-6">6. Government Approval / Entry into Gefen</a></li><li><a href="#section-7">7. Social Media Presence & Values</a></li><li><a href="#section-8">8. Connections to Other Sex-Ed Organizations</a></li><li><a href="#section-9">9. Risk Assessment & Values Alignment</a></li><li><a href="#section-10">10. Open Questions for Further Investigation</a></li><li><a href="#section-11">Data Sources Used</a></li><li><a href="#section-12">Comparison to Meyda Amin Pattern</a></li></ol></div>
+  <div class="section" id="section-1">
+<h2>1. Practitioner Identity</h2>
+<h3>Personal Details</h3>
+<ul>
+<li><strong>Full Name:</strong> נעמה מונק (Naama Monk/Munk)</li>
+<li><strong>Estimated Birth Year:</strong> ~1992 (based on Pinterest username "naamamunk92")</li>
+<li><strong>Estimated Age:</strong> ~33-34</li>
+<li><strong>Social Media:</strong> Pinterest profile (naamamunk92); Facebook group admin</li>
+<li><strong>LinkedIn:</strong> Not found</li>
+<li><strong>Instagram:</strong> Not found as professional account</li>
+<li><strong>Professional Affiliation:</strong> Listed on SEI website (sei.org.il)</li>
+</ul>
+<h3>Education & Qualifications</h3>
+<ul>
+<li><strong>B.Ed.</strong> (Bachelor of Education) -- institution not specified</li>
+<li><strong>M.A. in Gender Studies</strong> (לימודי מגדר) -- institution not specified (possibly Bar-Ilan University, which has the most prominent Gender Studies program in the religious-nationalist sector, and where she gave a presentation)</li>
+<li><strong>Certificate:</strong> Group facilitation in the field of sexuality from <strong>Beer Emuna Institute</strong> (מכון באר אמונה)</li>
+</ul>
+<h3>Professional Experience</h3>
+<ul>
+<li><strong>~6 years</strong> of delivering workshops and lectures (as of the time her SEI profile was written)</li>
+<li><strong>Target audience:</strong> Primarily girls, parents, and educational teams from the <strong>religious-nationalist (dati-leumi) community</strong></li>
+<li><strong>Facebook community manager:</strong> "הורים מדברים - מיניות בריאה עם ילדינו" (Parents Speaking - Healthy Sexuality with Our Children) -- Facebook group ID: 199881144599972</li>
+<li><strong>Academic presentation:</strong> Guest speaker at Bar-Ilan University's Gender Studies Program -- topic: "שיח חינוכי פמיניסטי בקרב הורים דתיים" (Feminist Educational Discourse Among Religious Parents)</li>
+</ul>
+
+</div>
+<div class="section" id="section-2">
+<h2>2. SEI Certification & Network Position</h2>
+<h3>SEI Membership Status</h3>
+<ul>
+<li><strong>Listed on SEI website:</strong> YES -- has a dedicated profile page at sei.org.il</li>
+<li><strong>Listed as SEI Facilitator:</strong> NO -- does NOT appear in the ~105 facilitators listed on SEI's facilitators page</li>
+<li><strong>Interpretation:</strong> She is recognized/affiliated with SEI but may not meet their full facilitator standard, or she opted not to apply for the facilitator listing. Her profile page exists on the SEI site, which implies some level of recognition, but the absence from the facilitators list is notable.</li>
+</ul>
+<h3>SEI Overview</h3>
+<ul>
+<li><strong>Founded:</strong> March 2023 (very recent)</li>
+<li><strong>Nature:</strong> Self-certifying professional body -- sex educators credentialing sex educators</li>
+<li><strong>Members include:</strong> Representatives from "general society, Arab society, religious society, LGBTQ organizations, and special education"</li>
+<li><strong>Key committees:</strong> Ethics (Yael Tal-Poah), Standards (Zahava Tamir), Conferences (Sion Lotan)</li>
+<li><strong>Relationship to IPPF/Delet Petucha:</strong> Open Door (Delet Petucha) is listed on SEI's trainings page as a provider of CSE (Comprehensive Sex Education) certification. Open Door IS the Israeli representative of IPPF. So while Monk herself is not directly connected to IPPF, the SEI network she belongs to includes IPPF's Israeli arm.</li>
+</ul>
+<h3>Beer Emuna Institute (Source of Monk's Certification)</h3>
+<ul>
+<li><strong>Operates under:</strong> Emunah (אמונה) -- the Religious Zionist Women's Movement (established 1935)</li>
+<li><strong>GuideStar registration:</strong> 580011146 (Emunah amuta)</li>
+<li><strong>Location:</strong> Jerusalem</li>
+<li><strong>Program director:</strong> Maor Kaplan (women's track), Yoav Weinstock (men's track)</li>
+<li><strong>Key faculty:</strong> Tami Samet, Dr. Michal Louria, Dr. Shulmit Ben-Shaya</li>
+<li><strong>Duration:</strong> 1-year program, 20 sessions</li>
+<li><strong>Curriculum includes:</strong> Female/male anatomy, sexuality in early childhood, modesty education, body image, sexual identity, intersection of Jewish law and sexuality</li>
+<li><strong>Gender identity / LGBTQ content:</strong> NOT explicitly mentioned in available curriculum descriptions for either the women's or men's tracks</li>
+<li><strong>Recognition:</strong> Claims to be "recognized by SEI" -- but notably Beer Emuna is NOT listed on SEI's official trainings page (which lists ~9 other programs). This suggests the recognition claim may be informal, reciprocal, or outdated.</li>
+<li><strong>Ideological positioning:</strong> Religious-Zionist framework; integrates Jewish law (halakha) with sexuality education; serves primarily the dati-leumi community. More moderate than secular sex-ed programs but explicitly feminist in orientation.</li>
+</ul>
+
+</div>
+<div class="section" id="section-3">
+<h2>3. What Does "מודעות מגדרית" Mean in Her Program?</h2>
+<h3>Self-Description (from SEI profile and Bar-Ilan presentation)</h3>
+<p>Monk describes her work as integrating "gender awareness" (מודעות מגדרית) into sexuality education, specifically addressing:</p>
+<ul>
+<li><strong>How culture and society influence sexuality</strong></li>
+<li><strong>Relationships between genders</strong> (יחסים בין המינים)</li>
+<li><strong>Perceptions of femininity and masculinity</strong> (תפיסות נשיות וגבריות)</li>
+</ul>
+<h3>Specific Feminist Content (from Bar-Ilan Gender Studies page)</h3>
+<p>Her Facebook group column addresses:</p>
+<ul>
+<li><strong>Gender inequality in educational institutions</strong> (אי שוויון מגדרי במוסדות חינוך)</li>
+<li><strong>Beauty culture pressures on girls</strong> (תרבות קישוט היופי אצל בנות)</li>
+<li><strong>Lack of connection to female genitalia among girls</strong> (חוסר חיבור לאיברי המין הנשיים אצל בנות)</li>
+<li><strong>Stereotypical conceptions of masculinity and femininity</strong> (תפיסות סטריאוטיפיות של גבריות ונשיות)</li>
+<li><strong>Gaps in male sexuality vs. female sexuality</strong> (פערים במיניות הגברית לעומת הנשית)</li>
+</ul>
+<h3>Stated Aspiration</h3>
+<p>Monk has explicitly stated her aspiration to develop "a lecture series and training program for educational teams addressing gender gaps in religious-nationalist education" (תוכנית הכשרה לצוותים חינוכיים שתעסוק במיגור הפערים המגדריים בחינוך הדתי-לאומי).</p>
+<h3>Analysis: Is This About Trans / Gender Identity?</h3>
+<p>Based on available evidence, Monk's "מודעות מגדרית" appears to focus primarily on <strong>feminist analysis of gender roles</strong> (deconstructing stereotypes of masculinity/femininity, addressing power imbalances) rather than on <strong>gender identity / transgender issues</strong> specifically. However:</p>
+<ol>
+<li>The term "מודעות מגדרית" is deliberately chosen and is NOT part of the MoE standard curriculum framework</li>
+<li>Her M.A. in Gender Studies means she has been trained in the full academic gender theory curriculum, which in Israeli universities includes queer theory and gender identity</li>
+<li>SEI, the network she belongs to, explicitly includes "LGBTQ organizations" as members</li>
+<li>The MoE itself has incorporated "sexual orientation and gender identity" (נטייה מינית וזהות מגדרית) into its sexuality education budgeting framework</li>
+<li>There is no published curriculum for her specific program that would allow verification of exactly what is taught</li>
+</ol>
+<p><strong>Bottom line:</strong> The evidence suggests her primary focus is feminist gender-role analysis, but the academic and organizational infrastructure she operates within fully embraces gender identity ideology, and her program title deliberately signals "gender awareness" beyond what the MoE requires.</p>
+
+</div>
+<div class="section" id="section-4">
+<h2>4. Age Groups & Content</h2>
+<h3>What We Know</h3>
+<ul>
+<li>The Gefen program description references: "החינוך הדתי-לאומי עבר שינויים משמעותיים בשנים האחרונות ביחס לחינוך המיני" (Religious-nationalist education has undergone significant changes regarding sex education)</li>
+<li>States that "healthy sexuality education -- receiving comprehensive and professional knowledge about physical and sexual development is a fundamental right of children and adolescents"</li>
+<li>Field classification: רווחתי-רגשי (Welfare-Emotional), NOT חברתי-ערכי (Social-Values) -- this is the same field as counseling/therapy programs, not the social-ideological category</li>
+<li>The program appears to serve school-age children (the Gefen system covers K-12)</li>
+</ul>
+<h3>Known School Deployments</h3>
+<p>From the Gefen mapping data:</p>
+<table>
+<tr><th>City</th><th>School</th><th>Budget (NIS)</th><th>Source</th></tr>
+<tr><td>באר שבע (Beer Sheva)</td><td>עמל רמות באר שבע - 670042</td><td>7,900</td><td>human_tzvi (manual rating)</td></tr>
+<tr><td>(2nd city unknown)</td><td>(2nd school unknown)</td><td>unknown</td><td>Gefen data</td></tr>
+</table>
+<p><strong>Total documented:</strong> 2 schools, 2 cities, NIS 7,900 confirmed budget (possibly ~NIS 15,800 total if both schools are similar)</p>
+<h3>What We Don't Know</h3>
+<ul>
+<li><strong>Specific age groups</strong> at each school (elementary? middle? high school?)</li>
+<li><strong>Specific lesson content</strong> per age group</li>
+<li><strong>Whether content differs</strong> for secular vs. religious schools</li>
+<li><strong>Published curriculum / syllabus</strong> -- none found online</li>
+</ul>
+
+</div>
+<div class="section" id="section-5">
+<h2>5. Financial Structure & Business Model</h2>
+<h3>Entity Type</h3>
+<ul>
+<li><strong>Likely:</strong> עוסק מורשה (Sole Proprietor / Authorized Dealer) -- the same structure used by Meyda Amin (Shlomit HaBaron) and similar to Maga BeTiaum's initial setup</li>
+<li><strong>No amuta (NGO)</strong> registration found</li>
+<li><strong>No company (חברה בע"מ)</strong> registration found</li>
+<li><strong>No GuideStar page</strong> found</li>
+</ul>
+<h3>Scale Comparison</h3>
+<table>
+<tr><th>Metric</th><th>נעמה מונק</th><th>מידע אמין (Meyda Amin)</th><th>מגע בתיאום</th></tr>
+<tr><td>Entity Type</td><td>עוסק מורשה (likely)</td><td>עוסק מורשה</td><td>חברה בע"מ</td></tr>
+<tr><td>Gefen Budget</td><td>~NIS 7,900+</td><td>NIS 1,189,257</td><td>~NIS 453,000</td></tr>
+<tr><td>Schools</td><td>2</td><td>136</td><td>27</td></tr>
+<tr><td>Cities</td><td>2</td><td>15</td><td>7</td></tr>
+<tr><td>Facilitators</td><td>1 (just Monk herself?)</td><td>~40</td><td>Unknown</td></tr>
+</table>
+<p><strong>Assessment:</strong> Monk is a micro-operator -- orders of magnitude smaller than Meyda Amin. This could mean she is a new entrant still building scale, or it could mean she is primarily a freelance educator who also has a small Gefen catalog entry. The danger is if her model scales like Meyda Amin's did.</p>
+<h3>Possible Family Connection to "מונק שירותים"</h3>
+<p>The Gefen catalog also contains program #20212 "פרויקט עוצמה - הגנה עצמית" (Project Strength - Self Defense) operated by "מונק שירותים" (Monk Services). This is a different program (self-defense based on Dennis Survival method) with 3 schools in 2 cities. The shared surname "מונק" suggests a possible family connection (husband? father? brother?) but this is unverified. If confirmed, it would mean the Monk family has multiple entries in the Gefen system through what may be a family business structure.</p>
+
+</div>
+<div class="section" id="section-6">
+<h2>6. Government Approval / Entry into Gefen</h2>
+<h3>How Did She Get In?</h3>
+<p>The Gefen system requires:</p>
+<ol>
+<li>Submission of a program proposal with curriculum</li>
+<li>Professional review by MoE staff</li>
+<li>Acceptance into the catalog (מאגר)</li>
+<li>Schools then select from the catalog at their discretion</li>
+</ol>
+<h3>Potential Pathway</h3>
+<p>Given her Beer Emuna certification and SEI affiliation, Monk likely entered the system through the standard application process. The fact that she classified her program as "רווחתי-רגשי" (welfare-emotional) rather than "חברתי-ערכי" (social-values) may have helped with approval, as welfare-emotional programs receive less ideological scrutiny.</p>
+<h3>Notable Anomaly</h3>
+<p>Her program title "חינוך למיניות בריאה <strong>ומודעות מגדרית</strong>" contains a term ("מודעות מגדרית") that is NOT standard MoE terminology for sex education programs. The MoE standard is "חינוך למיניות בריאה ומניעת פגיעות." The addition of "gender awareness" to the official program title suggests this was reviewed and approved by MoE, which raises questions about what review process was applied.</p>
+
+</div>
+<div class="section" id="section-7">
+<h2>7. Social Media Presence & Values</h2>
+<h3>Facebook Group: "הורים מדברים - מיניות בריאה עם ילדינו"</h3>
+<ul>
+<li><strong>Group URL:</strong> facebook.com/groups/199881144599972</li>
+<li><strong>Management:</strong> Co-managed with unnamed colleagues</li>
+<li><strong>Content model:</strong> Weekly themed content; each manager writes content or raises discussion questions</li>
+<li><strong>Purpose:</strong> "Making sex education knowledge accessible to religious parents in particular and parents in general"</li>
+<li><strong>Collaborators:</strong> "Many professionals who share their knowledge and experience"</li>
+<li><strong>Notable:</strong> The group attempts to "contain diversity and be sensitive to the variety of parents within it"</li>
+</ul>
+<h3>Bar-Ilan University Presentation</h3>
+<ul>
+<li><strong>Topic:</strong> "שיח חינוכי פמיניסטי בקרב הורים דתיים" (Feminist Educational Discourse Among Religious Parents)</li>
+<li><strong>Host:</strong> Bar-Ilan Gender Studies Program</li>
+<li><strong>Significance:</strong> This is an academic-activist presentation, not just educational. It positions Monk as someone who explicitly seeks to inject feminist discourse into religious communities.</li>
+</ul>
+<h3>Pinterest</h3>
+<ul>
+<li><strong>Username:</strong> naamamunk92</li>
+<li><strong>Content:</strong> Personal (not professionally relevant based on available info)</li>
+</ul>
+<h3>LinkedIn / Instagram</h3>
+<ul>
+<li><strong>Not found</strong> as professional accounts</li>
+</ul>
+
+</div>
+<div class="section" id="section-8">
+<h2>8. Connections to Other Sex-Ed Organizations</h2>
+<h3>Direct Connections (Confirmed)</h3>
+<table>
+<tr><th>Organization</th><th>Connection Type</th></tr>
+<tr><td><strong>SEI</strong> (האגודה לחינוך מיני)</td><td>Profile on their website; certified by their recognized institute</td></tr>
+<tr><td><strong>Beer Emuna Institute</strong> (מכון באר אמונה)</td><td>Source of her facilitator certification</td></tr>
+<tr><td><strong>Emunah Movement</strong> (אמונה - תנועת האישה הדתית לאומית)</td><td>Beer Emuna operates under Emunah</td></tr>
+<tr><td><strong>Bar-Ilan Gender Studies Program</strong></td><td>Guest presenter</td></tr>
+</table>
+<h3>Network Connections (Through SEI Membership)</h3>
+<p>The SEI network connects Monk to the same professional ecosystem as:</p>
+<ul>
+<li><strong>Meyda Amin</strong> (מידע אמין על מין) -- Shlomit HaBaron (listed on SEI trainings page)</li>
+<li><strong>Maga BeTiaum</strong> (מגע בתיאום) -- Listed as SEI member</li>
+<li><strong>Ladaat</strong> (לדעת לבחור נכון) -- Listed on SEI site</li>
+<li><strong>Nekudat Mifgash</strong> (נקודת מפגש) -- Listed on SEI trainings page</li>
+<li><strong>Open Door / Delet Petucha</strong> (דלת פתוחה) -- IPPF representative; listed on SEI trainings page</li>
+<li><strong>Tehuda</strong> (תהודה) -- Also operates in Modiin area (found in "עיר לומדת" Modiin catalog)</li>
+</ul>
+<h3>NOT Connected (Based on Evidence)</h3>
+<ul>
+<li><strong>IPPF/Delet Petucha:</strong> No direct connection found (though connected via SEI network)</li>
+<li><strong>Tehuda:</strong> No direct connection found (though both operate in sex education space)</li>
+</ul>
+
+</div>
+<div class="section" id="section-9">
+<h2>9. Risk Assessment & Values Alignment</h2>
+<h3>Risk Factors</h3>
+<table>
+<tr><th>Factor</th><th>Assessment</th><th>Weight</th></tr>
+<tr><td><strong>Explicit "gender awareness" in program name</strong></td><td>HIGH -- non-standard MoE term signals ideological content</td><td>Critical</td></tr>
+<tr><td><strong>M.A. in Gender Studies</strong></td><td>MEDIUM-HIGH -- academic training in feminist/queer theory</td><td>High</td></tr>
+<tr><td><strong>Feminist mission in religious education</strong></td><td>HIGH -- explicitly seeks to change religious communities</td><td>High</td></tr>
+<tr><td><strong>SEI network membership</strong></td><td>MEDIUM -- connected to cluster of sex-ed organizations</td><td>Medium</td></tr>
+<tr><td><strong>Beer Emuna certification</strong></td><td>MEDIUM -- religious framework but feminist orientation</td><td>Medium</td></tr>
+<tr><td><strong>Scale of operation</strong></td><td>LOW -- only 2 schools, tiny budget</td><td>Low</td></tr>
+<tr><td><strong>Transparency</strong></td><td>LOW RISK -- no evidence of hiding content, but no published curriculum either</td><td>Medium</td></tr>
+<tr><td><strong>Possible family business structure</strong></td><td>UNKNOWN -- "מונק שירותים" connection unverified</td><td>Low</td></tr>
+</table>
+<h3>Values Alignment Table</h3>
+<table>
+<tr><th>Value</th><th>Monk's Position</th><th>Risk to Traditional Parents</th></tr>
+<tr><td><strong>Bodily autonomy</strong></td><td>Central to her teaching</td><td>Low -- widely accepted</td></tr>
+<tr><td><strong>Prevention of sexual abuse</strong></td><td>Part of healthy sexuality education</td><td>None -- universally valued</td></tr>
+<tr><td><strong>Feminist analysis of gender roles</strong></td><td>Explicit and central</td><td>HIGH -- deconstructs traditional gender roles in religious context</td></tr>
+<tr><td><strong>Gender equality</strong></td><td>Core ideology</td><td>MEDIUM -- depends on how "equality" is defined</td></tr>
+<tr><td><strong>LGBTQ affirmation</strong></td><td>Not explicitly documented but network/academic background strongly implies</td><td>HIGH if present; UNKNOWN if actually taught</td></tr>
+<tr><td><strong>Gender identity exploration</strong></td><td>Not documented but term "מודעות מגדרית" could include</td><td>HIGH if present; UNKNOWN if actually taught</td></tr>
+<tr><td><strong>Respect for religious values</strong></td><td>Claims to work within religious community</td><td>MEDIUM -- she explicitly seeks to change religious norms, not just work within them</td></tr>
+<tr><td><strong>Parental authority / consent</strong></td><td>Offers parent lectures</td><td>UNKNOWN -- no evidence of opt-in/opt-out mechanism</td></tr>
+</table>
+
+</div>
+<div class="section" id="section-10">
+<h2>10. Open Questions for Further Investigation</h2>
+<ol>
+<li><strong>What is the complete curriculum?</strong> No syllabus or lesson plan has been found online. Requesting the full curriculum from the program or from the schools deploying it would clarify whether gender identity / trans topics are included.</li>
+</ol>
+<ol>
+<li><strong>What exactly is taught at each age level?</strong> The Gefen data shows 2 schools but doesn't specify grade levels. Is this elementary? Middle school? High school?</li>
+</ol>
+<ol>
+<li><strong>Is "מונק שירותים" (Monk Services, program #20212) a family business?</strong> If so, the Monk family has two Gefen entries, and the self-defense program may serve as a "foot in the door" for broader educational access.</li>
+</ol>
+<ol>
+<li><strong>Why isn't Beer Emuna listed on SEI's trainings page?</strong> Beer Emuna claims SEI recognition, but SEI's own page doesn't list them. Is the recognition informal? Has it lapsed?</li>
+</ol>
+<ol>
+<li><strong>What is the second city?</strong> The Gefen data says 2 cities / 2 schools, but we only confirmed Beer Sheva. What is the other city?</li>
+</ol>
+<ol>
+<li><strong>Is she planning to scale?</strong> Her stated aspiration is to build a training program for educational teams -- this suggests she intends to train other facilitators and scale beyond personal delivery, similar to Meyda Amin's trajectory.</li>
+</ol>
+<ol>
+<li><strong>What is her exact business registration?</strong> Is she an עוסק מורשה, עוסק פטור, or something else? The Gefen system typically requires at least עוסק מורשה.</li>
+</ol>
+<ol>
+<li><strong>Bar-Ilan Gender Studies presentation content</strong> -- was this a formal lecture? What was the full content? This could reveal more about her ideological framework.</li>
+</ol>
+
+</div>
+<div class="section" id="section-11">
+<h2>Data Sources Used</h2>
+<table>
+<tr><th>Source</th><th>URL</th><th>Finding</th></tr>
+<tr><td>SEI profile</td><td>https://sei.org.il/נעמה-מונק/</td><td>Bio, qualifications, philosophy</td></tr>
+<tr><td>Bar-Ilan Gender Studies</td><td>https://gender.biu.ac.il/node/1469</td><td>Feminist discourse presentation details</td></tr>
+<tr><td>SEI facilitators page</td><td>https://sei.org.il/facilitators/</td><td>Monk NOT listed among ~105 facilitators</td></tr>
+<tr><td>SEI about page</td><td>https://sei.org.il/about/</td><td>SEI founded March 2023</td></tr>
+<tr><td>SEI trainings page</td><td>https://sei.org.il/trainings/</td><td>Beer Emuna NOT listed; 9 other programs listed</td></tr>
+<tr><td>Beer Emuna (women)</td><td>https://machon-beer.org.il/מיניות-בריאה/</td><td>1-year program, topics, faculty</td></tr>
+<tr><td>Beer Emuna (men)</td><td>https://machon-beer.org.il/beer_emuna_men/</td><td>Men's track, no LGBTQ content visible</td></tr>
+<tr><td>Emunah movement</td><td>https://emunah.org.il/אמונה-במשפחה/מכון-באר-אמונה/</td><td>Beer Emuna operates under Emunah</td></tr>
+<tr><td>Gefen mapping data</td><td>derug-arim-site/data.js</td><td>Program #11683: 2 schools, 2 cities, NIS 7,900</td></tr>
+<tr><td>Gefen worst_programs</td><td>derug-arim-site/data/city_details.json</td><td>Beer Sheva deployment confirmed</td></tr>
+<tr><td>Gefen metadata</td><td>derug-arim-site/data/gefen_metadata.json</td><td>Score 4/5 auto, 5/5 human</td></tr>
+<tr><td>Pinterest</td><td>https://www.pinterest.com/naamamunk92/</td><td>Username suggests birth year 1992</td></tr>
+<tr><td>Facebook group</td><td>facebook.com/groups/199881144599972</td><td>Parents group she manages</td></tr>
+<tr><td>Modiin "Ir Lomedet"</td><td>modiin.muni.il</td><td>Tehuda (not Monk) offers sex-ed training in Modiin</td></tr>
+</table>
+
+</div>
+<div class="section" id="section-12">
+<h2>Comparison to Meyda Amin Pattern</h2>
+<p>The user asked whether Monk follows the "Meyda Amin pattern." Here is the comparison:</p>
+<table>
+<tr><th>Dimension</th><th>Meyda Amin (HaBaron)</th><th>Naama Monk</th></tr>
+<tr><td><strong>Started as</strong></td><td>Feminist activist (Achat Mitoch Achat -- sexual assault testimonies)</td><td>Feminist educator in religious community</td></tr>
+<tr><td><strong>Pivoted to</strong></td><td>School sex-ed via Gefen</td><td>School sex-ed via Gefen</td></tr>
+<tr><td><strong>Legal structure</strong></td><td>עוסק מורשה hiding ~40 facilitators</td><td>עוסק מורשה (likely), appears to be solo</td></tr>
+<tr><td><strong>Current scale</strong></td><td>NIS 1.18M, 15 cities, 136 school deployments</td><td>NIS ~7,900, 2 cities, 2 schools</td></tr>
+<tr><td><strong>Stated aspiration</strong></td><td>Already scaled</td><td>Wants to build training program for teams</td></tr>
+<tr><td><strong>SEI connection</strong></td><td>On SEI trainings page</td><td>On SEI profile page (but not facilitators page)</td></tr>
+<tr><td><strong>LGBTQ content</strong></td><td>Confirmed (includes LGBTQ affirmation, gender identity)</td><td>Not confirmed but highly probable given network/academic background</td></tr>
+<tr><td><strong>Transparency</strong></td><td>Published book, podcast, extensive media presence</td><td>Minimal public footprint, no published curriculum</td></tr>
+<tr><td><strong>Risk</strong></td><td>MEDIUM-HIGH (confirmed content + massive scale)</td><td>HIGH on content risk (unverified curriculum + "gender awareness" signaling), LOW on scale</td></tr>
+</table>
+<p><strong>Assessment:</strong> Monk is in the <strong>early stage</strong> of what could become a Meyda Amin-like trajectory. The warning signs are: (1) sole proprietor delivering sex-ed to children; (2) feminist/gender studies academic background; (3) explicit aspiration to build a training program and scale; (4) embedded in the SEI network. The key difference is scale -- she is currently micro. Whether she scales depends on demand from schools and municipalities.</p>
+<p><em>Report generated by Claude Opus 4.6 automated deep research agent. All claims are sourced from web search results and existing project data. Claims marked as "not confirmed" or "unknown" require manual verification.</em></p>
+
+</div>
+</div>
+
+<footer>
+  פרויקט זהות ציונית — דוח מחקר מעמיק | <a href="../">דירוג ערים</a> | <a href="../research/">כל הדוחות</a>
+</footer>
+
+</body>
+</html>

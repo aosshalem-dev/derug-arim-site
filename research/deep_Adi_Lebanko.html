@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>עדי לבנקו — לומדים אחרת (Adi Levenko — Learning Differently) — דוח מחקר מעמיק</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background: #f5f5f8;
+  color: #1a1a2e;
+  direction: rtl;
+  line-height: 1.8;
+  font-size: 17px;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #1a1a2e; color: #fff;
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  overflow-x: auto; white-space: nowrap;
+}
+nav .brand { font-weight: 700; color: #ff8800; flex-shrink: 0; }
+nav a { color: #ccc; text-decoration: none; font-size: 0.85em; padding: 8px 4px; border-bottom: 2px solid transparent; flex-shrink: 0; }
+nav a:hover { color: #ff8800; border-bottom-color: #ff8800; }
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a5a8a 100%);
+  color: #fff; padding: 50px 20px 40px; text-align: center;
+}
+.hero h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+.hero .subtitle { font-size: 1.05em; color: #b0c4de; margin-bottom: 6px; }
+.hero .meta { font-size: 0.9em; color: #ff8800; margin-top: 8px; }
+.risk-badge {
+  display: inline-block; padding: 4px 16px; border-radius: 20px;
+  font-size: 0.85em; font-weight: 600; margin-top: 10px;
+}
+.risk-high { background: #e74c3c; color: #fff; }
+.risk-medium { background: #f39c12; color: #fff; }
+.risk-low { background: #27ae60; color: #fff; }
+.container { max-width: 860px; margin: 0 auto; padding: 30px 20px 80px; }
+.toc {
+  background: #fff; border-radius: 8px; padding: 22px 26px;
+  margin-bottom: 32px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.toc h2 { font-size: 1.15em; color: #2a5a8a; margin-bottom: 12px; border-bottom: 2px solid #667eea; padding-bottom: 6px; }
+.toc ol { padding-right: 22px; font-size: 0.93em; }
+.toc li { margin-bottom: 4px; }
+.toc a { color: #2a5a8a; text-decoration: none; }
+.toc a:hover { color: #ff8800; text-decoration: underline; }
+.section {
+  background: #fff; border-radius: 8px; padding: 28px 26px;
+  margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.section h2 { font-size: 1.4em; color: #1a1a2e; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #667eea; }
+.section h3 { font-size: 1.1em; color: #2a5a8a; margin: 18px 0 8px; }
+.section h4 { font-size: 1em; color: #444; margin: 14px 0 6px; }
+.section p { margin-bottom: 12px; text-align: justify; }
+.section ul, .section ol { padding-right: 22px; margin-bottom: 12px; }
+.section li { margin-bottom: 5px; }
+blockquote {
+  background: #f0f4fa; border-right: 4px solid #667eea;
+  padding: 12px 18px; margin: 12px 0; border-radius: 0 6px 6px 0;
+  font-size: 0.94em; color: #333;
+}
+.thesis {
+  background: #fff8f0; border-right: 3px solid #ff8800;
+  padding: 14px 18px; margin: 12px 0; border-radius: 0 5px 5px 0;
+  font-size: 0.96em; color: #6b4500;
+}
+table {
+  width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.91em;
+}
+th {
+  background: #667eea; color: #fff; padding: 8px 12px;
+  text-align: right; position: sticky; top: 44px; z-index: 5;
+}
+td {
+  padding: 7px 12px; border-bottom: 1px solid #e8e8e8;
+  text-align: right; vertical-align: top;
+}
+tr:nth-child(even) { background: #f8f9fc; }
+a { color: #2a5a8a; }
+a:hover { color: #ff8800; }
+.back-link {
+  display: inline-block; margin-bottom: 20px; padding: 6px 14px;
+  background: #667eea; color: #fff; border-radius: 4px;
+  text-decoration: none; font-size: 0.88em;
+}
+.back-link:hover { background: #5a6fd6; color: #fff; }
+footer {
+  text-align: center; padding: 30px 20px; color: #888; font-size: 0.85em;
+}
+strong { color: #1a1a2e; }
+code {
+  background: #f0f0f0; padding: 1px 5px; border-radius: 3px;
+  font-size: 0.9em;
+}
+.source-tag {
+  display: inline-block; background: #e8eef6; padding: 2px 8px;
+  border-radius: 10px; font-size: 0.78em; color: #2a5a8a;
+  margin: 2px 3px; text-decoration: none;
+}
+.source-tag:hover { background: #d0dff0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">דוח מחקר מעמיק</span>
+  <a href="../">חזרה לדירוג</a>
+  <a href="../research/">כל הדוחות</a>
+  <a href="#section-1">1. Who is Adi Levenk</a> <a href="#section-2">2. Business Structur</a> <a href="#section-3">3. Program Content A</a> <a href="#section-4">4. Network and Reach</a> <a href="#section-5">5. Gefen Catalog Sta</a> <a href="#section-6">6. Values/Ideologica</a> <a href="#section-7">7. Risk Assessment</a> <a href="#section-8">8. Open Questions</a> <a href="#section-9">9. Source Summary</a> <a href="#section-10">10. Bottom Line</a>
+</nav>
+
+<div class="hero">
+  <h1>עדי לבנקו — לומדים אחרת (Adi Levenko — Learning Differently)</h1>
+  <div class="subtitle">Program: "לומדים איך ללמוד ולהצליח! (אסטרטגיות למידה המאה ה-21)"</div>
+  <div class="meta">Research Date: 2026-02-17</div>
+  
+</div>
+
+<div class="container">
+  <a href="../research/" class="back-link">← כל דוחות המחקר</a>
+  <div class="toc"><h2>תוכן עניינים</h2><ol><li><a href="#section-1">1. Who is Adi Levenko?</a></li><li><a href="#section-2">2. Business Structure</a></li><li><a href="#section-3">3. Program Content Analysis: "21st Century Learning Strategies"</a></li><li><a href="#section-4">4. Network and Reach</a></li><li><a href="#section-5">5. Gefen Catalog Status</a></li><li><a href="#section-6">6. Values/Ideological Content Assessment</a></li><li><a href="#section-7">7. Risk Assessment</a></li><li><a href="#section-8">8. Open Questions</a></li><li><a href="#section-9">9. Source Summary</a></li><li><a href="#section-10">10. Bottom Line</a></li></ol></div>
+  <div class="section" id="section-1">
+<h2>1. Who is Adi Levenko?</h2>
+<h3>Personal Profile</h3>
+<ul>
+<li><strong>Full Name:</strong> עדי לבנקו (Adi Levenko/Lebanko)</li>
+<li><strong>Gender:</strong> Male (referred to in masculine Hebrew forms across sources)</li>
+<li><strong>Base of Operations:</strong> Rehovot (learning center); previously listed in Givatayim (private tutoring)</li>
+<li><strong>Website:</strong> <a href="https://www.levenko.co.il/" target="_blank" rel="noopener">levenko.co.il</a> (Wix-based, "קשב וריכוז | עדי לבנקו לומדים אחרת")</li>
+<li><strong>Contact:</strong> WhatsApp: 972-52-830-8144 | Email: 345mail@gmail.com</li>
+<li><strong>Digital Presence:</strong> Calameo publisher account (ID 4921855), Padlet boards for classroom use</li>
+</ul>
+<h3>Education</h3>
+<table>
+<tr><th>Degree</th><th>Institution</th><th>Notes</th></tr>
+<tr><td><strong>M.A. in Education</strong></td><td>Open University of Israel</td><td>With distinction (בהצטיינות)</td></tr>
+<tr><td><strong>B.A. in Psychology & Sociology</strong></td><td>Tel Aviv University</td><td>With distinction (בהצטיינות)</td></tr>
+<tr><td><strong>Coaching Certification</strong></td><td>Tel Aviv University coaching program</td><td>Personal/executive coaching</td></tr>
+</table>
+<h3>Professional Background</h3>
+<ul>
+<li><strong>Career origin:</strong> Hebrew language teacher — taught thousands of students preparing for Bagrut (matriculation) exams, particularly students with learning disabilities and ADHD</li>
+<li><strong>Specializations:</strong> Learning strategies, ADHD coaching, attention and concentration, didactic and psycho-didactic assessments</li>
+<li><strong>Self-described as:</strong> "מומחה לאסטרטגיות למידה, מאמן אישי ומנחה סדנות והשתלמויות למורים, הורים, תלמידים וסטודנטים" (Expert in learning strategies, personal coach and facilitator of workshops and training for teachers, parents, students and university students)</li>
+</ul>
+<h3>Institutional Affiliations (lecturing/training)</h3>
+<ul>
+<li><strong>Oranim Academic College</strong> — lecturer</li>
+<li><strong>Herzog College</strong> — lecturer</li>
+<li><strong>Levinsky-Wingate College</strong> — lecturer</li>
+<li><strong>Nitzan Association</strong> (אגודת ניצן) — works with students with learning disabilities</li>
+<li><strong>Seminar Shain</strong> — leads teacher professional development course "המורה כמאמן — למידה אפקטיבית" (The Teacher as Coach — Effective Learning), code 92790, 30 hours, for Hila program teachers</li>
+<li><strong>Ankori High School</strong> — teaching experience</li>
+<li><strong>Management College</strong> — teaching experience</li>
+<li><strong>Ramlah-Hashfela Campus</strong> — pedagogical coordinator for Hebrew and mathematics teaching; worked with Ethiopian-descent children and former-USSR immigrant students</li>
+<li><strong>Psagot/Pisga Centers</strong> — lectures throughout the country</li>
+</ul>
+<h3>Assessment</h3>
+<p>Levenko has a <strong>legitimate and well-documented professional background</strong> in mainstream educational practice. His M.A. in Education and B.A. in Psychology from recognized Israeli institutions, combined with decades of practical teaching experience, qualify him as a standard educational practitioner. The coaching certification from TAU adds a professional development dimension but remains within standard education frameworks.</p>
+
+</div>
+<div class="section" id="section-2">
+<h2>2. Business Structure</h2>
+<h3>Entity Type: Sole Proprietor (עוסק)</h3>
+<ul>
+<li><strong>Brand Name:</strong> "לומדים אחרת" (Learning Differently)</li>
+<li><strong>Gefen Catalog Status:</strong> Registered supplier in Ministry of Education's Gefen procurement system</li>
+<li><strong>Entity Classification (per 2school):</strong> "External — business sector" (חיצוני — מגזר עסקי), "Not ministry-affiliated"</li>
+<li><strong>No amuta (association) registered</strong> — no GuideStar Israel entry found</li>
+<li><strong>No Ltd. company (חברה בע"מ) found</strong> under this name</li>
+</ul>
+<h3>Gefen Programs Registered (3 programs)</h3>
+<table>
+<tr><th>#</th><th>Program Name</th><th>Program ID</th><th>Description</th></tr>
+<tr><td>1</td><td><strong>לומדים איך ללמוד ולהצליח! (אסטרטגיות למידה המאה ה-21)</strong></td><td>7646</td><td>The program under review — learning strategies</td></tr>
+<tr><td>2</td><td><strong>בינה מלאכותית — זה העתיד! (פיתוח מיומנויות חשיבה גבוהות)</strong></td><td>33088</td><td>AI tools for developing higher-order thinking skills</td></tr>
+<tr><td>3</td><td><strong>חיזוק מהליבה</strong></td><td>33140</td><td>"Strengthening from the Core" — details not retrieved</td></tr>
+</table>
+<h3>Financial Analysis</h3>
+<ul>
+<li><strong>Budget in dataset:</strong> ₪85,645 across 52 schools in 10 cities</li>
+<li><strong>Per-school average:</strong> ₪1,647</li>
+<li><strong>Per-city average:</strong> ₪8,565</li>
+<li><strong>Assessment:</strong> This is an <strong>extremely modest budget</strong>. At ~₪1,647 per school, this likely represents 1-2 workshop sessions per school at most. For context, the Gefen allocation per student is ₪11,500 — so this supplier's entire 52-school budget equals what roughly 7-8 students bring to the system.</li>
+<li><strong>Revenue implication:</strong> ₪85K is insufficient to sustain a full-time operation. This is clearly supplementary income alongside his private tutoring practice (levenko.co.il), college lecturing, and teacher training work. This is consistent with a sole-proprietor model.</li>
+</ul>
+<h3>Comparison Note</h3>
+<p>A different company, <strong>"איזי ווי בע"מ" (Eazy Way Ltd., registration 512907122)</strong>, offers a similar-sounding program (הקניית אסטרטגיות למידה — "Teaching Learning Strategies," program #8844) in Gefen. This is a <strong>different entity</strong> — a Ltd. company offering competing learning-strategies workshops. This confirms the field has multiple providers, and Levenko is not unique in this space.</p>
+
+</div>
+<div class="section" id="section-3">
+<h2>3. Program Content Analysis: "21st Century Learning Strategies"</h2>
+<h3>What the Program Actually Teaches</h3>
+<p>Based on all available evidence, the program covers <strong>purely academic/study skills</strong>:</p>
+<ul>
+<li><strong>Memory function and mechanisms</strong> — how encoding, storage, and retrieval work</li>
+<li><strong>Information organization</strong> — methods for summarizing, note-taking, processing material</li>
+<li><strong>Learning style identification</strong> — recognizing individual learning preferences</li>
+<li><strong>Time management</strong> — scheduling, avoiding procrastination, task prioritization</li>
+<li><strong>Study techniques</strong> — preparation for exams, continuous study habits vs. cramming</li>
+<li><strong>Reading comprehension and writing skills</strong> — basic academic literacy</li>
+<li><strong>Metacognition</strong> — teaching students to think about how they think and learn</li>
+<li><strong>Self-regulated learning</strong> — taking responsibility for one's own learning process</li>
+</ul>
+<h3>What the Program Does NOT Contain (no evidence found)</h3>
+<ul>
+<li><strong>No values/ideological content</strong> — zero references to democracy, equality, social justice, Jewish values, identity, or any political themes</li>
+<li><strong>No social-emotional learning (SEL)</strong> — no mention of emotional regulation, empathy, social skills, relationship building</li>
+<li><strong>No gender/sexuality content</strong></li>
+<li><strong>No civics/citizenship content</strong></li>
+<li><strong>No peace/coexistence content</strong></li>
+<li><strong>No religious or anti-religious content</strong></li>
+<li><strong>No environmental/sustainability messaging</strong></li>
+</ul>
+<h3>The "21st Century" Branding — Analysis</h3>
+<p>The phrase "אסטרטגיות למידה המאה ה-21" (21st Century Learning Strategies) in the program name warrants scrutiny because "21st century skills" is a loaded term in Israeli education discourse. However:</p>
+<p><strong>The term as used by Levenko</strong> appears to be <strong>marketing language</strong> rather than ideological alignment. His actual content focuses on traditional study skills (memory, time management, exam prep) repackaged with contemporary framing. This is common among Gefen suppliers who need to align their program names with MoE buzzwords to attract school purchases.</p>
+<p><strong>The broader "21st century skills" landscape in Israel:</strong></p>
+<ul>
+<li>The Israeli MoE adopted 21st century skills frameworks based on P21 (Partnership for 21st Century Learning) and OECD models</li>
+<li>The P21 "4Cs" framework: Critical thinking, Creativity, Collaboration, Communication</li>
+<li>The MoE's "דמות הבוגר" (Graduate Profile) 2020-2030 incorporates these skills alongside values like "commitment to the values of the State of Israel as a Jewish and democratic state"</li>
+<li>SEL (Social-Emotional Learning) has become increasingly integrated into MoE policy (שפ"י — SHEFI department)</li>
+<li>Academic research (e.g., "Adapting the Education System to 21st Century Skills: The Case of Israel," EU-JER) notes a <strong>gap between declarative policy and actual implementation</strong></li>
+</ul>
+<p><strong>Key distinction:</strong> The broader MoE "21st century" framework <em>does</em> include values and SEL components at the policy level. But Levenko's specific program focuses on the <strong>cognitive/metacognitive skills subset</strong> only — study techniques, memory strategies, time management. He does not operate in the SEL or values space.</p>
+<h3>Connection to OECD/UNESCO Frameworks</h3>
+<ul>
+<li><strong>OECD Education 2030 / Learning Compass</strong> — Israel participates in this framework, which emphasizes competencies for students to "navigate toward well-being"</li>
+<li><strong>UNESCO Education 2030 / SDG 4</strong> — Quality education for all</li>
+<li><strong>P21 Framework</strong> — The predominant model in Israeli MoE policy documents</li>
+<li><strong>Levenko's connection:</strong> Superficial/branding only. His program content is vanilla study-skills training that could have existed unchanged in 1995. The "21st century" label is contemporary packaging.</li>
+</ul>
+
+</div>
+<div class="section" id="section-4">
+<h2>4. Network and Reach</h2>
+<h3>How Did One Individual Build a 10-City Network?</h3>
+<p>This is actually <strong>not remarkable</strong> for a Gefen supplier. The mechanism is straightforward:</p>
+<ol>
+<li><strong>Gefen catalog inclusion</strong> — Once approved as a Gefen supplier, any school in Israel can select your program using their allocated Gefen budget. Schools browse the catalog and choose.</li>
+<li><strong>Low unit cost</strong> — At ~₪1,647 per school, this is likely a single workshop day. Schools face minimal risk in trying it.</li>
+<li><strong>College lecturing network</strong> — Levenko lectures at Oranim, Herzog, Levinsky-Wingate, and Pisga centers throughout the country. These are exactly the venues where school principals and teachers encounter new Gefen suppliers. This creates organic word-of-mouth.</li>
+<li><strong>Nitzan Association connection</strong> — Working with Israel's largest learning-disabilities association gives access to a nationwide network of schools serving LD students.</li>
+<li><strong>Padlet/digital presence</strong> — Evidence of using digital tools (Padlet boards, Calameo publications) to share materials with workshop participants, creating ongoing engagement.</li>
+</ol>
+<p><strong>Assessment:</strong> 52 schools across 10 cities is <strong>modest reach</strong> for a Gefen supplier. The largest suppliers operate in hundreds of schools. This is consistent with a sole-proprietor operation.</p>
+
+</div>
+<div class="section" id="section-5">
+<h2>5. Gefen Catalog Status</h2>
+<h3>Confirmed: Active Supplier in Gefen System</h3>
+<ul>
+<li><strong>Programs in catalog:</strong> At least 3 (IDs 7646, 33088, 33140)</li>
+<li><strong>Procurement track:</strong> Repository/catalog procurement (מסלול מאגר)</li>
+<li><strong>Ministry affiliation:</strong> None — classified as external, business-sector provider</li>
+<li><strong>Quality indicators:</strong> Being in the Gefen catalog requires MoE approval of program content and supplier qualifications. This is a basic quality bar, not a high-standard endorsement.</li>
+</ul>
+<h3>Gefen System Context</h3>
+<ul>
+<li><strong>Total Gefen programs:</strong> 30,000+ from 6,200+ suppliers</li>
+<li><strong>Schools participating:</strong> ~5,600</li>
+<li><strong>Budget per student:</strong> ₪11,500 allocated to schools for Gefen purchases</li>
+<li><strong>Implications:</strong> Gefen inclusion means MoE reviewed and approved the program content as educationally appropriate. It does NOT mean the MoE endorses the specific pedagogy, guarantees results, or exercises ongoing oversight of delivery.</li>
+</ul>
+
+</div>
+<div class="section" id="section-6">
+<h2>6. Values/Ideological Content Assessment</h2>
+<h3>Verdict: NONE DETECTED</h3>
+<p>After exhaustive search across:</p>
+<ul>
+<li>Official website content</li>
+<li>Gefen catalog descriptions</li>
+<li>Teacher training course descriptions (Seminar Shain, code 92790)</li>
+<li>Campus.gov.il course materials</li>
+<li>Blog posts</li>
+<li>Padlet boards</li>
+<li>Public references and citations</li>
+</ul>
+<p><strong>No ideological, political, religious, gender, identity, or values-based content was found.</strong> The program is purely pedagogical — focused on study skills, metacognition, and academic achievement.</p>
+<h3>Comparison with SEL/Values Programs</h3>
+<p>Unlike many Gefen programs that embed values content (democracy education, social justice, identity, gender equality, environmental consciousness), Levenko's program is <strong>explicitly and exclusively about learning technique</strong>. His stated philosophy:</p>
+<blockquote>"אסטרטגיות למידה אפקטיביות הן המפתח להישגים אקדמיים גבוהים, עצמאות ותחושת מסוגלות"</blockquote>
+<blockquote>(Effective learning strategies are the key to high academic achievement, independence, and a sense of capability)</blockquote>
+<p>This is a <strong>utilitarian, outcomes-focused</strong> framing — not a values-driven one.</p>
+
+</div>
+<div class="section" id="section-7">
+<h2>7. Risk Assessment</h2>
+<h3>Original Rating: 3/5 — APPEARS HIGH</h3>
+<table>
+<tr><th>Risk Dimension</th><th>Assessment</th><th>Score</th></tr>
+<tr><td><strong>Ideological content</strong></td><td>None detected</td><td>0/5</td></tr>
+<tr><td><strong>Organizational opacity</strong></td><td>Low — sole proprietor, no complex entity structure</td><td>1/5</td></tr>
+<tr><td><strong>Financial concerns</strong></td><td>None — modest budget, straightforward fee-for-service</td><td>0/5</td></tr>
+<tr><td><strong>Government connections</strong></td><td>Standard Gefen supplier — no special access</td><td>1/5</td></tr>
+<tr><td><strong>Content quality risk</strong></td><td>Moderate — study-skills programs have mixed evidence base, but no harmful content</td><td>2/5</td></tr>
+<tr><td><strong>Network/reach concern</strong></td><td>52 schools is modest</td><td>1/5</td></tr>
+<tr><td><strong>"21st century" framing risk</strong></td><td>Marketing language only; content is vanilla study skills</td><td>1/5</td></tr>
+</table>
+<h3>Recommended Risk Rating: 1/5</h3>
+<p><strong>Rationale:</strong> This is a single education professional offering study-skills workshops to schools through the standard Gefen mechanism. The content is purely academic, the budget is minimal, there is no organizational complexity, and there is no values/ideological content. The only potential concern is the generic nature of "learning strategies" programs (mixed evidence for effectiveness), but that is a quality concern, not a risk concern.</p>
+
+</div>
+<div class="section" id="section-8">
+<h2>8. Open Questions</h2>
+<ol>
+<li><strong>Team size:</strong> The website has a "staff" page (levenko.co.il/staff) but it could not be rendered (Wix JS rendering). Does he have employees or just subcontractors? At ₪85K total budget, he likely delivers personally.</li>
+<li><strong>Program #33140 ("חיזוק מהליבה"):</strong> Details not retrieved. Worth checking if this program has different content focus.</li>
+<li><strong>Calameo publications:</strong> The Calameo account exists but content could not be extracted. May contain additional materials worth reviewing.</li>
+<li><strong>Exact cities:</strong> The 10 cities served are not identified in available data. These likely correlate with cities where he lectures at colleges/Pisga centers.</li>
+<li><strong>Private practice vs. Gefen overlap:</strong> Is the same content delivered privately (at higher rates) and through Gefen? Common pattern, not problematic.</li>
+</ol>
+
+</div>
+<div class="section" id="section-9">
+<h2>9. Source Summary</h2>
+<h3>Primary Sources</h3>
+<ul>
+<li><a href="https://www.levenko.co.il/" target="_blank" rel="noopener">levenko.co.il</a> — Official website</li>
+<li><a href="https://www.2school.co.il/InterData/iihnn/" target="_blank" rel="noopener">2school.co.il — AI Program #33088</a> — Gefen catalog entry</li>
+<li><a href="https://padlet.com/adilevenko/v996s6tis8ocm2iq" target="_blank" rel="noopener">Padlet Board</a> — Classroom materials</li>
+<li><a href="https://www.calameo.com/accounts/4921855" target="_blank" rel="noopener">Calameo Profile</a> — Publications</li>
+<li><a href="https://campus.gov.il/en/course/v1labor-gov-learningstrategies-he/" target="_blank" rel="noopener">Campus.gov.il — Learning Strategies Course</a> — Related (different provider, same field)</li>
+</ul>
+<h3>Contextual Sources</h3>
+<ul>
+<li><a href="https://meyda.education.gov.il/files/Scientist/21cskills040515.pdf" target="_blank" rel="noopener">MoE Chief Scientist — 21st Century Skills Research Review (PDF)</a></li>
+<li><a href="https://meyda.education.gov.il/files/Planning/dmuthabogeravneiderech.pdf" target="_blank" rel="noopener">MoE Graduate Profile 2020-2030 (PDF)</a></li>
+<li><a href="https://www.eu-jer.com/adapting-the-education-system-to-21st-century-skills-the-case-of-israel" target="_blank" rel="noopener">EU-JER — Adapting Israeli Education to 21st Century Skills</a></li>
+<li><a href="https://www.oecd.org/en/publications/21st-century-skills-and-competences-for-new-millennium-learners-in-oecd-countries_218525261154.html" target="_blank" rel="noopener">OECD — 21st Century Skills and Competences</a></li>
+<li><a href="https://shefi.education.gov.il/top-topics/sel/" target="_blank" rel="noopener">MoE SHEFI — Social-Emotional Learning</a></li>
+<li><a href="https://meyda.education.gov.il/files/PortalBaaluyot/POB/guide-gefen-sapakim.pdf" target="_blank" rel="noopener">Gefen Supplier Guide (PDF)</a></li>
+<li><a href="https://mygefen.co.il/" target="_blank" rel="noopener">mygefen.co.il — Gefen Supplier Community</a></li>
+</ul>
+
+</div>
+<div class="section" id="section-10">
+<h2>10. Bottom Line</h2>
+<p>עדי לבנקו — לומדים אחרת is a <strong>textbook example of a small, legitimate, low-risk Gefen supplier</strong>: one professional with real credentials, teaching practical study skills, operating through standard MoE procurement channels, at minimal cost. The "21st century" branding is marketing, not ideology. No red flags detected. If anything, the 3/5 risk rating in the original dataset overstates the concern — this should be 1/5.</p>
+<p><em>Research conducted 2026-02-17 using web search across Hebrew and English sources. Website rendering limited by Wix JS framework.</em></p>
+
+</div>
+</div>
+
+<footer>
+  פרויקט זהות ציונית — דוח מחקר מעמיק | <a href="../">דירוג ערים</a> | <a href="../research/">כל הדוחות</a>
+</footer>
+
+</body>
+</html>

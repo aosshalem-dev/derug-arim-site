@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SafeSchool Analytics (סייף סקול אנליטיקס בע"מ) — דוח מחקר מעמיק</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background: #f5f5f8;
+  color: #1a1a2e;
+  direction: rtl;
+  line-height: 1.8;
+  font-size: 17px;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #1a1a2e; color: #fff;
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  overflow-x: auto; white-space: nowrap;
+}
+nav .brand { font-weight: 700; color: #ff8800; flex-shrink: 0; }
+nav a { color: #ccc; text-decoration: none; font-size: 0.85em; padding: 8px 4px; border-bottom: 2px solid transparent; flex-shrink: 0; }
+nav a:hover { color: #ff8800; border-bottom-color: #ff8800; }
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a5a8a 100%);
+  color: #fff; padding: 50px 20px 40px; text-align: center;
+}
+.hero h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+.hero .subtitle { font-size: 1.05em; color: #b0c4de; margin-bottom: 6px; }
+.hero .meta { font-size: 0.9em; color: #ff8800; margin-top: 8px; }
+.risk-badge {
+  display: inline-block; padding: 4px 16px; border-radius: 20px;
+  font-size: 0.85em; font-weight: 600; margin-top: 10px;
+}
+.risk-high { background: #e74c3c; color: #fff; }
+.risk-medium { background: #f39c12; color: #fff; }
+.risk-low { background: #27ae60; color: #fff; }
+.container { max-width: 860px; margin: 0 auto; padding: 30px 20px 80px; }
+.toc {
+  background: #fff; border-radius: 8px; padding: 22px 26px;
+  margin-bottom: 32px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.toc h2 { font-size: 1.15em; color: #2a5a8a; margin-bottom: 12px; border-bottom: 2px solid #667eea; padding-bottom: 6px; }
+.toc ol { padding-right: 22px; font-size: 0.93em; }
+.toc li { margin-bottom: 4px; }
+.toc a { color: #2a5a8a; text-decoration: none; }
+.toc a:hover { color: #ff8800; text-decoration: underline; }
+.section {
+  background: #fff; border-radius: 8px; padding: 28px 26px;
+  margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.section h2 { font-size: 1.4em; color: #1a1a2e; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #667eea; }
+.section h3 { font-size: 1.1em; color: #2a5a8a; margin: 18px 0 8px; }
+.section h4 { font-size: 1em; color: #444; margin: 14px 0 6px; }
+.section p { margin-bottom: 12px; text-align: justify; }
+.section ul, .section ol { padding-right: 22px; margin-bottom: 12px; }
+.section li { margin-bottom: 5px; }
+blockquote {
+  background: #f0f4fa; border-right: 4px solid #667eea;
+  padding: 12px 18px; margin: 12px 0; border-radius: 0 6px 6px 0;
+  font-size: 0.94em; color: #333;
+}
+.thesis {
+  background: #fff8f0; border-right: 3px solid #ff8800;
+  padding: 14px 18px; margin: 12px 0; border-radius: 0 5px 5px 0;
+  font-size: 0.96em; color: #6b4500;
+}
+table {
+  width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.91em;
+}
+th {
+  background: #667eea; color: #fff; padding: 8px 12px;
+  text-align: right; position: sticky; top: 44px; z-index: 5;
+}
+td {
+  padding: 7px 12px; border-bottom: 1px solid #e8e8e8;
+  text-align: right; vertical-align: top;
+}
+tr:nth-child(even) { background: #f8f9fc; }
+a { color: #2a5a8a; }
+a:hover { color: #ff8800; }
+.back-link {
+  display: inline-block; margin-bottom: 20px; padding: 6px 14px;
+  background: #667eea; color: #fff; border-radius: 4px;
+  text-decoration: none; font-size: 0.88em;
+}
+.back-link:hover { background: #5a6fd6; color: #fff; }
+footer {
+  text-align: center; padding: 30px 20px; color: #888; font-size: 0.85em;
+}
+strong { color: #1a1a2e; }
+code {
+  background: #f0f0f0; padding: 1px 5px; border-radius: 3px;
+  font-size: 0.9em;
+}
+.source-tag {
+  display: inline-block; background: #e8eef6; padding: 2px 8px;
+  border-radius: 10px; font-size: 0.78em; color: #2a5a8a;
+  margin: 2px 3px; text-decoration: none;
+}
+.source-tag:hover { background: #d0dff0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">דוח מחקר מעמיק</span>
+  <a href="../">חזרה לדירוג</a>
+  <a href="../research/">כל הדוחות</a>
+  <a href="#section-1">1. Company Registrat</a> <a href="#section-2">2. Financial Analysi</a> <a href="#section-3">3. Leadership Analys</a> <a href="#section-4">4. Revolving Door An</a> <a href="#section-5">5. Product Analysis:</a> <a href="#section-6">6. Ideological Conte</a> <a href="#section-7">7. Privacy and Data </a> <a href="#section-8">8. Government Ties a</a> <a href="#section-9">9. Controversies and</a> <a href="#section-10">10. Values Alignment</a> <a href="#section-11">11. Risk Summary and</a> <a href="#section-12">Source Index</a>
+</nav>
+
+<div class="hero">
+  <h1>SafeSchool Analytics (סייף סקול אנליטיקס בע"מ)</h1>
+  <div class="subtitle">Executive Summary (Thesis)</div>
+  <div class="meta"></div>
+  
+</div>
+
+<div class="container">
+  <a href="../research/" class="back-link">← כל דוחות המחקר</a>
+  <div class="toc"><h2>תוכן עניינים</h2><ol><li><a href="#section-1">1. Company Registration and Legal Structure</a></li><li><a href="#section-2">2. Financial Analysis</a></li><li><a href="#section-3">3. Leadership Analysis</a></li><li><a href="#section-4">4. Revolving Door Analysis</a></li><li><a href="#section-5">5. Product Analysis: What SafeSchool Actually Does</a></li><li><a href="#section-6">6. Ideological Content Analysis</a></li><li><a href="#section-7">7. Privacy and Data Concerns</a></li><li><a href="#section-8">8. Government Ties and Growth Mechanism</a></li><li><a href="#section-9">9. Controversies and Media Coverage</a></li><li><a href="#section-10">10. Values Alignment Assessment</a></li><li><a href="#section-11">11. Risk Summary and Open Questions</a></li><li><a href="#section-12">Source Index</a></li></ol></div>
+  <div class="section" id="section-1">
+<h2>1. Company Registration and Legal Structure</h2>
+<table>
+<tr><th>Field</th><th>Detail</th></tr>
+<tr><td><strong>Legal Name</strong></td><td>סייף סקול אנליטיקס בע"מ (SafeSchool Analytics Ltd.)</td></tr>
+<tr><td><strong>Company Number</strong></td><td>516296886</td></tr>
+<tr><td><strong>Incorporation Date</strong></td><td>December 15, 2020</td></tr>
+<tr><td><strong>Legal Structure</strong></td><td>Private company (חברה פרטית, בע"מ) -- NOT an amuta</td></tr>
+<tr><td><strong>Status</strong></td><td>Active (פעילה)</td></tr>
+<tr><td><strong>Registered Address</strong></td><td>Borochov 54, Givatayim</td></tr>
+<tr><td><strong>Latest Annual Report</strong></td><td>Filed 2025</td></tr>
+<tr><td><strong>Employees</strong></td><td>11-50 (per Crunchbase/ZoomInfo)</td></tr>
+<tr><td><strong>GEFEN Program Number</strong></td><td>5974</td></tr>
+</table>
+<p><strong>Key implication of בע"מ structure:</strong> As a private company rather than an amuta (non-profit), SafeSchool has no obligation to publish financial reports, board member lists, or government funding details on GuideStar Israel. This makes financial transparency significantly harder compared to amutot operating in the same space.</p>
+<p><strong>Source:</strong> <a href="https://webinfo.co.il/details/619558/" target="_blank" rel="noopener">Business Report - Company Registration</a>, <a href="https://next.obudget.org/i/org/company/516296886" target="_blank" rel="noopener">obudget.org</a>, <a href="https://www.crunchbase.com/organization/safe-school-analytics" target="_blank" rel="noopener">Crunchbase</a></p>
+
+</div>
+<div class="section" id="section-2">
+<h2>2. Financial Analysis</h2>
+<h3>Funding Rounds</h3>
+<table>
+<tr><th>Round</th><th>Amount</th><th>Date</th><th>Lead Investor</th><th>Notable Participants</th></tr>
+<tr><td><strong>Seed</strong></td><td>~$1M (first tranche)</td><td>Mid-2021</td><td>Nir Zohar (WIX President)</td><td>Avishai Avrahami (WIX CEO), Eli Waldman, Micha Kaufman (Fiverr CEO), Michael Eisenberg</td></tr>
+<tr><td><strong>Seed extension</strong></td><td>$2M total</td><td>~2022</td><td>Nir Zohar</td><td>Same group</td></tr>
+<tr><td><strong>Celebrity round</strong></td><td>"Hundreds of thousands of dollars"</td><td>May 2022</td><td>Gal Gadot & Yaron Varsano</td><td>--</td></tr>
+<tr><td><strong>Strategic investor</strong></td><td>"Hundreds of thousands of shekels"</td><td>~July 2022</td><td>Amit Edri (former MoE DG)</td><td>--</td></tr>
+<tr><td><strong>Additional</strong></td><td>Undisclosed</td><td>~2024</td><td>Rotem Sela & Ariel Rotter</td><td>--</td></tr>
+</table>
+<p><strong>Total estimated funding:</strong> $2M+ seed + celebrity/strategic rounds = likely $2.5-3M total</p>
+<h3>Notable Investors (Full List)</h3>
+<ol>
+<li><strong>Nir Zohar</strong> -- President & COO of WIX. Co-founder of SafeSchool. Led the seed round.</li>
+<li><strong>Avishai Avrahami</strong> -- CEO of WIX.</li>
+<li><strong>Michael Eisenberg</strong> -- Prominent Israeli VC (Aleph).</li>
+<li><strong>Micha Kaufman</strong> -- CEO of Fiverr.</li>
+<li><strong>Eli Waldman</strong> -- Tech executive.</li>
+<li><strong>Gal Gadot & Yaron Varsano</strong> -- Actress/entrepreneur couple. Invested May 2022.</li>
+<li><strong>Rotem Sela & Ariel Rotter</strong> -- Model/actress and entrepreneur. Invested ~2024.</li>
+<li><strong>Amit Edri</strong> -- Former Director General of Ministry of Education. Invested and became advisory board chairman.</li>
+</ol>
+<h3>Government Revenue (obudget.org data)</h3>
+<p>Total government transfers in past 3 years: <strong>NIS 83,119</strong> -- surprisingly small relative to the company's scale.</p>
+<table>
+<tr><th>Source</th><th>Amount (NIS)</th><th>Description</th></tr>
+<tr><td>Ministry of Education</td><td>45,000</td><td>Virtual interface project</td></tr>
+<tr><td>Ministry of Education</td><td>17,550</td><td>Climate & teacher training subscription</td></tr>
+<tr><td>Ministry of Education</td><td>11,700</td><td>Program #5974 (SafeSchool Analytics)</td></tr>
+<tr><td>Ministry of Education</td><td>4,914</td><td>Program #5974 (Yossi & Asa SafeSchool)</td></tr>
+<tr><td>Ministry of National Security</td><td>3,955</td><td>Public speaking workshop</td></tr>
+</table>
+<p><strong>Key insight:</strong> The low direct government transfer amount suggests SafeSchool's revenue primarily comes through the GEFEN system, where individual schools purchase subscriptions using their allocated budgets. This creates a decentralized procurement model where no single large government contract is visible -- the revenue is distributed across 1,200+ school-level purchases. The GEFEN system allocates NIS 2.5 billion annually to schools for external program purchases.</p>
+<p><strong>Sources:</strong> <a href="https://next.obudget.org/i/org/company/516296886" target="_blank" rel="noopener">obudget.org</a>, <a href="https://www.globes.co.il/news/article.aspx?did=1001420102" target="_blank" rel="noopener">Globes</a>, <a href="https://www.algemeiner.com/2022/05/24/gal-gadot-investing-in-israeli-edtech-startup-safe-school/" target="_blank" rel="noopener">Algemeiner</a>, <a href="https://www.mako.co.il/nexter-news/Article-06b7df5e7dbad81027.htm" target="_blank" rel="noopener">Mako</a></p>
+
+</div>
+<div class="section" id="section-3">
+<h2>3. Leadership Analysis</h2>
+<h3>Doron Herman -- Founder & Co-CEO</h3>
+<table>
+<tr><th>Field</th><th>Detail</th></tr>
+<tr><td><strong>Born</strong></td><td>July 1986, Iasi, Romania</td></tr>
+<tr><td><strong>Immigration</strong></td><td>Moved to Israel November 1994, grew up in Nazareth Illit</td></tr>
+<tr><td><strong>Education</strong></td><td>ORT Moshe Sharett High School</td></tr>
+<tr><td><strong>Career</strong></td><td>Head of Criminal Desk, News 13 (Channel 13)</td></tr>
+<tr><td><strong>Known for</strong></td><td>Documentaries "The Policemen and the Youth Murder" and "The Child Shira"; Ronald Fisher recordings case</td></tr>
+<tr><td><strong>Left Channel 13</strong></td><td>September 9, 2020</td></tr>
+<tr><td><strong>Founded SafeSchool</strong></td><td>December 2020 (registered), operational summer 2021</td></tr>
+<tr><td><strong>Spouse</strong></td><td>Dana Nahum-Herman, former News 13 presenter/reporter, now media manager at Japanese Embassy in Israel</td></tr>
+</table>
+<p><strong>"Legal Parade" controversy (ha-makom.co.il):</strong> While still at Channel 13, Herman launched "HaMatzad HaMishpati" (The Legal Parade) in March 2021 -- ostensibly a current affairs legal program. Ha-Makom investigative site revealed it was a <strong>pay-to-play scheme</strong> in partnership with "Psakdin" website: lawyers paid NIS 8,000 (without appearance) to NIS 15,000-17,000 (with on-air appearance) to be featured as "experts." This violated both Bar Association ethics rules and Second Authority broadcasting regulations. After the expose, the program's Facebook page was removed. This raises character questions about the founder of a company entrusted with children's data and education.</p>
+<p><strong>Note on user's description:</strong> The user described Herman as a "reality TV producer." This is not precisely accurate. Herman was a criminal affairs journalist and news desk chief, not a reality TV producer. His TV production work was documentary-focused (crime documentaries), and the "Legal Parade" was a news-format program (albeit commercially compromised). The distinction matters -- "journalist turned EdTech founder" is different from "reality TV producer."</p>
+<h3>Nir Zohar -- Co-Founder</h3>
+<ul>
+<li>President & COO of WIX.com (NASDAQ: WIX)</li>
+<li>Co-founded SafeSchool alongside Herman</li>
+<li>Led the $2M seed round</li>
+<li>One of Israel's most prominent tech executives</li>
+</ul>
+<h3>Dotan Gavea -- Co-CEO (appointed ~2024)</h3>
+<ul>
+<li>Age 35</li>
+<li>B.A. Economics (Ben Gurion University), MBA (Reichman University)</li>
+<li>Former senior positions at Flying Cargo (FC) and Via (smart public transit)</li>
+<li>Investor and director in multiple startups (logistics, transportation, sustainability)</li>
+<li>Israeli Air Force veteran</li>
+</ul>
+<h3>Key Staff</h3>
+<table>
+<tr><th>Name</th><th>Role</th><th>Background</th></tr>
+<tr><td>Yifat Tao</td><td>Deputy CEO & Content Director</td><td>--</td></tr>
+<tr><td>Tali Kobelsman</td><td>VP Customer Service (CSM)</td><td>--</td></tr>
+<tr><td>Adi Rachtman (Rakabi)</td><td>Senior Product Manager</td><td>Former analyst/PM at Playtika (gaming)</td></tr>
+<tr><td>Maor Tzur</td><td>Lecturer (risk behaviors, violence)</td><td>Former Channel 13 journalist (colleague of Herman)</td></tr>
+<tr><td>Eliyahu Lavi</td><td>Head of Sales</td><td>--</td></tr>
+<tr><td>Liat Dotan</td><td>Psychological Mentor</td><td><strong>Former National Coordinator for Prevention of Violence and Behavioral Problems, Ministry of Education</strong></td></tr>
+<tr><td>Gili Stanescu</td><td>Customer Success</td><td><strong>Former Director of Distance Learning, Ministry of Education</strong></td></tr>
+<tr><td>Hana Shadmi</td><td>Chief Advisor</td><td><strong>Former Director of Senior Division, Psychological-Counseling Service (ShPY), Ministry of Education</strong></td></tr>
+</table>
+<p><strong>Sources:</strong> <a href="https://he.wikipedia.org/wiki/%D7%93%D7%95%D7%A8%D7%95%D7%9F_%D7%94%D7%A8%D7%9E%D7%9F" target="_blank" rel="noopener">Wikipedia - Doron Herman</a>, <a href="https://www.calcalist.co.il/article/h1iq9zme0" target="_blank" rel="noopener">Calcalist</a>, <a href="https://www.ha-makom.co.il/post-new-galit-herman/" target="_blank" rel="noopener">ha-makom.co.il</a>, <a href="https://www.ice.co.il/positions/news/article/1014247" target="_blank" rel="noopener">ICE</a>, <a href="https://www.zoominfo.com/p/Liat-Dotan/13234278696" target="_blank" rel="noopener">ZoomInfo</a></p>
+
+</div>
+<div class="section" id="section-4">
+<h2>4. Revolving Door Analysis</h2>
+<p>This is the most concerning structural finding. SafeSchool has assembled an extraordinary concentration of former Ministry of Education officials:</p>
+<h3>Amit Edri -- Former Director General of Ministry of Education</h3>
+<table>
+<tr><th>Field</th><th>Detail</th></tr>
+<tr><td><strong>Born</strong></td><td>August 26, 1969</td></tr>
+<tr><td><strong>MoE DG tenure</strong></td><td>July 2020 - July 2021 (appointed by Minister Yoav Gallant)</td></tr>
+<tr><td><strong>Previous roles</strong></td><td>Chief of Staff to Minister (Housing & Immigration ministries); IDF Lt. Colonel (retired 2013 after 26 years)</td></tr>
+<tr><td><strong>Joined SafeSchool</strong></td><td>~July 2022 (approximately 1 year after leaving MoE)</td></tr>
+<tr><td><strong>Role at SafeSchool</strong></td><td>Advisory Board Chairman + Investor ("hundreds of thousands of shekels")</td></tr>
+<tr><td><strong>Other positions</strong></td><td>Chairman of Thelma Yellin High School (appointed July 2022); Reserve Brigadier General (appointed June 2022)</td></tr>
+</table>
+<p><strong>Timeline analysis:</strong> Edri was MoE Director General from July 2020 to July 2021 -- precisely the period when SafeSchool was founded (December 2020) and began operations (summer 2021). He joined SafeSchool as advisory board chairman and investor approximately one year after leaving the Ministry. During his tenure as DG, the GEFEN system and ShPY (Psychological-Counseling Service) would have been under his administrative purview.</p>
+<h3>Hana Shadmi -- Former Director of ShPY Senior Division</h3>
+<p>Shadmi leads SafeSchool's institutional professional development courses (which are recognized for teacher professional development credits). She was the former director of the senior division of ShPY -- the very Ministry of Education body that advises on psychological and counseling services in schools, including the types of SEL programs that SafeSchool sells. She helps characterize schools' needs -- essentially defining the demand that SafeSchool then fills.</p>
+<h3>Liat Dotan -- Former National Coordinator for Prevention of Violence, MoE</h3>
+<p>Previously the MoE's national coordinator for preventing violence and behavioral problems -- precisely the domain SafeSchool operates in. Now serves as "Psychological Mentor" at SafeSchool.</p>
+<h3>Gili Stanescu -- Former Director of Distance Learning, MoE</h3>
+<p>Previously directed distance learning at the Ministry -- the digital infrastructure that EdTech companies like SafeSchool operate through. Now in Customer Success at SafeSchool.</p>
+<h3>Amy Palmor -- Former Director General of Ministry of Justice</h3>
+<p>Listed by Mako as contributing content to the platform.</p>
+<h3>Pattern: Regulatory Capture</h3>
+<p>The revolving door pattern here is textbook:</p>
+<ol>
+<li><strong>Regulator defines the need</strong> (MoE/ShPY says schools need SEL programs)</li>
+<li><strong>Regulator creates the procurement channel</strong> (GEFEN system)</li>
+<li><strong>Former regulators join the company</strong> (Edri, Shadmi, Dotan, Stanescu)</li>
+<li><strong>Former regulators bring credibility and connections</strong> (Edri as advisory board chair; Shadmi leading teacher training recognized for MoE professional development credits)</li>
+<li><strong>Company achieves explosive growth</strong> (0 to 1,200+ schools in 4 years)</li>
+</ol>
+<p><strong>Sources:</strong> <a href="https://he.wikipedia.org/wiki/%D7%A2%D7%9E%D7%99%D7%AA_%D7%90%D7%93%D7%A8%D7%99" target="_blank" rel="noopener">Wikipedia - Amit Edri</a>, <a href="https://www.globes.co.il/news/article.aspx?did=1001420102" target="_blank" rel="noopener">Globes</a>, <a href="https://www.zoominfo.com/p/Liat-Dotan/13234278696" target="_blank" rel="noopener">ZoomInfo</a>, <a href="https://www.zoominfo.com/p/Gili-Stanescu/9459272729" target="_blank" rel="noopener">ZoomInfo</a></p>
+
+</div>
+<div class="section" id="section-5">
+<h2>5. Product Analysis: What SafeSchool Actually Does</h2>
+<h3>Three Product Layers</h3>
+<p><strong>Layer 1: Content Streaming Platform ("The Netflix for Teachers")</strong></p>
+<ul>
+<li>600+ video content units (masterclasses) with accompanying lesson plans</li>
+<li>Content created by "former news and media experts and education professionals (teachers, social workers, school counselors, educational psychologists)"</li>
+<li>Topics organized by age group (grades 1-14)</li>
+<li>Teachers select content and design lesson plans for their classes</li>
+</ul>
+<p><strong>Layer 2: School Climate Survey System (Analytics)</strong></p>
+<ul>
+<li>Anonymous questionnaires administered to students</li>
+<li>Measures the school's "social-emotional climate"</li>
+<li>Results provided at institutional level (not individual student level)</li>
+<li>Schools use data to identify areas needing intervention</li>
+<li>This is the "Analytics" in the company name -- the data-driven component</li>
+</ul>
+<p><strong>Layer 3: Professional Development & Lectures</strong></p>
+<ul>
+<li>Physical lectures by a roster of speakers</li>
+<li>Institutional teacher training courses led by Hana Shadmi (recognized for MoE professional development credits)</li>
+<li>Remote broadcast system with over 1 million student participants reported</li>
+<li>Content providers include former IDF Chief of Staff Aviv Kohavi, former Mossad Chief Yossi Cohen, former Justice Ministry DG Amy Palmor</li>
+</ul>
+<h3>Content Areas (from GEFEN catalog, program #5974)</h3>
+<p>The official GEFEN listing covers:</p>
+<ul>
+<li>Cyberbullying and online shaming</li>
+<li>Online safety hazards</li>
+<li>Problematic apps</li>
+<li>Substance abuse (drugs/alcohol)</li>
+<li>Reckless driving and road dangers</li>
+<li>Digital identity and privacy</li>
+<li>Healthy sexuality</li>
+<li>Financial literacy for youth</li>
+<li>Positive psychology</li>
+<li>Women's empowerment</li>
+</ul>
+<h3>Post-October 7 Pivot</h3>
+<p>After October 7, 2024, SafeSchool rapidly produced hundreds of updated lesson plans on current events and emotional resilience. The company framed this as "mass psychological treatment at scale" -- a striking term for a for-profit EdTech company. Content contributors in this period included former military/intelligence chiefs (Kohavi, Yossi Cohen).</p>
+<p><strong>Sources:</strong> <a href="https://www.algemeiner.com/2022/05/24/gal-gadot-investing-in-israeli-edtech-startup-safe-school/" target="_blank" rel="noopener">Algemeiner</a>, <a href="https://www.calcalist.co.il/article/bkngsdjjt" target="_blank" rel="noopener">Calcalist</a>, <a href="https://www.2school.co.il/InterData/rmto/" target="_blank" rel="noopener">GEFEN Catalog</a>, <a href="https://www.mako.co.il/nexter-news/Article-06b7df5e7dbad81027.htm" target="_blank" rel="noopener">Mako</a></p>
+
+</div>
+<div class="section" id="section-6">
+<h2>6. Ideological Content Analysis</h2>
+<h3>Sex Education and Gender Identity Content</h3>
+<p>SafeSchool is listed as an affiliated organization on the <strong>Israeli Association for Sexual Education</strong> (האגודה לחינוך מיני - sei.org.il) website. The association's listing for SafeSchool describes comprehensive sexual education content including:</p>
+<table>
+<tr><th>Topic Area</th><th>Details</th></tr>
+<tr><td><strong>Sexual orientation and gender identity</strong></td><td>Explicitly listed as a content category</td></tr>
+<tr><td><strong>Gender equality</strong></td><td>Listed as content area</td></tr>
+<tr><td><strong>Healthy relationships</strong></td><td>Including dating, intimacy</td></tr>
+<tr><td><strong>Body image</strong></td><td>Across age groups</td></tr>
+<tr><td><strong>Physiological development</strong></td><td>Age-appropriate</td></tr>
+<tr><td><strong>Pregnancy prevention and contraception</strong></td><td>For older students</td></tr>
+<tr><td><strong>Prevention of sexual violence</strong></td><td>Across age groups</td></tr>
+<tr><td><strong>Pornography</strong></td><td>As a topic for discussion</td></tr>
+<tr><td><strong>Online sexual education</strong></td><td>Digital-specific content</td></tr>
+<tr><td><strong>Sexuality at different developmental stages</strong></td><td>From kindergarten through high school</td></tr>
+<tr><td><strong>Power dynamics</strong></td><td>Listed as a content theme</td></tr>
+<tr><td><strong>Multiculturalism and human rights</strong></td><td>Listed as a content theme</td></tr>
+</table>
+<p><strong>The SEL framing:</strong> All of this content is delivered under the umbrella of "Social-Emotional Learning" (SEL) and "child safety." The GEFEN catalog listing (program #5974) categorizes SafeSchool under "Inclusion and integration (social-values domain)" -- a neutral-sounding classification that does not make the sexual education and gender identity content visible to parents browsing the catalog.</p>
+<p><strong>Semantic displacement analysis (per org_research methodology):</strong> SafeSchool uses the term "safe" and "protection" (הגנה) to frame content that goes well beyond physical or digital safety. The word "safe" in "SafeSchool" implies protection from harm, but the actual content delivery includes comprehensive sexuality education, gender identity exploration, and values-laden content about "power dynamics," "multiculturalism," and "human rights." This is classic semantic displacement -- using safety language to deliver ideological content.</p>
+<p><strong>Hebrew vs. English comparison:</strong> The company's English-language materials (Algemeiner, NoCamels, Haaretz) emphasize anti-cyberbullying and online safety. The Hebrew materials (sei.org.il, SafeSchool website) reveal a much broader content scope including comprehensive sex education and gender identity materials. This messaging gap is consistent with the org_research methodology's "semantic displacement" detection pattern.</p>
+<p><strong>Sources:</strong> <a href="https://sei.org.il/%D7%A1%D7%99%D7%99%D7%A3-%D7%A1%D7%A7%D7%95%D7%9C-safeschool/" target="_blank" rel="noopener">Israeli Association for Sexual Education</a>, <a href="https://www.2school.co.il/InterData/rmto/" target="_blank" rel="noopener">GEFEN Catalog</a>, <a href="https://hackaveret.org/projects/safe-school/" target="_blank" rel="noopener">Hackaveret</a></p>
+
+</div>
+<div class="section" id="section-7">
+<h2>7. Privacy and Data Concerns</h2>
+<h3>What Data is Collected</h3>
+<ol>
+<li><strong>Anonymous climate surveys</strong> -- questionnaires administered to students measuring social-emotional climate, bullying, safety perceptions, and other behavioral/attitudinal metrics</li>
+<li><strong>Usage data</strong> -- which content teachers and students access, viewing patterns</li>
+<li><strong>App data</strong> -- the SafeSchool Analytics mobile app (Google Play / App Store) collects device and usage data</li>
+</ol>
+<h3>Privacy Assessment</h3>
+<table>
+<tr><th>Concern</th><th>Status</th></tr>
+<tr><td><strong>Published privacy policy</strong></td><td>Not found publicly accessible (Wix-based website renders JS, no readable privacy policy page located)</td></tr>
+<tr><td><strong>Data encryption</strong></td><td>Google Play listing states "data is encrypted in transit"</td></tr>
+<tr><td><strong>Data deletion</strong></td><td>Google Play listing states "users can request data deletion"</td></tr>
+<tr><td><strong>Israeli Privacy Law compliance</strong></td><td>Unknown -- no public statement found</td></tr>
+<tr><td><strong>GDPR compliance</strong></td><td>Unknown -- no public statement found</td></tr>
+<tr><td><strong>Parental consent mechanism</strong></td><td>Unknown -- no documentation found</td></tr>
+<tr><td><strong>Data ownership</strong></td><td>Unknown -- who owns the survey data? The school? The company?</td></tr>
+<tr><td><strong>Data retention</strong></td><td>Unknown</td></tr>
+<tr><td><strong>Third-party sharing</strong></td><td>Unknown</td></tr>
+<tr><td><strong>Anonymity guarantees</strong></td><td>Company claims surveys are anonymous and data is presented at institutional level only</td></tr>
+</table>
+<h3>Critical Questions</h3>
+<ol>
+<li><strong>Who owns the data?</strong> When SafeSchool collects climate survey data from students in 1,200+ schools, does the data belong to the school, the municipality, or the for-profit company? For an amuta there would be public accountability; for a בע"מ, there is none.</li>
+</ol>
+<ol>
+<li><strong>Can the data be deanonymized?</strong> Even if surveys are "anonymous," if they collect grade, age, gender, and school, small class sizes could enable reidentification. No information was found about differential privacy or k-anonymity protections.</li>
+</ol>
+<ol>
+<li><strong>What happens if the company is acquired or goes bankrupt?</strong> As a for-profit בע"מ with VC investors, the company could be acquired by any entity. What happens to the behavioral data on hundreds of thousands of Israeli children?</li>
+</ol>
+<ol>
+<li><strong>Parental awareness:</strong> Parents can now see which GEFEN programs operate in their schools (per a Calcalist report on transparency), but the GEFEN catalog description does not make clear the scope of data collection or the sexual education content.</li>
+</ol>
+<ol>
+<li><strong>Israeli privacy law:</strong> Israel's Privacy Protection Law (Amendment 13) requires organizations collecting personal data to appoint a Data Protection Officer and register their databases. No evidence was found that SafeSchool has publicly disclosed such compliance.</li>
+</ol>
+
+</div>
+<div class="section" id="section-8">
+<h2>8. Government Ties and Growth Mechanism</h2>
+<h3>How SafeSchool Got Into 1,200+ Schools</h3>
+<p><strong>Step 1: Hackaveret Incubator</strong></p>
+<p>SafeSchool went through Hackaveret (הכוורת) -- Israel's Center for Social Innovation, co-founded by JDC Israel and the National Insurance Institute. Hackaveret provides initial funding, operating model design, and -- critically -- connections to government sectors. This is how SafeSchool gained its initial government-sector introductions.</p>
+<p><strong>Step 2: GEFEN System Approval</strong></p>
+<p>SafeSchool was approved as program #5974 in the Ministry of Education's GEFEN catalog. GEFEN (גמישות בפדגוגיה ובניהול) is the system through which schools purchase external educational programs using a NIS 2.5 billion annual allocation. Once in the catalog, SafeSchool can be purchased by any school in Israel.</p>
+<p><strong>Step 3: Revolving Door Personnel</strong></p>
+<p>With Amit Edri (former MoE DG) as advisory board chairman, Hana Shadmi (former ShPY director) leading training, and multiple former MoE officials on staff, SafeSchool has unmatched institutional credibility and connections within the education system.</p>
+<p><strong>Step 4: Celebrity Marketing</strong></p>
+<p>Gal Gadot's investment (May 2022) generated international media coverage. Rotem Sela's investment (2024) generated Israeli media coverage. These create a halo effect for school principals making purchasing decisions.</p>
+<p><strong>Step 5: Post-October 7 Demand Spike</strong></p>
+<p>The October 7 attacks and their aftermath created massive demand for emotional support content in schools. SafeSchool rapidly pivoted to produce trauma-related content, including contributions from former military/intelligence chiefs. This positioned the company as an essential service during a national crisis.</p>
+<h3>Growth Trajectory</h3>
+<table>
+<tr><th>Period</th><th>Schools</th><th>Source</th></tr>
+<tr><td>Mid-2022</td><td>~600</td><td>Globes, Algemeiner</td></tr>
+<tr><td>2024</td><td>1,000+</td><td>Hackaveret, Calcalist</td></tr>
+<tr><td>Late 2024/2025</td><td>1,200+</td><td>Calcalist (latest article)</td></tr>
+</table>
+<h3>Direct Government Revenue vs. GEFEN Revenue</h3>
+<p>The obudget.org data shows only NIS 83K in direct government transfers -- trivially small. This confirms the company's revenue flows primarily through the GEFEN school-level procurement system, where individual schools use their allocated budgets. This makes the company's total government-derived revenue invisible in standard transparency databases.</p>
+<p><strong>Sources:</strong> <a href="https://hackaveret.org/projects/safe-school/" target="_blank" rel="noopener">Hackaveret</a>, <a href="https://www.2school.co.il/InterData/rmto/" target="_blank" rel="noopener">GEFEN Catalog</a>, <a href="https://next.obudget.org/i/org/company/516296886" target="_blank" rel="noopener">obudget.org</a></p>
+
+</div>
+<div class="section" id="section-9">
+<h2>9. Controversies and Media Coverage</h2>
+<h3>Controversies Found</h3>
+<ol>
+<li><strong>Doron Herman's "Legal Parade" pay-to-play scandal</strong> (ha-makom.co.il): Before founding SafeSchool, Herman ran a program on Channel 13 where lawyers paid NIS 8,000-17,000 to appear as "experts" without disclosure. This violated Bar Association ethics and broadcasting regulations.</li>
+</ol>
+<ol>
+<li><strong>No parental objection reports found:</strong> Despite extensive searching in Hebrew and English, no media reports of organized parental opposition to SafeSchool's content were found. This could mean (a) parents are satisfied, (b) parents are unaware of the full content scope, or (c) opposition exists but has not been covered by media.</li>
+</ol>
+<ol>
+<li><strong>No data breaches reported:</strong> No reports of security incidents or data breaches were found.</li>
+</ol>
+<ol>
+<li><strong>No regulatory investigations found:</strong> No reports of Privacy Authority or State Comptroller investigations were found.</li>
+</ol>
+<h3>Media Coverage Tone</h3>
+<p>Media coverage is overwhelmingly positive -- Calcalist, Globes, TheMarker, Mako, Haaretz, Algemeiner, NoCamels, and CTech have all covered the company in promotional terms. No investigative or critical journalism about SafeSchool was found. Ha-makom.co.il (which exposed the Legal Parade scandal) has not published on SafeSchool itself.</p>
+
+</div>
+<div class="section" id="section-10">
+<h2>10. Values Alignment Assessment</h2>
+<table>
+<tr><th>Dimension</th><th>Score (1-5)</th><th>Notes</th></tr>
+<tr><td><strong>Transparency</strong></td><td>2/5</td><td>בע"מ structure avoids amuta transparency; no public privacy policy found; GEFEN catalog description understates content scope</td></tr>
+<tr><td><strong>Parental consent</strong></td><td>2/5</td><td>No evidence of meaningful parental consent for data collection or sex education content</td></tr>
+<tr><td><strong>Data protection</strong></td><td>2/5</td><td>Surveys described as "anonymous" but no technical privacy guarantees documented; no public DPO or privacy compliance statement</td></tr>
+<tr><td><strong>Revolving door</strong></td><td>1/5</td><td>Former MoE DG, former ShPY director, former MoE violence prevention coordinator, former MoE distance learning director all at the company</td></tr>
+<tr><td><strong>Content integrity</strong></td><td>3/5</td><td>Professional content creators; expert advisors; but "safety" branding masks ideological content</td></tr>
+<tr><td><strong>Financial transparency</strong></td><td>2/5</td><td>Revenue flows through school-level GEFEN purchases, invisible in government databases; בע"מ has no public reporting obligation</td></tr>
+<tr><td><strong>Conflict of interest mgmt</strong></td><td>1/5</td><td>Edri invested in and chairs advisory board of company in the sector he regulated as DG; Shadmi defines school needs while selling solutions</td></tr>
+</table>
+
+</div>
+<div class="section" id="section-11">
+<h2>11. Risk Summary and Open Questions</h2>
+<h3>High-Priority Open Questions</h3>
+<ol>
+<li><strong>What is the full list of shareholders and directors?</strong> Registry data requires a premium report (NIS 139-499) from webinfo.co.il or direct access to the Companies Registrar.</li>
+</ol>
+<ol>
+<li><strong>What is the company's actual annual revenue?</strong> With 1,200+ schools paying subscription fees through GEFEN, the revenue could be substantial (estimate: if each school pays NIS 5,000-20,000/year, total revenue = NIS 6M-24M/year). But no public disclosure exists.</li>
+</ol>
+<ol>
+<li><strong>Has there been a cooling-off period violation?</strong> Edri joined SafeSchool approximately 1 year after leaving as MoE DG. Israeli law requires a cooling-off period for senior government officials before they can work in related private sector roles. Was this complied with?</li>
+</ol>
+<ol>
+<li><strong>Who approved SafeSchool for the GEFEN catalog, and when?</strong> The approval timeline relative to Edri's tenure as DG is critical.</li>
+</ol>
+<ol>
+<li><strong>What specific data points are collected in the student surveys?</strong> The company describes them as "anonymous" but the actual questionnaire content and data schema are not public.</li>
+</ol>
+<ol>
+<li><strong>Does the company have a registered database under Israel's Privacy Protection Law?</strong> Required for any entity collecting personal information on Israeli citizens.</li>
+</ol>
+<ol>
+<li><strong>Has the Privacy Authority reviewed SafeSchool's data practices?</strong> Given the company collects behavioral/emotional data on minors at scale, this should be a regulatory priority.</li>
+</ol>
+<ol>
+<li><strong>What parental notification and consent process exists?</strong> When a school subscribes to SafeSchool and students take climate surveys, are parents individually notified and given opt-out rights?</li>
+</ol>
+<h3>Recommended Next Steps</h3>
+<ul>
+<li><strong>Request company registry extract</strong> (נסח חברה) for shareholder and director details</li>
+<li><strong>File a Freedom of Information request</strong> with MoE regarding SafeSchool's GEFEN approval process and timeline</li>
+<li><strong>Contact the Privacy Authority</strong> regarding SafeSchool's database registration status</li>
+<li><strong>Review the actual student questionnaire</strong> to assess what data is collected</li>
+<li><strong>Check cooling-off period compliance</strong> for Amit Edri's transition from MoE DG to SafeSchool advisory board</li>
+</ul>
+
+</div>
+<div class="section" id="section-12">
+<h2>Source Index</h2>
+<h3>Primary Sources</h3>
+<ul>
+<li><a href="https://next.obudget.org/i/org/company/516296886" target="_blank" rel="noopener">obudget.org - Government Transfers</a></li>
+<li><a href="https://www.2school.co.il/InterData/rmto/" target="_blank" rel="noopener">GEFEN Catalog Listing</a></li>
+<li><a href="https://webinfo.co.il/details/619558/" target="_blank" rel="noopener">Companies Registry - webinfo.co.il</a></li>
+<li><a href="https://sei.org.il/%D7%A1%D7%99%D7%99%D7%A3-%D7%A1%D7%A7%D7%95%D7%9C-safeschool/" target="_blank" rel="noopener">Israeli Association for Sexual Education</a></li>
+</ul>
+<h3>Media Coverage</h3>
+<ul>
+<li><a href="https://www.globes.co.il/news/article.aspx?did=1001420102" target="_blank" rel="noopener">Globes - "The Surprising Investor"</a> (Edri joining)</li>
+<li><a href="https://www.calcalist.co.il/article/h1iq9zme0" target="_blank" rel="noopener">Calcalist - New Appointments</a> (Gavea, Rachtman)</li>
+<li><a href="https://www.calcalist.co.il/article/bkngsdjjt" target="_blank" rel="noopener">Calcalist - Technology for Teachers</a> (Product overview)</li>
+<li><a href="https://www.algemeiner.com/2022/05/24/gal-gadot-investing-in-israeli-edtech-startup-safe-school/" target="_blank" rel="noopener">Algemeiner - Gal Gadot Investment</a></li>
+<li><a href="https://www.mako.co.il/nexter-news/Article-06b7df5e7dbad81027.htm" target="_blank" rel="noopener">Mako - Rotem Sela Investment</a></li>
+<li><a href="https://www.themarker.com/technation/2021-06-23/ty-article/.premium/0000017f-dbe6-d3a5-af7f-fbeeb2630000" target="_blank" rel="noopener">TheMarker - Million Dollar Fundraise</a></li>
+<li><a href="https://www.haaretz.com/israel-news/tech-news/.premium-this-israeli-startup-wants-to-stop-cyberbullying-1.9960019" target="_blank" rel="noopener">Haaretz - Cyberbullying Startup</a></li>
+<li><a href="https://www.ice.co.il/positions/news/article/1014247" target="_blank" rel="noopener">ICE - Strategy Update</a></li>
+<li><a href="https://www.ha-makom.co.il/post-new-galit-herman/" target="_blank" rel="noopener">ha-makom.co.il - Legal Parade Expose</a></li>
+<li><a href="https://b.walla.co.il/item/3480410" target="_blank" rel="noopener">Walla - Maor Tzur Joins</a></li>
+</ul>
+<h3>Profiles</h3>
+<ul>
+<li><a href="https://he.wikipedia.org/wiki/%D7%93%D7%95%D7%A8%D7%95%D7%9F_%D7%94%D7%A8%D7%9E%D7%9F" target="_blank" rel="noopener">Wikipedia - Doron Herman</a></li>
+<li><a href="https://he.wikipedia.org/wiki/%D7%A2%D7%9E%D7%99%D7%AA_%D7%90%D7%93%D7%A8%D7%99" target="_blank" rel="noopener">Wikipedia - Amit Edri</a></li>
+<li><a href="https://hackaveret.org/projects/safe-school/" target="_blank" rel="noopener">Hackaveret - Project Page</a></li>
+<li><a href="https://www.crunchbase.com/organization/safe-school-analytics" target="_blank" rel="noopener">Crunchbase</a></li>
+<li><a href="https://finder.startupnationcentral.org/company_page/safe-school" target="_blank" rel="noopener">Startup Nation Finder</a></li>
+<li><a href="https://play.google.com/store/apps/details?id=co.il.safeschool.safe_school&hl=en" target="_blank" rel="noopener">Google Play App</a></li>
+</ul>
+<p><em>Report generated 2026-02-17 by Claude Opus 4.6 deep research agent.</em></p>
+<p><em>Research methodology: parallel web searches in Hebrew and English across Israeli business registries, government transparency databases, tech press, investigative journalism sites, and company websites.</em></p>
+
+</div>
+</div>
+
+<footer>
+  פרויקט זהות ציונית — דוח מחקר מעמיק | <a href="../">דירוג ערים</a> | <a href="../research/">כל הדוחות</a>
+</footer>
+
+</body>
+</html>
