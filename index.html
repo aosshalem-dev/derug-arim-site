@@ -957,6 +957,13 @@
         if (info.schools) detailParts.push(`<div><strong>בתי ספר:</strong> ${info.schools} &nbsp;|&nbsp; <strong>ערים:</strong> ${info.num_cities || '\u2014'}</div>`);
         detailParts.push(`<div><strong>מקור דירוג:</strong> ${prog.source || '\u2014'}</div>`);
 
+        // Source links row
+        let sourceLinks = [];
+        if (prog.id) sourceLinks.push(`<a href="https://apps.education.gov.il/gefen/ProgramView.aspx?ProgramId=${prog.id}" target="_blank" rel="noopener" style="color:#2a5a8a">כרטיס גפ"ן #${prog.id}</a>`);
+        if (orgName) sourceLinks.push(`<a href="https://www.guidestar.org.il/search?q=${encodeURIComponent(orgName)}" target="_blank" rel="noopener" style="color:#2a5a8a">חיפוש GuideStar</a>`);
+        if (orgReportUrl) sourceLinks.push(`<a href="${orgReportUrl}" target="_blank" rel="noopener" style="color:#c0392b;font-weight:bold">דוח מחקר מעמיק</a>`);
+        if (sourceLinks.length) detailParts.push(`<div style="margin-top:8px;padding-top:8px;border-top:1px solid #eee;font-size:0.85em;"><strong>מקורות:</strong> ${sourceLinks.join(' | ')}</div>`);
+
         // Add research panel if cluster exists
         if (cluster) {
             detailParts.push(buildResearchPanel(cluster));
