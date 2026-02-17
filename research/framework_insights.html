@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>דירוג ערים — דוח מחקר מעמיק</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background: #f5f5f8;
+  color: #1a1a2e;
+  direction: rtl;
+  line-height: 1.8;
+  font-size: 17px;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #1a1a2e; color: #fff;
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  overflow-x: auto; white-space: nowrap;
+}
+nav .brand { font-weight: 700; color: #ff8800; flex-shrink: 0; }
+nav a { color: #ccc; text-decoration: none; font-size: 0.85em; padding: 8px 4px; border-bottom: 2px solid transparent; flex-shrink: 0; }
+nav a:hover { color: #ff8800; border-bottom-color: #ff8800; }
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a5a8a 100%);
+  color: #fff; padding: 50px 20px 40px; text-align: center;
+}
+.hero h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+.hero .subtitle { font-size: 1.05em; color: #b0c4de; margin-bottom: 6px; }
+.hero .meta { font-size: 0.9em; color: #ff8800; margin-top: 8px; }
+.risk-badge {
+  display: inline-block; padding: 4px 16px; border-radius: 20px;
+  font-size: 0.85em; font-weight: 600; margin-top: 10px;
+}
+.risk-high { background: #e74c3c; color: #fff; }
+.risk-medium { background: #f39c12; color: #fff; }
+.risk-low { background: #27ae60; color: #fff; }
+.container { max-width: 860px; margin: 0 auto; padding: 30px 20px 80px; }
+.toc {
+  background: #fff; border-radius: 8px; padding: 22px 26px;
+  margin-bottom: 32px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.toc h2 { font-size: 1.15em; color: #2a5a8a; margin-bottom: 12px; border-bottom: 2px solid #667eea; padding-bottom: 6px; }
+.toc ol { padding-right: 22px; font-size: 0.93em; }
+.toc li { margin-bottom: 4px; }
+.toc a { color: #2a5a8a; text-decoration: none; }
+.toc a:hover { color: #ff8800; text-decoration: underline; }
+.section {
+  background: #fff; border-radius: 8px; padding: 28px 26px;
+  margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.section h2 { font-size: 1.4em; color: #1a1a2e; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #667eea; }
+.section h3 { font-size: 1.1em; color: #2a5a8a; margin: 18px 0 8px; }
+.section h4 { font-size: 1em; color: #444; margin: 14px 0 6px; }
+.section p { margin-bottom: 12px; text-align: justify; }
+.section ul, .section ol { padding-right: 22px; margin-bottom: 12px; }
+.section li { margin-bottom: 5px; }
+blockquote {
+  background: #f0f4fa; border-right: 4px solid #667eea;
+  padding: 12px 18px; margin: 12px 0; border-radius: 0 6px 6px 0;
+  font-size: 0.94em; color: #333;
+}
+.thesis {
+  background: #fff8f0; border-right: 3px solid #ff8800;
+  padding: 14px 18px; margin: 12px 0; border-radius: 0 5px 5px 0;
+  font-size: 0.96em; color: #6b4500;
+}
+table {
+  width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.91em;
+}
+th {
+  background: #667eea; color: #fff; padding: 8px 12px;
+  text-align: right; position: sticky; top: 44px; z-index: 5;
+}
+td {
+  padding: 7px 12px; border-bottom: 1px solid #e8e8e8;
+  text-align: right; vertical-align: top;
+}
+tr:nth-child(even) { background: #f8f9fc; }
+a { color: #2a5a8a; }
+a:hover { color: #ff8800; }
+.back-link {
+  display: inline-block; margin-bottom: 20px; padding: 6px 14px;
+  background: #667eea; color: #fff; border-radius: 4px;
+  text-decoration: none; font-size: 0.88em;
+}
+.back-link:hover { background: #5a6fd6; color: #fff; }
+footer {
+  text-align: center; padding: 30px 20px; color: #888; font-size: 0.85em;
+}
+strong { color: #1a1a2e; }
+code {
+  background: #f0f0f0; padding: 1px 5px; border-radius: 3px;
+  font-size: 0.9em;
+}
+.source-tag {
+  display: inline-block; background: #e8eef6; padding: 2px 8px;
+  border-radius: 10px; font-size: 0.78em; color: #2a5a8a;
+  margin: 2px 3px; text-decoration: none;
+}
+.source-tag:hover { background: #d0dff0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">דוח מחקר מעמיק</span>
+  <a href="../">חזרה לדירוג</a>
+  <a href="../research/">כל הדוחות</a>
+  <a href="#section-1">Part B: Contextual I</a> <a href="#section-2">Part C: Structural O</a>
+</nav>
+
+<div class="hero">
+  <h1>דירוג ערים</h1>
+  <div class="subtitle">Cross-Cutting Patterns & City-Level Analysis from 31 Organizations + 2 Schools</div>
+  <div class="meta">1. Funding Pipelines: The NIF/Ford/EU Ecosystem</div>
+  
+</div>
+
+<div class="container">
+  <a href="../research/" class="back-link">← כל דוחות המחקר</a>
+  <div class="toc"><h2>תוכן עניינים</h2><ol><li><a href="#section-1">Part B: Contextual Insights Per City</a></li><li><a href="#section-2">Part C: Structural Observations for Framework Development</a></li></ol></div>
+  <div class="section">
+<table>
+<tr><th>---</th><th>---</th><th>---</th></tr>
+<tr><td>חבצלת/השומר הצעיר</td><td>67%</td><td>49.4M</td><td>1/5 (most ideological)</td></tr>
+<tr><td>תיקון</td><td>49%</td><td>5.3M</td><td>2/5</td></tr>
+<tr><td>יסודות/דרור</td><td>47%</td><td>34.8M</td><td>1/5</td></tr>
+<tr><td>המכון הדמוקרטי</td><td>44%</td><td>10.6M</td><td>4/5</td></tr>
+<tr><td>גשר</td><td>15%</td><td>22.8M</td><td>2/5</td></tr>
+<tr><td>מכון הרטמן</td><td>16%</td><td>98.4M</td><td>3/5</td></tr>
+</table>
+<p>The pattern: <strong>the Israeli government is the single largest funder of ideological education programs entering schools</strong>, not foreign donors. This is counterintuitive — the public debate focuses on foreign funding (חוק העמותות) while the larger pipeline is domestic.</p>
+<h3>2. The Self-Certification Ecosystem: IPPF/SEI Network in Sex Education</h3>
+<p>This is arguably the most significant structural finding. A closed loop of mutual credentialing operates in the sex education space:</p>
+<p><strong>The chain:</strong></p>
+<ol>
+<li><strong>IPPF</strong> (International Planned Parenthood Federation, London) certifies <strong>דלת פתוחה</strong> as its Israel member</li>
+<li><strong>דלת פתוחה</strong> trains Israeli sex educators using IPPF's CSE (Comprehensive Sexuality Education) framework</li>
+<li>Graduates founded <strong>SEI — האגודה הישראלית לחינוך מיני</strong> (March 2023)</li>
+<li>SEI "accredits" its own founders' programs, creating a closed certification loop</li>
+</ol>
+<p><strong>Organizations in this loop:</strong></p>
+<ul>
+<li><strong>מגע בתיאום</strong> (Maga BeTiaum) — for-profit company, founded November 2022. Founder שירי בסין סביון is former MoE sexuality unit staff ("revolving door")</li>
+<li><strong>מידע אמין על מין</strong> (Meyda Amin) — ~40 facilitators hiding behind a sole proprietorship registration. 51 schools, 15 cities, 1.19M NIS from public funds with zero reporting obligation</li>
+<li><strong>תהודה</strong> (Tehuda) — CEO serves as SEI audit committee chair, certifying her own program</li>
+<li><strong>כל השאלות נכונות</strong> (Or Gelbard) — sole practitioner, IPPF/דלת פתוחה certified</li>
+<li><strong>לדעת</strong> (Ladaat) — SEI member, the oldest organization in this space (1976)</li>
+<li><strong>חוש"ן</strong> (CHOSHEN) — adjacent network (LGBTQ education), 6 Gefen programs all tagged gender/sexuality</li>
+</ul>
+<p><strong>What this means for the ranking:</strong> These organizations collectively operate in 15+ cities. Their programs enter schools through the Gefen catalog, meaning public school budgets pay for programs whose professional standards are set by the same people who deliver them. No independent academic validation exists for most of these programs.</p>
+<h3>3. Personnel Overlap Between Organizations</h3>
+<p><strong>Dror Israel ecosystem</strong> — The clearest case of interlocking entities:</p>
+<ul>
+<li><strong>דרור ישראל</strong> (the movement, 88M NIS)</li>
+<li><strong>יסודות לצמיחה דרור</strong> (operating arm, 34.8M NIS, 988 "volunteers")</li>
+<li>Combined ecosystem: <strong>234.6M NIS/year</strong> — the largest network in the mapping</li>
+<li>Same people, same ideology (Freire's critical pedagogy), different legal shells</li>
+</ul>
+<p><strong>השומר הצעיר ecosystem:</strong></p>
+<ul>
+<li><strong>חבצלת</strong> (educational institutions arm, 49.4M NIS)</li>
+<li>Connected to הקיבוץ הארצי</li>
+<li>Combined: ~110M NIS including related entities</li>
+<li>67% government funded — the highest government dependency of any researched org</li>
+</ul>
+<p><strong>Sex education revolving door:</strong></p>
+<ul>
+<li>שירי בסין סביון: Ministry of Education sexuality unit -> מגע בתיאום (private company)</li>
+<li>שלומית הברון: activist ("אחת מתוך אחת" database) -> מידע אמין על מין (Gefen contractor)</li>
+<li>תהודה CEO -> SEI audit committee chair</li>
+</ul>
+<p><strong>Governance crossover:</strong></p>
+<ul>
+<li>עקיבא סמוטריץ' (brother of Finance Minister) on חברותא board</li>
+<li>יאיר קרטמן (חברותא founder) in קוממיות movement leadership</li>
+<li>הרב דניאל טרופר (גשר founder) from Merkaz HaRav Yeshiva, chaired הבית היהודי appointments committee</li>
+</ul>
+<h3>4. Common Framing Strategies</h3>
+<p><strong>"Human Rights" as ideology vehicle:</strong></p>
+<p>ACRI's evolution is the textbook case — from classical liberal civil rights advocacy (founded 1972) to adopting an "apartheid" framework (from 2008). The organization's thesis shifted from defending individual rights within the state to challenging the state's legitimacy. Revenue: 10.9M NIS, virtually zero government funding (0.2%).</p>
+<p><strong>"Democracy" as pedagogical framework:</strong></p>
+<p>המכון הדמוקרטי explicitly makes "democracy" the supreme educational value, which sounds unobjectionable until examined: its version of democracy emphasizes individual autonomy and pluralism to the exclusion of communal or traditional values. Founded by חוה הכט, 44% government funded.</p>
+<p><strong>"Encounter" (מפגש) as framing:</strong></p>
+<p>תיקון and several coexistence organizations frame their work as "encounter" — a depoliticized word that masks specific ideological content. תיקון is the successor of המחנות העולים (MAPAM youth movement), yet presents itself as a neutral meeting facilitation service.</p>
+<p><strong>"Pluralism" as ideology (the Hartman paradox):</strong></p>
+<p>מכון הרטמן, with its $42M combined budget, promotes "pluralism" through its CLAWS framework. The paradox: when pluralism itself becomes the supreme value, it functions as an ideology that delegitimizes all non-pluralist positions. Their "לב אהרון" program trains IDF commanders in this framework.</p>
+<p><strong>Hebrew vs. English messaging gaps:</strong></p>
+<ul>
+<li><strong>חוש"ן</strong>: In Hebrew, "אדבוקסיה" (advocacy); in English, "education and information"</li>
+<li><strong>יד ביד</strong>: In Hebrew, "חינוך משותף" (shared education); in English, emphasis on "dual narrative" including Nakba</li>
+<li><strong>ACRI</strong>: In English, uses "apartheid" framework prominently; Hebrew messaging softer</li>
+</ul>
+<h3>5. Financial Opacity Patterns</h3>
+<p><strong>For-profit entities avoiding amuta transparency:</strong></p>
+<p>Three organizations use corporate structures (חברה פרטית / עוסק מורשה) that have no public reporting obligations:</p>
+<table>
+<tr><th>Entity</th><th>Type</th><th>Revenue</th><th>Public Reporting</th></tr>
+<tr><td>אשכולות חשיבה (Mind Lab)</td><td>חברה פרטית</td><td>12M NIS</td><td>Last annual report: 2017 (9-year gap)</td></tr>
+<tr><td>מגע בתיאום</td><td>חברה פרטית</td><td>500K NIS</td><td>Zero — founded Nov 2022</td></tr>
+<tr><td>מידע אמין על מין</td><td>עוסק מורשה</td><td>1.2M NIS</td><td>Zero — no reporting required</td></tr>
+<tr><td>כל השאלות נכונות</td><td>עוסק מורשה</td><td>204K NIS</td><td>Zero</td></tr>
+<tr><td>טבע האדם</td><td>עוסק מורשה</td><td>256K NIS</td><td>Zero</td></tr>
+</table>
+<p><strong>Shell-like structures:</strong></p>
+<ul>
+<li><strong>קהלים שלובים</strong>: 0 employees, 0 reported volunteers, 384K NIS revenue, 7 thematic flags in Gefen. Controlled by commercial mediation company גומא גבים.</li>
+<li><strong>מהפך תודעתי (Todaa)</strong>: 5 employees claim service to hundreds of schools; sole-source government contracts without tenders</li>
+</ul>
+<p><strong>Gefen undercount vs. reality:</strong></p>
+<p>The Gefen catalog dramatically undercounts actual organizational activity:</p>
+<ul>
+<li><strong>גשר</strong>: 69K NIS in Gefen vs. 22.8M NIS actual revenue (0.3%)</li>
+<li><strong>הוועד למלחמה באיידס</strong>: 37K in Gefen vs. 3.8M actual</li>
+<li><strong>מכון הרטמן</strong>: 182K in Gefen vs. 98.4M actual (0.2%)</li>
+</ul>
+<p>This means the Gefen-based education exposure score (Stream B) captures only the school-entry programs, not the total organizational footprint in a city.</p>
+<h3>6. Schools as Ideological Vehicles</h3>
+<p><strong>ליד"ה (Leyada) — Jerusalem:</strong></p>
+<p>The Hebrew University Secondary School, founded 1935, is the elite progressive school case study. Key indicators:</p>
+<ul>
+<li>Invited speakers include איימן עודה (Joint List), רולא דאוד (Standing Together), שוברים שתיקה</li>
+<li>Permanent pride flag since 2015 (after Shira Banki murder)</li>
+<li>"Humanism in Wartime" conferences during active military operations</li>
+<li>Channel 14 campaign (2025) led to MoE investigation</li>
+<li>Revenue: 36M NIS, only 1.1% government — financial independence enables ideological independence</li>
+<li>Alumni: 2 Nobel laureates, 5 Supreme Court justices — elite network perpetuation</li>
+<li><strong>Relevance to ranking:</strong> Leyada is a Jerusalem-specific factor that concentrates progressive elite formation in the city. Its alumni dominate legal, academic, and media institutions.</li>
+</ul>
+<p><strong>קדמה (Kedma) — Jerusalem:</strong></p>
+<p>The Mizrachi critical pedagogy school, founded 1994 in Katamon neighborhood:</p>
+<ul>
+<li>Founders: סבירסקי (Adva Center), שטרית (הקשת המזרחית), דהאן-כלב (feminism) — the intellectual core of Mizrachi progressivism</li>
+<li>Designed as secular alternative to Shas's "אל המעיין" educational network</li>
+<li>Applied Freire's critical pedagogy explicitly — "education is a political act"</li>
+<li>Planned 15 schools; only Jerusalem survived (Tel Aviv and Kiryat Malakhi branches closed)</li>
+<li>~136 students, 25 teachers — tiny but symbolically significant</li>
+<li><strong>Relevance to ranking:</strong> Kedma represents the Mizrachi progressive attempt to create institutional alternatives. Its near-total failure (14/15 branches closed) is itself data — this ideology did not scale, but Jerusalem was the one place it persisted.</li>
+</ul>
+<p><strong>What both schools share:</strong> Neither receives significant government funding. Both maintain ideological positions that would be difficult under government oversight. Both are Jerusalem-specific, adding a unique ideological layer to the capital that does not exist in other cities.</p>
+
+</div>
+<div class="section" id="section-1">
+<h2>Part B: Contextual Insights Per City</h2>
+<h3>City Org Density Rankings</h3>
+<table>
+<tr><th>City</th><th>Researched Orgs</th><th>Key Clusters</th></tr>
+<tr><td><strong>ירושלים</strong></td><td>19</td><td>Full spectrum: sex-ed, coexistence, democracy, religious, schools</td></tr>
+<tr><td><strong>תל אביב-יפו</strong></td><td>19</td><td>Progressive concentration: sex-ed, feminist, LGBTQ, coexistence</td></tr>
+<tr><td><strong>הרצליה</strong></td><td>13</td><td>Suburban progressive hub: sex-ed, social change, advocacy</td></tr>
+<tr><td><strong>חיפה</strong></td><td>13</td><td>Coexistence hub: dual-narrative, Arab-Jewish, sports</td></tr>
+<tr><td><strong>רמת השרון</strong></td><td>12</td><td>High-density suburban: sex-ed + coexistence + Hashomer HaTzair</td></tr>
+<tr><td><strong>באר שבע</strong></td><td>12</td><td>Periphery access point: diverse range, moderate density</td></tr>
+<tr><td><strong>הוד השרון</strong></td><td>7</td><td>Sex-ed corridor concentration</td></tr>
+<tr><td><strong>ראש העין</strong></td><td>7</td><td>Mixed: religious (חברותא) + sex-ed + coexistence</td></tr>
+<tr><td><strong>רעננה</strong></td><td>6</td><td>Moderate: education + sex-ed</td></tr>
+<tr><td><strong>רמת גן</strong></td><td>8</td><td>Mixed: religious + progressive + sex-ed</td></tr>
+<tr><td><strong>כרמיאל</strong></td><td>6</td><td>Northern periphery: education-focused</td></tr>
+<tr><td><strong>קרית גת</strong></td><td>7</td><td>Southern periphery: Toronto funding + Alliance + sex-ed</td></tr>
+<tr><td><strong>קרית אונו</strong></td><td>5</td><td>Low-moderate coverage</td></tr>
+<tr><td><strong>קרית שמונה</strong></td><td>3</td><td>Minimal: Matzmichim + sex-ed + assault centers</td></tr>
+<tr><td><strong>גבעתיים</strong></td><td>2</td><td>Surprisingly low for its progressive reputation</td></tr>
+<tr><td><strong>גבעת שמואל</strong></td><td>2</td><td>Minimal</td></tr>
+<tr><td><strong>נתיבות</strong></td><td>2</td><td>Minimal: Matzmichim + Alliance only</td></tr>
+<tr><td><strong>אריאל</strong></td><td>1</td><td>Only Maga BeTiaum (sex-ed)</td></tr>
+<tr><td><strong>עמנואל</strong></td><td>0</td><td>Zero researched org presence</td></tr>
+<tr><td><strong>אפרת</strong></td><td>0</td><td>Zero researched org presence</td></tr>
+</table>
+<h3>Jerusalem (ירושלים) — 19 orgs, News Score 76.7</h3>
+<p><strong>Profile: The Maximum-Complexity City</strong></p>
+<p>Jerusalem has the highest org count (tied with Tel Aviv at 19) but with a fundamentally different character. While Tel Aviv's orgs cluster around progressive advocacy, Jerusalem's org ecosystem spans the full ideological spectrum:</p>
+<p><strong>Progressive cluster:</strong></p>
+<ul>
+<li>ACRI (registered in Ramat Gan but operates nationally from Jerusalem)</li>
+<li>יד ביד (flagship dual-narrative school — Jerusalem + Haifa + Tel Aviv)</li>
+<li>מרכז רוסינג (Christian-Jewish dialogue, church-funded)</li>
+<li>שער שוויון (sports-based coexistence, Bedouin/Druze/Arab/Jewish)</li>
+<li>המכון הדמוקרטי (17 schools in Jerusalem alone)</li>
+</ul>
+<p><strong>Sex education cluster:</strong></p>
+<ul>
+<li>מידע אמין על מין (51 schools nationally, Jerusalem is a key city)</li>
+<li>לדעת (Jerusalem-based since 1976, Forum 21 abortion committee advocacy)</li>
+<li>כל השאלות נכונות (Alfi Gelbard, sole practitioner)</li>
+</ul>
+<p><strong>Religious/Traditional cluster:</strong></p>
+<ul>
+<li>חברותא (Smotrich connection, קוממיות network, Beit El origins)</li>
+<li>גשר (asymmetric bridge: religious-Zionist leadership exclusively)</li>
+</ul>
+<p><strong>Large institutional:</strong></p>
+<ul>
+<li>מכון הרטמן ($42M combined, 23 schools)</li>
+<li>ידידות טורונטו (23 schools, single-donor dependency)</li>
+<li>כי"ח/אליאנס (166-year-old French organization, 16 schools)</li>
+</ul>
+<p><strong>Schools as additional factors:</strong></p>
+<ul>
+<li><strong>ליד"ה</strong>: Elite progressive formation — 2 Nobel laureates, progressive speaker invitations, pride flag</li>
+<li><strong>קדמה</strong>: Mizrachi critical pedagogy — the only surviving branch of 15 planned schools</li>
+</ul>
+<p><strong>What this means for the ranking:</strong> Jerusalem currently lacks a protocol score (scraper underperforming, 36/206 files) and uses education-only data. But its org density is the highest in the country. The combination of elite progressive institutions (Leyada, Hartman), sex-ed saturation, and coexistence organizations creates a unique ideological infrastructure. However, Jerusalem also has strong counter-forces (Chevruta, Gesher) that don't exist in Tel Aviv. The net effect is <strong>ideological competition</strong>, not one-sided penetration.</p>
+<p>The presence of both Leyada and Kedma adds a dimension no other city has: <strong>institutional progressive education embedded in schools themselves</strong>, not just as external program providers. Leyada produces future elites with progressive orientation; Kedma attempted (mostly failed) to do the same for Mizrachi populations.</p>
+<h3>Tel Aviv-Jaffa (תל אביב-יפו) — 19 orgs, News Score 69.5, Combined Rank #1</h3>
+<p><strong>Profile: The Progressive Capital</strong></p>
+<p>Tel Aviv's org ecosystem is the most ideologically homogeneous — almost entirely progressive, with virtually no counter-forces from the religious or traditional sector.</p>
+<p><strong>Dominant clusters:</strong></p>
+<ul>
+<li><strong>Sex education saturated:</strong> Maga BeTiaum, Meyda Amin, Tehuda, Or Gelbard, Sexual Assault Centers — 5 sex-ed/gender organizations, the highest concentration nationally</li>
+<li><strong>Coexistence/social change:</strong> יד ביד, אפשר אחרת, קהלים שלובים, המרחב החברתי</li>
+<li><strong>Institutional progressive:</strong> הרטמן, דרור/יסודות, Alliance</li>
+<li><strong>Feminist/LGBTQ:</strong> מהפך תודעתי (Todaa — 6/6 issue flags, record), חוש"ן (HQ in Tel Aviv)</li>
+<li><strong>AIDS Task Force:</strong> Mission drift from HIV to "healthy sexuality" and LGBTQ advocacy</li>
+</ul>
+<p><strong>No counter-forces:</strong> Unlike Jerusalem, Tel Aviv has zero religious-Zionist organizations in the Gefen mapping. חברותא is present but marginal. No equivalent to Gesher's religious leadership.</p>
+<p><strong>Financial concentration:</strong> Combined org revenues in Tel Aviv exceed 200M NIS annually (Hartman alone is 98M). The city's progressive infrastructure is the best-funded in the country.</p>
+<p><strong>News coverage:</strong> 718 articles across 6 progressive topics — second only to Haifa in absolute numbers but with different composition. Tel Aviv leads in LGBTQ municipal coverage (74 articles) and social justice (162).</p>
+<p><strong>What this means for the ranking:</strong> Tel Aviv's #1 rank is overdetermined — it leads in progressive voting (53%), has the densest progressive org network, highest news coverage on progressive topics, and virtually no institutional counter-forces. The city functions as the <strong>command center</strong> of the progressive organizational ecosystem.</p>
+<h3>Haifa (חיפה) — 13 orgs, News Score 100 (highest), Combined Rank #5</h3>
+<p><strong>Profile: The Coexistence Laboratory</strong></p>
+<p>Haifa has the highest news coverage score (574 articles, normalized to 100) despite having fewer orgs than Tel Aviv or Jerusalem. This reflects Haifa's unique position as the <strong>primary Arab-Jewish mixed city</strong> being covered by media.</p>
+<p><strong>Coexistence cluster (dominant):</strong></p>
+<ul>
+<li>יד ביד (one of 3 school locations nationally)</li>
+<li>שער שוויון (sports-based coexistence)</li>
+<li>כי"ח/אליאנס (French multicultural tradition)</li>
+<li>איגוד מרכזי הסיוע (Sexual Assault Centers — operates across communities)</li>
+</ul>
+<p><strong>Education/institutional:</strong></p>
+<ul>
+<li>מכון הרטמן (23 schools in the Gefen mapping, Haifa is one of 7 cities)</li>
+<li>מצמיחים (behavioral, non-ideological — present in 16 cities)</li>
+<li>אשכולות חשיבה/Mind Lab (neutral thinking games)</li>
+<li>ידידות טורונטו (23 schools)</li>
+<li>יסודות/דרור (Dror Israel operating arm, critical pedagogy)</li>
+</ul>
+<p><strong>Sex education:</strong></p>
+<ul>
+<li>מידע אמין על מין (51 schools nationally, Haifa included)</li>
+</ul>
+<p><strong>News coverage breakdown:</strong></p>
+<ul>
+<li>Sustainability: 136 articles (highest topic)</li>
+<li>Diversity/inclusion: 121</li>
+<li>Social justice: 112</li>
+<li>Gender equality: 82</li>
+<li>LGBTQ municipal: 64</li>
+<li>Progressive education: 59</li>
+</ul>
+<p><strong>What this means for the ranking:</strong> Haifa's high news score (boosting it from #9 to #5 when news was added to the formula) reflects the city's genuine demographic complexity, not just ideological activism. The coexistence organizations here serve a real mixed population. However, the same organizations (Hand in Hand with its dual-narrative model, Shaar Shivion's contact-theory approach) carry implicit political content — "coexistence" in the Israeli context is inherently a position on the conflict.</p>
+<h3>Beer Sheva (באר שבע) — 12 orgs, News Score 83.8, Combined Rank #7</h3>
+<p><strong>Profile: The Periphery Access Point</strong></p>
+<p>Beer Sheva is the gateway for national organizations to reach the southern periphery, including Bedouin communities. It has 12 researched orgs — high for a periphery city.</p>
+<p><strong>Organizations present:</strong></p>
+<ul>
+<li><strong>מכון הרטמן</strong>: 23 Gefen schools, Beer Sheva is one of 7 cities</li>
+<li><strong>המכון הדמוקרטי</strong>: One of only 3 cities (with Jerusalem and Ra'anana)</li>
+<li><strong>ידידות טורונטו</strong>: 23 schools, Beer Sheva is one of 4 cities — single-donor risk (Albert Friedberg)</li>
+<li><strong>שער שוויון</strong>: Sports coexistence — Bedouin communities particularly relevant here</li>
+<li><strong>יסודות/דרור</strong>: Dror Israel's operating arm — 49 schools nationally, Beer Sheva included</li>
+<li><strong>מצמיחים</strong>: Behavioral (non-ideological), 16 cities</li>
+<li><strong>Mind Lab</strong>: Thinking games (non-ideological), 6 cities</li>
+<li><strong>גשר</strong>: Asymmetric bridge, 11 Gefen schools</li>
+<li><strong>הוועד למלחמה באיידס</strong>: Mission-drifted from HIV to broad sexuality</li>
+<li><strong>כל השאלות נכונות</strong>: Sex ed sole practitioner</li>
+<li><strong>איגוד מרכזי הסיוע</strong>: Sexual assault prevention</li>
+<li><strong>חברותא</strong>: Religious-Zionist (Smotrich connection)</li>
+</ul>
+<p><strong>The paradox:</strong> Beer Sheva has only 15% progressive voting (Knesset 25) but 12 progressive/mixed organizations operating in its schools. This is the clearest case of <strong>organizational presence disconnected from population ideology</strong> — national organizations use Beer Sheva as a periphery expansion hub regardless of local political preferences.</p>
+<p><strong>News coverage:</strong> 485 articles — third highest after Haifa and Tel Aviv. Diversity/inclusion (137 articles) is the dominant topic, reflecting Bedouin/Ethiopian/immigrant community coverage.</p>
+<p><strong>What this means for the ranking:</strong> Beer Sheva's combined rank (#7) is elevated by news and org density despite low progressive voting. The formula gives equal weight to organizational presence and voter preference — but in Beer Sheva these point in opposite directions. This suggests that org-based ideological exposure may be a <strong>leading indicator</strong> of future political shifts, or alternatively that these organizations serve a different function in periphery cities (service delivery rather than ideological formation).</p>
+
+</div>
+<div class="section" id="section-2">
+<h2>Part C: Structural Observations for Framework Development</h2>
+<h3>1. The Gefen Catalog as Regulatory Gap</h3>
+<p>The Ministry of Education's Gefen catalog is the gateway for all external programs entering schools. Current findings reveal:</p>
+<ul>
+<li><strong>No parental opt-in mechanism</strong> exists for any Gefen program (discovered in Maga BeTiaum research)</li>
+<li><strong>For-profit companies</strong> operate alongside amutot with no differentiated oversight</li>
+<li><strong>Self-certification</strong> through SEI is accepted without independent validation</li>
+<li><strong>Gefen budget dramatically undercounts</strong> organizational scope (Gesher: 69K Gefen vs. 22.8M actual)</li>
+</ul>
+<h3>2. Risk Distribution</h3>
+<table>
+<tr><th>Risk Level</th><th>Count</th><th>Organizations</th></tr>
+<tr><td><strong>High</strong></td><td>6</td><td>ACRI, חבצלת/השומר הצעיר, יסודות/דרור, מגע בתיאום, מידע אמין, חברותא, ליד"ה</td></tr>
+<tr><td><strong>Medium-High</strong></td><td>3</td><td>תיקון, מהפך תודעתי, גשר</td></tr>
+<tr><td><strong>Medium</strong></td><td>6</td><td>הרטמן, המכון הדמוקרטי, ידידות טורונטו, הוועד לאיידס, יסוד, קדמה, חוש"ן, לדעת</td></tr>
+<tr><td><strong>Moderate</strong></td><td>4</td><td>שער שוויון, המרחב החברתי, קהלים שלובים, כל השאלות נכונות, תהודה</td></tr>
+<tr><td><strong>Low-Moderate</strong></td><td>3</td><td>כי"ח/אליאנס, מרכז רוסינג, טבע האדם</td></tr>
+<tr><td><strong>Low</strong></td><td>3</td><td>מצמיחים, Mind Lab, איגוד מרכזי הסיוע, אפשר אחרת</td></tr>
+</table>
+<p>Note: "High" encompasses both progressive and religious-Zionist organizations (חברותא is rated high from the opposite ideological direction).</p>
+<h3>3. Coverage Gaps Still Outstanding</h3>
+<ul>
+<li><strong>ירושלים</strong>: Protocol scraping still incomplete (36/206 files). Full combined score impossible.</li>
+<li><strong>רמת גן</strong>: Protocol data unavailable (video streaming, no PDFs).</li>
+<li><strong>GuideStar financial details</strong>: Cannot be scraped (JavaScript rendering). Manual verification only.</li>
+<li><strong>Ford Foundation pipeline claim</strong>: Still unverified from Gemini report on Dror Israel.</li>
+<li><strong>SEI accreditation details</strong>: No independent audit of SEI's certification process exists.</li>
+<li><strong>Gefen parental notification</strong>: No systematic data on whether any city requires opt-in for external programs.</li>
+</ul>
+<p><em>This synthesis covers all 31 organizations + 2 schools from research_orgs.js, cross-referenced with news coverage data from index.json and the org_research team.json methodology. Organizations were researched across 3 batches using 4-6 parallel agents each, totaling approximately 1,300 tool calls.</em></p>
+
+</div>
+</div>
+
+<footer>
+  פרויקט זהות ציונית — דוח מחקר מעמיק | <a href="../">דירוג ערים</a> | <a href="../research/">כל הדוחות</a>
+</footer>
+
+</body>
+</html>
