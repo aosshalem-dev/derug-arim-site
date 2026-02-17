@@ -519,41 +519,6 @@
             </div>
         </div>
 
-        <div class="method-box" style="border-color:#2e7d32">
-            <div class="method-toggle open" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
-                <h3 style="color:#2e7d32">&#10003; תיקון חיוביים כוזבים — ציר ב'</h3>
-                <span class="arrow">&#9660;</span>
-            </div>
-            <div class="method-body open">
-                <ul style="margin-top:10px">
-                    <li><strong>ניתוח מעמיק של פרוטוקולים מכל 15 הערים</strong> גילה ששיעור החיוביים הכוזבים בציר ב' נע בין 0% ל-100%.</li>
-                    <li>דוגמאות: <strong>&#171;קיימות&#187;</strong> = "existing" (לא sustainability), <strong>&#171;שולי&#187;</strong> = שם פרטי (לא שוליות), <strong>&#171;הכלה&#187;</strong> = שגיאת OCR של הלכה (לא inclusion).</li>
-                    <li>הציונים המוצגים כעת הם <strong>ציוני ציר ב' מתוקנים</strong> — הציון הגולמי מוכפל באחוז האות האמיתי שזוהה בניתוח.</li>
-                    <li>לחצו על עיר לצפייה בציון הגולמי (<code>pole_b_raw</code>) לצד הציון המתוקן.</li>
-                    <li class="dim" style="margin-top:6px">רק חיפה והרצליה הציגו תוכניות מוסדיות אמיתיות (8-15% אות אמיתי). ב-7 ערים שיעור החיוביים הכוזבים היה 100%.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="method-box" style="border-color:#e8a000">
-            <div class="method-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
-                <h3 style="color:#bf360c">&#9888; כתמים עיוורים של הסורק</h3>
-                <span class="arrow">&#9660;</span>
-            </div>
-            <div class="method-body">
-                <ul style="margin-top:10px">
-                    <li><strong>&#171;קיימות&#187; — חיובי כוזב שכיח.</strong> המילה פירושה גם sustainability וגם &#171;קיים&#187; (existing). ביטויים כמו &#171;מערכות קיימות וחדשות&#187; נספרים כאילו הם מדיניות קיימות סביבתית, אך בפועל מדובר ב&#171;מערכות קיימות&#187; = existing systems.</li>
-                    <li><strong>&#171;שולי&#187; — ניפוח שמות.</strong> בגבעתיים נספרו 71 מופעים של &#171;שולי&#187; (שוליות/שוליים). רובם הם השם &#171;שולי ברוך בר-דוד&#187; — מזכירת ישיבות המועצה ששמה מופיע בכותרת כל פרוטוקול. לא תוכן אידיאולוגי.</li>
-                    <li><strong>&#171;רשת ערים&#187; — דגל אדום שאינו מוצדק.</strong> הטריגר בגבעתיים נובע מהצטרפות ל&#171;רשת ערים בריאות בישראל&#187; — תוכנית בריאות ציבורית של ארגון הבריאות העולמי (WHO), לא מנגנון חדירה אידיאולוגית.</li>
-                    <li><strong>&#171;יועץ חיצוני&#187; — רוב המופעים טכניים.</strong> כמעט כל התוצאות הן יועצי נדל"ן, סייבר, חשבונאות ותכנון עירוני — לא יועצים אידיאולוגיים.</li>
-                    <li><strong>&#171;הדרה&#187; — שגיאות הקלדה.</strong> לפחות מופע אחד בגבעתיים הוא &#171;הדרכה&#187; (guidance) ששוכתב בטעות כ&#171;הדרה&#187; (exclusion) בפרוטוקול.</li>
-                    <li class="dim" style="margin-top:8px">
-                        <strong>הגבלה כללית:</strong> ספירת מילות מפתח עיוורת להקשר — המילה &#171;צדק חברתי&#187; נספרת זהה בין אם היא מוזכרת בחיוב, בביקורת או בציטוט.
-                        כיסוי הפרוטוקולים נע בין 4% (הרצליה) ל-37% (אפרת) ללא תיקון סטטיסטי.
-                    </li>
-                </ul>
-            </div>
-        </div>
 
         <div class="legend">
             <span><span class="dot" style="background:#ff4444"></span> 50+ קריטי</span>
@@ -755,13 +720,16 @@
             <a href="https://next.obudget.org" target="_blank" class="source-tag">obudget.org — תקציב פתוח</a>
             <a href="https://votes25.bechirot.gov.il/" target="_blank" class="source-tag">תוצאות בחירות כנסת 25</a>
             <a href="research/" target="_blank" class="source-tag">31 דוחות מחקר מעמיק</a>
+            <a href="data/news/index.json" target="_blank" class="source-tag">ארכיון כתבות (5,095 כתבות, JSON)</a>
+            <a href="data/city_news_articles.json" target="_blank" class="source-tag">כתבות מלא — כל הערים (JSON)</a>
+            <a href="data/merged_city_ranking.json" target="_blank" class="source-tag">נתוני דירוג גולמיים (JSON)</a>
             <a href="https://www.ngo-monitor.org.il" target="_blank" class="source-tag">NGO Monitor</a>
         </div>
     </div>
 
     <footer>
         פרויקט זהות ציונית — דירוג ערים | עדכון אחרון: פברואר 2026<br>
-        מקורות: פרוטוקולים עירוניים (15 ערים) + תוכניות גפ"ן (20 ערים) + 31 דוחות מחקר מעמיק + בחירות כנסת 25 + סיקור תקשורתי
+        מקורות: פרוטוקולים עירוניים (15 ערים) + תוכניות גפ"ן (20 ערים) + 31 דוחות מחקר מעמיק + בחירות כנסת 25 + 5,095 כתבות מקוטלגות
     </footer>
 
     </div><!-- .main-content -->
