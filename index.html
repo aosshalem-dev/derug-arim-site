@@ -516,6 +516,15 @@
                     <li>• דגלים אדומים — שיתוף UNESCO, יועצים חיצוניים <span class="weight">15%</span></li>
                     <li class="dim" style="margin-top:8px">ציר א' (זהות יהודית/ציונית) מוצג לעיון בלבד ואינו נכלל בציון המשולב</li>
                 </ul>
+                <div style="margin-top:10px;font-size:0.82em;color:#666">
+                    מקורות:
+                    <a href="https://apps.education.gov.il/gefen" target="_blank" style="color:#2a5a8a">גפ"ן — משרד החינוך</a> |
+                    <a href="https://votes25.bechirot.gov.il/" target="_blank" style="color:#2a5a8a">בחירות כנסת 25</a> |
+                    <a href="https://news.google.com/?hl=iw&gl=IL" target="_blank" style="color:#2a5a8a">Google News</a> |
+                    פרוטוקולי מועצות עיר |
+                    <a href="data/merged_city_ranking.json" target="_blank" style="color:#2a5a8a">נתונים גולמיים</a> |
+                    <a href="research/framework_insights.html" target="_blank" style="color:#2a5a8a">תובנות כלליות</a>
+                </div>
             </div>
         </div>
 
@@ -1074,7 +1083,9 @@
                     <ul class="kw-list">${buildKeywordPills(proto.red_flag_details)}</ul>
                 </div>` : ''}
                 <div style="font-size:0.8em;margin-top:4px">
-                    מקור: פרוטוקולים של ישיבות מועצת העיר (${entry.protocol_coverage || ''} קבצים)
+                    מקור: פרוטוקולים של ישיבות מועצת העיר (${entry.protocol_coverage || ''} קבצים) |
+                    <span style="cursor:pointer;color:#2a5a8a;text-decoration:underline" onclick="event.stopPropagation();switchTab('protocols',document.querySelectorAll('.nav-tab')[2])">צפה בפרוטוקולים מלאים</span> |
+                    <a href="data/merged_city_ranking.json" target="_blank" rel="noopener" style="color:#2a5a8a" onclick="event.stopPropagation()">נתונים גולמיים (JSON)</a>
                 </div>`;
         }
 
@@ -1377,6 +1388,7 @@
             <div class="stat-item"><div class="stat-value">${highRisk}</div><div class="stat-label">סיכון גבוה (4-5)</div></div>
             <div class="stat-item"><div class="stat-value">\u20AA${(totalBudget/1000000).toFixed(1)} מיליון</div><div class="stat-label">תקציב כולל</div></div>
         `;
+        document.getElementById('edu-stats').innerHTML += '<div style="font-size:0.78em;color:#888;text-align:center;width:100%;margin-top:4px">מקור: <a href="https://apps.education.gov.il/gefen" target="_blank" rel="noopener" style="color:#2a5a8a">קטלוג גפ"ן — משרד החינוך</a> | <a href="https://aosshalem-dev.github.io/educational-programs/" target="_blank" rel="noopener" style="color:#2a5a8a">ניתוח מלא 2,859 תוכניות</a> | <a href="research/" target="_blank" rel="noopener" style="color:#2a5a8a">31 דוחות מחקר</a></div>';
 
         const container = document.getElementById('edu-programs-list');
         container.innerHTML = `<div style="max-width:900px;margin:0 auto">
@@ -1412,6 +1424,7 @@
             <div class="stat-item"><div class="stat-value">${avgPoleB}</div><div class="stat-label">ממוצע ציר ב'</div></div>
             <div class="stat-item"><div class="stat-value">${redFlagCities}</div><div class="stat-label">ערים עם דגלים אדומים</div></div>
         `;
+        document.getElementById('proto-stats').innerHTML += '<div style="font-size:0.78em;color:#888;text-align:center;width:100%;margin-top:4px">מקור: פרוטוקולי מועצות עיר — סריקת מילות מפתח אוטומטית | <a href="data/merged_city_ranking.json" target="_blank" rel="noopener" style="color:#2a5a8a">נתונים גולמיים (JSON)</a></div>';
 
         // Find city name for each key
         const keyToCity = {};
@@ -1439,6 +1452,11 @@
                         ${entry.pole_b_raw != null ? buildPoleBar('\u05d2\u05d5\u05dc\u05de\u05d9', entry.pole_b_raw, 3, '#ccc') : ''}
                         <ul class="kw-list">${buildKeywordPills(details.pole_b_details)}</ul>
                     </div>
+                </div>
+                <div style="font-size:0.78em;color:#999;margin-top:6px;border-top:1px solid #eee;padding-top:4px">
+                    מקור: פרוטוקולי מועצת העיר |
+                    <a href="data/merged_city_ranking.json" target="_blank" rel="noopener" style="color:#2a5a8a">נתונים גולמיים</a> |
+                    <a href="research/" target="_blank" rel="noopener" style="color:#2a5a8a">דוחות מחקר</a>
                 </div>
             </div>`;
         }
@@ -1478,7 +1496,7 @@
         html += `<div class="stats-bar" style="margin-bottom:20px">
             <div class="stat-item"><div class="stat-value" style="color:#cc0000">${citiesWithFlags}</div><div class="stat-label">ערים עם דגלים</div></div>
             <div class="stat-item"><div class="stat-value">${totalCities - citiesWithFlags}</div><div class="stat-label">ערים ללא דגלים</div></div>
-            <div class="stat-item"><div class="stat-value">20%</div><div class="stat-label">משקל בציון המשולב</div></div>
+            <div class="stat-item"><div class="stat-value">15%</div><div class="stat-label">משקל בציון המשולב</div></div>
         </div>`;
 
         if (entries.length === 0) {
@@ -1604,6 +1622,7 @@
             <div class="hero-stat"><div class="val">${protoCities}</div><div class="lbl">ערים עם פרוטוקולים</div></div>
             <div class="hero-stat"><div class="val">${clusterCount}</div><div class="lbl">אשכולות ארגוניים</div></div>
         `;
+        document.getElementById('hero-stats').innerHTML += '<div style="font-size:0.72em;color:rgba(255,255,255,0.6);text-align:center;width:100%;margin-top:6px">מקורות: <a href="https://apps.education.gov.il/gefen" target="_blank" style="color:rgba(255,255,255,0.8)">גפ"ן</a> · <a href="https://votes25.bechirot.gov.il/" target="_blank" style="color:rgba(255,255,255,0.8)">בחירות כנסת 25</a> · <a href="https://news.google.com/?hl=iw&gl=IL" target="_blank" style="color:rgba(255,255,255,0.8)">Google News</a> · פרוטוקולי מועצות · <a href="research/" target="_blank" style="color:rgba(255,255,255,0.8)">31 דוחות מחקר</a></div>';
     }
 
     // ── Protocol Browser ──
