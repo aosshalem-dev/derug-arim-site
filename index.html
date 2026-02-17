@@ -1065,6 +1065,12 @@
                         ציון חדשות: <strong>${entry.news_score.toFixed(1)}</strong>/100
                         &nbsp;|&nbsp; מקור: <a href="https://news.google.com/search?q=${encodeURIComponent(entry.city + ' עירייה')}&hl=iw&gl=IL" target="_blank" rel="noopener" style="color:#2980b9">Google News — ${entry.city}</a>
                     </div>
+                    <div style="margin-top:10px">
+                        <button onclick="loadNewsArticles('${entry.protocol_key}', this)" style="background:#339966;color:#fff;border:none;padding:6px 16px;border-radius:4px;cursor:pointer;font-size:0.88em">
+                            הצג כתבות מלאות (${entry.news_relevant || 0}) ▾
+                        </button>
+                        <div id="news-articles-${entry.protocol_key}" style="display:none;margin-top:10px"></div>
+                    </div>
                 </div>`;
         }
 
@@ -1096,6 +1102,69 @@
         if (el) {
             el.classList.toggle('visible');
             el.closest('.program-card').classList.toggle('expanded');
+        }
+    }
+
+    // ── News article loader (on-demand per city) ──
+    const _newsCache = {};
+    async function loadNewsArticles(cityKey, btn) {
+        const container = document.getElementById(`news-articles-${cityKey}`);
+        if (!container) return;
+        if (container.style.display !== 'none') {
+            container.style.display = 'none';
+            btn.textContent = btn.textContent.replace('הסתר', 'הצג');
+            return;
+        }
+        if (_newsCache[cityKey]) {
+            container.style.display = 'block';
+            btn.textContent = btn.textContent.replace('הצג', 'הסתר');
+            return;
+        }
+        btn.textContent = 'טוען כתבות...';
+        btn.disabled = true;
+        try {
+            const resp = await fetch(`data/news/${cityKey}.json`);
+            if (!resp.ok) throw new Error('No data');
+            const data = await resp.json();
+            _newsCache[cityKey] = data;
+
+            const topicLabels = {
+                lgbt_municipal: 'להט"ב ומוניציפלי',
+                gender_equality: 'שוויון מגדרי',
+                sustainability: 'קיימות',
+                social_justice: 'צדק חברתי',
+                diversity_inclusion: 'גיוון והכלה',
+                education_progressive: 'חינוך פרוגרסיבי'
+            };
+
+            let html = '';
+            for (const [topicKey, topicData] of Object.entries(data.topics)) {
+                if (topicData.count === 0) continue;
+                const label = topicLabels[topicKey] || topicKey;
+                html += `<div style="margin-bottom:12px">
+                    <div onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'"
+                         style="cursor:pointer;font-weight:600;font-size:0.9em;color:#339966;padding:4px 0">
+                        ${label} (${topicData.count} כתבות) ▾
+                    </div>
+                    <div style="display:none;font-size:0.82em;max-height:300px;overflow-y:auto;padding-right:8px;border-right:2px solid #e0e0e0">`;
+                for (const a of topicData.articles) {
+                    const dateStr = a.published ? new Date(a.published).toLocaleDateString('he-IL') : '';
+                    html += `<div style="margin-bottom:6px;padding:3px 0;border-bottom:1px solid #f0f0f0">
+                        <a href="${a.url}" target="_blank" rel="noopener" style="color:#2980b9;text-decoration:none;font-size:0.95em">${a.title}</a>
+                        <span style="color:#888;font-size:0.85em"> — ${a.source} ${dateStr}</span>
+                    </div>`;
+                }
+                html += '</div></div>';
+            }
+            container.innerHTML = html || '<div style="color:#888;font-size:0.85em">אין כתבות זמינות</div>';
+            container.style.display = 'block';
+            btn.textContent = btn.textContent.replace('טוען כתבות...', 'הסתר כתבות');
+            btn.disabled = false;
+        } catch (e) {
+            container.innerHTML = '<div style="color:#c00;font-size:0.85em">שגיאה בטעינת כתבות</div>';
+            container.style.display = 'block';
+            btn.textContent = 'שגיאה';
+            btn.disabled = false;
         }
     }
 
