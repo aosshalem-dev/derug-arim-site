@@ -103,6 +103,32 @@ code {
   margin: 2px 3px; text-decoration: none;
 }
 .source-tag:hover { background: #d0dff0; }
+nav .nav-sections { display: contents; }
+@media (max-width: 768px) {
+  nav {
+    padding: 8px 12px;
+    gap: 8px;
+    flex-wrap: wrap;
+    white-space: normal;
+  }
+  nav .brand { font-size: 0.9em; }
+  nav .nav-sections { display: none; }
+  .hero {
+    padding: 24px 14px 20px;
+  }
+  .hero h1 { font-size: 1.25em; line-height: 1.3; }
+  .hero .subtitle { font-size: 0.9em; }
+  .container { padding: 16px 12px 50px; }
+  .section { padding: 18px 14px; }
+  .section h2 { font-size: 1.15em; }
+  .toc { padding: 14px 16px; }
+  .toc ol { font-size: 0.85em; }
+  table { font-size: 0.82em; display: block; overflow-x: auto; }
+  th { position: static; }
+  blockquote { padding: 10px 12px; font-size: 0.88em; }
+  .thesis { padding: 10px 12px; font-size: 0.9em; }
+  body { font-size: 15px; line-height: 1.65; }
+}
 </style>
 </head>
 <body>
@@ -111,7 +137,7 @@ code {
   <span class="brand">דוח מחקר מעמיק</span>
   <a href="../">חזרה לדירוג</a>
   <a href="../research/">כל הדוחות</a>
-  <a href="#section-1">1. Registration & Le</a> <a href="#section-2">2. Finances</a> <a href="#section-3">3. Leadership & Pers</a> <a href="#section-4">4. Programs: What Ar</a> <a href="#section-5">5. Ideology: What "S</a> <a href="#section-6">6. Network Connectio</a> <a href="#section-7">7. Media Coverage</a> <a href="#section-8">8. Risk Assessment &</a> <a href="#section-9">9. Values Alignment </a> <a href="#section-10">10. Open Questions f</a> <a href="#section-11">Data Sources Used</a>
+  <span class="nav-sections"><a href="#section-1">1. Registration & Le</a> <a href="#section-2">2. Finances</a> <a href="#section-3">3. Leadership & Pers</a> <a href="#section-4">4. Programs: What Ar</a> <a href="#section-5">5. Ideology: What "S</a> <a href="#section-6">6. Network Connectio</a> <a href="#section-7">7. Media Coverage</a> <a href="#section-8">8. Risk Assessment &</a> <a href="#section-9">9. Values Alignment </a> <a href="#section-10">10. Open Questions f</a> <a href="#section-11">Data Sources Used</a></span>
 </nav>
 
 <div class="hero">
