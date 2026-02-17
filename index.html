@@ -846,6 +846,56 @@
         </div>`;
     }
 
+    // Map org names to research report URLs for linking
+    function findOrgReport(orgName) {
+        if (!orgName || typeof RESEARCH_ORGS === 'undefined') return null;
+        for (const [key, o] of Object.entries(RESEARCH_ORGS.orgs || {})) {
+            if (orgName.includes(o.name_he) || o.name_he.includes(orgName) ||
+                (o.name_en && orgName.toLowerCase().includes(o.name_en.toLowerCase()))) {
+                return o.report_url || null;
+            }
+        }
+        // Partial matches for common short names
+        const partials = {
+            'הוועד למלחמ': 'research/deep_AIDS_Task_Force.html',
+            'מחנכים לשינוי': 'research/deep_Efshar_Acheret.html',
+            'חוש"ן': 'research/deep_CHOSHEN.html',
+            'מגע בתיאום': 'research/deep_Maga_BeTiaum.html',
+            'מידע אמין': 'research/deep_Meyda_Amin.html',
+            'מצמיחים': 'research/deep_Matzmichim.html',
+            'Mind Lab': 'research/deep_Mind_Lab.html',
+            'אשכולות חשיבה': 'research/deep_Mind_Lab.html',
+            'הרטמן': 'research/deep_Hartman.html',
+            'דרור': 'research/deep_Yesodot_Dror.html',
+            'יסודות': 'research/deep_Yesodot_Dror.html',
+            'גשר': 'research/deep_Gesher.html',
+            'אליאנס': 'research/deep_Alliance_Israel.html',
+            'ידידות טורונטו': 'research/deep_Yedidut_Toronto.html',
+            'תיקון': 'research/deep_Tikkun.html',
+            'חבצלת': 'research/deep_Havatzelet.html',
+            'השומר הצעיר': 'research/deep_Havatzelet.html',
+            'רוסינג': 'research/deep_Rossing_Center.html',
+            'יד ביד': 'research/deep_Yad_BYad.html',
+            'לדעת': 'research/deep_Ladaat.html',
+            'תהודה': 'research/deep_Tehuda.html',
+            'אור גלברד': 'research/deep_Or_Gelbard.html',
+            'טבע האדם': 'research/deep_Teva_HaAdam.html',
+            'מהפך תודעתי': 'research/deep_Todaa.html',
+            'קהלים שלובים': 'research/deep_Kehalim_Shluvim.html',
+            'המרחב החברתי': 'research/deep_Markam.html',
+            'מרקם': 'research/deep_Markam.html',
+            'שער שוויון': 'research/deep_Shaar_Shivion.html',
+            'המכון הדמוקרטי': 'research/deep_Democratic_Institute.html',
+            'אפשר אחרת': 'research/deep_Efshar_Acheret.html',
+            'חברותא': 'research/deep_Chevruta.html',
+            'יסוד': 'research/deep_Yesod.html'
+        };
+        for (const [partial, url] of Object.entries(partials)) {
+            if (orgName.includes(partial)) return url;
+        }
+        return null;
+    }
+
     let _cardIdx = 0;
     function buildProgramCard(prog) {
         const uid = _cardIdx++;
@@ -854,12 +904,17 @@
         const rDesc = info.research_desc || prog.research_desc || '';
         const rNotes = info.research_notes || prog.research_notes || '';
         const cluster = findCluster(prog);
+        const orgName = info.org || prog.institution || '';
+        const orgReportUrl = findOrgReport(orgName) || findOrgReport(prog.name || '');
 
         let detailParts = [];
         if (rDesc) detailParts.push(`<div class="research-comment"><strong>תיאור מחקרי:</strong> ${rDesc}</div>`);
         if (rNotes) detailParts.push(`<div class="research-comment"><strong>הערות סוכנים:</strong> ${rNotes}</div>`);
         if (summary) detailParts.push(`<div><strong>תקציר תוכנית:</strong> ${summary}</div>`);
-        detailParts.push(`<div><strong>ארגון:</strong> ${info.org || prog.institution || '\u2014'}</div>`);
+        const orgLink = orgReportUrl
+            ? `<a href="${orgReportUrl}" target="_blank" rel="noopener" style="color:#2980b9;text-decoration:underline">${orgName || '\u2014'}</a>`
+            : (orgName || '\u2014');
+        detailParts.push(`<div><strong>ארגון:</strong> ${orgLink}</div>`);
         if (info.field) detailParts.push(`<div><strong>תחום:</strong> ${info.field}</div>`);
         if (info.schools) detailParts.push(`<div><strong>בתי ספר:</strong> ${info.schools} &nbsp;|&nbsp; <strong>ערים:</strong> ${info.num_cities || '\u2014'}</div>`);
         detailParts.push(`<div><strong>מקור דירוג:</strong> ${prog.source || '\u2014'}</div>`);
@@ -879,7 +934,9 @@
                 <span class="prog-rating ${ratingClass(prog.rating)}">${prog.rating}</span>
             </div>
             <div class="prog-meta">
-                תקציב: \u20AA${Math.round(prog.budget).toLocaleString()} &nbsp;|&nbsp; ${prog.institution || ''}
+                תקציב: \u20AA${Math.round(prog.budget).toLocaleString()} &nbsp;|&nbsp; ${orgReportUrl
+                    ? `<a href="${orgReportUrl}" target="_blank" rel="noopener" style="color:#2980b9" onclick="event.stopPropagation()">${orgName || prog.institution || ''}</a>`
+                    : (orgName || prog.institution || '')}
             </div>
             <div class="prog-detail" id="pc-${uid}">
                 ${detailParts.join('')}
@@ -987,6 +1044,7 @@
                     <div style="margin-top:8px;font-size:0.8em">
                         מקור: <a href="https://apps.education.gov.il/gefen" target="_blank" rel="noopener" style="color:#2980b9">קטלוג גפ"ן — משרד החינוך</a>
                         &nbsp;|&nbsp; <a href="https://aosshalem-dev.github.io/educational-programs/" target="_blank" rel="noopener" style="color:#2980b9">ניתוח מלא: 2,859 תוכניות</a>
+                        &nbsp;|&nbsp; <a href="research/" target="_blank" rel="noopener" style="color:#2980b9">31 דוחות מחקר ארגונים</a>
                     </div>
                 </div>`;
         }
