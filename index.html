@@ -427,6 +427,102 @@
         }
         .proto-view-link:hover { background: #345f8a; }
 
+        /* ── Protocol Findings (context-analyzed) ── */
+        .findings-section {
+            max-width: 1000px; margin: 0 auto 30px;
+        }
+        .findings-header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #2a3a5e 100%);
+            color: #fff; padding: 20px 24px; border-radius: 10px 10px 0 0;
+        }
+        .findings-header h2 { margin: 0 0 8px; font-size: 1.2em; }
+        .findings-header p { margin: 0; font-size: 0.88em; opacity: 0.85; }
+        .findings-stats {
+            display: flex; gap: 20px; margin-top: 12px; flex-wrap: wrap;
+        }
+        .findings-stat {
+            background: rgba(255,255,255,0.12); padding: 6px 14px;
+            border-radius: 6px; font-size: 0.85em;
+        }
+        .findings-stat strong { color: #ff8800; }
+        .findings-filter-bar {
+            background: #f0f2f5; padding: 10px 20px;
+            border: 1px solid #ddd; border-top: none;
+            display: flex; gap: 10px; flex-wrap: wrap; align-items: center;
+        }
+        .findings-filter-bar select {
+            padding: 6px 10px; border: 1px solid #ccc; border-radius: 4px;
+            font-size: 0.85em; direction: rtl;
+        }
+        .findings-filter-bar .filter-label {
+            font-size: 0.85em; color: #666;
+        }
+        .findings-list {
+            border: 1px solid #ddd; border-top: none;
+            border-radius: 0 0 10px 10px; overflow: hidden;
+        }
+        .finding-card {
+            background: #fff; border-bottom: 1px solid #eee;
+            padding: 16px 20px; transition: background 0.15s;
+        }
+        .finding-card:last-child { border-bottom: none; }
+        .finding-card:hover { background: #fafafa; }
+        .finding-top {
+            display: flex; justify-content: space-between; align-items: flex-start;
+            flex-wrap: wrap; gap: 8px; margin-bottom: 8px;
+        }
+        .finding-city {
+            font-weight: 700; color: #1a1a2e; font-size: 0.95em;
+        }
+        .finding-badges { display: flex; gap: 6px; flex-wrap: wrap; }
+        .finding-badge {
+            display: inline-block; padding: 2px 10px; border-radius: 4px;
+            font-size: 0.75em; font-weight: 600;
+        }
+        .badge-approved { background: #d4edda; color: #155724; }
+        .badge-rejected { background: #f8d7da; color: #721c24; }
+        .badge-declaration { background: #d1ecf1; color: #0c5460; }
+        .badge-proposal { background: #fff3cd; color: #856404; }
+        .badge-policy { background: #e2d5f1; color: #432874; }
+        .badge-signed { background: #d4edda; color: #155724; }
+        .badge-established { background: #d1ecf1; color: #0c5460; }
+        .badge-appointed { background: #e2e3e5; color: #383d41; }
+        .badge-agenda { background: #e2e3e5; color: #383d41; }
+        .badge-active { background: #d1ecf1; color: #0c5460; }
+        .badge-confirmed { background: #d4edda; color: #155724; }
+        .badge-removed { background: #f8d7da; color: #721c24; }
+        .badge-cat {
+            background: #e8f0f8; color: #2a5a8a;
+        }
+        .finding-summary {
+            font-size: 0.9em; color: #333; line-height: 1.6; margin-bottom: 10px;
+        }
+        .finding-quote {
+            background: #fffbf0; border-right: 4px solid #ff8800;
+            padding: 12px 16px; margin: 10px 0;
+            border-radius: 0 6px 6px 0;
+            font-size: 0.88em; color: #444; line-height: 1.8;
+            direction: rtl; cursor: pointer;
+            max-height: 80px; overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .finding-quote.expanded {
+            max-height: 2000px;
+        }
+        .finding-quote::after {
+            content: '...לחצו להרחבה';
+            display: block; text-align: center;
+            font-size: 0.8em; color: #888; margin-top: 4px;
+        }
+        .finding-quote.expanded::after {
+            content: '';
+        }
+        .finding-meta {
+            font-size: 0.8em; color: #888; display: flex; gap: 12px; flex-wrap: wrap;
+        }
+        .finding-meta a { color: #2a5a8a; text-decoration: none; }
+        .finding-meta a:hover { text-decoration: underline; }
+
         @media (max-width: 768px) {
             .main-content { padding: 10px; }
             th, td { padding: 8px 4px; font-size: 0.8em; }
@@ -508,13 +604,13 @@
             </div>
             <div class="method-body">
                 <ul style="margin-top:10px">
-                    <li><strong>ציון משולב</strong> = שקלול של חמישה מקורות מידע:</li>
-                    <li>• חשיפה חינוכית (תוכניות גפ"ן) <span class="weight">35%</span></li>
-                    <li>• הצבעה פרוגרסיבית (כנסת 25) <span class="weight">20%</span></li>
-                    <li>• סיקור חדשותי פרוגרסיבי (Google News) <span class="weight">15%</span></li>
-                    <li>• אותות פרוגרסיביים בפרוטוקולים (ציר ב') <span class="weight">15%</span></li>
-                    <li>• דגלים אדומים — שיתוף UNESCO, יועצים חיצוניים <span class="weight">15%</span></li>
+                    <li><strong>ציון משולב</strong> = שקלול של ארבעה מקורות מידע:</li>
+                    <li>• חשיפה חינוכית (תוכניות גפ"ן) <span class="weight">45%</span></li>
+                    <li>• סיקור חדשותי פרוגרסיבי (Google News) <span class="weight">20%</span></li>
+                    <li>• אותות פרוגרסיביים בפרוטוקולים (ציר ב') <span class="weight">20%</span></li>
+                    <li>• דגלים אדומים — שיתוף UNESCO <span class="weight">15%</span></li>
                     <li class="dim" style="margin-top:8px">ציר א' (זהות יהודית/ציונית) מוצג לעיון בלבד ואינו נכלל בציון המשולב</li>
+                    <li class="dim">הצבעה (כנסת 25) מוצגת כרקע בלבד ואינה נכללת בציון המשולב</li>
                 </ul>
                 <div style="margin-top:10px;font-size:0.82em;color:#666">
                     מקורות:
@@ -543,7 +639,7 @@
                     <th data-col="rank" data-type="num"># <span class="sort-arrow">&#9660;</span></th>
                     <th data-col="city" data-type="str">עיר <span class="sort-arrow">&#9660;</span></th>
                     <th data-col="combined_score" data-type="num">ציון משולב <span class="sort-arrow">&#9660;</span></th>
-                    <th data-col="progressive_pct" data-type="num">הצבעה פרוגר' <span class="sort-arrow">&#9660;</span></th>
+                    <th data-col="progressive_pct" data-type="num" style="color:#bbd">הצבעה (רקע) <span class="sort-arrow">&#9660;</span></th>
                     <th data-col="news_score" data-type="num">חדשות פרוגר' <span class="sort-arrow">&#9660;</span></th>
                     <th data-col="exposure_score" data-type="num">חשיפה חינוכית <span class="sort-arrow">&#9660;</span></th>
                     <th data-col="subversive_ratio" data-type="num">% תקציב מסומן <span class="sort-arrow">&#9660;</span></th>
@@ -576,15 +672,45 @@
     <!-- ═══ TAB: PROTOCOLS ═══ -->
     <div id="tab-protocols" class="tab-content">
         <h1>פרוטוקולים עירוניים</h1>
-        <p class="subtitle">ניתוח מילות מפתח בפרוטוקולי מועצות עיר | 15 ערים</p>
+        <p class="subtitle">ניתוח מבוסס הקשר של פרוטוקולי מועצות עיר | 15 ערים | 8,063 פרוטוקולים</p>
+
+        <!-- ═══ FINDINGS SECTION (context-analyzed) ═══ -->
+        <div class="findings-section">
+            <div class="findings-header">
+                <h2>החלטות מועצה שזוהו — ניתוח מבוסס הקשר</h2>
+                <p>537 פרוטוקולים שסומנו על ידי סריקת מילות מפתח נבדקו אחד-אחד בניתוח הקשרי מלא. רק החלטות מועצה ממשיות בנושאי פוליטיקת זהות מגדרית זוהו כממצאים — לא אזכורי מילות מפתח.</p>
+                <div class="findings-stats">
+                    <div class="findings-stat">נסרקו: <strong>537</strong> פרוטוקולים</div>
+                    <div class="findings-stat">ממצאים: <strong>23</strong> החלטות</div>
+                    <div class="findings-stat">שיעור דיוק: <strong>4.3%</strong></div>
+                    <div class="findings-stat">ערים עם ממצאים: <strong>5</strong> מתוך 15</div>
+                </div>
+            </div>
+            <div class="findings-filter-bar">
+                <span class="filter-label">סינון:</span>
+                <select id="findings-city-filter" onchange="renderFindings()">
+                    <option value="all">כל הערים</option>
+                </select>
+                <select id="findings-outcome-filter" onchange="renderFindings()">
+                    <option value="all">כל הסטטוסים</option>
+                    <option value="approved">אושר</option>
+                    <option value="rejected">נדחה</option>
+                    <option value="declaration">הצהרה</option>
+                    <option value="proposal">הצעה</option>
+                    <option value="policy">מדיניות</option>
+                </select>
+                <span class="filter-label" id="findings-count"></span>
+            </div>
+            <div class="findings-list" id="findings-list"></div>
+        </div>
 
         <div class="stats-bar" id="proto-stats"></div>
 
         <div id="proto-details-list"></div>
 
-        <!-- Protocol Browser -->
+        <!-- Protocol Browser (legacy keyword view) -->
         <div class="proto-browser-header">
-            <h2>רשימת פרוטוקולים — טקסט מלא עם הדגשת מילות מפתח</h2>
+            <h2>רשימת פרוטוקולים — טקסט מלא עם הדגשת מילות מפתח (מתודולוגיה ישנה)</h2>
             <p class="subtitle" style="text-align:right">53 פרוטוקולים שנבחרו מ-5 ערים עם האותות החזקים ביותר | לחצו לפתיחת הטקסט</p>
             <p style="font-size:0.82em;color:#bf360c;text-align:right;max-width:1000px;margin:4px auto 0">
                 &#9888; שימו לב: ההדגשה מבוססת על ספירה מכנית ללא ניתוח הקשר. חלק מהמילים המודגשות הן חיוביים כוזבים (&#171;קיימות&#187; = existing, שמות פרטיים כ&#171;שולי&#187;). ראו
@@ -783,6 +909,7 @@
     <script src="data.js?v=10"></script>
     <script src="research_data.js?v=10"></script>
     <script src="protocols_data.js?v=10"></script>
+    <script src="protocol_findings.js?v=1"></script>
     <script src="research_orgs.js?v=10"></script>
     <script>
     // ── Tab switching ──
@@ -795,6 +922,7 @@
         // Lazy-render tab content
         if (tab === 'education' && !document.getElementById('edu-programs-list').innerHTML) renderEducation();
         if (tab === 'protocols' && !document.getElementById('proto-details-list').innerHTML) {
+            renderFindings();
             renderProtocols();
             renderProtocolBrowser();
         }
@@ -831,6 +959,36 @@
         if (score >= 4) return 'risk-medium-high';
         if (score >= 3) return 'risk-medium';
         return 'risk-low';
+    }
+
+    function buildPieChart(progPct, religPct, otherPct, size) {
+        const r = size / 2;
+        const cx = r, cy = r;
+        const slices = [
+            { pct: progPct, color: '#6644cc' },
+            { pct: religPct, color: '#cc8844' },
+            { pct: otherPct, color: '#bbb' }
+        ].filter(s => s.pct > 0);
+        let paths = '';
+        let startAngle = -90;
+        for (const slice of slices) {
+            const angle = (slice.pct / 100) * 360;
+            const endAngle = startAngle + angle;
+            const startRad = (startAngle * Math.PI) / 180;
+            const endRad = (endAngle * Math.PI) / 180;
+            const x1 = cx + r * Math.cos(startRad);
+            const y1 = cy + r * Math.sin(startRad);
+            const x2 = cx + r * Math.cos(endRad);
+            const y2 = cy + r * Math.sin(endRad);
+            const largeArc = angle > 180 ? 1 : 0;
+            if (slice.pct >= 100) {
+                paths += `<circle cx="${cx}" cy="${cy}" r="${r}" fill="${slice.color}"/>`;
+            } else {
+                paths += `<path d="M${cx},${cy} L${x1},${y1} A${r},${r} 0 ${largeArc} 1 ${x2},${y2} Z" fill="${slice.color}"/>`;
+            }
+            startAngle = endAngle;
+        }
+        return `<svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" style="display:block">${paths}</svg>`;
     }
 
     function buildPoleBar(label, value, max, color) {
@@ -1078,9 +1236,8 @@
                     <ul class="kw-list">${buildKeywordPills(proto.pole_a_details)}</ul>
                 </div>
                 <div class="detail-section">
-                    <h4>ציר ב' \u2014 אותות פרוגרסיביים (${entry.pole_b ?? '\u2014'}${entry.pole_b_raw != null ? ' \u2190 גולמי: ' + entry.pole_b_raw : ''})</h4>
+                    <h4>ציר ב' \u2014 אותות פרוגרסיביים (${entry.pole_b ?? '\u2014'})</h4>
                     ${buildPoleBar('\u05de\u05ea\u05d5\u05e7\u05df', entry.pole_b || 0, 3, '#ff8800')}
-                    ${entry.pole_b_raw != null ? buildPoleBar('\u05d2\u05d5\u05dc\u05de\u05d9', entry.pole_b_raw, 3, '#ccc') : ''}
                     <ul class="kw-list">${buildKeywordPills(proto.pole_b_details)}</ul>
                 </div>
                 ${Object.keys(proto.red_flag_details || {}).length > 0 ? `
@@ -1113,19 +1270,27 @@
 
         let electionPanel = '';
         if (entry.progressive_pct != null) {
-            const progBar = buildPoleBar('פרוגרסיבי', entry.progressive_pct, 60, '#6644cc');
-            const religBar = buildPoleBar('דתי', entry.religious_pct || 0, 60, '#cc8844');
+            const prog = entry.progressive_pct;
+            const relig = entry.religious_pct || 0;
+            const other = Math.max(0, 100 - prog - relig);
+            const pieChart = buildPieChart(prog, relig, other, 120);
             electionPanel = `
                 <div class="detail-section">
-                    <h4>הצבעה — כנסת 25 (${(entry.turnout_pct || 0).toFixed(0)}% הצבעה, ${(entry.eligible_voters || 0).toLocaleString()} זכאים)</h4>
-                    ${progBar}${religBar}
-                    <div class="dim" style="margin-top:6px;font-size:0.85em">
-                        פרוגרסיבי (מרצ+עבודה+יש עתיד): <strong>${entry.progressive_pct}%</strong> &nbsp;|&nbsp;
-                        דתי (ש"ס+יהדות התורה+ציונות דתית): <strong>${entry.religious_pct}%</strong>
+                    <h4>הצבעה — כנסת 25 <span class="dim" style="font-weight:normal">(רקע — לא נכלל בציון)</span></h4>
+                    <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap">
+                        <div>${pieChart}</div>
+                        <div style="font-size:0.88em;line-height:1.8">
+                            <div><span style="display:inline-block;width:12px;height:12px;background:#6644cc;border-radius:2px;margin-left:6px"></span> פרוגרסיבי: <strong>${prog}%</strong></div>
+                            <div><span style="display:inline-block;width:12px;height:12px;background:#cc8844;border-radius:2px;margin-left:6px"></span> דתי: <strong>${relig}%</strong></div>
+                            <div><span style="display:inline-block;width:12px;height:12px;background:#bbb;border-radius:2px;margin-left:6px"></span> אחר: <strong>${other.toFixed(1)}%</strong></div>
+                            <div class="dim" style="margin-top:6px">אחוז הצבעה: ${(entry.turnout_pct || 0).toFixed(0)}% | ${(entry.eligible_voters || 0).toLocaleString()} זכאים</div>
+                        </div>
                     </div>
-                    <div style="margin-top:6px;font-size:0.8em">
+                    <div class="dim" style="margin-top:8px;font-size:0.8em">
+                        פרוגרסיבי = מרצ+עבודה+יש עתיד &nbsp;|&nbsp; דתי = ש"ס+יהדות התורה+ציונות דתית
+                    </div>
+                    <div style="margin-top:4px;font-size:0.8em">
                         מקור: <a href="https://votes25.bechirot.gov.il/" target="_blank" rel="noopener" style="color:#2980b9">ועדת הבחירות המרכזית — כנסת 25</a>
-                        &nbsp;|&nbsp; <a href="https://www.gov.il/he/departments/central_elections_committee" target="_blank" rel="noopener" style="color:#2980b9">אתר הוועדה</a>
                     </div>
                 </div>`;
         }
@@ -1343,7 +1508,7 @@
                 <td class="rank">${isPartial ? '\u2014' : (e.rank || i+1)}</td>
                 <td class="city">${e.city} \u25BE ${isPartial ? '<span class="dim">(' + src + ')</span>' : ''}</td>
                 <td class="score" style="color:${color};font-weight:bold">${e.combined_score ?? '\u2014'}</td>
-                <td>${e.progressive_pct != null ? e.progressive_pct + '%' : '\u2014'}</td>
+                <td class="dim">${e.progressive_pct != null ? e.progressive_pct + '%' : '\u2014'}</td>
                 <td>${e.news_score != null ? e.news_score.toFixed(0) : '\u2014'}</td>
                 <td>${e.exposure_score != null ? e.exposure_score + '%' : '\u2014'}</td>
                 <td>${e.subversive_ratio != null ? e.subversive_ratio + '%' : '\u2014'}</td>
@@ -1414,6 +1579,88 @@
         });
     }
 
+    // ── Protocol Findings (context-analyzed) ──
+    function renderFindings() {
+        if (typeof PROTOCOL_FINDINGS === 'undefined') return;
+        const findings = PROTOCOL_FINDINGS.findings;
+        const listEl = document.getElementById('findings-list');
+        const cityFilter = document.getElementById('findings-city-filter');
+        const countEl = document.getElementById('findings-count');
+
+        // Populate city filter
+        const cities = [...new Set(findings.map(f => f.city))];
+        const cityNames = {};
+        findings.forEach(f => { cityNames[f.city] = f.city_he; });
+        cities.forEach(c => {
+            const opt = document.createElement('option');
+            opt.value = c;
+            opt.textContent = cityNames[c] + ' (' + findings.filter(f => f.city === c).length + ')';
+            cityFilter.appendChild(opt);
+        });
+
+        renderFindingsList();
+    }
+
+    function renderFindingsList() {
+        if (typeof PROTOCOL_FINDINGS === 'undefined') return;
+        const findings = PROTOCOL_FINDINGS.findings;
+        const listEl = document.getElementById('findings-list');
+        const cityVal = document.getElementById('findings-city-filter').value;
+        const outcomeVal = document.getElementById('findings-outcome-filter').value;
+        const countEl = document.getElementById('findings-count');
+
+        let filtered = findings;
+        if (cityVal !== 'all') filtered = filtered.filter(f => f.city === cityVal);
+        if (outcomeVal !== 'all') filtered = filtered.filter(f => f.outcome === outcomeVal);
+
+        countEl.textContent = filtered.length + ' ממצאים';
+
+        const outcomeBadgeClass = {
+            approved: 'badge-approved', rejected: 'badge-rejected',
+            declaration: 'badge-declaration', proposal: 'badge-proposal',
+            policy: 'badge-policy', signed: 'badge-signed',
+            established: 'badge-established', appointed: 'badge-appointed',
+            agenda: 'badge-agenda', active: 'badge-active',
+            confirmed: 'badge-confirmed', removed: 'badge-removed'
+        };
+
+        listEl.innerHTML = filtered.map(f => {
+            const badgeCls = outcomeBadgeClass[f.outcome] || 'badge-proposal';
+            const dateStr = f.date || 'ללא תאריך';
+            return `
+            <div class="finding-card">
+                <div class="finding-top">
+                    <span class="finding-city">${f.city_he}</span>
+                    <div class="finding-badges">
+                        <span class="finding-badge ${badgeCls}">${f.outcome_he}</span>
+                        <span class="finding-badge badge-cat">${f.category_he}</span>
+                    </div>
+                </div>
+                <div class="finding-summary">${f.summary_he}</div>
+                <div class="finding-quote" onclick="this.classList.toggle('expanded')">${f.quote_he}</div>
+                <div class="finding-meta">
+                    <span>${dateStr}</span>
+                    <span>${f.document}</span>
+                    ${f.proposer ? '<span>מציע: ' + f.proposer + '</span>' : ''}
+                    <a href="${f.source_url}" target="_blank">מקור: אתר העירייה</a>
+                </div>
+            </div>`;
+        }).join('');
+    }
+
+    // The onchange handlers in HTML call renderFindings() — after initial setup,
+    // subsequent calls just re-render the list (city filter already populated)
+    var _findingsInitialized = false;
+    var _origRenderFindings = renderFindings;
+    renderFindings = function() {
+        if (!_findingsInitialized) {
+            _origRenderFindings();
+            _findingsInitialized = true;
+        } else {
+            renderFindingsList();
+        }
+    };
+
     // ── Protocols tab ──
     function renderProtocols() {
         const proto = DATA.protocol_details || {};
@@ -1453,9 +1700,8 @@
                         <ul class="kw-list">${buildKeywordPills(details.pole_a_details)}</ul>
                     </div>
                     <div>
-                        <strong>ציר ב' \u2014 אותות פרוגרסיביים (${entry.pole_b ?? '\u2014'}${entry.pole_b_raw != null ? ' \u2190 גולמי: ' + entry.pole_b_raw : ''})</strong>
+                        <strong>ציר ב' \u2014 אותות פרוגרסיביים (${entry.pole_b ?? '\u2014'})</strong>
                         ${buildPoleBar('\u05de\u05ea\u05d5\u05e7\u05df', entry.pole_b || 0, 3, '#ff8800')}
-                        ${entry.pole_b_raw != null ? buildPoleBar('\u05d2\u05d5\u05dc\u05de\u05d9', entry.pole_b_raw, 3, '#ccc') : ''}
                         <ul class="kw-list">${buildKeywordPills(details.pole_b_details)}</ul>
                     </div>
                 </div>
