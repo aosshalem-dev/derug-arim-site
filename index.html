@@ -656,6 +656,152 @@
             .bg-hero { padding: 20px 16px; }
             .bg-section { padding: 16px; }
         }
+
+        /* ── Concept badges & evidence modal ── */
+        .concept-badge {
+            display: inline-block; padding: 1px 7px; border-radius: 3px;
+            font-size: 0.72em; font-weight: 600; cursor: pointer;
+            margin-right: 4px; border: 1px solid transparent;
+            transition: filter 0.15s, transform 0.1s;
+            color: #fff; vertical-align: middle;
+        }
+        .concept-badge:hover { filter: brightness(1.2); transform: scale(1.05); }
+
+        .concept-evidence-overlay {
+            position: fixed; inset: 0; background: rgba(0,0,0,0.55);
+            z-index: 2000; display: flex; align-items: center; justify-content: center;
+            animation: fadeIn 0.15s ease;
+        }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .concept-evidence-panel {
+            background: #fff; border-radius: 12px; max-width: 700px; width: 92%;
+            max-height: 85vh; overflow-y: auto; padding: 28px 32px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.25); direction: rtl;
+            position: relative;
+        }
+        .concept-evidence-panel h3 {
+            margin: 0 0 16px; font-size: 1.2em; color: #1a1a2e;
+            padding-left: 40px;
+        }
+        .concept-evidence-close {
+            position: absolute; top: 12px; left: 16px; background: none;
+            border: none; font-size: 1.6em; cursor: pointer; color: #888;
+            line-height: 1; padding: 4px 8px; border-radius: 4px;
+        }
+        .concept-evidence-close:hover { background: #f0f0f0; color: #333; }
+
+        .concept-dual-meaning {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+            margin-bottom: 18px;
+        }
+        .meaning-surface {
+            background: #f0f8f0; border: 1px solid #c8e6c9; border-radius: 8px;
+            padding: 14px;
+        }
+        .meaning-hidden {
+            background: #fff5f0; border: 1px solid #ffccbc; border-radius: 8px;
+            padding: 14px;
+        }
+        .meaning-surface h5, .meaning-hidden h5 {
+            font-size: 0.8em; margin: 0 0 6px; text-transform: uppercase;
+        }
+        .meaning-surface h5 { color: #2e7d32; }
+        .meaning-hidden h5 { color: #c62828; }
+        .meaning-surface p, .meaning-hidden p { font-size: 0.88em; color: #444; margin: 0; line-height: 1.6; }
+
+        .concept-evidence-quote {
+            background: #f8f0e8; border-right: 4px solid #8b0000;
+            padding: 12px 16px; margin: 10px 0; border-radius: 0 8px 8px 0;
+        }
+        .concept-evidence-quote p { font-size: 0.88em; color: #333; line-height: 1.6; font-style: italic; margin: 0 0 4px; }
+        .concept-evidence-quote .quote-src { font-size: 0.78em; color: #888; font-style: normal; }
+        .concept-evidence-quote .quote-src a { color: #2a5a8a; text-decoration: none; }
+        .concept-evidence-quote .quote-src a:hover { text-decoration: underline; }
+
+        .concept-evidence-links {
+            display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px;
+            padding-top: 14px; border-top: 1px solid #eee;
+        }
+        .concept-evidence-links a {
+            display: inline-flex; align-items: center; gap: 4px;
+            padding: 6px 14px; border-radius: 6px; font-size: 0.82em;
+            font-weight: 600; text-decoration: none; transition: filter 0.2s;
+        }
+        .concept-evidence-links a:hover { filter: brightness(1.15); }
+        .concept-evidence-links .link-rosetta { background: #8b0000; color: #fff; }
+        .concept-evidence-links .link-research { background: #2a5a8a; color: #fff; }
+
+        .clearance-section {
+            background: #f5f5f8; border: 1px solid #ddd; border-radius: 8px;
+            margin-top: 10px; overflow: hidden;
+        }
+        .clearance-toggle {
+            padding: 8px 14px; cursor: pointer; font-size: 0.82em;
+            font-weight: 600; color: #555; display: flex;
+            align-items: center; gap: 6px;
+        }
+        .clearance-toggle:hover { background: #eee; }
+        .clearance-toggle .arrow { transition: transform 0.2s; font-size: 0.8em; }
+        .clearance-section.open .clearance-toggle .arrow { transform: rotate(90deg); }
+        .clearance-body {
+            display: none; padding: 0 14px 12px; font-size: 0.82em; color: #555;
+        }
+        .clearance-section.open .clearance-body { display: block; }
+        .clearance-body ul { margin: 6px 0; padding-right: 18px; }
+        .clearance-body li { padding: 2px 0; }
+
+        /* ── Suspicion dossier sections ── */
+        .dossier-section {
+            background: #fff8f0; border: 1px solid #eed; border-radius: 8px;
+            padding: 12px 16px; margin: 8px 0;
+        }
+        .dossier-section h5 {
+            margin: 0 0 8px; font-size: 0.88em; color: #8b0000;
+            display: flex; align-items: center; gap: 6px;
+        }
+        .dossier-section p, .dossier-section li {
+            font-size: 0.84em; color: #444; line-height: 1.6;
+        }
+        .dossier-section ul { margin: 4px 0; padding-right: 18px; }
+        .dossier-section a { color: #2a5a8a; text-decoration: none; }
+        .dossier-section a:hover { text-decoration: underline; }
+
+        .dossier-nif {
+            background: #f5eef8; border-color: #d5c0e8;
+        }
+        .dossier-nif h5 { color: #6a1b9a; }
+
+        .dossier-missing {
+            background: #f0f0f5; border-color: #ccc;
+        }
+        .dossier-missing h5 { color: #555; }
+
+        .dossier-terms {
+            display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px;
+        }
+        .dossier-term-link {
+            display: inline-flex; align-items: center; gap: 4px;
+            padding: 4px 10px; border-radius: 4px; font-size: 0.8em;
+            font-weight: 600; color: #fff; text-decoration: none;
+            transition: filter 0.15s;
+        }
+        .dossier-term-link:hover { filter: brightness(1.2); color: #fff; }
+
+        .dossier-deep-links {
+            display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px;
+            padding-top: 8px; border-top: 1px solid #e0d0c0;
+        }
+        .dossier-deep-links a {
+            padding: 5px 12px; border-radius: 5px; font-size: 0.78em;
+            font-weight: 600; text-decoration: none; color: #fff;
+        }
+        .dossier-deep-links a:hover { filter: brightness(1.15); color: #fff; }
+
+        @media (max-width: 600px) {
+            .concept-dual-meaning { grid-template-columns: 1fr; }
+            .concept-evidence-panel { padding: 20px 16px; }
+        }
     </style>
 </head>
 <body>
@@ -1042,7 +1188,7 @@
                 <div class="findings-stats">
                     <div class="findings-stat">נסרקו: <strong>537</strong> פרוטוקולים</div>
                     <div class="findings-stat">ממצאים: <strong>23</strong> החלטות</div>
-                    <div class="findings-stat">שיעור דיוק: <strong>4.3%</strong></div>
+                    <div class="findings-stat">שיעור דיוק: <strong>4%</strong></div>
                     <div class="findings-stat">ערים עם ממצאים: <strong>5</strong> מתוך 15</div>
                 </div>
             </div>
@@ -1271,7 +1417,177 @@
     <script src="protocols_data.js?v=10"></script>
     <script src="protocol_findings.js?v=1"></script>
     <script src="research_orgs.js?v=10"></script>
+    <script src="suspicious_concepts.js?v=1"></script>
     <script>
+    // ── Concept detection & evidence ──
+    function detectConcepts(prog, info) {
+        if (typeof SUSPICIOUS_CONCEPTS === 'undefined') return [];
+        const SC = SUSPICIOUS_CONCEPTS;
+        const found = new Set();
+
+        // Layer 1: Explicit mapping by program ID
+        const explicit = SC.program_concepts[prog.id];
+        if (explicit) explicit.forEach(c => found.add(c));
+
+        // Layer 2: Keyword fallback on description + summary
+        const text = [
+            prog.research_desc || '',
+            info.research_desc || '',
+            info.summary || '',
+            prog.name || ''
+        ].join(' ');
+
+        if (text) {
+            for (const rule of SC.keyword_rules) {
+                if (rule.pattern.test(text)) found.add(rule.concept);
+            }
+        }
+
+        return [...found].map(id => ({ id, ...SC.concepts[id] })).filter(c => c.name_he);
+    }
+
+    function showConceptEvidence(conceptId) {
+        if (typeof SUSPICIOUS_CONCEPTS === 'undefined') return;
+        const c = SUSPICIOUS_CONCEPTS.concepts[conceptId];
+        if (!c) return;
+
+        const evidenceHtml = (c.evidence || []).map(e => {
+            const linkHtml = e.url
+                ? ` <a href="${e.url}" target="_blank" rel="noopener">[מקור]</a>`
+                : '';
+            return `<div class="concept-evidence-quote">
+                <p>${e.text}</p>
+                <div class="quote-src">\u2014 <strong>${e.source}</strong>${linkHtml}</div>
+            </div>`;
+        }).join('');
+
+        const links = [];
+        if (c.rosetta_url) links.push(`<a class="link-rosetta" href="${c.rosetta_url}" target="_blank" rel="noopener">\u{1F5FF} אבן רוזטה הפרוגרסיבית</a>`);
+        if (c.research_url) links.push(`<a class="link-research" href="${c.research_url}" target="_blank" rel="noopener">\u{1F9E0} מחקר מלא</a>`);
+        const linksHtml = links.length ? `<div class="concept-evidence-links">${links.join('')}</div>` : '';
+
+        const overlay = document.createElement('div');
+        overlay.className = 'concept-evidence-overlay';
+        overlay.onclick = function(e) { if (e.target === overlay) overlay.remove(); };
+        overlay.innerHTML = `<div class="concept-evidence-panel">
+            <button class="concept-evidence-close" onclick="this.closest('.concept-evidence-overlay').remove()">&times;</button>
+            <h3>${c.name_he}</h3>
+            <div class="concept-dual-meaning">
+                <div class="meaning-surface">
+                    <h5>המשמעות הגלויה</h5>
+                    <p>${c.surface_meaning}</p>
+                </div>
+                <div class="meaning-hidden">
+                    <h5>המשמעות המתועדת</h5>
+                    <p>${c.hidden_meaning}</p>
+                </div>
+            </div>
+            ${evidenceHtml}
+            ${linksHtml}
+        </div>`;
+        document.body.appendChild(overlay);
+    }
+
+    function buildClearanceFooter() {
+        if (typeof SUSPICIOUS_CONCEPTS === 'undefined') return '';
+        const cl = SUSPICIOUS_CONCEPTS.clearance;
+        const items = cl.conditions.map(c => `<li>${c}</li>`).join('');
+        return `<div class="clearance-section" onclick="this.classList.toggle('open')">
+            <div class="clearance-toggle"><span class="arrow">\u25C0</span> ${cl.title}</div>
+            <div class="clearance-body">
+                <p>${cl.intro}</p>
+                <ul>${items}</ul>
+                <p style="margin-top:8px;font-style:italic">${cl.footer}</p>
+            </div>
+        </div>`;
+    }
+
+    // Find org profile from RESEARCH_ORGS by name matching
+    function findOrgProfile(orgName) {
+        if (!orgName || typeof RESEARCH_ORGS === 'undefined') return null;
+        for (const [key, o] of Object.entries(RESEARCH_ORGS.orgs || {})) {
+            if (orgName.includes(o.name_he) || o.name_he.includes(orgName) ||
+                (o.name_en && orgName.toLowerCase().includes(o.name_en.toLowerCase()))) {
+                return o;
+            }
+        }
+        // Partial matches
+        const shorts = {'מצמיחים':'Matzmichim','דרור':'Yesodot_Dror','הוועד למלחמ':'AIDS_Task_Force',
+            'הרטמן':'Hartman','חוש"ן':'CHOSHEN','האגודה לזכויות':'ACRI'};
+        for (const [partial, key] of Object.entries(shorts)) {
+            if (orgName.includes(partial) && RESEARCH_ORGS.orgs[key]) return RESEARCH_ORGS.orgs[key];
+        }
+        return null;
+    }
+
+    function buildSuspicionDossier(prog, info, concepts) {
+        if (!concepts || concepts.length === 0) return '';
+        const orgName = info.org || prog.institution || '';
+        const orgProfile = findOrgProfile(orgName);
+        let parts = [];
+
+        // ── 1. Org problems ──
+        if (orgProfile) {
+            const riskHe = {'high':'\u05d2\u05d1\u05d5\u05d4','medium-high':'\u05d1\u05d9\u05e0\u05d5\u05e0\u05d9-\u05d2\u05d1\u05d5\u05d4','medium':'\u05d1\u05d9\u05e0\u05d5\u05e0\u05d9','moderate':'\u05de\u05ea\u05d5\u05df','low-moderate':'\u05e0\u05de\u05d5\u05da-\u05de\u05ea\u05d5\u05df','low':'\u05e0\u05de\u05d5\u05da'}[orgProfile.risk] || orgProfile.risk;
+            const findings = (orgProfile.key_findings || []).slice(0, 4).map(f => `<li>${f}</li>`).join('');
+            const reportLink = orgProfile.report_url
+                ? ` <a href="${orgProfile.report_url}" target="_blank" rel="noopener" style="font-weight:600;color:#8b0000">\u{1F4C4} \u05d3\u05d5\u05d7 \u05de\u05d7\u05e7\u05e8 \u05de\u05dc\u05d0</a>`
+                : '';
+            parts.push(`<div class="dossier-section">
+                <h5>\u26A0 \u05d1\u05e2\u05d9\u05d5\u05ea \u05e2\u05dd \u05d4\u05d0\u05e8\u05d2\u05d5\u05df: ${orgProfile.name_he} (\u05e1\u05d9\u05db\u05d5\u05df: ${riskHe})</h5>
+                <p>${orgProfile.thesis}</p>
+                ${findings ? `<ul>${findings}</ul>` : ''}
+                <p>\u05e0\u05d9\u05d8\u05e8\u05dc\u05d9\u05d5\u05ea: <strong>${orgProfile.neutrality}/5</strong> | \u05e9\u05e7\u05d9\u05e4\u05d5\u05ea: <strong>${orgProfile.transparency}/5</strong> | \u05de\u05d9\u05de\u05d5\u05df: ${orgProfile.funding_sources}${reportLink}</p>
+            </div>`);
+        }
+
+        // ── 2. NIF funder connection ──
+        const isNIF = orgProfile && orgProfile.funding_sources && /NIF|קרן חדשה/.test(orgProfile.funding_sources);
+        if (isNIF) {
+            parts.push(`<div class="dossier-section dossier-nif">
+                <h5>\u{1F4B0} \u05e7\u05e9\u05e8 \u05dc\u05e7\u05e8\u05df \u05d4\u05d7\u05d3\u05e9\u05d4 \u05dc\u05d9\u05e9\u05e8\u05d0\u05dc (NIF)</h5>
+                <p>\u05d4\u05e7\u05e8\u05df \u05d4\u05d7\u05d3\u05e9\u05d4 \u05de\u05de\u05de\u05e0\u05ea \u05d0\u05ea \u05d4\u05d0\u05e8\u05d2\u05d5\u05df \u05d4\u05d6\u05d4. \u05d1\u05d0\u05d5\u05ea\u05d5 \u05d6\u05de\u05df, \u05d4\u05d9\u05d0 \u05de\u05de\u05de\u05e0\u05ea \u05d0\u05e8\u05d2\u05d5\u05e0\u05d9\u05dd \u05e9\u05de\u05dc\u05de\u05d3\u05d9\u05dd <strong>\u05d8\u05db\u05e0\u05d9\u05e7\u05d5\u05ea \u05de\u05e0\u05d9\u05e4\u05d5\u05dc\u05e6\u05d9\u05d4 \u05de\u05e4\u05d5\u05e8\u05e9\u05d5\u05ea</strong>:</p>
+                <div class="concept-evidence-quote" style="margin:8px 0">
+                    <p>\u201F\u05e7\u05d5\u05d3\u05dd \u05db\u05dc \u05dc\u05d4\u05d1\u05d9\u05df \u05d0\u05d9\u05da \u05d4\u05d1\u05df \u05d0\u05d3\u05dd \u05d4\u05d0\u05d7\u05e8 \u05d7\u05d5\u05e9\u05d1 \u05e2\u05dc \u05d4\u05e1\u05d5\u05d2\u05d9\u05d4, \u05d5\u05d0\u05d6 \u05de\u05ea\u05d5\u05da \u05d4\u05d4\u05e1\u05ea\u05db\u05dc\u05d5\u05ea \u05e9\u05dc\u05d5, \u05dc\u05e0\u05e1\u05d7 \u05dc\u05d5 \u05d0\u05ea \u05d4\u05d1\u05e2\u05d9\u05d4 \u05d1\u05d0\u05d5\u05e4\u05df \u05e9<strong>\u05d4\u05ea\u05e9\u05d5\u05d1\u05d4 \u05d4\u05d0\u05e4\u05e9\u05e8\u05d9\u05ea \u05d4\u05d9\u05d7\u05d9\u05d3\u05d4</strong> \u05dc\u05e9\u05d0\u05dc\u05d4 \u05e9\u05d0\u05e0\u05d9 \u05e9\u05d5\u05d0\u05dc \u05d0\u05d5\u05ea\u05d5, \u05d4\u05d9\u05d0 \u05dc\u05e2\u05e9\u05d5\u05ea \u05d0\u05ea \u05d4\u05d3\u05d1\u05e8 \u05e9\u05d0\u05e0\u05d9 \u05e8\u05d5\u05e6\u05d4 \u05e9\u05d4\u05d5\u05d0 \u05d9\u05e2\u05e9\u05d4\u201E</p>
+                    <div class="quote-src">\u2014 <strong>\u05d7\u05d2\u05d9 \u05d0\u05dc\u05e7\u05d9\u05d9\u05dd</strong>, \u05e1\u05d3\u05e0\u05ea "\u05d4\u05e0\u05d3\u05e1\u05ea \u05ea\u05d5\u05d3\u05e2\u05d4" \u05e9\u05dc \u05d0\u05e8\u05d2\u05d5\u05df \u05de\u05d7\u05d6\u05e7\u05d9\u05dd (\u05de\u05de\u05d5\u05de\u05df \u05e2"\u05d9 \u05d4\u05e7\u05e8\u05df \u05d4\u05d7\u05d3\u05e9\u05d4)
+                        <a href="https://www.gnostocracy.com/?quote=534" target="_blank" rel="noopener">[\u05de\u05e7\u05d5\u05e8 + \u05d5\u05d9\u05d3\u05d0\u05d5]</a></div>
+                </div>
+                <p>\u05d6\u05d5 \u05dc\u05d0 \u05d4\u05e0\u05d7\u05d4 \u05ea\u05d9\u05d0\u05d5\u05e8\u05d8\u05d9\u05ea \u2014 \u05d6\u05d4 \u05e7\u05d5\u05e8\u05e1 \u05de\u05e6\u05d5\u05dc\u05dd \u05e9\u05dc \u05d0\u05e8\u05d2\u05d5\u05df \u05e9\u05d4\u05e7\u05e8\u05df \u05d4\u05d7\u05d3\u05e9\u05d4 \u05de\u05de\u05de\u05e0\u05ea. \u05d0\u05d5\u05ea\u05d4 \u05e8\u05e9\u05ea \u05d0\u05e8\u05d2\u05d5\u05e0\u05d9\u05dd \u05de\u05e4\u05e2\u05d9\u05dc\u05d4 \u05ea\u05d5\u05db\u05e0\u05d9\u05d5\u05ea \u05d1\u05d1\u05ea\u05d9 \u05e1\u05e4\u05e8.</p>
+            </div>`);
+        }
+
+        // ── 3. Missing data + opacity by design ──
+        parts.push(`<div class="dossier-section dossier-missing">
+            <h5>\u2753 \u05de\u05d4 \u05d0\u05e0\u05d7\u05e0\u05d5 \u05dc\u05d0 \u05d9\u05d5\u05d3\u05e2\u05d9\u05dd</h5>
+            <ul>
+                <li>\u05de\u05d4 \u05d1\u05d3\u05d9\u05d5\u05e7 \u05e7\u05d5\u05e8\u05d4 \u05d1\u05db\u05d9\u05ea\u05d4 \u2014 \u05d7\u05d5\u05de\u05e8\u05d9 \u05d4\u05dc\u05d9\u05de\u05d5\u05d3 \u05dc\u05d0 \u05e4\u05ea\u05d5\u05d7\u05d9\u05dd \u05dc\u05e2\u05d9\u05d5\u05df \u05e6\u05d9\u05d1\u05d5\u05e8\u05d9</li>
+                <li>\u05de\u05d4 \u05d4\u05de\u05e0\u05d7\u05d9\u05dd \u05d0\u05d5\u05de\u05e8\u05d9\u05dd \u05dc\u05ea\u05dc\u05de\u05d9\u05d3\u05d9\u05dd \u05de\u05e2\u05d1\u05e8 \u05dc\u05de\u05d4 \u05e9\u05db\u05ea\u05d5\u05d1 \u05d1\u05ea\u05e7\u05e6\u05d9\u05e8</li>
+                <li>\u05d0\u05d9\u05dc\u05d5 \u05ea\u05d5\u05e6\u05d0\u05d5\u05ea \u05d3\u05d5\u05d5\u05d7\u05d5 \u05dc\u05d4\u05d5\u05e8\u05d9\u05dd</li>
+                <li>\u05d4\u05d0\u05dd \u05d4\u05d9\u05d9\u05ea\u05d4 \u05d4\u05e1\u05db\u05de\u05ea \u05d4\u05d5\u05e8\u05d9\u05dd \u05de\u05e8\u05d0\u05e9 (opt-in) \u05d0\u05d5 \u05d4\u05d5\u05d3\u05e2\u05d4 \u05d1\u05d3\u05d9\u05e2\u05d1\u05d3 (opt-out)</li>
+            </ul>
+            <p><strong>\u05d6\u05d4 \u05d1\u05db\u05d5\u05d5\u05e0\u05d4.</strong> \u05d0\u05e0\u05e9\u05d9\u05dd \u05de\u05e8\u05db\u05d6\u05d9\u05d9\u05dd \u05d1\u05de\u05e2\u05e8\u05db\u05ea \u05de\u05d1\u05d9\u05e2\u05d9\u05dd \u05e2\u05de\u05d3\u05d5\u05ea \u05de\u05e4\u05d5\u05e8\u05e9\u05d5\u05ea \u05e0\u05d2\u05d3 \u05e9\u05e7\u05d9\u05e4\u05d5\u05ea.
+                <a href="#" onclick="event.preventDefault();event.stopPropagation();switchTab('background',document.querySelector('.nav-tab'))">\u05dc\u05de\u05d4 \u05d6\u05d4 \u05d1\u05e2\u05d9\u05d4 \u2192</a>
+            </p>
+        </div>`);
+
+        // ── 4. Suspicious terms detected ──
+        const termBadges = concepts.map(c =>
+            `<span class="dossier-term-link" style="background:${c.color};cursor:pointer" onclick="event.stopPropagation();showConceptEvidence('${c.id}')">${c.short_label}</span>`
+        ).join('');
+        parts.push(`<div class="dossier-section">
+            <h5>\u{1F50D} \u05de\u05d5\u05e0\u05d7\u05d9\u05dd \u05d7\u05e9\u05d5\u05d3\u05d9\u05dd \u05e9\u05d6\u05d5\u05d4\u05d5</h5>
+            <p>\u05dc\u05db\u05dc \u05de\u05d5\u05e0\u05d7 \u05d9\u05e9 \u05de\u05e9\u05de\u05e2\u05d5\u05ea \u05d2\u05dc\u05d5\u05d9\u05d4 (\u05ea\u05de\u05d9\u05de\u05d4) \u05d5\u05de\u05e9\u05de\u05e2\u05d5\u05ea \u05de\u05ea\u05d5\u05e2\u05d3\u05ea (\u05d1\u05e2\u05d9\u05d9\u05ea\u05d9\u05ea). \u05dc\u05d7\u05e6\u05d5 \u05dc\u05e4\u05e8\u05d8\u05d9\u05dd:</p>
+            <div class="dossier-terms">${termBadges}</div>
+            <div class="dossier-deep-links">
+                <a href="https://aosshalem-dev.github.io/progressive-rosetta-stone/" target="_blank" rel="noopener" style="background:#8b0000" onclick="event.stopPropagation()">\u{1F5FF} \u05d0\u05d1\u05df \u05e8\u05d5\u05d6\u05d8\u05d4 \u05d4\u05e4\u05e8\u05d5\u05d2\u05e8\u05e1\u05d9\u05d1\u05d9\u05ea</a>
+                <a href="https://aosshalem-dev.github.io/sel-research/" target="_blank" rel="noopener" style="background:#1565c0" onclick="event.stopPropagation()">\u{1F9E0} \u05de\u05d7\u05e7\u05e8 SEL</a>
+                <a href="https://aosshalem-dev.github.io/shefi-research/" target="_blank" rel="noopener" style="background:#6a1b9a" onclick="event.stopPropagation()">\u26A0 \u05e9\u05e4"\u05d9 \u2014 \u05de\u05d2\u05d3\u05e8 \u05d5\u05d6\u05d4\u05d5\u05ea \u05de\u05d9\u05e0\u05d9\u05ea</a>
+            </div>
+        </div>`);
+
+        return parts.join('');
+    }
+
     // ── Tab switching ──
     function switchTab(tab, el) {
         document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
@@ -1513,9 +1829,21 @@
         const researchBadge = hasResearch ? '<span class="research-badge">מחקר</span>' : '';
         const clusterBadge = cluster ? `<span class="cluster-badge">${cluster.name_he}</span>` : '';
 
+        // Concept detection
+        const concepts = detectConcepts(prog, info);
+        const conceptBadges = concepts.map(c =>
+            `<span class="concept-badge" style="background:${c.color}" onclick="event.stopPropagation();showConceptEvidence('${c.id}')">${c.short_label}</span>`
+        ).join('');
+
+        // Full suspicion dossier for programs with detected concepts
+        if (concepts.length > 0) {
+            detailParts.push(buildSuspicionDossier(prog, info, concepts));
+            detailParts.push(buildClearanceFooter());
+        }
+
         return `<div class="program-card" onclick="toggleProg('pc-${uid}')">
             <div class="prog-header">
-                <span class="prog-name">${prog.name} ${clusterBadge} ${researchBadge}</span>
+                <span class="prog-name">${prog.name} ${clusterBadge} ${researchBadge} ${conceptBadges}</span>
                 <span class="prog-rating ${ratingClass(prog.rating)}">${prog.rating}</span>
             </div>
             <div class="prog-meta">
@@ -1564,7 +1892,7 @@
                 <div class="org-card-thesis">${o.thesis}</div>
                 <div class="org-card-stats">
                     <div class="org-stat"><strong>\u20AA${(o.revenue_nis / 1000000).toFixed(1)}M</strong> \u05ea\u05e7\u05e6\u05d9\u05d1</div>
-                    <div class="org-stat"><strong>${o.gov_pct}%</strong> \u05de\u05de\u05e9\u05dc\u05ea\u05d9</div>
+                    <div class="org-stat"><strong>${Math.round(o.gov_pct)}%</strong> \u05de\u05de\u05e9\u05dc\u05ea\u05d9</div>
                     <div class="org-stat"><strong>${o.staff}</strong> \u05e2\u05d5\u05d1\u05d3\u05d9\u05dd</div>
                     <div class="org-stat"><strong>${o.school_count}</strong> \u05d1\u05ea\u05d9 \u05e1\u05e4\u05e8</div>
                     ${o.program_budget > 0 ? `<div class="org-stat"><strong>\u20AA${Math.round(o.program_budget).toLocaleString()}</strong> \u05ea\u05e7\u05e6\u05d9\u05d1 \u05d2\u05e4\u05df</div>` : ''}
@@ -1615,7 +1943,7 @@
                             <div style="font-size:0.78em;color:#555">תוכניות</div>
                         </div>
                         <div style="background:#fce4ec;border-radius:6px;padding:8px 14px;text-align:center;min-width:100px">
-                            <div style="font-size:1.6em;font-weight:700;color:#c0392b">${entry.proven_budget_pct}%</div>
+                            <div style="font-size:1.6em;font-weight:700;color:#c0392b">${Math.round(entry.proven_budget_pct)}%</div>
                             <div style="font-size:0.78em;color:#555">מתקציב חינוך</div>
                         </div>
                         <div style="background:#f3e5f5;border-radius:6px;padding:8px 14px;text-align:center;min-width:100px">

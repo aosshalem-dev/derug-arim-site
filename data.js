@@ -3,12 +3,12 @@ const DATA = {
     {
       "city": "חיפה",
       "protocol_key": "HAIFA",
-      "evidence_score": 69.05,
+      "evidence_score": 69,
       "rank": 1,
-      "education_pillar_score": 38.1,
+      "education_pillar_score": 38,
       "proven_programs_count": 15,
       "proven_budget": 1268244.04,
-      "proven_budget_pct": 6.87,
+      "proven_budget_pct": 7,
       "total_edu_budget": 18456085.03,
       "proven_programs": [
         {
@@ -162,7 +162,7 @@ const DATA = {
           "source": "human_reviewed_programs.json"
         }
       ],
-      "protocol_pillar_score": 100.0,
+      "protocol_pillar_score": 100,
       "verified_decisions": 5,
       "protocol_weighted_sum": 5.0,
       "protocol_findings_ids": [
@@ -172,7 +172,7 @@ const DATA = {
         "haifa-4",
         "haifa-5"
       ],
-      "news_pillar_score": 100.0,
+      "news_pillar_score": 100,
       "strong_news_actions": 3,
       "news_actions_detail": [
         {
@@ -209,12 +209,12 @@ const DATA = {
     {
       "city": "הרצליה",
       "protocol_key": "HERZLIYA",
-      "evidence_score": 51.7,
+      "evidence_score": 52,
       "rank": 2,
-      "education_pillar_score": 46.0,
+      "education_pillar_score": 46,
       "proven_programs_count": 12,
       "proven_budget": 569631.46,
-      "proven_budget_pct": 8.3,
+      "proven_budget_pct": 8,
       "total_edu_budget": 6865924.97,
       "proven_programs": [
         {
@@ -338,7 +338,7 @@ const DATA = {
           "source": "human_reviewed_programs.json"
         }
       ],
-      "protocol_pillar_score": 82.0,
+      "protocol_pillar_score": 82,
       "verified_decisions": 7,
       "protocol_weighted_sum": 4.1,
       "protocol_findings_ids": [
@@ -350,7 +350,7 @@ const DATA = {
         "herzliya-6",
         "herzliya-7"
       ],
-      "news_pillar_score": 0.0,
+      "news_pillar_score": 0,
       "strong_news_actions": 0,
       "news_actions_detail": [],
       "high_risk_orgs": [
@@ -365,12 +365,12 @@ const DATA = {
     {
       "city": "כרמיאל",
       "protocol_key": "KARMIEL",
-      "evidence_score": 50.0,
+      "evidence_score": 50,
       "rank": 3,
-      "education_pillar_score": 100.0,
+      "education_pillar_score": 100,
       "proven_programs_count": 18,
       "proven_budget": 744170.61,
-      "proven_budget_pct": 18.04,
+      "proven_budget_pct": 18,
       "total_edu_budget": 4125756.17,
       "proven_programs": [
         {
@@ -554,11 +554,11 @@ const DATA = {
           "source": "research_orgs.js → Yesodot_Dror (high risk)"
         }
       ],
-      "protocol_pillar_score": 0.0,
+      "protocol_pillar_score": 0,
       "verified_decisions": 0,
       "protocol_weighted_sum": 0,
       "protocol_findings_ids": [],
-      "news_pillar_score": 0.0,
+      "news_pillar_score": 0,
       "strong_news_actions": 0,
       "news_actions_detail": [],
       "high_risk_orgs": [
@@ -573,12 +573,12 @@ const DATA = {
     {
       "city": "רעננה",
       "protocol_key": "RAANANA",
-      "evidence_score": 41.71,
+      "evidence_score": 42,
       "rank": 4,
-      "education_pillar_score": 47.02,
+      "education_pillar_score": 47,
       "proven_programs_count": 10,
       "proven_budget": 426004.32,
-      "proven_budget_pct": 8.48,
+      "proven_budget_pct": 8,
       "total_edu_budget": 5022736.51,
       "proven_programs": [
         {
@@ -682,7 +682,7 @@ const DATA = {
           "source": "human_reviewed_programs.json"
         }
       ],
-      "protocol_pillar_score": 52.0,
+      "protocol_pillar_score": 52,
       "verified_decisions": 5,
       "protocol_weighted_sum": 2.6,
       "protocol_findings_ids": [
@@ -692,7 +692,7 @@ const DATA = {
         "raanana-4",
         "raanana-5"
       ],
-      "news_pillar_score": 0.0,
+      "news_pillar_score": 0,
       "strong_news_actions": 0,
       "news_actions_detail": [],
       "high_risk_orgs": [
@@ -707,12 +707,12 @@ const DATA = {
     {
       "city": "תל אביב-יפו",
       "protocol_key": "TEL_AVIV",
-      "evidence_score": 36.88,
+      "evidence_score": 37,
       "rank": 5,
-      "education_pillar_score": 63.76,
+      "education_pillar_score": 64,
       "proven_programs_count": 16,
       "proven_budget": 1928808.96,
-      "proven_budget_pct": 11.5,
+      "proven_budget_pct": 12,
       "total_edu_budget": 16771664.3,
       "proven_programs": [
         {
@@ -876,11 +876,11 @@ const DATA = {
           "source": "human_reviewed_programs.json"
         }
       ],
-      "protocol_pillar_score": 0.0,
+      "protocol_pillar_score": 0,
       "verified_decisions": 0,
       "protocol_weighted_sum": 0,
       "protocol_findings_ids": [],
-      "news_pillar_score": 33.33,
+      "news_pillar_score": 33,
       "strong_news_actions": 1,
       "news_actions_detail": [
         {
@@ -903,12 +903,12 @@ const DATA = {
     {
       "city": "רמת השרון",
       "protocol_key": "RAMAT_HASHARON",
-      "evidence_score": 31.09,
+      "evidence_score": 31,
       "rank": 6,
-      "education_pillar_score": 62.19,
+      "education_pillar_score": 62,
       "proven_programs_count": 12,
       "proven_budget": 517363.98,
-      "proven_budget_pct": 11.22,
+      "proven_budget_pct": 11,
       "total_edu_budget": 4612262.39,
       "proven_programs": [
         {
@@ -1032,11 +1032,11 @@ const DATA = {
           "source": "research_orgs.js → ACRI (high risk)"
         }
       ],
-      "protocol_pillar_score": 0.0,
+      "protocol_pillar_score": 0,
       "verified_decisions": 0,
       "protocol_weighted_sum": 0,
       "protocol_findings_ids": [],
-      "news_pillar_score": 0.0,
+      "news_pillar_score": 0,
       "strong_news_actions": 0,
       "news_actions_detail": [],
       "high_risk_orgs": [
@@ -1053,12 +1053,12 @@ const DATA = {
     {
       "city": "קרית שמונה",
       "protocol_key": "KIRYAT_SHMONA",
-      "evidence_score": 28.2,
+      "evidence_score": 28,
       "rank": 7,
-      "education_pillar_score": 56.39,
+      "education_pillar_score": 56,
       "proven_programs_count": 3,
       "proven_budget": 106241.4,
-      "proven_budget_pct": 10.17,
+      "proven_budget_pct": 10,
       "total_edu_budget": 1044522.61,
       "proven_programs": [
         {
@@ -1092,11 +1092,11 @@ const DATA = {
           "source": "human_reviewed_programs.json"
         }
       ],
-      "protocol_pillar_score": 0.0,
+      "protocol_pillar_score": 0,
       "verified_decisions": 0,
       "protocol_weighted_sum": 0,
       "protocol_findings_ids": [],
-      "news_pillar_score": 0.0,
+      "news_pillar_score": 0,
       "strong_news_actions": 0,
       "news_actions_detail": [],
       "high_risk_orgs": [],
@@ -1109,12 +1109,12 @@ const DATA = {
     {
       "city": "גבעתיים",
       "protocol_key": "GIVATAYIM",
-      "evidence_score": 24.65,
+      "evidence_score": 25,
       "rank": 8,
-      "education_pillar_score": 43.7,
+      "education_pillar_score": 44,
       "proven_programs_count": 4,
       "proven_budget": 250822.07,
-      "proven_budget_pct": 7.88,
+      "proven_budget_pct": 8,
       "total_edu_budget": 3182249.77,
       "proven_programs": [
         {
@@ -1158,7 +1158,7 @@ const DATA = {
           "source": "human_reviewed_programs.json"
         }
       ],
-      "protocol_pillar_score": 8.0,
+      "protocol_pillar_score": 8,
       "verified_decisions": 5,
       "protocol_weighted_sum": 0.4,
       "protocol_findings_ids": [
@@ -1168,7 +1168,7 @@ const DATA = {
         "givatayim-4",
         "givatayim-5"
       ],
-      "news_pillar_score": 0.0,
+      "news_pillar_score": 0,
       "strong_news_actions": 0,
       "news_actions_detail": [],
       "high_risk_orgs": [],
@@ -1181,12 +1181,12 @@ const DATA = {
     {
       "city": "גבעת שמואל",
       "protocol_key": "GIVAT_SHMUEL",
-      "evidence_score": 21.91,
+      "evidence_score": 22,
       "rank": 9,
-      "education_pillar_score": 43.82,
+      "education_pillar_score": 44,
       "proven_programs_count": 3,
       "proven_budget": 173390.19,
-      "proven_budget_pct": 7.9,
+      "proven_budget_pct": 8,
       "total_edu_budget": 2193812.01,
       "proven_programs": [
         {
@@ -1220,11 +1220,11 @@ const DATA = {
           "source": "human_reviewed_programs.json"
         }
       ],
-      "protocol_pillar_score": 0.0,
+      "protocol_pillar_score": 0,
       "verified_decisions": 0,
       "protocol_weighted_sum": 0,
       "protocol_findings_ids": [],
-      "news_pillar_score": 0.0,
+      "news_pillar_score": 0,
       "strong_news_actions": 0,
       "news_actions_detail": [],
       "high_risk_orgs": [],
@@ -1237,12 +1237,12 @@ const DATA = {
     {
       "city": "קרית אונו",
       "protocol_key": "KIRYAT_ONO",
-      "evidence_score": 20.57,
+      "evidence_score": 21,
       "rank": 10,
-      "education_pillar_score": 41.13,
+      "education_pillar_score": 41,
       "proven_programs_count": 5,
       "proven_budget": 250047.78,
-      "proven_budget_pct": 7.42,
+      "proven_budget_pct": 7,
       "total_edu_budget": 3370774.28,
       "proven_programs": [
         {
@@ -1296,11 +1296,11 @@ const DATA = {
           "source": "human_reviewed_programs.json"
         }
       ],
-      "protocol_pillar_score": 0.0,
+      "protocol_pillar_score": 0,
       "verified_decisions": 0,
       "protocol_weighted_sum": 0,
       "protocol_findings_ids": [],
-      "news_pillar_score": 0.0,
+      "news_pillar_score": 0,
       "strong_news_actions": 0,
       "news_actions_detail": [],
       "high_risk_orgs": [
@@ -1315,12 +1315,12 @@ const DATA = {
     {
       "city": "רמת גן",
       "protocol_key": "RAMAT_GAN",
-      "evidence_score": 20.45,
+      "evidence_score": 20,
       "rank": 11,
-      "education_pillar_score": 40.91,
+      "education_pillar_score": 41,
       "proven_programs_count": 12,
       "proven_budget": 640878.0,
-      "proven_budget_pct": 7.38,
+      "proven_budget_pct": 7,
       "total_edu_budget": 8685637.12,
       "proven_programs": [
         {
@@ -1444,11 +1444,11 @@ const DATA = {
           "source": "human_reviewed_programs.json"
         }
       ],
-      "protocol_pillar_score": 0.0,
+      "protocol_pillar_score": 0,
       "verified_decisions": 0,
       "protocol_weighted_sum": 0,
       "protocol_findings_ids": [],
-      "news_pillar_score": 0.0,
+      "news_pillar_score": 0,
       "strong_news_actions": 0,
       "news_actions_detail": [],
       "high_risk_orgs": [
@@ -1463,12 +1463,12 @@ const DATA = {
     {
       "city": "הוד השרון",
       "protocol_key": "HOD_HASHARON",
-      "evidence_score": 20.16,
+      "evidence_score": 20,
       "rank": 12,
-      "education_pillar_score": 26.33,
+      "education_pillar_score": 26,
       "proven_programs_count": 7,
       "proven_budget": 185942.05,
-      "proven_budget_pct": 4.75,
+      "proven_budget_pct": 5,
       "total_edu_budget": 3915764.76,
       "proven_programs": [
         {
@@ -1542,13 +1542,13 @@ const DATA = {
           "source": "human_reviewed_programs.json"
         }
       ],
-      "protocol_pillar_score": 20.0,
+      "protocol_pillar_score": 20,
       "verified_decisions": 1,
       "protocol_weighted_sum": 1.0,
       "protocol_findings_ids": [
         "hodhasharon-1"
       ],
-      "news_pillar_score": 0.0,
+      "news_pillar_score": 0,
       "strong_news_actions": 0,
       "news_actions_detail": [],
       "high_risk_orgs": [
@@ -1563,12 +1563,12 @@ const DATA = {
     {
       "city": "ראש העין",
       "protocol_key": "ROSH_HAAYIN",
-      "evidence_score": 15.77,
+      "evidence_score": 16,
       "rank": 13,
-      "education_pillar_score": 31.54,
+      "education_pillar_score": 32,
       "proven_programs_count": 6,
       "proven_budget": 281844.43,
-      "proven_budget_pct": 5.69,
+      "proven_budget_pct": 6,
       "total_edu_budget": 4954358.12,
       "proven_programs": [
         {
@@ -1632,11 +1632,11 @@ const DATA = {
           "source": "human_reviewed_programs.json"
         }
       ],
-      "protocol_pillar_score": 0.0,
+      "protocol_pillar_score": 0,
       "verified_decisions": 0,
       "protocol_weighted_sum": 0,
       "protocol_findings_ids": [],
-      "news_pillar_score": 0.0,
+      "news_pillar_score": 0,
       "strong_news_actions": 0,
       "news_actions_detail": [],
       "high_risk_orgs": [
@@ -1651,12 +1651,12 @@ const DATA = {
     {
       "city": "קרית גת",
       "protocol_key": "KIRYAT_GAT",
-      "evidence_score": 12.18,
+      "evidence_score": 12,
       "rank": 14,
-      "education_pillar_score": 24.35,
+      "education_pillar_score": 24,
       "proven_programs_count": 7,
       "proven_budget": 259565.05,
-      "proven_budget_pct": 4.39,
+      "proven_budget_pct": 4,
       "total_edu_budget": 5908760.13,
       "proven_programs": [
         {
@@ -1730,11 +1730,11 @@ const DATA = {
           "source": "research_orgs.js → Yesodot_Dror (high risk)"
         }
       ],
-      "protocol_pillar_score": 0.0,
+      "protocol_pillar_score": 0,
       "verified_decisions": 0,
       "protocol_weighted_sum": 0,
       "protocol_findings_ids": [],
-      "news_pillar_score": 0.0,
+      "news_pillar_score": 0,
       "strong_news_actions": 0,
       "news_actions_detail": [],
       "high_risk_orgs": [
@@ -1749,12 +1749,12 @@ const DATA = {
     {
       "city": "ירושלים",
       "protocol_key": "JERUSALEM",
-      "evidence_score": 10.52,
+      "evidence_score": 11,
       "rank": 15,
-      "education_pillar_score": 21.03,
+      "education_pillar_score": 21,
       "proven_programs_count": 18,
       "proven_budget": 2311610.9,
-      "proven_budget_pct": 3.79,
+      "proven_budget_pct": 4,
       "total_edu_budget": 60946815.92,
       "proven_programs": [
         {
@@ -1938,11 +1938,11 @@ const DATA = {
           "source": "human_reviewed_programs.json"
         }
       ],
-      "protocol_pillar_score": 0.0,
+      "protocol_pillar_score": 0,
       "verified_decisions": 0,
       "protocol_weighted_sum": 0,
       "protocol_findings_ids": [],
-      "news_pillar_score": 0.0,
+      "news_pillar_score": 0,
       "strong_news_actions": 0,
       "news_actions_detail": [],
       "high_risk_orgs": [
@@ -1957,12 +1957,12 @@ const DATA = {
     {
       "city": "באר שבע",
       "protocol_key": "BEER_SHEVA",
-      "evidence_score": 9.3,
+      "evidence_score": 9,
       "rank": 16,
-      "education_pillar_score": 18.6,
+      "education_pillar_score": 19,
       "proven_programs_count": 16,
       "proven_budget": 691005.42,
-      "proven_budget_pct": 3.36,
+      "proven_budget_pct": 3,
       "total_edu_budget": 20596019.02,
       "proven_programs": [
         {
@@ -2126,11 +2126,11 @@ const DATA = {
           "source": "research_orgs.js → Yesodot_Dror (high risk)"
         }
       ],
-      "protocol_pillar_score": 0.0,
+      "protocol_pillar_score": 0,
       "verified_decisions": 0,
       "protocol_weighted_sum": 0,
       "protocol_findings_ids": [],
-      "news_pillar_score": 0.0,
+      "news_pillar_score": 0,
       "strong_news_actions": 0,
       "news_actions_detail": [],
       "high_risk_orgs": [
@@ -2145,12 +2145,12 @@ const DATA = {
     {
       "city": "אריאל",
       "protocol_key": "ariel",
-      "evidence_score": 8.02,
+      "evidence_score": 8,
       "rank": 17,
-      "education_pillar_score": 16.04,
+      "education_pillar_score": 16,
       "proven_programs_count": 2,
       "proven_budget": 38290.0,
-      "proven_budget_pct": 2.89,
+      "proven_budget_pct": 3,
       "total_edu_budget": 1323795.86,
       "proven_programs": [
         {
@@ -2174,11 +2174,11 @@ const DATA = {
           "source": "human_reviewed_programs.json"
         }
       ],
-      "protocol_pillar_score": 0.0,
+      "protocol_pillar_score": 0,
       "verified_decisions": 0,
       "protocol_weighted_sum": 0,
       "protocol_findings_ids": [],
-      "news_pillar_score": 0.0,
+      "news_pillar_score": 0,
       "strong_news_actions": 0,
       "news_actions_detail": [],
       "high_risk_orgs": [],
@@ -2191,12 +2191,12 @@ const DATA = {
     {
       "city": "נתיבות",
       "protocol_key": "NETIVOT",
-      "evidence_score": 2.73,
+      "evidence_score": 3,
       "rank": 18,
-      "education_pillar_score": 5.47,
+      "education_pillar_score": 5,
       "proven_programs_count": 3,
       "proven_budget": 13203.98,
-      "proven_budget_pct": 0.99,
+      "proven_budget_pct": 1,
       "total_edu_budget": 1339007.94,
       "proven_programs": [
         {
@@ -2230,11 +2230,11 @@ const DATA = {
           "source": "human_reviewed_programs.json"
         }
       ],
-      "protocol_pillar_score": 0.0,
+      "protocol_pillar_score": 0,
       "verified_decisions": 0,
       "protocol_weighted_sum": 0,
       "protocol_findings_ids": [],
-      "news_pillar_score": 0.0,
+      "news_pillar_score": 0,
       "strong_news_actions": 0,
       "news_actions_detail": [],
       "high_risk_orgs": [],
@@ -2247,19 +2247,19 @@ const DATA = {
     {
       "city": "עמנואל",
       "protocol_key": "EMANUEL",
-      "evidence_score": 0.0,
+      "evidence_score": 0,
       "rank": 19,
-      "education_pillar_score": 0.0,
+      "education_pillar_score": 0,
       "proven_programs_count": 0,
       "proven_budget": 0,
-      "proven_budget_pct": 0.0,
+      "proven_budget_pct": 0,
       "total_edu_budget": 208538.99,
       "proven_programs": [],
-      "protocol_pillar_score": 0.0,
+      "protocol_pillar_score": 0,
       "verified_decisions": 0,
       "protocol_weighted_sum": 0,
       "protocol_findings_ids": [],
-      "news_pillar_score": 0.0,
+      "news_pillar_score": 0,
       "strong_news_actions": 0,
       "news_actions_detail": [],
       "high_risk_orgs": [],
@@ -2272,19 +2272,19 @@ const DATA = {
     {
       "city": "אפרת",
       "protocol_key": "EFRAT",
-      "evidence_score": 0.0,
+      "evidence_score": 0,
       "rank": 20,
-      "education_pillar_score": 0.0,
+      "education_pillar_score": 0,
       "proven_programs_count": 0,
       "proven_budget": 0,
-      "proven_budget_pct": 0.0,
+      "proven_budget_pct": 0,
       "total_edu_budget": 1224136.24,
       "proven_programs": [],
-      "protocol_pillar_score": 0.0,
+      "protocol_pillar_score": 0,
       "verified_decisions": 0,
       "protocol_weighted_sum": 0,
       "protocol_findings_ids": [],
-      "news_pillar_score": 0.0,
+      "news_pillar_score": 0,
       "strong_news_actions": 0,
       "news_actions_detail": [],
       "high_risk_orgs": [],
