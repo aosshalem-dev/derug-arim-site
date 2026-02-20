@@ -1923,14 +1923,35 @@
         const provenProgs = entry.proven_programs || [];
         if (provenProgs.length > 0) {
             const progCards = provenProgs.slice(0, 10).map(p => {
+                const puid = _cardIdx++;
                 const tierBadge = p.tier === 'A'
                     ? `<span style="background:#c0392b;color:#fff;padding:1px 6px;border-radius:3px;font-size:0.75em;margin-left:6px">Tier A (R${p.rating})</span>`
                     : `<span style="background:#d35400;color:#fff;padding:1px 6px;border-radius:3px;font-size:0.75em;margin-left:6px">Tier B (${p.org_key || 'org'})</span>`;
-                return `<div style="background:#fff5f5;border:1px solid #e8d0d0;border-radius:6px;padding:8px 12px;margin-bottom:6px">
-                    <div style="font-weight:600;font-size:0.88em">${p.name} ${tierBadge}</div>
+
+                // Detect concepts from program name + org
+                const pConcepts = detectConcepts(p, {});
+                const pBadges = pConcepts.map(c =>
+                    `<span class="concept-badge" style="background:${c.color}" onclick="event.stopPropagation();showConceptEvidence('${c.id}')">${c.short_label}</span>`
+                ).join('');
+
+                // Build expanded detail with dossier
+                let pDetail = '';
+                if (pConcepts.length > 0) {
+                    pDetail = buildSuspicionDossier(p, {}, pConcepts) + buildClearanceFooter();
+                }
+
+                const hasDetail = pConcepts.length > 0;
+                const clickAttr = hasDetail
+                    ? `onclick="document.getElementById('pp-${puid}').classList.toggle('visible');this.classList.toggle('expanded')" style="cursor:pointer;background:#fff5f5;border:1px solid #e8d0d0;border-radius:6px;padding:8px 12px;margin-bottom:6px"`
+                    : `style="background:#fff5f5;border:1px solid #e8d0d0;border-radius:6px;padding:8px 12px;margin-bottom:6px"`;
+
+                return `<div ${clickAttr}>
+                    <div style="font-weight:600;font-size:0.88em">${p.name} ${tierBadge} ${pBadges}</div>
                     <div style="font-size:0.8em;color:#666;margin-top:2px">
                         ${p.org} | ${p.budget.toLocaleString('he-IL', {maximumFractionDigits:0})} \u20aa | ${p.deployments} פריסות
                     </div>
+                    ${hasDetail ? `<div style="text-align:center;font-size:0.7em;color:#999;margin-top:3px">\u25BC \u05dc\u05d7\u05e6\u05d5 \u05dc\u05e4\u05e8\u05d8\u05d9\u05dd \u25BC</div>` : ''}
+                    ${hasDetail ? `<div class="prog-detail" id="pp-${puid}">${pDetail}</div>` : ''}
                 </div>`;
             }).join('');
 
