@@ -1,0 +1,627 @@
+================================================================================
+  DERUG-ARIM-SITE  --  DATA & SITE STRUCTURE MAP
+  Generated 2026-02-20
+================================================================================
+
+1.  PROJECT OVERVIEW
+====================
+A Hebrew city-ranking site analyzing ideological influence in Israeli
+education enrichment programs (Gefen marketplace).  The site ranks ~20 cities
+by an "evidence score" combining three pillars:
+  - Education programs (Gefen data, reviewed by humans + AI)
+  - Municipal protocol keyword analysis (Pole A vs Pole B orientation)
+  - News signal analysis (Google News RSS, progressive-topic counts)
+
+The main entry point is index.html — a single-page app with 6 tabs, all
+rendered client-side from JS data files loaded via <script> tags.
+
+
+2.  FILE INVENTORY
+==================
+
+2.1  RUNTIME JS DATA FILES (loaded by index.html)
+--------------------------------------------------
+All loaded in <script> tags at line 1415-1420 of index.html:
+
+  FILE                       LINES   GLOBAL VAR           WHAT IT CONTAINS
+  -----------------------    -----   -----------------    -----------------------------------
+  data.js                    7829    DATA                 Master data: rankings[], protocol_details{},
+                                                          worst_programs{}, program_info{}
+  research_data.js            233    RESEARCH             Cluster dossiers (7 clusters), program_cluster_map{},
+                                                          program_name_patterns{}
+  protocols_data.js           636    PROTOCOLS            Raw protocol texts by city key (HAIFA, etc.)
+                                                          with filename, date, text, keyword_hits
+  protocol_findings.js        410    PROTOCOL_FINDINGS    23 human-reviewed findings extracted from
+                                                          537 flagged protocols (meta + findings[])
+  research_orgs.js           1020    RESEARCH_ORGS        31 deep-research org profiles (orgs{}),
+                                                          methodology{}, city_orgs{} mapping
+  suspicious_concepts.js      227    SUSPICIOUS_CONCEPTS  7 concept definitions, program_concepts{} map,
+                                                          keyword_rules[], clearance conditions
+
+2.2  DATA/ FOLDER — JSON SOURCE & REFERENCE FILES
+--------------------------------------------------
+These are NOT loaded at runtime by index.html.  They serve as source data
+for the enrichment pipeline or for standalone HTML pages under data/.
+
+  FILE                                  PURPOSE
+  ------------------------------------  ----------------------------------------
+  data/gefen_metadata.json              HUGE (~2M tokens). Raw Gefen catalog dump
+                                        with gemini_summary, gemini_analysis,
+                                        key_people, links_json per program_number.
+                                        SOURCE for enrichment pipeline.
+
+  data/manual_metadata.json             173 manually scored programs from the
+                                        rating database (program_number, score,
+                                        description, notes, gemini_* fields).
+                                        Exported from ranking-v2 database.
+
+  data/program_lookup.json              Gefen program lookup by program_number.
+                                        Contains name, org, field, summary,
+                                        schools count, num_cities.
+
+  data/programs_subset.json             Subset of Gefen programs keyed by
+                                        program_number with name, org, field,
+                                        summary, schools, num_cities.
+
+  data/merged_city_ranking.json         Pre-computed city rankings with all
+                                        raw scoring fields (pole_a, pole_b,
+                                        red_flag, exposure_score, etc.).
+                                        Metadata includes methodology description.
+
+  data/city_details.json                Detailed protocol keyword breakdowns per
+                                        city: pole_a_details (heritage, zionist,
+                                        holidays, tradition, security) and
+                                        pole_b_details (subtle, critical pedagogy,
+                                        analytical framework), red_flag_details.
+
+  data/methodology_computations.json    Statistical validation data: inter-rater
+                                        reliability (Pearson, Cohen's kappa),
+                                        normalization ceiling analysis,
+                                        coverage analysis per city.
+
+  data/acri_research.json               Deep research dossier for ACRI (Association
+                                        for Civil Rights in Israel). Leadership,
+                                        financials, ideology analysis.
+
+  data/research_efshar_acheret.json     Deep research dossier for "Efshar Acheret"
+                                        (A New Way). Leadership, financials.
+
+  data/research_lens.json               9-chapter analytical framework extracted
+                                        from Dror Israel deep-dive document.
+                                        Used as investigation template.
+
+  data/city_news_articles.json          Full news article collection (5095 articles
+                                        across 18 cities, 6 topics). Contains
+                                        title, url, source, date per article.
+
+  data/city_news_compact.json           Compact version: city -> topic -> count.
+                                        No individual articles, just totals.
+
+  data/news/index.json                  Per-city topic counts (same as compact).
+  data/news/{CITY_KEY}.json (x20)       Per-city full article lists, one JSON
+                                        file per city (HAIFA.json, TEL_AVIV.json,
+                                        BEER_SHEVA.json, etc.)
+
+2.3  STANDALONE HTML PAGES
+--------------------------
+  data/ranking.html              Raw ranking data viewer
+  data/research_lens.html        Research framework viewer
+  data/methodology.html          Statistical computations viewer
+  data/news/index.html           News browser page (loads per-city JSONs)
+
+  research/index.html            Research hub / landing page
+  research/deep_*.html (x48)     Individual deep-research reports per org
+  research/*_network.html (x6)   Cluster-level reports (Dror Israel network,
+                                 Gender/Sexuality providers, Political-activist,
+                                 Hartman network, Foreign-funded coexistence,
+                                 Child protection, Feminist agenda)
+  research/framework_insights.html   Research framework insights
+
+  gefen4/index.html              Gefen program table viewer (standalone)
+  ranking-v2/public/index.html   Admin data management UI (PHP-backed, legacy)
+
+2.4  SCRIPTS
+------------
+  scripts/enrich_program_info.js   Node.js script: reads gefen_metadata.json,
+                                   merges enriched fields into data.js program_info.
+
+2.5  QA/TEST SCRIPTS
+---------------------
+  qa_test.js          Simulates browser logic for concept detection
+  qa_gefen.js         Inspects gefen_metadata.json structure/stats
+  qa_enrichment.js    Validates enrichment results in data.js
+
+
+3.  DATA STRUCTURE DETAIL — THE DATA OBJECT (data.js)
+=====================================================
+
+const DATA = {
+
+  "rankings": [                     // Array of ~20 city ranking entries
+    {
+      "city":                       // Hebrew city name ("חיפה")
+      "protocol_key":               // English key ("HAIFA")
+      "evidence_score":             // Combined score (0-100)
+      "rank":                       // Position in ranking
+      "education_pillar_score":     // Education pillar (0-100)
+      "proven_programs_count":      // Number of proven-problematic programs
+      "proven_budget":              // Total budget of proven programs (NIS)
+      "proven_budget_pct":          // % of total edu budget
+      "total_edu_budget":           // Total education budget
+      "proven_programs": [          // Array of program objects
+        {
+          "name":                   // Program name (Hebrew)
+          "org":                    // Operating organization name
+          "org_key":                // Key into RESEARCH_ORGS.orgs{} (or "")
+          "tier":                   // "A" (human reviewed) or "B" (org-inherited)
+          "rating":                 // 1-5 risk rating
+          "budget":                 // Budget in NIS
+          "deployments":            // Number of school deployments
+          "source":                 // Source of the rating
+        }, ...
+      ],
+      "protocol_pillar_score":      // Protocol pillar (0-100)
+      "verified_decisions":         // Number of verified protocol findings
+      "protocol_weighted_sum":      // Weighted sum of findings
+      "protocol_findings_ids": [],  // IDs into PROTOCOL_FINDINGS.findings[]
+      "news_pillar_score":          // News pillar (0-100)
+      "strong_news_actions":        // Count of strong news signals
+      "news_actions_detail": [],    // Array of {title, link, source, published, evidence}
+      "exposure_score":             // Legacy/alternate exposure score
+    }, ...
+  ],
+
+  "protocol_details": {             // Keyed by lowercase city key ("ariel", "BEER_SHEVA", ...)
+    "<city>": {
+      "pole_a_details": {           // Jewish/Zionist identity keyword counts
+        "jewish_heritage": {},
+        "zionist_national": {},
+        "holidays_memory": {},
+        "tradition_family": {},
+        "security_resilience": {}
+      },
+      "pole_b_details": {           // Progressive/critical keyword counts
+        "level_1_subtle": {},
+        "level_3_critical_pedagogy": {},
+        "analytical_framework": {}
+      },
+      "red_flag_details": {}        // Institutional capture indicators
+    }
+  },
+
+  "worst_programs": {               // Keyed by Hebrew city name
+    "<city_he>": [                  // Array of worst program deployments
+      {
+        "id":                       // Gefen program_number (string)
+        "name":                     // Program name
+        "rating":                   // 1-5 risk rating
+        "budget":                   // Budget for this deployment
+        "institution":              // School/institution name + ID
+        "source":                   // "human_tzvi", "org_inherited:...", etc.
+        "research_desc":            // Research description
+        "research_score":           // Research risk score
+        "research_notes":           // Agent scoring notes
+      }, ...
+    ]
+  },
+
+  "program_info": {                 // Keyed by Gefen program_number (string)
+    "<program_number>": {
+      "name":                       // Program name
+      "org":                        // Organization name
+      "field":                      // Category ("חברתי - ערכי", "לימודי", etc.)
+      "summary":                    // Gefen catalog description (truncated)
+      "schools":                    // Total school count
+      "num_cities":                 // Cities deployed in
+      "research_desc":              // Human/AI research description
+      "research_score":             // Consensus risk score
+      "research_notes":             // Agent scoring notes
+      // --- Enriched fields (from gefen_metadata.json via enrich script): ---
+      "gefen_description":          // Full Gemini-generated summary
+      "website_url":                // Organization website URL
+      "gemini_risk_score":          // AI risk assessment (1-5)
+      "gemini_risk_justification":  // AI risk reasoning
+      "ideology_markers": [],       // [{level, text}] high/medium/low
+      "funding_signals": [],        // Array of funding source strings
+      "partnerships": [],           // Array of partnership strings
+      "gemini_evidence": [],        // Array of evidence citations
+      "gemini_sources": [],         // [{title, url}]
+      "key_people": []              // [{name, role, suspicion}]
+    }
+  }
+};
+
+
+4.  DATA LINKAGE MAP
+=====================
+
+4.1  PRIMARY KEY RELATIONSHIPS
+------------------------------
+
+     gefen_metadata.json                data.js
+    +-------------------+      +----------------------------+
+    | program_number  ----+--->| program_info[program_number]|
+    | program_name      |  |   | worst_programs[city][].id   |
+    | gemini_summary    |  |   | rankings[].proven_programs  |
+    | gemini_analysis   |  |   +----------------------------+
+    | key_people        |  |
+    | links_json        |  |         suspicious_concepts.js
+    +-------------------+  |   +----------------------------+
+                           +-->| program_concepts[prog_id]  |
+                               +----------------------------+
+                           |
+                           |         research_data.js
+                           |   +----------------------------+
+                           +-->| program_cluster_map[prog_id]|
+                               | program_name_patterns{}     |
+                               +----------------------------+
+
+4.2  ORGANIZATION LINKAGES
+--------------------------
+
+  DATA.rankings[].proven_programs[].org_key
+       |
+       +--> RESEARCH_ORGS.orgs[org_key]          (deep org profile)
+       |
+       +--> RESEARCH_ORGS.city_orgs[city_he]     (list of org_keys per city)
+
+  DATA.rankings[].proven_programs[].org  (Hebrew name)
+       |
+       +--> findOrgProfile(orgName)               (fuzzy match in RESEARCH_ORGS)
+       +--> findOrgReport(orgName)                 (finds report_url)
+
+4.3  CITY LINKAGES
+------------------
+
+  DATA.rankings[].city            (Hebrew: "חיפה")
+       |
+       +--> DATA.worst_programs["חיפה"]           (worst programs for city)
+       +--> RESEARCH_ORGS.city_orgs["חיפה"]       (investigated orgs in city)
+
+  DATA.rankings[].protocol_key    (English: "HAIFA")
+       |
+       +--> DATA.protocol_details["HAIFA"]         (keyword breakdown)
+       +--> PROTOCOLS["HAIFA"]                     (raw protocol texts)
+       +--> PROTOCOL_FINDINGS.findings[].city       (protocol findings)
+       +--> data/news/HAIFA.json                   (news articles)
+
+4.4  CLUSTER LINKAGES
+---------------------
+
+  RESEARCH.program_cluster_map[program_number] --> cluster_id
+  RESEARCH.program_name_patterns[name_fragment] --> cluster_id
+  RESEARCH.clusters[cluster_id]
+       |
+       +--> .orgs[]              (list of org names in cluster)
+       +--> .report_url          (link to research/*.html)
+
+4.5  CONCEPT LINKAGES
+---------------------
+
+  SUSPICIOUS_CONCEPTS.program_concepts[program_number] --> concept_id[]
+  SUSPICIOUS_CONCEPTS.keyword_rules[].pattern          --> concept_id (regex fallback)
+  SUSPICIOUS_CONCEPTS.concepts[concept_id]
+       |
+       +--> .evidence[]          (source citations)
+       +--> .rosetta_url         (external progressive-rosetta-stone site)
+       +--> .research_url        (external research page)
+
+4.6  PROTOCOL FINDINGS LINKAGES
+-------------------------------
+
+  DATA.rankings[].protocol_findings_ids[]  --> PROTOCOL_FINDINGS.findings[].id
+  PROTOCOL_FINDINGS.findings[].city        --> matches DATA.rankings[].protocol_key
+
+
+5.  DATA FLOW DIAGRAMS
+=======================
+
+5.1  ENRICHMENT PIPELINE
+-------------------------
+
+  +---------------------+
+  | Gefen Marketplace   |  (Ministry of Education catalog)
+  | apps.education.gov  |
+  +----------+----------+
+             |
+             | (scraped/exported)
+             v
+  +---------------------+
+  | gefen_metadata.json |  ~2M tokens, all programs with raw
+  | (data/)             |  descriptions, gemini_*, key_people
+  +----------+----------+
+             |
+             | node scripts/enrich_program_info.js
+             |   - matches by program_number
+             |   - extracts: gemini_summary, gemini_analysis,
+             |     key_people, links_json, ideology_markers,
+             |     funding_signals, partnerships, evidence
+             v
+  +---------------------+
+  | data.js             |  program_info{} section updated
+  | (project root)      |  with enriched fields
+  +---------------------+
+
+
+5.2  FULL DATA ASSEMBLY
+------------------------
+
+  +-----------------------+     +--------------------+     +------------------+
+  | gefen_metadata.json   |     | manual_metadata.json|    | merged_city_     |
+  | (raw Gefen catalog)   |     | (manual ratings DB) |    | ranking.json     |
+  +-----------+-----------+     +---------+----------+     +--------+---------+
+              |                           |                         |
+              |  enrich script            |  manual curation        |  pre-computed
+              v                           v                         v
+  +-----------------------------------------------------------------------+
+  |                         data.js (const DATA)                          |
+  |  .rankings[]    .protocol_details{}    .worst_programs{}              |
+  |  .program_info{} (enriched)                                          |
+  +-----------------------------------------------------------------------+
+              ^                           ^
+              |                           |
+  +-----------+-----------+     +---------+----------+
+  | program_lookup.json   |     | city_details.json  |
+  | programs_subset.json  |     | (protocol keyword  |
+  | (Gefen subsets)       |     |  breakdowns)       |
+  +-----------------------+     +--------------------+
+
+  +-------------------+     +--------------------+     +-------------------+
+  | research_data.js  |     | research_orgs.js   |     | protocols_data.js |
+  | (RESEARCH)        |     | (RESEARCH_ORGS)    |     | (PROTOCOLS)       |
+  +-------------------+     +--------------------+     +-------------------+
+              |                      |                          |
+              +-------- loaded at runtime by index.html --------+
+              |                      |                          |
+  +-------------------+     +--------------------+
+  | suspicious_       |     | protocol_findings  |
+  | concepts.js       |     | .js                |
+  +-------------------+     +--------------------+
+
+
+6.  RENDERING MAP — WHAT RENDERS WHERE
+=======================================
+
+6.1  TAB: "רקע מחקרי" (Research Background) — tab-background
+-------------------------------------------------------------
+  HTML lines: 826-1093
+  Static content. No dynamic rendering functions.
+  Contains methodology explanation, scoring criteria, links to
+  external research sites.
+
+6.2  TAB: "דירוג ראיות" (Evidence Ranking) — tab-ranking [DEFAULT]
+-------------------------------------------------------------------
+  HTML lines: 1094-1163
+  Render function: render() (line 2405)
+    -> reads DATA.rankings[]
+    -> sorts via sortEntries()
+    -> builds ranking table rows
+    -> each row clickable -> toggleCity(idx)
+       -> buildDetailPanel(entry) (line 1984)
+          Reads from:
+            - DATA.rankings[idx] (scores, budgets)
+            - DATA.protocol_details[protocol_key] (keyword pills)
+            - PROTOCOL_FINDINGS.findings[] (verified findings)
+            - RESEARCH_ORGS.city_orgs[city] + RESEARCH_ORGS.orgs[] (org panels)
+            - entry.proven_programs[] -> buildProgramCard(prog)
+              -> DATA.program_info[prog.id] (enriched detail)
+              -> detectConcepts(prog, info) -> SUSPICIOUS_CONCEPTS
+              -> findCluster(prog) -> RESEARCH.clusters[]
+              -> buildSuspicionDossier() (concept evidence popups)
+              -> findOrgProfile()/findOrgReport() -> RESEARCH_ORGS
+            - entry.news_actions_detail[] (news signal list)
+            - loadNewsArticles(cityKey) -> fetches data/news/{KEY}.json
+
+  Helper functions used:
+    filterTable(), sortEntries(), updateSortUI(), scoreColor(),
+    evidenceColor(), ratingClass(), riskBadgeClass(),
+    buildPieChart(), buildPoleBar(), buildKeywordPills()
+
+6.3  TAB: "תוכניות חינוך" (Education Programs) — tab-education
+----------------------------------------------------------------
+  HTML lines: 1164-1178
+  Render function: renderEducation() (line 2438)
+    -> reads DATA.worst_programs{}
+    -> for each city, lists worst programs with research_desc,
+       research_score, budget
+  Filter: filterEducation() (line 2482)
+  Also calls: renderHeroStats() (line 2760)
+
+6.4  TAB: "פרוטוקולים" (Protocols) — tab-protocols
+----------------------------------------------------
+  HTML lines: 1179-1236
+  Render function: renderProtocols() (line 2574)
+    -> reads DATA.protocol_details{}
+    -> builds keyword category bars per city
+  Also: renderProtocolBrowser() (line 2820)
+    -> reads PROTOCOLS{} (raw protocol texts)
+    -> showCityProtocols(cityKey) (line 2924)
+    -> toggleProtoCard() to expand/collapse
+    -> highlightKeywords() for visual emphasis
+  Also: renderFindings() (line 2492) + renderFindingsList() (line 2513)
+    -> reads PROTOCOL_FINDINGS.findings[]
+    -> groups by city, renders finding cards with quotes
+
+6.5  TAB: "דגלים אדומים" (Red Flags) — tab-redflags
+------------------------------------------------------
+  HTML lines: 1237-1333
+  Render function: renderRedFlags() (line 2644)
+    -> reads DATA.protocol_details{} (red_flag_details)
+    -> reads DATA.rankings[] (for city scores)
+    -> cross-references to PROTOCOLS{} for raw text view
+  Static content: explains institutional capture indicators
+
+6.6  TAB: "מחקר מעמיק" (Deep Research) — tab-research
+-------------------------------------------------------
+  HTML lines: 1334-1412
+  Render function: renderResearch() (line 2731)
+    -> reads RESEARCH.clusters{} from research_data.js
+    -> for each cluster: name, risk level, member orgs,
+       summary, key findings
+    -> links to research/*.html full reports
+  Also: renderHeroStats() uses RESEARCH cluster count
+
+6.7  CROSS-TAB FUNCTIONS (used across multiple tabs)
+-----------------------------------------------------
+  switchTab(tab, el)          -- line 1613, tab navigation
+  findProgramInfoByName()     -- line 1424, name-based lookup in program_info
+  detectConcepts(prog, info)  -- line 1433, concept detection (explicit + regex)
+  showConceptEvidence()       -- line 1470, popup with concept evidence
+  buildClearanceFooter()      -- line 1512, "how to clear suspicion" block
+  findOrgProfile(orgName)     -- line 1527, fuzzy match in RESEARCH_ORGS
+  buildSuspicionDossier()     -- line 1544, full concept evidence panel
+  findCluster(prog)           -- line 1725, cluster lookup in RESEARCH
+  buildResearchPanel(cluster) -- line 1739, cluster info mini-panel
+  findOrgReport(orgName)      -- line 1758, finds deep report URL
+  buildProgramCard(prog)      -- line 1815, full program card with all overlays
+  buildOrgPanel(cityName)     -- line 1925, org research panel per city
+  renderHeroStats()           -- line 2760, top-of-page stats
+
+
+7.  DATA GAPS & UNLINKED DATA
+==============================
+
+7.1  KNOWN GAPS
+---------------
+  - org_key is empty ("") for most programs in DATA.rankings[].proven_programs[].
+    Only programs whose org was investigated in deep research have an org_key.
+    This means buildProgramCard() must fall back to fuzzy name matching via
+    findOrgProfile() and findOrgReport().
+
+  - Not all programs in worst_programs{} have a matching entry in program_info{}.
+    When no match exists, the program card lacks enriched detail (gemini
+    description, ideology markers, etc.).
+
+  - SUSPICIOUS_CONCEPTS.program_concepts{} only covers ~30 programs with explicit
+    concept mappings.  The rest depend on keyword_rules[] regex fallback, which
+    only works if the program has a research_desc or gefen_description.
+
+  - RESEARCH.program_cluster_map{} only covers ~16 programs.  The rest rely on
+    program_name_patterns{} (fuzzy name matching), which can miss programs.
+
+  - protocol_findings_ids[] in rankings entries reference PROTOCOL_FINDINGS IDs,
+    but only 5 cities have findings (23 total findings out of 537 protocols
+    scanned).  10 cities have zero findings.
+
+  - data/news/{CITY_KEY}.json files exist for ~20 cities but are only loaded
+    on-demand when the user clicks "load news" in a city detail panel.
+
+7.2  UNUSED / STANDALONE DATA FILES
+------------------------------------
+  These files exist in data/ but are NOT loaded by index.html at runtime:
+
+  - data/gefen_metadata.json       -- source only, consumed by enrich script
+  - data/manual_metadata.json      -- DB export, not directly rendered
+  - data/program_lookup.json       -- reference lookup, not rendered
+  - data/programs_subset.json      -- reference subset, not rendered
+  - data/merged_city_ranking.json  -- pre-computed rankings (data.js has final version)
+  - data/city_details.json         -- protocol details (data.js has protocol_details{})
+  - data/methodology_computations.json  -- stats (rendered by data/methodology.html)
+  - data/acri_research.json        -- standalone ACRI dossier (not rendered in main site)
+  - data/research_efshar_acheret.json -- standalone dossier (not rendered in main site)
+  - data/research_lens.json        -- framework definition (rendered by data/research_lens.html)
+  - data/city_news_articles.json   -- full news corpus (news tab loads per-city JSONs instead)
+  - data/city_news_compact.json    -- compact news counts (index.json is same structure)
+
+  Effectively, the data/ folder contains both source materials for the build
+  pipeline AND standalone viewer pages.  The main site (index.html) uses only
+  the 6 .js files at the project root.
+
+7.3  POTENTIAL LINKAGE IMPROVEMENTS
+------------------------------------
+  a) Many programs in worst_programs{} lack .id values that exist in
+     program_info{}.  A normalization pass could match by name to add IDs.
+
+  b) org_key could be auto-populated for any org name that matches a
+     RESEARCH_ORGS.orgs entry (currently only ~10% have org_key set).
+
+  c) The 7 RESEARCH clusters are linked to programs via only 16 explicit
+     mappings + ~30 name patterns.  Many programs operated by cluster orgs
+     are not linked (e.g., a program by "דרור ישראל" might not match if
+     the pattern list misses its specific name).
+
+  d) SUSPICIOUS_CONCEPTS explicit mapping covers ~30 programs; there are
+     likely 50+ more programs that should have explicit concept tags based
+     on their research_desc content.
+
+  e) The news data (data/news/*.json) is loaded lazily per city. The
+     news_pillar_score and news_actions_detail in DATA.rankings are
+     pre-computed, but only 3 strong signals per city are stored in
+     rankings. The full article corpus is much larger.
+
+
+8.  ARCHITECTURE OVERVIEW (ASCII)
+==================================
+
+  +------------------------------------------------------+
+  |                    index.html                         |
+  |  (Single Page App, 6 tabs, client-side rendering)    |
+  +------+-----------+-----------+-----------+-----------+
+         |           |           |           |
+    +----+----+ +----+----+ +---+---+ +-----+-----+
+    | data.js | |research | |proto  | |suspicious |
+    | (DATA)  | |_data.js | |cols_  | |_concepts  |
+    |         | |(RESEARCH| |data.js| |.js        |
+    | 7829 L  | | 233 L)  | |(PROTO)| | 227 L    |
+    +---------+ +---------+ |636 L  | +-----------+
+                             +---+---+
+                                 |
+                          +------+------+
+                          |research_    |protocol_
+                          |orgs.js      |findings.js
+                          |(RESEARCH_   |(PROTOCOL_
+                          | ORGS,1020L) | FINDINGS,410L)
+                          +-------------+
+
+  Source pipeline:
+  ~~~~~~~~~~~~~~~~
+  Gefen Marketplace --> gefen_metadata.json
+                             |
+                             | enrich_program_info.js
+                             v
+  manual_metadata.json +--> data.js (program_info enriched)
+  merged_city_ranking  +--> data.js (rankings assembled)
+  city_details.json    +--> data.js (protocol_details)
+
+  Deep research (manual):
+  ~~~~~~~~~~~~~~~~~~~~~~~~
+  Per-org investigation --> research/deep_*.html (48 reports)
+                       --> research_orgs.js (31 org profiles)
+                       --> research_data.js (7 cluster analyses)
+
+  News pipeline:
+  ~~~~~~~~~~~~~~
+  Google News RSS --> data/city_news_articles.json (5095 articles)
+                  --> data/news/{CITY}.json (per-city)
+                  --> data/city_news_compact.json (counts)
+                  --> DATA.rankings[].news_* fields (pre-scored)
+
+  Protocol pipeline:
+  ~~~~~~~~~~~~~~~~~~
+  Municipal protocol PDFs --> keyword scanning --> protocols_data.js
+                          --> context review --> protocol_findings.js
+                          --> keyword counts --> DATA.protocol_details{}
+
+
+9.  AUXILIARY SUBSITES
+=======================
+
+  ranking-v2/                   PHP-backed admin interface for managing
+                                program ratings. Database-driven. Has its
+                                own JS (api.js, app.js, table.js, modals.js,
+                                inline-edit.js). Not connected to the main
+                                site at runtime.
+
+  gefen4/index.html             Standalone Gefen program table viewer.
+                                Separate from the main ranking site.
+
+  research/index.html           Hub page linking to all deep research reports.
+
+  data/ranking.html             Raw ranking data display page.
+  data/methodology.html         Statistical methodology display page.
+  data/research_lens.html       Research framework display page.
+  data/news/index.html          News article browser page.
+
+================================================================================
+END OF MAP
+================================================================================

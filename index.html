@@ -1825,7 +1825,8 @@
         let detailParts = [];
         if (rDesc) detailParts.push(`<div class="research-comment"><strong>תיאור מחקרי:</strong> ${rDesc}</div>`);
         if (rNotes) detailParts.push(`<div class="research-comment"><strong>הערות סוכנים:</strong> ${rNotes}</div>`);
-        if (summary) detailParts.push(`<div><strong>תקציר תוכנית:</strong> ${summary}</div>`);
+        const fullDesc = info.gefen_description || summary;
+        if (fullDesc) detailParts.push(`<div><strong>\u05ea\u05d9\u05d0\u05d5\u05e8 \u05d4\u05ea\u05db\u05e0\u05d9\u05ea \u05d1\u05d0\u05ea\u05e8 \u05d2\u05e4"\u05df:</strong> ${fullDesc}</div>`);
         const orgLink = orgReportUrl
             ? `<a href="${orgReportUrl}" target="_blank" rel="noopener" style="color:#2980b9;text-decoration:underline">${orgName || '\u2014'}</a>`
             : (orgName || '\u2014');
@@ -1834,9 +1835,51 @@
         if (info.schools) detailParts.push(`<div><strong>בתי ספר:</strong> ${info.schools} &nbsp;|&nbsp; <strong>ערים:</strong> ${info.num_cities || '\u2014'}</div>`);
         detailParts.push(`<div><strong>מקור דירוג:</strong> ${prog.source || '\u2014'}</div>`);
 
-        // Source links row
+        // Gemini risk score
+        if (info.gemini_risk_score !== undefined) {
+            const riskColor = info.gemini_risk_score >= 7 ? '#c0392b' : info.gemini_risk_score >= 4 ? '#e67e22' : '#27ae60';
+            detailParts.push(`<div><strong>\u05e6\u05d9\u05d5\u05df \u05e1\u05d9\u05db\u05d5\u05df (Gemini):</strong> <span style="color:${riskColor};font-weight:700">${info.gemini_risk_score}/10</span>${info.gemini_risk_justification ? ' \u2014 ' + info.gemini_risk_justification : ''}</div>`);
+        }
+
+        // Key people
+        if (info.key_people && info.key_people.length > 0) {
+            const peopleHtml = info.key_people.map(kp =>
+                `<li><strong>${kp.name}</strong>${kp.role ? ' (' + kp.role + ')' : ''}${kp.suspicion ? ' \u2014 <span style="color:#c0392b">' + kp.suspicion + '</span>' : ''}</li>`
+            ).join('');
+            detailParts.push(`<div><strong>\u05d0\u05e0\u05e9\u05d9 \u05de\u05e4\u05ea\u05d7:</strong><ul style="margin:4px 0">${peopleHtml}</ul></div>`);
+        }
+
+        // Ideology markers
+        if (info.ideology_markers && info.ideology_markers.length > 0) {
+            const markerHtml = info.ideology_markers.map(m => {
+                const mColor = m.level === 'high' ? '#c0392b' : m.level === 'medium' ? '#e67e22' : '#888';
+                return `<span style="display:inline-block;background:${mColor};color:#fff;padding:1px 6px;border-radius:3px;font-size:0.78em;margin:2px">${m.text}</span>`;
+            }).join('');
+            detailParts.push(`<div><strong>\u05e1\u05de\u05e0\u05d9\u05dd \u05d0\u05d9\u05d3\u05d9\u05d0\u05d5\u05dc\u05d5\u05d2\u05d9\u05d9\u05dd (Gemini):</strong><div style="margin-top:4px">${markerHtml}</div></div>`);
+        }
+
+        // Funding signals
+        if (info.funding_signals && info.funding_signals.length > 0) {
+            const fundHtml = info.funding_signals.map(f => `<li>${f}</li>`).join('');
+            detailParts.push(`<div><strong>\u05d0\u05d9\u05ea\u05d5\u05ea\u05d9 \u05de\u05d9\u05de\u05d5\u05df:</strong><ul style="margin:4px 0">${fundHtml}</ul></div>`);
+        }
+
+        // Gemini evidence & sources
+        if (info.gemini_evidence && info.gemini_evidence.length > 0) {
+            const evHtml = info.gemini_evidence.map(e => `<li>${e}</li>`).join('');
+            detailParts.push(`<div><strong>\u05e8\u05d0\u05d9\u05d5\u05ea (Gemini):</strong><ul style="margin:4px 0">${evHtml}</ul></div>`);
+        }
+        if (info.gemini_sources && info.gemini_sources.length > 0) {
+            const srcHtml = info.gemini_sources.map(s =>
+                s.url ? `<li><a href="${s.url}" target="_blank" rel="noopener" style="color:#2a5a8a">${s.title || s.url}</a></li>`
+                       : `<li>${s.title}</li>`
+            ).join('');
+            detailParts.push(`<div><strong>\u05de\u05e7\u05d5\u05e8\u05d5\u05ea (Gemini):</strong><ul style="margin:4px 0">${srcHtml}</ul></div>`);
+        }
+
+        // Source links row — use website_url instead of dead Gefen link
         let sourceLinks = [];
-        if (prog.id) sourceLinks.push(`<a href="https://apps.education.gov.il/gefen/ProgramView.aspx?ProgramId=${prog.id}" target="_blank" rel="noopener" style="color:#2a5a8a">כרטיס גפ"ן #${prog.id}</a>`);
+        if (info.website_url) sourceLinks.push(`<a href="${info.website_url}" target="_blank" rel="noopener" style="color:#2a5a8a">\u05d0\u05ea\u05e8 \u05d4\u05ea\u05db\u05e0\u05d9\u05ea</a>`);
         if (orgName) sourceLinks.push(`<a href="https://www.guidestar.org.il/search?q=${encodeURIComponent(orgName)}" target="_blank" rel="noopener" style="color:#2a5a8a">חיפוש GuideStar</a>`);
         if (orgReportUrl) sourceLinks.push(`<a href="${orgReportUrl}" target="_blank" rel="noopener" style="color:#c0392b;font-weight:bold">דוח מחקר מעמיק</a>`);
         if (sourceLinks.length) detailParts.push(`<div style="margin-top:8px;padding-top:8px;border-top:1px solid #eee;font-size:0.85em;"><strong>מקורות:</strong> ${sourceLinks.join(' | ')}</div>`);
@@ -1962,15 +2005,58 @@
                 // Build detail — EVERY program is clickable
                 let pParts = [];
 
-                // Program info
-                if (pInfo.summary) pParts.push(`<div style="font-size:0.84em;color:#444;margin-bottom:6px"><strong>\u05ea\u05e7\u05e6\u05d9\u05e8:</strong> ${pInfo.summary}</div>`);
+                // Program description — full text from Gefen, never truncated
+                const pDesc = pInfo.gefen_description || pInfo.summary || '';
+                if (pDesc) pParts.push(`<div style="font-size:0.84em;color:#444;margin-bottom:6px"><strong>\u05ea\u05d9\u05d0\u05d5\u05e8 \u05d4\u05ea\u05db\u05e0\u05d9\u05ea \u05d1\u05d0\u05ea\u05e8 \u05d2\u05e4"\u05df:</strong> ${pDesc}</div>`);
                 if (pInfo.research_desc) pParts.push(`<div class="research-comment"><strong>\u05ea\u05d9\u05d0\u05d5\u05e8 \u05de\u05d7\u05e7\u05e8\u05d9:</strong> ${pInfo.research_desc}</div>`);
                 if (pInfo.field) pParts.push(`<div style="font-size:0.84em;color:#444"><strong>\u05ea\u05d7\u05d5\u05dd:</strong> ${pInfo.field}</div>`);
                 if (pInfo.schools) pParts.push(`<div style="font-size:0.84em;color:#444"><strong>\u05d1\u05ea\u05d9 \u05e1\u05e4\u05e8:</strong> ${pInfo.schools} | <strong>\u05e2\u05e8\u05d9\u05dd:</strong> ${pInfo.num_cities || '\u2014'}</div>`);
 
-                // Source links
+                // Gemini risk score
+                if (pInfo.gemini_risk_score !== undefined) {
+                    const riskColor = pInfo.gemini_risk_score >= 7 ? '#c0392b' : pInfo.gemini_risk_score >= 4 ? '#e67e22' : '#27ae60';
+                    pParts.push(`<div style="font-size:0.84em;margin:4px 0"><strong>\u05e6\u05d9\u05d5\u05df \u05e1\u05d9\u05db\u05d5\u05df (Gemini):</strong> <span style="color:${riskColor};font-weight:700">${pInfo.gemini_risk_score}/10</span>${pInfo.gemini_risk_justification ? ` \u2014 ${pInfo.gemini_risk_justification}` : ''}</div>`);
+                }
+
+                // Key people
+                if (pInfo.key_people && pInfo.key_people.length > 0) {
+                    const peopleHtml = pInfo.key_people.map(p2 =>
+                        `<li><strong>${p2.name}</strong>${p2.role ? ' (' + p2.role + ')' : ''}${p2.suspicion ? ' \u2014 <span style="color:#c0392b">' + p2.suspicion + '</span>' : ''}</li>`
+                    ).join('');
+                    pParts.push(`<div style="font-size:0.84em;margin:4px 0"><strong>\u05d0\u05e0\u05e9\u05d9 \u05de\u05e4\u05ea\u05d7:</strong><ul style="margin:4px 0">${peopleHtml}</ul></div>`);
+                }
+
+                // Ideology markers from Gemini
+                if (pInfo.ideology_markers && pInfo.ideology_markers.length > 0) {
+                    const markerHtml = pInfo.ideology_markers.map(m => {
+                        const mColor = m.level === 'high' ? '#c0392b' : m.level === 'medium' ? '#e67e22' : '#888';
+                        return `<span style="display:inline-block;background:${mColor};color:#fff;padding:1px 6px;border-radius:3px;font-size:0.78em;margin:2px">${m.text}</span>`;
+                    }).join('');
+                    pParts.push(`<div style="font-size:0.84em;margin:4px 0"><strong>\u05e1\u05de\u05e0\u05d9\u05dd \u05d0\u05d9\u05d3\u05d9\u05d0\u05d5\u05dc\u05d5\u05d2\u05d9\u05d9\u05dd (Gemini):</strong><div style="margin-top:4px">${markerHtml}</div></div>`);
+                }
+
+                // Funding signals
+                if (pInfo.funding_signals && pInfo.funding_signals.length > 0) {
+                    const fundHtml = pInfo.funding_signals.map(f => `<li>${f}</li>`).join('');
+                    pParts.push(`<div style="font-size:0.84em;margin:4px 0"><strong>\u05d0\u05d9\u05ea\u05d5\u05ea\u05d9 \u05de\u05d9\u05de\u05d5\u05df:</strong><ul style="margin:4px 0">${fundHtml}</ul></div>`);
+                }
+
+                // Gemini evidence & sources
+                if (pInfo.gemini_evidence && pInfo.gemini_evidence.length > 0) {
+                    const evHtml = pInfo.gemini_evidence.map(e => `<li>${e}</li>`).join('');
+                    pParts.push(`<div style="font-size:0.84em;margin:4px 0"><strong>\u05e8\u05d0\u05d9\u05d5\u05ea (Gemini):</strong><ul style="margin:4px 0">${evHtml}</ul></div>`);
+                }
+                if (pInfo.gemini_sources && pInfo.gemini_sources.length > 0) {
+                    const srcHtml = pInfo.gemini_sources.map(s =>
+                        s.url ? `<li><a href="${s.url}" target="_blank" rel="noopener" style="color:#2a5a8a" onclick="event.stopPropagation()">${s.title || s.url}</a></li>`
+                               : `<li>${s.title}</li>`
+                    ).join('');
+                    pParts.push(`<div style="font-size:0.84em;margin:4px 0"><strong>\u05de\u05e7\u05d5\u05e8\u05d5\u05ea (Gemini):</strong><ul style="margin:4px 0">${srcHtml}</ul></div>`);
+                }
+
+                // Source links — use website_url instead of dead Gefen link
                 let pLinks = [];
-                if (pInfo.id) pLinks.push(`<a href="https://apps.education.gov.il/gefen/ProgramView.aspx?ProgramId=${pInfo.id}" target="_blank" rel="noopener" style="color:#2a5a8a" onclick="event.stopPropagation()">\u05db\u05e8\u05d8\u05d9\u05e1 \u05d2\u05e4"\u05df #${pInfo.id}</a>`);
+                if (pInfo.website_url) pLinks.push(`<a href="${pInfo.website_url}" target="_blank" rel="noopener" style="color:#2a5a8a" onclick="event.stopPropagation()">\u05d0\u05ea\u05e8 \u05d4\u05ea\u05db\u05e0\u05d9\u05ea</a>`);
                 const pOrgReport = findOrgReport(pOrgName) || findOrgReport(p.name || '');
                 if (pOrgReport) pLinks.push(`<a href="${pOrgReport}" target="_blank" rel="noopener" style="color:#c0392b;font-weight:bold" onclick="event.stopPropagation()">\u05d3\u05d5\u05d7 \u05de\u05d7\u05e7\u05e8 \u05de\u05e2\u05de\u05d9\u05e7</a>`);
                 if (pOrgName) pLinks.push(`<a href="https://www.guidestar.org.il/search?q=${encodeURIComponent(pOrgName)}" target="_blank" rel="noopener" style="color:#2a5a8a" onclick="event.stopPropagation()">GuideStar</a>`);
