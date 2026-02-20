@@ -16,7 +16,7 @@ const DATA = {
       "total_edu_budget": 16771664.299999993,
       "edu_deployments": 1411,
       "subversive_deployments": 171,
-      "combined_score": 44.91,
+      "combined_score": 51.13,
       "data_sources": "both",
       "rank": 1,
       "fp_correction_pending": true,
@@ -24,118 +24,63 @@ const DATA = {
       "religious_pct": 9.64,
       "eligible_voters": 447576,
       "turnout_pct": 59.62,
-      "news_score": 69.52,
-      "news_relevant": 146,
+      "news_score": 63.64,
+      "news_relevant": 14,
       "news_topics": {
-        "lgbt_municipal": 60,
-        "gender_equality": 20,
-        "sustainability": 34,
-        "social_justice": 13,
-        "diversity_inclusion": 19,
-        "education_progressive": 0
-      }
-    },
-    {
-      "city": "באר שבע",
-      "protocol_key": "BEER_SHEVA",
-      "pole_a": 6.52,
-      "pole_b_raw": 0.34,
-      "pole_b": 0.0,
-      "red_flag": 0.0,
-      "ab_ratio": 652.0,
-      "protocol_files_scanned": 97,
-      "protocol_coverage": "97/1027",
-      "exposure_score": 30.19,
-      "subversive_ratio": 6.37,
-      "subversive_budget": 1311850.63,
-      "total_edu_budget": 20596019.02,
-      "edu_deployments": 1294,
-      "subversive_deployments": 78,
-      "combined_score": 30.35,
-      "data_sources": "both",
-      "rank": 5,
-      "progressive_pct": 14.89,
-      "religious_pct": 26.09,
-      "eligible_voters": 164728,
-      "turnout_pct": 61.31,
-      "news_score": 83.81,
-      "news_relevant": 176,
-      "news_topics": {
-        "lgbt_municipal": 54,
-        "gender_equality": 38,
-        "sustainability": 40,
-        "social_justice": 16,
-        "diversity_inclusion": 27,
-        "education_progressive": 1
-      }
-    },
-    {
-      "city": "כרמיאל",
-      "protocol_key": "KARMIEL",
-      "pole_a": 4.29,
-      "pole_b_raw": 0.58,
-      "pole_b": 0.0,
-      "red_flag": 0.04,
-      "ab_ratio": 429.0,
-      "protocol_files_scanned": 49,
-      "protocol_coverage": "49/162",
-      "exposure_score": 75.14,
-      "subversive_ratio": 22.06,
-      "subversive_budget": 910073.38,
-      "total_edu_budget": 4125756.1699999995,
-      "edu_deployments": 250,
-      "subversive_deployments": 44,
-      "combined_score": 40.1,
-      "data_sources": "both",
-      "rank": 2,
-      "progressive_pct": 28.06,
-      "religious_pct": 15.04,
-      "eligible_voters": 42065,
-      "turnout_pct": 57.13,
-      "news_score": 11.43,
-      "news_relevant": 24,
-      "news_topics": {
-        "lgbt_municipal": 14,
-        "gender_equality": 2,
-        "sustainability": 8,
+        "gender_equality": 4,
+        "lgbt": 4,
+        "sustainability": 4,
         "social_justice": 0,
-        "diversity_inclusion": 0,
-        "education_progressive": 0
-      }
-    },
-    {
-      "city": "חיפה",
-      "protocol_key": "HAIFA",
-      "pole_a": 4.06,
-      "pole_b_raw": 0.44,
-      "pole_b": 0.07,
-      "red_flag": 0.0,
-      "ab_ratio": 58.0,
-      "protocol_files_scanned": 93,
-      "protocol_coverage": "93/1215",
-      "exposure_score": 38.12,
-      "subversive_ratio": 10.96,
-      "subversive_budget": 2023012.99,
-      "total_edu_budget": 18456085.030000005,
-      "edu_deployments": 1317,
-      "subversive_deployments": 131,
-      "combined_score": 37.62,
-      "data_sources": "both",
-      "rank": 3,
-      "progressive_pct": 35.67,
-      "religious_pct": 13.22,
-      "eligible_voters": 253292,
-      "turnout_pct": 55.53,
-      "news_score": 100.0,
-      "news_relevant": 210,
-      "news_topics": {
-        "lgbt_municipal": 77,
-        "gender_equality": 38,
-        "sustainability": 36,
-        "social_justice": 23,
-        "diversity_inclusion": 36,
-        "education_progressive": 0
-      }
+        "progressive_education": 0,
+        "diversity": 0
+      },
+      "news_actions_count": 14,
+      "news_coop_count": 0,
+      "news_actions": {
+        "gender_equality": 4,
+        "lgbt": 4,
+        "sustainability": 4,
+        "social_justice": 0,
+        "progressive_education": 0,
+        "diversity": 0
+      },
+      "news_top_actions": [
+        {
+          "title": "עיריית תל אביב דורשת שוויון מגדרי בבתי הכנסת; השר קרעי: ״רשעים ארורים״ - הידברות",
+          "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBPTU1PdmZxSVhmMk9xclV5LWJWUm10LVZzX3pkYXdBV3VGVl9iNHBFZnBHelhaX1Q5UE1HYWV4ODhiRFhuQzRaMXYzNDNvZUF3VU5F?oc=5",
+          "source": "הידברות",
+          "published": "Sun, 24 Aug 2025 07:00:00 GMT",
+          "evidence": "anchor+domain:מגדר"
+        },
+        {
+          "title": "לרגל \"יום הנראות הטרנסית\": עיריית תל אביב השיקה תאי שירותים רב-מגדריים - וואלה חדשות",
+          "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBOMDJiRjBpTWxpVnl3aEVPamdPaWFvUjJ0Tk96Mi1HVFZHVjJJT3U0UWZtdWV4MzFqUXNVRk9NV0RIODVQZGVFVUhPcGo5QQ?oc=5",
+          "source": "וואלה חדשות",
+          "published": "Sun, 31 Mar 2024 07:00:00 GMT",
+          "evidence": "anchor+verb:השיקה+domain:מגדר"
+        },
+        {
+          "title": "עיריית תל אביב-יפו מציינת את יום המאבק לאלימות כלפי נשים - מעריב",
+          "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBVUEtzTGlJLUlVSWcxZmlySWlQckJHVzJKa0JxcC1HN09SSVJLUnU2VnJQLVBrRFhFWWhCQ1E4R0FMRG1FVXFlSFo2SUlqM2Vnd1RoQXdFUGxqRDhETnBEU3dRWWZIRzFaOGc?oc=5",
+          "source": "מעריב",
+          "published": "Thu, 24 Nov 2022 08:00:00 GMT",
+          "evidence": "anchor+domain:אלימות כלפי נשים"
+        },
+        {
+          "title": "עיריית תל אביב-יפו משיקה את \"משווה ומעלה\" בבית מרים: תערוכת קבע חדשה הבוחנת זהות מגדרית וסיורים מודרכים - BE106",
+          "link": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE9hNmN0X0JpbjltYlFlMlFnY3lEcUZ3NVFsbm5ReWJ2cDF3bTlUMWgwVlBNTmdQNWpiR3dMTUhRVnpEQkR6M1Zr?oc=5",
+          "source": "BE106",
+          "published": "Mon, 08 Dec 2025 08:00:00 GMT",
+          "evidence": "anchor+domain:מגדר"
+        },
+        {
+          "title": "מתי זוגות להט\"ב יוכלו להירשם בעיריית תל אביב? - mako",
+          "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBETWNHc0hoWmFDUTlQc0dsQml1UVRzU1V1aWZYNmM2R19KcG1lYU5FWWQza05NQ0JRRVN3TFo0NHRmY0J0T3RncW4xT25oOWNuTVhRN0x1RDhiLXIyazFaelcxNkZNbE1QRzhtVlEwaTREcHZjbGVBcVVn?oc=5",
+          "source": "mako",
+          "published": "Sun, 20 Dec 2020 08:00:00 GMT",
+          "evidence": "anchor+domain:להט\"ב"
+        }
+      ]
     },
     {
       "city": "רמת השרון",
@@ -153,24 +98,183 @@ const DATA = {
       "total_edu_budget": 4612262.39,
       "edu_deployments": 318,
       "subversive_deployments": 54,
-      "combined_score": 31.97,
+      "combined_score": 43.85,
       "data_sources": "both",
-      "rank": 4,
+      "rank": 2,
       "fp_correction_pending": true,
       "progressive_pct": 57.88,
       "religious_pct": 8.25,
       "eligible_voters": 38282,
       "turnout_pct": 71.42,
-      "news_score": 14.76,
-      "news_relevant": 31,
+      "news_score": 13.64,
+      "news_relevant": 3,
       "news_topics": {
-        "lgbt_municipal": 14,
         "gender_equality": 0,
-        "sustainability": 15,
+        "lgbt": 1,
+        "sustainability": 1,
+        "social_justice": 0,
+        "progressive_education": 0,
+        "diversity": 1
+      },
+      "news_actions_count": 3,
+      "news_coop_count": 0,
+      "news_actions": {
+        "gender_equality": 0,
+        "lgbt": 1,
+        "sustainability": 1,
+        "social_justice": 0,
+        "progressive_education": 0,
+        "diversity": 1
+      },
+      "news_top_actions": [
+        {
+          "title": "חזון העיר רמת השרון לקהילה הגאה - אתר עיריית רמת השרון",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNaVpXT045WkgtQk9LNDFYSVUzbzdhZkhkXzM4b250Y0ptajdqZXRRNy1uMTVhR3A2RUJGNGNZZEkzSFhwOXI1aVpzRUR5WE5LNk9PRktJaFdCdHl3V3dFTUVhQUR3LVNCSkdCUkRMSGROZkdyajdBUUhWWnpFR3hOWDgwaGJsS3IzY3ppamUtSkk4NGxHYkpxd3dac0psUWRybDRBaFNXNW9JNHB2WUctQXpMSVU2YkF1TFE?oc=5",
+          "source": "אתר עיריית רמת השרון",
+          "published": "Tue, 02 Apr 2024 10:48:10 GMT",
+          "evidence": "anchor+domain:גאה"
+        },
+        {
+          "title": "חינוך סביבתי וקיימות - אתר עיריית רמת השרון",
+          "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9NRFN0VjRCbUNRYmVYZEI5dDVhRzM0eTQ0VWF4R1FkRndtRHFDdFRCNXR3M1hKTDFRNzVmZ0I1R0FKSWJ5Qmo2WGlPb0Z6eFlKQmpDX3ZDRWU4b0REa0Y3WGU2YTBoX0JXU01PQ2M1WC11bWF0N2VZ?oc=5",
+          "source": "אתר עיריית רמת השרון",
+          "published": "Thu, 09 Aug 2018 07:15:33 GMT",
+          "evidence": "anchor+domain:קיימות"
+        },
+        {
+          "title": "חזון העיר רמת השרון לקהילה הגאה - אתר עיריית רמת השרון",
+          "link": "https://news.google.com/rss/articles/CBMingJBVV95cUxNc1ZkeVNIdm9qMDVPTlpNNmZER3ZyaWo0Y21yczVnbzd5bVgyRnNhTTlIRURnZDVkVVpHeG0yZ185TnlpUWRhNjByalF4TmVXcU5xMWlIdHVvaVZpLXktRVN5THNxUDNUQkNmSkx1VXBQS1dHR05IWVlHUGZCZUF2VW1qVExqSG5oa05CZ18xZHZkdExtYkMybTFsMXM5VEswWFlLcjhkUUluWXNyaEtOYVhqWlByTEZLMWhIZGRlRWJUQ2lJbUtJdVNrLXlNVUhmb3NFcFEwRF9sTmFxVDZrYUp2dllsMFFwTkZfSkFVQzR6dG16d2FMS3lvN1ktS2d6QUc4akhOd015Qmh4NDJXNWE3eEhUY1dwX2JRUmZB?oc=5",
+          "source": "אתר עיריית רמת השרון",
+          "published": "Wed, 19 Nov 2025 11:22:04 GMT",
+          "evidence": "anchor+domain:גאה"
+        }
+      ]
+    },
+    {
+      "city": "חיפה",
+      "protocol_key": "HAIFA",
+      "pole_a": 4.06,
+      "pole_b_raw": 0.44,
+      "pole_b": 0.07,
+      "red_flag": 0.0,
+      "ab_ratio": 58.0,
+      "protocol_files_scanned": 93,
+      "protocol_coverage": "93/1215",
+      "exposure_score": 38.12,
+      "subversive_ratio": 10.96,
+      "subversive_budget": 2023012.99,
+      "total_edu_budget": 18456085.030000005,
+      "edu_deployments": 1317,
+      "subversive_deployments": 131,
+      "combined_score": 40.58,
+      "data_sources": "both",
+      "rank": 3,
+      "progressive_pct": 35.67,
+      "religious_pct": 13.22,
+      "eligible_voters": 253292,
+      "turnout_pct": 55.53,
+      "news_score": 100.0,
+      "news_relevant": 22,
+      "news_topics": {
+        "gender_equality": 5,
+        "lgbt": 11,
+        "sustainability": 4,
         "social_justice": 1,
-        "diversity_inclusion": 1,
-        "education_progressive": 0
-      }
+        "progressive_education": 0,
+        "diversity": 0
+      },
+      "news_actions_count": 22,
+      "news_coop_count": 0,
+      "news_actions": {
+        "gender_equality": 5,
+        "lgbt": 11,
+        "sustainability": 4,
+        "social_justice": 1,
+        "progressive_education": 0,
+        "diversity": 0
+      },
+      "news_top_actions": [
+        {
+          "title": "עיריית חיפה הכריזה על הקמת פורום עירוני לקידום שוויון מגדרי - עיריית חיפה",
+          "link": "https://news.google.com/rss/articles/CBMi0wJBVV95cUxQTGNCU3JleVpqU1dEMnJCbGRYTW0xWE9jUjRNT1J6QXhRaGcxVGN5b1JIek1YSjYyR2pqZWZabjEtUnY0anJ4SGppWGJuV2dUQjdjZ0lHZlU0dWZ4d2k2WFNSME9sbGFxTHZncXhVLTNjdmNGdGM5dTU2ZGhjQzNsMklkekJoeTVuRGN1S3MtZ0lBaVdzSi1vUXBqUi1NdEh2R3gydHpsTmpFdGUxTHM3TkpNNm1KZXExc0xja2FoTEdvOWl3MmxwWnNmdzB5ZEtjc1doQ3B2bWdUbExIWHp3akdTY2VvV3J5VzBJa0ZEUk13SUQyZ2h4RjZmUk1lcEY5TnpfdXdsUmE3azdqM3lpRnhkc2UwaHE2MzE5dFRpMFB3eEsyUVJJcktKUlBlQ1NNVno3Y0t2c3B3ckNuTjQ3ZEhybzJ3M0hyUmIwSFU0M3ZGMUU?oc=5",
+          "source": "עיריית חיפה",
+          "published": "Mon, 08 Sep 2025 07:00:00 GMT",
+          "evidence": "anchor+verb:הכריזה+domain:מגדר"
+        },
+        {
+          "title": "עיריית חיפה מובילה קידום חינוך לשוויון מגדרי בעיר - עיריית חיפה",
+          "link": "https://news.google.com/rss/articles/CBMi0gJBVV95cUxNYThzeVl6LWx4bkRiQzQ3UEJ4Z0xnT2g0dTBkUlM3OFA1SXlWVzBBb1owMHZZZkp6eFpiZG1qZERGbGlUZVNoMGNKLUd3T1gyUHlxUjRFYmxuTVZ6S1hYNFhpRkRpS1VnTHV5Wk90enRVLUVUOUhJNlV5d0VTenpaaE1BQ3UyX2s4dHc3YXVWaExnVmFieUVYWGFzRXN6U1dVNzRVVWJkaEwyenNRb0xWT09XZUh5N256RFVVcVpUWGlYUGRZR2N2TG9wZXlpeDJSZ0pUZm5GQURDS0p0bVRmbFh6WE96aURhTXBSTzZXQzA5VTBWc2N4UFp5RHJhZGNVblJGRUNFWGpkMUxrUEtxYURGSVdkMnR1Nmp3ZlhiMnBEWGpHUmRfMTBJUlpsVXZoWjEtZ3E1ekJvT0FvV09PTkNTOHpwNHdXREUyQWU0Nnl4QQ?oc=5",
+          "source": "עיריית חיפה",
+          "published": "Sun, 02 Nov 2025 07:00:00 GMT",
+          "evidence": "anchor+verb:קידום+domain:מגדר"
+        },
+        {
+          "title": "חיפאיות וחיפאים לא מתעלמים: קמפיין עירוני למאבק באלימות כלפי נשים - עיריית חיפה",
+          "link": "https://news.google.com/rss/articles/CBMi0gJBVV95cUxNYldaZVhpeDFFeXFqcGd0V2xCb0VCTWltWWhyMENSTnRPT05YZmJmVExnRmpDbF9XWTNLZWVJNVIwRENMU2sxa3VDME12My1wT1pZXzFLcUJsTGtwWDhibDNHMjc1SHJvX3h2ZE11LUwzTGVGZHVDSVA2Z1JYOUlpSzB1ck9JeDlNN3lPUW1uVTcxQlljSUotM3ZVN3RQY0NTOV95bTB2UzdpMWhuSTBpcjdDQTdDVlNveHp0eXJPcnFtQzlUMGdQOG1ncl9mMEdkcTdiQTlVQzVjdmNOcUlsejI4NXBOSHFqWDR6S3FwNF82N3d6YTdaX012LWZCYjVZRnhLeVRfSm5INVYxMDJFOWR4cGhNUFlzMkRyRmRPcXZTdEp4QnVSd05sVlh6ME9BV0YxQjNSVmc3dWFOUlFVWVpiME01dVNlZDJLdll2U2hCdw?oc=5",
+          "source": "עיריית חיפה",
+          "published": "Thu, 21 Nov 2024 08:00:00 GMT",
+          "evidence": "anchor+domain:אלימות כלפי נשים"
+        },
+        {
+          "title": "עיריית חיפה מובילה קידום חינוך לשוויון מגדרי בעיר - ניוזים",
+          "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE4zVkxQVUFENk4wVzZpb09Od29nb3ZPN1lnQ3JWX3dWNFFlWngxOFc1VDAzRHBYY0hRUUY3TzhoVEZ1SmxXa3ZVR1JFMA?oc=5",
+          "source": "ניוזים",
+          "published": "Sun, 02 Nov 2025 07:00:00 GMT",
+          "evidence": "anchor+verb:קידום+domain:מגדר"
+        },
+        {
+          "title": "עיריית חיפה ציינה את יום המאבק הבינלאומי למניעת אלימות כלפי נשים - עיריית חיפה",
+          "link": "https://news.google.com/rss/articles/CBMi1AJBVV95cUxQU0dpamRpYkJIQWs5MzkyMFZIV1hhdGRzUmE1X21VZWZ2NVZycUpFUm9fQnhzb0JRZzVrZDNMcHgtM0NEWGpLNjVGUHlPUktYNklhZFJzYXVRZ0FfUnR2bmdFaXRNYWd5WjAybjhqYUg3Nk9fcHR1SnE5VkowRlEyYkZaRTVtNnR6SGlUX3Fjb3dmNVVNRzBuTlpMb2doeUZRb1Jsc3FhZmJMWS1jMjRSVERNaFJ3a2tRT1RwaE5JMVY4blRZSU1EMHNwVnp0Wlk2a2ZCTDJ0bkltSDM1ZkxVZXNWcmJEX1V3OW95NU5WT0JjSzd4Y1U2YnNEV2NMZmptRGZVcmp1a1FFZUloRy11NGZJdmVwR2Uwb0Vmczk5VWw0VHV4U2xQQWpnUW1pS3FqMWJZcUZvS094OTR5a0RqdnRjX2JfaWFVXzczZUdTR2pFVnYx?oc=5",
+          "source": "עיריית חיפה",
+          "published": "Tue, 25 Nov 2025 08:00:00 GMT",
+          "evidence": "anchor+domain:אלימות כלפי נשים"
+        }
+      ]
+    },
+    {
+      "city": "כרמיאל",
+      "protocol_key": "KARMIEL",
+      "pole_a": 4.29,
+      "pole_b_raw": 0.58,
+      "pole_b": 0.0,
+      "red_flag": 0.04,
+      "ab_ratio": 429.0,
+      "protocol_files_scanned": 49,
+      "protocol_coverage": "49/162",
+      "exposure_score": 75.14,
+      "subversive_ratio": 22.06,
+      "subversive_budget": 910073.38,
+      "total_edu_budget": 4125756.1699999995,
+      "edu_deployments": 250,
+      "subversive_deployments": 44,
+      "combined_score": 39.65,
+      "data_sources": "both",
+      "rank": 4,
+      "progressive_pct": 28.06,
+      "religious_pct": 15.04,
+      "eligible_voters": 42065,
+      "turnout_pct": 57.13,
+      "news_score": 0.0,
+      "news_relevant": 0,
+      "news_topics": {
+        "gender_equality": 0,
+        "lgbt": 0,
+        "sustainability": 0,
+        "social_justice": 0,
+        "progressive_education": 0,
+        "diversity": 0
+      },
+      "news_actions_count": 0,
+      "news_coop_count": 0,
+      "news_actions": {
+        "gender_equality": 0,
+        "lgbt": 0,
+        "sustainability": 0,
+        "social_justice": 0,
+        "progressive_education": 0,
+        "diversity": 0
+      },
+      "news_top_actions": []
     },
     {
       "city": "הוד השרון",
@@ -188,23 +292,49 @@ const DATA = {
       "total_edu_budget": 3915764.7600000007,
       "edu_deployments": 329,
       "subversive_deployments": 42,
-      "combined_score": 29.67,
+      "combined_score": 38.68,
       "data_sources": "both",
-      "rank": 6,
+      "rank": 5,
       "progressive_pct": 52.97,
       "religious_pct": 7.43,
       "eligible_voters": 48723,
       "turnout_pct": 74.36,
-      "news_score": 34.76,
-      "news_relevant": 73,
+      "news_score": 9.09,
+      "news_relevant": 2,
       "news_topics": {
-        "lgbt_municipal": 41,
-        "gender_equality": 5,
-        "sustainability": 21,
-        "social_justice": 1,
-        "diversity_inclusion": 5,
-        "education_progressive": 0
-      }
+        "gender_equality": 1,
+        "lgbt": 1,
+        "sustainability": 0,
+        "social_justice": 0,
+        "progressive_education": 0,
+        "diversity": 0
+      },
+      "news_actions_count": 2,
+      "news_coop_count": 0,
+      "news_actions": {
+        "gender_equality": 1,
+        "lgbt": 1,
+        "sustainability": 0,
+        "social_justice": 0,
+        "progressive_education": 0,
+        "diversity": 0
+      },
+      "news_top_actions": [
+        {
+          "title": "הוד השרון - תוכנית עירונית חדשנית לניהול 'גן מודע מגדר' - עיריית הוד השרון",
+          "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5FQ1pjanlQRzdtc3J4Slc5MTdMd1hVZW5xTWJXSUtvNkNYelVCMk1jb1UwOTFqVlBPcmdkZUJVSzFBdU1oejNfR2l4MjAwM0RBNW5qQWhYR2hCS0d4RnZFU0E4SQ?oc=5",
+          "source": "עיריית הוד השרון",
+          "published": "Thu, 17 Feb 2022 08:00:00 GMT",
+          "evidence": "anchor+domain:מגדר"
+        },
+        {
+          "title": "בניין עיריית הוד השרון עוטר בדגל הגאווה: ומתי האירוע המרכזי? - מיינט הוד השרון",
+          "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE84WVRBSHZfNmNvejlMejFRbFlKOUdHVUFqX1J3WldRQUlDWWFLOUFKTmoyM2J2OG5XdE5qNV94QmZTUEFNQW1ZWEtqRHBwMTYwYnVDX3Qtd2FyQ3MySlRCRWM5SVowRTV6RFpB?oc=5",
+          "source": "מיינט הוד השרון",
+          "published": "Mon, 03 Jun 2019 07:00:00 GMT",
+          "evidence": "anchor+domain:גאווה"
+        }
+      ]
     },
     {
       "city": "גבעתיים",
@@ -222,23 +352,34 @@ const DATA = {
       "total_edu_budget": 3182249.7700000005,
       "edu_deployments": 203,
       "subversive_deployments": 23,
-      "combined_score": 28.5,
+      "combined_score": 35.44,
       "data_sources": "both",
-      "rank": 7,
+      "rank": 6,
       "progressive_pct": 56.63,
       "religious_pct": 5.94,
       "eligible_voters": 49341,
       "turnout_pct": 68.97,
-      "news_score": 41.43,
-      "news_relevant": 87,
+      "news_score": 0.0,
+      "news_relevant": 0,
       "news_topics": {
-        "lgbt_municipal": 36,
-        "gender_equality": 10,
-        "sustainability": 40,
+        "gender_equality": 0,
+        "lgbt": 0,
+        "sustainability": 0,
         "social_justice": 0,
-        "diversity_inclusion": 1,
-        "education_progressive": 0
-      }
+        "progressive_education": 0,
+        "diversity": 0
+      },
+      "news_actions_count": 0,
+      "news_coop_count": 0,
+      "news_actions": {
+        "gender_equality": 0,
+        "lgbt": 0,
+        "sustainability": 0,
+        "social_justice": 0,
+        "progressive_education": 0,
+        "diversity": 0
+      },
+      "news_top_actions": []
     },
     {
       "city": "רעננה",
@@ -256,23 +397,56 @@ const DATA = {
       "total_edu_budget": 5022736.51,
       "edu_deployments": 394,
       "subversive_deployments": 31,
-      "combined_score": 27.05,
+      "combined_score": 31.55,
       "data_sources": "both",
-      "rank": 8,
+      "rank": 7,
       "progressive_pct": 42.43,
       "religious_pct": 15.99,
       "eligible_voters": 69652,
       "turnout_pct": 66.61,
-      "news_score": 39.05,
-      "news_relevant": 82,
+      "news_score": 13.64,
+      "news_relevant": 3,
       "news_topics": {
-        "lgbt_municipal": 32,
-        "gender_equality": 5,
-        "sustainability": 29,
-        "social_justice": 7,
-        "diversity_inclusion": 9,
-        "education_progressive": 0
-      }
+        "gender_equality": 0,
+        "lgbt": 2,
+        "sustainability": 1,
+        "social_justice": 0,
+        "progressive_education": 0,
+        "diversity": 0
+      },
+      "news_actions_count": 3,
+      "news_coop_count": 0,
+      "news_actions": {
+        "gender_equality": 0,
+        "lgbt": 2,
+        "sustainability": 1,
+        "social_justice": 0,
+        "progressive_education": 0,
+        "diversity": 0
+      },
+      "news_top_actions": [
+        {
+          "title": "האם עיריית רעננה באמת תומכת בתושביה הלהט\"בים? - mako",
+          "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1ObjdDRElnNDJTX05PX2ZRZTh5VUE5X0NIaW5IdXR2WnNMN2pwQ1J5bEU3Y2duSlFHaDR6NVVDVk5MTFVnN2o2cnBLSWVxNTRSZFVTUElZUVlUZnBBUnByT0lYYWJESzRxel9PVElUM3g4SUk?oc=5",
+          "source": "mako",
+          "published": "Tue, 16 Jun 2020 07:00:00 GMT",
+          "evidence": "anchor+domain:להט\"ב"
+        },
+        {
+          "title": "ראש העירייה אישר את מצעד הגאווה: \"עוד הרבה לפני שנהייתי ראש עיר אני אבא גאה\" - מיינט רעננה",
+          "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9keFRyUGJCUEtEajFJWGw1VHBySFc0QnBjREFaY2phUUk3TjZWYXRWVVNKaG80X01qRE4wVTV6N0FoRkhvVF9qSTZKVkJ0NVA1RmFDLVMyNWREaEtneXNNazB5eWJ5QQ?oc=5",
+          "source": "מיינט רעננה",
+          "published": "Tue, 28 May 2019 07:00:00 GMT",
+          "evidence": "anchor+domain:גאה"
+        },
+        {
+          "title": "קיימות רעננה - עיריית רעננה",
+          "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9LbkxVa0h1dXRIam9sQ01MTUVDYXgyZUNQTl90TmZKa2VyLUNpVkN6YkVKanR5Wmhib1RTTEFUT2JzWWc0ZFZXOGxvcjBjOWZQ?oc=5",
+          "source": "עיריית רעננה",
+          "published": "Sun, 28 Dec 2025 07:17:28 GMT",
+          "evidence": "anchor+domain:קיימות"
+        }
+      ]
     },
     {
       "city": "הרצליה",
@@ -290,126 +464,56 @@ const DATA = {
       "total_edu_budget": 6865924.969999998,
       "edu_deployments": 533,
       "subversive_deployments": 49,
-      "combined_score": 24.05,
+      "combined_score": 30.83,
       "data_sources": "both",
-      "rank": 9,
+      "rank": 8,
       "progressive_pct": 48.71,
       "religious_pct": 9.88,
       "eligible_voters": 88932,
       "turnout_pct": 65.64,
-      "news_score": 42.38,
-      "news_relevant": 89,
-      "news_topics": {
-        "lgbt_municipal": 35,
-        "gender_equality": 9,
-        "sustainability": 29,
-        "social_justice": 9,
-        "diversity_inclusion": 6,
-        "education_progressive": 1
-      }
-    },
-    {
-      "city": "קרית שמונה",
-      "protocol_key": "KIRYAT_SHMONA",
-      "pole_a": 2.67,
-      "pole_b_raw": 0.42,
-      "pole_b": 0.42,
-      "red_flag": 0.0,
-      "ab_ratio": 6.36,
-      "protocol_files_scanned": 35,
-      "protocol_coverage": "35/370",
-      "exposure_score": 41.65,
-      "subversive_ratio": 10.72,
-      "subversive_budget": 111931.40999999999,
-      "total_edu_budget": 1044522.61,
-      "edu_deployments": 87,
-      "subversive_deployments": 4,
-      "combined_score": 22.21,
-      "data_sources": "both",
-      "rank": 10,
-      "fp_correction_pending": true,
-      "progressive_pct": 8.74,
-      "religious_pct": 25.3,
-      "eligible_voters": 18582,
-      "turnout_pct": 61.11,
-      "news_score": 3.33,
-      "news_relevant": 7,
-      "news_topics": {
-        "lgbt_municipal": 4,
-        "gender_equality": 1,
-        "sustainability": 2,
-        "social_justice": 0,
-        "diversity_inclusion": 0,
-        "education_progressive": 0
-      }
-    },
-    {
-      "city": "גבעת שמואל",
-      "protocol_key": "GIVAT_SHMUEL",
-      "pole_a": 4.74,
-      "pole_b_raw": 0.07,
-      "pole_b": 0.07,
-      "red_flag": 0.0,
-      "ab_ratio": 67.71,
-      "protocol_files_scanned": 68,
-      "protocol_coverage": "68/392",
-      "exposure_score": 37.49,
-      "subversive_ratio": 9.73,
-      "subversive_budget": 213385.17999999996,
-      "total_edu_budget": 2193812.01,
-      "edu_deployments": 149,
-      "subversive_deployments": 14,
-      "combined_score": 21.24,
-      "data_sources": "both",
-      "rank": 11,
-      "progressive_pct": 19.25,
-      "religious_pct": 32.23,
-      "eligible_voters": 20150,
-      "turnout_pct": 74.92,
-      "news_score": 19.52,
-      "news_relevant": 41,
-      "news_topics": {
-        "lgbt_municipal": 29,
-        "gender_equality": 2,
-        "sustainability": 7,
-        "social_justice": 0,
-        "diversity_inclusion": 3,
-        "education_progressive": 0
-      }
-    },
-    {
-      "city": "אריאל",
-      "protocol_key": "ariel",
-      "pole_a": 5.27,
-      "pole_b_raw": 0.12,
-      "pole_b": 0.12,
-      "red_flag": 0.02,
-      "ab_ratio": 43.92,
-      "protocol_files_scanned": 69,
-      "protocol_coverage": "69/196",
-      "exposure_score": 26.56,
-      "subversive_ratio": 10.83,
-      "subversive_budget": 143390.0,
-      "total_edu_budget": 1323795.86,
-      "edu_deployments": 91,
-      "subversive_deployments": 8,
-      "combined_score": 15.04,
-      "data_sources": "both",
-      "rank": 12,
-      "progressive_pct": 13.63,
-      "religious_pct": 21.25,
-      "eligible_voters": 15396,
-      "turnout_pct": 61.81,
-      "news_score": 1.43,
+      "news_score": 13.64,
       "news_relevant": 3,
       "news_topics": {
-        "lgbt_municipal": 2,
-        "gender_equality": 1,
-        "sustainability": 0,
+        "gender_equality": 0,
+        "lgbt": 2,
+        "sustainability": 1,
         "social_justice": 0,
-        "diversity_inclusion": 0,
-        "education_progressive": 0
-      }
+        "progressive_education": 0,
+        "diversity": 0
+      },
+      "news_actions_count": 3,
+      "news_coop_count": 0,
+      "news_actions": {
+        "gender_equality": 0,
+        "lgbt": 2,
+        "sustainability": 1,
+        "social_justice": 0,
+        "progressive_education": 0,
+        "diversity": 0
+      },
+      "news_top_actions": [
+        {
+          "title": "עיריית הרצליה הודיעה: בית גאה ראשון יוקם בעיר - mako",
+          "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE1GZkFGZl9tbkFZYmg5N3BBZy1ScVF0cXhCak9CV3lYSlFyb3lMZXFGd21Sd3ozOUg5b1QtNTNMakh5MVBvTWNnRVZ4R21WOXZBdkp4UkkybzFuSFFYcXJYaU9FNGZRTFpTMHhBRHZXOGRtQQ?oc=5",
+          "source": "mako",
+          "published": "Wed, 03 Jan 2024 08:00:00 GMT",
+          "evidence": "anchor+domain:גאה"
+        },
+        {
+          "title": "חשיפה: עובדים בעיריית הרצליה התנכלו לעובדת שהניחה דגלון גאווה על השולחן - מיינט הרצליה",
+          "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBWLU5JT0Ita1RWMlNlNVZuX0hDbFRtdlVueHQxODhKOEEyTmhSNWJlVURQQXgwQ0w3b3l1ZmZmMEhOdHpZR2ZGS3gtSmV1TzQycEppdjFMR1JVb3NiQUFOQVlpbXdFRWkw?oc=5",
+          "source": "מיינט הרצליה",
+          "published": "Mon, 12 Jun 2023 07:00:00 GMT",
+          "evidence": "anchor+domain:גאווה"
+        },
+        {
+          "title": "מתודולוגיית כתיבת תכנית היערכות לשינוי אקלים - 'הרצליה 2030' - עיריית הרצליה",
+          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNcXRFZENUcFZNa0k0MXdOR2ZkSU1vSFpoejIxUTM4bHFLc3lZcm90cFNPRElLbFdVMkt0dmZUSXl0TjZfZ0dWT3hrQXRaMGdYRnlUNHRYYjFqdnY1Vkd5WjBKRGdVaWZ1SC1XVTMzQ0VLU2x3MWhXMnZKemd2Q285TXFWbEZwbEpUOGhXQllpTEFpRlgwdzIyZl9UZzFWWjVNU29IQndB?oc=5",
+          "source": "עיריית הרצליה",
+          "published": "Wed, 09 Aug 2023 03:30:21 GMT",
+          "evidence": "anchor+domain:אקלים"
+        }
+      ]
     },
     {
       "city": "קרית אונו",
@@ -427,23 +531,206 @@ const DATA = {
       "total_edu_budget": 3370774.28,
       "edu_deployments": 241,
       "subversive_deployments": 18,
-      "combined_score": 14.61,
+      "combined_score": 27.46,
       "data_sources": "both",
-      "rank": 13,
+      "rank": 9,
       "progressive_pct": 48.58,
       "religious_pct": 9.32,
       "eligible_voters": 31113,
       "turnout_pct": 73.27,
-      "news_score": 0.48,
-      "news_relevant": 1,
+      "news_score": 0.0,
+      "news_relevant": 0,
       "news_topics": {
-        "lgbt_municipal": 0,
         "gender_equality": 0,
-        "sustainability": 1,
+        "lgbt": 0,
+        "sustainability": 0,
         "social_justice": 0,
-        "diversity_inclusion": 0,
-        "education_progressive": 0
-      }
+        "progressive_education": 0,
+        "diversity": 0
+      },
+      "news_actions_count": 0,
+      "news_coop_count": 0,
+      "news_actions": {
+        "gender_equality": 0,
+        "lgbt": 0,
+        "sustainability": 0,
+        "social_justice": 0,
+        "progressive_education": 0,
+        "diversity": 0
+      },
+      "news_top_actions": []
+    },
+    {
+      "city": "גבעת שמואל",
+      "protocol_key": "GIVAT_SHMUEL",
+      "pole_a": 4.74,
+      "pole_b_raw": 0.07,
+      "pole_b": 0.07,
+      "red_flag": 0.0,
+      "ab_ratio": 67.71,
+      "protocol_files_scanned": 68,
+      "protocol_coverage": "68/392",
+      "exposure_score": 37.49,
+      "subversive_ratio": 9.73,
+      "subversive_budget": 213385.17999999996,
+      "total_edu_budget": 2193812.01,
+      "edu_deployments": 149,
+      "subversive_deployments": 14,
+      "combined_score": 19.89,
+      "data_sources": "both",
+      "rank": 10,
+      "progressive_pct": 19.25,
+      "religious_pct": 32.23,
+      "eligible_voters": 20150,
+      "turnout_pct": 74.92,
+      "news_score": 0.0,
+      "news_relevant": 0,
+      "news_topics": {
+        "gender_equality": 0,
+        "lgbt": 0,
+        "sustainability": 0,
+        "social_justice": 0,
+        "progressive_education": 0,
+        "diversity": 0
+      },
+      "news_actions_count": 0,
+      "news_coop_count": 0,
+      "news_actions": {
+        "gender_equality": 0,
+        "lgbt": 0,
+        "sustainability": 0,
+        "social_justice": 0,
+        "progressive_education": 0,
+        "diversity": 0
+      },
+      "news_top_actions": []
+    },
+    {
+      "city": "קרית שמונה",
+      "protocol_key": "KIRYAT_SHMONA",
+      "pole_a": 2.67,
+      "pole_b_raw": 0.42,
+      "pole_b": 0.42,
+      "red_flag": 0.0,
+      "ab_ratio": 6.36,
+      "protocol_files_scanned": 35,
+      "protocol_coverage": "35/370",
+      "exposure_score": 41.65,
+      "subversive_ratio": 10.72,
+      "subversive_budget": 111931.40999999999,
+      "total_edu_budget": 1044522.61,
+      "edu_deployments": 87,
+      "subversive_deployments": 4,
+      "combined_score": 19.59,
+      "data_sources": "both",
+      "rank": 11,
+      "fp_correction_pending": true,
+      "progressive_pct": 8.74,
+      "religious_pct": 25.3,
+      "eligible_voters": 18582,
+      "turnout_pct": 61.11,
+      "news_score": 0.0,
+      "news_relevant": 0,
+      "news_topics": {
+        "gender_equality": 0,
+        "lgbt": 0,
+        "sustainability": 0,
+        "social_justice": 0,
+        "progressive_education": 0,
+        "diversity": 0
+      },
+      "news_actions_count": 0,
+      "news_coop_count": 0,
+      "news_actions": {
+        "gender_equality": 0,
+        "lgbt": 0,
+        "sustainability": 0,
+        "social_justice": 0,
+        "progressive_education": 0,
+        "diversity": 0
+      },
+      "news_top_actions": []
+    },
+    {
+      "city": "באר שבע",
+      "protocol_key": "BEER_SHEVA",
+      "pole_a": 6.52,
+      "pole_b_raw": 0.34,
+      "pole_b": 0.0,
+      "red_flag": 0.0,
+      "ab_ratio": 652.0,
+      "protocol_files_scanned": 97,
+      "protocol_coverage": "97/1027",
+      "exposure_score": 30.19,
+      "subversive_ratio": 6.37,
+      "subversive_budget": 1311850.63,
+      "total_edu_budget": 20596019.02,
+      "edu_deployments": 1294,
+      "subversive_deployments": 78,
+      "combined_score": 18.94,
+      "data_sources": "both",
+      "rank": 12,
+      "progressive_pct": 14.89,
+      "religious_pct": 26.09,
+      "eligible_voters": 164728,
+      "turnout_pct": 61.31,
+      "news_score": 22.73,
+      "news_relevant": 5,
+      "news_topics": {
+        "gender_equality": 0,
+        "lgbt": 5,
+        "sustainability": 0,
+        "social_justice": 0,
+        "progressive_education": 0,
+        "diversity": 0
+      },
+      "news_actions_count": 5,
+      "news_coop_count": 0,
+      "news_actions": {
+        "gender_equality": 0,
+        "lgbt": 5,
+        "sustainability": 0,
+        "social_justice": 0,
+        "progressive_education": 0,
+        "diversity": 0
+      },
+      "news_top_actions": [
+        {
+          "title": "מדד הגאווה: האם עיריית באר שבע דואגת לקהילה הגאה? - מיינט באר שבע",
+          "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1faFFBakt6MjlaeVIxRFdMbG9EQjdEWnpVazJja19JWXlQaHA4cmp4SWNCQ3FjTFlMSmtqcVVWeWI2c2RzcDJ3MzZzV0tVWU9zSzhPV2Z1eUo0Qkk4Mzd2VU9TNTIzbzY4ZkE?oc=5",
+          "source": "מיינט באר שבע",
+          "published": "Tue, 23 May 2023 07:00:00 GMT",
+          "evidence": "anchor+domain:גאה"
+        },
+        {
+          "title": "אלפים בעצרת הקהילה הגאה מול עיריית באר שבע - שיחה מקומית",
+          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPUzJ5VUpBRFI0c3RDVWc0cXFBNGk3Z2RqZ3JHbGEta1NkSEpFVlh5SXJkQTZ2ZHpWRlV5cS1aY3p0OVNzeThlbHRYR1BiZE0yZWd3YjFkbDBIcnRuZ0J2OG40VjZxMmlMcVk3dFRJZEFXeS1rYW1lRTVsbHE4d2tReEVqMUl2NUpTcktiMHJfOFVUblRCYi01cERiY0U?oc=5",
+          "source": "שיחה מקומית",
+          "published": "Thu, 14 Jul 2016 07:00:00 GMT",
+          "evidence": "anchor+domain:גאה"
+        },
+        {
+          "title": "גאווה מקומית: ה-צלם של עיריית באר שבע זכה בפרס ישראל לנגישות - - באר שבע נט",
+          "link": "https://news.google.com/rss/articles/CBMihwRBVV95cUxNRGZPTlNZU2FWV21qR0FCLTNNZXlONG4xSU82VTZFdnV6QkpxUUYxUUdyR0RKaEdLTElVRzhhU3lXZ0NNRTdBUEN1WEZwR19IWFBsZVY0ZHhSQjlXMUtfSHdwUWlmUk01Unc1QkdOeUdVSko2eGZDVTJjZVBEemZLa21WLXBPbUpUX25FS01sek5scFZpX1VrelFrdXg4eWhGVmxybS1UQWp3RnNOYzVsSm0yQlhYS2tyRDFWOGVMNHN1MElPNlg3NmtuZTBya1RYREx6cDNhOU84aVl0VDkzTWdxdFpPR19tT29hb18tU3Nib2p6akl2SGNTczVOMHpNZWZrREt6aTUyX19PZFZ2ME5Jbkk5Z3RSR2RiQ1pXMHVNeExVVUZMUDRXcm15U0RoT1BMS2hnRG9tMXpFQTZMNkZNbDJCTTNGNUlWSjFBZDlsaFdZeVk4enNrNktuRVZTeFJqTGp5clhVcEF5YTRFZy1hVlBiamt5cnJlWnI5cU9EQXF5RVNWWkFEanBJX3c4aVBrM01mRkpya3JuMXBhQ2JIZ2g3WThibU9RWU9LR0NHQ1p5emZFdHlyUF9RSEJ4Y3lvWEw0RzhfdXY2X2RRY3ZTc2hrWVV2OUs3QUpWMDEzYjZraEhIM3NCNW15Rm1uc0dCelpoWGxDbklRM3FDMFIwQzA4WVE?oc=5",
+          "source": "באר שבע נט",
+          "published": "Mon, 12 Sep 2022 07:00:00 GMT",
+          "evidence": "anchor+domain:גאווה"
+        },
+        {
+          "title": "גאווה: משרד הפנים העניק ציון 100 לעיריית באר שבע בפעם השנייה ברציפות - - באר שבע נט",
+          "link": "https://news.google.com/rss/articles/CBMiswRBVV95cUxPUm5HVnRQa09xM3h1WkZfNUw2ZmpLZWRnamxsNmF5Y0ZIeEtod3dYenJ5ZzdJY2lLRDlOVUtMUzZzUjVlODNkVU5OdmdSM0tQeWI1NXV5RkFrVVV6TTJjb2wxVUJkWVFwUkhrWHRESFRaVldUalg0eXNVdU9PS2dobXZHZkZrendnYkZXQ0pvQ1NnYS1SWnJWODNpVk0zaXgtVnhTNkR4eW5GWWdTemZMLWhJcHo3bm5TbGI1Z1NEMjBPN0xONkV4ZDBldi1vYU9TZmhiQlRuUWJiSW40c3dSRDg3Z2owWXdxc2gwN3hURF9MdXFJWjdrWGxmVnY0V2hISWQyZzJiTnc4cFNJTzUzMFVVaW5KbVBoWU9tREt3dXJnSmpUU2xsVDM1NVdiakdhbW9JcHlNUGUySEdrdUkyeS1NQ1I1UE5IVUFDbEhnbDktMDZqQS1sRTBnbkI1WXBYQWFxT3E2NEZPemxGdzU0Q3RqVm9EOFE5ZVd4RDNQa1g2b2pDMDlOdk8tUGNpMGlmTEVZb090Zjd4eVFvZDlxdGhEU3BUTXFJczdOREctRC0wZ0pTdDktOWU0NUtqOWhhVmlOTXlLT1hYRGNzdjVZUGdnd0JWeFRSaVRsRU1EQ0lsS3ExUjVudFdqUUZSTVJzZlZVUGRMdWRfZUphaXlzVnlWUkg1NldyMHZLdk91NHVteU1RWDlQMTJIaHgzbkNPZjMwNExLbWZ0TjFwMmRQUjNGWQ?oc=5",
+          "source": "באר שבע נט",
+          "published": "Mon, 24 Jan 2022 08:00:00 GMT",
+          "evidence": "anchor+domain:גאווה"
+        },
+        {
+          "title": "סגן ראש העיר כרדי על הקהילה הגאה: \"אין להם עקרונות, הם רוצים להתריס\" - - באר שבע נט",
+          "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE90TWxRdDg2VXV6SDJIektmdVFCbE9LLVBKVXgzN19EVXQxN1BDdVBDQjlDWW9WN1cxVU5laFB6aV9wR3FWSG43cGVmVi1HT1g3MGw4MFA0dkczYU53bWRDMFJNSmVrdTV4M0xvU3JVOUVaMUds?oc=5",
+          "source": "באר שבע נט",
+          "published": "Thu, 14 Jul 2016 07:00:00 GMT",
+          "evidence": "anchor+domain:גאה"
+        }
+      ]
     },
     {
       "city": "ראש העין",
@@ -461,23 +748,79 @@ const DATA = {
       "total_edu_budget": 4954358.119999997,
       "edu_deployments": 362,
       "subversive_deployments": 19,
-      "combined_score": 13.87,
+      "combined_score": 16.58,
       "data_sources": "both",
-      "rank": 14,
+      "rank": 13,
       "progressive_pct": 24.27,
       "religious_pct": 25.5,
       "eligible_voters": 49148,
       "turnout_pct": 77.58,
-      "news_score": 14.76,
-      "news_relevant": 31,
+      "news_score": 0.0,
+      "news_relevant": 0,
       "news_topics": {
-        "lgbt_municipal": 19,
-        "gender_equality": 2,
-        "sustainability": 8,
-        "social_justice": 1,
-        "diversity_inclusion": 1,
-        "education_progressive": 0
-      }
+        "gender_equality": 0,
+        "lgbt": 0,
+        "sustainability": 0,
+        "social_justice": 0,
+        "progressive_education": 0,
+        "diversity": 0
+      },
+      "news_actions_count": 0,
+      "news_coop_count": 0,
+      "news_actions": {
+        "gender_equality": 0,
+        "lgbt": 0,
+        "sustainability": 0,
+        "social_justice": 0,
+        "progressive_education": 0,
+        "diversity": 0
+      },
+      "news_top_actions": []
+    },
+    {
+      "city": "אריאל",
+      "protocol_key": "ariel",
+      "pole_a": 5.27,
+      "pole_b_raw": 0.12,
+      "pole_b": 0.12,
+      "red_flag": 0.02,
+      "ab_ratio": 43.92,
+      "protocol_files_scanned": 69,
+      "protocol_coverage": "69/196",
+      "exposure_score": 26.56,
+      "subversive_ratio": 10.83,
+      "subversive_budget": 143390.0,
+      "total_edu_budget": 1323795.86,
+      "edu_deployments": 91,
+      "subversive_deployments": 8,
+      "combined_score": 16.44,
+      "data_sources": "both",
+      "rank": 14,
+      "progressive_pct": 13.63,
+      "religious_pct": 21.25,
+      "eligible_voters": 15396,
+      "turnout_pct": 61.81,
+      "news_score": 0.0,
+      "news_relevant": 0,
+      "news_topics": {
+        "gender_equality": 0,
+        "lgbt": 0,
+        "sustainability": 0,
+        "social_justice": 0,
+        "progressive_education": 0,
+        "diversity": 0
+      },
+      "news_actions_count": 0,
+      "news_coop_count": 0,
+      "news_actions": {
+        "gender_equality": 0,
+        "lgbt": 0,
+        "sustainability": 0,
+        "social_justice": 0,
+        "progressive_education": 0,
+        "diversity": 0
+      },
+      "news_top_actions": []
     },
     {
       "city": "קרית גת",
@@ -495,23 +838,34 @@ const DATA = {
       "total_edu_budget": 5908760.129999999,
       "edu_deployments": 484,
       "subversive_deployments": 29,
-      "combined_score": 13.17,
+      "combined_score": 12.91,
       "data_sources": "both",
       "rank": 15,
       "progressive_pct": 9.57,
       "religious_pct": 37.63,
       "eligible_voters": 45388,
       "turnout_pct": 68.51,
-      "news_score": 3.33,
-      "news_relevant": 7,
+      "news_score": 0.0,
+      "news_relevant": 0,
       "news_topics": {
-        "lgbt_municipal": 4,
         "gender_equality": 0,
-        "sustainability": 3,
+        "lgbt": 0,
+        "sustainability": 0,
         "social_justice": 0,
-        "diversity_inclusion": 0,
-        "education_progressive": 0
-      }
+        "progressive_education": 0,
+        "diversity": 0
+      },
+      "news_actions_count": 0,
+      "news_coop_count": 0,
+      "news_actions": {
+        "gender_equality": 0,
+        "lgbt": 0,
+        "sustainability": 0,
+        "social_justice": 0,
+        "progressive_education": 0,
+        "diversity": 0
+      },
+      "news_top_actions": []
     },
     {
       "city": "אפרת",
@@ -529,9 +883,9 @@ const DATA = {
       "total_edu_budget": 1224136.2400000002,
       "edu_deployments": 145,
       "subversive_deployments": 0,
-      "combined_score": 1.56,
+      "combined_score": 2.54,
       "data_sources": "both",
-      "rank": 17,
+      "rank": 16,
       "progressive_pct": 3.98,
       "religious_pct": 50.93,
       "eligible_voters": 7945,
@@ -539,13 +893,24 @@ const DATA = {
       "news_score": 0.0,
       "news_relevant": 0,
       "news_topics": {
-        "lgbt_municipal": 0,
         "gender_equality": 0,
+        "lgbt": 0,
         "sustainability": 0,
         "social_justice": 0,
-        "diversity_inclusion": 0,
-        "education_progressive": 0
-      }
+        "progressive_education": 0,
+        "diversity": 0
+      },
+      "news_actions_count": 0,
+      "news_coop_count": 0,
+      "news_actions": {
+        "gender_equality": 0,
+        "lgbt": 0,
+        "sustainability": 0,
+        "social_justice": 0,
+        "progressive_education": 0,
+        "diversity": 0
+      },
+      "news_top_actions": []
     },
     {
       "city": "נתיבות",
@@ -563,23 +928,34 @@ const DATA = {
       "total_edu_budget": 1339007.9400000002,
       "edu_deployments": 165,
       "subversive_deployments": 3,
-      "combined_score": 3.56,
+      "combined_score": 1.9,
       "data_sources": "both",
-      "rank": 16,
+      "rank": 17,
       "progressive_pct": 2.28,
       "religious_pct": 64.28,
       "eligible_voters": 28166,
       "turnout_pct": 75.55,
-      "news_score": 10.48,
-      "news_relevant": 22,
+      "news_score": 0.0,
+      "news_relevant": 0,
       "news_topics": {
-        "lgbt_municipal": 12,
-        "gender_equality": 1,
-        "sustainability": 9,
+        "gender_equality": 0,
+        "lgbt": 0,
+        "sustainability": 0,
         "social_justice": 0,
-        "diversity_inclusion": 0,
-        "education_progressive": 0
-      }
+        "progressive_education": 0,
+        "diversity": 0
+      },
+      "news_actions_count": 0,
+      "news_coop_count": 0,
+      "news_actions": {
+        "gender_equality": 0,
+        "lgbt": 0,
+        "sustainability": 0,
+        "social_justice": 0,
+        "progressive_education": 0,
+        "diversity": 0
+      },
+      "news_top_actions": []
     },
     {
       "city": "עמנואל",
@@ -597,7 +973,7 @@ const DATA = {
       "total_edu_budget": 208538.99,
       "edu_deployments": 36,
       "subversive_deployments": 0,
-      "combined_score": 0.55,
+      "combined_score": 0.53,
       "data_sources": "both",
       "rank": 18,
       "progressive_pct": 0.31,
@@ -607,13 +983,24 @@ const DATA = {
       "news_score": 0.0,
       "news_relevant": 0,
       "news_topics": {
-        "lgbt_municipal": 0,
         "gender_equality": 0,
+        "lgbt": 0,
         "sustainability": 0,
         "social_justice": 0,
-        "diversity_inclusion": 0,
-        "education_progressive": 0
-      }
+        "progressive_education": 0,
+        "diversity": 0
+      },
+      "news_actions_count": 0,
+      "news_coop_count": 0,
+      "news_actions": {
+        "gender_equality": 0,
+        "lgbt": 0,
+        "sustainability": 0,
+        "social_justice": 0,
+        "progressive_education": 0,
+        "diversity": 0
+      },
+      "news_top_actions": []
     }
   ],
   "education_only": [
@@ -631,16 +1018,63 @@ const DATA = {
       "religious_pct": 56.33,
       "eligible_voters": 432125,
       "turnout_pct": 61.6,
-      "news_score": 76.67,
-      "news_relevant": 161,
+      "news_score": 59.09,
+      "news_relevant": 13,
       "news_topics": {
-        "lgbt_municipal": 56,
-        "gender_equality": 24,
-        "sustainability": 34,
-        "social_justice": 26,
-        "diversity_inclusion": 20,
-        "education_progressive": 1
-      }
+        "gender_equality": 1,
+        "lgbt": 7,
+        "sustainability": 3,
+        "social_justice": 0,
+        "progressive_education": 0,
+        "diversity": 0
+      },
+      "news_actions_count": 13,
+      "news_coop_count": 0,
+      "news_actions": {
+        "gender_equality": 1,
+        "lgbt": 7,
+        "sustainability": 3,
+        "social_justice": 0,
+        "progressive_education": 0,
+        "diversity": 0
+      },
+      "news_top_actions": [
+        {
+          "title": "קידום נשים - עיריית ירושלים",
+          "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5UNUxuVGxSd01aRzZJNjVjRzh1blNBdzlCd2ltdzdWSkdLQ25CMktnTmRmb2hvajRrbFF3a0dsNlZxMHMxZXRUM3Z5VW83ZVJvcWlMZ1I3TUhzcC1HeWNwU2Zmclhzc2JJUFVF?oc=5",
+          "source": "עיריית ירושלים",
+          "published": "Tue, 29 Mar 2022 10:05:45 GMT",
+          "evidence": "anchor+verb:קידום+domain:קידום נשים"
+        },
+        {
+          "title": "עיריית ירושלים הורתה להסיר שלטי קמפיין נגד מצעד הגאווה - הארץ",
+          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOdU1HZm5JQ3VfZks2R2k5VFRoUi11ZzZCd2NQbDU0NGluU2Z1M3M3YzByRTNURk1tdVM2X3Flencwcm5ZNTJhWTlYcDZFSlU5YjM0Rm9SR2pBN1BFUGstT2ZjeXJXT1pieUVWaUo5ZjYwUGVfNEZmamNPeEYxM0FFRmZMR0taMTRWM05qcG5teEhpMGQzekdwYV92Tl90R0tXYjlBUndLQQ?oc=5",
+          "source": "הארץ",
+          "published": "Wed, 05 Jun 2019 07:00:00 GMT",
+          "evidence": "anchor+domain:גאווה"
+        },
+        {
+          "title": "פקחי עיריית ירושלים הסירו משגרירות ארה״ב שלט שנתלה לכבוד חודש הגאווה - מיינט ירושלים",
+          "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE94QTNpb0I0X0JHaFNTVWRnaFN1NUV3N0ZFTzZ6TFVPUllJU0lXRmtGUUgwLUExdGdCY0IwazBWSzFlTlVRcGlQWEplazU2bkppY2sxMm41QlR2UjFvb3hzc0l1WTd6VlktcXc?oc=5",
+          "source": "מיינט ירושלים",
+          "published": "Tue, 23 Jun 2020 07:00:00 GMT",
+          "evidence": "anchor+domain:גאווה"
+        },
+        {
+          "title": "הבית הפתוח נגד עיריית ירושלים: \"מפלה תקציבית את הקהילה הגאה\" - מיינט ירושלים",
+          "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTFA3cF9hYjN6dEd3ZDF6TTJSMmZHZGtzYnM2MDRGdFZYb1U2dTRFcHlwaFIzYVU1YWN5cW5Sa0dIaFVwUlI1NDNsdnZWaUgxcXQ2Rmh6TDd2OHFjNWFTbFhvd0ZqOWJWLTRjNkE?oc=5",
+          "source": "מיינט ירושלים",
+          "published": "Sun, 02 Aug 2020 07:00:00 GMT",
+          "evidence": "anchor+domain:גאה"
+        },
+        {
+          "title": "רק 24 שעות במקום 4 ימים: כך מנסה עיריית ירושלים לטרפד את תלית דגלי הגאווה בעיר - מיינט ירושלים",
+          "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1PZXRkNjNQaEwyRDVWbmR5QjdNaFlMZzBFaHcwdkMzSUhJR1pvRURvcUNlUTdreGdMQnF5SmRrelY4UF9YRGtYRGY0a0FKclI4NzhzQnh2RkE2Q1VQZF9HVHZ2elpQLXpjV2c?oc=5",
+          "source": "מיינט ירושלים",
+          "published": "Wed, 24 Jun 2020 07:00:00 GMT",
+          "evidence": "anchor+domain:גאווה"
+        }
+      ]
     },
     {
       "city": "רמת גן",
@@ -656,16 +1090,63 @@ const DATA = {
       "religious_pct": 12.08,
       "eligible_voters": 139055,
       "turnout_pct": 65.23,
-      "news_score": 43.81,
-      "news_relevant": 92,
+      "news_score": 36.36,
+      "news_relevant": 8,
       "news_topics": {
-        "lgbt_municipal": 38,
-        "gender_equality": 13,
-        "sustainability": 32,
-        "social_justice": 4,
-        "diversity_inclusion": 5,
-        "education_progressive": 0
-      }
+        "gender_equality": 0,
+        "lgbt": 6,
+        "sustainability": 1,
+        "social_justice": 1,
+        "progressive_education": 0,
+        "diversity": 0
+      },
+      "news_actions_count": 8,
+      "news_coop_count": 0,
+      "news_actions": {
+        "gender_equality": 0,
+        "lgbt": 6,
+        "sustainability": 1,
+        "social_justice": 1,
+        "progressive_education": 0,
+        "diversity": 0
+      },
+      "news_top_actions": [
+        {
+          "title": "עיריית רמת גן אישרה ההכרה בנישואים של זוגות להט\"בים - mako",
+          "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9sOTVqUF90dndlTFBpMzU3a2hxUW42ejZHeVdGZ19CRkYwemwyakdUWEpDalRKd01RUnhlU0syaURzdDI1MUp1VE4xNXFWMG03VGlaNTN3bE93eHFBYksxY3FBT3VkQ3R6X1NjVlc5Z3k2YTNWMkV4N3pRbmhQQQ?oc=5",
+          "source": "mako",
+          "published": "Tue, 17 Nov 2020 08:00:00 GMT",
+          "evidence": "anchor+verb:אישרה+domain:להט\"ב"
+        },
+        {
+          "title": "אחרי תקרית נוספת: עיריית רמת גן קישטה רחוב בדגלי גאווה - ynet",
+          "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE91QTBwT1pFam85VFluOUNQNVBrbGlfc2VLQkxZVmpZUGJnRU5LcFpMTGNqY2ZpSE9FRVZPVlNkU1dQQVUxNklSaWh4YnNMMnVHbFU5M2EyWDU?oc=5",
+          "source": "ynet",
+          "published": "Wed, 12 Aug 2020 07:00:00 GMT",
+          "evidence": "anchor+domain:גאווה"
+        },
+        {
+          "title": "חודש הגאווה 2025: מגוון פעילויות ברחבי העיר - עיריית רמת גן",
+          "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQMjdJcXhYRFpzOVAwdHNXRTM1cXFhLWNDVjZwV3YtV3ZZTzUzaTBHcjBORjgyZkY3UkNtQTAwNVNpUWNpUnFiMXJLdW1pU3BXaFdUNXBjOE9OYWg3NjNHemx2b1c0SF9rQnRmTEphU045Q2V5UmhzZDZZbUNJUmFYdGlaV0pqd3JK?oc=5",
+          "source": "עיריית רמת גן",
+          "published": "Sun, 08 Jun 2025 07:00:00 GMT",
+          "evidence": "anchor+domain:גאווה"
+        },
+        {
+          "title": "גאווה עירונית: רמת גן מובילה במדד האגודה למען הלהט\"ב שנה שנייה ברציפות - עיריית רמת גן",
+          "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNbTNwa0ptazRxODJmVkcyU3FGOWJ5NXRtNmlVX1locElGcnJmN0cxdFNxM2hRaTJuQkM1YjQ4ZXRYamEzWmQ3bTRSQ1UtQlJQVnR5TzhKaHQzeGJIQnBpcER2TTMxUE1mV2ZIdk82bHdjZGc4ZG82cG95ckthYVRpWjZrd1ZBY3dD?oc=5",
+          "source": "עיריית רמת גן",
+          "published": "Wed, 19 Jun 2024 07:00:00 GMT",
+          "evidence": "anchor+domain:להט\"ב"
+        },
+        {
+          "title": "שלטי שנאה נגד להט\"בים ברמת גן - ראש העיר מתכנן נקמה קרה - ice (אייס)",
+          "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1rUkNVaVMzZ0NSX1lab1NBaDZzV2wxazQ3YzJKWUJGTVJrbnBtVTIzYXZaajlib1hEbGYwVGFvZGtYcW8xZ3htT3cyWlgydXFvVlVzV05BTGZYMV9ZRHd6NE13?oc=5",
+          "source": "ice (אייס)",
+          "published": "Thu, 27 Apr 2023 07:00:00 GMT",
+          "evidence": "anchor+domain:להט\"ב"
+        }
+      ]
     }
   ],
   "protocols_only": [],

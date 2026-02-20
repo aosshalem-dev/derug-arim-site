@@ -559,6 +559,103 @@
             /* Also hide red_flag column on small phones */
             th:nth-child(7), td:nth-child(7) { display: none; }
         }
+
+        /* ── Research Background tab ── */
+        .bg-hero {
+            background: linear-gradient(135deg, #2c1810 0%, #4a2520 40%, #1a1a2e 100%);
+            color: #fff; border-radius: 12px; padding: 32px 30px;
+            margin: 0 auto 28px; max-width: 900px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+        .bg-hero h2 { font-size: 1.5em; margin-bottom: 10px; color: #fff; }
+        .bg-hero p { color: #d0c8c0; font-size: 1em; line-height: 1.7; }
+        .bg-hero strong { color: #ff8800; }
+
+        .bg-section {
+            background: #fff; border: 1px solid #ddd; border-radius: 8px;
+            padding: 24px; margin: 0 auto 20px; max-width: 900px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        .bg-section h3 {
+            color: #1a1a2e; font-size: 1.1em; margin-bottom: 14px;
+            padding-bottom: 8px; border-bottom: 2px solid #ff8800;
+        }
+        .bg-section h4 { color: #2a5a8a; font-size: 0.95em; margin: 14px 0 8px; }
+
+        .bg-unknown {
+            display: flex; align-items: flex-start; gap: 12px;
+            padding: 10px 14px; margin: 8px 0; background: #faf5f0;
+            border-radius: 6px; border-right: 3px solid #cc8800;
+        }
+        .bg-unknown-icon { font-size: 1.2em; flex-shrink: 0; margin-top: 2px; }
+        .bg-unknown-text { font-size: 0.9em; color: #444; line-height: 1.6; }
+        .bg-unknown-text strong { color: #222; }
+
+        .bg-quote {
+            background: #f8f0e8; border-right: 4px solid #8b0000;
+            padding: 16px 20px; margin: 14px 0; border-radius: 0 8px 8px 0;
+        }
+        .bg-quote p {
+            font-size: 0.95em; color: #333; line-height: 1.7; margin-bottom: 6px;
+            font-style: italic;
+        }
+        .bg-quote .bg-quote-src {
+            font-size: 0.8em; color: #888; font-style: normal;
+        }
+        .bg-quote .bg-quote-src a { color: #2a5a8a; text-decoration: none; }
+        .bg-quote .bg-quote-src a:hover { text-decoration: underline; }
+
+        .bg-evidence {
+            background: #fff5f5; border: 1px solid #e8cccc; border-radius: 8px;
+            padding: 16px 20px; margin: 12px 0;
+        }
+        .bg-evidence h4 { color: #8b0000; margin: 0 0 8px; font-size: 0.95em; }
+        .bg-evidence p { font-size: 0.88em; color: #444; line-height: 1.6; }
+
+        .bg-compare {
+            display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px;
+            align-items: center; margin: 16px 0;
+        }
+        .bg-compare-box {
+            background: #f5f5f8; border-radius: 8px; padding: 16px;
+            text-align: center; border: 1px solid #ddd;
+        }
+        .bg-compare-box.bad { background: #fff5f0; border-color: #e8cccc; }
+        .bg-compare-box.good { background: #f0f8f0; border-color: #cce8cc; }
+        .bg-compare-arrow { font-size: 1.5em; color: #888; }
+        .bg-compare-box h5 { margin-bottom: 6px; font-size: 0.9em; }
+        .bg-compare-box p { font-size: 0.8em; color: #555; }
+
+        .bg-links {
+            display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px;
+        }
+        .bg-link {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 8px 16px; border-radius: 6px;
+            font-size: 0.85em; font-weight: 600; text-decoration: none;
+            transition: filter 0.2s;
+        }
+        .bg-link:hover { filter: brightness(1.15); }
+        .bg-link.rosetta { background: #8b0000; color: #fff; }
+        .bg-link.sel { background: #2a5a8a; color: #fff; }
+        .bg-link.shefi { background: #6b2fa0; color: #fff; }
+        .bg-link.gnost { background: #1a1a2e; color: #fff; }
+
+        .bg-bottom-line {
+            background: linear-gradient(135deg, #1a1a2e 0%, #2a3a5e 100%);
+            color: #fff; border-radius: 8px; padding: 20px 24px;
+            margin: 20px auto 0; max-width: 900px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .bg-bottom-line h3 { color: #ff8800; margin-bottom: 8px; }
+        .bg-bottom-line p { color: #d0d8e8; font-size: 0.9em; line-height: 1.7; }
+
+        @media (max-width: 768px) {
+            .bg-compare { grid-template-columns: 1fr; }
+            .bg-compare-arrow { transform: rotate(90deg); text-align: center; }
+            .bg-hero { padding: 20px 16px; }
+            .bg-section { padding: 16px; }
+        }
     </style>
 </head>
 <body>
@@ -567,6 +664,7 @@
         <div class="nav-inner">
             <span class="nav-title">דירוג ערים</span>
             <div class="nav-tabs">
+                <div class="nav-tab" onclick="switchTab('background',this)">רקע מחקרי</div>
                 <div class="nav-tab active" onclick="switchTab('ranking',this)">דירוג משולב</div>
                 <div class="nav-tab" onclick="switchTab('education',this)">תוכניות חינוך</div>
                 <div class="nav-tab" onclick="switchTab('protocols',this)">פרוטוקולים</div>
@@ -577,6 +675,274 @@
     </nav>
 
     <div class="main-content">
+
+    <!-- ═══ TAB: RESEARCH BACKGROUND ═══ -->
+    <div id="tab-background" class="tab-content">
+
+        <div class="bg-hero">
+            <h2>למה קשה לדעת מה באמת קורה בבתי הספר</h2>
+            <p>
+                מטרת המחקר הזה היא לדרג ערים לפי מידת החדירה האידיאולוגית-פרוגרסיבית למערכת החינוך העירונית.
+                חלק מהותי מהמשימה הוא להבין <strong>מה נלמד בפועל בכיתות</strong>.
+                בעמוד הזה נסביר למה זה קשה — ונציג ראיות שהקושי הזה <strong>אינו מקרי</strong>.
+            </p>
+        </div>
+
+        <!-- Section 1: What we don't know -->
+        <div class="bg-section">
+            <h3>מה אנחנו לא יודעים</h3>
+            <p style="font-size:0.9em;color:#555;margin-bottom:14px;">
+                נתוני מאגר גפ"ן של משרד החינוך מכסים כשנתיים בלבד, ומספקים מידע ברזולוציה נמוכה מאוד.
+                אנחנו יודעים ששולמו כספים. אנחנו לא יודעים מה קרה בכיתה.
+            </p>
+
+            <div class="bg-unknown">
+                <span class="bg-unknown-icon">&#x2753;</span>
+                <div class="bg-unknown-text">
+                    <strong>שעות חשיפה של תלמידים</strong> — תוכנית יכולה להיות סדנה חד-פעמית של שעתיים,
+                    או מפגש שבועי לאורך כל השנה. אין לנו מידע על היקף החשיפה בפועל.
+                </div>
+            </div>
+
+            <div class="bg-unknown">
+                <span class="bg-unknown-icon">&#x2753;</span>
+                <div class="bg-unknown-text">
+                    <strong>שעות הכשרת מורים</strong> — חלק מהתוכניות כוללות הכשרות למורים שמשפיעות
+                    על כל שיעור שהמורה מעביר. אין לנו מידע על היקף ההכשרות.
+                </div>
+            </div>
+
+            <div class="bg-unknown">
+                <span class="bg-unknown-icon">&#x2753;</span>
+                <div class="bg-unknown-text">
+                    <strong>הנחיות יישום מערכתיות</strong> — האם ההנחיה היא "ליישם את העקרונות בכל שיעור"?
+                    "לשלב SEL בכל השיעורים"? הנחיות כאלה הופכות שעה אחת של הכשרה למאות שעות של חשיפה.
+                    <strong>אין לנו גישה להנחיות אלה.</strong>
+                </div>
+            </div>
+
+            <div class="bg-unknown">
+                <span class="bg-unknown-icon">&#x2753;</span>
+                <div class="bg-unknown-text">
+                    <strong>תוכן בפועל</strong> — תוכניות כמו SafeSchool (2.4 מיליון &#x20AA;, 838 בתי ספר)
+                    פועלות מאחורי חומת תשלום. הורים מדווחים שילדים חוזרים הביתה ומדברים על "ספקטרום מגדרי" —
+                    אבל לא ניתן לאמת מבחוץ מה בדיוק מוצג לתלמידים.
+                </div>
+            </div>
+
+            <div class="bg-unknown">
+                <span class="bg-unknown-icon">&#x2753;</span>
+                <div class="bg-unknown-text">
+                    <strong>תיאורים מטושטשים בכוונה</strong> — שמות תוכניות כמו "כישורי חיים",
+                    "אקלים מיטבי" או "אזרחות פעילה" לא מגלים כמעט שום דבר על התוכן בפועל.
+                    זה כמו לנסות להבין מה בתפריט של מסעדה לפי הכותרת "אוכל טוב".
+                </div>
+            </div>
+
+            <h4>השוו בעצמכם</h4>
+            <div class="bg-compare">
+                <div class="bg-compare-box good">
+                    <h5>ספר לימוד</h5>
+                    <p>כל הורה יכול לקנות, לקרוא, ולדעת בדיוק מה הילד לומד בכיתה. תוכן גלוי ושקוף.</p>
+                </div>
+                <div class="bg-compare-arrow">&#x2B05;</div>
+                <div class="bg-compare-box bad">
+                    <h5>תוכנית חיצונית</h5>
+                    <p>מנחה חיצוני נכנס לכיתה. תוכן מאחורי חומת תשלום. שם מטושטש.
+                    ההורים מקבלים הודעה בדיעבד — אם בכלל.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: By design -->
+        <div class="bg-section">
+            <h3>ראיות שהאטימות היא בכוונה</h3>
+            <p style="font-size:0.9em;color:#555;margin-bottom:14px;">
+                הקושי לדעת מה קורה בכיתות לא נובע רק ממגבלות טכניות.
+                אנשים בעלי השפעה במערכת החינוך מביעים עמדות מפורשות נגד שקיפות — ובעד ניצול האטימות.
+            </p>
+
+            <div class="bg-quote">
+                <p>
+                    &#x201F;כל פעם שדברים על ביג דאטה, קופצת לי הטראומה של פרסום נתוני המיצ"ב...
+                    ואנחנו צריכים להיות מאוד מאוד זהירים באיזה מידע אנחנו אוספים ואיזה מידע אנחנו לא אוספים&#x201E;
+                </p>
+                <div class="bg-quote-src">
+                    — <strong>ד"ר ניר מיכאלי</strong>, ערוץ משרד החינוך, דקה 02:25
+                    (<a href="https://www.youtube.com/watch?v=WUhBXXgCVsQ&t=145" target="_blank" rel="noopener">YouTube</a>)
+                </div>
+            </div>
+
+            <div class="bg-quote">
+                <p>
+                    &#x201F;אני הרבה פעמים הייתה לי תחושה כמורה שאני יכול לארגן הפיכה קומוניסטית בכיתה
+                    ואף אחד לא בכלל לא ירגיש וזה לא יזיז לאף אחד והם אפילו לא ידעו בדיוק להגיד בבית
+                    על מה בדיוק דיברנו בכיתה&#x201E;
+                </p>
+                <div class="bg-quote-src">
+                    — <strong>ד"ר ניר מיכאלי</strong>, הרצאה בקדמה, דקה 55:00
+                    (<a href="https://www.youtube.com/watch?v=lTtg0gbU-ZU&t=3300" target="_blank" rel="noopener">YouTube</a>)
+                </div>
+            </div>
+
+            <div class="bg-evidence">
+                <h4>מי זה ניר מיכאלי?</h4>
+                <p>
+                    לא פרשן שולי — מחבר משותף של דו"ח <strong>המדענית הראשית של משרד החינוך</strong> (2024)
+                    בנושא "חינוך פוליטי בעת משבר לאומי", יחד עם ד"ר קרן קטקו-איילי.
+                    אותו דו"ח ממומן על ידי לשכת המדענית הראשית
+                    ומציע מודל שהמחברים עצמם כינו במאמר אקדמי קודם (2020)
+                    <strong>"פדגוגיה אקטיביסטית"</strong> — כלומר הכשרת מורים כסוכני שינוי חברתי.
+                </p>
+            </div>
+        </div>
+
+        <!-- Section 3: The language game -->
+        <div class="bg-section">
+            <h3>משחק השפה — אותו תוכן, אריזה אחרת</h3>
+
+            <p style="font-size:0.9em;color:#555;margin-bottom:14px;">
+                ד"ר קרן קטקו-איילי פרסמה <strong>את אותו מודל פדגוגי</strong> בשני מסמכים:
+            </p>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+                <div style="background:#fff5f0;border:1px solid #e8cccc;border-radius:8px;padding:14px;">
+                    <div style="font-size:0.75em;color:#8b0000;font-weight:700;margin-bottom:4px;">2020 — מאמר אקדמי באנגלית</div>
+                    <p style="font-size:0.85em;color:#444;">
+                        "Activist Pedagogy" — שפה אקטיביסטית גלויה.
+                        מורים כ"סוכני שינוי חברתי". מבוסס על פאולו פריירה (פדגוגיה ביקורתית = מרקסיזם).
+                        פורסם בכתב עת ברומניה.
+                    </p>
+                </div>
+                <div style="background:#f0f5ff;border:1px solid #ccd8e8;border-radius:8px;padding:14px;">
+                    <div style="font-size:0.75em;color:#2a5a8a;font-weight:700;margin-bottom:4px;">2024 — דו"ח למשרד החינוך</div>
+                    <p style="font-size:0.85em;color:#444;">
+                        "חינוך פוליטי בעת משבר לאומי" — שפה מרוככת ומוסדית.
+                        ממוסגר כ"מענה למשבר 7 באוקטובר". המודל זהה, האריזה הפוכה.
+                        ממומן על ידי המדענית הראשית.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-evidence">
+                <h4>המעבר מחינוך ציוני ל"אזרחות פעילה"</h4>
+                <p>
+                    המשרד עצמו עובר מדגש על חינוך ציוני לעבר "אזרחות פעילה" (Active Citizenship).
+                    קטקו-איילי מסבירה במאמר 2020 מה המונח הזה באמת אומר:
+                    <strong>Activist Pedagogy — פדגוגיה אקטיביסטית</strong>, שהיא Critical Pedagogy —
+                    פדגוגיה ביקורתית, שמשמעותה פרוגרסיביזם רדיקלי.
+                    היא מצטטת את פאולו פריירה, הרברט מרקוזה והנרי ג'ירו.
+                    היא מקדמת הכשרת מורים ברדיקליזם, ובמקביל מזדהה עם מורים המסתירים מה הם באמת עושים בכיתה.
+                    התוכן מפורט ב<a href="https://aosshalem-dev.github.io/progressive-rosetta-stone/" target="_blank" rel="noopener" style="color:#8b0000;font-weight:600;">אבן רוזטה הפרוגרסיבית</a>.
+                </p>
+            </div>
+        </div>
+
+        <!-- Section 4: NIF funding -->
+        <div class="bg-section">
+            <h3>הקרן החדשה לישראל (NIF) — ממימון מניפולציה לתוכניות בבתי ספר</h3>
+
+            <p style="font-size:0.9em;color:#555;margin-bottom:14px;">
+                הקרן החדשה לישראל מממנת ארגונים שמפעילים תוכניות חינוכיות בבתי ספר.
+                באותו זמן, היא מממנת ארגונים שמלמדים <strong>טכניקות מניפולציה מפורשות</strong>.
+            </p>
+
+            <div class="bg-quote">
+                <p>
+                    &#x201F;קודם כל להבין איך הבן אדם האחר חושב על הסוגיה, ואז מתוך ההסתכלות שלו,
+                    לנסח לו את הבעיה באופן ש<strong>התשובה האפשרית היחידה</strong> לשאלה שאני שואל אותו,
+                    היא לעשות את הדבר שאני רוצה שהוא יעשה.
+                    [...] הדבר היחיד שמעניין זה מה הם עושים&#x201E;
+                </p>
+                <div class="bg-quote-src">
+                    — <strong>חגי אלקיים</strong>, סדנת "הנדסת תודעה" של ארגון מחזקים (ממומן ע"י הקרן החדשה)
+                    (<a href="https://www.gnostocracy.com/?quote=534" target="_blank" rel="noopener">מקור + וידאו</a>)
+                </div>
+            </div>
+
+            <div class="bg-evidence">
+                <h4>הקשר לחינוך</h4>
+                <p>
+                    אותה קרן חדשה שמממנת סדנאות "הנדסת תודעה" מממנת גם ארגונים שמפעילים
+                    תוכניות חינוך בבתי ספר:
+                </p>
+                <ul style="list-style:none;padding:0;margin:10px 0 0;">
+                    <li style="padding:4px 0;font-size:0.88em;color:#444;">
+                        <strong style="color:#8b0000;">דרור ישראל</strong> — 16 תוכניות, דירוג 5, ~690,000 &#x20AA;,
+                        חשיפת תלמידים ל"שינוי חברתי", תלונות הורים על גיוס כיתתי
+                    </li>
+                    <li style="padding:4px 0;font-size:0.88em;color:#444;">
+                        <strong style="color:#8b0000;">רשת מרכזי הסיוע (ARCCI)</strong> — 5 תוכניות, דירוג 4-5, ~419,000 &#x20AA;,
+                        מזדהה כ"סוכנות לשינוי חברתי", לובי 50+ חוקים
+                    </li>
+                    <li style="padding:4px 0;font-size:0.88em;color:#444;">
+                        <strong style="color:#8b0000;">מצמיחים</strong> — דירוג 5, ~1,823,000 &#x20AA;, 348 בתי ספר,
+                        "מדינת כל אזרחיה" במסגור של מניעת אלימות
+                    </li>
+                </ul>
+                <p style="margin-top:10px;font-size:0.88em;color:#444;">
+                    <strong>זו הסיבה שקשר לקרן החדשה מוריד דירוג.</strong>
+                    לא אשמה בזיקה — אלא שהמממן מלמד את הרשת שלו טכניקות מניפולציה,
+                    ואותה רשת מפעילה תוכניות בבתי ספר.
+                </p>
+            </div>
+        </div>
+
+        <!-- Section 5: Why -->
+        <div class="bg-section">
+            <h3>למה לשמור על אטימות?</h3>
+            <p style="font-size:0.95em;color:#333;line-height:1.7;">
+                פשוט — <strong>כי רוב ההורים לא היו מסכימים.</strong>
+            </p>
+            <p style="font-size:0.9em;color:#555;line-height:1.7;margin-top:8px;">
+                מורה שמארגן "הפיכה קומוניסטית" בכיתה לא עושה את זה בגלוי —
+                כי הוא יודע שהורים היו מתנגדים.
+                ארגון שמלמד "הנדסת תודעה" לא מפרסם את זה בעלון לבית —
+                כי הוא יודע שההורים לא היו שולחים את הילדים.
+                תוכנית שמלמדת "ספקטרום מגדרי" שמה את התוכן מאחורי חומת תשלום —
+                כי בגלוי זה לא היה עובר.
+            </p>
+            <p style="font-size:0.9em;color:#555;line-height:1.7;margin-top:8px;">
+                יש כוחות חזקים שרוצים שהורים ידעו כמה שפחות.
+                זה לא תיאוריית קונספירציה — זה ציטוטים ישירים של אנשים מרכזיים במערכת, עם מקורות.
+            </p>
+        </div>
+
+        <!-- Section 6: Despite all this -->
+        <div class="bg-bottom-line">
+            <h3>בכל זאת — מאמץ מיטבי</h3>
+            <p>
+                בתנאים האלה, אנחנו עדיין מנסים למפות היכן עיריות דוחפות תוכן פרוגרסיבי.
+                אנחנו משתמשים ב<strong>מחקר עומק</strong> על תוכניות ספציפיות (181 ביקורות אנושיות, 12 חקירות מעמיקות עם מקורות),
+                <strong>מיפוי ארגוני</strong> של מפעילי תוכניות, <strong>ניתוח פרוטוקולים</strong> של מועצות עיר,
+                ו<strong>נתוני תקציב</strong> מגפ"ן.
+                התמונה חלקית — אבל מה שאנחנו רואים מספיק כדי לזהות מגמות.
+            </p>
+        </div>
+
+        <!-- Deep dive links -->
+        <div class="bg-section" style="text-align:center;">
+            <h3>מחקרי עומק נוספים</h3>
+            <p style="font-size:0.9em;color:#555;margin-bottom:16px;">
+                כל אחד מהאתרים הבאים מרחיב על היבט ספציפי של התמונה:
+            </p>
+            <div class="bg-links" style="justify-content:center;">
+                <a class="bg-link rosetta" href="https://aosshalem-dev.github.io/progressive-rosetta-stone/" target="_blank" rel="noopener">
+                    &#x1F5FF; אבן רוזטה הפרוגרסיבית
+                </a>
+                <a class="bg-link sel" href="https://aosshalem-dev.github.io/sel-research/" target="_blank" rel="noopener">
+                    &#x1F9E0; SEL — למידה רגשית-חברתית
+                </a>
+                <a class="bg-link shefi" href="https://aosshalem-dev.github.io/shefi-research/" target="_blank" rel="noopener">
+                    &#x26A0; שפ"י — מגדר וזהות מינית
+                </a>
+                <a class="bg-link gnost" href="https://www.gnostocracy.com/?quote=534" target="_blank" rel="noopener">
+                    &#x1F3AC; הנדסת תודעה — וידאו
+                </a>
+            </div>
+        </div>
+
+    </div>
 
     <!-- ═══ TAB: RANKING (default) ═══ -->
     <div id="tab-ranking" class="tab-content active">
@@ -714,7 +1080,7 @@
             <p class="subtitle" style="text-align:right">53 פרוטוקולים שנבחרו מ-5 ערים עם האותות החזקים ביותר | לחצו לפתיחת הטקסט</p>
             <p style="font-size:0.82em;color:#bf360c;text-align:right;max-width:1000px;margin:4px auto 0">
                 &#9888; שימו לב: ההדגשה מבוססת על ספירה מכנית ללא ניתוח הקשר. חלק מהמילים המודגשות הן חיוביים כוזבים (&#171;קיימות&#187; = existing, שמות פרטיים כ&#171;שולי&#187;). ראו
-                <span style="cursor:pointer;color:#2a5a8a;text-decoration:underline" onclick="switchTab('ranking',document.querySelector('.nav-tab'))">כתמים עיוורים</span>
+                <span style="cursor:pointer;color:#2a5a8a;text-decoration:underline" onclick="switchTab('ranking',document.querySelectorAll('.nav-tab')[1])">כתמים עיוורים</span>
                 לפירוט.
             </p>
         </div>
@@ -789,8 +1155,8 @@
                     <p style="margin-top:6px;font-size:0.85em;color:#666">
                         <strong>מקורות:</strong>
                         ראו דוחות מחקר מעמיק בטאב "מחקר מעמיק" — במיוחד:
-                        <span style="background:#e8f0f8;padding:2px 6px;border-radius:3px;cursor:pointer" onclick="switchTab('research',document.querySelector('[data-tab=research]')||document.querySelectorAll('.nav-tab')[4])">רשת דרור ישראל</span>,
-                        <span style="background:#e8f0f8;padding:2px 6px;border-radius:3px;cursor:pointer" onclick="switchTab('research',document.querySelector('[data-tab=research]')||document.querySelectorAll('.nav-tab')[4])">רשת מכון הרטמן</span>
+                        <span style="background:#e8f0f8;padding:2px 6px;border-radius:3px;cursor:pointer" onclick="switchTab('research',document.querySelector('[data-tab=research]')||document.querySelectorAll('.nav-tab')[5])">רשת דרור ישראל</span>,
+                        <span style="background:#e8f0f8;padding:2px 6px;border-radius:3px;cursor:pointer" onclick="switchTab('research',document.querySelector('[data-tab=research]')||document.querySelectorAll('.nav-tab')[5])">רשת מכון הרטמן</span>
                     </p>
                 </div>
             </div>
@@ -807,7 +1173,7 @@
                     <p style="margin-top:8px"><strong>השיטה:</strong> סריקה אוטומטית של מילות מפתח בפרוטוקולי מועצות עיר, נורמליזציה לפי אורך הטקסט (לכל 10,000 תווים), ומיון ערים לפי צפיפות אינדיקטורים. הציון משתתף ב-<strong>20%</strong> מהציון המשולב.</p>
                     <p style="margin-top:6px;color:#bf360c;font-size:0.88em">
                         <strong>&#9888; מגבלות ידועות:</strong> לסורק כתמים עיוורים — חיוביים כוזבים ממילים דו-משמעיות (&#171;קיימות&#187;, &#171;שולי&#187;), שמות פרטיים הנספרים כתוכן, ודגלים על תוכניות לגיטימיות (&#171;רשת ערים בריאות&#187;).
-                        <span style="cursor:pointer;color:#2a5a8a;text-decoration:underline" onclick="switchTab('ranking',document.querySelector('.nav-tab'))">פירוט מלא בטאב הדירוג &#8592;</span>
+                        <span style="cursor:pointer;color:#2a5a8a;text-decoration:underline" onclick="switchTab('ranking',document.querySelectorAll('.nav-tab')[1])">פירוט מלא בטאב הדירוג &#8592;</span>
                     </p>
                     <p style="font-size:0.85em;color:#666;margin-top:6px">
                         <strong>מקורות נוספים:</strong>
@@ -1247,7 +1613,7 @@
                 </div>` : ''}
                 <div style="font-size:0.8em;margin-top:4px">
                     מקור: פרוטוקולים של ישיבות מועצת העיר (${entry.protocol_coverage || ''} קבצים) |
-                    <span style="cursor:pointer;color:#2a5a8a;text-decoration:underline" onclick="event.stopPropagation();switchTab('protocols',document.querySelectorAll('.nav-tab')[2])">צפה בפרוטוקולים מלאים</span> |
+                    <span style="cursor:pointer;color:#2a5a8a;text-decoration:underline" onclick="event.stopPropagation();switchTab('protocols',document.querySelectorAll('.nav-tab')[3])">צפה בפרוטוקולים מלאים</span> |
                     <a href="data/ranking.html" target="_blank" rel="noopener" style="color:#2a5a8a" onclick="event.stopPropagation()">נתוני דירוג גולמיים</a>
                 </div>`;
         }
@@ -1296,31 +1662,69 @@
         }
 
         let newsPanel = '';
-        if (entry.news_score != null && entry.news_topics) {
-            const t = entry.news_topics;
-            const topicLabels = {
-                lgbt_municipal: 'להטב',
-                gender_equality: 'מגדר',
-                sustainability: 'קיימות',
-                social_justice: 'צדק חברתי',
-                diversity_inclusion: 'גיוון',
-                education_progressive: 'חינוך פרוגרסיבי'
-            };
-            const bars = Object.entries(topicLabels).map(([key, label]) => {
-                const val = t[key] || 0;
-                return buildPoleBar(label, val, 80, '#339966');
-            }).join('');
+        if (entry.news_score != null) {
+            const nActions = entry.news_actions_count || 0;
+            const nCoops = entry.news_coop_count || 0;
+            const nTotal = nActions + nCoops;
+
+            // Domain breakdown bars (only if domain data exists)
+            let domainBars = '';
+            if (entry.news_actions) {
+                const domainLabels = {
+                    gender_equality: 'שוויון מגדרי',
+                    lgbt: 'להט"ב',
+                    sustainability: 'קיימות',
+                    social_justice: 'צדק חברתי',
+                    progressive_education: 'חינוך פרוגרסיבי',
+                    diversity: 'גיוון'
+                };
+                domainBars = Object.entries(domainLabels).map(([key, label]) => {
+                    const val = entry.news_actions[key] || 0;
+                    return val > 0 ? buildPoleBar(label, val, 20, '#339966') : '';
+                }).filter(Boolean).join('');
+            }
+
+            // Top action headlines
+            let topHeadlines = '';
+            if (entry.news_top_actions && entry.news_top_actions.length > 0) {
+                const items = entry.news_top_actions.slice(0, 3).map(a =>
+                    `<div style="margin-bottom:4px;font-size:0.82em;padding:2px 0;border-bottom:1px solid #f0f0f0">
+                        <a href="${a.link}" target="_blank" rel="noopener" style="color:#2980b9;text-decoration:none">${a.title}</a>
+                        <span style="color:#888;font-size:0.85em"> — ${a.source || ''}</span>
+                    </div>`
+                ).join('');
+                topHeadlines = `<div style="margin-top:8px">
+                    <div style="font-weight:600;font-size:0.85em;color:#555;margin-bottom:4px">דוגמאות לפעולות עירוניות:</div>
+                    ${items}
+                </div>`;
+            }
+
             newsPanel = `
                 <div class="detail-section">
-                    <h4>סיקור חדשותי — נושאים פרוגרסיביים (${entry.news_relevant || 0} כתבות רלוונטיות)</h4>
-                    ${bars}
+                    <h4>פעולות עירוניות פרוגרסיביות — סיקור חדשותי</h4>
+                    <div style="display:flex;gap:12px;margin-bottom:10px;flex-wrap:wrap">
+                        <div style="background:#e8f5e9;border-radius:6px;padding:8px 14px;text-align:center;min-width:100px">
+                            <div style="font-size:1.6em;font-weight:700;color:#2e7d32">${nActions}</div>
+                            <div style="font-size:0.78em;color:#555">פעולות עירוניות</div>
+                        </div>
+                        <div style="background:#e3f2fd;border-radius:6px;padding:8px 14px;text-align:center;min-width:100px">
+                            <div style="font-size:1.6em;font-weight:700;color:#1565c0">${nCoops}</div>
+                            <div style="font-size:0.78em;color:#555">שיתופי פעולה עם ארגונים</div>
+                        </div>
+                        <div style="background:#f3e5f5;border-radius:6px;padding:8px 14px;text-align:center;min-width:100px">
+                            <div style="font-size:1.6em;font-weight:700;color:#7b1fa2">${entry.news_score.toFixed(0)}</div>
+                            <div style="font-size:0.78em;color:#555">ציון פעולות / 100</div>
+                        </div>
+                    </div>
+                    ${domainBars}
+                    ${topHeadlines}
                     <div class="dim" style="margin-top:6px;font-size:0.85em">
-                        ציון חדשות: <strong>${entry.news_score.toFixed(1)}</strong>/100
-                        &nbsp;|&nbsp; מקור: <a href="https://news.google.com/search?q=${encodeURIComponent(entry.city + ' עירייה')}&hl=iw&gl=IL" target="_blank" rel="noopener" style="color:#2980b9">Google News — ${entry.city}</a>
+                        מתודולוגיה: ציון מבוסס פעולות עירוניות מתועדות (לא ספירת אזכורים)
+                        &nbsp;|&nbsp; <a href="https://news.google.com/search?q=${encodeURIComponent('עיריית ' + entry.city)}&hl=iw&gl=IL" target="_blank" rel="noopener" style="color:#2980b9">Google News</a>
                     </div>
                     <div style="margin-top:10px">
                         <button onclick="loadNewsArticles('${entry.protocol_key}', this)" style="background:#339966;color:#fff;border:none;padding:6px 16px;border-radius:4px;cursor:pointer;font-size:0.88em">
-                            הצג כתבות מלאות (${entry.news_relevant || 0}) ▾
+                            הצג כתבות מפורטות (${nTotal}) ▾
                         </button>
                         <div id="news-articles-${entry.protocol_key}" style="display:none;margin-top:10px"></div>
                     </div>
@@ -1358,7 +1762,7 @@
         }
     }
 
-    // ── News article loader (on-demand per city) ──
+    // ── News article loader (on-demand per city) — v3 action-based ──
     const _newsCache = {};
     async function loadNewsArticles(cityKey, btn) {
         const container = document.getElementById(`news-articles-${cityKey}`);
@@ -1381,33 +1785,59 @@
             const data = await resp.json();
             _newsCache[cityKey] = data;
 
-            const topicLabels = {
-                lgbt_municipal: 'להט"ב ומוניציפלי',
-                gender_equality: 'שוויון מגדרי',
-                sustainability: 'קיימות',
-                social_justice: 'צדק חברתי',
-                diversity_inclusion: 'גיוון והכלה',
-                education_progressive: 'חינוך פרוגרסיבי'
+            const categoryColors = {
+                municipal_action: '#2e7d32',
+                municipal_cooperation: '#1565c0',
+                topic_mention: '#888'
             };
 
             let html = '';
-            for (const [topicKey, topicData] of Object.entries(data.topics)) {
-                if (topicData.count === 0) continue;
-                const label = topicLabels[topicKey] || topicKey;
-                html += `<div style="margin-bottom:12px">
-                    <div onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'"
-                         style="cursor:pointer;font-weight:600;font-size:0.9em;color:#339966;padding:4px 0">
-                        ${label} (${topicData.count} כתבות) ▾
-                    </div>
-                    <div style="display:none;font-size:0.82em;max-height:300px;overflow-y:auto;padding-right:8px;border-right:2px solid #e0e0e0">`;
-                for (const a of topicData.articles) {
-                    const dateStr = a.published ? new Date(a.published).toLocaleDateString('he-IL') : '';
-                    html += `<div style="margin-bottom:6px;padding:3px 0;border-bottom:1px solid #f0f0f0">
-                        <a href="${a.url}" target="_blank" rel="noopener" style="color:#2980b9;text-decoration:none;font-size:0.95em">${a.title}</a>
-                        <span style="color:#888;font-size:0.85em"> — ${a.source} ${dateStr}</span>
-                    </div>`;
+            if (data.categories) {
+                for (const [catKey, catData] of Object.entries(data.categories)) {
+                    if (catData.count === 0) continue;
+                    const color = categoryColors[catKey] || '#555';
+                    html += `<div style="margin-bottom:12px">
+                        <div onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'"
+                             style="cursor:pointer;font-weight:600;font-size:0.9em;color:${color};padding:4px 0">
+                            ${catData.label} (${catData.count} כתבות) ▾
+                        </div>
+                        <div style="display:none;font-size:0.82em;max-height:300px;overflow-y:auto;padding-right:8px;border-right:2px solid ${color}30">`;
+                    for (const a of catData.articles) {
+                        const dateStr = a.published ? new Date(a.published).toLocaleDateString('he-IL') : '';
+                        const evidenceTag = a.evidence ? `<span style="color:#999;font-size:0.8em;margin-right:4px">[${a.evidence}]</span>` : '';
+                        html += `<div style="margin-bottom:6px;padding:3px 0;border-bottom:1px solid #f0f0f0">
+                            <a href="${a.url}" target="_blank" rel="noopener" style="color:#2980b9;text-decoration:none;font-size:0.95em">${a.title}</a>
+                            <span style="color:#888;font-size:0.85em"> — ${a.source} ${dateStr}</span>
+                            ${evidenceTag}
+                        </div>`;
+                    }
+                    html += '</div></div>';
                 }
-                html += '</div></div>';
+            } else if (data.topics) {
+                // Fallback: v2-style topic-based structure
+                const topicLabels = {
+                    lgbt_municipal: 'להט"ב ומוניציפלי', gender_equality: 'שוויון מגדרי',
+                    sustainability: 'קיימות', social_justice: 'צדק חברתי',
+                    diversity_inclusion: 'גיוון והכלה', education_progressive: 'חינוך פרוגרסיבי'
+                };
+                for (const [topicKey, topicData] of Object.entries(data.topics)) {
+                    if (topicData.count === 0) continue;
+                    const label = topicLabels[topicKey] || topicKey;
+                    html += `<div style="margin-bottom:12px">
+                        <div onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'"
+                             style="cursor:pointer;font-weight:600;font-size:0.9em;color:#339966;padding:4px 0">
+                            ${label} (${topicData.count} כתבות) ▾
+                        </div>
+                        <div style="display:none;font-size:0.82em;max-height:300px;overflow-y:auto;padding-right:8px;border-right:2px solid #e0e0e0">`;
+                    for (const a of topicData.articles) {
+                        const dateStr = a.published ? new Date(a.published).toLocaleDateString('he-IL') : '';
+                        html += `<div style="margin-bottom:6px;padding:3px 0;border-bottom:1px solid #f0f0f0">
+                            <a href="${a.url}" target="_blank" rel="noopener" style="color:#2980b9;text-decoration:none;font-size:0.95em">${a.title}</a>
+                            <span style="color:#888;font-size:0.85em"> — ${a.source} ${dateStr}</span>
+                        </div>`;
+                    }
+                    html += '</div></div>';
+                }
             }
             container.innerHTML = html || '<div style="color:#888;font-size:0.85em">אין כתבות זמינות</div>';
             container.style.display = 'block';
@@ -1796,7 +2226,7 @@
                 ${categoryHtml}
                 <div style="font-size:0.78em;color:#999;margin-top:8px;border-top:1px solid #eee;padding-top:6px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px">
                     <span>הציון מנורמל לפי אורך הטקסט (אזכורים ל-10,000 תווים) ותורם 20% לציון המשולב.
-                    <span style="cursor:pointer;color:#2a5a8a" onclick="switchTab('ranking',document.querySelector('.nav-tab'))">צפה בדירוג \u25B8</span></span>
+                    <span style="cursor:pointer;color:#2a5a8a" onclick="switchTab('ranking',document.querySelectorAll('.nav-tab')[1])">צפה בדירוג \u25B8</span></span>
                     ${typeof PROTOCOLS !== 'undefined' && PROTOCOLS[key] ? '<span class="proto-view-link" onclick="event.stopPropagation();showCityProtocols(\'' + key + '\')">צפה בפרוטוקולים \u25B8</span>' : ''}
                 </div>
             </div>`;
@@ -2013,7 +2443,7 @@
 
     // Switch to protocols tab filtered to a specific city
     function showCityProtocols(cityKey) {
-        switchTab('protocols', document.querySelectorAll('.nav-tab')[2]);
+        switchTab('protocols', document.querySelectorAll('.nav-tab')[3]);
         // Wait for DOM to settle, then set filter
         setTimeout(() => {
             const select = document.getElementById('proto-city-filter');
