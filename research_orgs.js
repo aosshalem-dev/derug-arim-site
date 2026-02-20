@@ -480,8 +480,7 @@ const RESEARCH_ORGS = {
         {"label": "אתר גשר", "url": "https://www.gesher.co.il"},
         {"label": "קרן גשר לקולנוע (obudget)", "url": "https://next.obudget.org/i/associations/association/580358190"}
       ]
-    }
-  },
+    },
     "AIDS_Task_Force": {
       "name_he": "הוועד למלחמה באיידס (ע\"ר)",
       "name_en": "Israel AIDS Task Force (IATF)",
@@ -991,6 +990,223 @@ const RESEARCH_ORGS = {
         {"label": "אתר העמותה", "url": "https://kedma-edu.org.il"},
         {"label": "אתר בית הספר", "url": "https://kedmaschool.co.il"}
       ]
+    },
+
+    // ─── PIPELINE ORGANIZATIONS (institutional infrastructure, not direct Gefen operators) ───
+
+    "Yad_Hanadiv": {
+      "name_he": "יד הנדיב (קרן רוטשילד)",
+      "name_en": "Yad Hanadiv (Rothschild Foundation)",
+      "reg": "510001191",
+      "entity_type": "חל\"צ",
+      "founded": 1958,
+      "revenue_nis": null,
+      "gov_pct": 0,
+      "staff": null,
+      "neutrality": 3,
+      "transparency": 3,
+      "ideology_detected": true,
+      "pipeline": true,
+      "pipeline_role": "מימון תשתיתי",
+      "cities": [],
+      "school_count": 0,
+      "program_budget": 0,
+      "thesis": "קרן רוטשילד — ממנת תשתיות חינוך ומחקר. מופיעה ב'פרויקט ריבונות בחינוך' כמממנת צינור חדירה של SEL למערכת החינוך הישראלית.",
+      "key_findings": [
+        "מנויה ב'פרויקט ריבונות בחינוך' כמממנת חדירת SEL",
+        "ממנת מחקר ומדיניות חינוכית — לא תוכניות ישירות",
+        "חלק מהצינור: יד הנדיב → מחקר אקדמי → המלצות מדיניות → יישום בכיתה",
+        "הקרן הגדולה ביותר בישראל — בנתה את הכנסת, ספריית ירושלים, פארק הטכנולוגי"
+      ],
+      "risk": "medium",
+      "funding_sources": "הון רוטשילד (בריטניה)",
+      "report_url": null,
+      "source_links": [
+        {"label": "אתר יד הנדיב", "url": "https://www.yadhanadiv.org.il"}
+      ]
+    },
+    "Kibbutzim_College": {
+      "name_he": "מכללת סמינר הקיבוצים / כסא UNESCO",
+      "name_en": "Kibbutzim College of Education / UNESCO Chair",
+      "reg": null,
+      "entity_type": "מוסד אקדמי",
+      "founded": 1939,
+      "revenue_nis": null,
+      "gov_pct": null,
+      "staff": null,
+      "neutrality": 2,
+      "transparency": 3,
+      "ideology_detected": true,
+      "pipeline": true,
+      "pipeline_role": "הכשרת מורים + מרכז אקדמי",
+      "cities": [],
+      "school_count": 0,
+      "program_budget": 0,
+      "thesis": "מוסד שער: מארח כסא UNESCO (פרופ' נמרוד אלוני) ואת המרכז לפדגוגיה ביקורתית. הנקודה שבה אידיאולוגיה גלובלית נכנסת להכשרת מורים ישראלית.",
+      "key_findings": [
+        "כסא UNESCO לחינוך הומניסטי — פרופ' נמרוד אלוני",
+        "אלוני עצמו מעיד: ג'ירו 'אין לו גרם של כבוד לרציונליות'",
+        "המרכז לפדגוגיה ביקורתית (גלית זלמנסון) — 'עבודה חתרנית לפעמים'",
+        "מרקס לא מוזכר באתר — אבל האקדמיה הלאומית מבהירה: פדגוגיה ביקורתית = מרקסיזם",
+        "הצינור: UNESCO → כסא אקדמי → הכשרת מורים → כיתה"
+      ],
+      "risk": "high",
+      "funding_sources": "תקציב ממשלתי (מל\"ג), UNESCO",
+      "report_url": null,
+      "source_links": [
+        {"label": "אתר המכללה", "url": "https://www.smkb.ac.il"}
+      ]
+    },
+    "Mofet_Institute": {
+      "name_he": "מכון מופ\"ת",
+      "name_en": "MOFET Institute",
+      "reg": null,
+      "entity_type": "מכון מחקר",
+      "founded": 1983,
+      "revenue_nis": null,
+      "gov_pct": null,
+      "staff": null,
+      "neutrality": 3,
+      "transparency": 3,
+      "ideology_detected": true,
+      "pipeline": true,
+      "pipeline_role": "מחקר והכשרת מורים",
+      "cities": [],
+      "school_count": 0,
+      "program_budget": 0,
+      "thesis": "המכון שמכשיר מכשירי מורים. מודה במגבלות המתודולוגיות: 75% מהמחקרים מבוססים על דיווח עצמי, 66% נערכו ע\"י מעצבי התוכנית. למרות זאת, ממצאיו משמשים להצדקת שינוי מערכתי.",
+      "key_findings": [
+        "75% מהמחקרים מבוססים על דיווח עצמי — לא מדידה חיצונית",
+        "66% מהמחקרים נערכו על ידי מעצבי התוכנית — ניגוד עניינים מובנה",
+        "ממצאים אלה משמשים להצדקת המלצות יוזמה לשינוי מערכתי",
+        "חלק מהצינור: מופ\"ת מייצר את ה'מדע' שמצדיק את ההטמעה"
+      ],
+      "risk": "medium",
+      "funding_sources": "משרד החינוך, קרנות מחקר",
+      "report_url": null,
+      "source_links": [
+        {"label": "אתר מופ\"ת", "url": "https://www.mofet.macam.ac.il"}
+      ]
+    },
+    "Avanei_Rosha": {
+      "name_he": "אבני ראשה — המכון למנהיגות בית ספרית",
+      "name_en": "Avney Rosha — Institute for School Leadership",
+      "reg": null,
+      "entity_type": "מכון",
+      "founded": 2007,
+      "revenue_nis": null,
+      "gov_pct": null,
+      "staff": null,
+      "neutrality": 3,
+      "transparency": 3,
+      "ideology_detected": true,
+      "pipeline": true,
+      "pipeline_role": "הכשרת מנהלים",
+      "cities": [],
+      "school_count": 0,
+      "program_budget": 0,
+      "thesis": "מכשיר מנהלי בתי ספר. פרסם '10 מדדים ליישום SEL מערכתי' — ההוראה הפרקטית שמתרגמת מדיניות להטמעה בפועל.",
+      "key_findings": [
+        "10 מדדים ליישום SEL מערכתי — ההוראות הפרקטיות למנהלים",
+        "הכשרת כל מנהלי בתי הספר החדשים בישראל",
+        "חלק מהצינור: יוזמה → אבני ראשה → מנהל → בית ספר",
+        "ממומן ע\"י יד הנדיב וממשלת ישראל"
+      ],
+      "risk": "medium",
+      "funding_sources": "יד הנדיב, משרד החינוך",
+      "report_url": null,
+      "source_links": [
+        {"label": "אתר אבני ראשה", "url": "https://www.avneyrosha.org.il"}
+      ]
+    },
+    "SEL_IL": {
+      "name_he": "SEL.IL — המרכז ליישום SEL (רייכמן)",
+      "name_en": "SEL.IL — Reichman University",
+      "reg": null,
+      "entity_type": "מרכז מחקר",
+      "founded": null,
+      "revenue_nis": null,
+      "gov_pct": null,
+      "staff": null,
+      "neutrality": 3,
+      "transparency": 3,
+      "ideology_detected": true,
+      "pipeline": true,
+      "pipeline_role": "מחקר יישומי",
+      "cities": [],
+      "school_count": 0,
+      "program_budget": 0,
+      "thesis": "מרכז מחקר יישומי באוניברסיטת רייכמן (ד\"ר דפנה קופלמן-רובין). תוכנית 'א.י.ל' לגני ילדים. מתרגם מדיניות SEL גלובלית ליישום ישראלי.",
+      "key_findings": [
+        "ד\"ר דפנה קופלמן-רובין — ראשת המרכז",
+        "תוכנית 'א.י.ל' לגני ילדים — SEL מגיל 3",
+        "מתרגם CASEL framework ליישום ישראלי",
+        "חלק מהצינור: CASEL → SEL.IL → כלים למורים → כיתה"
+      ],
+      "risk": "medium",
+      "funding_sources": "אוניברסיטת רייכמן, קרנות מחקר",
+      "report_url": null,
+      "source_links": []
+    },
+    "Mandel_Foundation": {
+      "name_he": "קרן מנדל",
+      "name_en": "Mandel Foundation",
+      "reg": null,
+      "entity_type": "קרן",
+      "founded": 1990,
+      "revenue_nis": null,
+      "gov_pct": 0,
+      "staff": null,
+      "neutrality": 3,
+      "transparency": 3,
+      "ideology_detected": true,
+      "pipeline": true,
+      "pipeline_role": "צינור מנהיגות",
+      "cities": [],
+      "school_count": 0,
+      "program_budget": 0,
+      "thesis": "צינור מנהיגות — מכשירה מנהיגים בחינוך ובמגזר השלישי. בוגרי מנדל מאיישים עמדות מפתח במכון הדמוקרטי ובארגוני חינוך אחרים. יוצרת רשת של בוגרים בעלי השקפה דומה.",
+      "key_findings": [
+        "בוגרי מנדל מאיישים עמדות מפתח במכון הדמוקרטי",
+        "צינור מנהיגות: מנדל → מנהיגות חינוכית → ארגונים → בתי ספר",
+        "מוסד מורטון מנדל — ירושלים",
+        "מכשירה מנהיגים לחינוך, מגזר שלישי, וממשל"
+      ],
+      "risk": "low-moderate",
+      "funding_sources": "הון משפחת מנדל (ארה\"ב, קליבלנד)",
+      "report_url": null,
+      "source_links": [
+        {"label": "אתר מנדל", "url": "https://www.mandelfoundation.org.il"}
+      ]
+    },
+    "Chotem_Program": {
+      "name_he": "תכנית חותם",
+      "name_en": "Chotem Program (Ministry of Education)",
+      "reg": null,
+      "entity_type": "תכנית ממשלתית",
+      "founded": 2010,
+      "revenue_nis": null,
+      "gov_pct": 100,
+      "staff": null,
+      "neutrality": 3,
+      "transparency": 3,
+      "ideology_detected": true,
+      "pipeline": true,
+      "pipeline_role": "השמת אקדמאים בבתי ספר",
+      "cities": [],
+      "school_count": 0,
+      "program_budget": 0,
+      "thesis": "תכנית משרד החינוך שהשמיעה 1,400 אקדמאים בבתי ספר מאז 2010. הצינור הישיר ביותר: אקדמאים עם הכשרה בפדגוגיה ביקורתית מוצבים ישירות בכיתות.",
+      "key_findings": [
+        "1,400 אקדמאים הושמו בבתי ספר מאז 2010",
+        "הצינור הישיר ביותר: אקדמיה → כיתה",
+        "אקדמאים מוכשרים במכללות (כולל קיבוצים) → מלמדים בבתי ספר",
+        "ללא פיקוח על תוכן ההוראה בפועל"
+      ],
+      "risk": "medium-high",
+      "funding_sources": "משרד החינוך (100%)",
+      "report_url": null,
+      "source_links": []
     }
   },
 
