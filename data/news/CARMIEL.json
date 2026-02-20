@@ -1,0 +1,133 @@
+{
+  "city": "כרמיאל",
+  "protocol_key": "CARMIEL",
+  "action_score": 0.0,
+  "categories": {
+    "municipal_action": {
+      "label": "פעולות עירוניות",
+      "count": 0,
+      "articles": []
+    },
+    "municipal_cooperation": {
+      "label": "שיתופי פעולה עם ארגונים",
+      "count": 0,
+      "articles": []
+    },
+    "topic_mention": {
+      "label": "אזכורי נושא (ללא פעולה עירונית)",
+      "count": 17,
+      "articles": [
+        {
+          "title": "עכשיו זה רשמי: בת שבע אבוחצירה תתמודד על ראשות עיריית כרמיאל - רדיו קול רגע",
+          "url": "https://news.google.com/rss/articles/CBMizgJBVV95cUxPOVJnek5vZ0p1amxpTnl3YW9veFByZDBkLTRROEE4WC1BU2hCSERzWTA1Ny10eTB2eHo5ZEZtS2Q2TWVuX05UaVpMZVg3RW1MRlJmSlFnT2ZIMERBZUFKb0NTMVl5RTZlYkRhQXliYVUtV3VvWXVCajNfTkFmMTNnWTBBbzdNZmZoYzBDdXRtMENjdFFwbVFybElEUExNTTFnZ3ZMbE1ScWRkRXBleC14UWpoa1RQZjFlLVlMQXkxSy1UYVhPSjgwZklhR1ZSd2c4MTZWdFVNSE9hMVJhd0pYd0JrYXI2RjBPX1AyWFdJVk9UdHAxc3lfcUYybF9WQzhMT1NrMzRYMnh6Ql9iOFdpNjNDZnlrcWZIbE5sb21sMzZVQ245UmN3dWdOeWZfckJrejRWV2lwbGVIRTdNQl9XWEdYM3FBOE1tZkNUYXpn?oc=5",
+          "source": "רדיו קול רגע",
+          "published": "Thu, 13 Apr 2023 07:00:00 GMT"
+        },
+        {
+          "title": "כרמיאל ״מזנקת״ בגאווה - זהר.נט",
+          "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQUnBJV0loRGd4ZVBURkFuODlvbV8zVlFYTTczaWJDOUU3ckNIX2hySERVWkh3SGZOdmlvUHMwT19QU1dXemIxRUxKU0M1WTFfUWpMMWQxQ2tjR3lIeEVUQkc4U2hTOWladVhQdHZnZjRjSW9YMFdtVk1tQmxHZzJBTE91WS03ZzVWUHdiSTFEdHRqVzktTlZnVExkYXNWX05FVzVNOHBFY0RwckZHZ2pIRTJDRVJSY1Fua3doS3BlQ3pWLWd5SGR2UjdybENXcm5LNUxnczlR?oc=5",
+          "source": "זהר.נט",
+          "published": "Thu, 15 Jun 2023 07:00:00 GMT"
+        },
+        {
+          "title": "ראש עיריית כרמיאל: \"גני הילדים והעסקים ייפתחו ביום בראשון\" - mako",
+          "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5pQ0Q2YUxFTGVvVzVfMDY2TlFNeWRpM1M4NWtyRzhLNW5TZDlnVUk4VnFkbExhdGM4UW95YTRvQVVYbGdoeXVrWDlOYmlqN2lNa0VMVWhqdkdnSExvdERyeVctVlF6SHZRV0pIUjE4UFNnTW5lVFJMQ3dULUlmMDg?oc=5",
+          "source": "mako",
+          "published": "Mon, 12 Oct 2020 07:00:00 GMT"
+        },
+        {
+          "title": "יו\"ר \"קליל\" וראש עיריית כרמיאל השיקו את פארק הפרפרים הראשון בישראל - ice (אייס)",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1fYTRoNGFDb01BZFlRYlVzOHY2eks5Y2NXUlk5ZU9mRHhKUW9WOVJGQk5PdUYwTEF3STM5X0pfdF9pOXhhVG9UVXR1alVjQU5NY3RCcEJFcTRNMHJwM1EwVW93S1hjcjhfU1E?oc=5",
+          "source": "ice (אייס)",
+          "published": "Wed, 09 Jun 2021 07:00:00 GMT"
+        },
+        {
+          "title": "כרמיאל רוקדת: נפתח פסטיבל המחולות - ynet",
+          "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5GY25VVk9NSUZEdENQTWp1ZmpwWG9zMU85a3A5YlJ0Q3BsVnZPcEYtX0I3aUU3LTBlYzVBYWF1M1UyY3pRdElpR1hMb1dsc3NPQmM5NmhyTXBOSFJVRjUzNXZDNHI1TzQ?oc=5",
+          "source": "ynet",
+          "published": "Wed, 28 Jul 2010 07:00:00 GMT"
+        },
+        {
+          "title": "המינוי היוקרתי של תושבת כרמיאל סולל את מינויו של בעלה כיועץ המשפטי בעירייה - זהר.נט",
+          "url": "https://news.google.com/rss/articles/CBMiwwJBVV95cUxPeHlkSmJzajdXc1pTMUVMZGxCT3JtMGM5YThnM2doZ2xab1JBWVNlUU41c1U0eEdFWWZONU1BRER3MVNiWV9TLW9RY0ZreEdvMWJ3N0J4U054MEZ3dWg0c0VYV01lUUZmMXFrZEtjSlFBM3VQTlA2OVB0dm5ZLTFXNWM1OV9mLXoxRW1RR0ZDOEk0Vm5uOW13dnJUR2lJaU1DYUZ6UHBsdW1QZWY1UlpjbGo2WG9JZ1lPdWczejdGUlgtR01VUFNYREJZcTQxTWxyQ0FoZjFiQVdoZUg0blh6UEJVWmZMTjdoQzBJYUFvQTQwOTBSVVJJaDZfdWNyV0MtUk83dWN1VVFvR0RUUUtWQjNCQUhJbmtBZmx1MVgtSlIzRElJSWsyOHVILWJGQkxsdnNYLTFYQzlGSldaUGd5QU9yYw?oc=5",
+          "source": "זהר.נט",
+          "published": "Tue, 03 May 2022 07:00:00 GMT"
+        },
+        {
+          "title": "גאווה: שלושה טייסים חדשים מכרמיאל - זהר.נט",
+          "url": "https://news.google.com/rss/articles/CBMioAJBVV95cUxOVWs4bGxCMDVsSmZXY0UzNV80MTJxcWcxNTFGNExlbjdiN1pNR1FlWXJYSXNEaGJ3N3UySWxqOG05eWhSeTJjcU5CS0VUZEpiVDhiVm9CajhsdG5zakpGZlNINXdpQ1JsQ08xeHRhNjVjeW5xakI2OTgyVTc5N0pSZVRZaGotd2hBNDEwaDFjNzYwcVhXYjV5QzlHRWFkX2tCdnl1OWZqWWRGUGJSYUNZNnNGMUlZV1dGelgtQWtOSHlpejVjSjVkUjFaZ1RmSXVWQWZJTFRCVzY5V0pLc2RCQ094RDRNWnZwcW9feS16UE9FNEFkTEF3N3NTS2RiMGY1Vzh1Q3NhUjYzVThvQkNSWjFySnFpOFpSNGFQYlpydk8?oc=5",
+          "source": "זהר.נט",
+          "published": "Tue, 27 Jun 2017 07:00:00 GMT"
+        },
+        {
+          "title": "מעודדים אנרגיה מתחדשת? 168 אלף שקל ארנונה לפאנלים סולאריים בכרמיאל - ynet",
+          "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9nRXNadTVKMEZBcDVybTYzTWZGTFpKc2R2WkFkTVhwWDVWM0stYkVDRlo3Q0tYbVNoOC11MHBQejNFRHNXTzd4MzZGYmYwSzJ2Wi1UZXg0OTNkTmNQSFJGSVdjcl8xSGc?oc=5",
+          "source": "ynet",
+          "published": "Mon, 27 Jul 2015 07:00:00 GMT"
+        },
+        {
+          "title": "פגיעת ברק גרמה לנזקי תשתית בכרמיאל – מה התחזית לסופ״ש? - זהר.נט",
+          "url": "https://news.google.com/rss/articles/CBMiuwJBVV95cUxQRGpQd3NPY2pKYkRaR2pWZm1YcE5Jd1BIOFRZcC1zTkdQMklld1RoV1FiYThWVDdCV3pSMWsyN08zMHJuVkdNMzRYRXVfTUFWTk5QdDE1Z3JoYnBJVVU4U3A5ZmhQaTNnb0VWbThOWE1ienhvU2hmbTZvMmxzQWoyYWQ0QU5VNklza083WHZHZ3paclFyTnd5Vi1XTE9VdWNJUGR1SkJaczBCYnFiTnhlUklTeGpKLU13UjlUZUNHbkpFQWY2VzVFTWJCN2xodHY0Q3BBSUpkYXV0TDN0cmdhbkEzVHE3VXJJTW04S2dmbEpmX3JCcXM2cEUtRlBHcWV4ekxUb2R1cGg1bU9vbDNWUldVMGs1WGs1clc0dldPa2EzX3VUeXJidmV6RWowMkJ1N0VHRFctSHVVRkk?oc=5",
+          "source": "זהר.נט",
+          "published": "Thu, 01 Jan 2026 08:00:00 GMT"
+        },
+        {
+          "title": "כרמיאל מצטרפת למהפכת מיחזור האריזות - בלינקר",
+          "url": "https://news.google.com/rss/articles/CBMi_wNBVV95cUxPZDN2djZzUWhoTnp4UU5Jb2EzWHpLQzRoTjhNdXVoWHV2U0E1XzAwRVVLZnNhdnpucTJleGlHTnRqNS1USXB2WWxCZS1PX2ZEaUlnSWd1TENBV2FFUnhIX2JkWUFxRVBOSm4tRTJHWjQ3RFJOSk8tMzR6SXJfSE1fZzdQdkxDUzNtdGo0V3FWU1FZMjlSeFQzOXhOTUZabTlsNlBYbDdxMEpUc1l4ekI1NXBNYXo0ZFN3LWdpaDdlUFA0UlZaUUoycnJXWFhrWFhSZkdyUjBCTlN6MlAwSnlBVWg1VWVpWDNIUTZhUXZwYVRWT19DY0czMTVKdFdmN1otNjZ6Q093ZnNSX2VodWRJSUpoYlZzN0Y3S2stZzFuMmJsZmVPYXFBeTJmSW1nVl9iLUZBLWtBUHgySmo3Sms1Y1ZEU2ZzM3cwc1ZjZVZ0blFLUHVHazlIOGdoZzZDakJzQWhSVGM1VUVuVWh0Zlg1bzA3N2l4NHk2NEd2R0RkbEhpSV85U0l0NFg5NDVULXowSXlfZU5QMVp6U0xST2RGeW16NEU2eFlSZVRseU5PVXM2d2tkWW00WWNnQUlpMlFSRXNHT000QnIycldxQ090NFQ2U3JzTFdwbndzd3FMYmd4N09sblY0WDVRTDk4WnhsbHp3dmFhV2pLRHMtYVRB?oc=5",
+          "source": "בלינקר",
+          "published": "Thu, 12 Dec 2013 08:00:00 GMT"
+        },
+        {
+          "title": "רביעית בארץ: הדירוג הגבוה של כרמיאל במימוש פוטנציאל האנרגיה המתחדשת - זהר.נט",
+          "url": "https://news.google.com/rss/articles/CBMiwwJBVV95cUxQOHVBVDc4YnNCQmpWVFBJWTViUk53dTZBMDBubFVRTXRuam1uZXdmZFhIeXhqYmQxcG9HSXMxUU5HN0JRdjZqTktjMGFaOXRPaXoyYVEyc2lOOFVJR1RPN0E0Um9VckFzNG00ZVVBYXpYR1R6UnV5SFhTUmpCa1RBSnl0d2ZZYjlQZk5IdU8tUTQ5ckxkNHkyZXRVTjBjOW8xSTgwVm1lazFvX0ZFRTVrbEVFeEJ0NWQtcXdqUGg2eEdTNnA0SWMtdkI4dDZ5LTRJTlkyVWhxTnZFenFMLXRRakoybVIweFdLT1JqMHdjTGdoTF9zaWYyR19MaE9DVllLMHJ0SzA4MXJvalM1TlBPaWxMb0F3X3gyLXptbUYxWnNxelVxSEowWUNDN29NeEZ3dk1MZ3F1UnM3R2QzM0NmQ294UQ?oc=5",
+          "source": "זהר.נט",
+          "published": "Sat, 21 Dec 2024 08:00:00 GMT"
+        },
+        {
+          "title": "ראש עיריית כרמיאל אסר על הקרנת סרטים בהיכל התרבות: \"עלולים לפגוע בחיילי צה\"ל\" - news-desk.co.il",
+          "url": "https://news.google.com/rss/articles/CBMizgJBVV95cUxNSjBKYl9OWFY2ZkR6N1hqaUJKaVItRURrbTZjYWpKYlU1bVpuemEwZVlPLVdLU1V2RFFjdGVvdHhRZm1EaThjVlI3dXp6US15SEotQjJjRkM4bFU3OGVWZTlINkpON0tKVkFMbmxGTzJZWkJsbjJ1SnFPLTF6RjRCRl9aLVkzek9Cbk5LRWxkUXIySjVOQlhoVWgwcHhFaTdxWlJGODlGRnVOSXhnRmMxSjktN2RuN0tPMlJGSkNLYjV1ZHJkYUtTcmIzTUptYXZiY1hra3NYTnZCLWpORjJPRmNJOHktSEU3RXB4Mndkc2xtS2xuNFBkWVp4NHZlNElOVXV6VkYxYTNPeVpjY3FqMWpDMXh0RjNmeVdnZVdodHF3a011Ri1ERzVaV25lMEhzN1NzVjJ0NFFWNWQwOWY0dTRZdW1zNDh4NXFiUER3?oc=5",
+          "source": "news-desk.co.il",
+          "published": "Wed, 21 Jan 2026 08:00:00 GMT"
+        },
+        {
+          "title": "אישום בכפוף לשימוע נגד אילן סרדל ואשת ראש-עיריית כרמיאל על סחיטה - פוסטה",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBDTmh3NEJqRFFGWUtYczVNSllXcng2eGtEM0E3THBuLWdkalBVV3hlNlJMZ0dxYnNpOXZPOGZ1ZU11WGUybDRYWHpLWTdUaG8?oc=5",
+          "source": "פוסטה",
+          "published": "Mon, 01 Jul 2024 10:22:04 GMT"
+        },
+        {
+          "title": "עיריית כרמיאל מסרבת לממן הסעות למאות תלמידים ערבים שלומדים מחוץ לעיר - הארץ",
+          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQUkIyY2FzS2lIaHAyRVBPTFJqa0NDY1N6blZqNWZSV3gtODZDQUhJWE9oSzZIVXJpNDRKN3ZnZTljYi1EMElmXzdNdzJZV3BPRkhKNjFHWEVTc0tnNkhoM2N3SXA5YTlvOTEzQnRLMHdhOHRVV0Y1TFA1QnJzT1dESVlQeWJVbzE5TERhcXpMaHp0YzN3eGphMkYxWXVVTmY4My1JWW5sNTBEZ1ZH?oc=5",
+          "source": "הארץ",
+          "published": "Wed, 11 Mar 2020 07:00:00 GMT"
+        },
+        {
+          "title": "דירוג נמוך לעיריית כרמיאל במדד ההון האנושי – תישאר מחוץ לתהליך משרד הפנים - זהר.נט",
+          "url": "https://news.google.com/rss/articles/CBMiwwJBVV95cUxNbFljNklFaHdtbk9KSDU0VkhGaEszeTlxekFHS3hNNkdZMk04UXI1NnZiajY0ek4tZHRyX0hhYThCTGhxUUNINWJkc2ZGOFJRYkw2bkc2ZDZ4ZzE4ZmszYlVGeVdxX1dWTmN4a2dmYVktbWhqNTBPX3dJR3lnakFScTNLVVZwcG14dkVpd1JCMDduRE50N0hwczcwRWN2Y0VjVlEyQ2tGN3dueWdib2Q3RmJqTU9xS0hDeGhxLXkwWHJ0UEI3ZldRS3ZaNDhaVkpwTlpQd244b2Fzb0VJOV94S0lONExJYWJNT3hOWmtMejFVU2h4OG9idC1iRmRPMGhsX3JjYkVVZDRCWDBGVTI4VWZRazQ3bFdyTklrMVJuMkM5Q2VZM1pRZFRvZkJzTUdvcXJiWDRsRHk4OWkwXzFVdGJLVQ?oc=5",
+          "source": "זהר.נט",
+          "published": "Sun, 11 Jun 2023 07:00:00 GMT"
+        },
+        {
+          "title": "ראש עיריית כרמיאל הנבחר משה קונינסקי: \"אני אדם שמחבק את כולם\" - בלינקר",
+          "url": "https://news.google.com/rss/articles/CBMi5AJBVV95cUxORVlxaHIyNXozVTk3LVBUalFsVTIxN3NpSUtZc0dDa2lYTmN3MF9kSWFYTkpoTWRWZkIwdGE4QUtmbDAtamptcW9BWjVvM1J0d0g2ZjJ2dW9ZckcyWGJFbHNjbks5dDc4elAySDRILXVBQzFjTkh1endCQVF0WVpQQ3FjcVdQdkQtVVRrQlVoMVdocnhpa0NkcnFaYWhPZmZvb1hPQ1djNWR4R3JSX1BZV2F3ckx1aVIwQkdkcGU4dXIzRER0YlJZZlp3S1ZTMGxBZXFRbEljd0NabEhlVTRiaUU3NnFSYjRUV3lXdU0xRWFLd1ZhbEpUM2pNTnY2WG1zVDZNRnBqNTdXYTc1OGhpeEhlejJZZEZ5c2JHb1ZFb05iOGtmaEE5RVZtSjFfSzZfbDJrMTIyTmpva3JVRmNPVEI0NGhlaHU4M0hHVElCbUhuWGV3cVhsWmVJemdweVBGWG5CVw?oc=5",
+          "source": "בלינקר",
+          "published": "Thu, 01 Nov 2018 07:00:00 GMT"
+        },
+        {
+          "title": "ראש העיר כרמיאל הגביל כניסה לפארק לתושבים בלבד; היועמ\"ש: זה מנוגד לחוק - הארץ",
+          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOcF9MYlBDcHdYZ1JVS1dvZEYyWXJscDJTSFFXdkxOaE92SWV1NkxCYlhkWlBIYVRfZ0FFSDVTTUhQbnN4SzZUalltTXQ2VlR0eGVrcERlZk1rTzRsWjBtUHlYdzdMeDJQa3dGNlBYbnFqZXBKYW5OcFZSaS1naUpjN1cyX3J1VUR3NDIxcmswaGJfX19rclppVHNLR05PMlBsSm16eGdaVQ?oc=5",
+          "source": "הארץ",
+          "published": "Sun, 13 Sep 2020 07:00:00 GMT"
+        }
+      ]
+    }
+  },
+  "domain_counts": {
+    "gender_equality": 0,
+    "lgbt": 0,
+    "sustainability": 0,
+    "social_justice": 0,
+    "progressive_education": 0,
+    "diversity": 0
+  }
+}

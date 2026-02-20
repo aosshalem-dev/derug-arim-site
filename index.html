@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>דירוג ערים — ציון משולב</title>
+    <title>דירוג ערים — ציון ראיות</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -665,7 +665,7 @@
             <span class="nav-title">דירוג ערים</span>
             <div class="nav-tabs">
                 <div class="nav-tab" onclick="switchTab('background',this)">רקע מחקרי</div>
-                <div class="nav-tab active" onclick="switchTab('ranking',this)">דירוג משולב</div>
+                <div class="nav-tab active" onclick="switchTab('ranking',this)">דירוג ראיות</div>
                 <div class="nav-tab" onclick="switchTab('education',this)">תוכניות חינוך</div>
                 <div class="nav-tab" onclick="switchTab('protocols',this)">פרוטוקולים</div>
                 <div class="nav-tab" onclick="switchTab('redflags',this)">דגלים אדומים</div>
@@ -946,8 +946,8 @@
 
     <!-- ═══ TAB: RANKING (default) ═══ -->
     <div id="tab-ranking" class="tab-content active">
-        <h1>דירוג ערים — ציון משולב</h1>
-        <p class="subtitle">לחצו על עיר לפרטים</p>
+        <h1>דירוג ערים — ציון ראיות</h1>
+        <p class="subtitle">כל נקודה בציון עוקבת לראיה ספציפית | לחצו על עיר לפרטים</p>
 
         <!-- Hero summary -->
         <div class="hero" id="hero-section">
@@ -970,22 +970,19 @@
             </div>
             <div class="method-body">
                 <ul style="margin-top:10px">
-                    <li><strong>ציון משולב</strong> = שקלול של ארבעה מקורות מידע:</li>
-                    <li>• חשיפה חינוכית (תוכניות גפ"ן) <span class="weight">45%</span></li>
-                    <li>• סיקור חדשותי פרוגרסיבי (Google News) <span class="weight">20%</span></li>
-                    <li>• אותות פרוגרסיביים בפרוטוקולים (ציר ב') <span class="weight">20%</span></li>
-                    <li>• דגלים אדומים — שיתוף UNESCO <span class="weight">15%</span></li>
-                    <li class="dim" style="margin-top:8px">ציר א' (זהות יהודית/ציונית) מוצג לעיון בלבד ואינו נכלל בציון המשולב</li>
-                    <li class="dim">הצבעה (כנסת 25) מוצגת כרקע בלבד ואינה נכללת בציון המשולב</li>
+                    <li><strong>ציון ראיות</strong> = כל נקודה עוקבת לראיה ספציפית וניתנת לאימות:</li>
+                    <li>• תוכניות מוכחות כבעייתיות (דירוג אנושי + ארגונים בסיכון גבוה) <span class="weight">50%</span></li>
+                    <li>• החלטות מועצה מאומתות (23 ממצאים מ-537 פרוטוקולים) <span class="weight">35%</span></li>
+                    <li>• פעולות עירוניות מתועדות בחדשות (עירייה+פועל בלבד) <span class="weight">15%</span></li>
+                    <li class="dim" style="margin-top:8px">ציון מילות מפתח ישן מוצג להשוואה בלבד — לא נכלל בדירוג</li>
+                    <li class="dim">181 סקירות אנושיות, 12 חקירות מעמיקות, מיפוי ארגונים, ניתוח פרוטוקולים</li>
                 </ul>
                 <div style="margin-top:10px;font-size:0.82em;color:#666">
                     מקורות:
                     <a href="https://apps.education.gov.il/gefen" target="_blank" style="color:#2a5a8a">גפ"ן — משרד החינוך</a> |
-                    <a href="https://votes25.bechirot.gov.il/" target="_blank" style="color:#2a5a8a">בחירות כנסת 25</a> |
+                    פרוטוקולי מועצות עיר (537 נסרקו, 23 ממצאים) |
                     <a href="https://news.google.com/?hl=iw&gl=IL" target="_blank" style="color:#2a5a8a">Google News</a> |
-                    פרוטוקולי מועצות עיר |
-                    <a href="data/ranking.html" target="_blank" style="color:#2a5a8a">נתונים גולמיים</a> |
-                    <a href="research/framework_insights.html" target="_blank" style="color:#2a5a8a">תובנות כלליות</a>
+                    <a href="research/" target="_blank" style="color:#2a5a8a">דוחות מחקר ארגונים</a>
                 </div>
             </div>
         </div>
@@ -1004,15 +1001,12 @@
                 <tr>
                     <th data-col="rank" data-type="num"># <span class="sort-arrow">&#9660;</span></th>
                     <th data-col="city" data-type="str">עיר <span class="sort-arrow">&#9660;</span></th>
-                    <th data-col="combined_score" data-type="num">ציון משולב <span class="sort-arrow">&#9660;</span></th>
-                    <th data-col="progressive_pct" data-type="num" style="color:#bbd">הצבעה (רקע) <span class="sort-arrow">&#9660;</span></th>
-                    <th data-col="news_score" data-type="num">חדשות פרוגר' <span class="sort-arrow">&#9660;</span></th>
-                    <th data-col="exposure_score" data-type="num">חשיפה חינוכית <span class="sort-arrow">&#9660;</span></th>
-                    <th data-col="subversive_ratio" data-type="num">% תקציב מסומן <span class="sort-arrow">&#9660;</span></th>
-                    <th data-col="pole_b" data-type="num">ציר ב' <span class="sort-arrow">&#9660;</span></th>
-                    <th data-col="red_flag" data-type="num">דגלים אדומים <span class="sort-arrow">&#9660;</span></th>
-                    <th data-col="pole_a" data-type="num">ציר א' (זהות) <span class="sort-arrow">&#9660;</span></th>
-                    <th data-col="protocol_coverage" data-type="str">כיסוי <span class="sort-arrow">&#9660;</span></th>
+                    <th data-col="evidence_score" data-type="num">ציון ראיות <span class="sort-arrow">&#9660;</span></th>
+                    <th data-col="proven_programs_count" data-type="num">תוכניות מוכחות <span class="sort-arrow">&#9660;</span></th>
+                    <th data-col="verified_decisions" data-type="num">החלטות מאומתות <span class="sort-arrow">&#9660;</span></th>
+                    <th data-col="strong_news_actions" data-type="num">פעולות בחדשות <span class="sort-arrow">&#9660;</span></th>
+                    <th data-col="high_risk_orgs" data-type="num">ארגונים בסיכון <span class="sort-arrow">&#9660;</span></th>
+                    <th data-col="keyword_proxy" data-type="num" style="color:#888" title="ציון מילות מפתח — לא נכלל בדירוג, מוצג להשוואה בלבד">מילות מפתח* <span class="sort-arrow">&#9660;</span></th>
                 </tr>
             </thead>
             <tbody id="table-body"></tbody>
@@ -1312,6 +1306,13 @@
         if (score >= 15) return '#b89900';
         return '#44aa44';
     }
+    function evidenceColor(score) {
+        if (score >= 50) return '#ff4444';
+        if (score >= 30) return '#ff8800';
+        if (score >= 15) return '#b89900';
+        if (score > 0) return '#44aa44';
+        return '#666';
+    }
 
     function ratingClass(r) {
         if (r >= 5) return 'r5';
@@ -1589,155 +1590,165 @@
     }
 
     function buildDetailPanel(entry) {
-        const key = entry.protocol_key || CITY_KEY_MAP[entry.city];
-        const proto = key ? DATA.protocol_details[key] : null;
-        const worst = DATA.worst_programs[entry.city] || [];
-
-        let leftPanel = '';
-        if (proto) {
-            leftPanel = `
-                <div class="detail-section">
-                    <h4>ציר א' \u2014 זהות יהודית/ציונית (${entry.pole_a || '\u2014'})</h4>
-                    ${buildPoleBar('ציון', entry.pole_a || 0, 10, '#4488cc')}
-                    <ul class="kw-list">${buildKeywordPills(proto.pole_a_details)}</ul>
-                </div>
-                <div class="detail-section">
-                    <h4>ציר ב' \u2014 אותות פרוגרסיביים (${entry.pole_b ?? '\u2014'})</h4>
-                    ${buildPoleBar('\u05de\u05ea\u05d5\u05e7\u05df', entry.pole_b || 0, 3, '#ff8800')}
-                    <ul class="kw-list">${buildKeywordPills(proto.pole_b_details)}</ul>
-                </div>
-                ${Object.keys(proto.red_flag_details || {}).length > 0 ? `
-                <div class="detail-section">
-                    <h4>דגלים אדומים (${entry.red_flag || '\u2014'})</h4>
-                    <ul class="kw-list">${buildKeywordPills(proto.red_flag_details)}</ul>
-                </div>` : ''}
-                <div style="font-size:0.8em;margin-top:4px">
-                    מקור: פרוטוקולים של ישיבות מועצת העיר (${entry.protocol_coverage || ''} קבצים) |
-                    <span style="cursor:pointer;color:#2a5a8a;text-decoration:underline" onclick="event.stopPropagation();switchTab('protocols',document.querySelectorAll('.nav-tab')[3])">צפה בפרוטוקולים מלאים</span> |
-                    <a href="data/ranking.html" target="_blank" rel="noopener" style="color:#2a5a8a" onclick="event.stopPropagation()">נתוני דירוג גולמיים</a>
-                </div>`;
-        }
-
-        let rightPanel = '';
-        if (worst.length > 0) {
-            rightPanel = `
-                <div class="detail-section" style="grid-column: ${proto ? 'auto' : '1 / -1'}">
-                    <h4>תוכניות חינוך בעייתיות (${worst.length} מובילות)</h4>
-                    <div class="program-list">
-                        ${worst.map(p => buildProgramCard(p)).join('')}
-                    </div>
-                    <div style="margin-top:8px;font-size:0.8em">
-                        מקור: <a href="https://apps.education.gov.il/gefen" target="_blank" rel="noopener" style="color:#2980b9">קטלוג גפ"ן — משרד החינוך</a>
-                        &nbsp;|&nbsp; <a href="https://aosshalem-dev.github.io/educational-programs/" target="_blank" rel="noopener" style="color:#2980b9">ניתוח מלא: 2,859 תוכניות</a>
-                        &nbsp;|&nbsp; <a href="research/" target="_blank" rel="noopener" style="color:#2980b9">46 דוחות מחקר ארגונים</a>
+        // === Pillar 1: Proven Programs ===
+        let programsPanel = '';
+        const provenProgs = entry.proven_programs || [];
+        if (provenProgs.length > 0) {
+            const progCards = provenProgs.slice(0, 10).map(p => {
+                const tierBadge = p.tier === 'A'
+                    ? `<span style="background:#c0392b;color:#fff;padding:1px 6px;border-radius:3px;font-size:0.75em;margin-left:6px">Tier A (R${p.rating})</span>`
+                    : `<span style="background:#d35400;color:#fff;padding:1px 6px;border-radius:3px;font-size:0.75em;margin-left:6px">Tier B (${p.org_key || 'org'})</span>`;
+                return `<div style="background:#fff5f5;border:1px solid #e8d0d0;border-radius:6px;padding:8px 12px;margin-bottom:6px">
+                    <div style="font-weight:600;font-size:0.88em">${p.name} ${tierBadge}</div>
+                    <div style="font-size:0.8em;color:#666;margin-top:2px">
+                        ${p.org} | ${p.budget.toLocaleString('he-IL', {maximumFractionDigits:0})} \u20aa | ${p.deployments} פריסות
                     </div>
                 </div>`;
-        }
+            }).join('');
 
-        let electionPanel = '';
-        if (entry.progressive_pct != null) {
-            const prog = entry.progressive_pct;
-            const relig = entry.religious_pct || 0;
-            const other = Math.max(0, 100 - prog - relig);
-            const pieChart = buildPieChart(prog, relig, other, 120);
-            electionPanel = `
+            programsPanel = `
                 <div class="detail-section">
-                    <h4>הצבעה — כנסת 25 <span class="dim" style="font-weight:normal">(רקע — לא נכלל בציון)</span></h4>
-                    <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap">
-                        <div>${pieChart}</div>
-                        <div style="font-size:0.88em;line-height:1.8">
-                            <div><span style="display:inline-block;width:12px;height:12px;background:#6644cc;border-radius:2px;margin-left:6px"></span> פרוגרסיבי: <strong>${prog}%</strong></div>
-                            <div><span style="display:inline-block;width:12px;height:12px;background:#cc8844;border-radius:2px;margin-left:6px"></span> דתי: <strong>${relig}%</strong></div>
-                            <div><span style="display:inline-block;width:12px;height:12px;background:#bbb;border-radius:2px;margin-left:6px"></span> אחר: <strong>${other.toFixed(1)}%</strong></div>
-                            <div class="dim" style="margin-top:6px">אחוז הצבעה: ${(entry.turnout_pct || 0).toFixed(0)}% | ${(entry.eligible_voters || 0).toLocaleString()} זכאים</div>
+                    <h4>תוכניות מוכחות כבעייתיות (${provenProgs.length}) \u2014 ציון: ${entry.education_pillar_score}</h4>
+                    <div style="display:flex;gap:12px;margin-bottom:10px;flex-wrap:wrap">
+                        <div style="background:#fce4ec;border-radius:6px;padding:8px 14px;text-align:center;min-width:100px">
+                            <div style="font-size:1.6em;font-weight:700;color:#c0392b">${provenProgs.length}</div>
+                            <div style="font-size:0.78em;color:#555">תוכניות</div>
+                        </div>
+                        <div style="background:#fce4ec;border-radius:6px;padding:8px 14px;text-align:center;min-width:100px">
+                            <div style="font-size:1.6em;font-weight:700;color:#c0392b">${entry.proven_budget_pct}%</div>
+                            <div style="font-size:0.78em;color:#555">מתקציב חינוך</div>
+                        </div>
+                        <div style="background:#f3e5f5;border-radius:6px;padding:8px 14px;text-align:center;min-width:100px">
+                            <div style="font-size:1.4em;font-weight:700;color:#7b1fa2">${entry.proven_budget ? entry.proven_budget.toLocaleString('he-IL', {maximumFractionDigits:0}) : 0}</div>
+                            <div style="font-size:0.78em;color:#555">\u20aa תקציב מוכח</div>
                         </div>
                     </div>
-                    <div class="dim" style="margin-top:8px;font-size:0.8em">
-                        פרוגרסיבי = מרצ+עבודה+יש עתיד &nbsp;|&nbsp; דתי = ש"ס+יהדות התורה+ציונות דתית
-                    </div>
-                    <div style="margin-top:4px;font-size:0.8em">
-                        מקור: <a href="https://votes25.bechirot.gov.il/" target="_blank" rel="noopener" style="color:#2980b9">ועדת הבחירות המרכזית — כנסת 25</a>
+                    ${progCards}
+                    ${provenProgs.length > 10 ? `<div class="dim" style="margin-top:4px">ועוד ${provenProgs.length - 10} תוכניות...</div>` : ''}
+                    <div style="margin-top:8px;font-size:0.8em">
+                        מקור: 181 סקירות אנושיות (human_reviewed_programs.json) + 6 ארגונים בסיכון גבוה (research_orgs.js)
                     </div>
                 </div>`;
         }
 
-        let newsPanel = '';
-        if (entry.news_score != null) {
-            const nActions = entry.news_actions_count || 0;
-            const nCoops = entry.news_coop_count || 0;
-            const nTotal = nActions + nCoops;
-
-            // Domain breakdown bars (only if domain data exists)
-            let domainBars = '';
-            if (entry.news_actions) {
-                const domainLabels = {
-                    gender_equality: 'שוויון מגדרי',
-                    lgbt: 'להט"ב',
-                    sustainability: 'קיימות',
-                    social_justice: 'צדק חברתי',
-                    progressive_education: 'חינוך פרוגרסיבי',
-                    diversity: 'גיוון'
-                };
-                domainBars = Object.entries(domainLabels).map(([key, label]) => {
-                    const val = entry.news_actions[key] || 0;
-                    return val > 0 ? buildPoleBar(label, val, 20, '#339966') : '';
-                }).filter(Boolean).join('');
+        // === Pillar 2: Verified Council Decisions ===
+        let protocolPanel = '';
+        const findings = entry.protocol_findings_ids || [];
+        if (findings.length > 0) {
+            // Look up findings from PROTOCOL_FINDINGS if available
+            let findingCards = '';
+            if (typeof PROTOCOL_FINDINGS !== 'undefined' && PROTOCOL_FINDINGS.findings) {
+                const cityFindings = PROTOCOL_FINDINGS.findings.filter(f =>
+                    findings.includes(f.id)
+                );
+                findingCards = cityFindings.map(f => {
+                    const outcomeBadge = {
+                        'approved': '\u2705 אושר',
+                        'unanimously_approved': '\u2705 אושר פה אחד',
+                        'signed': '\u2705 נחתם',
+                        'established': '\u2705 הוקם',
+                        'policy': '\u2705 מדיניות',
+                        'confirmed': '\u2705 אושר',
+                        'appointed': '\u2705 מינוי',
+                        'declaration': '\ud83d\udce3 הצהרה',
+                        'active': '\ud83e\udd1d שיתוף פעולה',
+                        'proposal': '\ud83d\udccb הצעה',
+                        'agenda': '\ud83d\udcc5 סדר יום',
+                        'rejected': '\u274c נדחה',
+                        'removed': '\u274c הוסר',
+                    }[f.outcome] || f.outcome_he || f.outcome;
+                    return `<div style="background:#e3f2fd;border:1px solid #bbdefb;border-radius:6px;padding:8px 12px;margin-bottom:6px">
+                        <div style="font-weight:600;font-size:0.88em">${outcomeBadge} \u2014 ${f.category_he || ''}</div>
+                        <div style="font-size:0.82em;color:#444;margin-top:4px">${f.summary_he ? f.summary_he.substring(0, 200) + (f.summary_he.length > 200 ? '...' : '') : ''}</div>
+                        <div style="font-size:0.75em;color:#888;margin-top:2px">${f.date || ''} | ${f.document || ''}</div>
+                    </div>`;
+                }).join('');
             }
 
-            // Top action headlines
-            let topHeadlines = '';
-            if (entry.news_top_actions && entry.news_top_actions.length > 0) {
-                const items = entry.news_top_actions.slice(0, 3).map(a =>
-                    `<div style="margin-bottom:4px;font-size:0.82em;padding:2px 0;border-bottom:1px solid #f0f0f0">
-                        <a href="${a.link}" target="_blank" rel="noopener" style="color:#2980b9;text-decoration:none">${a.title}</a>
-                        <span style="color:#888;font-size:0.85em"> — ${a.source || ''}</span>
-                    </div>`
-                ).join('');
-                topHeadlines = `<div style="margin-top:8px">
-                    <div style="font-weight:600;font-size:0.85em;color:#555;margin-bottom:4px">דוגמאות לפעולות עירוניות:</div>
-                    ${items}
+            protocolPanel = `
+                <div class="detail-section">
+                    <h4>החלטות מועצה מאומתות (${findings.length}) \u2014 ציון: ${entry.protocol_pillar_score}</h4>
+                    <div style="background:#e3f2fd;border-radius:6px;padding:8px 14px;text-align:center;display:inline-block;margin-bottom:10px">
+                        <div style="font-size:1.6em;font-weight:700;color:#1565c0">${findings.length}</div>
+                        <div style="font-size:0.78em;color:#555">ממצאים מאומתים</div>
+                    </div>
+                    <div style="font-size:0.82em;color:#666;margin-bottom:8px">סכום משוקלל: ${entry.protocol_weighted_sum} (אושר=1.0, הצהרה=0.7, הצעה=0.4, סדר יום=0.2, נדחה=-0.5)</div>
+                    ${findingCards}
+                    <div style="margin-top:8px;font-size:0.8em">
+                        מקור: סקירה ידנית של 537 פרוטוקולים מסומנים |
+                        <span style="cursor:pointer;color:#2a5a8a;text-decoration:underline" onclick="event.stopPropagation();switchTab('protocols',document.querySelectorAll('.nav-tab')[3])">צפה בפרוטוקולים</span>
+                    </div>
                 </div>`;
-            }
+        }
+
+        // === Pillar 3: News Actions ===
+        let newsPanel = '';
+        const newsActions = entry.news_actions_detail || [];
+        if (newsActions.length > 0) {
+            const newsItems = newsActions.map(a =>
+                `<div style="margin-bottom:4px;font-size:0.82em;padding:4px 0;border-bottom:1px solid #f0f0f0">
+                    <a href="${a.link}" target="_blank" rel="noopener" style="color:#2980b9;text-decoration:none">${a.title}</a>
+                    <span style="color:#888;font-size:0.85em"> \u2014 ${a.source || ''}</span>
+                    <span style="background:#e8f5e9;color:#2e7d32;padding:1px 6px;border-radius:3px;font-size:0.72em;margin-right:6px">${a.evidence}</span>
+                </div>`
+            ).join('');
 
             newsPanel = `
                 <div class="detail-section">
-                    <h4>פעולות עירוניות פרוגרסיביות — סיקור חדשותי</h4>
-                    <div style="display:flex;gap:12px;margin-bottom:10px;flex-wrap:wrap">
-                        <div style="background:#e8f5e9;border-radius:6px;padding:8px 14px;text-align:center;min-width:100px">
-                            <div style="font-size:1.6em;font-weight:700;color:#2e7d32">${nActions}</div>
-                            <div style="font-size:0.78em;color:#555">פעולות עירוניות</div>
-                        </div>
-                        <div style="background:#e3f2fd;border-radius:6px;padding:8px 14px;text-align:center;min-width:100px">
-                            <div style="font-size:1.6em;font-weight:700;color:#1565c0">${nCoops}</div>
-                            <div style="font-size:0.78em;color:#555">שיתופי פעולה עם ארגונים</div>
-                        </div>
-                        <div style="background:#f3e5f5;border-radius:6px;padding:8px 14px;text-align:center;min-width:100px">
-                            <div style="font-size:1.6em;font-weight:700;color:#7b1fa2">${entry.news_score.toFixed(0)}</div>
-                            <div style="font-size:0.78em;color:#555">ציון פעולות / 100</div>
-                        </div>
-                    </div>
-                    ${domainBars}
-                    ${topHeadlines}
-                    <div class="dim" style="margin-top:6px;font-size:0.85em">
-                        מתודולוגיה: ציון מבוסס פעולות עירוניות מתועדות (לא ספירת אזכורים)
-                        &nbsp;|&nbsp; <a href="https://news.google.com/search?q=${encodeURIComponent('עיריית ' + entry.city)}&hl=iw&gl=IL" target="_blank" rel="noopener" style="color:#2980b9">Google News</a>
-                    </div>
-                    <div style="margin-top:10px">
-                        <button onclick="loadNewsArticles('${entry.protocol_key}', this)" style="background:#339966;color:#fff;border:none;padding:6px 16px;border-radius:4px;cursor:pointer;font-size:0.88em">
-                            הצג כתבות מפורטות (${nTotal}) ▾
-                        </button>
-                        <div id="news-articles-${entry.protocol_key}" style="display:none;margin-top:10px"></div>
+                    <h4>פעולות עירוניות מתועדות בחדשות (${newsActions.length}) \u2014 ציון: ${entry.news_pillar_score}</h4>
+                    ${newsItems}
+                    <div class="dim" style="margin-top:6px;font-size:0.8em">
+                        רק כתבות עם עירייה+פועל (anchor+verb). אזכורים בלבד (anchor+domain) לא נספרים.
                     </div>
                 </div>`;
         }
 
-        let orgsPanel = buildOrgPanel(entry.city);
+        // === High-Risk Orgs ===
+        let orgsPanel = '';
+        const hrOrgs = entry.high_risk_orgs || [];
+        if (hrOrgs.length > 0 && typeof RESEARCH_ORGS !== 'undefined') {
+            const orgCards = hrOrgs.map(key => {
+                const org = RESEARCH_ORGS.orgs[key];
+                if (!org) return '';
+                return `<div style="background:#fff3e0;border:1px solid #ffe0b2;border-radius:6px;padding:8px 12px;margin-bottom:6px">
+                    <div style="font-weight:600;font-size:0.88em">${org.name_he}
+                        <span style="background:#e65100;color:#fff;padding:1px 6px;border-radius:3px;font-size:0.72em;margin-right:6px">סיכון גבוה</span>
+                    </div>
+                    <div style="font-size:0.8em;color:#666;margin-top:2px">${org.thesis ? org.thesis.substring(0, 150) + '...' : ''}</div>
+                    ${org.report_url ? `<a href="${org.report_url}" target="_blank" rel="noopener" style="font-size:0.78em;color:#2980b9" onclick="event.stopPropagation()">דוח מחקר מלא</a>` : ''}
+                </div>`;
+            }).filter(Boolean).join('');
 
-        if (!proto && worst.length === 0 && !electionPanel && !newsPanel && !orgsPanel) {
-            return '<div class="detail-section"><h4>אין נתונים מפורטים זמינים</h4></div>';
+            if (orgCards) {
+                orgsPanel = `
+                    <div class="detail-section">
+                        <h4>ארגונים בסיכון גבוה בעיר (${hrOrgs.length})</h4>
+                        ${orgCards}
+                    </div>`;
+            }
+        }
+        // Fallback to legacy org panel if RESEARCH_ORGS not loaded
+        if (!orgsPanel) {
+            orgsPanel = buildOrgPanel(entry.city);
         }
 
-        return `<div class="detail-grid">${leftPanel}${electionPanel}${newsPanel}${rightPanel}${orgsPanel}</div>`;
+        // === Legacy keyword panel (collapsed) ===
+        let legacyPanel = '';
+        if (entry.keyword_proxy != null) {
+            legacyPanel = `
+                <div class="detail-section" style="opacity:0.6">
+                    <h4 style="color:#888">ציון מילות מפתח ישן: ${entry.keyword_proxy} <span class="dim" style="font-weight:normal">(לא נכלל בדירוג)</span></h4>
+                    <div style="font-size:0.8em;color:#888">
+                        Pole A: ${entry.pole_a ?? '\u2014'} | Pole B: ${entry.pole_b ?? '\u2014'} | חשיפה חינוכית: ${entry.exposure_score ?? '\u2014'}%
+                    </div>
+                </div>`;
+        }
+
+        if (!programsPanel && !protocolPanel && !newsPanel && !orgsPanel) {
+            return '<div class="detail-section"><h4>אין ראיות ספציפיות לעיר זו</h4><div class="dim">ציון ראיות: 0 — לא נמצאו תוכניות מוכחות, החלטות מועצה, או פעולות מתועדות</div></div>';
+        }
+
+        return `<div class="detail-grid">${programsPanel}${protocolPanel}${newsPanel}${orgsPanel}${legacyPanel}</div>`;
     }
 
     function toggleCity(idx) {
@@ -1859,16 +1870,11 @@
     }
 
     // ── Sorting ──
-    let sortCol = 'combined_score';
+    let sortCol = 'evidence_score';
     let sortDir = -1;
 
     function getAllEntries() {
-        const ranked = (DATA.rankings || []).map(e => ({...e, _group: 'ranked'}));
-        const partials = [
-            ...(DATA.protocols_only || []).map(e => ({...e, _group: 'partial'})),
-            ...(DATA.education_only || []).map(e => ({...e, _group: 'partial'})),
-        ];
-        return [...ranked, ...partials];
+        return (DATA.rankings || []).map(e => ({...e, _group: 'ranked'}));
     }
 
     function sortEntries(entries) {
@@ -1878,6 +1884,9 @@
         return entries.slice().sort((a, b) => {
             let va = a[sortCol];
             let vb = b[sortCol];
+            // Handle array fields (like high_risk_orgs) — sort by length
+            if (Array.isArray(va)) va = va.length;
+            if (Array.isArray(vb)) vb = vb.length;
             if (va == null && vb == null) return 0;
             if (va == null) return 1;
             if (vb == null) return -1;
@@ -1930,25 +1939,21 @@
 
         let html = '';
         all.forEach((e, i) => {
-            const isPartial = e._group === 'partial';
-            const color = e.combined_score != null ? scoreColor(e.combined_score) : '#888';
-            const src = isPartial ? (e.data_sources === 'protocols_only' ? 'פרוטוקולים' : 'חינוך') : '';
+            const color = e.evidence_score != null ? evidenceColor(e.evidence_score) : '#888';
+            const nOrgs = (e.high_risk_orgs || []).length;
 
-            html += `<tr class="city-row ${isPartial ? 'partial' : ''}" id="city-${i}" onclick="toggleCity(${i})">
-                <td class="rank">${isPartial ? '\u2014' : (e.rank || i+1)}</td>
-                <td class="city">${e.city} \u25BE ${isPartial ? '<span class="dim">(' + src + ')</span>' : ''}</td>
-                <td class="score" style="color:${color};font-weight:bold">${e.combined_score ?? '\u2014'}</td>
-                <td class="dim">${e.progressive_pct != null ? e.progressive_pct + '%' : '\u2014'}</td>
-                <td>${e.news_score != null ? e.news_score.toFixed(0) : '\u2014'}</td>
-                <td>${e.exposure_score != null ? e.exposure_score + '%' : '\u2014'}</td>
-                <td>${e.subversive_ratio != null ? e.subversive_ratio + '%' : '\u2014'}</td>
-                <td>${e.pole_b ?? '\u2014'}</td>
-                <td>${e.red_flag ?? '\u2014'}</td>
-                <td>${e.pole_a ?? '\u2014'}</td>
-                <td class="dim">${e.protocol_coverage || '\u2014'}</td>
+            html += `<tr class="city-row" id="city-${i}" onclick="toggleCity(${i})">
+                <td class="rank">${e.rank || i+1}</td>
+                <td class="city">${e.city} \u25BE</td>
+                <td class="score" style="color:${color};font-weight:bold">${e.evidence_score ?? '\u2014'}</td>
+                <td>${e.proven_programs_count || 0}</td>
+                <td>${e.verified_decisions || 0}</td>
+                <td>${e.strong_news_actions || 0}</td>
+                <td>${nOrgs || 0}</td>
+                <td class="dim" style="color:#888">${e.keyword_proxy != null ? e.keyword_proxy : '\u2014'}</td>
             </tr>
             <tr class="detail-row" id="detail-${i}">
-                <td colspan="11" class="detail-cell">${buildDetailPanel(e)}</td>
+                <td colspan="8" class="detail-cell">${buildDetailPanel(e)}</td>
             </tr>`;
         });
 

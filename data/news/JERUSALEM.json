@@ -1,0 +1,753 @@
+{
+  "city": "ירושלים",
+  "protocol_key": "JERUSALEM",
+  "action_score": 59.09,
+  "categories": {
+    "municipal_action": {
+      "label": "פעולות עירוניות",
+      "count": 13,
+      "articles": [
+        {
+          "title": "קידום נשים - עיריית ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5UNUxuVGxSd01aRzZJNjVjRzh1blNBdzlCd2ltdzdWSkdLQ25CMktnTmRmb2hvajRrbFF3a0dsNlZxMHMxZXRUM3Z5VW83ZVJvcWlMZ1I3TUhzcC1HeWNwU2Zmclhzc2JJUFVF?oc=5",
+          "source": "עיריית ירושלים",
+          "published": "Tue, 29 Mar 2022 10:05:45 GMT",
+          "evidence": "anchor+verb:קידום+domain:קידום נשים"
+        },
+        {
+          "title": "עיריית ירושלים הורתה להסיר שלטי קמפיין נגד מצעד הגאווה - הארץ",
+          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOdU1HZm5JQ3VfZks2R2k5VFRoUi11ZzZCd2NQbDU0NGluU2Z1M3M3YzByRTNURk1tdVM2X3Flencwcm5ZNTJhWTlYcDZFSlU5YjM0Rm9SR2pBN1BFUGstT2ZjeXJXT1pieUVWaUo5ZjYwUGVfNEZmamNPeEYxM0FFRmZMR0taMTRWM05qcG5teEhpMGQzekdwYV92Tl90R0tXYjlBUndLQQ?oc=5",
+          "source": "הארץ",
+          "published": "Wed, 05 Jun 2019 07:00:00 GMT",
+          "evidence": "anchor+domain:גאווה"
+        },
+        {
+          "title": "פקחי עיריית ירושלים הסירו משגרירות ארה״ב שלט שנתלה לכבוד חודש הגאווה - מיינט ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE94QTNpb0I0X0JHaFNTVWRnaFN1NUV3N0ZFTzZ6TFVPUllJU0lXRmtGUUgwLUExdGdCY0IwazBWSzFlTlVRcGlQWEplazU2bkppY2sxMm41QlR2UjFvb3hzc0l1WTd6VlktcXc?oc=5",
+          "source": "מיינט ירושלים",
+          "published": "Tue, 23 Jun 2020 07:00:00 GMT",
+          "evidence": "anchor+domain:גאווה"
+        },
+        {
+          "title": "הבית הפתוח נגד עיריית ירושלים: \"מפלה תקציבית את הקהילה הגאה\" - מיינט ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFA3cF9hYjN6dEd3ZDF6TTJSMmZHZGtzYnM2MDRGdFZYb1U2dTRFcHlwaFIzYVU1YWN5cW5Sa0dIaFVwUlI1NDNsdnZWaUgxcXQ2Rmh6TDd2OHFjNWFTbFhvd0ZqOWJWLTRjNkE?oc=5",
+          "source": "מיינט ירושלים",
+          "published": "Sun, 02 Aug 2020 07:00:00 GMT",
+          "evidence": "anchor+domain:גאה"
+        },
+        {
+          "title": "רק 24 שעות במקום 4 ימים: כך מנסה עיריית ירושלים לטרפד את תלית דגלי הגאווה בעיר - מיינט ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1PZXRkNjNQaEwyRDVWbmR5QjdNaFlMZzBFaHcwdkMzSUhJR1pvRURvcUNlUTdreGdMQnF5SmRrelY4UF9YRGtYRGY0a0FKclI4NzhzQnh2RkE2Q1VQZF9HVHZ2elpQLXpjV2c?oc=5",
+          "source": "מיינט ירושלים",
+          "published": "Wed, 24 Jun 2020 07:00:00 GMT",
+          "evidence": "anchor+domain:גאווה"
+        },
+        {
+          "title": "עיריית ירושלים מסננת את הקהילה הגאה: ״מנסים לדבר, אף אחד לא עונה״ - מיינט ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE0tbFNJdmJtRVBickx2R2Mybmd0azh1TGNCSHI3YzVtRTg3NFctWEh4UGlia3gta2JaLU5pTGs1ckVMVE93U2tFTzk3NGJkVWJTaWZaLUMzOVpYbW4tXzdjY0pVYUp1clJKZVE?oc=5",
+          "source": "מיינט ירושלים",
+          "published": "Tue, 24 Jan 2023 08:00:00 GMT",
+          "evidence": "anchor+domain:גאה"
+        },
+        {
+          "title": "\"דגלי הגאווה הם דגלים שחורים מעל ראשה של עיריית ירושלים\" - כיפה",
+          "url": "https://news.google.com/rss/articles/CBMi7gNBVV95cUxOLVNtaDFwZFJiSjNwd0xfR0p3S1c3VkRvRmhTb3BjQVNVN3o5YXlXNkRqVDl3b1hRc0VwTGdSWjBlcmZ5QTJGa2lHY0paMlhISm1pV2J5Sm5ISHlHVFZCNGY0U3hpRFRzMkNYQnBQWi1pWGFseS1ZRHBpY1A5VE1JSGFRQmROalNuNHo1QmRWaEI3T3hNOXBwdElvZTYyeUNVRERHXzJFZ1JPdnJzTFN2RURvMGxmOTQ4MUVidXBhN19Gdk9UWFVkLUd2SGNkR1Jna09XSFJiV0haRWJNZG5YeS16dDB3RkQ5R1g2d2lSS0dfQ21SX3ZtZFJXRDlSaTA1UDJYVEtjTGhGLVI4SjFDam9RQ2tYbUVxaDk5MzdidlMycE5URHBjZWxOTWxDWExvOUI3Q0pQNFJBR3d3Q1JEeDNQcmoxX2NEdnJnOXF0ZVBpUlVJb0dzMTZaUWtNM0ZRR2ZySXM3NnJpWEVrOXJhVG9DSXFiWTVhcFZJLThBX2F4S05EQUFyd0taVE1JOTJmaG9KeHdIdGFMdTRsWlN1V1poeGpJczJ2X05IS1FKdHFzakppVVZlN3hmNEdHekZFbTZnRG44SUx4anhpUFRKSWxzYWdvd2ZIcG0yd1ltRmJadnJwN2twVzRSNUJRQdIBSkFVX3lxTFBxdmxLZlVnTlN6NlVmVG4zRmMza2VaRXhXSGNCUEhhNkJ2MG5mSlJteEc1cjRTd3prU05kbWEwU2w1bFdvUXpTM1JR?oc=5",
+          "source": "כיפה",
+          "published": "Thu, 02 Aug 2018 07:00:00 GMT",
+          "evidence": "anchor+domain:גאווה"
+        },
+        {
+          "title": "מדד הגאווה ברשויות המקומיות: עיריית ירושלים שוב בתחתית הדירוג - כל העיר ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1sb2hEemsxeUpKWC1uNzJ4d3B5RzJabktMTFVfZm5LZk1VdzBBblBoOEtiSTJtUE5rbThDZnhoaExGelNSbVlXczZ4LWU3X3F5Y0RIZGZxMEtpcTd6?oc=5",
+          "source": "כל העיר ירושלים",
+          "published": "Tue, 16 May 2023 07:00:00 GMT",
+          "evidence": "anchor+domain:גאווה"
+        },
+        {
+          "title": "נובמבר של קיימות - חודש ללא צריכה - עיריית ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE0zanBZYmh4SzRWTGlMTE9EMERUdVdWdUZzTk5LQTg1amt4aTlVdU9JeGNRWUxfQmoxaUJ4WFp3V0lKNTZEbmFVeXdpRnlkMnVicWM2VFRUdFRmcFhTNHNxaS1xMTlyd1pCbnc?oc=5",
+          "source": "עיריית ירושלים",
+          "published": "Sun, 26 Oct 2025 09:32:58 GMT",
+          "evidence": "anchor+domain:קיימות"
+        },
+        {
+          "title": "מחלקת קיימות חברתית - עיריית ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1taWhxX0F4dFNlZjhKRGlFU1k3aFlYM0VQSDN4WDd2UTVqNGV1RlM3aGx3S3VPZU1HVW9CaF9HaGN6TlpUUldkTFFwcDhiZTBremZkT1p2ODNLaWFfcjFoQVJibldEdk0zaEdiRzYwNm55dlk?oc=5",
+          "source": "עיריית ירושלים",
+          "published": "Mon, 31 Oct 2022 20:57:30 GMT",
+          "evidence": "anchor+domain:קיימות"
+        },
+        {
+          "title": "ממשלת ישראל ועיריית ירושלים ישקיעו כ-90 מיליון שקלים בפיתוח מיזמי אנרגיה מתחדשת בעיר ירושלים - www.gov.il",
+          "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE5vNHg3eGs1NjZXY3I0SHJTODNHY2k2NUY0T3BnQlJaSHdET3hpMU9RR1dER3o3dHdKSUVlOFU5OHdBMmNhMGxDaw?oc=5",
+          "source": "www.gov.il",
+          "published": "Sun, 29 May 2022 07:00:00 GMT",
+          "evidence": "anchor+domain:אנרגיה מתחדשת"
+        },
+        {
+          "title": "סגן ראש העיר ירושלים: \"אם הלהט\"בים נורמלים, למה הם צריכים תקציב נפרד?\" - ynet",
+          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFA5cmRuQW5aYmRyUlY4NGNPYXBKUElLYV8xZlBJN0liRGl2b18tU3dzZ2M2V1E3c1JOWHJrdTRhcndQV0NuN1lOTUFydGVlbDZWTk5aLWloNk0?oc=5",
+          "source": "ynet",
+          "published": "Mon, 22 May 2023 07:00:00 GMT",
+          "evidence": "anchor+domain:להט\"ב"
+        },
+        {
+          "title": "טרנסג'נדרית תובעת את עיריית ירושלים לאחר שעובדי תברואה צחקו ולעגו לה: \"זה בחור\" - מיינט ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9MUFdNazdoaGVZSExKUV91Y1hXQlp5S2VhQWhYNzFEdzd3UnROZTdFNWVOSVB3WXNUeWNHRk93QlF1d2hxUkRrclNUSFZiSE1LLTdRN1Z1aWhwRFBUTXN3TzFtcEJqT3gtaVE?oc=5",
+          "source": "מיינט ירושלים",
+          "published": "Tue, 23 Jun 2020 07:00:00 GMT",
+          "evidence": "anchor+domain:טרנסג'נדר"
+        }
+      ]
+    },
+    "municipal_cooperation": {
+      "label": "שיתופי פעולה עם ארגונים",
+      "count": 0,
+      "articles": []
+    },
+    "topic_mention": {
+      "label": "אזכורי נושא (ללא פעולה עירונית)",
+      "count": 105,
+      "articles": [
+        {
+          "title": "עיריית ירושלים נלחמת באלימות השקופה: “גם באלימות מילולית יש סימנים כחולים” - עיריית ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPXy1oVEk2SmpiX2NFMHhSaVB1R2NPakgtVVBpOFNMM3JiMjhIZzBxQU5PbDk3aTE1NUtrNjNWWVM0eUVxcEp5RzRPdjlDMS1lamlHT0o0Q3FhbnVuUGtxM2N6NmR5bHZFVE5qZTFLN2FNQVRWOGN4NnU4a2ZpN0pWOS0tVlVCZw?oc=5",
+          "source": "עיריית ירושלים",
+          "published": "Thu, 20 Nov 2025 11:30:21 GMT"
+        },
+        {
+          "title": "תערוכות והצגות: ירושלים תציין את יום המאבק הבינלאומי למניעת אלימות נגד נשים - מיינט ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE41dUdzU1pXX2dlTm5IM2dBQl9FR2Q5dUczMjBXU243YUowV1NCWURNWWRrMlVOWUpfcGN5U0t6dFFRajhETElSUUlUU3NHUWlVcWRvMk5sVFFrU1FlblFNTGNOQlZtVUw2Sk5R?oc=5",
+          "source": "מיינט ירושלים",
+          "published": "Wed, 13 Nov 2024 08:00:00 GMT"
+        },
+        {
+          "title": "לא נעים מתה מזמן - מעלים את המודעות למאבק באלימות נגד נשים | כל העיר - כל העיר ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1pRGRrcktMUXMxSUFEcHFpbG92b1FJMjF5OFl1bzk5WFhXX1AxM3ppRE40SThOdE5xbktzeUFWT3lRTUJpLUdmX2l3dVZ1T3lZLVY2aDV1V24zdkoy?oc=5",
+          "source": "כל העיר ירושלים",
+          "published": "Tue, 22 Nov 2022 08:00:00 GMT"
+        },
+        {
+          "title": "ירושלים נלחמת באלימות השקופה: קמפיין עירוני חושף את הפגיעה הרגשית - חדשות אפס שמונה",
+          "url": "https://news.google.com/rss/articles/CBMiwwJBVV95cUxQZXBta1JvR0xBMjlBTDhvZGxjU0FzZkwxcklRdFB6QjZxd29sOVJHZThpQkhIR00zdVhQRTRKc3M4NXF6VHJ5UFozeUNQdjJpN056UVFNNVl5cVlmMmRSUXFKbm5wT0lQRkswWC1UcklQWkNWZXQ1OUlGbG9reEJwWk5vOVdEdm5xMWRIS0ZORmZNSlk5WHI0ME4zOG1xQ2RjbmlWb2ZSQms1aEhwZmY0SU5yZFNXRnZ3eV92NU8wcGhDSWRwRlVpZWJHdGtLNzR6SXhwLVNXRzhQblc3ZDBhNW9EMG1Vd2VSTGF4R2hpYXJQWWh2THJuTFdIYXFvblBQbGhYSWMzV1VYWnBRUVZDQnBXeFBTYVFSMm5wOEotc1pWZGh5Z1RJVnUtbUtpZ09RT2Vxb21PeTB5QU1JanZmY1N5dw?oc=5",
+          "source": "חדשות אפס שמונה",
+          "published": "Tue, 18 Nov 2025 08:00:00 GMT"
+        },
+        {
+          "title": "לקראת יום המאבק: הנתונים על אלימות נגד נשים בירושלים נחשפים - כל העיר ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBNTlJabng2TXhsZ1E1SndJdVBWMTVLU0NMTTk5NkpqVGcySUlncmVaMV9kWEtuM0tDU1o3ZUVMTGNrcjdyVFp1Zk9RUlFQY3ozeFp4YXdYWWNacFo1?oc=5",
+          "source": "כל העיר ירושלים",
+          "published": "Wed, 13 Nov 2024 08:00:00 GMT"
+        },
+        {
+          "title": "היום, יום האישה הבינלאומי: שיחה עם יו\"ר ויצו ירושלים ויו\"ר נעמת ירושלים - כל העיר ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5kdXdYTU5lcXo4TnBtbkJENFVtODJSWTRBc2kzeWdSX3IzWW1id25RcndXbTZzNURDOVZKS09fUVFwZWVxNF8ta1lJTkxiMUZEQ0M4Y0I3UFZQOHQ0?oc=5",
+          "source": "כל העיר ירושלים",
+          "published": "Tue, 08 Mar 2022 08:00:00 GMT"
+        },
+        {
+          "title": "עיריית ירושלים החליטה ליישר את שוק מחנה יהודה, מה זה אומר? - מיינט ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5Od3RzRDF4ZkcyTUQyTC1PMWtGdFdpQk9VWmRmSFVEQ3FPZmdCVFVyUHZrclJueFoyVUE2VzhudlRaSlM5aHRSWkFsTC12bG1oUU84M29OR2NOeThLSTVuSmZJOXJJSldRdGVB?oc=5",
+          "source": "מיינט ירושלים",
+          "published": "Wed, 17 Sep 2025 07:00:00 GMT"
+        },
+        {
+          "title": "היסטוריה בבירה: לראשונה תמונה אישה לתפקיד מנכ\"לית עיריית ירושלים - מרכז הנדל\"ן",
+          "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1uRlZIRElZLXQ3WUNOY0JSTEVCNW1zMEV5Z0lqbUtrYm5RSFJfMktZV3dsNTR1RXdMSFFoRFFHeUFmNkZpNGVneWFHbnZsMDRkdU8xOVJJUQ?oc=5",
+          "source": "מרכז הנדל\"ן",
+          "published": "Wed, 06 Aug 2025 07:00:00 GMT"
+        },
+        {
+          "title": "תקציב למניעת הטרדות מיניות בירושלים - לעמותה שתומכת ב\"טיפולי המרה\" - ynet",
+          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE43TVo3MzlnWlFJNFBESDlqWC1VU0FFb1BoV1pxWFBWY1dZQmdoblJScEtKVnQ2anJvdWJLTmV0MXBGbVNPdGw2UEJKb1M1Q3FFbFRDNzROREI?oc=5",
+          "source": "ynet",
+          "published": "Tue, 27 Oct 2020 07:00:00 GMT"
+        },
+        {
+          "title": "ת\"א כבר לא הכי גאה: גבעתיים בראש מדד הגאווה, ירושלים בתחתית - רשת 13",
+          "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFB2a21FSTlTWHN2MmtyaVFmVjB4WlpWX2RDU05VWVZfVXhoZUtTQ21xQ2lFMFZvV2JVOXZrb3VfVG9FUXhxY0tIS2NzTTNROXFyLU1MZ1N0ZFJySGtaUmlvT1BSMVFMd0lKT2RmeExfMGdYRW5sX0FfMUFtMG8?oc=5",
+          "source": "רשת 13",
+          "published": "Tue, 16 May 2023 07:00:00 GMT"
+        },
+        {
+          "title": "עשרות מיליונים למבני דת: אושר תקציב הפיתוח של ירושלים לשנת 2026 - Kikar",
+          "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9JaDJBWkRPbFJyak9GR0xWeVY2cFNSOVpzVVZpQmMzUkN4N0VIazBQQnlaVDc1Y19ZVVFDOXo5Tlp6eHk5ZExSWXVqMC1rZ0lZUnE5aw?oc=5",
+          "source": "Kikar",
+          "published": "Wed, 17 Dec 2025 08:00:00 GMT"
+        },
+        {
+          "title": "דני קליין יקבל פרס מפעל חיים על תרומתו לספורט בירושלים - ישראל ספורט",
+          "url": "https://news.google.com/rss/articles/CBMixAJBVV95cUxQOTV5WEsyNlRwZTI4dDFHVEtRUEVBb3QwV1VaUjVMM09HaWY1X1JIYldGM1dQcTYxT285TzBpRHVGU2RiVXUzak1LN29wMERPRWgwM2EtaDdpX1l0dmQzbURpS1lNSEtfYkxHOUhxLTRjWXg3N2V0UFdSTFhPZ3F5NmRRYk1vWnhBMy1YV0pkQnJucEtyUTNvSWhodFR1ckdlckdIS3dFRWlqWHRqZENGMm80QjVYU0FnRnF6Y1ZTUHppY2ZMdWxyNDFscS15ekhkUkdtVXk3WFcwTXVTQzE4ODJQeTZ0RGszVkVDWVFNOEx3VFVWTHhDVllMQ3lnUWJENDlZcGx2dUFMRjh4VGd6NjVpRjMwZFU0YU1UNkN6UmJxMXJlOHFxUElsdGRZbTdKaDExdkpoaUlZRklQYnNJemgwRG0?oc=5",
+          "source": "ישראל ספורט",
+          "published": "Wed, 11 Jun 2025 07:00:00 GMT"
+        },
+        {
+          "title": "במרכז מכירים בזוגיות גאה, בירושלים לא מנגישים שירותים ללהט\"ב: מדד הגאווה - ynet",
+          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1maWR1UGpKV3l3NmhPTHpCQW00eVJVYlBobG1FNGhjbkY5SklqWTVWVEM2MkhicDdRUmhZOF9QaUZ3S210ZXJSUzRabExqdnZLUE9ESzJ5QmEwZw?oc=5",
+          "source": "ynet",
+          "published": "Tue, 07 Jun 2022 07:00:00 GMT"
+        },
+        {
+          "title": "עיריית ירושלים אישרה: זה מיקומו של מנחת המסוקים החדש שייבנה בעיר - מיינט ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1OcHlKT1RQZmRUbDBwQ2kyQVZGQkhOUkRJMGxPN1A0a2g1M3FzdkNDc0liN2Q5dDVZaGR0OHdiRXc1TEREdzdfeE1xeEZueUloYzZ3WTVQZXNhUUw2UGhxQ3RkNjJiZ3J3d3Fxa2VR?oc=5",
+          "source": "מיינט ירושלים",
+          "published": "Wed, 17 May 2023 07:00:00 GMT"
+        },
+        {
+          "title": "זעם בעקבות הקמפיין של אריה קינג נגד הקהילה הלהט\"בית: \"מודעה חשוכה והומופובית\" - מיינט ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5Wal9RZTFYdHBHV04xcUJzNzFoejlILWZhcFJSaEwtaDZ4ZEVJT1MxcXRfX3FvZm5QQkVVM0R3eGczdTJNSnF4UHdvdGRMaFBWczNhVEhEWGZmdnd1NGpfYUlKc3o3N0xnUUVUeDBn?oc=5",
+          "source": "מיינט ירושלים",
+          "published": "Tue, 29 Aug 2023 07:00:00 GMT"
+        },
+        {
+          "title": "מציבי השלטים ההומופוביים בירושלים: \"הידרדרנו בעקבות טרור להט\"בי\" - ynet",
+          "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFAxNXdXMi1ZcEY4ZzhUa3g3N09OUkZsSTk1RXIxUzNPME82NjU2TFF5VWtGMVJXd3l2Sl9oSTFVNkl6M3hwLS1ScnhFdUU4czJVVlRlMlotUUtyaWJQUnVBYkZ4b0FsYWs?oc=5",
+          "source": "ynet",
+          "published": "Wed, 05 Jun 2019 07:00:00 GMT"
+        },
+        {
+          "title": "כך תיראה הכניסה לירושלים בעוד כמה שנים - מיינט חיפה",
+          "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBtVmotTFpfUEUzQ1QxcGFaRVg5MXNsSC1mXzd4a3FOSlVlX1FLVEIyUzgzV0lZaG9UNnF1blYwZGN0WkFmc1U1NEFOZGVvVTJtRUtKSUhfZVRRUGprOW5Obnd5YU0?oc=5",
+          "source": "מיינט חיפה",
+          "published": "Mon, 27 May 2024 07:00:00 GMT"
+        },
+        {
+          "title": "גאווה: הכירו 11 בני נוער שעושים שינוי חברתי אמיתי בירושלים - מיינט ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5IMjY3eW00Wl8wYjA1aHFGWkZPaDBRd25TeVVIQ0dqcE9UTTRQYkRxMGZXWE82TE1UNVJ5aF9URzc3aXIwaDlYaG9ocFMzNy1fWXg3LXNEOU5MMGEySTVNMFBYemM1ZWlYdkE?oc=5",
+          "source": "מיינט ירושלים",
+          "published": "Thu, 08 Jul 2021 07:00:00 GMT"
+        },
+        {
+          "title": "גם אורי ששון ותמנע נלסון לוי קיבלו מענק: כמה עיריית ירושלים שילמה להם? - ice (אייס)",
+          "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE44b2V6cjdfMnRSNkJKMDZrdDA2QlJ3U0dpR3hKY3lGWE41NzRaUHM1cjl2X2pvdktPUlFrX1ZTc1NKOGVmdzFIQ2dEU3RkNVgzemhvcXZ2NE9vdDBWWElvRjFaOA?oc=5",
+          "source": "ice (אייס)",
+          "published": "Tue, 03 Aug 2021 07:00:00 GMT"
+        },
+        {
+          "title": "צאו מתסביך ירושלים. האירוויזיון שייך לת\"א - ynet",
+          "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5NU19yejhoLWI0ZTdBZ2JwaVFBTmhUSEtjMjF3RE9rSVJLQ3htX25wdF9Dc2pWa2JJWVNNZ3ppc2Ryajd5X2l6Z0d2cWRPOE5TM3huNmpKNEZhMURQUmxJaExTQkEyQ2M?oc=5",
+          "source": "ynet",
+          "published": "Sun, 17 Jun 2018 07:00:00 GMT"
+        },
+        {
+          "title": "נועה קירל, קבלי: הביצוע המפתיע והלא צפוי ליוניקורן (וידאו) - מיינט ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9seWEyN1I0eldwVFVjMlZQWU51NTg1TlhlaXpYWktVSkNGQU0xRm91WkJvRldyb3VieVg1RWYzWGRvemhncmVSQ25qcDlhSmt1M3lLNXY4SXpSTVA3eDAtRlh0d1NPcDdOZGt4eA?oc=5",
+          "source": "מיינט ירושלים",
+          "published": "Thu, 18 May 2023 07:00:00 GMT"
+        },
+        {
+          "title": "יממה לפני מצעד הגאווה: קריקטורה מופצת נגד משה ליאון - מיינט ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1SX3RQZzZYbnNlZHRjN3BONXlaT2tVN0FaaVVkTURhemU4Sjl4cVBKZkc0anc1R0szR0FxOGYybE9IeWh1RGxBX1dMZHJGeVpqcmpiUExMcHlzaWl0RC1zMDVqRm1fWHA2?oc=5",
+          "source": "מיינט ירושלים",
+          "published": "Wed, 05 Jun 2019 07:00:00 GMT"
+        },
+        {
+          "title": "מצעד הגאווה בירושלים יצא לדרך: אלו הכבישים שנחסמו - i24NEWS",
+          "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9RNktfeTV6bzBSVGJGQ0w0UTRMcmpzb1BSYUV6WFcxaDVxSFJIUlMzcmQ2ZFRpN1g5U3k1YTBoMmFxejZObVF2WFF5SHduME1mZEpqX2lnYTBWa0xRakQwVHA3X3Y0UQ?oc=5",
+          "source": "i24NEWS",
+          "published": "Thu, 05 Jun 2025 07:00:00 GMT"
+        },
+        {
+          "title": "למה החרדים משתדלים להתעלם ממצעד הגאווה בירושלים, ומה חושב עליו אבו מאזן? - Calcalist",
+          "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1FLTZ6U0FEdHprVHJmR1Rqd0VQelRCVkNaWWVyRjFrY0ZtSzZyR1ZHNzJLa0xjZ0IyZ1FpWS1mV0d5c09BZzdJRjJZVENpbzA5XzUzaFVMaENzSDlLRGt0M0hEeG80Y0U?oc=5",
+          "source": "Calcalist",
+          "published": "Sat, 27 May 2023 07:00:00 GMT"
+        },
+        {
+          "title": "מדד הגאווה העירוני 2021: תל אביב בראש, ירושלים מאכזבת - mako",
+          "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1yVTk5Q2JqZE5Sd2w3djhFM1N0OTVTb0dSWkY5T2xreTBmaE9wcDhsVlEtMjZ6c1VXR1hfOHdTQU5yak81dEkyUlQwOGhtWlJMVFdNekJMVEJXVlZLeWdnVVpkREJfd01BS3RIUWctM1d1cGJKeHZ0QzNB?oc=5",
+          "source": "mako",
+          "published": "Mon, 31 May 2021 07:00:00 GMT"
+        },
+        {
+          "title": "לראשונה: 6 חתונות גאות נערכו בלשכתו של סגן ראש עיריית ירושלים - מיינט ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9zUHB6LUU5Ml9PeXJuRTdPajg4OVRRMGhnU1dqVWVXVE9IVF9zRFNvTlB3el9GOXp2WjlUWVpBTjZCUk1kWEJfZnJtTkVGclViV1lhRThLLVl0dC1ZTFFPUzR6cXlRLVZlMUE?oc=5",
+          "source": "מיינט ירושלים",
+          "published": "Thu, 01 Jun 2023 07:00:00 GMT"
+        },
+        {
+          "title": "מצעד הגאווה בירושלים חוגג 20 שנה, וכל עוד אין שוויון הוא חייב להימשך - הארץ",
+          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOMnVGSURQakJHamY4NlVEUzY0T2VrTjFUdWtMakxBcGpUNk43VjBNd3o1UGlxUDlGb3BfOE1ZczJrMU9qN3ctaDVFTFhybFptQmloWjRycjdVWVFVcl9vRWh5dnhRWE1sWTM1akFZMlljTW9TRG1hd0pQUFBtY1lBWnFLSjViSkJ1OXZBWnBscmFjdHdVeWNYWFNTNTVmUQ?oc=5",
+          "source": "הארץ",
+          "published": "Thu, 02 Jun 2022 07:00:00 GMT"
+        },
+        {
+          "title": "מצעד הגאווה בירושלים תחת מתקפה - טיים אאוט",
+          "url": "https://news.google.com/rss/articles/CBMikAJBVV95cUxPSHVMSFlVbE85NkhpNlZ3SVdWaUdtT0gtOHlDaUxkLW91WlNYVDFOVmZTM2dOQ2lRWTRjUmVxWEQyLWVFWDU1aTlUTDFYdC1uUG50b2U5OE1kWm1MOUVzRkF1UmpRNlAwWDUzZGNCV0FEbEpQNDdhTjlOaU8xMW9GeElFUF9PVWJFblhHTlFnZm9JQ2V3WFlFdDdjUlRvNlIzNFliWTl6aHNuN0FoWDdiQzlrNEhwQnIzWEdRaWVNeFg1SFR3U01aWGIyRTUweVhKTExaRWhmQUZGRDliaGxwWlI1RU1wLTNuRzBPSlZUX2RaVkFlbURnTEtIWDk1VWpXM05xVDRwM2ctWkdWLXpQeA?oc=5",
+          "source": "טיים אאוט",
+          "published": "Mon, 27 May 2019 07:00:00 GMT"
+        },
+        {
+          "title": "היסטוריה בירושלים: לראשונה אישה תמונה לתפקיד מנכ\"לית העירייה - מיינט ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBlTXdUcHdfeThiWkxFQnJqYnRkcjNrM3BHZDZ1OVpHUHVHcHp0UnUzbE9kR25wTDNTelBQTHQ3blBFRUE4OXZRbVFKd3RFQVlHYWpPZEhHeVNIOFNNdTM4M3ZHbEhCTzRaY1VZ?oc=5",
+          "source": "מיינט ירושלים",
+          "published": "Wed, 06 Aug 2025 07:00:00 GMT"
+        },
+        {
+          "title": "גורמים חרדים מפעילים לחץ לבטל אירוע גאווה גדול בירושלים - מיינט ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9oVTZMTHVoemN5a3JCbGVRLWhTWHVJMmNFV01PRjhVRTFMUUVMSVFjWm1Ob21IRFpzX3JtYVRVaEp6bzQzVUEycEVnZUxOM1lGWVk3X0lILUpFNk90RTd2TEYwdlc2QnZrdUE?oc=5",
+          "source": "מיינט ירושלים",
+          "published": "Mon, 10 Jun 2024 07:00:00 GMT"
+        },
+        {
+          "title": "דריכות לקראת המצעד בירושלים: שניים נחקרו, דגל גאווה נשרף - ynet",
+          "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1GZXYzNHhWZEJqTFB2YjVzNE00V21TSGFodDd6QmwxU3hCcGNSUXBzVElkeDlMdWNhQjZnMEMwZmhNV2dFWGZqT0NqX1pxRzJrWl9YMTdfWEp0T05Nc2NMQkhDTHVsLTg?oc=5",
+          "source": "ynet",
+          "published": "Thu, 06 Jun 2019 07:00:00 GMT"
+        },
+        {
+          "title": "עיריית ירושלים זכתה במקום הראשון בשירות וחווית לקוח - ביזנעס",
+          "url": "https://news.google.com/rss/articles/CBMiwAJBVV95cUxNYmhLNDI3LWRjSFZ0OE9uREVXcFlNNzl5NXhqbl9mMldOUk9jUVQtOEpJVFpvNWxBOVM3bmRzQXhYSF9vRkNmLURfVkxuLXpYREVrcThfSlBJVU1waklvSTBlc0lkQjNERXJ5dFdVenhHeVZwNDc5bDZoUGx1M1ZIYk9VZ0ZuMUhySzFSN0o3M3dYZ0MwUi1qandEeWN4NkZMdnNGTTRGZXZWMlM0VFhxa2h5M1V0ZW5yU1JMOWxXWVpQVHZOZU9wdFFsdGMzSVZ5OEllSTQ3ck5NZnluREJjSUhSOXR2ZjJPNEF5Sjh5dzY4Z0dvN0t5ZEJ2UUJnV1pHNEplcnd2ZFVRX1h5QmhZRUR6VjJhYUxHa2xsWEgyeHFXQmVuaExiUHN1MXA5QWhTd2V0VnB5Qmk1QnJ2TEVaTw?oc=5",
+          "source": "ביזנעס",
+          "published": "Thu, 26 Apr 2018 07:00:00 GMT"
+        },
+        {
+          "title": "מפקד משטרת ירושלים: מצעד הגאווה הוא מימוש חופש הביטוי, מי שינסה לפגוע - ייעצר - ynet",
+          "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9UMEt0dXA5RWRZbGRZamRWV2VjWExvZjAwdTV0bjgtTzh4TjNscDh1UHFSa25WSnFjVms1RVhzdE93aU5Zek9ERXVhOXgyTXdEWEh1WmtnU1pveGpjY1IwRUJOalRWVVk?oc=5",
+          "source": "ynet",
+          "published": "Wed, 20 Jul 2016 07:00:00 GMT"
+        },
+        {
+          "title": "המילה \"עירומים\" הופיעה על פרסום של עיריית ירושלים וגררה מחאה וכעס - מיינט ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9oMmJ3OWhmRXQ2SE11b0JQcHRQYXdEaGpiMDBwV000R2lrZmEtN284MW5HWGlDMDl6X2NDcWljQ0tLOGc2VVIxMUVQSDRYa2RfeFFxVmdiclY3RW93ZFhKXzJValBtLVNEbXc?oc=5",
+          "source": "מיינט ירושלים",
+          "published": "Sun, 04 Aug 2024 07:00:00 GMT"
+        },
+        {
+          "title": "הוצג המסלול של מצעד הגאווה 2017: ״זה הולך להיות המצעד הארוך אי פעם״ - מיינט ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBhdk5wejRIbmV1eUQxSFgtR2tBRXhIbDlPMWFsRnh2Q0ZvLVVNYTBWSkxuZXVIUnJfdnNlM21QRnB6X0phcXlyMkJJcjdnYXdJU0FzYmtYX0ZpR1hoaWxpTGZWSTYzSHY1?oc=5",
+          "source": "מיינט ירושלים",
+          "published": "Mon, 17 Jul 2017 07:00:00 GMT"
+        },
+        {
+          "title": "יום לפני עצרת הגאווה: דגל גאווה נתלש ממסעדת דיינר R&R - מיינט ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5xLW5zWFRPekdSd0FZRExnbVBMOTNNMmpyQzZhTTBDREJUMjF4bVhUSnR3Z3F4dE5JdnM2SUVSNnFkdWpiS2NicFV4MjVDTlh2UWg0NldjZm9QQ1M2S2VybEZCLW8xd1FYYXNJ?oc=5",
+          "source": "מיינט ירושלים",
+          "published": "Sat, 27 Jun 2020 07:00:00 GMT"
+        },
+        {
+          "title": "מצעד הגאווה 2023: הצעידה הסתיימה, כ-30 אלף איש השתתפו - מיינט ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBOS2I3YW9NOXZjTmJsSTFpUUdpbmNNQ0xjN1E5Zm1iUmZkblhSUGhQOVBMcHRhSVU2Z0lRWFBLMzhBOVhhRGFadmdYVHpKckhiLVdPTm5RRDVPSlRVZEtDYUdaZU01N0V1cWc?oc=5",
+          "source": "מיינט ירושלים",
+          "published": "Thu, 01 Jun 2023 07:00:00 GMT"
+        },
+        {
+          "title": "גמר ליגת האלופות של הפועל ירושלים ישודר בהיכל הספורט במלחה - מיינט ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5kY0lXQjRuelpoZDM3Y0pxYm4xMGY0dHpFV25IbHlWZHlnNGkwNV9nRDN1XzBwbDh1SzJuWDgtSXRxM2Uyc19GVUJLSnVpdi0yT3p6VjVVN1dVazJ0WVdSQlBxaDA?oc=5",
+          "source": "מיינט ירושלים",
+          "published": "Sun, 14 May 2023 07:00:00 GMT"
+        },
+        {
+          "title": "גאווה עירונית: הפרויקט הירושלמי שהוכתר כטוב ביותר בישראל | כל העיר - כל העיר ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBxaEhqbGloNEdfX1o2VXQta0FtR2hWQUc3TGN4Qi1UZDd0cEdLYnNBUDdJME9TYXhOMElBc3pRMktuQkFLVkNpZnRaRTdob0VwbVhsbzNVOUpHaS1z?oc=5",
+          "source": "כל העיר ירושלים",
+          "published": "Thu, 09 Dec 2021 08:00:00 GMT"
+        },
+        {
+          "title": "המהפכה הירוקה של ירושלים - ynet",
+          "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFB0N3dnMmtQT3Nfcm1fYnU1Q3NvRldWbWJ2alhfSXZJaGNYOUFpZlVXMEpPZlZsaXUwT2RtQkJ0cjRseFphMnZHdmJKZHF3WTFBYU4yZHAxcDJYRkV5ZXJ6UU5mVWhXTHpfTmVMSjF5aw?oc=5",
+          "source": "ynet",
+          "published": "Fri, 23 May 2025 07:00:00 GMT"
+        },
+        {
+          "title": "אושרה בממשלה: תכנית החומש לפיתוח מזרח ירושלים על סך כ-3.2 מיליארד שקל משרד ירושלים ומסורת ישראל - www.gov.il",
+          "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE42azFKNDFmTFFYb0ItMG5VUmQtWVlmcG1GRGJ6aGE1eUZILTNWNVYyUTRqbGdtaXdWWHVlUXhvcFVUVU11MGphZXljQnZxUk8yb1l6b1hfMnh3TmpucHctZ2VlVkVWZWhhMEhmTEplbFhWZy1z?oc=5",
+          "source": "www.gov.il",
+          "published": "Sun, 20 Aug 2023 07:00:00 GMT"
+        },
+        {
+          "title": "עם היעלמותם של שטחים פתוחים, ירושלים משנה את ייעוד הגגות - זמן ישראל",
+          "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTFBFU0txX3pnT0YycjJTS0hZQ1JZX1JLbUwtcmlXczJMbU0yV3RHaHZhUTZyb0dUZWZaVkhhMEtIbVM2TjNEUEV3LUNNM24?oc=5",
+          "source": "זמן ישראל",
+          "published": "Mon, 03 Jul 2023 07:00:00 GMT"
+        },
+        {
+          "title": "מוליכת הטבלה – פחים כתומים - עיריית ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOaV9NNTFqVFlCZGttZHZTeVdjUUl5YlNqZVdrTFk1cHdEamlYdi1UbnBrR0YxcjA3REV5eXdFam1Uc29mMHN2VkZuX1MwWU8wRjFfY1dteTVNMWU0WklQVDZUSjF3aGFtdGZBYTE3dF9lRVc3aFM4ZFRZX3NkNmdnVGx4SVhwejRYZ18yVw?oc=5",
+          "source": "עיריית ירושלים",
+          "published": "Tue, 18 Mar 2025 18:17:23 GMT"
+        },
+        {
+          "title": "חיפוש מוסדות חינוך - עיריית ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE03Z1dBTkFMXzQxVDBRXzktX2hVNk9STXEwS0xEX1I2U1pJTmV3RVlxRXRRemxFRFFaRUQ0YUxlVm11VHUwbnJ4TTlzckZfYVQ1LXY0RkZMQ0JMTXBFdl9iMXBvZXJnSlVsOHZZYkRzOWEyZjQ?oc=5",
+          "source": "עיריית ירושלים",
+          "published": "Tue, 18 Mar 2025 10:26:38 GMT"
+        },
+        {
+          "title": "קידום עסקים - עיריית ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9tS2dBRlBUSEN1b3k1MkoyMEF2OW4tOXozVExYczYtcEhoXzd6ci1CRnVCbkFYZ0RyYUoxa3pWenFtVVR5ajBwb1pSOHBzN1huSE54QQ?oc=5",
+          "source": "עיריית ירושלים",
+          "published": "Sun, 24 Feb 2019 10:13:29 GMT"
+        },
+        {
+          "title": "הרכבת הקלה בירושלים – חיבור נוח ומהיר בין שכונות העיר - עיריית ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9tcWVYN3lkSXpLdGpBaGwwVzdVLWVNUUs4ZXE2bllGX2doMVJEbXlLMFJFbHZSYVZqLVEzX0FhTldpakJiUDZwUndxX2hnSUsweW8zRWlibEF3N1k2MDFrcWx2S1NZYmNjUlFxa1hxVDdoQQ?oc=5",
+          "source": "עיריית ירושלים",
+          "published": "Mon, 02 Dec 2024 16:43:45 GMT"
+        },
+        {
+          "title": "תעשו מקום – רשימת פרוייקטי פלייסמייקינג ירושלמי - עיריית ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOTjJEVVpGcWRNamp1NlV2RDNiY1ZISFhCZFVPWDROQnY2cTBYbmdmMkdEaDR5NFV4OXJ2VGVPd2gweG9WWkt0YkNtWWszcGZnTmFoS293OWw3VnRTbGp3aUZoRlhESGdfVE1kN2lIMEpEVHVGRzJ6dVZRVVpUQ3hmSWNTSjhGV0UxeDc0THgzX3k?oc=5",
+          "source": "עיריית ירושלים",
+          "published": "Fri, 05 Apr 2024 23:41:59 GMT"
+        },
+        {
+          "title": "הפארק החדש הזה יחצה שכונה שלמה בירושלים - מיינט ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1MUnFOdFA0eF94VHh1TlBnTXJVSXlOM1Q2RW9rdjFZalQzZVRMdWplVDhMc0dzekJNVjRMcDdkNmxza0wzT0tHOU9MTzYwQkNEaDJaZnlpTkFrUXQyLWJJMWltN3FXSzhjRUR3RTJn?oc=5",
+          "source": "מיינט ירושלים",
+          "published": "Tue, 26 Dec 2023 08:00:00 GMT"
+        },
+        {
+          "title": "גן שלנו מה נחמד הוא: מעצבים מחדש את בריכת ממילא וגן העצמאות בירושלים - ynet",
+          "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBBWXl6NW1qYS1GNHByTDNNV3VUNUJvTXBmckFBaUlYQUxtOTh4R3lfQ1I0clNiY1ZPeFdhcFJBRXg5T0NyX0RKaDJYcHZZM28wakQ0VmpDdjBlTkdwRmpDU2hqOFJxU00?oc=5",
+          "source": "ynet",
+          "published": "Sat, 26 Sep 2015 07:00:00 GMT"
+        },
+        {
+          "title": "ירושלים: קרקעות למשרדים יוסבו למלונאות - ynet",
+          "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE41WHhpR1dmSGY2MnluQ3pqNkZTWnptNUNCSWgxT0RwRHhXLVBnTUpyUnRNNFhLcDNsZkI0cmNHVnJuZEN1YWVndHFBMGVjaDRkbnVVOXg4U1lDaUhmZFlic2IzejNzaXM?oc=5",
+          "source": "ynet",
+          "published": "Tue, 21 Oct 2014 07:00:00 GMT"
+        },
+        {
+          "title": "הסופר הצרפתי מישל וולבק — זוכה פרס ירושלים לספרות - הארץ",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQbFRkUGpJVXNUWXBFdWVlVFplYlJ2OHhQUmo2VXB6LUlKZDE2VlNVRTJ3LTI3b1lkaThQSmRsRDdWejhHU2tQYTh2QnAyRFZYcS1LUkNObmJTX0dNUmJHQVJqYkFoTy15d25XMDdaQlctdWM2MEo3ejhjOXdYcmFwcXF1bHFuZnVmb3cxVWlsclRQNGxFS3l5bmNGUjFBNDZ4UktFZDBVWjM5QzNRaUNzdUZ3?oc=5",
+          "source": "הארץ",
+          "published": "Tue, 08 Apr 2025 07:00:00 GMT"
+        },
+        {
+          "title": "שכונת גוננים ממשיכה להתחדש - עיריית ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQTlBjLXlFZm01VFUtcUkwOS1qMEswcEpfSGlDV3g0R1hDZEl1MURIb282Ym1jYzFBSkZCZTYxeVJ0eC1LMXhyT0dXSUNvMjdrY05LeC1zWWhBMHRIQjNNazdSSkUxUmhSM0hsVXFqZFRzaWRuNXlWZlVwZFRIX3BlQ0pvWGlJaGdSX09oWHBpWVRHQjNvck9Qcw?oc=5",
+          "source": "עיריית ירושלים",
+          "published": "Tue, 25 Feb 2025 08:00:00 GMT"
+        },
+        {
+          "title": "בלי תכנון ושקיפות: כך מקימים מבני ציבור בירושלים - Calcalist",
+          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9CNU5wNjZNcDlTTnNEUnNISFZFQldfMk5mNGZxSlRDZ1RMTmFON3AwZmJWYjlYbzRWNHAyM2NySE14SEtEa1JhbWNYOENXdTVOQTdJVThRV0dtcFR3a1NMaHJNUEZNZXRYTEpsMjF3RENNN3hXWFE?oc=5",
+          "source": "Calcalist",
+          "published": "Tue, 11 Aug 2020 07:00:00 GMT"
+        },
+        {
+          "title": "בחירות 2023 בירושלים: מי מתמודד למועצה? - מיינט ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1tUGZXc0F4MllMX0g5VTVwQ1ROT2Nzc0xDb09oLVNxclUxUFUydnZhejJVeXBDMzB2WlNJM21kc255Yno3SlEyQzMyanoxVXhZaFdUcEEtQVo3cnJjWVdXWWd6cTQ5aDJRWWNTczR3?oc=5",
+          "source": "מיינט ירושלים",
+          "published": "Mon, 24 Jul 2023 07:00:00 GMT"
+        },
+        {
+          "title": "עיריית ירושלים מאיצה התחדשות עירונית עם עוד 1,700 דירות - מגדילים",
+          "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE5BSHJzYmtwNmNsOWNPUGVhbDltTm4zUFd0Y09BdnlXNFVTenpRQUVJWkRrWnNfTUdaaG5UX0pDX0ZzTVVYZkdsTjYxbDk?oc=5",
+          "source": "מגדילים",
+          "published": "Tue, 04 Nov 2025 08:00:00 GMT"
+        },
+        {
+          "title": "רוכבת על הגל: גם ירושלים דורשת להפעיל רכבת קלה בשבתות - ynet",
+          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9wWXRoOHhJSHhmcTFRVHEyNHVTNUZNRm0zbUp1OGhmYkhuaW16WGdIb0Z4dml3ZzgySzlqUVN4bHNacnJTQWhLeXJSOENnd25XSUFIN1QxbHdISkFEb0ktakRQcGZPaWc0Wm5NRlh0cUg?oc=5",
+          "source": "ynet",
+          "published": "Thu, 25 Aug 2022 07:00:00 GMT"
+        },
+        {
+          "title": "בניגוד לתוכניות ולתנאי השטח, מקדמת עיריית ירושלים הקמת מגדלים בשכונות המצוקה - המקום הכי חם בגיהנום",
+          "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5sYm4xWUU4TWJUdjE4NXUwVi1McW8xVG5MTXYxalpzM3MwZlZ0ank2VmRlM1YxX3cwQjBUTnhqZkNEeU9SeTRXMHpQX3VmM1FBLVlxaFFxVUVISFh1azJBbHVfZw?oc=5",
+          "source": "המקום הכי חם בגיהנום",
+          "published": "Tue, 08 Feb 2022 08:00:00 GMT"
+        },
+        {
+          "title": "ממשיכים לבנות בירושלים - עיריית ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQYUhGQkNkOTFxamttdFJCLU81dWt2bHNob2JvZno1TkxEeHJ4Q0wzUk5McURCTWpBYkZNbEdzZGNWS0k2bGJOcms5WndXNzk3NjZrcDc0UGNfanFJU3h6UEJ6R3Q4eGdsMFlQWEliZG8wVVdKeTRHR1pURndBTzR5aDdiME1FT2Q5U2xleHJ0Qzd2ZnpFVTBMZnR6eXM?oc=5",
+          "source": "עיריית ירושלים",
+          "published": "Mon, 01 Dec 2025 08:00:00 GMT"
+        },
+        {
+          "title": "עיריית ירושלים: יש להפקיד תוכנית לדיור להשכרה בפסגת זאב - Calcalist",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1ZMzlsajFLMjdMOXVMU2R6NDlyc1ZuSUZvYnJnYlN5ZHpQODd2cmRtbUQxU1RMSUUzc2tNb2R1QjRNdTZJTVJIZjNhRmRCQWEtamt4MGxDdzl0all0WTl4c1A4cEw2TDVz?oc=5",
+          "source": "Calcalist",
+          "published": "Mon, 18 Oct 2021 07:00:00 GMT"
+        },
+        {
+          "title": "עיריית ירושלים ביטלה הנחה בארנונה לארגון הנתמך על ידי הקרן החדשה - הארץ",
+          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQOXdJakRVS0tWNzhjYkdLVjZBZ3RhVm1JN3lLSUhoS05BZnlodlZjVW51bE1SODhfYTZtMHpPa2dRZHVoeFhJVmo1Q0E5WUdkRVR6Z2dVNFV5aUMzVjg3UFhDWHdHRjRiWWl1bEF0XzRiQkZSRXRGeHo0d1dVTEVyZ0Y3VnFpWndkbndISk1LQ29sSnhaWHhDWkdvcnV3bzg0em11c2lNcw?oc=5",
+          "source": "הארץ",
+          "published": "Wed, 25 Jan 2023 08:00:00 GMT"
+        },
+        {
+          "title": "עיריית ירושלים מסרבת לקרוא כיכר על שמה של שולמית אלוני ז״ל - מיינט ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1JeENsZXFQSDNMZGNiN3Jrby1CQkhqcFgwYnQ5R2xqT1pSd3VmbWRSWmpBdFlOSUhobm1QcDExcGpwRW0zUHFpSUxFM2J0Z0Z0clF4cFhJZEU3QmwtazM5N2tUcnBoQzcwOTZr?oc=5",
+          "source": "מיינט ירושלים",
+          "published": "Thu, 16 Feb 2023 08:00:00 GMT"
+        },
+        {
+          "title": "ממשיכים לבנות ולפתח את בירת ישראל: - עיריית ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNci03LWlObm9FelVVbVlYOGZzNE1rLW1Xb0JjUjVkZmZjbWxhT1NpeHVmNHlMOWtZU1FhWjlWdWIzb08xNEExcEx1ZTR4YUVkWDM4X2lIYjRPXzQwbTY4WFl5YjZ6c29mSHF4SUprTjlrZ29kTTBZT0Q1bWtpZVg5UmNmUUhnUG5Yd3c3OTlqbTFxUFdX?oc=5",
+          "source": "עיריית ירושלים",
+          "published": "Tue, 03 Feb 2026 08:00:00 GMT"
+        },
+        {
+          "title": "שיא של כל הזמנים בהוצאת היתרי הבנייה בירושלים עם תחזית ל-8,000 היתרים נוספים בשנת 2024 - מגדילים",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE43XzNHZ1BZUTRFeHB1SjZ2LTdYWkVJX0Vjc0RrWHA2MTY0T3l5ZWY4MlRrTDZJZ1AyR3VBM2pqcVRCWkVSRW53bHpLNmFnUTg?oc=5",
+          "source": "מגדילים",
+          "published": "Thu, 04 Jan 2024 08:00:00 GMT"
+        },
+        {
+          "title": "ימים לפני תחילת השנה, למאות תלמידים ממזרח ירושלים אין מסגרת חינוכית - הארץ",
+          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxONlliMlBqNGxucWtRR1BNSjAtd3RaNzM1NHFlSWExdlFOay1MTlR2UGtkT1J3aFZXQm9vNGVIU0EtMnRWNTRxbzdSVXFJMkZNSGc5ZW0wNHRzSmVOa2VQU1lkeGhqWl92YnI3Tnd1akZWZWd4d1Y2aUoyNGg1RXg0UWFwZlRnd1huVExEdmNYajRlb2VRN0VjX01XNUN6VlBOcThKQlhNUHVuNDFC?oc=5",
+          "source": "הארץ",
+          "published": "Thu, 28 Aug 2025 07:00:00 GMT"
+        },
+        {
+          "title": "עיריית ירושלים ממליצה לאשר הקמת 800 יחידות דיור חדשות בגילה - מיינט ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5OUmhmVHR1UEJ2OUh6dHVTYzVrVm4wS2VaajYzdXUtM3JEYjdZSTVpQ1M4bk51d3I0WExLbGRQZXJKU2hGeTNRazdQbEhVREk0OEJFeW9vNmppVjAtQnNwREVQbmduNERZMDRaMw?oc=5",
+          "source": "מיינט ירושלים",
+          "published": "Thu, 16 Jan 2025 08:00:00 GMT"
+        },
+        {
+          "title": "מבני ציבור, שטחי מסחר וכ-1,000 דירות חדשות יוקמו בשכונת עיר גנים - עיריית ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQTC1DZXRzQnctTEdQTGxNdFpOV3pTNVZTb3FuVW5GMHhkcEtjb203dnMwRHJpT1hwOTJuQ0lwT2cybDhsZC04dWFYcXZBNm9OUndjR1g3a2lGU1QzdlB2c3BaR1VObW5uVEYyMzhkNUtQc0k0RzRtY0NXZmF4Y05OQmpRNmVxZXRIU3VpdUQyOGpnbXloVy1EWmFzVHVfemc?oc=5",
+          "source": "עיריית ירושלים",
+          "published": "Wed, 14 May 2025 07:00:00 GMT"
+        },
+        {
+          "title": "700 משפחות בירושלים ללא קורת גג ובמשרד הבינוי והשיכון — שותקים - מיינט ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBjdzFPaDNpRUQxMWk5S2JmLVVhanZPU2tMeWU1VDRZQnJMdkZ4cEtPVEczUlZQb0I1MEtfZDl0RmJZYUt5UEFCcDlkMzJSejdHUndTNFQwQnBTVWxCVjl2VDJRRjJRVXF2eHNJ?oc=5",
+          "source": "מיינט ירושלים",
+          "published": "Sun, 15 Dec 2024 08:00:00 GMT"
+        },
+        {
+          "title": "קצב הריסת הבתים במזרח ירושלים עלה בחדות מאז המלחמה, ההריסות בנגב חודשו - הארץ",
+          "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQNjFfOFI5TVhkeVlxRTVGZndnXzlFSXBrTThDbkpBMnlTT1pLM180RHl3UEVyd2VvN0RSbGtCOV9aMzlGVEVXZElyTmpweEFweXUydmhjU1M4d0FhMXkwTHB5bjRrc2hHaDNYemxVZkdMRWpqb21UWlhqS0VGZFNiQTJVVUVYa0lPaWo3MDJoaGJqZkhzN2Q5MGZHSVo4SWM?oc=5",
+          "source": "הארץ",
+          "published": "Wed, 10 Jan 2024 08:00:00 GMT"
+        },
+        {
+          "title": "עשרות ארגונים פנו לראש העיר ירושלים ודרשו לספק מים זורמים לתושבי כפר עקב - זו הדרך",
+          "url": "https://news.google.com/rss/articles/CBMiQEFVX3lxTE9aVUR4dGRfVzRmVVpiSkd4dU9Nam50TkxUdUdrcnVqRzlQUGx4WTZXT0lUUHpDVTVJYl84a05kZEw?oc=5",
+          "source": "זו הדרך",
+          "published": "Fri, 05 Jul 2024 07:00:00 GMT"
+        },
+        {
+          "title": "בחירות 2023: עו\"ד יוסי חביליו הודיע על התמודדותו לראשות עיריית ירושלים - מיינט ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBRM1puMnQzSU82ajA2ZVZ1Z1JCLWJRNEV2eFd6TXlYSElVTGRDVnkwUUdmYmpRZk41THlYR25DX0dGcVNMZnotNTItTVFkNXRHdkJvS1VDOTdDTnhrNVVJVU11ZDhLNUx5T1FtSDdR?oc=5",
+          "source": "מיינט ירושלים",
+          "published": "Sun, 10 Sep 2023 07:00:00 GMT"
+        },
+        {
+          "title": "האלימות ברחובות ירושלים מתחילה במדיניות העירייה והממשלה - שיחה מקומית",
+          "url": "https://news.google.com/rss/articles/CBMixwJBVV95cUxQaExGUXI3bXhfd2NDbGNxaTFhODV1VjRydTJyamF2VEx2bXg0WHFqc2V1dmdQSmxnajdDc3Zhc0JOOWg5bU5keDdUTVIyU29KdWxFMXhjaWl3ajh5NTBXVzZ2aEIxVEIxQmdNV1lhUjJwWnRHc0tDemRCS3A0R19vVGQ2OTFGWEdYMTdKUXBDTWRjdHUyS1VCQ1FMZzcwX1pENk1jejA0d3JQbXlwWVZBOWlvZEtJR0xNakxzVlYzbVlYcVk1OTZCQnhTNUU5d2lST2V3TnllV29BTzBvUk9KU0NKeERSZ3Z6ZG41X2RPMzFlSDJrQ1pHcFBxbW1pdnkzZFVHMjNad3Bkem0zMFZGTDFLRFZrUFJBdEJ2QmVnTzhEYVhHUUFoUGY2YXdTS2xGaDR3SVR1eWFJNzkwLTAzTm9MUzBHRVU?oc=5",
+          "source": "שיחה מקומית",
+          "published": "Tue, 12 Aug 2014 07:00:00 GMT"
+        },
+        {
+          "title": "התחדשות עירונית: התקדמות בפרויקטים בירושלים ותל אביב - ynet",
+          "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBhV3JUa1VEanhKREJKdEhCbzN6dUVMcng5Y0Z2aks4ZXdCSk4zTWxRUEVqUHZ4OVNENzlnS3RsMXVXMzlUd0dtWHhnVmhCdFZodkJvMmY0ZVFyMG5jNFE?oc=5",
+          "source": "ynet",
+          "published": "Sun, 06 Apr 2025 07:00:00 GMT"
+        },
+        {
+          "title": "עיריית ירושלים ביטלה פאנל על נשים כי הדוברת עבדה בעבר ב\"בצלם\" - ynet",
+          "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1LRElidWVTSmtJLUllODd3YjZVd21vUjljclluZlZ6ZjRPVUpBTTJpMGlrYk1oanBLOVk5ZzJhQURzdURUM2RULWVpT3lyUlc4Rl9FQWhNUFF0X2laWDdOaDRLTEI5ek0?oc=5",
+          "source": "ynet",
+          "published": "Wed, 13 Sep 2017 07:00:00 GMT"
+        },
+        {
+          "title": "עיריית ירושלים מקדמת פרויקט ענק: מגדלים בני 37 קומות יחליפו דירות ישנות בגוננים - מיינט ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBUVTczM2ZCRGNwMHR4Sjg5TUpLaFIyQU5wQmZoUUdQbVFUejhBQnJnRW96c0RocS1ZRHE4dFdLaUFjWnhhb0xZUmltVnZ1VWdPN2JwcTc4RUo1bmR6M0lfY09DOFB4VmpNRHlLTjFn?oc=5",
+          "source": "מיינט ירושלים",
+          "published": "Mon, 05 May 2025 07:00:00 GMT"
+        },
+        {
+          "title": "פינוי בינוי בירושלים: זה הפרויקט בו ייבנו 1,300 דירות - ice (אייס)",
+          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBxdDF4ZWY3ZER5bTE2ZjB2eURZVUVlb3k4RWhkV1hCa08xTlZWVTRHRVNkMUF0eGdkR1h6aE1qY2xISUE4U2xwMThKQVA0UFcwSk50bVdwWVRmb2NIaTMzY1BB?oc=5",
+          "source": "ice (אייס)",
+          "published": "Sun, 09 Jul 2023 07:00:00 GMT"
+        },
+        {
+          "title": "1,700 דירות במערב ירושלים: אושרה תוכנית להתחדשות עירונית - ynet",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE83dXBFd195VVdCNTcxU2M4UWpiQzZ5UGtOc21xTF9vRl9rWm5aXzlWRHdJY1FtbEt4Z2dPczA5SmFLMk1FWHhEcVVKNlJ2c3d4VUNqcVlDbklXT25r?oc=5",
+          "source": "ynet",
+          "published": "Thu, 15 Oct 2020 07:00:00 GMT"
+        },
+        {
+          "title": "ירושלים: מגדלים בני 30 קומות במקום חניון - ynet",
+          "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9aZkduSUJOdU5KUjl3Qi02cU56ZWpvWS1xcHMwV2tpQ19FbU5YN2pVaVV2NmpZNWcyS1RTbnF1LVF5VkdGQXQ4eDFZMzBYSXRHazM2YW5jdzA1cV9uNF83TUhHd096RFk?oc=5",
+          "source": "ynet",
+          "published": "Tue, 04 Feb 2020 08:00:00 GMT"
+        },
+        {
+          "title": "חשבונות הבנק של הפטריארכיה של ירושלים הוקפאו - The European Times",
+          "url": "https://news.google.com/rss/articles/CBMijgNBVV95cUxPUk93VjVpdEM1ZF9FWElXekNmS2xxU1dDNFhPUGN4R3RsOTRKOXJqbm5KSVBoc3JHMEpobWFlNTRPcXVrSEZHZ3VKMms1THhmUUxXVUpTb0piMXdzMVhOWV90MlRyRGg0YXQ5U3JlRUJHR2ZwcXVEN295WVRoSHZKaDQ1T0drVnpKb0lqTUo1R1c5OEQ2aHBjaF91bFRMZVhlbTgxR3owRGdhaGVhQkRuQXZnRG9Xd0RXOFgxMGRyckZCQ01xVWFKNV9QZ19HcVI5T0xOemRkMm5pRTlrRVROVzlvRzhINXVQc00wQk5sTXVUcDQ2SkNvSVQyYTdIZ2d4T3ZtTnlMQzY0MEE1TWo0bk9nYjlvcnJlcXRFY3l3SVNFMmpGYm5rQ0E3ZzJnRTN5M01lanY0STQwTjVnd0ZncUxHeFRmQkR6a1VYQUZiTUVPVmFLbG95ZmJnUU5vZlNVazU1aUpxa0ZtX0hUYnhaTF9FV3B2cDRFQjlUbEEwcHNHdXlNVUlQb21TZ0FlUQ?oc=5",
+          "source": "The European Times",
+          "published": "Mon, 18 Aug 2025 07:00:00 GMT"
+        },
+        {
+          "title": "מקומי - ירושלים nrg - כרטיס התושב של יגאל עמדי - מקור ראשון",
+          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE42V2hjUzViZWIySVNkVHdIdGliY3VISTJuN04wQ3ZqTmZtVWtHZjhJTjVDbUpSOEgwQjl4WjE4eG5iTnAwcXdrUnoxT04xSFh6V2ZwMXdmb0VLcU1EeGlSV0pYVVpoYkhsOXZadS13?oc=5",
+          "source": "מקור ראשון",
+          "published": "Sun, 16 Nov 2008 08:00:00 GMT"
+        },
+        {
+          "title": "בפריסה עירונית רחבה: השכונות הירושלמיות שבהן ייבנו עוד מגדלי מגורים | כל העיר - כל העיר ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9TNDBYNzA5enM2bFJiWXJ1Ny0wMUpISll5ckJzNVNqNjgtTWpORFpUY1JJdFBkaHB2QlhyRVRVZXBoZ1dpMXIxQlpyZXQ3S1hpXzNkZGRTcw?oc=5",
+          "source": "כל העיר ירושלים",
+          "published": "Thu, 17 Jul 2025 07:00:00 GMT"
+        },
+        {
+          "title": "יום ראשון...וכל יום ראשון ההנהגה הפלסטינית והבחירות המוניציפליות בירושלים בין מלכוד לרשלנות! - جريدة القدس",
+          "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE02azd1ak0zMTZPYkoxWmpaWmx1TW5mUnNqUHZxMHJRWEFmZ1VxMWVzMFRlcERrMGhBdGszYUU5RmRUOTVhNzFZZW5fQ2NTQQ?oc=5",
+          "source": "جريدة القدس",
+          "published": "Fri, 13 Feb 2026 15:07:01 GMT"
+        },
+        {
+          "title": "מחווה יפה אחת ליבתה את המהומות בשכונת אבו תור בירושלים - זמן ישראל",
+          "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTFBxNkIxQjNZNTJ2UDkwR2ZzV3lNWjNmeDZhVE04T1VLMXF1MGtfeEFIbUdQQjNqWnpxZWJONW01cXRtWjI0OHlwN0dENjI?oc=5",
+          "source": "זמן ישראל",
+          "published": "Tue, 25 May 2021 07:00:00 GMT"
+        },
+        {
+          "title": "עיריית ירושלים: \"צהרון אחד לילדים דתיים וגויים\" - אמס",
+          "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTFBrN0NzTWNVa2VNcEdzSlhPNEV1d19BcDdLSEV1TTVYTFlLWHhrM0twcS1ZdlNTOFM4aGVjS2ptWFc1TWhEdDZtZkxFekY?oc=5",
+          "source": "אמס",
+          "published": "Tue, 09 Sep 2014 07:00:00 GMT"
+        },
+        {
+          "title": "ירושלים: תעודות הערכה לנערים על פעילות חברתית - סרוגים",
+          "url": "https://news.google.com/rss/articles/CBMizgJBVV95cUxPMXh1LVdzQXNhWGx0WEJWX0JjTndwQjhVN05oa0FVbGpNYlJnOWJXWWpZaG03a00wVjNhbWNrWUFqLUJ6VXVPMjU0VU1RbUp0NVMzQmtXYXFVb3BsVHBzMmRhT1R0RU1jWWdiQVB1aW5mRGZfTWtqSnlZT1I0UldFZ0FIRkFVNkV4RjBpeVkwQ1dlSkV2d3BLZFRfSmZaeGdmX3AxRTJKSTMwcWUxdVVDWVNOR3UxbmlacWp6ZDYzcU94b3lrV0pOenVTc2txcmJqNzh4Z0ZpQ3F3cVVIdGNzYWt5c0Jya201ektfTGI2QnlpZDlGUG4wYTdzclNLa0tvRkNDb1RZYm1jV0djckpLYW9Td3p3ZlhnY0QzRmtKZWo4ZlMyUFRWWFJ0aFUwZ1Qwc1ZtaVk0eFlaaTNjMWlxejZUZ1BwaVRHSU91dldB?oc=5",
+          "source": "סרוגים",
+          "published": "Thu, 08 Jul 2021 07:00:00 GMT"
+        },
+        {
+          "title": "שפני הסלע החלו להתבסס בלב ירושלים. זו עשויה להיות בשורה מדאיגה לתושבים - הארץ",
+          "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNUm02XzJQX2g4WFUxeGlrc2lUSldpbENsS3JET1RLbUJXdWJWd0ZycnlwQnRUWEZ2VEp5b2RuNDBfZmczRGhUMFhkTkEwRUdYZ2w0NnJIVDRGbG92Q2h0am45MkQ4NFhReG1WdEVKREFfUHRMejlNMGhIdHQ2ek43SndvYmh1czJ1aUxGZjVmSXdRQTViT2g2Q3NCU0VzVHVyNGFtajg5d3NlenhUcnc?oc=5",
+          "source": "הארץ",
+          "published": "Mon, 15 Jun 2020 07:00:00 GMT"
+        },
+        {
+          "title": "לאחר ההצתה: משמרת תמיכה בתלמידי הדו-לשוני בירושלים - שיחה מקומית",
+          "url": "https://news.google.com/rss/articles/CBMiyAJBVV95cUxOdFJVWXBPdS05VTRqcjNjdFZVUVc1RUhjWmY5R0lyRWk5RHVJeHFhTHNEUV9aMGt2QUllWjB3TFZBN2hicXJFdmRyMjF1RmRwLWNTcEVlUzc5Z2VES1lkdlFNeElOS282aVlVbUpxTkFKNEdtYUYyaXJjem9FNlRITTZrZ3pQdHhGdlEzZVBVU2FLUnRkSFlIVDA3cS02dVFvRUZWWHlLUzJjQWR1T0JqZHJNSk0xSWVxR0JJUHgzRmJqYi0tMFFoejFrUmdEaVF2Q3NSdXNxSTBUU1FPUGJPbGFfSkFhc3NSS2R6OS1JZWxRdjRDcTFVOWRyRE5iOUtzd2c3UnJhZU1uWTNmZ1U2UE5oYlF0TTBqWXNYY2RjRmc0dEJ2ZFg4Q3B2MlI3RXlVUExKX1hpR0ZEQUVDSEljZi1ad1RRT1VK?oc=5",
+          "source": "שיחה מקומית",
+          "published": "Sun, 30 Nov 2014 08:00:00 GMT"
+        },
+        {
+          "title": "הרכבת הקלה: כך יראה מסלול קו התכלת - מיינט ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1ZQS1Qdk95RWV3alZrMUpnZmw2ZXlnOTluVUcxbnBUeS1FdUk1STVLcGZUYnNLSl8zOHlJamhQNEJ6a3hhQk9PX1FINzN2SkY3V3libUp4bGVBcGZNeWItZlBISFpfRjI3cW5B?oc=5",
+          "source": "מיינט ירושלים",
+          "published": "Thu, 12 Jan 2023 08:00:00 GMT"
+        },
+        {
+          "title": "ירושלים אין כמוה בעולם - ynet",
+          "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1xQ0paSzJIRGJ3WUZzX3U3dDBXVEhIUElCeW5YcVVKV3NrakNvVTMzQlBsLVhpTTFhTlY4Ym4xTTNVR3NMNEdRUUU5R1gyRWliLWxkV0p6UDJrWC1nMk9ZcXdTZkt3aGw2ZU8ydzlFcw?oc=5",
+          "source": "ynet",
+          "published": "Thu, 22 May 2025 07:00:00 GMT"
+        },
+        {
+          "title": "חרדים מחו - ופקחי עיריית ירושלים סגרו מסעדה בשבת: \"טעות אנוש\" - ynet",
+          "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFB4U2dnaWJWUU1nSVNLTUZYd2VZNUNSTkVpYUU4RmpXOFV4cUpGdVItUmJYLV9waEVmVmdVMm13a1JMb1BmZ2phWk0xSmVrRU5yd3BHRjN5QTlBbXZrYnJoVmxIUFBrSzg?oc=5",
+          "source": "ynet",
+          "published": "Sat, 15 Sep 2018 07:00:00 GMT"
+        },
+        {
+          "title": "ברצלונה לא הסכימה להגיע לירושלים, המשחק מול בית\"ר בוטל - ynet",
+          "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1YcVE1UUw1YlM3VFdFdnNYYVRJTUtnU0lLaURBN2h1dkhUUVBxSHl4ZmY5R1psSkpqTy1iVkxtRk43TXRERUk5VFdzQkN3SzNPWDJnYl85RDBMUHNONzFmYnp6S2t0OE1VRzZjZQ?oc=5",
+          "source": "ynet",
+          "published": "Thu, 15 Jul 2021 07:00:00 GMT"
+        },
+        {
+          "title": "המוכתר שמבטיח לשמור על אחדות ירושלים - ynet",
+          "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBmXzAtSGFkM3cyS0s5LUJwd3Fvb1FlUnhwVWtBWi1nZ0FtT1lvVEhQd3d6M0l3WU53Nm5nb2F1TjUtTXJKVUM1NDZrODNpZkVSc1l4U2lkTzRfeWRCYy12ZUM4Tl91T3c?oc=5",
+          "source": "ynet",
+          "published": "Fri, 19 Sep 2008 07:00:00 GMT"
+        },
+        {
+          "title": "מהפכה בתחבורה הציבורית בירושלים: התכנית להקמת מטרו יוצאת דרך - ice (אייס)",
+          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9pZnRmd21LR0VoT1RKT1RsYmVjcFFHS2p1eWdZdlpEWV9MXzRkTjFTSHBaQ09aOUdmZkFnTzVkQXdkUlFDRXQydlpZaGZzWEhRQUZlLVdpdkFYQU9Ya3U1eXh3?oc=5",
+          "source": "ice (אייס)",
+          "published": "Mon, 23 Jan 2023 08:00:00 GMT"
+        },
+        {
+          "title": "ירושלים בעיני המתבונן: הושלמה הפקת לוח השנה העירוני לשנת 2026 | כל העיר ירושלים - כל העיר ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE44VHVrcXNDNGdQNmpjSzBWMk9YMHJxaEdsMUV2eC1MVlBKVlhLdnpTZFFWRUgwSzB6V09LWDA0bGROTXdNV0RXSlBrSlJ2bVFEM1d5TTZUVVRkRzRS?oc=5",
+          "source": "כל העיר ירושלים",
+          "published": "Sun, 18 Jan 2026 08:00:00 GMT"
+        },
+        {
+          "title": "משבר פינוי האשפה במזרח ירושלים מחמיר: \"העשן חודר לכיתות ואי אפשר ללמוד\" - davar1.co.il",
+          "url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTFB4RmFTVnhvR1BKaF9PLU9SRlR1Y3p2MXVhMmVHTkgyQVFCUUxXVS1lcVhITl82UUtaR0poRzZaNWRuRlIzSzlN?oc=5",
+          "source": "davar1.co.il",
+          "published": "Mon, 17 Nov 2025 08:00:00 GMT"
+        },
+        {
+          "title": "משרד החינוך זרק לרחוב 800 תלמידים ממזרח ירושלים. לטובתם כמובן - שיחה מקומית",
+          "url": "https://news.google.com/rss/articles/CBMitgJBVV95cUxNMFVzTWR3NWFJNHFOOUtCVzd6b1oxQnlVOGxiUERNbldkUlhWTU92blloQXg0NTJ3b21fMFBGLTEzbFRsYUI3YXprSHNBeWc2azc1UHhQb3ZwTkV4RzkzQ0NHeUF0ZGQ3UURXQ2hFUjQ0Q184VEZmdGh5VWJwaVA5MVFlTUxlRmJlRWcwU3pnS05QUXdqYlNFMkpBMFNNVkhHX200NW9nSWpHa2YtbWRJbWVVYmZRS29aQklOMnQtVEU3bjlTODE2WjNQNENsYXNvQTA2ZWlqRXlxSVI4QTFqNVUzVTh2U0lYQkxpT2JRZXM0RHFDSGY1alZnQlRCZTc4S2JhNHJjaGxWQURBMXJJamZEdjR6eDVBd1Z4V1lHRF9OZTd6Q0tCNHZoTGZXS25MQmdteUp3?oc=5",
+          "source": "שיחה מקומית",
+          "published": "Thu, 24 Apr 2025 07:00:00 GMT"
+        },
+        {
+          "title": "\"מחכים לאסון\": תהום נפערה בלב שכונה במזרח ירושלים - ynet",
+          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE92d2NidDF0UmpvblBmcEgwQ0ZReEh1eTB1TW9NdEN5VUI5MFU4SlpNMm1lOHp3aUswUFVCUGZyUVJ4NjJCTXdOUGJFN19RVHdSV1lCU2hPRWI?oc=5",
+          "source": "ynet",
+          "published": "Fri, 24 Dec 2021 08:00:00 GMT"
+        },
+        {
+          "title": "המחוזי: עיריית ירושלים הסירה שלטי מחאה בניגוד לדין ופגעה בחופש הביטוי - הארץ",
+          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPMjhBeHgySjM5NEVqQjloUEVqNjFXdmoxdDV1cGRLYndiUkxBTUF3U2FLdVhBVExUU0xuUWhNcjQ4WmJHV2dLdWh4NV93c2RXUWItLXdyeHNLYTBDYk5LY3ltTkhlZTBsN19Vcmo2WFJVWXAtcnVpS3VTNjRfZ1Rwb2l0M0xVNXlOWE1pUTNqNC0wZ3gtX1BuQmVramU3Sm5hcktQeQ?oc=5",
+          "source": "הארץ",
+          "published": "Sun, 05 Dec 2021 08:00:00 GMT"
+        },
+        {
+          "title": "70% מהילדים הערבים בירושלים חיים מתחת לקו העוני, כ-30% לא רשומים למסגרת חינוכית - davar1.co.il",
+          "url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE9GdjhxQTRsRGlZUlIzYV9EeWJldldoU0FGYURjWnVlUlVFejE5Q1FXQldsNXVHVkI2SGhZdk82ZFBIaWZQb25z?oc=5",
+          "source": "davar1.co.il",
+          "published": "Tue, 16 May 2023 07:00:00 GMT"
+        },
+        {
+          "title": "הדיירת החדשה: העירייה שכרה וילת פאר בקטמון - מיינט ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1ZVkxrUUg1QXZQQVF0MVdPaFhUMTY2b0NvUURhXzR4VG1rcnhDWkp6Yk4wT1VvNU9vdnlIaEYwRlNha0otR0pQc3ZQT1g5REx4UkVMQ2ZLRWdRZWZMWEVib0JIN0FOSmRBN3c?oc=5",
+          "source": "מיינט ירושלים",
+          "published": "Sun, 22 Aug 2021 07:00:00 GMT"
+        },
+        {
+          "title": "מקומי - ירושלים nrg - בעיריית ירושלים אין טפסים בערבית - מקור ראשון",
+          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5WZll3UWxNcW5wMldGcVNZc3Z4NDd4ZW8tT2w2RzRYeWJYMzVqa2k2cUZhbG5IM1h2ZjdVVl9lWThBMkQ0bzZTY1c4MUtyU2VwU09ad04tdXZFb2FVRklXRjgtTzhjUkJFZVUzbVBn?oc=5",
+          "source": "מקור ראשון",
+          "published": "Wed, 20 Aug 2008 07:00:00 GMT"
+        },
+        {
+          "title": "העירייה הרסה מבנה – והותירה שכונה שלמה ללא כביש גישה - כל העיר ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE4yT3FYWllWa0I3ZVVOQjRLMTFYZUYxazVaRTRYS0x3WUo0MkNoeEI5ZkZFRmJ1UEhrOTA3X2JoSXhmZTJrdVBiTTZVVlhHc2hTSEdiaEFQMF9iUi00?oc=5",
+          "source": "כל העיר ירושלים",
+          "published": "Mon, 30 Jun 2025 07:00:00 GMT"
+        },
+        {
+          "title": "התשובה שהעירייה נדרשת לספק: מדוע לא הוקמו תחנות טיפת חלב בשכונות? - כל העיר ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1oTWlseWhkbG5FcXc2b0dtdWxoSEpQZXpDRElqd203Y1FncmlremJ5UklxbmpfNDRMa1ptWnAyQXRfMFZ6cUJKeDdYY3VZQ0JCMW5JV2x3bm9fX2Fp?oc=5",
+          "source": "כל העיר ירושלים",
+          "published": "Mon, 24 Nov 2025 08:00:00 GMT"
+        },
+        {
+          "title": "הערב: גשר המיתרים יואר לציון יום האיידס העולמי - מיינט ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFB4ZXFwSWs1Vll4YnE4N29IcW1xM0tfSlFmSFkyOHhyS0tJdU5FRFNHM3VrZGN4dVZ3V3RRcllGTXdjWUNSd1Itc2xaMG9YejhvaUZOVU8wUGNSVjl1SUFVOFpxYlpIWlF6ZzhwVUpHaGVhRG0zQTFn?oc=5",
+          "source": "מיינט ירושלים",
+          "published": "Thu, 30 Nov 2017 08:00:00 GMT"
+        },
+        {
+          "title": "תיאטרון - אירועי שבוע הגאווה בירושלים - הבמה",
+          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNQ1ZTcWxtSnpSdGJ1Ym1BX3lieml2dkUyQ1RBS2NZaldGWU9IVWxFTWJyZmxRZDlWaXFva3pjYmJtN1JwejRrcFdDOTA5dUxPQnlFTUlCYmdyWVprS2Q1T0FESDdIaWtQaVhnQlQ3ZHlscDg1T0dkUXg5bXRRMG5XZGlR?oc=5",
+          "source": "הבמה",
+          "published": "Sun, 06 Aug 2006 07:00:00 GMT"
+        },
+        {
+          "title": "מתי ואיך הפך גן סאקר למגרש חניה? | כל העיר - כל העיר ירושלים",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE8zUzNFYTJzVW1lQ3hsYVRMb1kwSzRqSi1pNkpMLWNLUUZjQVFFNmI3NEczN1N6SmEwWHVQM3hzLU5oZWNmX2RSZ0VndTBzY3dwLXU4am91TlJieHFw?oc=5",
+          "source": "כל העיר ירושלים",
+          "published": "Fri, 13 Jan 2023 08:00:00 GMT"
+        }
+      ]
+    }
+  },
+  "domain_counts": {
+    "gender_equality": 1,
+    "lgbt": 7,
+    "sustainability": 3,
+    "social_justice": 0,
+    "progressive_education": 0,
+    "diversity": 0
+  }
+}

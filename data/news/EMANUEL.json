@@ -1,1 +1,30 @@
-{"city_name":"עמנואל","total":0,"topics":{"lgbt_municipal":{"label":"להט\"ב ומוניציפלי","count":0,"articles":[]},"gender_equality":{"label":"שוויון מגדרי","count":0,"articles":[]},"sustainability":{"label":"קיימות","count":0,"articles":[]},"social_justice":{"label":"צדק חברתי","count":0,"articles":[]},"diversity_inclusion":{"label":"גיוון והכלה","count":0,"articles":[]},"education_progressive":{"label":"חינוך פרוגרסיבי","count":0,"articles":[]}}}
+{
+  "city": "עמנואל",
+  "protocol_key": "EMANUEL",
+  "action_score": 0.0,
+  "categories": {
+    "municipal_action": {
+      "label": "פעולות עירוניות",
+      "count": 0,
+      "articles": []
+    },
+    "municipal_cooperation": {
+      "label": "שיתופי פעולה עם ארגונים",
+      "count": 0,
+      "articles": []
+    },
+    "topic_mention": {
+      "label": "אזכורי נושא (ללא פעולה עירונית)",
+      "count": 0,
+      "articles": []
+    }
+  },
+  "domain_counts": {
+    "gender_equality": 0,
+    "lgbt": 0,
+    "sustainability": 0,
+    "social_justice": 0,
+    "progressive_education": 0,
+    "diversity": 0
+  }
+}

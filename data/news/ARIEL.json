@@ -1,1 +1,61 @@
-{"city_name":"אריאל","total":0,"topics":{"lgbt_municipal":{"label":"להט\"ב ומוניציפלי","count":0,"articles":[]},"gender_equality":{"label":"שוויון מגדרי","count":0,"articles":[]},"sustainability":{"label":"קיימות","count":0,"articles":[]},"social_justice":{"label":"צדק חברתי","count":0,"articles":[]},"diversity_inclusion":{"label":"גיוון והכלה","count":0,"articles":[]},"education_progressive":{"label":"חינוך פרוגרסיבי","count":0,"articles":[]}}}
+{
+  "city": "אריאל",
+  "protocol_key": "ARIEL",
+  "action_score": 0.0,
+  "categories": {
+    "municipal_action": {
+      "label": "פעולות עירוניות",
+      "count": 0,
+      "articles": []
+    },
+    "municipal_cooperation": {
+      "label": "שיתופי פעולה עם ארגונים",
+      "count": 0,
+      "articles": []
+    },
+    "topic_mention": {
+      "label": "אזכורי נושא (ללא פעולה עירונית)",
+      "count": 5,
+      "articles": [
+        {
+          "title": "\"האח הגדול\" | עיריית אריאל נגד סער סקלי - mako",
+          "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQWDBrM3lkUVJLYzR1c0MyWGFqenVQb25WLTB4QmY4U2g0WVNjcGwwbVVrcUJMT3RxQnEtbGJ1UnU0M0U2TldHWEJrM082UXdITmhoNkt0T3RXdkFyNV9IT2hHLWlSbnkyRHlWY1pkNS1ZVV94VERhalZQWWNzblhuMjZuWER5QQ?oc=5",
+          "source": "mako",
+          "published": "Wed, 08 Feb 2012 08:00:00 GMT"
+        },
+        {
+          "title": "אושר תקציב עיריית אריאל לשנת 2025. ראש העיר, יאיר שטבון, בירך על אישור התקציב: \"התקציב העירוני המאושר הערב מדבר שפה אחרת. העיר הופכת מעיר מתנהלת לעיר מנוהלת. כל תחום, מהביטחון ועד לחינוך ולתחבורה, מקבל תשומת לב מיוחדת במטרה לשפר את איכות החיים של תושבי העיר ולהב - ניוזים",
+          "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE91UzJ6ZEp2cUgzSnB6WjRuaHg3VmtzM29DNk1XdDE3YS12b0I1dVBXRGhvRkQ4M05rYzRHN2VsTkc2WlRMOFZxM1Z3VEs?oc=5",
+          "source": "ניוזים",
+          "published": "Sun, 22 Dec 2024 08:00:00 GMT"
+        },
+        {
+          "title": "תקופת ההמתנה: העיר אריאל מתפתחת, ומסמנת יעד חדש - מעריב",
+          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBlTV9idVlfX213ZTVDbkVlT2FjYWxiSTMxajZxZE9rYkF5UDRscm9vcExVRVhuY2lzX2Z6Q0ZVX0NjdXZYakNMbEF5THRkaWJZWl92dmdDTGctNTB5RDIzOQ?oc=5",
+          "source": "מעריב",
+          "published": "Fri, 28 Apr 2017 07:00:00 GMT"
+        },
+        {
+          "title": "חבר המועצה אורן חזן לראש עיריית אריאל: \"יש לך בולבול קטן.\" ראש העיר יאיר שטבון: \"קורא לשלטון המקומי ולמשרד הפנים לפעול להדחתו של חבר המועצה חזן.\" חזן בתגובה: \"אמירה קצת אומללה שנאמרה בבדיחות הדעת, שהגיעה בעקבות הבריונות המיותרת שלו\" - ניוזים",
+          "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE1vTWowS2pHQ2tzSElXS1lvZ0FBNGpEVnhYWndCN19BRDI5cmJtYVNPTW9acUY2TDNhMDdvcWFNOTFyZXpXWlZFb0xLSHo?oc=5",
+          "source": "ניוזים",
+          "published": "Tue, 11 Mar 2025 07:00:00 GMT"
+        },
+        {
+          "title": "140 אלף מ\"ר להייטק ומסחר: עיריית אריאל אישרה תוכנית להרחבת אזור התעשייה - מרכז הנדל\"ן",
+          "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9CMncyMHBIbkdpaVhhU01iNm1NRXVIT09md0RYYjZ5aC1sQTZPcndfTHVGcUdZVEh3ejhiMmZDX1J2YmlIcWdmNnY3aGx3SmR1SXY0Tk1yOA?oc=5",
+          "source": "מרכז הנדל\"ן",
+          "published": "Sun, 14 Sep 2025 07:00:00 GMT"
+        }
+      ]
+    }
+  },
+  "domain_counts": {
+    "gender_equality": 0,
+    "lgbt": 0,
+    "sustainability": 0,
+    "social_justice": 0,
+    "progressive_education": 0,
+    "diversity": 0
+  }
+}

@@ -1,0 +1,568 @@
+{
+  "city": "רמת גן",
+  "protocol_key": "RAMAT_GAN",
+  "action_score": 36.36,
+  "categories": {
+    "municipal_action": {
+      "label": "פעולות עירוניות",
+      "count": 8,
+      "articles": [
+        {
+          "title": "עיריית רמת גן אישרה ההכרה בנישואים של זוגות להט\"בים - mako",
+          "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9sOTVqUF90dndlTFBpMzU3a2hxUW42ejZHeVdGZ19CRkYwemwyakdUWEpDalRKd01RUnhlU0syaURzdDI1MUp1VE4xNXFWMG03VGlaNTN3bE93eHFBYksxY3FBT3VkQ3R6X1NjVlc5Z3k2YTNWMkV4N3pRbmhQQQ?oc=5",
+          "source": "mako",
+          "published": "Tue, 17 Nov 2020 08:00:00 GMT",
+          "evidence": "anchor+verb:אישרה+domain:להט\"ב"
+        },
+        {
+          "title": "אחרי תקרית נוספת: עיריית רמת גן קישטה רחוב בדגלי גאווה - ynet",
+          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE91QTBwT1pFam85VFluOUNQNVBrbGlfc2VLQkxZVmpZUGJnRU5LcFpMTGNqY2ZpSE9FRVZPVlNkU1dQQVUxNklSaWh4YnNMMnVHbFU5M2EyWDU?oc=5",
+          "source": "ynet",
+          "published": "Wed, 12 Aug 2020 07:00:00 GMT",
+          "evidence": "anchor+domain:גאווה"
+        },
+        {
+          "title": "חודש הגאווה 2025: מגוון פעילויות ברחבי העיר - עיריית רמת גן",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQMjdJcXhYRFpzOVAwdHNXRTM1cXFhLWNDVjZwV3YtV3ZZTzUzaTBHcjBORjgyZkY3UkNtQTAwNVNpUWNpUnFiMXJLdW1pU3BXaFdUNXBjOE9OYWg3NjNHemx2b1c0SF9rQnRmTEphU045Q2V5UmhzZDZZbUNJUmFYdGlaV0pqd3JK?oc=5",
+          "source": "עיריית רמת גן",
+          "published": "Sun, 08 Jun 2025 07:00:00 GMT",
+          "evidence": "anchor+domain:גאווה"
+        },
+        {
+          "title": "גאווה עירונית: רמת גן מובילה במדד האגודה למען הלהט\"ב שנה שנייה ברציפות - עיריית רמת גן",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNbTNwa0ptazRxODJmVkcyU3FGOWJ5NXRtNmlVX1locElGcnJmN0cxdFNxM2hRaTJuQkM1YjQ4ZXRYamEzWmQ3bTRSQ1UtQlJQVnR5TzhKaHQzeGJIQnBpcER2TTMxUE1mV2ZIdk82bHdjZGc4ZG82cG95ckthYVRpWjZrd1ZBY3dD?oc=5",
+          "source": "עיריית רמת גן",
+          "published": "Wed, 19 Jun 2024 07:00:00 GMT",
+          "evidence": "anchor+domain:להט\"ב"
+        },
+        {
+          "title": "שלטי שנאה נגד להט\"בים ברמת גן - ראש העיר מתכנן נקמה קרה - ice (אייס)",
+          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1rUkNVaVMzZ0NSX1lab1NBaDZzV2wxazQ3YzJKWUJGTVJrbnBtVTIzYXZaajlib1hEbGYwVGFvZGtYcW8xZ3htT3cyWlgydXFvVlVzV05BTGZYMV9ZRHd6NE13?oc=5",
+          "source": "ice (אייס)",
+          "published": "Thu, 27 Apr 2023 07:00:00 GMT",
+          "evidence": "anchor+domain:להט\"ב"
+        },
+        {
+          "title": "זוגות להט\"בים ברמת גן ספגו התנכלות, ראש העיר הורה לתלות דגלי גאווה - ynet",
+          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9ubUxTanA4X2drUEpzWm5LMnZaX1NsTU40SlhpUzJKRk9pWEVJakpyOXU2YktPMWU5ZVhHc1E2b0w2Y2VJMkFvR09DdGg1ZDdtZERNNjJ4RmU?oc=5",
+          "source": "ynet",
+          "published": "Mon, 27 Jul 2020 07:00:00 GMT",
+          "evidence": "anchor+domain:להט\"ב"
+        },
+        {
+          "title": "גגות סולאריים - עיריית רמת גן",
+          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNeEg0UW4yZVZTMG9fV09mQU03a1lRUmJMQURKSTBwRV96ajE3aElOV2VkcVdpaXhLbW94VUFIa1gwS09tSXlUTmVub1ZlOEROempKT1lnWXcyRGFoRkVjX1lXNjZNMVh3dG1iMDJubmlta0Uyd2tTbTlCdGJmM1pNV0NB?oc=5",
+          "source": "עיריית רמת גן",
+          "published": "Thu, 25 Apr 2024 04:47:13 GMT",
+          "evidence": "anchor+domain:סולארי"
+        },
+        {
+          "title": "כחלק מהמהפכה הירוקה: עיריית רמת גן מציינת את שבוע הקיימות - עיריית רמת גן",
+          "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQdW01bG8yMWZ1VDhnZFZhc3ZEd1ZHQWFsS2lkRFF0dkxFVjFmdEZ5RXd5SVVWQ2d3dWdfV2NfREFpTldaOHFtWWxpemxnajdjOFNjSjVvcUZqNnRVWWlFTGVpVHVGT2ZwY0lfNzZrSnp0bEhzUjFrSDBwSmZnekVZY3M0NGNsZ3E5amluWWNkYmFpanY4d3kyQ1hVUzBrNkktM1pCdFFwMl9JMUFnN29N?oc=5",
+          "source": "עיריית רמת גן",
+          "published": "Tue, 03 Dec 2024 08:00:00 GMT",
+          "evidence": "anchor+domain:קיימות"
+        }
+      ]
+    },
+    "municipal_cooperation": {
+      "label": "שיתופי פעולה עם ארגונים",
+      "count": 0,
+      "articles": []
+    },
+    "topic_mention": {
+      "label": "אזכורי נושא (ללא פעולה עירונית)",
+      "count": 80,
+      "articles": [
+        {
+          "title": "מנהיגות אחרת״ ו״הירוקים״ רצים יחד למועצת העיר - מקומונט רמת גן",
+          "url": "https://news.google.com/rss/articles/CBMixwJBVV95cUxQd2VMb0k4NFlfcm55bk5henNueFBxazlpTlZmOFU3SmhOcjBGVWNZOGpEdGZLbnJmdm8zMEFwbXJleU81RDVQRFR3alhscVVQSUZfMWluYUtKNjBtRVhfa202cFl5Tmd0a3p3QThHOVNrU1RWSzRsMWJ5ZllmX3VaRnpIUkNVLWVoVHJTR213UWhzNFdYbkxSSWt6YUxyZVktMUpOaXE0d1E5ZVcyWWkxOFpNOUlyMENPaVZXay1zNDFWRVJWR3J3N0laV21oRzVQLW5CeVRqZjU1M1NTaDk4OGp3Q0VLZ3MxLUVCQ3JTQ2h4SUkzVXdGTkFINE5CODZubDlYOEplaUZfMzg1OGdYd0ZONy1ZOEVmUWM3aGVhUUhCNXhHU1hTYXFyOHVHSVhWTm1GWklRTTB2eVVmSmlqQ0JzNDdIeHPSAcwCQVVfeXFMTlFURnB2NDEtM3FlSF9QaTluX19DU0pXS3c4RzVHeWQzazBvQUdMZHlBNlZrWmVoc0NRT2V3SEx4T0hrcTNoaTBJcENVeTN6cjZSdFhWWWZEMm5ZMjBRT0drajlob0hDcnBsQWN1T0ZvWUtISTJlb05qS3p2LXE1ejE0NF9XNFZ6bUhORkRHSFVKS2h0aGNNZnhjS3VhUDJGdGlCVmNWTldKNzlwMWJmS2o1TU15M3BkNElKcXRHVnYtUW5Xajhtb3dhUEM3UTMyRzdwTm5VcHdFaXpEN1dydVdOWHVZUzFReDVzUDlET3R0WVZ5SWx2N2ZDVE1hTzBRbXZtTUlveV9FcTBKd2s1N0N2X0RtMjJCQUZ0V2wyVk9fbHdaUkV5OU1oUWhvMUY3Q2ZyT2pwaGFfVk9SdTNqQUR6RHpjRDBfVGtTZGE?oc=5",
+          "source": "מקומונט רמת גן",
+          "published": "Sun, 03 Sep 2023 07:00:00 GMT"
+        },
+        {
+          "title": "מהפך במדד הגאווה: רמת גן מובילה - ובאיזה מקום תל אביב? - היום",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5ueURhTjQtY1lSU2pXejZ0eGRVRlUzaHRyZ2dJczRzaU0tcl9jV0pMekVTOHlPdlJDYjZITWJYXzh0RUJLTG5XNmFaeDBObFNpYmhIc1VONHhpT28zZFBuX3owVS1JWkRG0gFwQVVfeXFMTS0xVjVIeFgzV3UtR2NVLTNmSE10OVA5X1RMWm9XakMyV1J6R0R5dWFPQ1pDdG1aLTBCUFc1cGJQOUg3b0g0WFVDdnF0aEk0RTZfenFvNHF4M2VpMkgzSDB1VnVNV2VsWFduQzBFd0VLUw?oc=5",
+          "source": "היום",
+          "published": "Wed, 28 May 2025 07:00:00 GMT"
+        },
+        {
+          "title": "חינוך מיוחד ברמת גן: בית ספר \"בית אדם\" נחנך בהשקעה של 100 מיליון - מעריב",
+          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE16ZlBmMkRMYl9FblMtY0hwWWhJOXBlcnVxcHVJYjFFcFVjZFlCcTVZS1lmTVM5c3pyLXRjdnFIQlNrazRtcHFZdENLenhjX0tLTTNpU3VzMTJFUS1OT3VSOXpLWjJ5MVJNWDRz?oc=5",
+          "source": "מעריב",
+          "published": "Mon, 01 Sep 2025 07:00:00 GMT"
+        },
+        {
+          "title": "מנציחים את אגדות הספורט הרמת-גני - מקומונט רמת גן",
+          "url": "https://news.google.com/rss/articles/CBMinwJBVV95cUxQRGdhNVZaR1N1bWRPaEQ2Ri1rTlQzYnJLMlM4M3hBSEJMUXdlcHJNZFVuaDQwRVM4c2YxS3pFTGJENDJjNkxlallUejlKazU4YU1NaHJ2am9pbThVUThOaUdvWkVkcmM4dFlpVlE5LTNQRmk0akwxdTQ4VE05amwwODYxOGYzVjZRZ2Q1WlYzc3RiakstQ1lTZVNRN0RqeDJoOEFDY01vd3BVNXhwcFZWTktISHY1b2pCVjFSOU00ZlRFZ2lvdm85RWRZMlRoY08xWkVDUXNObEhDdFVtLVJLc3ZuN09uTks0MXBTRzF3Sk5ycFFicl9SZWgyLTBNWE93YnFja1M2UW9vWE95eWc3Ri05aElmWVhOb1V6clAtTdIBpAJBVV95cUxNWWJqbEd1bWQ0UkNMc0JMWWhwUUtBRTlhMmhmUnlxdzEwWnpzVm5fcTZ4bUVGSmNyaS1mbGhVcUtBaFJuM0tBN0VuZkN3TkJFZFNMRm1peWtHUzh0Z21rcXUtSkJFOXFMemJad2ZlVUw4SWIwYUhRVHk1N0pxNGhxSGhXZTZPdC0tUmxUR3RVemR6dnpNUlZabEx2UHRHcDMzTDRVWjVfaVVWZEVVOS14UUcycUxVY21EOTRYUm5tR0dDeFIwZEZuNkU1eGs3eFhNcm1NRGxjelplNUVJdFBjbHhaZENpak5Uc3lqMG5hVWt0c3R2RC01SmZZdWhDVW91ejFCSHJiWEl6SWtwZkFoYjBSVy0tQWZuR1VqTV9jdm4wUW0w?oc=5",
+          "source": "מקומונט רמת גן",
+          "published": "Mon, 17 Jun 2019 07:00:00 GMT"
+        },
+        {
+          "title": "ראש עיריית רמת גן לשר הביטחון: זמן את הרב שפירא לבירור - ynet",
+          "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5HUWR0eTZhaFVZM3dBLVp0OXhraTgwWlN3QmZrUWtuNl9YbG5QLUpwU3k2SjBQSVd3LS1ibGd5REVuTGJPdV9DUFFwelQyc0lYbk4teDhQY3JLYVkxcjZWVmlReE1vOVE?oc=5",
+          "source": "ynet",
+          "published": "Wed, 07 Mar 2018 08:00:00 GMT"
+        },
+        {
+          "title": "האגף לשירותים חברתיים - עיריית רמת גן",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5wcVJFbDFJYW1hc29Ic2xVOTduTjg0WFNGVUY0Qk5USE5Zck9ubXJrcTZJUnZNRUNuTk1EQkZ1c0FKTTk5bm82T3RYNUlwN0t4b28ycEM4R1VWeG5zUW84NU5MVFlGT3lV?oc=5",
+          "source": "עיריית רמת גן",
+          "published": "Mon, 01 Apr 2024 14:08:34 GMT"
+        },
+        {
+          "title": "גבעתיים ורמת גן מובילות ביחס ללהט\"ב - מעריב",
+          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1MbFJBaFMyaXA5OUgzcndiOWlxS28wTE94VTRKT0xCQ0RKQktRTXh2Q0ZsWlJCeEJnU3RpRm1SYS0wNmJhR1ROVnBjUXFjRmV4dmp4QkxtSHd0WGxjeEExVm9mU3BtTC1SR18w?oc=5",
+          "source": "מעריב",
+          "published": "Wed, 26 Jun 2024 07:00:00 GMT"
+        },
+        {
+          "title": "סגן ראש עיריית רמת גן מרגש: \"תרצי לקחת חלק במסע להורות\"? - mako",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE8tQU1mdDFCck1Fd0tDYkxoSFR1bVVHekRXaWs0TDJQM04tbFpjZlpRVkdPbTA1V1lQYk9qeXdxcno5WmYtSmd2TERjSzFyQnhiWFFhTjZrQllQdzQ4SFpITDhIazNjSUdIQm5vYUdVQkNIZw?oc=5",
+          "source": "mako",
+          "published": "Thu, 19 Dec 2024 08:00:00 GMT"
+        },
+        {
+          "title": "רווחה ברמת-גן - עיריית רמת גן",
+          "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOZ2hIVFRiY1lhSnVzc21hNUU1eFpqd090QVhqazRBdUNRdW41Xy05cFY2b3lRUktKR09mZmd0TW5mcEFyUjJkMTIxLVktSnRuTFBOXzViNlBBaGVTMDJkeko4bXFjSm1BRnhPa0RycXJ1T2ZELTVQQ2xIbURweTdob3JzXzliQQ?oc=5",
+          "source": "עיריית רמת גן",
+          "published": "Mon, 01 Apr 2024 14:09:21 GMT"
+        },
+        {
+          "title": "גאווה מקומית: בן רמת גן הנחה את כנס \"קולנו\" הראשון של אקים - מעריב",
+          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBBa05qUkJaNFBNT25ZWXBSSFR1dTRWbWdlYzJUcllzWXBBT05waXlJX2JpUkh1YmJub3NPY0ZwS3RlZl84VG9kSlRLZEREM3Qzdi1wb2JncmhCb0ZjdVRnS1RuOVExNFY1YW13?oc=5",
+          "source": "מעריב",
+          "published": "Thu, 10 Apr 2025 07:00:00 GMT"
+        },
+        {
+          "title": "לראשונה בתולדותיה: אירוע גאווה ברמת גן - ynet",
+          "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9nbGk4S3dMSGxhMDcwbHVsQTdWdTIyTEM4M2dLRlk1TTI5cl84dnctN1hESkZwVXZiWlFsMDJ1eF9xcjdzQnpYUUxucW00UlJHZDhsUkpnS25jdEtNazJJa1hSa2FabGs?oc=5",
+          "source": "ynet",
+          "published": "Thu, 06 Jun 2019 07:00:00 GMT"
+        },
+        {
+          "title": "רמת גן: שלח תלונה בסמס לראש העיר - כך הוא הגיב - mako",
+          "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBIMlJDSUpXcmNlVmhSQUJWcm04VGtNM2oxRlVtSVhxa0gwNnNVLS1XX1VvS293NUwxelFLRkVjcjdoUTY2MVBoVHVnUmo2cmZBd01YS2lLbjUzWk9zMktNM0tCdl9iamZldmEzbW9pbGJLS0pZN0JVNE9n?oc=5",
+          "source": "mako",
+          "published": "Tue, 22 Dec 2020 08:00:00 GMT"
+        },
+        {
+          "title": "דגלי גאווה הוצתו ברמת גן, שוב - mako",
+          "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE84elRkNTBBVmtnTW90NUh6TG9CN2d5UXNGc044Rk05VV9naXo3c1otR0JHSFBRanBrMXRaT3JZbDVjYThycXJvRXhjYlpNV3lNRkpHZk5XTC1Ed19hbkxaU3F2RXpKRllXV0xyc0xPV0ZjVTMweHFjOGh3?oc=5",
+          "source": "mako",
+          "published": "Wed, 19 Aug 2020 07:00:00 GMT"
+        },
+        {
+          "title": "הרב כ\"ץ ימלא את צרכי הדת ברמת גן - ערוץ 7",
+          "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBqR3QwWUJnMzZkRkdNNlVDNXQ4d3pYcE9HdWEyMV93ci1sVkRDWEJkX1RSY3JhNV9ZSHdHb1ZpdUQ2ZEZhdFBnQw?oc=5",
+          "source": "ערוץ 7",
+          "published": "Mon, 25 May 2020 07:00:00 GMT"
+        },
+        {
+          "title": "חינוך מיוחד: עם בריכה טיפולית ודירות הכשרה נפתח בי\"ס \"בית אדם\" ברמת גן - רמת גן גבעתיים ניוז",
+          "url": "https://news.google.com/rss/articles/CBMiggNBVV95cUxQdXdUZzlHaERlUm8yMjIxR3pCdUljel9OZmlqdFduUnR5eFIwSWhxUkYxRGtEaDMwTUxidGNXaHF4a0FsbXREa2xGcDBaN0xBektuQ3FVS19LRkF6NFpUdGhocTRBQ0lCejZ4TVpFaGFnckNkQXdaLTFkdlZzVFg2SWlLaC05cTlZck55Yi05Q0dzRWphOGphQlBQVC1LaE1lQ09YWGVCMldWaHh6RXhIa0Q0OEhZYUNvMmRyY1B4d092NjRveExEU204M3ZEOHdnYUJpNXdPajFZbkVtTjV1UkF5UDJWWDFOSzN2b1VGTHFxTnU5Q2Q5clUtZ2pTWGVQd1liM21rUFhBbjJBb2ZjMWt0Ylg1V3pnZ2VKUU1pWTd2Y0Z2NHBaejNaeWpfY1lqX1l0bDhxQUp4WmJuMGlTZXFCVU1aRnVIdHVQUHJUaDh4UWkyYXRibkh4S1BkSlBUZ1pBN1BiUzNfZFZMcThCSUhBZmxFZmFrRkQtM0t4bkZkZw?oc=5",
+          "source": "רמת גן גבעתיים ניוז",
+          "published": "Mon, 01 Sep 2025 07:00:00 GMT"
+        },
+        {
+          "title": "גאווה מקומית: נבחרת האקרובטיקה של רמת גן כבשה את אליפות ישראל - רמת גן גבעתיים ניוז",
+          "url": "https://news.google.com/rss/articles/CBMi5AJBVV95cUxNU3NFamV4T0FReVZNcHpFbTdlWDZENlI2VU14WTNiRmdIb0stQWVSR1V0N0VLRWlFQkdKVkNXMUozZjdtU2ZhVmRTdE5WeFctaUdwUFdDaVBvTGhpRjYybjlBUWhsVFJVdDN1S2ZDVkNTcVo3a04zSFlRNzVyUHpRaUI1NGdtRWN0NlUwQWxub2lEWXA1VnFOZk1ZenJzYmZlV1F6ZHJ6anlLbG1xWTd1Zy1TTEZEQ2lJdzltMVVFZ3M3Wlh1RDQ3NENNLV8xT21KY2hVZUxUN3ZjdGgyT3VZZ3Y2RVdkWkVrSzFMSFdKeEdZNjhib2xVYWUwcFFINEpSVjE0ejFnaS0yQUNyQXNVaDNQWlhzaGNLMmNQTHI0d0JRaG5KcGctdWNqMEcyRmtiU3hVUEhUNlQ3bDRRdk5kNS1WdXJDQUdqVUxpTlB0cVp1b3QtTzYxazExcExnNGRHZjJyRg?oc=5",
+          "source": "רמת גן גבעתיים ניוז",
+          "published": "Tue, 15 Jul 2025 07:00:00 GMT"
+        },
+        {
+          "title": "חשיפה | האם ראש עיריית רמת גן פעל בניגוד להנחיות צה\"ל והצנזורה? - רמת גן גבעתיים ניוז",
+          "url": "https://news.google.com/rss/articles/CBMi5gJBVV95cUxOYW5TT05sVE5GOEQzV01OOW5fLXJLeWlBaGVDdF9tNFFZc0RyNm5DaFU3X2JHaThkS2hRLU12QzA3RDNac2RNSUtNQXktYnRqQ0tiZHhkY3c2b2dBd3FBUVVubGxBdmhCd0taUUc2UGpOajhlSGwyZ3lzc09EaFJQOUgzRHhKVjFVczhYQXJDT2RyS05PY1NCNWtWdUtvMkw2UTQzdTFzYXJEM3ZsbHViYXh1VFRGSE52c1BiUHY3NGxzdGRfamRSVXZoaWNGazUtSHF4Vk05Q3RTa0lhZy1XQ2ZIRm44ajF0V3Y3M1ViYktxVzV0SnFxcU5ZaGJ6c2RMNUEzdHlPRXRyRWZib09qNFBZNjh1YzBHZkVsdHJmQlo2UVNpM3lkMThCZDdMeElRMUhtck1SOFpKUFZJc1pVUncxZVdyMmJkbjFveENsSlgwbG1LbF9RVmdGbEo3a3FxRlctc2x3?oc=5",
+          "source": "רמת גן גבעתיים ניוז",
+          "published": "Fri, 06 May 2022 07:00:00 GMT"
+        },
+        {
+          "title": "עצרת רבנים ענקית ברמת גן – אל תפגעו בקדושת השבת - רמת גן גבעתיים ניוז",
+          "url": "https://news.google.com/rss/articles/CBMigANBVV95cUxOSHpROVIxR2RMZm1xd2pnMHdtRmU3V2diMENRNUpOSldYSGRHYnhyVVVSRWtxckZHOTdxSHdORmFJcV9SYmlBb2c2U3d4VUNSblJhYU1NaUxJM25DdXhwMDIxMFNMWGxYSzlpQ205ei0xUURkUTB4NlR1cmRvdHA3d0JSQV9EaEM2eEdqbEw4cmhwUmQzMks2Q043aEVwR0hDSHZGZU0tczZrOUVzald0VXhOdk5IT0VmaGtLcnhoRXJPQ0tuMWxXaFFvdldOMmh6VVZlLWF4MExWeHYxZXF4b0xXNVgyeHRGbGdSN28wNjVjcFZkUlN1TXZXcnllX3VlUW45V2g3bVZMZ2lGYndtQWhBRXl1SHN6RWl2a0NzYzB0OElJNEFjS3liSFNKV05WRXVZN3YwM3Z3X1lRaEFGM1YyOFhta2Z4MjJUc2I3MmVEU2lYRGlQZFhyUEFwUE1TXzlRaVAwOWtRWHhFU2l1eWxWOXFrd1ZjMTRzX0NaX0Q?oc=5",
+          "source": "רמת גן גבעתיים ניוז",
+          "published": "Mon, 03 Jun 2019 07:00:00 GMT"
+        },
+        {
+          "title": "אורי כוכבי מרמת גן זכה במקום השלישי באליפות אירופה לנוער בשחמט - רמת גן גבעתיים ניוז",
+          "url": "https://news.google.com/rss/articles/CBMi5gJBVV95cUxQaXREeWVfemRGZTVDSDdGbU1zcjNyXzJGQlFZTVdSa1BoQ1N3V0s1eTk2S3hRUW1JMUJwb0tSbERqRlBQdUF3cWlVbVZBSS1zanlpUGljYk1mQVBENWNCVkNzMmFITXYyVXktSG13RHpURWZWdWRTN1g0X3N2SkpIMlowMUVHdUNzeE1HRUdOM25WMk5JeTVjUnZxMHc3MVVUR1pvYktRenF5bW1UNjRXd0xUSTJUVFFoaFhwd3NwQmNud2RqbFFvU3JENF9RY3IxV1JRRFZNck5IdTBEeHB6c0hXdU9xb1BRaUo0YWIzNVFGLWpCOEd2ekZqdXZyeklJSVh3UTktLWZoaGE4cHZBUUZkME9uMUhPTE5MZUxNQUxaLTNrTlEyNlU3eUN3bklNQUVYbWZIVUw0eDVPcmxGSF80TnF3a3VyV2pyOFI0Y1YxR3k3cFlpRWNhUWxJZUltX1ZHbTdR?oc=5",
+          "source": "רמת גן גבעתיים ניוז",
+          "published": "Tue, 04 Sep 2018 07:00:00 GMT"
+        },
+        {
+          "title": "84 אלף יחידות דיור בלב גוש דן: התוכנית להכפלת רמת גן בדרך להפקדה - TheMarker",
+          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQQTJrclpoUEhGcFRpX1NGVnJLY0lTOUhXZFpzWlpfbnc4U2x4WXNaMHNMenJCTEI0NGdBUjVnTmw2aGRyN1FPZU5tVjZFcG5haWV5ZFhqTnpqS1pLSlg0MTlhTVFLWTk1YllRSzJFdVJEdm0xQTZDSmVLaUlNcGdtQWVTcC1yRTN0Y2dfSXRGN1BSX3dfM3VJWW84TTRNUUFCUWRpYVQySQ?oc=5",
+          "source": "TheMarker",
+          "published": "Wed, 30 Nov 2022 08:00:00 GMT"
+        },
+        {
+          "title": "ירוק עד : 75 שנים להקמת הפארק הלאומי - עיריית רמת גן",
+          "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE8tRWZ3TjdJVUE0c0tPUjhwZjVvWXAtVDJIZ19ibzRvTnBfYlVRa1k1bGF3Zkt1OG9IWEp4a21kT2xjMmRib21jTUlQWFo4UnJvNjJ3OEFjUkl6S1ZPOUxzeWtYVko3SjhjbVhfbmNwM1NsUlBvWkRPY0hVSlQ?oc=5",
+          "source": "עיריית רמת גן",
+          "published": "Thu, 22 Jan 2026 14:39:46 GMT"
+        },
+        {
+          "title": "אל תגידו לי זה לא יקרה; ר\"ג מציינת את חודש הבטיחות בדרכים בפעילות עירונית מקיפה - עיריית רמת גן",
+          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQNm1CNktaV1ZCUDRVUExKM3N4cGlIVXd3dlFCbWpubTRYSjlhd3dXWTB4QWlHM19jLVdoNjVaWmlCc2swU1E1aUIyejM5WllCU2ZmVnhFMy02ZzBWS0hTWUtjM24xcDZoT2JDbFlha0RhSWI5a19hZDNwWkEtcWkyX3ZhNTFnX2xZNENYandIZWk?oc=5",
+          "source": "עיריית רמת גן",
+          "published": "Sun, 16 Nov 2025 08:00:00 GMT"
+        },
+        {
+          "title": "מעצמת אנרגיה: עיריית רמת גן וחברת דוראל בפרויקט אנרגיה אסטרטגי - עיריית רמת גן",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNT3NpRnFINWtFelZPeWZ2clRQdUwtZ0ExWUxxSkJjci1ZWWtQdjNOM0VRSllkb1FlNXRyaVNHd0ZSdlAzTjRQM2V5dl9oaXZLemVjamZKQjN5a3lDaGxkRlBXN3NJdzlaMTZnVTE1QU9EZ2hDTnk0UEZDb3pUM0JnV2Y5cnF2eXJ3?oc=5",
+          "source": "עיריית רמת גן",
+          "published": "Tue, 18 Mar 2025 07:00:00 GMT"
+        },
+        {
+          "title": "היתר ירוק לפרויקט הענק: רמת גן מאשרת את Vertical City - מעריב",
+          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5rdTloSkZNN0U1djZwei1PRnhPTmVkcEZpV3MzU20wSWtlRXpwMkhoaE9GY2U0dTdiZ3VmS04wRDk1cWZrZkhUZXFDczh1N1JiN29wSXM4VHpsNVF0YU5YUXBBYWhJNW84S1FN?oc=5",
+          "source": "מעריב",
+          "published": "Thu, 11 Sep 2025 07:00:00 GMT"
+        },
+        {
+          "title": "רמת גן במהפכת אנרגיה: \"בשורה של ממש לתושבי העיר\" - ice (אייס)",
+          "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE50MEpFV0lmbkFxOU41NEkwX3NDWnVTeEQxaC1nRDFDOFdUYXZpZFBtUVJSV2tQN0FlM1U4eDYtWXp0UTh4RHZCWk1xaDczbWY2dHh2Um1fUlNPYzBHT3RtMC1Zbw?oc=5",
+          "source": "ice (אייס)",
+          "published": "Sun, 24 Nov 2024 08:00:00 GMT"
+        },
+        {
+          "title": "עיריית רמת גן אישרה קרוב לאלפיים דירות בהתחדשות עירונית ומגדל מסחר ותעסוקה חדש - מגדילים",
+          "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE5MSUFOYUlJSGhqa2dreHIxOVVWaFNFLVJoQzBPRFpDZXJESnJObjJjdW9jelk3VFBHck83SjFtbVVDbWZWS2xOMDNGNjM?oc=5",
+          "source": "מגדילים",
+          "published": "Mon, 09 Sep 2024 07:00:00 GMT"
+        },
+        {
+          "title": "מהפכה בתחום המיחזור: מכונות חכמות לקליטת בקבוקים יוצבו ברמת גן - היום",
+          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1YSktBUEpSVHlqb0JWbmpJZC0yeFhxTkc3ZERuQjFyb0VjN205Vnc0X09rRnhkSzllWmlpX1ZWLXVtS0FJc3lhaEw3cUJvTkZacXNvWXN2NkZ0V3djTUFQMHFfaTBCemFLel9ibFBQVkXSAXhBVV95cUxNNkp0My1HZ2FQQ2d3aV9SVXBQMTJlaFJRdTduNFlfMXRiakNoRW1YdFd3ZnZ5aFJmVlljbWxDdm0zNDNlMGdmX0ZWZHQtTzZJckdiNk90WHpJaWhUdndBcVk0LVRScGRkZXBqS1lBWldHNmlydDNyN2c?oc=5",
+          "source": "היום",
+          "published": "Tue, 02 Jan 2024 08:00:00 GMT"
+        },
+        {
+          "title": "האם מרמת גן תצא הבשורה שתמנע הצפות בחורף? - ynet",
+          "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1vaklXTEhUNXFMX19YOHRJc093aVRKVnpSV0RWN3hvSjRNeEpQVjdRZ3dfekpQd0FzZUQ4eDhoX0RZWmRLMUJWck9kUUNNNnotTTVHN1M3NnlVVTNfdHc?oc=5",
+          "source": "ynet",
+          "published": "Mon, 01 May 2023 07:00:00 GMT"
+        },
+        {
+          "title": "הוועדה המחוזית תדון בבניית כ-300 יח\"ד בשני פרויקטים במרכז רמת גן - Calcalist",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9LTThRakkzd0Jhb3Zxdzd5U2lmRk02cTF4cV8wQXZ3WGR3Nmd0d0dxTWdDSjdEN2ltZUtib1dIbVVacWQ5VENtUDY2c19GM1pBY3ZsWjF3TTRaM1hEajdUQVJ2ZHk1RzU0OHc?oc=5",
+          "source": "Calcalist",
+          "published": "Sun, 18 May 2025 07:00:00 GMT"
+        },
+        {
+          "title": "הרישום לגני הילדים וכיתות א' לשנת הלימודים תשפ\"ז יוצא לדרך! - עיריית רמת גן",
+          "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQLUtia3cxeURBRGJUTVdGSjJQVzBDRG5tblB1VU5zS0xXUUsycDVkbXk4OTFHNWxWaElOM0hWVEI3dHRhZUVMc1FTMG9lNTcyc2MxdG1zU1ZTNnh2dlhTTGo4Q2diQTlFTWk5dUI1SDR6QnlpcHZzekN3bUJRVjdESzF6X2sxMmNEdVhPdXkyWHJGZ09ORnJvcXVWTno4VlRsZlZVU3VleDBVNzh1c3ZZNEs1bi1kcDVtV1FvcF9RS1VCSzJKQ3NuLXMxUEdEN0QwbmlheHJFZm5wVzlNdGplbQ?oc=5",
+          "source": "עיריית רמת גן",
+          "published": "Sun, 04 Jan 2026 08:00:00 GMT"
+        },
+        {
+          "title": "השדרוג העירוני של רמת גן ותל אביב יוצא לדרך: אלו הפרויקטים שהתכנית כוללת - מעריב",
+          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9KYVNfeTl6TndMRDBUY1BtZ2FkN0w1aHQzdE45Z3FNWU1ONVNrZ0xtN0ZCV0pXRC1rUGI4VXdiV1lyam1JNDlzSkJfNXEyeFVtUU1NYUtfSjBhZDJsQlN2b2Vn?oc=5",
+          "source": "מעריב",
+          "published": "Thu, 05 Dec 2024 08:00:00 GMT"
+        },
+        {
+          "title": "לראשונה בגוש דן: תאגיד אנרגיה עירוני - עיריית רמת גן",
+          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQd0Nna1p5QU9fQ29pLXM5WXV4Q0NkcE5GVFFaaHdNY0FWWkpDSGJxVkhmQmNMM2xjZURXemxld2plRk5FTVFsLVhuQnY0cS1ZZ2NaQ25RMVFEM29IQk9GMTQyMks0M2lCQ3ozTmdGYllZRDRyUFFUSThFYkczVXAxMUhkZ0NReldsVXNORnpFMjM4bFRpYVFIag?oc=5",
+          "source": "עיריית רמת גן",
+          "published": "Sun, 24 Nov 2024 08:00:00 GMT"
+        },
+        {
+          "title": "מוכנים לכל תרחיש: תוכנית \"עוגן איתן\" ברמת גן - עיריית רמת גן",
+          "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1hOVpaaVROWEpid3ZjM2U3Y0NDdXdudjNWYUVYNTdvVEdhdEFBZXktTXF2TkhVRE9fV0NHX0pJcjEwUmktanlEN0NoaUlFclkyeERhR1dxLXU0WE5teWZXVFdERnhNMklTeEdRWVFKcVdaa25JNGdWenV0WUpRVFU?oc=5",
+          "source": "עיריית רמת גן",
+          "published": "Sat, 24 Aug 2024 07:00:00 GMT"
+        },
+        {
+          "title": "סמל העיר - עיריית רמת גן",
+          "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5OUGo1NVpfdF91ZzBWbzdmb2tNbWtkcGdLMXpSYjUtdEVMR1lCVG5QeHBoOHB4aFhIVVB6emxrdUNJTzY4anpuazB5OWJySmdZcE5JbUN6WjN1Z2hsSlBGTlQ2M0ZYYWRENUZkUXpEbzB2cnNrV0tv?oc=5",
+          "source": "עיריית רמת גן",
+          "published": "Thu, 25 Apr 2024 05:14:29 GMT"
+        },
+        {
+          "title": "הנשיא של כולנו: תחנת הרכבת הקלה ברמת גן תיקרא על שם ג'ו ביידן - טיים אאוט",
+          "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNaVFMZWtqN1BLWm9NMXpjQWdGbzdwOS0zdHk5NzhOaF9RYVUwa3ZwWVRvXzlIelg4S0FsMUE5OXZLSEY5R055VFlqT1p5R2VsNEJscG1NQnhIb0ExS09xellOMHZiNmVaaXp6NnBsMFBUbEZSc0lpMjB5Rm5rTG4tNE1DcXJadEJ3b3Q3bGJsYndKaDl1cnlFZGVpS1YwcDJveGhXd2dBNGJCSWlsSjF1WURGRVA3VU5UTmoyeXJpdkROeUhyb1JN?oc=5",
+          "source": "טיים אאוט",
+          "published": "Thu, 19 Oct 2023 07:00:00 GMT"
+        },
+        {
+          "title": "אור ירוק לשכונת ענק ברמת גן: 2,500 דירות חדשות - ynet",
+          "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBieWVfdGw1d2ZheDJtZ0Nla3lBR2RscWFQaGhkOWJQeVo1dC1iZzV2TTVWSnJyRlJRUnNBZ0dKX1d0cG53WjR6dXFVWEpKdEU1cDA3U0t0Ul9obXNJR28tNXRwdFJrc1U?oc=5",
+          "source": "ynet",
+          "published": "Thu, 26 Sep 2019 07:00:00 GMT"
+        },
+        {
+          "title": "מגדל מגורים ותעסוקה בן 35 קומות יוקם בצומת עלית ברמת גן - Calcalist",
+          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBzZF9qY2Y0V2tOY09pWnlZOW5YMzBCVWdCOUw2QktYWFFvak5EbUZrTF9RZ1VNeUtGX053cUJiTUh6UUtRZF9GWGloRGdzQkF0dzNnX1dnM0pZRWpaOFFkWjdvUXgyV3hKV3RPcVJ3NUpZRVdvZVE?oc=5",
+          "source": "Calcalist",
+          "published": "Wed, 16 Oct 2019 07:00:00 GMT"
+        },
+        {
+          "title": "מדוע רמת חן זוכה ליחס מלכותי מעיריית רמת גן - הארץ",
+          "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOLWx2UTJPQmlLbkp2cHd1RjVWQkoySUJUREk3Vk5OSnFncDNkUFVNX1Z4cjJsdXp2N2hyYjNGa3M5b24zSVlFQ05OSDhadGY2U3o0RzNHVjFOdjZUUzNVakpFZlpzZ0JJZk1MdFM1Y3pVR1hsTVhfdURYdHZmckNWNkxOU1haSWhoak1zT2ZXLWdXX2hLb0RwU3c0Q0dwVmtHX2NuMUxZdS03VktzLWM2M25HVDNBOUZzaDZieEFKSmZTMkgy?oc=5",
+          "source": "הארץ",
+          "published": "Wed, 11 Jan 2017 08:00:00 GMT"
+        },
+        {
+          "title": "אחרי 43 שנים: גוב האריות של רמת גן - היום",
+          "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1yYlJUOEFST04tM2NrTllKMktNMFhralNSR1doQVRDN21iYnpxOW5kSVFsU21kZ0s0eHloTDdMZ1RydnFLa19CRFN2WEZ3SXJGVENHOTZQd9IBX0FVX3lxTE42eGRld0FrSFdtZEgza045bUM0bnVVVGRoa3plUE4xb2M5X1R0SnptUmhFZVBBQlFjNEdUa3l5QTFlcEsteWMtUzZfekhHSk1XZ0hZOG1jUEtGRndvNVR3?oc=5",
+          "source": "היום",
+          "published": "Mon, 28 Aug 2017 07:00:00 GMT"
+        },
+        {
+          "title": "אושרה תכנית פינוי בינוי בשכונת נווה יהושע ברמת גן - גלובס",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE91eWNKR1l0aHoyejB2aGFTSjFNQ2F2dXNrLVIwRWVaUk5uWG9iY0JsWEJXR3JyOWtMalBxUm5mSWphMEdsR19heUNiQWFnMzdWSHBXTWF3Ry1wdnp5eGE0ZVZWc2VSQ3oy?oc=5",
+          "source": "גלובס",
+          "published": "Sun, 09 Nov 2014 08:00:00 GMT"
+        },
+        {
+          "title": "\"הסנטרל פארק של האזור\": הצצה לתוכנית מתחם השלישות - רמת גן גבעתיים ניוז",
+          "url": "https://news.google.com/rss/articles/CBMi_wJBVV95cUxPdl9hZlNDVWFzQkN4WTlvVG91UGw5LUFlbFoxSUloZWxMYjNWYWJ4alZKcm5lSmFDWDZZQUlyMmxTU3ZYSXRlSExtS1Rob0tXbU4wcnVpbDBHWG9fWHhZaWRLVGpVTkF2UXVLcWMtRDZQZl96ME9UUkhnTFZCejZCRkVaVXVXU2hxZmZCNy1xOUlDREhNbHE4WXUxMDR0azVLbHZGakxSZTNjbm1pRlNGTlpUdHVzSWhYZFpKTGJReFdsQllfV3o3eHdUdUdmYnZIcW1NRXpSaEdrbkdoT0dIVFpYRkZQNWM1UDZhRnFMSlhlVGVJWUNFQmRtdEJ5VnNTaFI0eDQ3TGF0LWJRVFRoYXdaYjQ1NzJQSlpLUzFvMWRuN181RTl4bWFfRFVfcm5iMlQzTElRZ2lBVnVFeUJ2VjJVZUNyck8xUjE1ZFc0aG1MY1QxazVWbGlnNEdkN3VUTUE1ZGN0cjE4MmEyYlNya20wMmpsaTJ0UVFOTXRfOA?oc=5",
+          "source": "רמת גן גבעתיים ניוז",
+          "published": "Wed, 14 Jan 2026 08:00:00 GMT"
+        },
+        {
+          "title": "\"לא נשאיר אף ילד לבד\": רמת גן משיקה תוכנית חובה למניעת חרמות בתקציב של כמיליון ש\"ח - רמת גן גבעתיים ניוז",
+          "url": "https://news.google.com/rss/articles/CBMiggNBVV95cUxOeVNMSEFQR09GWUpxU1dONVV1dEpVVkdUZ1Q4TUNJR2lUNzdEdHlCS2JvdFlEbmd0OWtFRW9rYUpkbkRFY19iQVZxRmRFY0dTY2p2bmFJbXYwcGNlWXZzV2ZPZ0l3YWJZLTE1QXdQV2ktbVhyekRIeEVpOHFUVGFLbmo0cllUaFgtQmp5LUg2anhHSEx0TnRjRVR0bzBlRVpoVmw4SVMwamFUaGdrallnVHBSZ0VkcnJ4V1dXMXBUaTdRZm9vNmJCN3cwNzlwUXJ4X08wbEQ4TDhmTHJZTnlzR2Q1cmhLclQtR1paYm43aGFWZk1WSHlZSTU0WmJvMnhzenVNM0ZkcTdMQk1UdWR0cFg0WmdURW4zbV9KLWlOSmktd0pUZTRBX1RxZFlGMFhRdEl6TzA0Yno3a25qUm5PdXluQkhrcmxIOTVxeV9SWTBVVDlIbmVLbFNZSElfaG91dnk4SlUybi1USzBqcnp1N0VFU0RBWnlaZmtrcC1yZ0JlUQ?oc=5",
+          "source": "רמת גן גבעתיים ניוז",
+          "published": "Fri, 09 Jan 2026 08:00:00 GMT"
+        },
+        {
+          "title": "במקום בו נפל הטיל האיראני ברמת גן: יוקמו מגדלי מגורים חדשניים, מיני פארק ירוק ומבנה ציבור כ\"תמונת ניצחון לדורות\" - BE106",
+          "url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTFBtN1hMS3pYYXFtVk9GVS1sRG9TZkhpbjRpcGN3TnlOVWhCMTZxa0JMNjAxS0tYbGF3NGpxNlBfTjlRV1N6bXdV?oc=5",
+          "source": "BE106",
+          "published": "Fri, 07 Nov 2025 08:00:00 GMT"
+        },
+        {
+          "title": "רואים ירוק בעיניים – עיריית רמת גן ממשיכה לשדרג גינות ציבוריות - רמת גן גבעתיים ניוז",
+          "url": "https://news.google.com/rss/articles/CBMi5AJBVV95cUxPRHJwdVh0QVNfQkJiQU9NMGtYV0FQWERmaDhpc20zU2JPdGJTM1BkYmltX2I4Vm52Rk1iVmJrU051QTMwSFdOekd1d2VUT3ZZVzVSbkd4OG1taTZEQnY1MGRTNmszVlprcEpxbzhINml4a3NOZTRXZ003VE5HbUFUcWtLRERWZ3Z0ZEhWVFZSNlpjUE41UW9ZNEtYX1FJSFBiMFVPQm9hZjBoUm1IRGtNZDRHdnhiMlhnQ012b2hTTUU4TlhYZ0dBd0VEcGNidTRONGttOUxGWmdKQTFFNnJsVmw4MWltaEZ0TGxveHhHSzJzZF9zdEV2YURkNVBib25FazlMbGpNbDh2cGlsVUZmYnFRZ0RRSDUwN0JmbDBpbDZqTWRKZ0hybGZHRnpKajJwN0s5cjRWV2lZeGo1THNhNTFjU0xsLWpYbFhhQ0JqTlZCWTFSYkthY0Y1aHZuN1pqamFFbw?oc=5",
+          "source": "רמת גן גבעתיים ניוז",
+          "published": "Sun, 10 Oct 2021 07:00:00 GMT"
+        },
+        {
+          "title": "רמת גן: נחתם היתר הבנייה לפרויקט הענק \"ורטיקל סיטי\" במתחם הבורסה - רמת גן גבעתיים ניוז",
+          "url": "https://news.google.com/rss/articles/CBMigANBVV95cUxPM1I1eTNFYXprUXEtdnFreGhBcjRwX1VhcVFfaUNkc25NYTVFbkxxSExFQ0hWb0tSQUFWV2VfWFRlXzZwYWRUSFVQUlJkbnVTX3doUk5HMWpvdHVHdi1xSWtLUFhMMC1CU2wwRncxOUhNSnh0d2VDVVZGNF83czhRWmVXZEhvNXIwYW5ieDhfY2V4elAwWWhoV25kei1rRDlUaXU1XzUwWWhFOHF0M3djMjZRSGN5R19oV3l0N19oenVld1ZYRG1rMnlCb2J2czZvMGJvZU1Ndm5DR01aNkJMamdnd3VpR0ljZV91N1pseGtFeTBNSkMtLVJzenJ4Ump5OWdjYlVyM3dwaTN2NUVRYWpLNUlNelVfZy1BTXRPUFRxazBvVF9kaEJ1dThIM0dmMjZWY25YYkk4cTZXb19HTndnTkt4d3QyQUxFYkJLTUl3cDUxZ19JUGpXMTJDZFpod1pBZDY1aFdCODZBYUlISFUyT3Q5N1ZlbjdWZWJXZVM?oc=5",
+          "source": "רמת גן גבעתיים ניוז",
+          "published": "Thu, 11 Sep 2025 07:00:00 GMT"
+        },
+        {
+          "title": "הפנינג סביבתי | המפעל הנייד למיחזור פסולת אלקטרונית הגיע למרכז מרום נווה ברמת גן - רמת גן גבעתיים ניוז",
+          "url": "https://news.google.com/rss/articles/CBMi4wJBVV95cUxPWVRNMTA1eVVJUVpWcDJjWEEtWllmaE9CTG1FVkRzLUtiODVuVlJGQWVULUVwekQ2QUxzdDkzbHhnQ2FrZW90VW9uTnVYejk2WnZSeUhaUkRHUGV0UTNkclo0LWdnN29CNXkxVDFyZEhOa1dUTXRnU180ZHZOeGhocGhCR3VJOVZCaVkydTlFQ2NOSElWZjU5WDRDZ3FGcE1FVWtLNVQ5SXZvUGdaQmRWNDVndTkwc3ZadVc4T01feFdJbTV4LVkxOEM2S2wxZno0emc3cUU3STRSRWRnWFhRcU01Q0pfRFhFVS1SUEMwTmhWU3A5Q2U2VW03QmNnOGIzVndIcDYyRzdQajFBSThncVJzSGpiQlRPMnA1aS1Jc1BZMkNPYUF6T2pSLVJkcW9LR0VaS1pGZk1ITHVNWTZabWNkUS1XNC1Fa3FGZGhOWm5wSDJzZzZyNlY5N1cwekdjdUY4?oc=5",
+          "source": "רמת גן גבעתיים ניוז",
+          "published": "Wed, 17 Jan 2024 08:00:00 GMT"
+        },
+        {
+          "title": "״עיר העתיד״: אושרה תוכנית עיצוב אדריכלי למתחם משולש הבורסה ברמת גן - רמת גן גבעתיים ניוז",
+          "url": "https://news.google.com/rss/articles/CBMi4wJBVV95cUxPU0IwMUdFTG1JM1JPVjZaRWxwU1FIWlctbUE5eXozUTlVb1FHWWJ2WWVsWGhMWU00MHB0X3ZOWWVkaktiT3FyVEpwQm1pXzBsNXJnekxZai03UlJ5WUhaN0NzYjNDWkZzSUlUNFZLeXlkdnhGeWF5OE5RTGk5a2poMmN0OWJzUEJJTjk2NTIwVGx1S0VOU2wtVGlUMGRlMk9Jcm5wczVUdjZnMVpnU1ktSzFpWGYzUUlUbWJuZlZTN05YZjRuZ1B5NmJUUXRsZ0duQ0Zvby1YM19KbnhiVDMxNDRMLUFjRmFGUkpjS29iMkR2N3hzXzRORllyMHk5QjdVaVVwSnRkNmhycDd0U3dxbW5keDZKWUdvM2daRUxSZkpHV2tralItY1FiOTBEMDVmNEJNb0VnenJGQWQzYTJTR051T3ZScHgxWDRjemF6V2FrMG05OHdneGFyQTdtXzI4Sk1Z?oc=5",
+          "source": "רמת גן גבעתיים ניוז",
+          "published": "Thu, 18 Jan 2024 08:00:00 GMT"
+        },
+        {
+          "title": "הלב מתרחב – ארון קהילתי גרסת רמת גן - רמת גן גבעתיים ניוז",
+          "url": "https://news.google.com/rss/articles/CBMivAJBVV95cUxNZ1g5VzM4U28yTVdLMG5fTEs4U0hHRGlhSjg4UThxcVAwRWt6OFBxNDFVSXJnQ3M4dEZtT1AtSXRyMU1tN1NZblRoanYwOWhTMk1tZTRENVlaZWs0QWNDRzJRUDFCclJyZlFPM1JKT1Q1NUJJWk11Mk1aMWFpV0poc1V0YThJVVhXRXNXaW53MUF5QkI5LXBhUmEtVlFEQ2Qtc0ZpRzJWeDFWSGFnUWNEWkRrelZ3cGVRVU1qa0FVU2E3N1pTclc4SVA2LVo4Sy1KX2VBcG1kY01PWkR2NkdkbkdfOHFsczRCNUtaVHNDellSQi14Y0xQUjU3QWp3LXRzdHJZOEoyY2VsNWNQZEdyR0hxR0pNN2Z2UDE0TEdLV0o2RTJZNWVQM29PaGI1TlFzZ3JaUjZjTWhwWGRN?oc=5",
+          "source": "רמת גן גבעתיים ניוז",
+          "published": "Mon, 26 Apr 2021 07:00:00 GMT"
+        },
+        {
+          "title": "עיריית רמת גן משיקה- וואטסאפ זמין 24/7 לרווחת התושבים - מקומונט רמת גן",
+          "url": "https://news.google.com/rss/articles/CBMixwJBVV95cUxOS1BSOUx0ck9OWERKeEZVbW1udFRBZEduSUJMVExMQndyZDA0U0JPUjY0X1VyTmowX0hEanhXOWtFSjZYbWZJSFkwMW1wMHRDbzBKdEFyU3B2ZlFBNGVnWURMTlNDV3FZRWtzZWhQeFhieGl4MFRzMmZXbVZ4bjRvZm95VVptenhMUWJRUjA5NldpbThDejdSVll1cW9IRE5WbDBqNE5URXdOTFUzUkFhNlZ0bFJ0Nl8xYjd1VGVyelJUMkwxbjlGbEF1aE5CdEg5c3d0ZXhENmllclR3Y0VhdTVTNVpOSUk2a2VCMzYweE1RdjRLcmR4WFZOWUJzQmZ1Nk9NVmhiYU5DVk9GY2pMWmplMGtndzlCWmF4ZG8tZ3lpUWR3eUZmbXRsVDd6WWlTaXMyT0ZqazF5aFc2Mmx4Ym4wT2ZvaGvSAcwCQVVfeXFMTnI1dUlqMkZReXhkNkYxMC1OUkxfaWl5LWc0d1FvLWNZajhobmQxc1liZkZYMDdKWjFnSUlnWHYxWHZpQ1I2VFRLQThHVEdqRjVaZ3lnRnlaaTVfbmNCZl9tUXBiOG9PUk9vbU5UNmR1SHIyRUg1RXVld3pXVG1pT0ZSNEhJZ1lxMFhVdHZnSlVoUV9CU3NVVlNkcnB0V0FMbFRRWTJ0ZzlVVmxrWExJMmdVQVBTWGFxYnI0ZEhBSFUxbkQzekxwenFWOTN2R25OOXRIYVBhZGpIVE1kdUFrX3VSTTB3VGpGZDJuc25vVWlmN2dmOWRTN21OWXRoTzF6RGdnVzNqN3NZTllLYkpsbElTb0ZGWE95UjFwRmdRN29iN2FybEtqNVNxb3FOWG5VaERMdThyaU9ZbGtTUllEYkV0VDdBQkZSdU9YbTY?oc=5",
+          "source": "מקומונט רמת גן",
+          "published": "Tue, 06 Jul 2021 07:00:00 GMT"
+        },
+        {
+          "title": "ראיון עם עינת זבולון מנהלת בית ספר מכל\"ל רמת גן - רמת גן גבעתיים ניוז",
+          "url": "https://news.google.com/rss/articles/CBMi3gJBVV95cUxNWWdrNXd3d1U5alBCYk5DM2dXdG5ZWE1xSWMxR3JJSWFsZGY4a3BKT2dnRnVjMGtFYXFyZzFCSTRjTlhiTC1HZVlpSllGSG93WUx6OEctdEJTbEJZNUNfVnNPaGxwRlZfRFA0TVdlTXVIRHpGQlU1WUZUUFRpWVJwVFRLbTNCQVloVWNZekhQODZCa1FzeDJ6cnRpLTdOU1RuYW1CSzNqMF9jQnNWQkV2R0xHZkdUeWpabVJkQzhuM3k0WExra3J2Y2xPOGltcFVab0ZqV2hWaHhMamFmdzhfSlkwLTM4THVEUmdESTZOMUNBSW5nWmxwa01YTGtNV3BpRDVDYngza2NKRWtJVU01M0x3dVZYd3VmbTJEREJ1VTNMSkZfdkl3MVhpckdzVE9PZ1lPWXpSLVB6ZjNRQ0E4eW5mMnJTeEszYUpoQzVZT1RIMmJwa3F3QXVtX19tZw?oc=5",
+          "source": "רמת גן גבעתיים ניוז",
+          "published": "Tue, 12 Oct 2021 07:00:00 GMT"
+        },
+        {
+          "title": "הקרב על בר אילן עולה מדרגה - רמת גן גבעתיים ניוז",
+          "url": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxQTk5tMzlEQV90MmhHZy1vcDZOUlhYTkY1azhnWTJGU1FQYU9YczJSYmdCV3RlSDF5TVRhYUhIUUVMelV5YklQaWk3SnV6VXBncnNwRGZrN1NoNGg5bUFZQ0dVNGNLczVzbUMtUldGNXQ0NWNyTHdwQjJERmIxNlYyOTNxbnlOZTBZZzlTU0xjZE9FYVRHNXhIY0dkVlhpRUd6b0JYV1NoS0pvWkdrTTA1Y0ZBNGVMdzlMOFNfaXY3NVEteFVZb28xUmxqeDlPNnVDZUJrNWFkMXZMQVZlVjMwTC1pc0JGdTduR2p6STdwU3J3Wk1QUkw3SzhGbFhwWEI3MGkxVjhUMDhObE0?oc=5",
+          "source": "רמת גן גבעתיים ניוז",
+          "published": "Tue, 15 May 2018 07:00:00 GMT"
+        },
+        {
+          "title": "בונים חונים: החלו ההכנות לחידוש כיכר רמב\"ם - רמת גן גבעתיים ניוז",
+          "url": "https://news.google.com/rss/articles/CBMi5AJBVV95cUxOYmdCTlZWekNfSGNjRjlzay1INW9rWDZKR2NwbDlJdlg0NlRBQmdRa0ZQa0haR3BjSmg4bzNOeXNZZmxROHllTWtIRE41YXY5QlUwXzg2a2F5WmlQU0dkeGFJSE9GQ3FqalplTUlvVmFOZDVmem9hd2l3TUhyazd2cFB2SE53b3Z0R2EtM1NFdGRmenJPQ2dsaDY1WVZEeFN3TWNhZTRfMDFPeXFxTFpJRkpWc3Y3aDdNa09PT1VScURncVVNVkxtQWl4VmpqVUgxWDg4c095VlYwMFdUNDRHRGxzVUJkZWpoR042djVIOE1qLWprVUJhMGZZRF9VdnlnUGtXOUhPSGhJNk5qZkQ0Ry1GSEMwV2tiYWhudEdqMmtPd2hESGVOZzlrWkJ0b2lCcklSa2VvU3dSREdndnRsak5XcU9Fb2lseFZvYUt2VHMwREl3aUYzdndOZ3hkYVR6MzExQQ?oc=5",
+          "source": "רמת גן גבעתיים ניוז",
+          "published": "Tue, 26 Jun 2018 07:00:00 GMT"
+        },
+        {
+          "title": "מתיחת פנים בתיכון בליך: נחשפו עבודות השדרוג בחצר בית הספר - מקומונט רמת גן",
+          "url": "https://news.google.com/rss/articles/CBMiyAJBVV95cUxOMU00eTNMc0xFbEFMeFNTbkp2by1EQnctc0lnYU1pQ1JLOFR2cFdfSXJwZG5NUmNUeUdyTllUaUhNMTBacUZad2pxSEhFSHVJdUM5R2p6SzZHSE10elM3WXNtTENMX0FnV0F2ZnRySmpuYTZtRTR2enhVVzRRdmhTTzBnQjN1Z3l5Y3kzOHUxM1h3bkN2aHY3ZU5yRmdnUThjRWhJcjAxNG9GNEtIdTJ6aWJWaWQ5R3BLWlpLWlFuU0dWRWFLMl9FMmFiX0RQdlpaczRHVkNXUnJTems2QUxsbWljVHR1SnBRaXdxQnpSSWNjeE4yeFpEMUJQNzRyQ1RzdmtvbE0zOUlFTGdOLW1CYlo2bVpsdHUzWGVYNGU5WFk4NVZXMXJUbFpfbHpxemJRUUQ4YmdCUVY1ODU4SnFKRGNKaWJmMXM20gHOAkFVX3lxTE54U0ZrVWxISWVtcmtVZnp1MzAxWUFfWU85aDRxUmtiYUtDQXkyenNxM01NX1RiS2hOY2E1ejVpNzNSZEQ3Qmw3TDBDMUtoUzFhUnRwSW56WDNSUEhXaEhlUFR5cS13R3k1MnZXWjJERWFKQnBVMC0wOVRfNXZkRkYyblhuQUhmdTdEcGpHNV9HeDk5NnprbzlZd0JTWWtYSVNDVzlJQk5zVHdvNTVzUnkyOVl1ZnhKOEd6ZXAzWDd5aWtpNFhPODJBZEIzazFGVnJyekRUN25zNjJPbkUwcHl6UEg2cUNXWURhdU55eUx6T0NNNDZtTHRyeVVROTllS3YwZEdKekl3bUMtbktFSGtlOERqVWxMZlNWSWY2enRTR293Y04xWmUtcGpsQnJRYXlvSlBfamw0enNoS3JBTUpRS0NvREFqY05zSWlPdmc?oc=5",
+          "source": "מקומונט רמת גן",
+          "published": "Mon, 02 Sep 2019 07:00:00 GMT"
+        },
+        {
+          "title": "מוזיאון רמת גן נפתח מחדש, עם תערוכה אמיצה שמתחשבנת עם עולם האמנות - ynet",
+          "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE10RkZad200aWRaR25GaGZURWVtQzZOSDVpNlRid1FWUjc3ei1hVWxXYUtuRXFkb05xSURzNWNYbUtGZnNjSVZvOVpBMzJkNldvT0hYRnRpQkFtcV80ZkRKM0w1THQ?oc=5",
+          "source": "ynet",
+          "published": "Tue, 21 Dec 2021 08:00:00 GMT"
+        },
+        {
+          "title": "עיריית רמת גן הכריעה: יזמי התחדשות ישלמו 72% היטל השבחה באזור המטרו - מרכז הנדל\"ן",
+          "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9lSVFqQ1EySkVFaVZYUlRFeVpBQUpwNkRMN1VydjdBLUlJYWJLNmV2RVZMTi1pRDJ2Vlh1VHd0aEtCY2JkdWRBZDAxZTdULVRXQnBKdVB3QQ?oc=5",
+          "source": "מרכז הנדל\"ן",
+          "published": "Sat, 16 Aug 2025 07:00:00 GMT"
+        },
+        {
+          "title": "עיריית רמת גן דורשת להסיר יצירה מבניין שנקר. האמנית: זו צנזורה - הארץ",
+          "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPSk9ld2F5X2hfcjhTMjVWUGxYM01NT053QXJXUXhoSHBQYlhuQnRDRy1YNnJXLWtEMTJ6cE12cXkzLXgwSF9GRnJ5ajlhbEx4YlVoX1hZWDd1MDgwTUdmRFVIby1zQWZfUVVEN3NJOW9NbUhvYVZVRkFHbHFlc29QTWRndW5leU01VUxTekljTmIzODZDbVBFYk9oWFhUZDRLeDFEM3RyMTA?oc=5",
+          "source": "הארץ",
+          "published": "Tue, 16 Jul 2019 07:00:00 GMT"
+        },
+        {
+          "title": "מגדל בן 38 קומות ברחוב ביאליק: עיריית רמת גן אישרה תוכנית התחדשות של קרן מרתון - מרכז הנדל\"ן",
+          "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1VQzhEMThkYmE3akhfYmJqN2dsSHM0S2hiQzloQlVoY29PMC1GY04zNmZHdmJPT0JoMzl3QmQyVmZ3czI4SUNTbmx2djRlZWYxRU11VU5WSQ?oc=5",
+          "source": "מרכז הנדל\"ן",
+          "published": "Wed, 16 Jul 2025 07:00:00 GMT"
+        },
+        {
+          "title": "משביל בפארק ועד שיפוץ בגן: ראש העיר רמת גן לא מפספס הזדמנות להבליט את שמו - הארץ",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOWUllVUpyMHliRkQwVFBnRHNvaU5lMEJvb080WWQtR3gzb2I4OTlTbDZfUGxFc0JscE9mZzF2R214bEYyOFJETzZQTWY5alpuanMxb1MtWDlrMjhnQUlmYWVRQU4zSlFNYXdnaGc5VEpETGFqNW1xUWRYUjgwTjQ4ODVacHpOZmlqRmExaUcwTk5NNTFRalF1UDdOdWJsa2x2OHZXb3ZxeEZGcDZNZU16R0EzZw?oc=5",
+          "source": "הארץ",
+          "published": "Sun, 19 Dec 2021 08:00:00 GMT"
+        },
+        {
+          "title": "למה את מונעת גישה ליומן של כרמל שאמה? \"אני עובדת עם החוק של רמת גן\" - הארץ",
+          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQRHZvZnBsYnE3bThoWENHUV9fMlhyY3M2N2JyVTlnc2djVG1acW42OGMzc2JBSHdxWHNKVHBWRGFfbTMzc0hwRUMwWlM4NXBtcEhFVTBsNGVpZHkzVnlJUXVSby1aY3R0SnNZenVqalg1dUk2WFlpbk82TERhaGJteDhfUTlpNlZHNlJ4MmhaQVpJbTBmUjZDakN3dURXLUV2RTg4VTlwdw?oc=5",
+          "source": "הארץ",
+          "published": "Wed, 12 Jan 2022 08:00:00 GMT"
+        },
+        {
+          "title": "עידן חדש באצטדיון רמת גן - עיריית רמת גן",
+          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPZmRKbnVMUFFvRjAwOW9CaWw4QzBEdWdTOG9WZEpqazJyRDdiNXkycE1xSFMxMkQzMzBmZ2N3ZjJKUUdidjRBeHVOZ2g2eVNFQWdGWHBra2Uyc3ZlT0dQNXA2TVhXV2FJVzB4NkFUYWxUU1ptTS1RLXlQWmZ1dHpwRHJoLUJiaFB6eFExNk9oaXRtZ1lJUkZIVUFvcw?oc=5",
+          "source": "עיריית רמת גן",
+          "published": "Wed, 14 Jan 2026 08:00:00 GMT"
+        },
+        {
+          "title": "\"ישראל היא הזדמנות להתחלה חדשה\": בעיר ר\"ג נקלטו כ-400 עולים חדשים בשנה האחרונה - עיריית רמת גן",
+          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPSXhPTmVicHF1U1dxVXBfOUFfdVpENGM1T09rNFFlN3hRVHotMnFNZFU0ZnVfQkdzSER5dXNlbFZlUWV0MlZjX2NnNzdLOEs2ZjRpa2J3Ym5WLTdtWUQ1M2JDV0VJUjcyLWZLSDE0M3U4QkZtOU5vQTNQcnFRZktOSlpGZnV0Q1FSMHYtcm9ESlI0V01LazBfZA?oc=5",
+          "source": "עיריית רמת גן",
+          "published": "Tue, 28 Oct 2025 07:00:00 GMT"
+        },
+        {
+          "title": "דגל ישראל - לצד דגל פלסטין: שלט באזור הבורסה ברמת גן עורר סערה - ynet",
+          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9lX1VGNXNaMnlmaTlOSHZsM004blF1Z2pMV0xFZWU3S0FWQlBCQk12aDNucnR3blpER0VQY09vU0dsMVU4TXRFejdjLVBBRUR5N0lvbkVybHI?oc=5",
+          "source": "ynet",
+          "published": "Wed, 01 Jun 2022 07:00:00 GMT"
+        },
+        {
+          "title": "\"חשש לסדר הציבורי\": כל הפרטים מאחורי סערת תליית דגל אש\"ף בלב רמת גן - כיפה",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5jSjdLOU9scC1YZnhXbEhRSXNoSU5BQkxSRnFWRlY0X0M3Sld0eHhDOGdma1lUSWZIVG1ZSnN2YXphc1NtdGNzMDFVdkY0dFltWE0yOGRNbGs0LWUzYXRjalhQd3pvaDdTX2Ryd3BBbW1NZ9IBS0FVX3lxTFBDMzBkZnZqWmRpaWZHQkltMWtjN3J5Snh5VklOcUZ1OUlPRjVYME9oMVB6cUxubG9hWjhlNVotVDh6dVVrQlBEaHFtRQ?oc=5",
+          "source": "כיפה",
+          "published": "Wed, 01 Jun 2022 07:00:00 GMT"
+        },
+        {
+          "title": "יזמות בעלייה: רמת גן מסכמת תוכנית מנהיגות לעולים חדשים - מעריב",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1IWk5mVFRncnlLeGkxRlNhLXhCaG9pSVdqM0Y2dzhXc2NpeThhTktNaWE0UXJSM1cwWWRVNmlnbGdXNHRsX1AzU210cmduSF83d0t0eGYwT0VGLXo0WVN0T2tOUU1PVnZiRUE?oc=5",
+          "source": "מעריב",
+          "published": "Mon, 19 Dec 2022 08:00:00 GMT"
+        },
+        {
+          "title": "פרובוקציה או קמפיין? דגל אש\"ף בלב רמת גן - המחדש",
+          "url": "https://news.google.com/rss/articles/CBMiQ0FVX3lxTE1xNGNGd1psb1Uyd28zR3ZMZlgxbUxrLUZnM1ZFZUtWQTNic3dFbU5KVTVzSmhyQkxpQUV0SVlXRmJKOE0?oc=5",
+          "source": "המחדש",
+          "published": "Wed, 01 Jun 2022 07:00:00 GMT"
+        },
+        {
+          "title": "ראש עיריית רמת גן דורש להסיר יצירה של דוד ריב מתערוכה במוזיאון בעיר - הארץ",
+          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQZ3RRYldmNW55Y2dkUXJ3a25YcFpOUEQ1ZEZaaWs5cDB4WlRVODdPaU91Uld4T3dvNWtrV0tWVGI4SEZwY283ZEZDd0pzb1RiVEkxLWxiUndxd1kxY3RIWmRRLW5MczlGYVlxUmp0OGwtYWM5UlE0aks4MkhkbHd5eGJNeUM1ZWtHd3R4alV6dWlSNkhwMTlzQ0dVLWM?oc=5",
+          "source": "הארץ",
+          "published": "Sat, 25 Dec 2021 08:00:00 GMT"
+        },
+        {
+          "title": "האמן דוד ריב עתר נגד ראש העיר רמת גן: \"התערבות פוליטית פסולה\" - ynet",
+          "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9KZk5ZQi1DQzEzaUpoRnI4U01WWkZYRDRGMUE5YlF4RjFzRk53bHdISXIyWmRYSExnNTE4TDBDbldTV1o3ZkFpOGVjWDFhR0hHMHl4MHh4c2oyNkY3TkJVM2ZRZmk?oc=5",
+          "source": "ynet",
+          "published": "Sun, 26 Dec 2021 08:00:00 GMT"
+        },
+        {
+          "title": "למרות צו הביניים מבית המשפט - כרמל שאמה הסיר את \"יצירת המריבה\" ממוזיאון רמת גן - וואלה תרבות",
+          "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFBqWXNtdTRaVXhvZUwyN21BNXZvTHdyVFBGREZtSmlXRmpSRU5tVVZWV0k4cnl2TWlibWFfMkxaZGdLMXBlelMyMS13?oc=5",
+          "source": "וואלה תרבות",
+          "published": "Mon, 27 Dec 2021 08:00:00 GMT"
+        },
+        {
+          "title": "בעקבות כישלון הגישור בין האמנים לעירייה, מוזיאון רמת גן נסגר - הארץ",
+          "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPZU1ERUQ0Y3ZFMTN4dmJ4WXFGdDFQTnN1aVVGYTZieVRMRjNjSHJPejRSMFQ2Tl91ZE8ybk1URkN0NXVMV3d1OFoyanNKcmxsalBLcktrOHlOelJMZ3M4ME41UHJkN1l0ZzI4QVNDTHBKQ0MzX2kzSFBmaGdUYlRiN1FVOFJTeGpMUlVjRzFRMmpCZDN0a0RGTUwyVi1PcWVReGk2SzJzY0I?oc=5",
+          "source": "הארץ",
+          "published": "Wed, 12 Jan 2022 08:00:00 GMT"
+        },
+        {
+          "title": "בית המשפט החליט לא להתערב בהחלטה להסיר היצירה ממוזיאון רמת גן - וואלה תרבות",
+          "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE0wWkx5M2R6dm84VmxQQk94X1V3TlJxUk5CeWRzeHlEWS1ENjlNVi1nVS0yZ3lKMXhVdGJzOEhReVY0WHdnNEd6S2hn?oc=5",
+          "source": "וואלה תרבות",
+          "published": "Thu, 30 Dec 2021 08:00:00 GMT"
+        },
+        {
+          "title": "עשרות אמנים למוזיאון רמת גן: אם היצירה שהוסרה לא תחזור - הסירו גם יצירותינו - וואלה תרבות",
+          "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE5sUDlaNVUzeWswM1NwWmY3LVJlajJNZ3M4M1B1c19RNVAyWk9VTnU2R3F3S29nY2w2b0FvS2pQSDhhbmZhU0QyYzF3?oc=5",
+          "source": "וואלה תרבות",
+          "published": "Sat, 01 Jan 2022 08:00:00 GMT"
+        },
+        {
+          "title": "כרמל שאמה הכהן מתעלם מצו המניעה: יצירתו של דוד ריב הוסרה ממוזיאון רמת גן - הארץ",
+          "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNcjdCSEFwTXJmcGZqWi1aTzJ6MHAxektSXy1MczRmcU5OdGRMNW5jemlzZFhQSzMwTnRhdUN2WTFSV0VEQU5XRFZfYTM5WGp1bEVYa3hXUUpZcVFFdW5IVzlscGtHd185bXI3YlpndG8xS2RSNGNIR3BtOHRMcXZudWFELVJ3cFZKclRDT3B3cktOTzlVWEpLZkVzVG5lQkVySjJMd1lwVGs?oc=5",
+          "source": "הארץ",
+          "published": "Mon, 27 Dec 2021 08:00:00 GMT"
+        },
+        {
+          "title": "לראשונה בישראל: סופ״ש משפחות מגוונות ברמת גן! - עיריית רמת גן",
+          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPVEVFRk9zTGtuUnNkMHp3MDR6clhUTmRMTlJ1aDA2Rm9ncEo0Wk9YdXhqUzlDVzNNc2x0enl4OHpJSGk1emJkUGpBSXBEZlRHQkJWQnRmeU9tR1QwMm1lZG11Q2loS04yLWh5RWZDYmpwaW5QU0gzVUJiR3NubTFUSHN2VDkzYkZnbHZqdDU2LV9IZmFnZ1F5SENZSlZ0dw?oc=5",
+          "source": "עיריית רמת גן",
+          "published": "Sat, 23 Nov 2024 08:00:00 GMT"
+        },
+        {
+          "title": "הקהילה הגאה חוגגת: הוועידה הלאומית הגאה תתקיים לראשונה ברמת גן - מעריב",
+          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9uc3NuRE1rV016bFFJd3NtLXZBTEczTk9sRXVKTmotUHIzVmU2bzk5UXlibkRCUHJZUnVUX0pKUjhlSEU0dnBQT3p0X2dLb3FxT1A4Wk1fZkI0UHNveEVQZ2pSYjFydTdkTURF?oc=5",
+          "source": "מעריב",
+          "published": "Sun, 04 May 2025 07:00:00 GMT"
+        },
+        {
+          "title": "הוועידה הלאומית הגאה תתקיים לראשונה ברמת גן - mako",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFB5Ymk0UDZYbTREOWV4T0FYMW5xR1lGRDZhMmtBVVhDbXBPSW1sMVdGNUhfTjM0MEkzTjc5XzBGTEtOY1FtNmhxZGNyeExsZWE4V3BNWlJKaVE5X2JVNUtaZi1oMlpWUVhwbnhTbXZkX0ZuQQ?oc=5",
+          "source": "mako",
+          "published": "Sun, 04 May 2025 07:00:00 GMT"
+        },
+        {
+          "title": "סופ״ש משפחות מגוונות של עיריית רמת גן יוצא לדרך - גל גפן",
+          "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE12RXdNUXVBSUQ3LUFfenAxeEk5RnFVcW9QTGdocWFUTU03ZEwxalk1T01UNUNzUmpjOTJGQVFMSzkwcXVSM0JCbnd4cw?oc=5",
+          "source": "גל גפן",
+          "published": "Wed, 24 Dec 2025 08:00:00 GMT"
+        },
+        {
+          "title": "רמת גן מגייסת 30 מומחי AI: הושק פורום עירוני לבינה מלאכותית - מעריב",
+          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9qb1FPRmJmZEI2UC1KRGRKOUROQnhTWEwyQlNIYlNCM09vVnZiTlpkY2hkU0ZjaGctVGp1OTdXZFlGWmNyTTFpTXowSDJuOFl6MnFZbXc5WEhyWW1jSnQ1bUNZZmV5OXFkaDhF?oc=5",
+          "source": "מעריב",
+          "published": "Mon, 02 Feb 2026 08:00:00 GMT"
+        },
+        {
+          "title": "הספארי עובר מיקום: זה מה שהולך לקרות ברמת גן - MSN",
+          "url": "https://news.google.com/rss/articles/CBMigANBVV95cUxQMl9nVW50WXRzRVppaEpnaEFZUC1JUmJySElWZGJMQ05DaXVFc1k4T3ZSa2JSNXZxWjlIbXAyUkV2d3dROXJaQXlwNUdxSnZKNzg4UkhZLTM3RGhPdWJqdk9CdnpFQVJla3ZweXN1VndyQzZHLUdpajlydmplWkxiQWV3UkJCZXIzVEpqOVRlbF9hWW1jVzIwQWVfTEJORWZPRXEwMG5GQzZSM2p5VnJ2RXlFRWszMlVZR2ZWMWhmZEt0UkVtdGhvbVdmVG96LWFOMDZhc0dLVXAxaks0ZldCbHJLWDMzMVd6eVNYYW5KczhqNlhTMno1SGItZXZROHRkSDdxTlhpQnJkZzZPWDZoZjgtYTk5WWQyeW1BOHd1T1NUd0lBV1dYUDFtNjQxQzY2NE4zZmF6bXgtMmVfSm40eDR1dm5PbDN1SXJBOEs0R0FyREtLTTBpbGVjMFlEZUxTVzFkXzRSUHh0WEhNbmFhbWQ1U2tvV0ZiUl9YR2ZwNUo?oc=5",
+          "source": "MSN",
+          "published": "Tue, 27 Jan 2026 23:57:43 GMT"
+        },
+        {
+          "title": "חדשנות עם פנים אנושיות: רמת גן השיקה פורום עירוני לבינה מלאכותית - גל גפן",
+          "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE5aWm9QbXhJMlZ4bDVMYjlQc1ZsLVBqRVBaaFhXY0lKVDk4TjJRS2NMNGR6TGd0UmU0YlFMLWxSdmNiVzJieFB5MThnTQ?oc=5",
+          "source": "גל גפן",
+          "published": "Mon, 02 Feb 2026 08:00:00 GMT"
+        },
+        {
+          "title": "לראשונה: רמת גן מניפה את דגל הגאווה - היום",
+          "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBjNXpzd3lvZ05MTnF0X2ptbFlUTXVuTFFmTUZULUZfY2ptMy14SV82cnNldEVKYU1NRFczSHZpSVBSRTFaYkVGY0c5TWQ5YzljQkViY19hc9IBX0FVX3lxTFBBcUFieHlwMVFEZkZNd1hPSWxpeTZ2ZXdHa2dNQUQ1YlVpVTJsSVAtQVNNblY2bmhjOE55dW9tSFBBdHFETzlYU2FNa2t6Z0pWZWZoMjdBRGt3RzUybHVF?oc=5",
+          "source": "היום",
+          "published": "Fri, 07 Jun 2019 07:00:00 GMT"
+        }
+      ]
+    }
+  },
+  "domain_counts": {
+    "gender_equality": 0,
+    "lgbt": 6,
+    "sustainability": 1,
+    "social_justice": 1,
+    "progressive_education": 0,
+    "diversity": 0
+  }
+}
