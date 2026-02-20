@@ -1420,20 +1420,41 @@
     <script src="suspicious_concepts.js?v=1"></script>
     <script>
     // ── Concept detection & evidence ──
+    // Look up program_info entry by name when prog has no .id
+    function findProgramInfoByName(progName) {
+        if (!progName || !DATA.program_info) return null;
+        const prefix = progName.substring(0, Math.min(15, progName.length));
+        for (const [id, pi] of Object.entries(DATA.program_info)) {
+            if (pi.name && pi.name.includes(prefix)) return { id, ...pi };
+        }
+        return null;
+    }
+
     function detectConcepts(prog, info) {
         if (typeof SUSPICIOUS_CONCEPTS === 'undefined') return [];
         const SC = SUSPICIOUS_CONCEPTS;
         const found = new Set();
 
+        // If prog has no id, try to match via program_info by name
+        let progId = prog.id;
+        let resolvedInfo = info;
+        if (!progId && prog.name) {
+            const match = findProgramInfoByName(prog.name);
+            if (match) {
+                progId = match.id;
+                if (!resolvedInfo || !resolvedInfo.research_desc) resolvedInfo = match;
+            }
+        }
+
         // Layer 1: Explicit mapping by program ID
-        const explicit = SC.program_concepts[prog.id];
+        const explicit = SC.program_concepts[progId];
         if (explicit) explicit.forEach(c => found.add(c));
 
-        // Layer 2: Keyword fallback on description + summary
+        // Layer 2: Keyword fallback on description + summary + name
         const text = [
             prog.research_desc || '',
-            info.research_desc || '',
-            info.summary || '',
+            resolvedInfo.research_desc || '',
+            resolvedInfo.summary || '',
             prog.name || ''
         ].join(' ');
 
@@ -1928,30 +1949,48 @@
                     ? `<span style="background:#c0392b;color:#fff;padding:1px 6px;border-radius:3px;font-size:0.75em;margin-left:6px">Tier A (R${p.rating})</span>`
                     : `<span style="background:#d35400;color:#fff;padding:1px 6px;border-radius:3px;font-size:0.75em;margin-left:6px">Tier B (${p.org_key || 'org'})</span>`;
 
-                // Detect concepts from program name + org
-                const pConcepts = detectConcepts(p, {});
+                // Resolve program info by name if no id
+                const pInfo = findProgramInfoByName(p.name) || {};
+                const pOrgName = pInfo.org || p.org || '';
+
+                // Detect concepts (now uses name-based ID resolution)
+                const pConcepts = detectConcepts(p, pInfo);
                 const pBadges = pConcepts.map(c =>
                     `<span class="concept-badge" style="background:${c.color}" onclick="event.stopPropagation();showConceptEvidence('${c.id}')">${c.short_label}</span>`
                 ).join('');
 
-                // Build expanded detail with dossier
-                let pDetail = '';
+                // Build detail — EVERY program is clickable
+                let pParts = [];
+
+                // Program info
+                if (pInfo.summary) pParts.push(`<div style="font-size:0.84em;color:#444;margin-bottom:6px"><strong>\u05ea\u05e7\u05e6\u05d9\u05e8:</strong> ${pInfo.summary}</div>`);
+                if (pInfo.research_desc) pParts.push(`<div class="research-comment"><strong>\u05ea\u05d9\u05d0\u05d5\u05e8 \u05de\u05d7\u05e7\u05e8\u05d9:</strong> ${pInfo.research_desc}</div>`);
+                if (pInfo.field) pParts.push(`<div style="font-size:0.84em;color:#444"><strong>\u05ea\u05d7\u05d5\u05dd:</strong> ${pInfo.field}</div>`);
+                if (pInfo.schools) pParts.push(`<div style="font-size:0.84em;color:#444"><strong>\u05d1\u05ea\u05d9 \u05e1\u05e4\u05e8:</strong> ${pInfo.schools} | <strong>\u05e2\u05e8\u05d9\u05dd:</strong> ${pInfo.num_cities || '\u2014'}</div>`);
+
+                // Source links
+                let pLinks = [];
+                if (pInfo.id) pLinks.push(`<a href="https://apps.education.gov.il/gefen/ProgramView.aspx?ProgramId=${pInfo.id}" target="_blank" rel="noopener" style="color:#2a5a8a" onclick="event.stopPropagation()">\u05db\u05e8\u05d8\u05d9\u05e1 \u05d2\u05e4"\u05df #${pInfo.id}</a>`);
+                const pOrgReport = findOrgReport(pOrgName) || findOrgReport(p.name || '');
+                if (pOrgReport) pLinks.push(`<a href="${pOrgReport}" target="_blank" rel="noopener" style="color:#c0392b;font-weight:bold" onclick="event.stopPropagation()">\u05d3\u05d5\u05d7 \u05de\u05d7\u05e7\u05e8 \u05de\u05e2\u05de\u05d9\u05e7</a>`);
+                if (pOrgName) pLinks.push(`<a href="https://www.guidestar.org.il/search?q=${encodeURIComponent(pOrgName)}" target="_blank" rel="noopener" style="color:#2a5a8a" onclick="event.stopPropagation()">GuideStar</a>`);
+                if (pLinks.length) pParts.push(`<div style="margin-top:6px;padding-top:6px;border-top:1px solid #eee;font-size:0.82em"><strong>\u05de\u05e7\u05d5\u05e8\u05d5\u05ea:</strong> ${pLinks.join(' | ')}</div>`);
+
+                // Suspicion dossier (if concepts detected)
                 if (pConcepts.length > 0) {
-                    pDetail = buildSuspicionDossier(p, {}, pConcepts) + buildClearanceFooter();
+                    pParts.push(buildSuspicionDossier(p, pInfo, pConcepts));
+                    pParts.push(buildClearanceFooter());
                 }
 
-                const hasDetail = pConcepts.length > 0;
-                const clickAttr = hasDetail
-                    ? `onclick="document.getElementById('pp-${puid}').classList.toggle('visible');this.classList.toggle('expanded')" style="cursor:pointer;background:#fff5f5;border:1px solid #e8d0d0;border-radius:6px;padding:8px 12px;margin-bottom:6px"`
-                    : `style="background:#fff5f5;border:1px solid #e8d0d0;border-radius:6px;padding:8px 12px;margin-bottom:6px"`;
+                const pDetail = pParts.join('');
 
-                return `<div ${clickAttr}>
+                return `<div onclick="document.getElementById('pp-${puid}').classList.toggle('visible');this.classList.toggle('expanded')" style="cursor:pointer;background:#fff5f5;border:1px solid #e8d0d0;border-radius:6px;padding:8px 12px;margin-bottom:6px">
                     <div style="font-weight:600;font-size:0.88em">${p.name} ${tierBadge} ${pBadges}</div>
                     <div style="font-size:0.8em;color:#666;margin-top:2px">
-                        ${p.org} | ${p.budget.toLocaleString('he-IL', {maximumFractionDigits:0})} \u20aa | ${p.deployments} פריסות
+                        ${p.org} | ${p.budget.toLocaleString('he-IL', {maximumFractionDigits:0})} \u20aa | ${p.deployments} \u05e4\u05e8\u05d9\u05e1\u05d5\u05ea
                     </div>
-                    ${hasDetail ? `<div style="text-align:center;font-size:0.7em;color:#999;margin-top:3px">\u25BC \u05dc\u05d7\u05e6\u05d5 \u05dc\u05e4\u05e8\u05d8\u05d9\u05dd \u25BC</div>` : ''}
-                    ${hasDetail ? `<div class="prog-detail" id="pp-${puid}">${pDetail}</div>` : ''}
+                    <div style="text-align:center;font-size:0.7em;color:#999;margin-top:3px">\u25BC \u05dc\u05d7\u05e6\u05d5 \u05dc\u05e4\u05e8\u05d8\u05d9\u05dd \u25BC</div>
+                    <div class="prog-detail" id="pp-${puid}">${pDetail}</div>
                 </div>`;
             }).join('');
 
