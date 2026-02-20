@@ -1425,7 +1425,11 @@
         if (!progName || !DATA.program_info) return null;
         const prefix = progName.substring(0, Math.min(15, progName.length));
         for (const [id, pi] of Object.entries(DATA.program_info)) {
-            if (pi.name && pi.name.includes(prefix)) return { id, ...pi };
+            if (!pi.name) continue;
+            // Match if either name contains the other's prefix
+            if (pi.name.includes(prefix)) return { id, ...pi };
+            const piPrefix = pi.name.substring(0, Math.min(15, pi.name.length));
+            if (progName.includes(piPrefix)) return { id, ...pi };
         }
         return null;
     }
@@ -1864,6 +1868,12 @@
             detailParts.push(`<div><strong>\u05d0\u05d9\u05ea\u05d5\u05ea\u05d9 \u05de\u05d9\u05de\u05d5\u05df:</strong><ul style="margin:4px 0">${fundHtml}</ul></div>`);
         }
 
+        // Partnerships
+        if (info.partnerships && info.partnerships.length > 0) {
+            const partHtml = info.partnerships.map(p => `<li>${p}</li>`).join('');
+            detailParts.push(`<div><strong>\u05e9\u05d9\u05ea\u05d5\u05e4\u05d9 \u05e4\u05e2\u05d5\u05dc\u05d4:</strong><ul style="margin:4px 0">${partHtml}</ul></div>`);
+        }
+
         // Gemini evidence & sources
         if (info.gemini_evidence && info.gemini_evidence.length > 0) {
             const evHtml = info.gemini_evidence.map(e => `<li>${e}</li>`).join('');
@@ -2039,6 +2049,12 @@
                 if (pInfo.funding_signals && pInfo.funding_signals.length > 0) {
                     const fundHtml = pInfo.funding_signals.map(f => `<li>${f}</li>`).join('');
                     pParts.push(`<div style="font-size:0.84em;margin:4px 0"><strong>\u05d0\u05d9\u05ea\u05d5\u05ea\u05d9 \u05de\u05d9\u05de\u05d5\u05df:</strong><ul style="margin:4px 0">${fundHtml}</ul></div>`);
+                }
+
+                // Partnerships
+                if (pInfo.partnerships && pInfo.partnerships.length > 0) {
+                    const partHtml = pInfo.partnerships.map(pt => `<li>${pt}</li>`).join('');
+                    pParts.push(`<div style="font-size:0.84em;margin:4px 0"><strong>\u05e9\u05d9\u05ea\u05d5\u05e4\u05d9 \u05e4\u05e2\u05d5\u05dc\u05d4:</strong><ul style="margin:4px 0">${partHtml}</ul></div>`);
                 }
 
                 // Gemini evidence & sources
