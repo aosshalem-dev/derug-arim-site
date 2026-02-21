@@ -2237,79 +2237,160 @@
                 // Build detail — EVERY program is clickable
                 let pParts = [];
 
-                // Program description — full text from Gefen, never truncated
-                const pDesc = pInfo.gefen_description || pInfo.summary || '';
-                if (pDesc) pParts.push(`<div style="font-size:0.84em;color:#444;margin-bottom:6px"><strong>\u05ea\u05d9\u05d0\u05d5\u05e8 \u05d4\u05ea\u05db\u05e0\u05d9\u05ea \u05d1\u05d0\u05ea\u05e8 \u05d2\u05e4"\u05df:</strong> ${pDesc}</div>`);
-                if (pInfo.research_desc) pParts.push(`<div class="research-comment"><strong>\u05ea\u05d9\u05d0\u05d5\u05e8 \u05de\u05d7\u05e7\u05e8\u05d9:</strong> ${pInfo.research_desc}</div>`);
-                if (pInfo.field) pParts.push(`<div style="font-size:0.84em;color:#444"><strong>\u05ea\u05d7\u05d5\u05dd:</strong> ${pInfo.field}</div>`);
-                if (pInfo.schools) pParts.push(`<div style="font-size:0.84em;color:#444"><strong>\u05d1\u05ea\u05d9 \u05e1\u05e4\u05e8:</strong> ${pInfo.schools} | <strong>\u05e2\u05e8\u05d9\u05dd:</strong> ${pInfo.num_cities || '\u2014'}</div>`);
+                // Check for depth chain data (deep research overrides Gemini)
+                const pResolvedId = pInfo.id || (p.id ? String(p.id) : null);
+                const pDepthData = (typeof DEPTH_CHAINS !== 'undefined' && pResolvedId) ? DEPTH_CHAINS[pResolvedId] : null;
 
-                // Gemini risk score
-                if (pInfo.gemini_risk_score !== undefined) {
-                    const riskColor = pInfo.gemini_risk_score >= 7 ? '#c0392b' : pInfo.gemini_risk_score >= 4 ? '#e67e22' : '#27ae60';
-                    pParts.push(`<div style="font-size:0.84em;margin:4px 0"><strong>\u05e6\u05d9\u05d5\u05df \u05e1\u05d9\u05db\u05d5\u05df (Gemini):</strong> <span style="color:${riskColor};font-weight:700">${pInfo.gemini_risk_score}/10</span>${pInfo.gemini_risk_justification ? ` \u2014 ${pInfo.gemini_risk_justification}` : ''}</div>`);
+                if (pDepthData) {
+                    // ── DEPTH CHAIN PATH: Rich content with deep research ──
+
+                    // Deep description (red-bordered critical finding)
+                    if (pDepthData.deep_description) {
+                        pParts.push(pDepthData.deep_description);
+                    }
+
+                    // Basic info
+                    const pOrgReport2 = findOrgReport(pOrgName) || findOrgReport(p.name || '');
+                    const orgLink2 = pOrgReport2
+                        ? `<a href="${pOrgReport2}" target="_blank" rel="noopener" style="color:#2980b9;text-decoration:underline" onclick="event.stopPropagation()">${pOrgName || '\u2014'}</a>`
+                        : (pOrgName || '\u2014');
+                    pParts.push(`<div style="font-size:0.84em;margin:4px 0"><strong>\u05d0\u05e8\u05d2\u05d5\u05df:</strong> ${orgLink2}</div>`);
+                    if (pInfo.field) pParts.push(`<div style="font-size:0.84em;color:#444"><strong>\u05ea\u05d7\u05d5\u05dd:</strong> ${pInfo.field}</div>`);
+                    if (pInfo.schools) pParts.push(`<div style="font-size:0.84em;color:#444"><strong>\u05d1\u05ea\u05d9 \u05e1\u05e4\u05e8:</strong> ${pInfo.schools} | <strong>\u05e2\u05e8\u05d9\u05dd:</strong> ${pInfo.num_cities || '\u2014'}</div>`);
+
+                    // Key people (no Gemini suspicion text for depth chain programs)
+                    if (pInfo.key_people && pInfo.key_people.length > 0) {
+                        const peopleHtml2 = pInfo.key_people.map(p2 =>
+                            `<li><strong>${p2.name}</strong>${p2.role ? ' (' + p2.role + ')' : ''}</li>`
+                        ).join('');
+                        pParts.push(`<div style="font-size:0.84em;margin:4px 0"><strong>\u05d0\u05e0\u05e9\u05d9 \u05de\u05e4\u05ea\u05d7:</strong><ul style="margin:4px 0">${peopleHtml2}</ul></div>`);
+                    }
+
+                    // Source links
+                    let pLinks2 = [];
+                    if (pInfo.website_url) pLinks2.push(`<a href="${pInfo.website_url}" target="_blank" rel="noopener" style="color:#2a5a8a" onclick="event.stopPropagation()">\u05d0\u05ea\u05e8 \u05d4\u05ea\u05db\u05e0\u05d9\u05ea</a>`);
+                    const pOrgRpt = findOrgReport(pOrgName) || findOrgReport(p.name || '');
+                    if (pOrgRpt) pLinks2.push(`<a href="${pOrgRpt}" target="_blank" rel="noopener" style="color:#c0392b;font-weight:bold" onclick="event.stopPropagation()">\u05d3\u05d5\u05d7 \u05de\u05d7\u05e7\u05e8 \u05de\u05e2\u05de\u05d9\u05e7</a>`);
+                    if (pOrgName) pLinks2.push(`<a href="https://www.guidestar.org.il/search?q=${encodeURIComponent(pOrgName)}" target="_blank" rel="noopener" style="color:#2a5a8a" onclick="event.stopPropagation()">GuideStar</a>`);
+                    if (pLinks2.length) pParts.push(`<div style="margin-top:6px;padding-top:6px;border-top:1px solid #eee;font-size:0.82em"><strong>\u05de\u05e7\u05d5\u05e8\u05d5\u05ea:</strong> ${pLinks2.join(' | ')}</div>`);
+
+                    // Depth chain levels (expandable evidence)
+                    if (pDepthData.depth_chain && pDepthData.depth_chain.length > 0) {
+                        let dHtml = `<div class="depth-section"><h5>\u05e8\u05d3 \u05dc\u05e2\u05d5\u05de\u05e7 \u05d4\u05d3\u05d9\u05e8\u05d5\u05d2</h5>`;
+                        pDepthData.depth_chain.forEach(level => {
+                            dHtml += `<div class="depth-level" id="depth-pp-${pResolvedId}-${level.id}">
+                                <div class="depth-header" onclick="event.stopPropagation();toggleDepthLevel(this)">
+                                    <span class="depth-icon">${level.icon || '\u{1F4CC}'}</span>
+                                    <div class="depth-header-text">
+                                        <div class="depth-title">${level.title_he}</div>
+                                        <div class="depth-subtitle">${level.subtitle_he}</div>
+                                    </div>
+                                    <span class="depth-arrow">\u25BC</span>
+                                </div>
+                                <div class="depth-body">
+                                    <div class="depth-summary">${level.summary_he}</div>
+                                    ${level.content_he}
+                                    ${level.next_prompt ? `<div class="depth-next-prompt">${level.next_prompt} \u2193</div>` : ''}
+                                </div>
+                            </div>`;
+                        });
+
+                        // Related links
+                        if (pDepthData.related_links && pDepthData.related_links.length > 0) {
+                            dHtml += `<div class="depth-related"><h6>\u05e7\u05d9\u05e9\u05d5\u05e8\u05d9\u05dd \u05dc\u05de\u05d7\u05e7\u05e8 \u05e0\u05d5\u05e1\u05e3:</h6>`;
+                            pDepthData.related_links.forEach(link => {
+                                dHtml += `<a class="depth-link" href="${link.url}" target="_blank" rel="noopener" onclick="event.stopPropagation()">
+                                    <span class="depth-link-icon">${link.icon || '\u{1F517}'}</span>
+                                    <div class="depth-link-text">
+                                        <div class="depth-link-title">${link.title_he}</div>
+                                        ${link.description_he ? `<div class="depth-link-desc">${link.description_he}</div>` : ''}
+                                    </div>
+                                </a>`;
+                            });
+                            dHtml += `</div>`;
+                        }
+                        dHtml += `</div>`;
+                        pParts.push(dHtml);
+                    }
+
+                } else {
+                    // ── STANDARD PATH: Gefen + Gemini data ──
+
+                    // Program description — full text from Gefen, never truncated
+                    const pDesc = pInfo.gefen_description || pInfo.summary || '';
+                    if (pDesc) pParts.push(`<div style="font-size:0.84em;color:#444;margin-bottom:6px"><strong>\u05ea\u05d9\u05d0\u05d5\u05e8 \u05d4\u05ea\u05db\u05e0\u05d9\u05ea \u05d1\u05d0\u05ea\u05e8 \u05d2\u05e4"\u05df:</strong> ${pDesc}</div>`);
+                    if (pInfo.research_desc) pParts.push(`<div class="research-comment"><strong>\u05ea\u05d9\u05d0\u05d5\u05e8 \u05de\u05d7\u05e7\u05e8\u05d9:</strong> ${pInfo.research_desc}</div>`);
+                    if (pInfo.field) pParts.push(`<div style="font-size:0.84em;color:#444"><strong>\u05ea\u05d7\u05d5\u05dd:</strong> ${pInfo.field}</div>`);
+                    if (pInfo.schools) pParts.push(`<div style="font-size:0.84em;color:#444"><strong>\u05d1\u05ea\u05d9 \u05e1\u05e4\u05e8:</strong> ${pInfo.schools} | <strong>\u05e2\u05e8\u05d9\u05dd:</strong> ${pInfo.num_cities || '\u2014'}</div>`);
+
+                    // Gemini risk score
+                    if (pInfo.gemini_risk_score !== undefined) {
+                        const riskColor = pInfo.gemini_risk_score >= 7 ? '#c0392b' : pInfo.gemini_risk_score >= 4 ? '#e67e22' : '#27ae60';
+                        pParts.push(`<div style="font-size:0.84em;margin:4px 0"><strong>\u05e6\u05d9\u05d5\u05df \u05e1\u05d9\u05db\u05d5\u05df (Gemini):</strong> <span style="color:${riskColor};font-weight:700">${pInfo.gemini_risk_score}/10</span>${pInfo.gemini_risk_justification ? ` \u2014 ${pInfo.gemini_risk_justification}` : ''}</div>`);
+                    }
+
+                    // Key people
+                    if (pInfo.key_people && pInfo.key_people.length > 0) {
+                        const peopleHtml = pInfo.key_people.map(p2 =>
+                            `<li><strong>${p2.name}</strong>${p2.role ? ' (' + p2.role + ')' : ''}${p2.suspicion ? ' \u2014 <span style="color:#c0392b">' + p2.suspicion + '</span>' : ''}</li>`
+                        ).join('');
+                        pParts.push(`<div style="font-size:0.84em;margin:4px 0"><strong>\u05d0\u05e0\u05e9\u05d9 \u05de\u05e4\u05ea\u05d7:</strong><ul style="margin:4px 0">${peopleHtml}</ul></div>`);
+                    }
+
+                    // Ideology markers from Gemini
+                    if (pInfo.ideology_markers && pInfo.ideology_markers.length > 0) {
+                        const markerHtml = pInfo.ideology_markers.map(m => {
+                            const mColor = m.level === 'high' ? '#c0392b' : m.level === 'medium' ? '#e67e22' : '#888';
+                            return `<span style="display:inline-block;background:${mColor};color:#fff;padding:1px 6px;border-radius:3px;font-size:0.78em;margin:2px">${m.text}</span>`;
+                        }).join('');
+                        pParts.push(`<div style="font-size:0.84em;margin:4px 0"><strong>\u05e1\u05de\u05e0\u05d9\u05dd \u05d0\u05d9\u05d3\u05d9\u05d0\u05d5\u05dc\u05d5\u05d2\u05d9\u05d9\u05dd (Gemini):</strong><div style="margin-top:4px">${markerHtml}</div></div>`);
+                    }
+
+                    // Funding signals
+                    if (pInfo.funding_signals && pInfo.funding_signals.length > 0) {
+                        const fundHtml = pInfo.funding_signals.map(f => `<li>${f}</li>`).join('');
+                        pParts.push(`<div style="font-size:0.84em;margin:4px 0"><strong>\u05d0\u05d9\u05ea\u05d5\u05ea\u05d9 \u05de\u05d9\u05de\u05d5\u05df:</strong><ul style="margin:4px 0">${fundHtml}</ul></div>`);
+                    }
+
+                    // Partnerships
+                    if (pInfo.partnerships && pInfo.partnerships.length > 0) {
+                        const partHtml = pInfo.partnerships.map(pt => `<li>${pt}</li>`).join('');
+                        pParts.push(`<div style="font-size:0.84em;margin:4px 0"><strong>\u05e9\u05d9\u05ea\u05d5\u05e4\u05d9 \u05e4\u05e2\u05d5\u05dc\u05d4:</strong><ul style="margin:4px 0">${partHtml}</ul></div>`);
+                    }
+
+                    // Gemini evidence & sources
+                    if (pInfo.gemini_evidence && pInfo.gemini_evidence.length > 0) {
+                        const evHtml = pInfo.gemini_evidence.map(e => `<li>${e}</li>`).join('');
+                        pParts.push(`<div style="font-size:0.84em;margin:4px 0"><strong>\u05e8\u05d0\u05d9\u05d5\u05ea (Gemini):</strong><ul style="margin:4px 0">${evHtml}</ul></div>`);
+                    }
+                    if (pInfo.gemini_sources && pInfo.gemini_sources.length > 0) {
+                        const srcHtml = pInfo.gemini_sources.map(s =>
+                            s.url ? `<li><a href="${s.url}" target="_blank" rel="noopener" style="color:#2a5a8a" onclick="event.stopPropagation()">${s.title || s.url}</a></li>`
+                                   : `<li>${s.title}</li>`
+                        ).join('');
+                        pParts.push(`<div style="font-size:0.84em;margin:4px 0"><strong>\u05de\u05e7\u05d5\u05e8\u05d5\u05ea (Gemini):</strong><ul style="margin:4px 0">${srcHtml}</ul></div>`);
+                    }
+
+                    // Source links — use website_url instead of dead Gefen link
+                    let pLinks = [];
+                    if (pInfo.website_url) pLinks.push(`<a href="${pInfo.website_url}" target="_blank" rel="noopener" style="color:#2a5a8a" onclick="event.stopPropagation()">\u05d0\u05ea\u05e8 \u05d4\u05ea\u05db\u05e0\u05d9\u05ea</a>`);
+                    const pOrgReport = findOrgReport(pOrgName) || findOrgReport(p.name || '');
+                    if (pOrgReport) pLinks.push(`<a href="${pOrgReport}" target="_blank" rel="noopener" style="color:#c0392b;font-weight:bold" onclick="event.stopPropagation()">\u05d3\u05d5\u05d7 \u05de\u05d7\u05e7\u05e8 \u05de\u05e2\u05de\u05d9\u05e7</a>`);
+                    if (pOrgName) pLinks.push(`<a href="https://www.guidestar.org.il/search?q=${encodeURIComponent(pOrgName)}" target="_blank" rel="noopener" style="color:#2a5a8a" onclick="event.stopPropagation()">GuideStar</a>`);
+                    if (pLinks.length) pParts.push(`<div style="margin-top:6px;padding-top:6px;border-top:1px solid #eee;font-size:0.82em"><strong>\u05de\u05e7\u05d5\u05e8\u05d5\u05ea:</strong> ${pLinks.join(' | ')}</div>`);
                 }
 
-                // Key people
-                if (pInfo.key_people && pInfo.key_people.length > 0) {
-                    const peopleHtml = pInfo.key_people.map(p2 =>
-                        `<li><strong>${p2.name}</strong>${p2.role ? ' (' + p2.role + ')' : ''}${p2.suspicion ? ' \u2014 <span style="color:#c0392b">' + p2.suspicion + '</span>' : ''}</li>`
-                    ).join('');
-                    pParts.push(`<div style="font-size:0.84em;margin:4px 0"><strong>\u05d0\u05e0\u05e9\u05d9 \u05de\u05e4\u05ea\u05d7:</strong><ul style="margin:4px 0">${peopleHtml}</ul></div>`);
-                }
-
-                // Ideology markers from Gemini
-                if (pInfo.ideology_markers && pInfo.ideology_markers.length > 0) {
-                    const markerHtml = pInfo.ideology_markers.map(m => {
-                        const mColor = m.level === 'high' ? '#c0392b' : m.level === 'medium' ? '#e67e22' : '#888';
-                        return `<span style="display:inline-block;background:${mColor};color:#fff;padding:1px 6px;border-radius:3px;font-size:0.78em;margin:2px">${m.text}</span>`;
-                    }).join('');
-                    pParts.push(`<div style="font-size:0.84em;margin:4px 0"><strong>\u05e1\u05de\u05e0\u05d9\u05dd \u05d0\u05d9\u05d3\u05d9\u05d0\u05d5\u05dc\u05d5\u05d2\u05d9\u05d9\u05dd (Gemini):</strong><div style="margin-top:4px">${markerHtml}</div></div>`);
-                }
-
-                // Funding signals
-                if (pInfo.funding_signals && pInfo.funding_signals.length > 0) {
-                    const fundHtml = pInfo.funding_signals.map(f => `<li>${f}</li>`).join('');
-                    pParts.push(`<div style="font-size:0.84em;margin:4px 0"><strong>\u05d0\u05d9\u05ea\u05d5\u05ea\u05d9 \u05de\u05d9\u05de\u05d5\u05df:</strong><ul style="margin:4px 0">${fundHtml}</ul></div>`);
-                }
-
-                // Partnerships
-                if (pInfo.partnerships && pInfo.partnerships.length > 0) {
-                    const partHtml = pInfo.partnerships.map(pt => `<li>${pt}</li>`).join('');
-                    pParts.push(`<div style="font-size:0.84em;margin:4px 0"><strong>\u05e9\u05d9\u05ea\u05d5\u05e4\u05d9 \u05e4\u05e2\u05d5\u05dc\u05d4:</strong><ul style="margin:4px 0">${partHtml}</ul></div>`);
-                }
-
-                // Gemini evidence & sources
-                if (pInfo.gemini_evidence && pInfo.gemini_evidence.length > 0) {
-                    const evHtml = pInfo.gemini_evidence.map(e => `<li>${e}</li>`).join('');
-                    pParts.push(`<div style="font-size:0.84em;margin:4px 0"><strong>\u05e8\u05d0\u05d9\u05d5\u05ea (Gemini):</strong><ul style="margin:4px 0">${evHtml}</ul></div>`);
-                }
-                if (pInfo.gemini_sources && pInfo.gemini_sources.length > 0) {
-                    const srcHtml = pInfo.gemini_sources.map(s =>
-                        s.url ? `<li><a href="${s.url}" target="_blank" rel="noopener" style="color:#2a5a8a" onclick="event.stopPropagation()">${s.title || s.url}</a></li>`
-                               : `<li>${s.title}</li>`
-                    ).join('');
-                    pParts.push(`<div style="font-size:0.84em;margin:4px 0"><strong>\u05de\u05e7\u05d5\u05e8\u05d5\u05ea (Gemini):</strong><ul style="margin:4px 0">${srcHtml}</ul></div>`);
-                }
-
-                // Source links — use website_url instead of dead Gefen link
-                let pLinks = [];
-                if (pInfo.website_url) pLinks.push(`<a href="${pInfo.website_url}" target="_blank" rel="noopener" style="color:#2a5a8a" onclick="event.stopPropagation()">\u05d0\u05ea\u05e8 \u05d4\u05ea\u05db\u05e0\u05d9\u05ea</a>`);
-                const pOrgReport = findOrgReport(pOrgName) || findOrgReport(p.name || '');
-                if (pOrgReport) pLinks.push(`<a href="${pOrgReport}" target="_blank" rel="noopener" style="color:#c0392b;font-weight:bold" onclick="event.stopPropagation()">\u05d3\u05d5\u05d7 \u05de\u05d7\u05e7\u05e8 \u05de\u05e2\u05de\u05d9\u05e7</a>`);
-                if (pOrgName) pLinks.push(`<a href="https://www.guidestar.org.il/search?q=${encodeURIComponent(pOrgName)}" target="_blank" rel="noopener" style="color:#2a5a8a" onclick="event.stopPropagation()">GuideStar</a>`);
-                if (pLinks.length) pParts.push(`<div style="margin-top:6px;padding-top:6px;border-top:1px solid #eee;font-size:0.82em"><strong>\u05de\u05e7\u05d5\u05e8\u05d5\u05ea:</strong> ${pLinks.join(' | ')}</div>`);
-
-                // Suspicion dossier (if concepts detected)
-                if (pConcepts.length > 0) {
+                // Suspicion dossier (if concepts detected and NOT depth chain)
+                if (!pDepthData && pConcepts.length > 0) {
                     pParts.push(buildSuspicionDossier(p, pInfo, pConcepts));
                     pParts.push(buildClearanceFooter());
                 }
 
                 const pDetail = pParts.join('');
 
-                return `<div onclick="document.getElementById('pp-${puid}').classList.toggle('visible');this.classList.toggle('expanded')" style="cursor:pointer;background:#fff5f5;border:1px solid #e8d0d0;border-radius:6px;padding:8px 12px;margin-bottom:6px">
-                    <div style="font-weight:600;font-size:0.88em">${p.name} ${tierBadge} ${pBadges}</div>
+                const ppDepthBadge = pDepthData ? '<span style="background:#cc0000;color:#fff;padding:1px 6px;border-radius:3px;font-size:0.75em;margin-left:6px">\u05e8\u05d0\u05d9\u05d5\u05ea \u05de\u05e2\u05de\u05d9\u05e7\u05d5\u05ea</span>' : '';
+                return `<div onclick="document.getElementById('pp-${puid}').classList.toggle('visible');this.classList.toggle('expanded')" style="cursor:pointer;background:${pDepthData ? '#fff0f0' : '#fff5f5'};border:1px solid ${pDepthData ? '#d0a0a0' : '#e8d0d0'};border-radius:6px;padding:8px 12px;margin-bottom:6px${pDepthData ? ';border-right:4px solid #cc0000' : ''}">
+                    <div style="font-weight:600;font-size:0.88em">${p.name} ${tierBadge} ${ppDepthBadge} ${pBadges}</div>
                     <div style="font-size:0.8em;color:#666;margin-top:2px">
                         ${p.org} | ${p.budget.toLocaleString('he-IL', {maximumFractionDigits:0})} \u20aa | ${p.deployments} \u05e4\u05e8\u05d9\u05e1\u05d5\u05ea
                     </div>

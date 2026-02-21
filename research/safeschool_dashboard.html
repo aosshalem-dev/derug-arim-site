@@ -202,6 +202,129 @@ tr.highlight td { font-weight: 500; }
 .q-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.9em; }
 .q-list li::before { content: "❓ "; }
 
+/* ── Value Lens Toggle ── */
+.lens-bar {
+    display: flex; align-items: center; gap: 12px;
+    background: #f0f4fa; padding: 10px 18px; border-radius: 8px;
+    margin-bottom: 18px; border: 1px solid #d4daf0;
+}
+.lens-bar .lens-label { font-size: 0.88em; color: #555; font-weight: 600; }
+.lens-bar .lens-label.active { color: #1a1a2e; }
+.lens-switch {
+    position: relative; width: 44px; height: 24px; cursor: pointer;
+    background: #ccc; border-radius: 12px; transition: background 0.3s;
+    border: none; padding: 0;
+}
+.lens-switch.on { background: #e74c3c; }
+.lens-switch::after {
+    content: ''; position: absolute; top: 2px; left: 2px;
+    width: 20px; height: 20px; background: #fff; border-radius: 50%;
+    transition: transform 0.3s;
+}
+.lens-switch.on::after { transform: translateX(20px); }
+.lens-card {
+    background: #fff; border-radius: 8px; padding: 18px;
+    margin-bottom: 14px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    border-right: 4px solid #667eea;
+    transition: all 0.3s;
+}
+.lens-card.severity-high { border-right-color: #e74c3c; }
+.lens-card.severity-medium { border-right-color: #f39c12; }
+.lens-card .lens-source { font-size: 0.78em; color: #888; margin-bottom: 6px; }
+.lens-card .lens-type {
+    display: inline-block; padding: 2px 8px; border-radius: 10px;
+    font-size: 0.72em; font-weight: 600; background: #f0f0f0; color: #555;
+    margin-bottom: 8px;
+}
+.lens-official-text { font-style: italic; color: #333; line-height: 1.7; }
+.lens-interpreted-text {
+    color: #8b0000; font-weight: 600; line-height: 1.7;
+    border-right: 3px solid #e74c3c; padding-right: 12px;
+}
+.lens-interpreted-text .sel-link {
+    color: #2a5a8a; text-decoration: underline; font-weight: 400;
+}
+
+/* ── Influence Map ── */
+.influence-map {
+    background: #fafbff; border: 1px solid #e8e8e8; border-radius: 8px;
+    padding: 24px; min-height: 400px;
+    display: flex; flex-direction: column; align-items: center; gap: 16px;
+}
+.inf-row {
+    display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;
+}
+.inf-node {
+    text-align: center; cursor: default; transition: transform 0.2s;
+}
+.inf-node:hover { transform: scale(1.05); }
+.inf-circle {
+    width: 60px; height: 60px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 6px; font-size: 1.5em;
+    border: 2px solid;
+}
+.inf-circle.red { background: #fef2f2; border-color: #fca5a5; }
+.inf-circle.orange { background: #fff7ed; border-color: #fdba74; }
+.inf-circle.blue { background: #eff6ff; border-color: #93c5fd; }
+.inf-circle.green { background: #f0fdf4; border-color: #86efac; }
+.inf-circle.purple { background: #faf5ff; border-color: #c4b5fd; }
+.inf-name { font-size: 0.78em; font-weight: 700; color: #1a1a2e; max-width: 100px; }
+.inf-role { font-size: 0.68em; color: #888; }
+.inf-arrow { color: #ccc; font-size: 1.5em; }
+.inf-center {
+    background: #1a1a2e; color: #fff; padding: 14px 28px;
+    border-radius: 8px; font-weight: 700; font-size: 1.1em;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.inf-side {
+    position: relative; display: flex; align-items: center; gap: 8px;
+}
+.inf-dashed {
+    width: 40px; border-top: 2px dashed #ccc;
+}
+.inf-target {
+    background: #fff; padding: 12px; border-radius: 8px;
+    border-top: 3px solid #ff8800; text-align: center;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    min-width: 120px; transition: background 0.2s;
+}
+.inf-target:hover { background: #fff8f0; }
+.inf-target .inf-t-icon { font-size: 1.3em; margin-bottom: 4px; }
+.inf-target .inf-t-title { font-weight: 700; font-size: 0.82em; color: #1a1a2e; }
+.inf-target .inf-t-sub { font-size: 0.7em; color: #888; }
+
+/* ── Checklist ── */
+.check-item {
+    display: flex; align-items: flex-start; gap: 10px;
+    padding: 8px 0; border-bottom: 1px solid #f0f0f0;
+    cursor: pointer; transition: background 0.2s;
+}
+.check-item:hover { background: #fafbff; }
+.check-item:last-child { border-bottom: none; }
+.check-box {
+    width: 20px; height: 20px; border: 2px solid #ccc; border-radius: 4px;
+    flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+    margin-top: 2px; transition: all 0.2s;
+}
+.check-item.checked .check-box {
+    background: #667eea; border-color: #667eea; color: #fff;
+}
+.check-item.checked .check-text { text-decoration: line-through; color: #aaa; }
+.check-text { font-size: 0.88em; color: #333; }
+.progress-wrap {
+    margin-top: 16px; padding-top: 12px; border-top: 1px solid #eee;
+}
+.progress-bar-bg {
+    width: 100%; height: 8px; background: #e8e8e8; border-radius: 4px;
+    overflow: hidden;
+}
+.progress-bar-fill {
+    height: 100%; background: #667eea; border-radius: 4px;
+    transition: width 0.4s;
+}
+.progress-label { font-size: 0.78em; color: #888; margin-top: 4px; text-align: left; }
+
 /* ── Footer ── */
 footer {
     background: #1a1a2e; color: #667; padding: 20px;
@@ -323,6 +446,83 @@ footer a { color: #ff8800; text-decoration: none; }
                 <tr><td><strong>יפעת טאו</strong></td><td>משנה למנכ"ל, תוכן</td><td>—</td><td>אחראית על 600+ סרטוני תוכן</td></tr>
             </table>
         </div>
+
+        <div class="section">
+            <h2>מפת השפעה: מהאינקובטור לכיתה</h2>
+            <p>מסלול החדירה של SafeSchool למערכת החינוך — מהכוורת (אינקובטור JDC), דרך משקיעי הון סיכון ובכירי משרד לשעבר, אל 1,200 בתי ספר.</p>
+
+            <div class="influence-map">
+                <!-- Top row: Funding sources -->
+                <div style="font-weight:600;color:#888;font-size:0.82em;letter-spacing:1px">מקורות מימון והשפעה</div>
+                <div class="inf-row">
+                    <div class="inf-node">
+                        <div class="inf-circle blue">🏢</div>
+                        <div class="inf-name">הכוורת (JDC)</div>
+                        <div class="inf-role">אינקובטור חברתי</div>
+                    </div>
+                    <div class="inf-node">
+                        <div class="inf-circle blue">💰</div>
+                        <div class="inf-name">ניר זוהר (WIX)</div>
+                        <div class="inf-role">$2M Seed</div>
+                    </div>
+                    <div class="inf-node">
+                        <div class="inf-circle purple">⭐</div>
+                        <div class="inf-name">גל גדות + סלבריטאים</div>
+                        <div class="inf-role">מאות אלפי $</div>
+                    </div>
+                    <div class="inf-node">
+                        <div class="inf-circle red">🚪</div>
+                        <div class="inf-name">עמית אדרי</div>
+                        <div class="inf-role">מנכ"ל משרד לשעבר</div>
+                    </div>
+                </div>
+
+                <div class="inf-arrow">▼</div>
+
+                <!-- Center: SafeSchool -->
+                <div class="inf-center">SafeSchool Analytics בע"מ</div>
+
+                <!-- Revolving door personnel -->
+                <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center">
+                    <div class="inf-dashed"></div>
+                    <div style="font-size:0.75em;color:#e74c3c;font-weight:600;background:#fef2f2;padding:4px 12px;border-radius:4px;border:1px solid #fca5a5">
+                        דלת מסתובבת: אדרי (מנכ"ל משרד) + שדמי (שפ"י) + דותן (מניעת אלימות) + סטנסקו (למידה מרחוק)
+                    </div>
+                    <div class="inf-dashed"></div>
+                </div>
+
+                <div class="inf-arrow">▼</div>
+
+                <!-- Bottom row: Targets -->
+                <div style="font-weight:600;color:#888;font-size:0.82em;letter-spacing:1px">נקודות חדירה</div>
+                <div class="inf-row">
+                    <div class="inf-target">
+                        <div class="inf-t-icon">📋</div>
+                        <div class="inf-t-title">אישור גפ"ן</div>
+                        <div class="inf-t-sub">תוכנית #5974</div>
+                    </div>
+                    <div class="inf-target">
+                        <div class="inf-t-icon">🏫</div>
+                        <div class="inf-t-title">1,200+ בתי ספר</div>
+                        <div class="inf-t-sub">מנוי ישיר (עוקף בקרה)</div>
+                    </div>
+                    <div class="inf-target">
+                        <div class="inf-t-icon">🧠</div>
+                        <div class="inf-t-title">שפ"י / משרד הבריאות</div>
+                        <div class="inf-t-sub">לגיטימציה מוסדית</div>
+                    </div>
+                    <div class="inf-target">
+                        <div class="inf-t-icon">👨‍👩‍👧‍👦</div>
+                        <div class="inf-t-title">תלמידים + הורים</div>
+                        <div class="inf-t-sub">תוכן מאחורי paywall</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="warning-box" style="margin-top:16px">
+                <strong>המודל העסקי:</strong> מנוי ישיר מבתי ספר (לא דרך משרד החינוך) = עוקף בקרה מרכזית. ₪83,119 בלבד בהעברות ממשלתיות ישירות מתוך גיוס כולל של מיליוני דולרים. בית הספר משלם ← הורים לא רואים את התוכן ← אין מנגנון opt-in.
+            </div>
+        </div>
     </div>
 
     <!-- ═══════ TAB: FINANCE ═══════ -->
@@ -374,6 +574,85 @@ footer a { color: #ff8800; text-decoration: none; }
 
     <!-- ═══════ TAB: CONTENT ANALYSIS ═══════ -->
     <div id="view-content" class="view">
+
+        <!-- Value Lens Toggle -->
+        <div class="section">
+            <h2>עדשת הערכים: הצהרה רשמית מול משמעות בפועל</h2>
+            <p>הטקסטים של SafeSchool עוברים כאן "קריאה ביקורתית". המתג מאפשר לעמת בין ההצהרות הגלויות לבין המשמעות כפי שהיא עולה מהמחקר המעמיק.</p>
+
+            <div class="lens-bar">
+                <span class="lens-label active" id="lens-label-off">הצהרה רשמית</span>
+                <button class="lens-switch" id="lensSwitch" onclick="toggleValueLens()"></button>
+                <span class="lens-label" id="lens-label-on">הפרשנות המחקרית</span>
+            </div>
+
+            <div id="lens-cards">
+                <!-- Card 1: Safety branding -->
+                <div class="lens-card severity-high">
+                    <span class="lens-type">מיצוב מותגי</span>
+                    <div class="lens-source">אתר החברה + קטלוג גפ"ן, תוכנית #5974</div>
+                    <div class="lens-text lens-official-text" data-lens="official">
+                        "SafeSchool Analytics — פלטפורמת בטיחות ברשת ולמידה רגשית-חברתית. הגנה על תלמידים מסכנות דיגיטליות, בריונות ושיימינג."
+                    </div>
+                    <div class="lens-text lens-interpreted-text" data-lens="interpreted" style="display:none">
+                        המעטפת "בטיחות ברשת" מסתירה 600+ סרטוני תוכן שרובם אינם עוסקים ברשת כלל. מאחורי חומת התשלום: חינוך מיני מקיף, זהות מגדרית, "דינמיקות כוח", פורנוגרפיה — הכל החל מגיל בית ספר יסודי.
+                        <a class="sel-link" href="https://aosshalem-dev.github.io/sel-research/" target="_blank">מחקר מקיף: למה SEL בעייתי →</a>
+                    </div>
+                </div>
+
+                <!-- Card 2: SEL -->
+                <div class="lens-card severity-high">
+                    <span class="lens-type">מתודולוגיה</span>
+                    <div class="lens-source">אתר SEI (האגודה לחינוך מיני) — דף SafeSchool</div>
+                    <div class="lens-text lens-official-text" data-lens="official">
+                        "תוכנית למידה רגשית-חברתית (SEL) לפיתוח מיומנויות חיים — מודעות עצמית, ניהול רגשות, קבלת החלטות אחראית."
+                    </div>
+                    <div class="lens-text lens-interpreted-text" data-lens="interpreted" style="display:none">
+                        SEL = "למידה רגשית-חברתית" — שם מחודש לפדגוגיה ביקורתית של פאולו פריירה. ב-2020 CASEL הודתה: "SEL טרנספורמטיבי" = "שיבוש והתנגדות לאי-שוויון". יוזמ"ה (ועדת מדענים ישראלית) הודתה: "אין נתונים אמפיריים ישירים" — ובכל זאת המליצה על "שינוי עומק" בכל מערכת החינוך.
+                        <a class="sel-link" href="https://aosshalem-dev.github.io/shefi-research/" target="_blank">מחקר SHEFI — זרוע היישום של משרד החינוך →</a>
+                    </div>
+                </div>
+
+                <!-- Card 3: Gender diversity -->
+                <div class="lens-card severity-high">
+                    <span class="lens-type">תוכן שיעור (מתומלל)</span>
+                    <div class="lens-source">סרטון SafeSchool מאחורי paywall — <a href="https://youtu.be/226U6rJnPLc" target="_blank" style="color:#2a5a8a">YouTube</a></div>
+                    <div class="lens-text lens-official-text" data-lens="official">
+                        "כמו שיש יותר ממינים של זכר ונקבה, כך גם יש יותר מגדרים מגבר ואישה. יש לנו מגוון יפהפה ומרגש: סיסג'נדר, טרנסג'נדר, בי-ג'נדר, פאן-ג'נדר, אי-ג'נדר."
+                    </div>
+                    <div class="lens-text lens-interpreted-text" data-lens="interpreted" style="display:none">
+                        זוהי הטענה המרכזית של תיאוריית הקוויר — ג'ודית באטלר (1990): "ריבוי מינים ללא גבול שולל את המין כקטגוריה". המטרה המוצהרת אינה "הכלה" אלא פירוק המושג "זהות מינית" עצמו. איגוד הפסיכיאטרים הישראלי לילד ולמתבגר התנגד — והודח מתהליך כתיבת הנוהל.
+                        <a class="sel-link" href="https://aosshalem-dev.github.io/progressive-rosetta-stone/" target="_blank">אבן רוזטה — מילון ההסוואה →</a>
+                    </div>
+                </div>
+
+                <!-- Card 4: Regulatory capture -->
+                <div class="lens-card severity-medium">
+                    <span class="lens-type">שיווק מוסדי</span>
+                    <div class="lens-source">Globes, Calcalist — סיקור השקעת עמית אדרי</div>
+                    <div class="lens-text lens-official-text" data-lens="official">
+                        "עמית אדרי, מנכ"ל משרד החינוך לשעבר, מצטרף לדירקטוריון SafeSchool ומשקיע בחברה. 'האמנתי בחזון שלהם מהרגע הראשון.'"
+                    </div>
+                    <div class="lens-text lens-interpreted-text" data-lens="interpreted" style="display:none">
+                        דלת מסתובבת קלאסית: מי שפיקח על מערכת הגפ"ן ושפ"י כמנכ"ל המשרד (יולי 2020 — יולי 2021) — בדיוק התקופה שבה SafeSchool נוסדה — הפך למשקיע ויו"ר דירקטוריון. עוד 3 בכירי משרד (שדמי, דותן, סטנסקו) הצטרפו. זהו מודל של <strong>לכידה רגולטורית</strong> (regulatory capture).
+                        <a class="sel-link" href="deep_SafeSchool.html#section-4" target="_blank">דוח מלא: ניתוח הדלת המסתובבת →</a>
+                    </div>
+                </div>
+
+                <!-- Card 5: Hackaveret -->
+                <div class="lens-card severity-medium">
+                    <span class="lens-type">תשתית ארגונית</span>
+                    <div class="lens-source">Hackaveret.org — דף הפרויקט</div>
+                    <div class="lens-text lens-official-text" data-lens="official">
+                        "SafeSchool עברה תוכנית האצה בהכוורת — מרכז החדשנות החברתית של ג'וינט ישראל וביטוח לאומי."
+                    </div>
+                    <div class="lens-text lens-interpreted-text" data-lens="interpreted" style="display:none">
+                        הכוורת = שער הכניסה לממסד. מספקת מימון ראשוני, עיצוב מודל הפעולה, ובעיקר — חיבורים למגזר הממשלתי. כך SafeSchool קיבלה גישה לערוצי הרכש הממשלתיים (גפ"ן). המודל: אינקובטור ← אישור גפ"ן ← 1,200 בתי ספר בארבע שנים.
+                        <a class="sel-link" href="deep_SafeSchool.html#section-8" target="_blank">דוח מלא: מנגנון החדירה ל-1,200 בתי ספר →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="section">
             <h2>מילון המונחים: מה מסתתר מאחורי המילים?</h2>
@@ -579,6 +858,20 @@ footer a { color: #ff8800; text-decoration: none; }
                     <div class="lc-desc">כיצד מונחים ניטרליים ("אזרחות פעילה", "פדגוגיה חדשנית", "צדק חברתי") מסווים תוכן אידיאולוגי.</div>
                 </div>
             </a>
+            <a class="link-card" href="https://aosshalem-dev.github.io/shefi-research/" target="_blank">
+                <div class="lc-icon">🧠</div>
+                <div>
+                    <div class="lc-title">שפ"י — זרוע היישום של משרד החינוך</div>
+                    <div class="lc-desc">כיצד השירות הפסיכולוגי-ייעוצי מתרגם אידיאולוגיה לנהלי עבודה בבתי ספר. חנה שדמי (SafeSchool) ניהלה את שפ"י.</div>
+                </div>
+            </a>
+            <a class="link-card" href="https://www.gnostocracy.com/" target="_blank">
+                <div class="lc-icon">🎯</div>
+                <div>
+                    <div class="lc-title">גנוסטוקרסיה — הנדסת תודעה</div>
+                    <div class="lc-desc">ניר מיכאלי מסביר: "זה לא חינוך, זה תהליך של שינוי עומק" — הפילוסופיה שמאחורי SafeSchool ותוכניות SEL.</div>
+                </div>
+            </a>
         </div>
     </div>
 
@@ -617,34 +910,77 @@ footer a { color: #ff8800; text-decoration: none; }
                         <li>אילו נתונים SafeSchool אוספת על התלמידים, ומי הבעלים של הנתונים?</li>
                     </ul>
 
-                    <h3 style="margin-top:20px">הזדמנויות להעמקה</h3>
+                    <h3 style="margin-top:20px">רשימת בדיקה: שאלות פתוחות למחקר</h3>
+                    <p style="font-size:0.85em;color:#666;margin-bottom:12px">סמנו שאלות שכבר נבדקו. הרשימה נשמרת בדפדפן.</p>
+                    <div id="checklist-items">
+                        <div class="check-item" onclick="toggleCheck(this)">
+                            <div class="check-box"></div>
+                            <div class="check-text"><strong>פנקס בעלי מניות:</strong> מי הבעלים בפועל של SafeSchool Analytics בע"מ? בדיקה ברשם החברות (ח.פ. 516296886).</div>
+                        </div>
+                        <div class="check-item" onclick="toggleCheck(this)">
+                            <div class="check-box"></div>
+                            <div class="check-text"><strong>הכנסות שנתיות:</strong> כחברת בע"מ אינה חייבת בדיווח פומבי. האם ניתן להשיג דוחות כספיים דרך רשם החברות?</div>
+                        </div>
+                        <div class="check-item" onclick="toggleCheck(this)">
+                            <div class="check-box"></div>
+                            <div class="check-text"><strong>תקופת צינון:</strong> מתי בדיוק עזב עמית אדרי את משרד החינוך ומתי הצטרף ל-SafeSchool? האם חלפה תקופת צינון?</div>
+                        </div>
+                        <div class="check-item" onclick="toggleCheck(this)">
+                            <div class="check-box"></div>
+                            <div class="check-text"><strong>אישור גפ"ן:</strong> מתי בדיוק אושרה תוכנית #5974 בגפ"ן, ומי חתם על האישור? האם היה ניגוד עניינים?</div>
+                        </div>
+                        <div class="check-item" onclick="toggleCheck(this)">
+                            <div class="check-box"></div>
+                            <div class="check-text"><strong>סקרי "אפקטיביות":</strong> SafeSchool מציגה נתוני הצלחה. מי ערך את הסקרים? מה נשאל? האם הנתונים עצמאיים?</div>
+                        </div>
+                        <div class="check-item" onclick="toggleCheck(this)">
+                            <div class="check-box"></div>
+                            <div class="check-text"><strong>מדיניות פרטיות:</strong> אין מדיניות פומבית. אילו נתוני תלמידים נאספים? מי הבעלים? האם יש העברה לצד שלישי?</div>
+                        </div>
+                        <div class="check-item" onclick="toggleCheck(this)">
+                            <div class="check-box"></div>
+                            <div class="check-text"><strong>הסכמת הורים:</strong> האם קיים מנגנון opt-in מפורש לתכני חינוך מיני ומגדרי? או שהכל מגיע ב"חבילת בטיחות"?</div>
+                        </div>
+                        <div class="check-item" onclick="toggleCheck(this)">
+                            <div class="check-box"></div>
+                            <div class="check-text"><strong>מערכי שיעור:</strong> השגת חומרי ההדרכה הפנימיים שמאחורי חומת התשלום — מעבר לסרטון שכבר תומלל.</div>
+                        </div>
+                    </div>
+                    <div class="progress-wrap">
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill" id="check-progress-fill" style="width:0%"></div>
+                        </div>
+                        <div class="progress-label" id="check-progress-label">0 / 8 שאלות נבדקו (0%)</div>
+                    </div>
+
+                    <h3 style="margin-top:24px">מחקר מקיף — קישורים</h3>
                     <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
-                        <a class="link-card" href="#">
+                        <a class="link-card" href="deep_SafeSchool.html">
                             <div class="lc-icon">📄</div>
                             <div>
-                                <div class="lc-title">דוחות כספיים</div>
-                                <div class="lc-desc">בדיקת חשבונות חברת בע"מ ברשם החברות</div>
+                                <div class="lc-title">דוח מחקר מלא</div>
+                                <div class="lc-desc">12 פרקים: רישום, כספים, מנהיגות, דלת מסתובבת, תוכן, פרטיות</div>
                             </div>
                         </a>
-                        <a class="link-card" href="#">
-                            <div class="lc-icon">📱</div>
+                        <a class="link-card" href="https://aosshalem-dev.github.io/sel-research/" target="_blank">
+                            <div class="lc-icon">🔗</div>
                             <div>
-                                <div class="lc-title">רשתות חברתיות</div>
-                                <div class="lc-desc">מיפוי עמדות בכירים בחברה</div>
+                                <div class="lc-title">מחקר SEL</div>
+                                <div class="lc-desc">למידה רגשית-חברתית: מפריירה ועד מערכת החינוך הישראלית</div>
                             </div>
                         </a>
-                        <a class="link-card" href="#">
-                            <div class="lc-icon">🎓</div>
+                        <a class="link-card" href="https://aosshalem-dev.github.io/shefi-research/" target="_blank">
+                            <div class="lc-icon">🧠</div>
                             <div>
-                                <div class="lc-title">חומרי הדרכה</div>
-                                <div class="lc-desc">השגת מערכי שיעור פנימיים</div>
+                                <div class="lc-title">מחקר שפ"י</div>
+                                <div class="lc-desc">שירות פסיכולוגי-ייעוצי: זרוע היישום של משרד החינוך</div>
                             </div>
                         </a>
-                        <a class="link-card" href="#">
-                            <div class="lc-icon">🔒</div>
+                        <a class="link-card" href="https://aosshalem-dev.github.io/progressive-rosetta-stone/" target="_blank">
+                            <div class="lc-icon">🗝️</div>
                             <div>
-                                <div class="lc-title">מדיניות פרטיות</div>
-                                <div class="lc-desc">דרישת גילוי מדיניות נתונים</div>
+                                <div class="lc-title">אבן רוזטה</div>
+                                <div class="lc-desc">מילון ההסוואה: כיצד מונחים ניטרליים מסווים תוכן אידיאולוגי</div>
                             </div>
                         </a>
                     </div>
@@ -731,6 +1067,31 @@ new Chart(finCtx, {
         }
     }
 });
+
+// ── Value Lens Toggle ──
+function toggleValueLens() {
+    const sw = document.getElementById('lensSwitch');
+    const isOn = sw.classList.toggle('on');
+    document.getElementById('lens-label-off').classList.toggle('active', !isOn);
+    document.getElementById('lens-label-on').classList.toggle('active', isOn);
+    document.querySelectorAll('#lens-cards .lens-text').forEach(el => {
+        const lens = el.getAttribute('data-lens');
+        el.style.display = (lens === 'official' && !isOn) || (lens === 'interpreted' && isOn) ? '' : 'none';
+    });
+}
+
+// ── Checklist ──
+function toggleCheck(el) {
+    el.classList.toggle('checked');
+    updateCheckProgress();
+}
+function updateCheckProgress() {
+    const items = document.querySelectorAll('#checklist-items .check-item');
+    const checked = document.querySelectorAll('#checklist-items .check-item.checked').length;
+    const pct = items.length ? Math.round(checked / items.length * 100) : 0;
+    document.getElementById('check-progress-fill').style.width = pct + '%';
+    document.getElementById('check-progress-label').textContent = checked + ' / ' + items.length + ' שאלות נבדקו (' + pct + '%)';
+}
 
 // ── Growth Bar Chart ──
 const growCtx = document.getElementById('growthChart').getContext('2d');
