@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ניתוח מינצנברגי — דפוסי השפעה מוניציפליים</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+    background: #f5f5f8;
+    color: #1a1a2e;
+    direction: rtl;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+/* ── Navigation ── */
+nav {
+    position: sticky; top: 0; z-index: 100;
+    background: #1a1a2e; color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+.nav-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 20px;
+}
+.nav-brand {
+    font-weight: 700; font-size: 1.05em; padding: 12px 0;
+    white-space: nowrap; display: flex; align-items: center; gap: 10px;
+}
+.nav-brand a { color: #aab; text-decoration: none; font-size: 0.82em; font-weight: 400; }
+.nav-brand a:hover { color: #ff8800; }
+.nav-tabs { display: flex; gap: 0; }
+.nav-tab {
+    padding: 14px 14px; cursor: pointer; font-size: 0.82em;
+    border-bottom: 3px solid transparent; transition: all 0.2s;
+    color: #aab; white-space: nowrap; background: none; border-top: none; border-left: none; border-right: none;
+    font-family: inherit;
+}
+.nav-tab:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.nav-tab.active { color: #fff; border-bottom-color: #ff8800; font-weight: 600; }
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, #1a1a2e 0%, #4a2a2a 50%, #2a2a1a 100%);
+    color: #fff; padding: 40px 20px 30px; text-align: center;
+}
+.hero h1 { font-size: 1.7em; font-weight: 700; margin-bottom: 8px; }
+.hero .subtitle { color: #d4b896; font-size: 1em; margin-bottom: 4px; }
+.hero .meta { color: #ff8800; font-size: 0.88em; margin-top: 8px; }
+.hero .stats-row {
+    display: flex; justify-content: center; gap: 30px; margin-top: 16px; flex-wrap: wrap;
+}
+.hero .stat { text-align: center; }
+.hero .stat .num { font-size: 1.8em; font-weight: 800; color: #ff8800; }
+.hero .stat .lbl { font-size: 0.75em; color: #b0b0b0; }
+
+/* ── Layout ── */
+.container { max-width: 1200px; margin: 0 auto; padding: 24px 20px 60px; }
+.view { display: none; }
+.view.active { display: block; }
+
+/* ── Sections ── */
+.section {
+    background: #fff; border-radius: 8px; padding: 26px;
+    margin-bottom: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.section h2 { font-size: 1.3em; color: #1a1a2e; margin-bottom: 14px; padding-bottom: 6px; border-bottom: 2px solid #667eea; }
+.section h3 { font-size: 1.05em; color: #2a5a8a; margin: 16px 0 8px; }
+.section p { margin-bottom: 10px; }
+
+/* ── Grids ── */
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 24px; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 20px; }
+@media (max-width: 900px) {
+    .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
+    .grid-2 { grid-template-columns: 1fr; }
+    .nav-tabs { overflow-x: auto; }
+}
+@media (max-width: 600px) {
+    .grid-3, .grid-4 { grid-template-columns: 1fr; }
+}
+
+/* ── Metric cards ── */
+.metric {
+    background: #f8f9fa; padding: 16px; border-radius: 8px;
+    text-align: center; border: 1px solid #e8e8e8;
+    transition: transform 0.2s;
+}
+.metric:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+.metric .label { font-size: 0.82em; color: #666; margin-bottom: 4px; }
+.metric .value { font-size: 1.8em; font-weight: 800; color: #2a5a8a; }
+.metric .note { font-size: 0.75em; color: #999; margin-top: 2px; }
+.metric.alert { border-right: 4px solid #e74c3c; }
+.metric.alert .value { color: #e74c3c; }
+.metric.ok { border-right: 4px solid #27ae60; }
+.metric.ok .value { color: #27ae60; }
+
+/* ── Technique cards ── */
+.tech-card {
+    background: #fff; border-radius: 8px; padding: 20px;
+    border: 1px solid #e8e8e8; transition: all 0.2s;
+    cursor: pointer;
+}
+.tech-card:hover { border-color: #667eea; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+.tech-card .tc-num { font-size: 2em; font-weight: 800; color: #667eea; opacity: 0.3; float: left; margin-left: 12px; }
+.tech-card .tc-title { font-weight: 700; color: #1a1a2e; font-size: 1.05em; margin-bottom: 6px; }
+.tech-card .tc-title-en { font-size: 0.78em; color: #999; font-weight: 400; }
+.tech-card .tc-desc { font-size: 0.88em; color: #555; }
+
+/* ── Timeline ── */
+.timeline { position: relative; padding-right: 30px; }
+.timeline::before {
+    content: ''; position: absolute; right: 10px; top: 0; bottom: 0;
+    width: 3px; background: #667eea; border-radius: 2px;
+}
+.tl-item { position: relative; margin-bottom: 20px; padding-right: 30px; }
+.tl-item::before {
+    content: ''; position: absolute; right: -26px; top: 6px;
+    width: 14px; height: 14px; background: #667eea; border-radius: 50%;
+    border: 3px solid #fff; box-shadow: 0 0 0 2px #667eea;
+}
+.tl-item.approved::before { background: #e74c3c; box-shadow: 0 0 0 2px #e74c3c; }
+.tl-item .tl-year { font-weight: 800; color: #667eea; font-size: 0.88em; }
+.tl-item.approved .tl-year { color: #e74c3c; }
+.tl-item .tl-title { font-weight: 600; color: #1a1a2e; }
+.tl-item .tl-desc { font-size: 0.88em; color: #555; }
+.tl-item .tl-what { font-size: 0.78em; color: #999; font-style: italic; }
+
+/* ── Quote boxes ── */
+.quote-box {
+    background: #fff5f5; border-right: 4px solid #cc0000;
+    padding: 14px 18px; border-radius: 0 6px 6px 0;
+    margin: 14px 0; font-style: italic;
+}
+.quote-box .q-source { font-style: normal; font-size: 0.82em; color: #999; margin-top: 6px; }
+.quote-box.blue { background: #f0f4fa; border-right-color: #667eea; }
+.quote-box.blue .q-source { color: #667eea; }
+
+/* ── Evidence table ── */
+table { width: 100%; border-collapse: collapse; font-size: 0.88em; margin: 14px 0; }
+th { background: #667eea; color: #fff; padding: 8px 12px; text-align: right; }
+td { padding: 8px 12px; border-bottom: 1px solid #eee; }
+tr:hover { background: #f8f9fa; }
+tr.highlight { background: #fff5f5; }
+td a { color: #2a5a8a; }
+td a:hover { color: #ff8800; }
+
+/* ── Badge / tag ── */
+.badge {
+    display: inline-block; padding: 2px 10px; border-radius: 12px;
+    font-size: 0.72em; font-weight: 600;
+}
+.badge.red { background: #fde8e8; color: #c0392b; }
+.badge.green { background: #e8fde8; color: #27ae60; }
+.badge.blue { background: #e8edf8; color: #2a5a8a; }
+.badge.orange { background: #fef3e0; color: #e67e22; }
+.badge.gray { background: #f0f0f0; color: #666; }
+
+/* ── Link cards ── */
+.link-card {
+    display: flex; gap: 10px; padding: 10px 14px;
+    background: #f8f9fa; border-radius: 6px; border: 1px solid #e8e8e8;
+    text-decoration: none; color: inherit; transition: all 0.2s;
+    margin-bottom: 8px;
+}
+.link-card:hover { border-color: #667eea; background: #f0f4fa; }
+.link-card .lc-title { font-weight: 600; color: #2a5a8a; font-size: 0.9em; }
+.link-card .lc-desc { font-size: 0.78em; color: #666; }
+
+/* ── Expandable sections ── */
+.expand-section { margin: 10px 0; }
+.expand-header {
+    display: flex; align-items: center; gap: 10px;
+    padding: 12px 16px; cursor: pointer; background: #f8f9fa;
+    border-radius: 8px; border: 1px solid #e8e8e8;
+    transition: background 0.2s;
+}
+.expand-header:hover { background: #f0f4fa; }
+.expand-header .eh-title { font-weight: 700; color: #1a1a2e; }
+.expand-header .eh-arrow { margin-left: auto; color: #999; transition: transform 0.3s; font-size: 0.8em; }
+.expand-section.open .expand-header .eh-arrow { transform: rotate(180deg); }
+.expand-body {
+    max-height: 0; overflow: hidden; transition: max-height 0.4s ease;
+    padding: 0 16px;
+}
+.expand-section.open .expand-body { max-height: 3000px; padding: 16px; }
+
+/* ── Comparison columns ── */
+.compare-row {
+    display: grid; grid-template-columns: 1fr 30px 1fr; gap: 0; align-items: stretch;
+    margin: 12px 0;
+}
+.compare-col {
+    padding: 14px; border-radius: 8px; font-size: 0.9em;
+}
+.compare-col.promoted { background: #e8fde8; border: 1px solid #c3e6c3; }
+.compare-col.blocked { background: #fde8e8; border: 1px solid #e6c3c3; }
+.compare-arrow { display: flex; align-items: center; justify-content: center; color: #999; font-size: 1.2em; }
+
+/* ── Footer ── */
+footer {
+    text-align: center; padding: 30px 20px; color: #999; font-size: 0.82em;
+    border-top: 1px solid #e8e8e8; margin-top: 40px;
+}
+footer a { color: #667eea; }
+</style>
+</head>
+<body>
+
+<nav>
+<div class="nav-inner">
+    <div class="nav-brand">
+        ניתוח מינצנברגי
+        <a href="../index.html">דירוג ערים</a>
+    </div>
+    <div class="nav-tabs">
+        <button class="nav-tab active" onclick="showTab('overview')">סקירה</button>
+        <button class="nav-tab" onclick="showTab('techniques')">טכניקות</button>
+        <button class="nav-tab" onclick="showTab('cities')">ערים</button>
+        <button class="nav-tab" onclick="showTab('orgs')">ארגונים</button>
+        <button class="nav-tab" onclick="showTab('blocked')">מה נחסם</button>
+        <button class="nav-tab" onclick="showTab('sources')">מקורות</button>
+    </div>
+</div>
+</nav>
+
+<!-- ══════ HERO ══════ -->
+<div class="hero">
+    <h1>דפוסי מינצנברג בזירה המוניציפלית</h1>
+    <div class="subtitle">ניתוח טכניקות השפעה מוסדית בפרוטוקולים של מועצות עירוניות ישראליות</div>
+    <div class="meta">מבוסס על 10,211 עמודי פרוטוקול מ-15 ערים | 23 החלטות מועצה מאומתות | 10 ארגונים מזוהים</div>
+    <div class="stats-row">
+        <div class="stat"><div class="num">7</div><div class="lbl">טכניקות מזוהות</div></div>
+        <div class="stat"><div class="num">5</div><div class="lbl">ערים עם ממצאים</div></div>
+        <div class="stat"><div class="num">~8</div><div class="lbl">שחקנים מרכזיים</div></div>
+        <div class="stat"><div class="num">17</div><div class="lbl">הקצאות דת שנחסמו (באר שבע)</div></div>
+    </div>
+</div>
+
+<!-- ══════ CONTENT ══════ -->
+<div class="container">
+
+<!-- ═══ TAB 1: OVERVIEW ═══ -->
+<div id="tab-overview" class="view active">
+
+<div class="section">
+    <h2>וילי מינצנברג — למה הפרספקטיבה רלוונטית?</h2>
+    <p><strong>וילי מינצנברג</strong> (1889–1940) היה פעיל קומוניסטי גרמני שפיתח טכניקות תעמולה והשפעה מוסדית שהפכו לאב-טיפוס של מה שמכונה כיום "לכידה מוסדית" (institutional capture). הטכניקות שלו כללו: יצירת ארגוני חזית, "מועדוני תמימים", שליטה בשפה, הסלמה הדרגתית, ועקיפה מוסדית.</p>
+    <p>ניתוח של 10,211 עמודי פרוטוקול מ-15 מועצות עירוניות בישראל מגלה <strong>7 דפוסים מובחנים</strong> שמתמפים ישירות לשיטותיו של מינצנברג — לא כאנלוגיה רופפת, אלא כמקבילות מבניות ספציפיות המגובות בראיות.</p>
+    <p>המפתח לרלוונטיות: <strong>מסמך קטקו-איילי</strong> (אבן הרוזטה) מוכיח שפעולה בשפה כפולה היא מודעת — אותו מודל פדגוגי מוצג כ"פדגוגיה אקטיביסטית" בהקשר אקדמי (2020) וכ"חשיבה ביקורתית" בהקשר ממשלתי (2024). אותה חוקרת. אותו מודל. שתי שפות.</p>
+</div>
+
+<div class="section">
+    <h2>7 הטכניקות המזוהות</h2>
+    <div class="grid-3">
+        <div class="tech-card" onclick="showTab('techniques')">
+            <span class="tc-num">1</span>
+            <div class="tc-title">טקטיקת הסלמי <span class="tc-title-en">Salami Tactics</span></div>
+            <div class="tc-desc">צעדים הדרגתיים, כל אחד נראה סביר בפני עצמו, שבמצטבר משנים מוסדות. חיפה: יועצת → ועדה → תוכנית → קריטריוני מימון → הסכם קואליציוני.</div>
+        </div>
+        <div class="tech-card" onclick="showTab('techniques')">
+            <span class="tc-num">2</span>
+            <div class="tc-title">ארגוני חזית <span class="tc-title-en">Front Organizations</span></div>
+            <div class="tc-desc">ארגונים שנראים עצמאיים אך חולקים מימון, כוח אדם ומטרות. 10 ארגונים מזוהים ב-15 ערים, חלקם יושבים בוועדות חינוך עירוניות.</div>
+        </div>
+        <div class="tech-card" onclick="showTab('techniques')">
+            <span class="tc-num">3</span>
+            <div class="tc-title">מועדוני תמימים <span class="tc-title-en">Innocents' Clubs</span></div>
+            <div class="tc-desc">אנשים שמצביעים בעד עקרון מבלי להבין את המסלול המצטבר. גבעתיים: אותם חברי מועצה הצביעו 9-4 נגד (2019) ואז פה אחד בעד (2023).</div>
+        </div>
+        <div class="tech-card" onclick="showTab('techniques')">
+            <span class="tc-num">4</span>
+            <div class="tc-title">שליטה בשפה <span class="tc-title-en">Language Control</span></div>
+            <div class="tc-desc">"מעמד האישה" → "שוויון מגדרי" → "עיר רגישה מגדרית". "תוכניות חינוך" → "תוכניות ליברליות". תוכן פרוגרסיבי = "ערכים"; תוכן מסורתי = "התערבות פוליטית".</div>
+        </div>
+        <div class="tech-card" onclick="showTab('techniques')">
+            <span class="tc-num">5</span>
+            <div class="tc-title">מנגנון העקיפה <span class="tc-title-en">Bypass Mechanism</span></div>
+            <div class="tc-desc">כשהמדיניות הלאומית משתנה, רשויות מקומיות יוצרות ערוצי מימון ומדיניות חלופיים. דצמבר 2022: 3 ערים נעלו מדיניות בו-זמנית.</div>
+        </div>
+        <div class="tech-card" onclick="showTab('techniques')">
+            <span class="tc-num">6</span>
+            <div class="tc-title">אפקט המכפיל <span class="tc-title-en">Network Multiplier</span></div>
+            <div class="tc-desc">~8 אנשים מניעים את כל 23 הממצאים ב-5 ערים. ארגון אחד ("רוח נשית") פועל ב-7+ ערים בו-זמנית. זו לא תנועת המונים — זה יזמות מוסדית מרוכזת.</div>
+        </div>
+        <div class="tech-card" onclick="showTab('blocked')">
+            <span class="tc-num">7</span>
+            <div class="tc-title">א-סימטריית חסימה <span class="tc-title-en">Asymmetric Blocking</span></div>
+            <div class="tc-desc">באותם צמתי החלטה שמקדמים לכידה מוסדית פרוגרסיבית, תכנים מסורתיים/דתיים נחסמים, מתעכבים, או דורשים מיקוח קואליציוני בסיסי.</div>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <h2>מודע או אמרגנטי?</h2>
+    <div class="grid-2">
+        <div>
+            <h3>ראיות לאסטרטגיה מודעת</h3>
+            <ul>
+                <li><strong>אבן הרוזטה של קטקו-איילי</strong> — אותו מודל, שתי הצגות לשני קהלים</li>
+                <li><strong>תהל"ה נכנסת דרך מחלקת בריאות</strong> — בחירת ערוץ מודעת להימנעות מחיכוך פוליטי</li>
+                <li><strong>אשכול דצמבר 2022</strong> — 3 ערים, אותו חלון של 3 שבועות</li>
+                <li><strong>הגשה חוזרת מתמדת</strong> — קפלן בגבעתיים, מאיר ברעננה</li>
+                <li><strong>מסלול הסלמה מתוכנן</strong> — מציעה → יו"ר ועדה → מיישמת (מאיר)</li>
+            </ul>
+        </div>
+        <div>
+            <h3>ראיות לדפוס אמרגנטי</h3>
+            <ul>
+                <li>ערים שונות מציגות טקטיקות שונות (הרצליה: מלמעלה-למטה; חיפה: קואליציוני; גבעתיים: מיעוט מתמיד)</li>
+                <li>לא כל הצעה מצליחה — ועדה בגבעתיים נדחתה 9-4</li>
+                <li>אין ראיות לתיאום בין הפעילים ב-5 הערים</li>
+            </ul>
+            <div class="quote-box blue">
+                <p>התיאור המדויק ביותר: <strong>תנועה עם הנחות משותפות, אוצר מילים משותף, וטכניקות נלמדות</strong> — חלקן מלומדות במפורש (מסגרת קטקו-איילי, פדגוגיה אקטיביסטית) — המיושמות באופן עצמאי ע"י מספר קטן של פעילים פעילים מאוד.</p>
+                <div class="q-source">התיאום הוא אידאולוגי, לא תפעולי</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<!-- ═══ TAB 2: TECHNIQUES ═══ -->
+<div id="tab-techniques" class="view">
+
+<!-- SALAMI TACTICS -->
+<div class="section">
+    <h2>1. טקטיקת הסלמי — חיפה כמקרה מבחן</h2>
+    <p>שרשרת הסלמה מוסדית מתועדת בפרוטוקולים של מועצת העיר חיפה. כל שלב נראה סביר בפני עצמו:</p>
+    <div class="timeline">
+        <div class="tl-item">
+            <div class="tl-year">לפני 2018</div>
+            <div class="tl-title">יועצת ראש העיר למעמד האישה</div>
+            <div class="tl-desc">ביאטריס רוזן כץ נבחרה במכרז לתפקיד. מסגרת מסורתית של "מעמד האישה".</div>
+            <div class="tl-what">נראה כמו: תפקיד רווחה סטנדרטי</div>
+        </div>
+        <div class="tl-item approved">
+            <div class="tl-year">2018 — הסכם קואליציוני עם מרצ</div>
+            <div class="tl-title">"קידום שוויון מגדרי" כעקרון יסוד של הקואליציה</div>
+            <div class="tl-desc">ההסכם מעגן "שוויון מגדרי" כמחויבות פוליטית. מרצ מקבלת את תיק התרבות.</div>
+            <div class="tl-what">נראה כמו: משא ומתן קואליציוני רגיל | <a href="https://www.haifa.muni.il/city-and-muni/city-council/protocols/" target="_blank">מקור: אינדקס 812</a></div>
+        </div>
+        <div class="tl-item approved">
+            <div class="tl-year">פברואר 2019 — ישיבת מועצה ראשונה</div>
+            <div class="tl-title">אותה אדם → "יועצת לשוויון מגדרי"</div>
+            <div class="tl-desc">ביאטריס רוזן כץ ממשיכה באותו תפקיד, השם משתנה. הצעה לייצוג מגדרי שוויוני מתקבלת בהצבעה.</div>
+            <div class="tl-what">נראה כמו: עדכון שם בלבד | <a href="https://www.haifa.muni.il/city-and-muni/city-council/protocols/" target="_blank">מקור: אינדקס 435</a></div>
+        </div>
+        <div class="tl-item approved">
+            <div class="tl-year">ספטמבר 2020</div>
+            <div class="tl-title">תוכנית עירונית כוללת ל"עיר רגישה מגדרית"</div>
+            <div class="tl-desc">הוועדה לשוויון מגדרי מקבלת סמכות ליצור <strong>מסמכי עבודה מחייבים</strong>, שיתופי פעולה עם כל ועדות הרשות, עדכון מדיניות, וניירות עמדה. חיפה מכריזה על עצמה כ"מובילת הדרך" בישראל.</div>
+            <div class="tl-what">נראה כמו: מי מתנגד ל"רגישות"? | <a href="https://www.haifa.muni.il/city-and-muni/city-council/protocols/" target="_blank">מקור: אינדקס 359, הצעה #94</a></div>
+        </div>
+        <div class="tl-item approved">
+            <div class="tl-year">שוטף</div>
+            <div class="tl-title">קריטריוני מימון — שוויון מגדרי כתנאי סף</div>
+            <div class="tl-desc">קריטריוני תמיכה עירוניים לארגונים כוללים דרישת שוויון מגדרי, כולל ארגוני להט"ב. ארגון שמקבל פחות מ-150 נקודות לא מקבל מימון כלל. פעילות חינוכית חייבת להיות "בהתאם לחזון החינוכי העירוני".</div>
+            <div class="tl-what">נראה כמו: קריטריוני מימון סטנדרטיים | <a href="https://www.haifa.muni.il/city-and-muni/city-council/protocols/" target="_blank">מקור: אינדקסים 727-728</a></div>
+        </div>
+    </div>
+    <div class="quote-box">
+        <p>תחת הועדה לשוויון מגדרי, תתן מועצת העיר את הסמכות לוועדה לייצר מסמכי עבודה מסודרים בנושא [...] על חיפה להיות מובילת הדרך בעידוד וקידום יצירת ערים רגישות מגדרית בישראל, להיות חוד החנית בכנסים ארציים, מול משרדי ממשלה ועשיה משותפת למען חקיקה ושינוי מדיניות ארצית.</p>
+        <div class="q-source">נעמה לזימי, הצעה #94, פרוטוקול מועצת חיפה 8.9.2020 (אינדקס 359)</div>
+    </div>
+</div>
+
+<!-- BYPASS MECHANISM -->
+<div class="section">
+    <h2>5. מנגנון העקיפה — אשכול דצמבר 2022</h2>
+    <p>כשהפוליטיקה הלאומית משתנה, רשויות מקומיות לא פשוט מתנגדות — הן יוצרות <strong>ערוצי מימון ומדיניות חלופיים</strong> שעוקפים את הרמה הלאומית לחלוטין:</p>
+
+    <div class="grid-3">
+        <div class="metric alert">
+            <div class="label">הרצליה — דצמבר 2022</div>
+            <div class="value" style="font-size:1.2em;">מימון עירוני במקום לאומי</div>
+            <div class="note">ד"ר נחום: "אף תוכנית ליברלית לא תופסק בשל העדר תקציב"</div>
+        </div>
+        <div class="metric alert">
+            <div class="label">רעננה — דצמבר 2022</div>
+            <div class="value" style="font-size:1.2em;">הגנה על מערכת החינוך</div>
+            <div class="note">התחייבות למימון תוכניות חוש"ן ולהט"ב מכספי הרשות</div>
+        </div>
+        <div class="metric alert">
+            <div class="label">גבעתיים — דצמבר 2022</div>
+            <div class="value" style="font-size:1.2em;">הצעות הגנה</div>
+            <div class="note">הצעת קפלן להפרדה מגדרית — הורדה מסדר היום 11-4</div>
+        </div>
+    </div>
+
+    <p><strong>הטריגר</strong>: הסכמי הקואליציה של ממשלת ישראל ה-37 העבירו את היחידה לתוכניות חיצוניות ממשרד החינוך לסמכות סגן שר שמזוהה עם עמדות שמרניות. שלוש ערים הגיבו באותו חלון של 3 שבועות — בין חתימת ההסכמים להשבעת הממשלה (29.12).</p>
+
+    <div class="quote-box">
+        <p>האגף ערוך תקציבית להמשך מימון כל פעילות התואמת את המתואר לעיל באמצעות תקציבים עירוניים, וכי אף תכנית ליברלית לא תופסק בשל העדר תקציב.</p>
+        <div class="q-source">ד"ר יעקב נחום, מנהל אגף החינוך, הרצליה — אינדקס 194, ישיבת מועצה 27.12.2022</div>
+    </div>
+</div>
+
+<!-- LANGUAGE CONTROL -->
+<div class="section">
+    <h2>4. שליטה בשפה — קשר לאבן הרוזטה</h2>
+    <table>
+        <tr><th>מסגרת ישנה</th><th>מסגרת חדשה</th><th>אפקט</th><th>מקור</th></tr>
+        <tr>
+            <td>מעמד האישה</td>
+            <td>שוויון מגדרי</td>
+            <td>הרחבה מרווחת נשים → אידאולוגיית מגדר</td>
+            <td><a href="https://www.haifa.muni.il/city-and-muni/city-council/protocols/" target="_blank">חיפה 590→435</a></td>
+        </tr>
+        <tr>
+            <td>שוויון מגדרי</td>
+            <td>עיר רגישה מגדרית</td>
+            <td>הרחבה מתחום מדיניות → עדשה עירונית כוללת</td>
+            <td><a href="https://www.haifa.muni.il/city-and-muni/city-council/protocols/" target="_blank">חיפה 359</a></td>
+        </tr>
+        <tr class="highlight">
+            <td>תוכניות חינוך</td>
+            <td>"תוכניות ליברליות"</td>
+            <td>קטגוריזציה אידאולוגית מפורשת של שירותים עירוניים</td>
+            <td><a href="https://www.herzliya.muni.il/protocols/" target="_blank">הרצליה 194</a></td>
+        </tr>
+        <tr class="highlight">
+            <td>תכנים מסורתיים</td>
+            <td>"התערבות פוליטית חד-צדדית"</td>
+            <td>תוכן פרוגרסיבי = ערכים; תוכן מסורתי = פוליטיקה</td>
+            <td><a href="https://www.raanana.muni.il/protocols/" target="_blank">רעננה 767</a></td>
+        </tr>
+        <tr>
+            <td>פדגוגיה אקטיביסטית (2020)</td>
+            <td>חשיבה ביקורתית (2024)</td>
+            <td>אותו מודל, שתי הצגות לשני קהלים</td>
+            <td><a href="https://aosshalem-dev.github.io/progressive-rosetta-stone/" target="_blank">אבן הרוזטה</a></td>
+        </tr>
+    </table>
+
+    <div class="quote-box">
+        <p>מועצת העיר רעננה מתחייבת לתמוך במערכת החינוך [...] פעילות הסברה בבתי הספר לקידום זכויות קהילת הלהט"ב [...] עיריית רעננה מתחייבת לממן מכספי הרשות תכניות ברוח זו של חופש מחשתי, שוויון בין בני האדם [...] מועצת העיר מכריזה כי תגן על מערכת החינוך מכל <strong>התערבות פוליטית חד-צדדית</strong>.</p>
+        <div class="q-source">רונית וינטראוב, הצעה לסדר, רעננה — אינדקס 767, דצמבר 2022</div>
+    </div>
+    <p style="font-size:0.9em; color:#555;">שימו לב לא-סימטריה: תוכניות להט"ב ומפגשים עם חוש"ן הם "ערכים שנבנו במאמץ רב". כל תוכן מסורתי/דתי הוא "התערבות פוליטית חד-צדדית" שיש להגן ממנה.</p>
+</div>
+
+<!-- INNOCENTS' CLUBS -->
+<div class="section">
+    <h2>3. מועדוני תמימים — הטרנספורמציה של גבעתיים</h2>
+    <div class="grid-2">
+        <div>
+            <h3>מאי 2019 — נדחה 9-4</h3>
+            <p>ויוי וולפסון מציעה <strong>ועדה עירונית לשוויון מגדרי</strong> עם ייצוג פרופורציונלי מכל הסיעות. הקואליציה הורגת את ההצעה בטענה שהנושא "מטופל באופן מצוין".</p>
+            <p><strong>מה ההצעה הייתה באמת</strong>: שינוי מבני — ועדה שהייתה נותנת לאופוזיציה כוח פיקוח קבוע.</p>
+            <p class="badge red">נדחה — 9 נגד, 4 בעד</p>
+        </div>
+        <div>
+            <h3>יולי 2023 — אושר פה אחד</h3>
+            <p>רונאן קפלן מציע <strong>שוויון מגדרי באירועי תרבות וחינוך</strong>. אותם חברי קואליציה (קוניק, הולצמן, מנשה, גולדברג) שהצביעו נגד ב-2019 — <strong>מצביעים בעד ב-2023</strong>.</p>
+            <p><strong>מה השתנה</strong>: לא העיקרון — המסגור. ההצעה עברה מ"שינוי מבני" ל"הצהרת עקרון" בלי מנגנון אכיפה ("ככל שניתן").</p>
+            <p class="badge green">אושר — פה אחד</p>
+        </div>
+    </div>
+    <p>חברי הקואליציה הצביעו בעד העיקרון תוך חסימת המנגנון. הם לא הבינו שהם מבססים קו-בסיס נורמטיבי שהצעות עתידיות יבנו עליו.</p>
+</div>
+
+<!-- NETWORK MULTIPLIER -->
+<div class="section">
+    <h2>6. אפקט המכפיל — מעטים, הרבה ערים</h2>
+    <table>
+        <tr><th>שחקן</th><th>תפקיד</th><th>עיר</th><th>ממצאים</th><th>נוכחות</th></tr>
+        <tr><td>מירב מאיר</td><td>חברת מועצה, מרצ; יו"ר ועדת שמות</td><td>רעננה</td><td>3</td><td>110+ מסמכים</td></tr>
+        <tr><td>רונאן קפלן</td><td>חבר מועצה</td><td>גבעתיים</td><td>3</td><td>56+ מסמכים</td></tr>
+        <tr><td>ראש העיר פדלון</td><td>ראש עיר</td><td>הרצליה</td><td>2</td><td>501 פרוטוקולים</td></tr>
+        <tr><td>נעמה לזימי</td><td>סיעת חיים בחיפה</td><td>חיפה</td><td>1+</td><td>מציעה תוכנית עיר רגישה מגדרית</td></tr>
+        <tr><td>רונית וינטראוב</td><td>חברת מועצה</td><td>רעננה</td><td>1</td><td>הגנה על מערכת חינוך + חוש"ן</td></tr>
+        <tr><td>ויוי וולפסון</td><td>חברת מועצה</td><td>גבעתיים</td><td>1</td><td>ועדת שוויון מגדרי (נדחה 2019)</td></tr>
+        <tr><td>דנה אורן ינאי</td><td>חברת מועצה</td><td>הרצליה</td><td>1</td><td>אימוץ דו"ח ממשלתי כמדיניות מחייבת</td></tr>
+    </table>
+    <p><strong>"רוח נשית"</strong> פועלת בו-זמנית ברעננה, הרצליה, באר שבע, כרמיאל, חולון, תל אביב, קרית גת — <strong>ארגון אחד עם נוכחות מתנדבת ב-7+ ערים</strong>.</p>
+</div>
+
+</div>
+
+<!-- ═══ TAB 3: CITIES ═══ -->
+<div id="tab-cities" class="view">
+
+<div class="section">
+    <h2>ערים עם ממצאים</h2>
+    <div class="grid-4">
+        <div class="metric alert"><div class="label">הרצליה</div><div class="value">7</div><div class="note">ממצאים</div></div>
+        <div class="metric alert"><div class="label">חיפה</div><div class="value">5</div><div class="note">ממצאים</div></div>
+        <div class="metric alert"><div class="label">גבעתיים</div><div class="value">5</div><div class="note">ממצאים</div></div>
+        <div class="metric alert"><div class="label">רעננה</div><div class="value">5</div><div class="note">ממצאים</div></div>
+    </div>
+</div>
+
+<!-- HERZLIYA -->
+<div class="section">
+    <h2>הרצליה — 7 ממצאים, 1,814 פרוטוקולים</h2>
+    <p>העיר המתועדת ביותר. מנגנון המפתח: <strong>הצהרות ראש עיר ללא הצבעה</strong> דרך "עדכון ראש העיר" הרגיל. פדלון הפך את חלון עדכון הפתיחה לפלטפורמה להצהרות מדיניות שנושאות משקל מדיניות ללא דרישות פרוצדורליות של הצבעה פורמלית.</p>
+    <table>
+        <tr><th>תאריך</th><th>אינדקס</th><th>ממצא</th><th>תוצאה</th><th>מקור</th></tr>
+        <tr><td>27.12.2022</td><td>195</td><td>הצהרת אנטי-אפליה, סירוב רישיונות עסק לעסקים מפלים</td><td><span class="badge orange">הצהרה ללא הצבעה</span></td><td><a href="https://www.herzliya.muni.il/protocols/" target="_blank">פרוטוקול #71</a></td></tr>
+        <tr class="highlight"><td>27.12.2022</td><td>194</td><td>התחייבות תקציב עירוני ל"תוכניות ליברליות"</td><td><span class="badge red">מנגנון עקיפה</span></td><td><a href="https://www.herzliya.muni.il/protocols/" target="_blank">הצעה #1</a></td></tr>
+        <tr><td>15.3.2022</td><td>252</td><td>אימוץ דו"ח הדרת נשים כ"מדיניות מחייבת"</td><td><span class="badge blue">הצעה</span></td><td><a href="https://www.herzliya.muni.il/protocols/" target="_blank">פרוטוקול #56</a></td></tr>
+        <tr><td>22.12.2020</td><td>327</td><td>תקצוב מגדרי: 50% נשים בדירקטוריונים עירוניים</td><td><span class="badge blue">הצעה</span></td><td><a href="https://www.herzliya.muni.il/protocols/" target="_blank">פרוטוקול #36</a></td></tr>
+        <tr><td>28.6.2022</td><td>236</td><td>תמיכה בשינוי זהות מגדרית כיתה ב', גינוי חבר מועצה</td><td><span class="badge orange">הצהרת ראש עיר</span></td><td><a href="https://www.herzliya.muni.il/protocols/" target="_blank">פרוטוקול #60</a></td></tr>
+        <tr><td>—</td><td>17</td><td>שיתוף פעולה עם תהל"ה — דרך מחלקת בריאות</td><td><span class="badge red">הטמעה ארגונית</span></td><td><a href="https://www.herzliya.muni.il/protocols/" target="_blank">עלון מידע</a></td></tr>
+        <tr><td>18.11.2025</td><td>32</td><td>מינוי יועצת לקידום מעמד האישה</td><td><span class="badge blue">סדר יום</span></td><td><a href="https://www.herzliya.muni.il/protocols/" target="_blank">סדר יום</a></td></tr>
+    </table>
+    <div class="expand-section" onclick="this.classList.toggle('open')">
+        <div class="expand-header">
+            <span class="eh-title">טיפול באופוזיציה — מקרה צדיקוף (אינדקס 236)</span>
+            <span class="eh-arrow">▼</span>
+        </div>
+        <div class="expand-body">
+            <p>חבר מועצה <strong>אלד צדיקוף</strong> (נוכח ב-360 פרוטוקולים) ביקר תהליך שינוי זהות מגדרית של תלמיד כיתה ב'. טענתו: ההחלטות התקבלו <strong>למרות התנגדות מנהלת בית הספר</strong>. הורים פחדו להביע עמדה.</p>
+            <p>ראש העיר פדלון גינה אותו מהכיסא:</p>
+            <div class="quote-box">
+                <p>"אתה, חבר המועצה אלד צדיקוף, בנסיבות העניין, פגעת בכבוד הצוות החינוכי, המשפחה והילדה. פנית באופן עצמאי לתקשורת, ותרמת לחשיפת המשפחה והצוות לאיומים, פגיעות והשפלות."</p>
+                <div class="q-source">ראש העיר פדלון, פרוטוקול #60, 28.6.2022</div>
+            </div>
+            <p>הדפוס: <strong>גינוי פומבי מהכיסא</strong> → <strong>מסגור ההתנגדות כפגיעה בערכי העיר</strong> → <strong>ניהול מדיה</strong> (ביקורת על פנייה עצמאית לתקשורת).</p>
+        </div>
+    </div>
+</div>
+
+<!-- HAIFA -->
+<div class="section">
+    <h2>חיפה — 5 ממצאים, 1,499 פרוטוקולים</h2>
+    <p>מנגנון המפתח: <strong>נתיב הסלמה מוסדית</strong> דרך הסכמי קואליציה, ועדות, קריטריוני מימון.</p>
+    <table>
+        <tr><th>תאריך</th><th>אינדקס</th><th>ממצא</th><th>תוצאה</th><th>מקור</th></tr>
+        <tr class="highlight"><td>8.9.2020</td><td>359</td><td>תוכנית עירונית כוללת לעיר רגישה מגדרית</td><td><span class="badge red">אושר בהצבעה</span></td><td><a href="https://www.haifa.muni.il/city-and-muni/city-council/protocols/" target="_blank">הצעה #94</a></td></tr>
+        <tr><td>—</td><td>727</td><td>קריטריוני מימון — שוויון מגדרי + להט"ב כתנאי סף</td><td><span class="badge red">מדיניות פעילה</span></td><td><a href="https://www.haifa.muni.il/city-and-muni/city-council/protocols/" target="_blank">מסמך קריטריונים</a></td></tr>
+        <tr><td>2018</td><td>812</td><td>הסכם קואליציוני מרצ — שוויון מגדרי כיסוד</td><td><span class="badge red">נחתם</span></td><td><a href="https://www.haifa.muni.il/city-and-muni/city-council/protocols/" target="_blank">הסכם קואליציוני</a></td></tr>
+        <tr><td>4.2.2014</td><td>606</td><td>ועדה ציבורית לקהילת הלהט"ב — חינוך, רווחה, תרבות</td><td><span class="badge blue">הוקמה</span></td><td><a href="https://www.haifa.muni.il/city-and-muni/city-council/protocols/" target="_blank">פרוטוקול מועצה</a></td></tr>
+        <tr><td>2.9.2014</td><td>590</td><td>מינוי יועצת — "מעמד האישה" (שהפכה ל"שוויון מגדרי")</td><td><span class="badge blue">מינוי</span></td><td><a href="https://www.haifa.muni.il/city-and-muni/city-council/protocols/" target="_blank">פרוטוקול מועצה</a></td></tr>
+    </table>
+</div>
+
+<!-- RA'ANANA + GIVATAYIM summary cards -->
+<div class="section">
+    <h2>רעננה — 5 ממצאים | גבעתיים — 5 ממצאים</h2>
+    <div class="grid-2">
+        <div>
+            <h3>רעננה</h3>
+            <p><strong>מנגנון מפתח</strong>: מירב מאיר (מרצ) — 110+ מסמכים. מעבר מ"מציעה" ל"יו"ר ועדה מיישמת". הצעות חוזרות (231→656), שיתוף פעולה עם חוש"ן.</p>
+            <ul>
+                <li><a href="https://www.raanana.muni.il/protocols/" target="_blank">אינדקס 131</a> — מדיניות שמות רחובות מגדריים (ועדת שמות)</li>
+                <li><a href="https://www.raanana.muni.il/protocols/" target="_blank">אינדקס 231→656</a> — ייצוג נשים באירועים (הגשה חוזרת)</li>
+                <li><a href="https://www.raanana.muni.il/protocols/" target="_blank">אינדקס 767</a> — הגנה על מערכת חינוך + חוש"ן</li>
+                <li><a href="https://www.raanana.muni.il/protocols/" target="_blank">אינדקס 765</a> — דיאלוג בין קהילות (דצמבר 2022)</li>
+            </ul>
+        </div>
+        <div>
+            <h3>גבעתיים</h3>
+            <p><strong>מנגנון מפתח</strong>: רונאן קפלן — הגשה חוזרת מתמדת למרות הדחייה (11-4, 11-2). הורדה מסדר היום כנשק. הטרנספורמציה 2019→2023.</p>
+            <ul>
+                <li><a href="https://www.givatayim.muni.il/protocols/" target="_blank">אינדקס 492</a> — ועדת שוויון מגדרי — <span class="badge red">נדחה 9-4</span> (2019)</li>
+                <li><a href="https://www.givatayim.muni.il/protocols/" target="_blank">אינדקס 169</a> — שוויון מגדרי באירועים — <span class="badge green">פה אחד</span> (2023)</li>
+                <li><a href="https://www.givatayim.muni.il/protocols/" target="_blank">אינדקס 210</a> — הפרדה מגדרית — <span class="badge red">הורד מסדר היום 11-4</span></li>
+                <li><a href="https://www.givatayim.muni.il/protocols/" target="_blank">אינדקס 267</a> — חסימת מתנות מגופים דתיים לבתי ספר</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<!-- ═══ TAB 4: ORGANIZATIONS ═══ -->
+<div id="tab-orgs" class="view">
+
+<div class="section">
+    <h2>מפת הטמעה ארגונית — 10 ארגונים ב-15 ערים</h2>
+    <p>סריקה של 10,211 עמודי פרוטוקול. ארגונים כמו Breaking the Silence, בצלם, NIF, SafeSchool, Avatar — <strong>אפס אזכורים</strong> בפרוטוקולים מוניציפליים. ההשפעה עוברת דרך ארגונים אחרים.</p>
+    <table>
+        <tr><th>ארגון</th><th>מטרה גלויה</th><th>נקודת כניסה עירונית</th><th>ערים</th><th>רמת הטמעה</th></tr>
+        <tr class="highlight"><td>המכון הדמוקרטי</td><td>חינוך לדמוקרטיה</td><td><strong>יושב בוועדת חינוך</strong>, מפעיל תוכניות, 100K ₪ לבי"ס</td><td>הרצליה, באר שבע</td><td><span class="badge red">עמוק</span></td></tr>
+        <tr class="highlight"><td>דרור ישראל</td><td>חינוך נוער</td><td><strong>600+ תושבים מוטמעים בשכונה</strong> (קיבוץ מחנכים עירוני)</td><td>חיפה</td><td><span class="badge red">עמוק</span></td></tr>
+        <tr><td>תהל"ה</td><td>תמיכת הורים להט"ב</td><td>דרך <strong>מחלקת בריאות</strong> (לא חינוך)</td><td>הרצליה, באר שבע</td><td><span class="badge orange">ממוסד</span></td></tr>
+        <tr><td>חוש"ן</td><td>חינוך להט"ב</td><td>מפגשים עם תלמידים בבתי ספר</td><td>רעננה (אוזכר)</td><td><span class="badge orange">ממוסד</span></td></tr>
+        <tr><td>מצמיחים</td><td>מניעת אלימות</td><td>הרצאות בוועדות חינוך</td><td>הרצליה, באר שבע</td><td><span class="badge blue">מוזמן</span></td></tr>
+        <tr><td>השומר הצעיר</td><td>תנועת נוער</td><td>מימון שוטף, הקצאות מבנים</td><td>הרצליה, חיפה, הוד השרון</td><td><span class="badge blue">מימון</span></td></tr>
+        <tr><td>מכון הרטמן</td><td>ספרי לימוד</td><td>ספרים בתוכנית הלימודים</td><td>הרצליה</td><td><span class="badge blue">תוכן</span></td></tr>
+        <tr><td>אדם טבע ודין</td><td>חוק סביבתי</td><td>לחץ חיצוני על תכנון</td><td>הרצליה, ראש העין</td><td><span class="badge gray">חיצוני</span></td></tr>
+        <tr><td>רוח נשית</td><td>אלימות נגד נשים</td><td>רשת מתנדבות ב-7+ ערים</td><td>גבעתיים (+7)</td><td><span class="badge blue">רשת</span></td></tr>
+        <tr><td>ACRI</td><td>זכויות אזרח</td><td>ידיד בית המשפט</td><td>באר שבע</td><td><span class="badge gray">משפטי</span></td></tr>
+    </table>
+</div>
+
+<div class="section">
+    <h2>הטמעה לעומק — דוגמאות</h2>
+    <div class="expand-section" onclick="this.classList.toggle('open')">
+        <div class="expand-header">
+            <span class="eh-title">המכון הדמוקרטי בהרצליה — יושב בוועדת חינוך</span>
+            <span class="eh-arrow">▼</span>
+        </div>
+        <div class="expand-body">
+            <div class="quote-box blue">
+                <p>ידענו את זה וצפינו את זה, ועכשיו דברים נפתחים [...] המוזיקת הרקע שהילדים שומעים היא מאוד לוחמנית. יש לנו מצפן ערכים מקומי בהרצליה [...] גייסנו את אלון ממועצת החינוך העברי-ממלכתי ואת דורון מהמכון הדמוקרטי למשימה חשובה הזאת.</p>
+                <div class="q-source">עדר ארד, מנהלת אגף חינוך הרצליה — ועדת חינוך, אינדקס 750, 5.11.2025</div>
+            </div>
+            <p>המכון הדמוקרטי לא רק מקבל מימון — <strong>"מנהל שותפויות" שלו יושב בוועדת החינוך העירונית</strong>. המכון "כבר מפעיל תוכניות במוסדות החינוך של העיר" ומכין הצעה להרחבה. 100,000 ₪ מוקצים לכל בית ספר יסודי.</p>
+            <p><a href="https://www.herzliya.muni.il/protocols/" target="_blank">מקור: פרוטוקולי הרצליה, אינדקסים 750, 794</a></p>
+        </div>
+    </div>
+    <div class="expand-section" onclick="this.classList.toggle('open')">
+        <div class="expand-header">
+            <span class="eh-title">תהל"ה בהרצליה — כניסה דרך מחלקת בריאות</span>
+            <span class="eh-arrow">▼</span>
+        </div>
+        <div class="expand-body">
+            <p>עמותת תהל"ה מפעילה קבוצת תמיכה <strong>במרכז הבריאות העירוני</strong>, בשיתוף <strong>מחלקת הבריאות העירונית</strong> — לא מחלקת חינוך. מפגשים חודשיים, ימי ראשון, 19:30-22:00.</p>
+            <p><strong>מנגנון הכניסה</strong>: מחלקת בריאות פחות פוליטית ממחלקת חינוך. רק סוכן סינון אחד מתוך שניים סימן את המסמך כרלוונטי.</p>
+            <p><a href="https://www.herzliya.muni.il/protocols/" target="_blank">מקור: אינדקסים 17, 1707</a></p>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<!-- ═══ TAB 5: BLOCKED ═══ -->
+<div id="tab-blocked" class="view">
+
+<div class="section">
+    <h2>החצי השני — מה נחסם באותם צמתי החלטה</h2>
+    <p>ניתוח מינצנברגי שלם בודק את <strong>שני הצדדים</strong>: מה מקודם ומה נחסם. הנתונים מגלים א-סימטריה ברורה.</p>
+</div>
+
+<div class="section">
+    <h2>הרצליה — הדרה מבנית של עסקים שומרי שבת</h2>
+    <div class="compare-row">
+        <div class="compare-col promoted">
+            <h3 style="color:#27ae60;">מה מקודם</h3>
+            <ul>
+                <li>הצהרת אנטי-אפליה — ללא הצבעה</li>
+                <li>"אף תוכנית ליברלית לא תופסק"</li>
+                <li>תהל"ה מוטמעת דרך מחלקת בריאות</li>
+                <li>המכון הדמוקרטי יושב בוועדת חינוך</li>
+            </ul>
+        </div>
+        <div class="compare-arrow">⟷</div>
+        <div class="compare-col blocked">
+            <h3 style="color:#c0392b;">מה נחסם</h3>
+            <ul>
+                <li><strong>מכרז פוד טראקים (2026)</strong>: דרישת הפעלה 7 ימים בשבוע ב-7 אזורים מרכזיים — הדרה מוחלטת של עסקים שומרי שבת</li>
+                <li>תקציב כוללים ותרבות תורנית מותקפים כהפרת סטטוס קוו</li>
+                <li>עתירה לבג"ץ נגד עמדת שר הפנים על חוק שבת</li>
+            </ul>
+        </div>
+    </div>
+    <div class="quote-box">
+        <p>הסטטוס קוו <strong>לא</strong> מחייב תקצוב 1,420,000 ש"ח מתקציב העירייה לתמיכה בכוללים [...] הסטטוס קוו <strong>לא</strong> מחייב הקמת מחלקה לתרבות תורנית שאיכשהו שינתה את שמה לתרבות יהודית, והקצאת מאות אלפי שקלים לכל סיעה דתית במועצה.</p>
+        <div class="q-source">חבר מועצה לונדון, ישיבת מועצה מיוחדת, 9.8.2018 — <a href="https://www.herzliya.muni.il/protocols/" target="_blank">אינדקס 479</a></div>
+    </div>
+</div>
+
+<div class="section">
+    <h2>באר שבע — חיכוך בירוקרטי על הקצאות דת</h2>
+    <div class="grid-3">
+        <div class="metric alert"><div class="label">פרוטוקולי הקצאה עם התנגדות</div><div class="value">17</div><div class="note">2017-2025</div></div>
+        <div class="metric alert"><div class="label">נעילת מנעולים ופינוי ספרי תורה</div><div class="value">1</div><div class="note">מאי 2021</div></div>
+        <div class="metric"><div class="label">מרכז חב"ד — אישור מותנה</div><div class="value">1 שנה</div><div class="note">למרות ביקורות נקיות</div></div>
+    </div>
+    <div class="expand-section" onclick="this.classList.toggle('open')">
+        <div class="expand-header">
+            <span class="eh-title">נעילת בית כנסת במקלט — מאי 2021 (אינדקס 413)</span>
+            <span class="eh-arrow">▼</span>
+        </div>
+        <div class="expand-body">
+            <p>עמותת קול יהודה הפעילה בית כנסת במקלט. למרות שבדיקות עירוניות <strong>לא מצאו הפרות רעש</strong>, העירייה:</p>
+            <ol>
+                <li>שלחה הודעת הפסקת פעילות</li>
+                <li>העמותה המשיכה להתפלל</li>
+                <li>העירייה <strong>החליפה את המנעולים</strong> במקלט</li>
+                <li>ספרי תורה פונו מהמקום</li>
+            </ol>
+            <p><a href="https://www.beer-sheva.muni.il/" target="_blank">מקור: פרוטוקול ועדת הקצאות 22/779</a></p>
+        </div>
+    </div>
+    <div class="expand-section" onclick="this.classList.toggle('open')">
+        <div class="expand-header">
+            <span class="eh-title">קהילה רוסית ממתינה שנים למרכז תורני (אינדקס 160)</span>
+            <span class="eh-arrow">▼</span>
+        </div>
+        <div class="expand-body">
+            <p>1,000-1,500 תושבים דוברי רוסית בשכונת נווה זאב. בית כנסת קיים פועל מ<strong>40 מ"ר</strong> — נשים וילדים לא נכנסים, מתפללים בחוץ.</p>
+            <p>הקצאה קודמת <strong>בוטלה</strong>, הקרקע <strong>הוחלפה</strong> מתחתיהם. העירייה <strong>התעלמה מהבקשה שנים</strong>.</p>
+            <p><a href="https://www.beer-sheva.muni.il/" target="_blank">מקור: ועדת הקצאות 2-23, 21.5.2024</a></p>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <h2>גבעת שמואל — א-סימטריית תקציב</h2>
+    <div class="quote-box">
+        <p>תקציב שנתי ל"תרבות תורנית" שהוקצה ע"י העירייה: <strong>כ-300 ש"ח</strong> (כ-80$).</p>
+        <div class="q-source">חבר מועצה משה בוקייק, ישיבת מליאה 5/2019 — <a href="#" target="_blank">אינדקס 312</a></div>
+    </div>
+    <p>בוקייק תיעד: "רבנים עם כיפות סרוגות באים בעשרות אבל רבנים חרדים לא מובאים." תגובת העירייה: "המתנ"ס מנהל תרבות תורנית ומשרת את כלל האוכלוסייה כולל הדתית."</p>
+</div>
+
+<div class="section">
+    <h2>חיפה — שירותי דת דורשים חילוץ קואליציוני</h2>
+    <p>הסכם קואליציוני עם ש"ס (אינדקס 818) חושף שתשתית דתית בסיסית — נגישות בתי כנסת, מקוואות, תכנות מורשת, העסקה שוויונית — נדרשה <strong>כוויתור קואליציוני</strong>, לא כשירות עירוני סטנדרטי:</p>
+    <ul>
+        <li>"אפליה מתקנת לאפליה ששררה בעיר חיפה שנים" — הודאה מפורשת בהזנחה</li>
+        <li>תקציב מינימום 1 מיליון ₪ לשנה ל"מורשת מזרחית" — הובטח חוזית</li>
+        <li>הקצאות קרקע לבתי כנסת כולל מקוואות — לפי נהלי משרד הפנים</li>
+    </ul>
+    <p><a href="https://www.haifa.muni.il/city-and-muni/city-council/protocols/" target="_blank">מקור: הסכם קואליציוני ש"ס, אינדקס 818, נובמבר 2020</a></p>
+</div>
+
+</div>
+
+<!-- ═══ TAB 6: SOURCES ═══ -->
+<div id="tab-sources" class="view">
+
+<div class="section">
+    <h2>מקורות ראשוניים — פרוטוקולים עירוניים</h2>
+    <table>
+        <tr><th>עיר</th><th>פרוטוקולים</th><th>מסוננים</th><th>ממצאים</th><th>קישור</th></tr>
+        <tr><td>הרצליה</td><td>1,814</td><td>108</td><td>7</td><td><a href="https://www.herzliya.muni.il/protocols/" target="_blank">אתר עיריית הרצליה</a></td></tr>
+        <tr><td>חיפה</td><td>1,499</td><td>163</td><td>5</td><td><a href="https://www.haifa.muni.il/city-and-muni/city-council/protocols/" target="_blank">אתר עיריית חיפה</a></td></tr>
+        <tr><td>רעננה</td><td>1,110</td><td>78</td><td>5</td><td><a href="https://www.raanana.muni.il/protocols/" target="_blank">אתר עיריית רעננה</a></td></tr>
+        <tr><td>גבעתיים</td><td>779</td><td>61</td><td>5</td><td><a href="https://www.givatayim.muni.il/protocols/" target="_blank">אתר עיריית גבעתיים</a></td></tr>
+        <tr><td>באר שבע</td><td>1,013</td><td>—</td><td>17 (חסימות)</td><td><a href="https://www.beer-sheva.muni.il/" target="_blank">אתר עיריית באר שבע</a></td></tr>
+        <tr><td>הוד השרון</td><td>—</td><td>—</td><td>1</td><td><a href="https://www.hod-hasharon.muni.il/protocols/" target="_blank">אתר עיריית הוד השרון</a></td></tr>
+        <tr><td>גבעת שמואל</td><td>—</td><td>—</td><td>2 (תקציב)</td><td>—</td></tr>
+    </table>
+</div>
+
+<div class="section">
+    <h2>אתרי מחקר קשורים</h2>
+    <a class="link-card" href="https://aosshalem-dev.github.io/derug-arim-site/" target="_blank">
+        <div><div class="lc-title">דירוג ערים — אתר ראשי</div><div class="lc-desc">דירוג משולב של 18 ערים: חינוך, פרוטוקולים, בחירות, חדשות, דגלים אדומים</div></div>
+    </a>
+    <a class="link-card" href="https://aosshalem-dev.github.io/progressive-rosetta-stone/" target="_blank">
+        <div><div class="lc-title">אבן הרוזטה — מיפוי טרמינולוגי</div><div class="lc-desc">ניתוח קטקו-איילי: 12 תרגומי מונחים, 15 טכניקות, מודל 3 שלבים. אותו מודל, שתי שפות</div></div>
+    </a>
+    <a class="link-card" href="https://aosshalem-dev.github.io/sel-research/" target="_blank">
+        <div><div class="lc-title">מחקר SEL — למידה חברתית-רגשית</div><div class="lc-desc">כלי ההובלה (delivery vehicle) של מסגרת קטקו-איילי. מ"מודעות עצמית" ל"בחינת הטיות סמויות"</div></div>
+    </a>
+    <a class="link-card" href="https://aosshalem-dev.github.io/shefi-research/" target="_blank">
+        <div><div class="lc-title">מחקר שפ"י — שירות פסיכולוגי-ייעוצי</div><div class="lc-desc">זרוע היישום של משרד החינוך. שלב ה-Lock-in במודל</div></div>
+    </a>
+    <a class="link-card" href="https://www.gnostocracy.com/" target="_blank">
+        <div><div class="lc-title">גנוסטוקרטיה — ניתוח מבני</div><div class="lc-desc">מסגרת תיאורטית: שלטון ע"י ידע מיוחס, עמימות כמאפיין מערכתי</div></div>
+    </a>
+    <a class="link-card" href="https://gnostocracy.com/ranking/research_input/" target="_blank">
+        <div><div class="lc-title">כלי מחקר תוכניות חינוכיות</div><div class="lc-desc">31 תוכניות חינוכיות — שמות, מספרי פריסה, כלי איסוף נתונים</div></div>
+    </a>
+</div>
+
+<div class="section">
+    <h2>דוחות מחקר ארגוניים</h2>
+    <div class="grid-3">
+        <a class="link-card" href="deep_CHOSHEN.html"><div><div class="lc-title">חוש"ן</div><div class="lc-desc">חינוך להט"ב בבתי ספר</div></div></a>
+        <a class="link-card" href="deep_Democratic_Institute.html"><div><div class="lc-title">המכון הדמוקרטי</div><div class="lc-desc">חינוך לדמוקרטיה, מצפן ערכים</div></div></a>
+        <a class="link-card" href="deep_SafeSchool.html"><div><div class="lc-title">SafeSchool</div><div class="lc-desc">בטיחות/אלימות בבתי ספר</div></div></a>
+        <a class="link-card" href="safeschool_dashboard.html"><div><div class="lc-title">דשבורד SafeSchool</div><div class="lc-desc">5 טאבים, נתונים אינטראקטיביים</div></div></a>
+        <a class="link-card" href="deep_Dror_Israel.html"><div><div class="lc-title">דרור ישראל</div><div class="lc-desc">תנועת נוער, קיבוצים עירוניים</div></div></a>
+        <a class="link-card" href="deep_HaShomer_HaTzair.html"><div><div class="lc-title">השומר הצעיר</div><div class="lc-desc">תנועת נוער, מימון עירוני</div></div></a>
+    </div>
+</div>
+
+<div class="section">
+    <h2>מתודולוגיה</h2>
+    <ul>
+        <li><strong>מקור נתונים</strong>: 10,211 עמודי פרוטוקול ראשונים (preprocessed_first_pages.json) מ-15 ערים</li>
+        <li><strong>סינון</strong>: שני סוכני AI עצמאיים סיננו כל פרוטוקול. רק פרוטוקולים שסומנו ע"י שני הסוכנים נכללו כ"ביטחון גבוה". שיעור הסכמה: 90-94%</li>
+        <li><strong>ניתוח</strong>: 537 פרוטוקולים מסוננים נקראו בשלמות. 23 ממצאים אמיתיים (שיעור hit: 4.3%). טקסט עברי הפוך (סדר חזותי מחילוץ PDF) — כל שורה נקראה מימין לשמאל</li>
+        <li><strong>אימות ארגוני</strong>: חיפוש בכל 15 הערים אחר 20 ארגונים ספציפיים. 10 נמצאו, 10 עם אפס אזכורים. False positives הוסרו ידנית</li>
+        <li><strong>חסימות</strong>: חיפוש נפרד אחר פרוטוקולים בהם בקשות דתיות/מסורתיות נדחו, עוכבו, או נחסמו</li>
+        <li><strong>עלות API</strong>: $0 — כל הניתוח בוצע בשיחה אינטראקטיבית, ללא קריאות API חיצוניות</li>
+    </ul>
+</div>
+
+</div>
+
+</div>
+
+<footer>
+    <p>ניתוח מבוסס על נתונים ציבוריים מפרוטוקולים מוניציפליים | <a href="../index.html">דירוג ערים</a> | <a href="https://aosshalem-dev.github.io/progressive-rosetta-stone/">אבן הרוזטה</a></p>
+    <p style="margin-top:8px;">פברואר 2026</p>
+</footer>
+
+<script>
+function showTab(id) {
+    document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    // find matching tab button
+    const tabs = document.querySelectorAll('.nav-tab');
+    const map = {overview:0, techniques:1, cities:2, orgs:3, blocked:4, sources:5};
+    if (map[id] !== undefined) tabs[map[id]].classList.add('active');
+    window.scrollTo(0, 0);
+}
+</script>
+
+</body>
+</html>
