@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SafeSchool Analytics — דשבורד מחקר</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+    background: #f5f5f8;
+    color: #1a1a2e;
+    direction: rtl;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+/* ── Navigation ── */
+nav {
+    position: sticky; top: 0; z-index: 100;
+    background: #1a1a2e; color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+.nav-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 20px;
+}
+.nav-brand {
+    font-weight: 700; font-size: 1.05em; padding: 12px 0;
+    white-space: nowrap; display: flex; align-items: center; gap: 10px;
+}
+.nav-brand a { color: #aab; text-decoration: none; font-size: 0.82em; font-weight: 400; }
+.nav-brand a:hover { color: #ff8800; }
+.risk-pill {
+    display: inline-block; padding: 2px 12px; border-radius: 12px;
+    font-size: 0.72em; font-weight: 600;
+    background: #e74c3c; color: #fff; margin-right: 8px;
+}
+.nav-tabs { display: flex; gap: 0; }
+.nav-tab {
+    padding: 14px 16px; cursor: pointer; font-size: 0.82em;
+    border-bottom: 3px solid transparent; transition: all 0.2s;
+    color: #aab; white-space: nowrap; background: none; border-top: none; border-left: none; border-right: none;
+    font-family: inherit;
+}
+.nav-tab:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.nav-tab.active { color: #fff; border-bottom-color: #ff8800; font-weight: 600; }
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, #1a1a2e 0%, #2a5a8a 100%);
+    color: #fff; padding: 40px 20px 30px; text-align: center;
+}
+.hero h1 { font-size: 1.7em; font-weight: 700; margin-bottom: 8px; }
+.hero .subtitle { color: #b0c4de; font-size: 1em; margin-bottom: 4px; }
+.hero .meta { color: #ff8800; font-size: 0.88em; margin-top: 8px; }
+
+/* ── Layout ── */
+.container { max-width: 1100px; margin: 0 auto; padding: 24px 20px 60px; }
+.view { display: none; }
+.view.active { display: block; }
+
+/* ── Cards & Sections ── */
+.section {
+    background: #fff; border-radius: 8px; padding: 26px;
+    margin-bottom: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.section h2 { font-size: 1.3em; color: #1a1a2e; margin-bottom: 14px; padding-bottom: 6px; border-bottom: 2px solid #667eea; }
+.section h3 { font-size: 1.05em; color: #2a5a8a; margin: 16px 0 8px; }
+.section p { margin-bottom: 10px; }
+
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 24px; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
+@media (max-width: 768px) {
+    .grid-3 { grid-template-columns: 1fr; }
+    .grid-2 { grid-template-columns: 1fr; }
+    .nav-tabs { overflow-x: auto; }
+}
+
+/* ── Metric cards ── */
+.metric {
+    background: #f8f9fa; padding: 16px; border-radius: 8px;
+    text-align: center; border: 1px solid #e8e8e8;
+    transition: transform 0.2s;
+}
+.metric:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+.metric .label { font-size: 0.82em; color: #666; margin-bottom: 4px; }
+.metric .value { font-size: 1.8em; font-weight: 800; color: #2a5a8a; }
+.metric .note { font-size: 0.75em; color: #999; margin-top: 2px; }
+.metric.alert { border-right: 4px solid #e74c3c; }
+.metric.alert .value { color: #e74c3c; }
+
+/* ── Chart container ── */
+.chart-wrap {
+    position: relative; width: 100%; max-width: 500px;
+    height: 320px; margin: 0 auto;
+}
+
+/* ── Finding cards ── */
+.finding {
+    display: flex; gap: 12px; padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+.finding:last-child { border-bottom: none; }
+.finding .icon { font-size: 1.5em; flex-shrink: 0; }
+.finding h4 { font-weight: 700; color: #1a1a2e; margin-bottom: 2px; font-size: 0.95em; }
+.finding p { font-size: 0.88em; color: #555; }
+
+/* ── Table ── */
+table { width: 100%; border-collapse: collapse; font-size: 0.88em; margin: 14px 0; }
+th { background: #667eea; color: #fff; padding: 8px 12px; text-align: right; }
+td { padding: 8px 12px; border-bottom: 1px solid #eee; }
+tr.highlight { background: #fff5f5; }
+tr.highlight td { font-weight: 500; }
+
+/* ── Flip cards ── */
+.flip-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; margin: 16px 0; }
+.flip-card {
+    perspective: 800px; cursor: pointer; height: 150px;
+}
+.flip-inner {
+    position: relative; width: 100%; height: 100%;
+    transition: transform 0.5s; transform-style: preserve-3d;
+}
+.flip-card.flipped .flip-inner { transform: rotateY(180deg); }
+.flip-front, .flip-back {
+    position: absolute; width: 100%; height: 100%;
+    backface-visibility: hidden; border-radius: 8px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 14px; text-align: center;
+}
+.flip-front {
+    background: #f0f4fa; border: 1px solid #d4daf0;
+}
+.flip-front .term-icon { font-size: 1.8em; margin-bottom: 6px; }
+.flip-front .term-name { font-weight: 700; color: #2a5a8a; font-size: 1.05em; }
+.flip-front .term-hint { font-size: 0.7em; color: #999; margin-top: 6px; }
+.flip-back {
+    background: #fff5f5; border: 1px solid #f0d4d4;
+    transform: rotateY(180deg);
+}
+.flip-back .reveal-title { font-weight: 700; color: #8b0000; font-size: 0.85em; margin-bottom: 6px; }
+.flip-back .reveal-text { font-size: 0.82em; color: #444; line-height: 1.5; }
+
+/* ── Evidence chain ── */
+.depth-level {
+    border-right: 3px solid #667eea; margin: 12px 0;
+    background: #fafbff; border-radius: 0 8px 8px 0;
+    overflow: hidden;
+}
+.depth-header {
+    display: flex; align-items: center; gap: 10px;
+    padding: 12px 16px; cursor: pointer;
+    transition: background 0.2s;
+}
+.depth-header:hover { background: #f0f4fa; }
+.depth-header .d-icon { font-size: 1.3em; }
+.depth-header .d-title { font-weight: 700; color: #1a1a2e; }
+.depth-header .d-sub { font-size: 0.82em; color: #666; }
+.depth-header .d-arrow { margin-right: auto; color: #999; transition: transform 0.3s; }
+.depth-level.open .depth-header .d-arrow { transform: rotate(180deg); }
+.depth-body {
+    max-height: 0; overflow: hidden; transition: max-height 0.4s ease;
+    padding: 0 16px;
+}
+.depth-level.open .depth-body { max-height: 800px; padding: 0 16px 16px; }
+.depth-quote {
+    background: #fff; border-right: 3px solid #cc0000;
+    padding: 8px 14px; margin: 8px 0; border-radius: 0 4px 4px 0;
+    font-size: 0.9em; color: #333; font-style: italic;
+}
+.depth-next {
+    display: inline-block; margin-top: 10px; padding: 6px 14px;
+    background: #f0f4fa; border-radius: 4px; font-size: 0.82em;
+    color: #2a5a8a; cursor: default;
+}
+
+/* ── Warning box ── */
+.warning-box {
+    background: #fff5f5; border-right: 4px solid #cc0000;
+    padding: 14px 18px; border-radius: 0 6px 6px 0;
+    margin: 14px 0;
+}
+.warning-box strong { color: #8b0000; }
+
+/* ── Links row ── */
+.link-card {
+    display: flex; gap: 10px; padding: 10px 14px;
+    background: #f8f9fa; border-radius: 6px; border: 1px solid #e8e8e8;
+    text-decoration: none; color: inherit; transition: all 0.2s;
+    margin-bottom: 8px;
+}
+.link-card:hover { border-color: #667eea; background: #f0f4fa; }
+.link-card .lc-icon { font-size: 1.3em; }
+.link-card .lc-title { font-weight: 600; color: #2a5a8a; font-size: 0.9em; }
+.link-card .lc-desc { font-size: 0.78em; color: #666; }
+
+/* ── Questions list ── */
+.q-list { list-style: none; padding: 0; }
+.q-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.9em; }
+.q-list li::before { content: "❓ "; }
+
+/* ── Footer ── */
+footer {
+    background: #1a1a2e; color: #667; padding: 20px;
+    text-align: center; font-size: 0.82em;
+}
+footer a { color: #ff8800; text-decoration: none; }
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+    <div class="nav-inner">
+        <div class="nav-brand">
+            <span>SafeSchool Analytics</span>
+            <span class="risk-pill">סיכון קריטי</span>
+            <a href="../">← דירוג ערים</a>
+            <a href="deep_SafeSchool.html">דוח מלא</a>
+        </div>
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="navigate('overview')">מבט על</button>
+            <button class="nav-tab" onclick="navigate('finance')">מעקב כסף</button>
+            <button class="nav-tab" onclick="navigate('content')">ניתוח תוכן</button>
+            <button class="nav-tab" onclick="navigate('evidence')">שרשרת ראיות</button>
+            <button class="nav-tab" onclick="navigate('conclusions')">סיכום</button>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero -->
+<div class="hero">
+    <h1>סייף סקול אנליטיקס בע"מ</h1>
+    <div class="subtitle">חברת רווח (לא עמותה) | ח.פ. 516296886 | הוקמה: דצמבר 2020</div>
+    <div class="meta">מ-0 ל-1,200+ בתי ספר בארבע שנים | 4 בכירי משרד החינוך לשעבר</div>
+</div>
+
+<div class="container">
+
+    <!-- ═══════ TAB: OVERVIEW ═══════ -->
+    <div id="view-overview" class="view active">
+
+        <div class="section">
+            <h2>תעודת זהות ארגונית</h2>
+            <p>SafeSchool מציגה עצמה כפלטפורמת "בטיחות ברשת" ו"למידה רגשית-חברתית" (SEL). בפועל, הפלטפורמה מעבירה תכנים מקיפים בחינוך מיני ומגדרי — כולל הצגת ספקטרום מגדרי של חמש זהויות — מאחורי חומת תשלום שהורים לא יכולים לצפות בה.</p>
+
+            <div class="grid-3">
+                <div class="metric">
+                    <div class="label">בתי ספר פעילים</div>
+                    <div class="value">1,200+</div>
+                    <div class="note">גידול מ-0 בתוך 4 שנים</div>
+                </div>
+                <div class="metric">
+                    <div class="label">גיוס הון כולל</div>
+                    <div class="value">$2.5-3M</div>
+                    <div class="note">ניר זוהר (WIX), גל גדות, עמית אדרי</div>
+                </div>
+                <div class="metric alert">
+                    <div class="label">ציון סיכון ערכי</div>
+                    <div class="value">קריטי (4/5)</div>
+                    <div class="note">ג'ימיני נתנה 1/10 — שגוי לחלוטין</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="grid-2">
+                <div>
+                    <h3>פרופיל סיכון: תדמית מול מציאות</h3>
+                    <p style="font-size:0.85em;color:#666">השטח הכתום מראה את הסיכון בפועל. השטח הירוק — מה שהחברה מציגה. הפער ביניהם הוא הממצא.</p>
+                    <div class="chart-wrap">
+                        <canvas id="radarChart"></canvas>
+                    </div>
+                </div>
+                <div>
+                    <h3>ממצאים קריטיים</h3>
+                    <div class="finding">
+                        <div class="icon">🚪</div>
+                        <div>
+                            <h4>דלת מסתובבת</h4>
+                            <p>4 בכירי משרד החינוך לשעבר עובדים בחברה: מנכ"ל המשרד, מנהלת שפ"י, רכזת מניעת אלימות, מנהלת למידה מרחוק.</p>
+                        </div>
+                    </div>
+                    <div class="finding">
+                        <div class="icon">🔒</div>
+                        <div>
+                            <h4>תוכן מאחורי חומת תשלום</h4>
+                            <p>הורים לא יכולים לצפות בתכנים שילדיהם רואים. הסרטון שתמללנו מלמד 5 זהויות מגדריות כ"מגוון יפהפה".</p>
+                        </div>
+                    </div>
+                    <div class="finding">
+                        <div class="icon">🎭</div>
+                        <div>
+                            <h4>מעטפת בטיחות, תוכן אידיאולוגי</h4>
+                            <p>המסר המרכזי בסרטון: "מגדר הוא לא דבר טבעי, אלא נלמד" — הטענה המרכזית של תיאוריית הקוויר.</p>
+                        </div>
+                    </div>
+                    <div class="finding">
+                        <div class="icon">📊</div>
+                        <div>
+                            <h4>אי-שקיפות מובנית</h4>
+                            <p>אין מדיניות פרטיות פומבית, אין מנגנון הסכמת הורים מתועד, בעלות על נתוני תלמידים לא ברורה.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>אנשי מפתח</h2>
+            <table>
+                <tr><th>שם</th><th>תפקיד ב-SafeSchool</th><th>רקע</th><th>הערת חוקר</th></tr>
+                <tr><td><strong>דורון הרמן</strong></td><td>מייסד, מנכ"ל משותף</td><td>עיתונאי, רשת 13</td><td>—</td></tr>
+                <tr><td><strong>ניר זוהר</strong></td><td>מייסד שותף, משקיע ראשי</td><td>נשיא WIX</td><td>גיוס $2M seed</td></tr>
+                <tr class="highlight"><td><strong>עמית אדרי</strong></td><td>יו"ר דירקטוריון + משקיע</td><td>מנכ"ל משרד החינוך לשעבר</td><td>דלת מסתובבת — סיכון קריטי</td></tr>
+                <tr class="highlight"><td><strong>חנה שדמי</strong></td><td>מנטורית פסיכולוגית</td><td>מנהלת שפ"י לשעבר</td><td>דלת מסתובבת</td></tr>
+                <tr class="highlight"><td><strong>ליאת דותן</strong></td><td>צוות מקצועי</td><td>רכזת ארצית למניעת אלימות לשעבר</td><td>דלת מסתובבת</td></tr>
+                <tr class="highlight"><td><strong>גילי סטנסקו</strong></td><td>הצלחת לקוחות</td><td>מנהלת למידה מרחוק לשעבר</td><td>דלת מסתובבת</td></tr>
+                <tr><td><strong>דותן גבע</strong></td><td>מנכ"ל משותף</td><td>—</td><td>מונה ~2024</td></tr>
+                <tr><td><strong>יפעת טאו</strong></td><td>משנה למנכ"ל, תוכן</td><td>—</td><td>אחראית על 600+ סרטוני תוכן</td></tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- ═══════ TAB: FINANCE ═══════ -->
+    <div id="view-finance" class="view">
+
+        <div class="section">
+            <h2>ניתוח מקורות מימון</h2>
+            <p>SafeSchool היא חברת בע"מ (לא עמותה) — ולכן <strong>לא חייבת בדיווח כספי פומבי</strong>. זהו ממצא כשלעצמו: ארגון שחודר למערכת החינוך הציבורית אינו כפוף לשקיפות של רשם העמותות.</p>
+
+            <div class="grid-2">
+                <div>
+                    <h3 style="text-align:center">מקורות הכנסה (הערכה)</h3>
+                    <div class="chart-wrap" style="height:280px">
+                        <canvas id="financeChart"></canvas>
+                    </div>
+                </div>
+                <div>
+                    <h3>סבבי גיוס</h3>
+                    <table>
+                        <tr><th>סבב</th><th>סכום</th><th>משקיע מוביל</th></tr>
+                        <tr><td>Seed</td><td>~$1M</td><td>ניר זוהר (WIX)</td></tr>
+                        <tr><td>הרחבת Seed</td><td>$2M כולל</td><td>ניר זוהר</td></tr>
+                        <tr><td>סלבריטאים</td><td>מאות אלפי $</td><td>גל גדות + ירון ורסנו</td></tr>
+                        <tr class="highlight"><td>אסטרטגי</td><td>מאות אלפי ₪</td><td>עמית אדרי (מנכ"ל משרד לשעבר)</td></tr>
+                        <tr><td>נוסף</td><td>לא פורסם</td><td>רותם סלע + אריאל רוטר</td></tr>
+                    </table>
+
+                    <div class="warning-box" style="margin-top:16px">
+                        <strong>שימו לב:</strong> מנכ"ל משרד החינוך לשעבר <strong>גם משקיע וגם יו"ר דירקטוריון</strong>. זהו ניגוד עניינים מובנה — מי שפיקח על מערכת החינוך מרוויח כעת מחדירת מוצר אליה.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>העברות ממשלתיות ישירות (3 שנים)</h2>
+            <p>הסכום הממשלתי הישיר נמוך להפתיע — מה שמעיד על מודל עסקי של מנוי ישיר מבתי ספר (עוקף בקרה מרכזית).</p>
+            <table>
+                <tr><th>מקור</th><th>סכום</th><th>הערה</th></tr>
+                <tr><td>משרד החינוך — ממשק וירטואלי</td><td>₪45,000</td><td>—</td></tr>
+                <tr><td>משרד החינוך — אקלים והכשרת מורים</td><td>₪17,550</td><td>—</td></tr>
+                <tr><td>תוכנית גפ"ן #5974</td><td>₪11,700</td><td>התוכנית שאנו חוקרים</td></tr>
+                <tr><td>יוסי ועשהאל SafeSchool</td><td>₪4,914</td><td>—</td></tr>
+                <tr><td>משרד לביטחון לאומי</td><td>₪3,955</td><td>—</td></tr>
+                <tr style="font-weight:700;background:#f0f4fa"><td>סה"כ</td><td>₪83,119</td><td>~1% מגיוס ההון הכולל</td></tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- ═══════ TAB: CONTENT ANALYSIS ═══════ -->
+    <div id="view-content" class="view">
+
+        <div class="section">
+            <h2>מילון המונחים: מה מסתתר מאחורי המילים?</h2>
+            <p>SafeSchool משתמשת בשפה ניטרלית ("בטיחות", "SEL", "מגוון") כדי לעטוף תוכן אידיאולוגי. לחצו על כרטיס כדי לחשוף את המשמעות בפועל.</p>
+
+            <div class="flip-grid">
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-inner">
+                        <div class="flip-front">
+                            <div class="term-icon">🛡️</div>
+                            <div class="term-name">בטיחות ברשת</div>
+                            <div class="term-hint">לחץ להפוך</div>
+                        </div>
+                        <div class="flip-back">
+                            <div class="reveal-title">מה בפועל:</div>
+                            <div class="reveal-text">חומת תשלום מסתירה תכנים בחינוך מיני ומגדרי. הורים לא יכולים לצפות. 600+ סרטוני "masterclass" — רק חלקם עוסקים ברשת.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-inner">
+                        <div class="flip-front">
+                            <div class="term-icon">💡</div>
+                            <div class="term-name">SEL — למידה רגשית</div>
+                            <div class="term-hint">לחץ להפוך</div>
+                        </div>
+                        <div class="flip-back">
+                            <div class="reveal-title">מה בפועל:</div>
+                            <div class="reveal-text">מתודולוגיית SEL מושרשת בפדגוגיה ביקורתית (פאולו פריירה). משמשת כלי להחדרת תפיסות עולם תחת מעטפת "רגשית".</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-inner">
+                        <div class="flip-front">
+                            <div class="term-icon">🌈</div>
+                            <div class="term-name">מגוון יפהפה ומרגש</div>
+                            <div class="term-hint">לחץ להפוך</div>
+                        </div>
+                        <div class="flip-back">
+                            <div class="reveal-title">מה בפועל:</div>
+                            <div class="reveal-text">ציטוט ישיר מהסרטון. מציג 5 זהויות מגדריות כ"מגוון". המטרה לפי באטלר: ריבוי קטגוריות שולל את המין כקטגוריה.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-inner">
+                        <div class="flip-front">
+                            <div class="term-icon">🤝</div>
+                            <div class="term-name">הכלה וקבלה</div>
+                            <div class="term-hint">לחץ להפוך</div>
+                        </div>
+                        <div class="flip-back">
+                            <div class="reveal-title">מה בפועל:</div>
+                            <div class="reveal-text">"יש לנו כוח ליצור את החברה הזו" — מסר אקטיביסטי שמוצג כ"קבלה". מחליף נורמות מסורתיות בעמדה אידיאולוגית.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="grid-2">
+                <div>
+                    <h3>חדירה לבתי ספר (גידול שנתי)</h3>
+                    <div class="chart-wrap" style="height:280px">
+                        <canvas id="growthChart"></canvas>
+                    </div>
+                </div>
+                <div>
+                    <h3>תכנים מתועדים מאחורי חומת התשלום</h3>
+                    <p style="font-size:0.9em">מתוך תמלול סרטון שנמצא מאחורי ה-paywall:</p>
+                    <div class="depth-quote">"עדיין חשוב להכיר איך החברה שלנו פוגעת, ושמגדר הוא לא דבר טבעי, אלא נלמד."</div>
+                    <div class="depth-quote">"יש לנו כוח ליצור את החברה הזו."</div>
+                    <div class="depth-quote">"כמו שיש יותר ממינים של זכר ונקבה, כך גם יש יותר מגדרים מגבר ואישה."</div>
+                    <p style="font-size:0.82em;color:#888;margin-top:12px">
+                        מקור: <a href="https://youtu.be/226U6rJnPLc" target="_blank" style="color:#2a5a8a">YouTube</a> |
+                        תמלול מלא זמין בארכיון הפרויקט
+                    </p>
+
+                    <h3 style="margin-top:20px">נושאים מלומדים (לפי אתר SafeSchool)</h3>
+                    <ul style="padding-right:18px;font-size:0.88em;color:#444">
+                        <li>נטייה מינית וזהות מגדרית</li>
+                        <li>מיניות בריאה, דימוי גוף</li>
+                        <li>אמצעי מניעה</li>
+                        <li>פורנוגרפיה ודינמיקות כוח</li>
+                        <li>בריונות ושיימינג</li>
+                        <li>אקלים חברתי-רגשי</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════ TAB: EVIDENCE CHAIN ═══════ -->
+    <div id="view-evidence" class="view">
+
+        <div class="section">
+            <h2>שרשרת הראיות: מהילד בכיתה עד באטלר</h2>
+            <p>כל שכבה עונה על הספק מהשכבה הקודמת. אם אתה חושב "זה לא נשמע כל כך גרוע" — השכבה הבאה מסבירה למה כן.</p>
+
+            <!-- Level 1 -->
+            <div class="depth-level open" onclick="this.classList.toggle('open')">
+                <div class="depth-header">
+                    <span class="d-icon">🎬</span>
+                    <div>
+                        <div class="d-title">שכבה 1: מה התלמידים רואים בפועל</div>
+                        <div class="d-sub">תמלול הרצאת מגדר שמאחורי חומת תשלום</div>
+                    </div>
+                    <span class="d-arrow">▼</span>
+                </div>
+                <div class="depth-body">
+                    <p>סרטון SafeSchool (מאחורי paywall) מלמד תלמידי בית ספר חמש זהויות מגדריות: סיסג'נדר, טראנסג'נדר, בי-ג'נדר, פאן-ג'נדר, אי-ג'נדר.</p>
+                    <p>המסר המרכזי: <strong>"מגדר הוא לא דבר טבעי, אלא נלמד"</strong> — הטענה המרכזית של תיאוריית הקוויר, מוצגת כעובדה ניטרלית.</p>
+                    <div class="depth-quote">"עדיין חשוב להכיר איך החברה שלנו פוגעת, ושמגדר הוא לא דבר טבעי, אלא נלמד."</div>
+                    <div class="depth-quote">"יש לנו כוח ליצור את החברה הזו."</div>
+                    <p style="font-size:0.85em;color:#888">מקור: <a href="https://youtu.be/226U6rJnPLc" target="_blank" style="color:#2a5a8a">YouTube</a> | התוכן נמצא מאחורי חומת תשלום באתר SafeSchool</p>
+                    <div class="depth-next">אבל זה נשמע מקצועי ומטפל — מה הבעיה? ↓</div>
+                </div>
+            </div>
+
+            <!-- Level 2 -->
+            <div class="depth-level" onclick="this.classList.toggle('open')">
+                <div class="depth-header">
+                    <span class="d-icon">⚕️</span>
+                    <div>
+                        <div class="d-title">שכבה 2: הפסיכיאטרים מתנגדים</div>
+                        <div class="d-sub">איגוד הפסיכיאטרים לילד ולמתבגר נגד הנחיית משרד הבריאות</div>
+                    </div>
+                    <span class="d-arrow">▼</span>
+                </div>
+                <div class="depth-body">
+                    <p>איגוד הפסיכיאטרים לילד ולמתבגר בישראל (הסתדרות הרפואית) התנגד לטיוטת נוהל של משרד הבריאות בנושא התערבויות רפואיות בזהות מגדרית. הם מצאו כשלים חמורים:</p>
+                    <ul style="padding-right:18px;margin:10px 0">
+                        <li>הסתמכות על ראיות שאינן רלוונטיות לסוגיה</li>
+                        <li>אי-עמידה בפרוטוקולים רפואיים מקובלים</li>
+                        <li>הנחיות להורדת גיל ההתערבות הכירורגית ל-16</li>
+                        <li>התעלמות מחוות דעת מקצועיות</li>
+                    </ul>
+                    <p><strong>כאשר הפסיכיאטרים העלו את הביקורת — הם הודחו מתהליך כתיבת הנוהל.</strong> האתוס ה"מטפל" דחק את המדע שאמר "רגע, זה לא עובד ככה".</p>
+                    <p style="font-size:0.85em;color:#888">מקור: <a href="https://www.ima.org.il/MainSiteNew/EditClinic.aspx?ClinicId=252" target="_blank" style="color:#2a5a8a">אתר הר"י — הנחיות קליניות</a></p>
+                    <div class="depth-next">אז מאיפה הגיעה האידיאולוגיה הזו בכלל? ↓</div>
+                </div>
+            </div>
+
+            <!-- Level 3 -->
+            <div class="depth-level" onclick="this.classList.toggle('open')">
+                <div class="depth-header">
+                    <span class="d-icon">📚</span>
+                    <div>
+                        <div class="d-title">שכבה 3: השורש הפילוסופי — ג'ודית באטלר</div>
+                        <div class="d-sub">"ריבוי מינים ללא גבול שולל את המין כקטגוריה"</div>
+                    </div>
+                    <span class="d-arrow">▼</span>
+                </div>
+                <div class="depth-body">
+                    <p>ג'ודית באטלר (Gender Trouble, 1990) — הוגת תיאוריית הקוויר — טענה שריבוי קטגוריות מגדריות ישלול את המין כקטגוריה משמעותית בכלל. זו לא טעות בניסוח. זו המטרה המוצהרת: <strong>לא להכיל זהויות נוספות, אלא לחסל את המושג "זהות מינית" כולו.</strong></p>
+                    <div class="depth-quote" style="border-right-color:#4a0080">"The limitless proliferation of sexes [...] logically entails the negation of sex as such."<br>— Judith Butler, Gender Trouble (1990)</div>
+                    <p>באטלר רואה בהומוסקסואליות לא מטרה בפני עצמה, אלא <strong>אמצעי</strong> — "פרודיה של הנורמלי" שתכליתה לפרק את מושג הנורמליות עצמו.</p>
+                    <h3>שרשרת ההשפעה:</h3>
+                    <ul style="padding-right:18px;margin:10px 0">
+                        <li><strong>מרקס</strong> (1844) — החברה חייבת להיהרס לחלוטין</li>
+                        <li><strong>מרקוזה</strong> (שנות ה-60) — העברת הקו מכלכלה לתרבות</li>
+                        <li><strong>באטלר</strong> (1990) — ריבוי מגדרים כאמצעי לשלילת המין כקטגוריה</li>
+                        <li><strong>יישום בישראל</strong> — SafeSchool מלמדת ילדים חמש זהויות מגדריות כ"מגוון יפהפה ומרגש"</li>
+                    </ul>
+                    <p style="font-size:0.88em;color:#666">באטלר גם הגדירה את חמאס וחיזבאללה כ"תנועות פרוגרסיביות" — מה שמעיד על מסגרת המחשבה.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Links -->
+        <div class="section">
+            <h2>קישורים למחקר נוסף</h2>
+            <a class="link-card" href="https://aosshalem-dev.github.io/sel-research/" target="_blank">
+                <div class="lc-icon">🔗</div>
+                <div>
+                    <div class="lc-title">למה SEL בעייתי</div>
+                    <div class="lc-desc">מחקר מקיף: כיצד "למידה רגשית-חברתית" הפכה לכלי להסטת זהות חינוכית. מפריירה דרך מרקוזה ועד יישום בבתי ספר ישראליים.</div>
+                </div>
+            </a>
+            <a class="link-card" href="deep_SafeSchool.html">
+                <div class="lc-icon">🚪</div>
+                <div>
+                    <div class="lc-title">דלת מסתובבת: ממשרד החינוך ל-SafeSchool</div>
+                    <div class="lc-desc">דוח מחקר מעמיק: 4 בכירי משרד החינוך לשעבר עובדים בחברה. מודל של לכידה רגולטורית.</div>
+                </div>
+            </a>
+            <a class="link-card" href="Child_protection_with_ideological_overlay.html">
+                <div class="lc-icon">💰</div>
+                <div>
+                    <div class="lc-title">מימון מהקרן החדשה לישראל</div>
+                    <div class="lc-desc">SafeSchool פועלת במערכת אקולוגית של ארגוני "הגנת ילד" עם שכבה אידיאולוגית — כולם ממומנים מאותם מקורות.</div>
+                </div>
+            </a>
+            <a class="link-card" href="https://aosshalem-dev.github.io/progressive-rosetta-stone/" target="_blank">
+                <div class="lc-icon">🗝️</div>
+                <div>
+                    <div class="lc-title">אבן רוזטה — מילון ההסוואה</div>
+                    <div class="lc-desc">כיצד מונחים ניטרליים ("אזרחות פעילה", "פדגוגיה חדשנית", "צדק חברתי") מסווים תוכן אידיאולוגי.</div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- ═══════ TAB: CONCLUSIONS ═══════ -->
+    <div id="view-conclusions" class="view">
+
+        <div class="section" style="border-top:4px solid #e74c3c">
+            <h2>סיכום והמלצות</h2>
+
+            <div class="grid-2">
+                <div>
+                    <h3>המסקנה</h3>
+                    <p>SafeSchool Analytics מציגה מעטפת מקצועית של "בטיחות ברשת" — נושא שבקונצנזוס. עם זאת, מאחורי חומת התשלום מסתתר תוכן אידיאולוגי מובהק בחינוך מיני ומגדרי, המוצג כעובדה ולא כעמדה.</p>
+                    <p>ההפרדה בין המעטפת התמימה ("בטיחות") לתוכן בפועל ("מגדר הוא לא דבר טבעי") היא מכוונת ומובנית. חומת התשלום מבטיחה שהורים לא יראו את התכנים.</p>
+                    <p>הדלת המסתובבת (4 בכירי משרד החינוך) מספקת לגיטימציה מוסדית ודרכי חדירה ללא מכרזים ציבוריים.</p>
+
+                    <h3>ציוני ערכים</h3>
+                    <table>
+                        <tr><th>ציר</th><th>ציון</th></tr>
+                        <tr><td>שקיפות</td><td style="color:#e74c3c;font-weight:700">2/5</td></tr>
+                        <tr><td>הסכמת הורים</td><td style="color:#e74c3c;font-weight:700">2/5</td></tr>
+                        <tr><td>הגנת מידע</td><td style="color:#e74c3c;font-weight:700">2/5</td></tr>
+                        <tr><td>דלת מסתובבת</td><td style="color:#8b0000;font-weight:700">1/5</td></tr>
+                        <tr><td>שקיפות כספית</td><td style="color:#e74c3c;font-weight:700">2/5</td></tr>
+                        <tr><td>ניגוד עניינים</td><td style="color:#8b0000;font-weight:700">1/5</td></tr>
+                    </table>
+                </div>
+                <div>
+                    <h3>שאלות להורים ולמנהלי בתי ספר</h3>
+                    <ul class="q-list">
+                        <li>האם ידעתם שהתכנים מאחורי חומת תשלום ואינם פתוחים לצפייה?</li>
+                        <li>האם הייתה הסכמת הורים מפורשת (opt-in) לתכני חינוך מיני ומגדרי?</li>
+                        <li>האם צוות בית הספר נוכח בכל השיעורים?</li>
+                        <li>מי מממן את הפעילות — בית הספר, הרשות, או גורם חיצוני?</li>
+                        <li>האם ידוע לכם שמנכ"ל משרד החינוך לשעבר הוא יו"ר ומשקיע בחברה?</li>
+                        <li>אילו נתונים SafeSchool אוספת על התלמידים, ומי הבעלים של הנתונים?</li>
+                    </ul>
+
+                    <h3 style="margin-top:20px">הזדמנויות להעמקה</h3>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+                        <a class="link-card" href="#">
+                            <div class="lc-icon">📄</div>
+                            <div>
+                                <div class="lc-title">דוחות כספיים</div>
+                                <div class="lc-desc">בדיקת חשבונות חברת בע"מ ברשם החברות</div>
+                            </div>
+                        </a>
+                        <a class="link-card" href="#">
+                            <div class="lc-icon">📱</div>
+                            <div>
+                                <div class="lc-title">רשתות חברתיות</div>
+                                <div class="lc-desc">מיפוי עמדות בכירים בחברה</div>
+                            </div>
+                        </a>
+                        <a class="link-card" href="#">
+                            <div class="lc-icon">🎓</div>
+                            <div>
+                                <div class="lc-title">חומרי הדרכה</div>
+                                <div class="lc-desc">השגת מערכי שיעור פנימיים</div>
+                            </div>
+                        </a>
+                        <a class="link-card" href="#">
+                            <div class="lc-icon">🔒</div>
+                            <div>
+                                <div class="lc-title">מדיניות פרטיות</div>
+                                <div class="lc-desc">דרישת גילוי מדיניות נתונים</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>דשבורד מחקר — פרויקט זהות ציונית | <a href="../">דירוג ערים</a> | <a href="deep_SafeSchool.html">דוח מלא</a> | פברואר 2026</p>
+    <p style="margin-top:4px">כל הנתונים מבוססים על מקורות גלויים: אתר החברה, GuideStar, רשם החברות, תמלול סרטון מאומת, תקציב פתוח.</p>
+</footer>
+
+<script>
+// ── Navigation ──
+function navigate(tabId) {
+    document.querySelectorAll('.nav-tab').forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+    event.target.classList.add('active');
+    document.getElementById('view-' + tabId).classList.add('active');
+    window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+// ── Radar Chart ──
+const radarCtx = document.getElementById('radarChart').getContext('2d');
+new Chart(radarCtx, {
+    type: 'radar',
+    data: {
+        labels: ['מימון אטום', 'חדירה למערכת', 'שקיפות', 'תוכן אידיאולוגי', 'קשרים ממסדיים'],
+        datasets: [{
+            label: 'סיכון בפועל',
+            data: [70, 95, 25, 90, 85],
+            backgroundColor: 'rgba(231, 76, 60, 0.2)',
+            borderColor: 'rgba(231, 76, 60, 1)',
+            pointBackgroundColor: 'rgba(231, 76, 60, 1)',
+            borderWidth: 2
+        }, {
+            label: 'תדמית רשמית',
+            data: [15, 95, 85, 10, 85],
+            backgroundColor: 'rgba(102, 126, 234, 0.15)',
+            borderColor: 'rgba(102, 126, 234, 0.8)',
+            pointBackgroundColor: 'rgba(102, 126, 234, 1)',
+            borderWidth: 2
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+            r: {
+                suggestedMin: 0, suggestedMax: 100,
+                ticks: { display: false },
+                pointLabels: { font: { size: 12 } }
+            }
+        },
+        plugins: { legend: { position: 'bottom', labels: { font: { size: 12 } } } }
+    }
+});
+
+// ── Finance Doughnut ──
+const finCtx = document.getElementById('financeChart').getContext('2d');
+new Chart(finCtx, {
+    type: 'doughnut',
+    data: {
+        labels: ['הון סיכון (WIX, גדות)', 'מנויי בתי ספר', 'העברות ממשלתיות', 'משקיע אסטרטגי (אדרי)'],
+        datasets: [{
+            data: [55, 35, 3, 7],
+            backgroundColor: ['#3b82f6', '#0d9488', '#667eea', '#e74c3c'],
+            borderWidth: 0
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            legend: { position: 'bottom', labels: { font: { size: 11 } } },
+            tooltip: {
+                callbacks: {
+                    label: ctx => ctx.label + ': ~' + ctx.raw + '%'
+                }
+            }
+        }
+    }
+});
+
+// ── Growth Bar Chart ──
+const growCtx = document.getElementById('growthChart').getContext('2d');
+new Chart(growCtx, {
+    type: 'bar',
+    data: {
+        labels: ['2020', '2021', '2022', '2023', '2024'],
+        datasets: [{
+            label: 'בתי ספר',
+            data: [0, 200, 600, 1000, 1200],
+            backgroundColor: ['#667eea', '#667eea', '#667eea', '#e74c3c', '#e74c3c'],
+            borderRadius: 4
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+            y: { beginAtZero: true, grid: { color: '#f0f0f0' } },
+            x: { grid: { display: false } }
+        },
+        plugins: { legend: { display: false } }
+    }
+});
+</script>
+</body>
+</html>

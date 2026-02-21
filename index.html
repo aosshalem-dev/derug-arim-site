@@ -802,6 +802,70 @@
             .concept-dual-meaning { grid-template-columns: 1fr; }
             .concept-evidence-panel { padding: 20px 16px; }
         }
+
+        /* ── Depth Chain — "Go Deeper" sections ── */
+        .depth-section {
+            margin-top: 16px; padding-top: 12px; border-top: 2px solid #cc0000;
+        }
+        .depth-section h5 {
+            color: #8b0000; font-size: 0.95em; margin-bottom: 12px;
+            display: flex; align-items: center; gap: 6px;
+        }
+        .depth-level {
+            background: #fff; border: 1px solid #ddd; border-radius: 8px;
+            margin: 8px 0; overflow: hidden; transition: border-color 0.2s;
+        }
+        .depth-level:hover { border-color: #888; }
+        .depth-level.open { border-color: #cc0000; }
+        .depth-header {
+            padding: 12px 16px; cursor: pointer; display: flex;
+            align-items: center; gap: 10px; user-select: none;
+        }
+        .depth-header:hover { background: #fafafa; }
+        .depth-icon { font-size: 1.3em; flex-shrink: 0; }
+        .depth-header-text { flex: 1; }
+        .depth-title { font-weight: 700; font-size: 0.92em; color: #222; }
+        .depth-subtitle { font-size: 0.8em; color: #777; margin-top: 2px; }
+        .depth-arrow {
+            font-size: 0.8em; color: #999; transition: transform 0.2s; flex-shrink: 0;
+        }
+        .depth-level.open .depth-arrow { transform: rotate(180deg); }
+        .depth-body {
+            display: none; padding: 0 16px 14px; font-size: 0.88em;
+            line-height: 1.7; color: #333;
+        }
+        .depth-level.open .depth-body { display: block; }
+        .depth-summary { margin-bottom: 10px; }
+        .depth-quote {
+            background: #fff5f0; border-right: 3px solid #cc0000; padding: 8px 14px;
+            margin: 8px 0; border-radius: 0 4px 4px 0; font-style: italic;
+            font-size: 0.95em; color: #444; direction: rtl;
+        }
+        .depth-next-prompt {
+            text-align: center; padding: 8px; font-size: 0.82em; color: #888;
+            font-style: italic; border-top: 1px dashed #ddd; margin-top: 4px;
+        }
+        .depth-related {
+            margin-top: 14px; padding-top: 12px; border-top: 1px solid #eee;
+        }
+        .depth-related h6 { color: #555; font-size: 0.88em; margin-bottom: 8px; }
+        .depth-link {
+            display: flex; align-items: flex-start; gap: 8px; padding: 8px 12px;
+            background: #f8f8fa; border-radius: 6px; margin: 6px 0;
+            text-decoration: none; color: #222; transition: background 0.15s;
+            border: 1px solid #e8e8ee;
+        }
+        .depth-link:hover { background: #eef0f5; border-color: #ccc; color: #222; }
+        .depth-link-icon { font-size: 1.1em; flex-shrink: 0; margin-top: 2px; }
+        .depth-link-text { flex: 1; }
+        .depth-link-title { font-weight: 600; font-size: 0.88em; color: #2a5a8a; }
+        .depth-link-desc { font-size: 0.78em; color: #666; margin-top: 2px; }
+
+        .prog-close-btn {
+            float: left; cursor: pointer; font-size: 1.2em; color: #999;
+            padding: 0 4px; line-height: 1;
+        }
+        .prog-close-btn:hover { color: #333; }
     </style>
 </head>
 <body>
@@ -1513,6 +1577,7 @@
     <script src="protocol_findings.js?v=1"></script>
     <script src="research_orgs.js?v=10"></script>
     <script src="suspicious_concepts.js?v=1"></script>
+    <script src="depth_data.js?v=1"></script>
     <script>
     // ── Concept detection & evidence ──
     // Look up program_info entry by name when prog has no .id
@@ -1902,7 +1967,9 @@
             'מרכזי סיוע': 'research/deep_Sexual_Assault_Centers.html',
             'ליד"ה': 'research/deep_Leyada.html',
             'ליד האוניברסיטה': 'research/deep_Leyada.html',
-            'קדמה': 'research/deep_Kadma.html'
+            'קדמה': 'research/deep_Kadma.html',
+            'סייף סקול': 'research/deep_SafeSchool.html',
+            'SafeSchool': 'research/deep_SafeSchool.html'
         };
         for (const [partial, url] of Object.entries(partials)) {
             if (orgName.includes(partial)) return url;
@@ -1921,11 +1988,33 @@
         const orgName = info.org || prog.institution || '';
         const orgReportUrl = findOrgReport(orgName) || findOrgReport(prog.name || '');
 
+        // Check if this program has a depth chain
+        const depthData = (typeof DEPTH_CHAINS !== 'undefined') ? DEPTH_CHAINS[prog.id] : null;
+
         let detailParts = [];
-        if (rDesc) detailParts.push(`<div class="research-comment"><strong>תיאור מחקרי:</strong> ${rDesc}</div>`);
-        if (rNotes) detailParts.push(`<div class="research-comment"><strong>הערות סוכנים:</strong> ${rNotes}</div>`);
-        const fullDesc = info.gefen_description || summary;
-        if (fullDesc) detailParts.push(`<div><strong>\u05ea\u05d9\u05d0\u05d5\u05e8 \u05d4\u05ea\u05db\u05e0\u05d9\u05ea \u05d1\u05d0\u05ea\u05e8 \u05d2\u05e4"\u05df:</strong> ${fullDesc}</div>`);
+
+        // ── Close button ──
+        detailParts.push(`<span class="prog-close-btn" onclick="closeProg('pc-${uid}', event)" title="סגור">&times;</span>`);
+
+        // ── 1. GEFEN catalog text (verbatim, always first) ──
+        if (summary) {
+            detailParts.push(`<div style="margin-bottom:10px"><strong>תיאור התכנית באתר גפ"ן:</strong> ${summary}</div>`);
+        }
+
+        // ── 2. Full GEFEN description — skip for depth chain programs (it's Gemini content) ──
+        if (!depthData && info.gefen_description && info.gefen_description !== summary) {
+            detailParts.push(`<div style="margin-bottom:10px"><strong>מידע מלא מגפ"ן:</strong> ${info.gefen_description}</div>`);
+        }
+
+        // ── 3. Our deep research description (depth chain overrides generic) ──
+        if (depthData && depthData.deep_description) {
+            detailParts.push(depthData.deep_description);
+        } else {
+            if (rDesc) detailParts.push(`<div class="research-comment"><strong>תיאור מחקרי:</strong> ${rDesc}</div>`);
+            if (rNotes) detailParts.push(`<div class="research-comment"><strong>הערות:</strong> ${rNotes}</div>`);
+        }
+
+        // ── 4. Basic info ──
         const orgLink = orgReportUrl
             ? `<a href="${orgReportUrl}" target="_blank" rel="noopener" style="color:#2980b9;text-decoration:underline">${orgName || '\u2014'}</a>`
             : (orgName || '\u2014');
@@ -1934,69 +2023,107 @@
         if (info.schools) detailParts.push(`<div><strong>בתי ספר:</strong> ${info.schools} &nbsp;|&nbsp; <strong>ערים:</strong> ${info.num_cities || '\u2014'}</div>`);
         detailParts.push(`<div><strong>מקור דירוג:</strong> ${prog.source || '\u2014'}</div>`);
 
-        // Gemini risk score
-        if (info.gemini_risk_score !== undefined) {
-            const riskColor = info.gemini_risk_score >= 7 ? '#c0392b' : info.gemini_risk_score >= 4 ? '#e67e22' : '#27ae60';
-            detailParts.push(`<div><strong>\u05e6\u05d9\u05d5\u05df \u05e1\u05d9\u05db\u05d5\u05df (Gemini):</strong> <span style="color:${riskColor};font-weight:700">${info.gemini_risk_score}/10</span>${info.gemini_risk_justification ? ' \u2014 ' + info.gemini_risk_justification : ''}</div>`);
-        }
-
-        // Key people
+        // ── 5. Key people (skip Gemini suspicion text if depth chain exists) ──
         if (info.key_people && info.key_people.length > 0) {
-            const peopleHtml = info.key_people.map(kp =>
-                `<li><strong>${kp.name}</strong>${kp.role ? ' (' + kp.role + ')' : ''}${kp.suspicion ? ' \u2014 <span style="color:#c0392b">' + kp.suspicion + '</span>' : ''}</li>`
-            ).join('');
-            detailParts.push(`<div><strong>\u05d0\u05e0\u05e9\u05d9 \u05de\u05e4\u05ea\u05d7:</strong><ul style="margin:4px 0">${peopleHtml}</ul></div>`);
-        }
-
-        // Ideology markers
-        if (info.ideology_markers && info.ideology_markers.length > 0) {
-            const markerHtml = info.ideology_markers.map(m => {
-                const mColor = m.level === 'high' ? '#c0392b' : m.level === 'medium' ? '#e67e22' : '#888';
-                return `<span style="display:inline-block;background:${mColor};color:#fff;padding:1px 6px;border-radius:3px;font-size:0.78em;margin:2px">${m.text}</span>`;
+            const peopleHtml = info.key_people.map(kp => {
+                const susp = depthData ? '' : (kp.suspicion ? ' \u2014 <span style="color:#c0392b">' + kp.suspicion + '</span>' : '');
+                return `<li><strong>${kp.name}</strong>${kp.role ? ' (' + kp.role + ')' : ''}${susp}</li>`;
             }).join('');
-            detailParts.push(`<div><strong>\u05e1\u05de\u05e0\u05d9\u05dd \u05d0\u05d9\u05d3\u05d9\u05d0\u05d5\u05dc\u05d5\u05d2\u05d9\u05d9\u05dd (Gemini):</strong><div style="margin-top:4px">${markerHtml}</div></div>`);
+            detailParts.push(`<div><strong>אנשי מפתח:</strong><ul style="margin:4px 0">${peopleHtml}</ul></div>`);
         }
 
-        // Funding signals
-        if (info.funding_signals && info.funding_signals.length > 0) {
-            const fundHtml = info.funding_signals.map(f => `<li>${f}</li>`).join('');
-            detailParts.push(`<div><strong>\u05d0\u05d9\u05ea\u05d5\u05ea\u05d9 \u05de\u05d9\u05de\u05d5\u05df:</strong><ul style="margin:4px 0">${fundHtml}</ul></div>`);
-        }
-
-        // Partnerships
-        if (info.partnerships && info.partnerships.length > 0) {
-            const partHtml = info.partnerships.map(p => `<li>${p}</li>`).join('');
-            detailParts.push(`<div><strong>\u05e9\u05d9\u05ea\u05d5\u05e4\u05d9 \u05e4\u05e2\u05d5\u05dc\u05d4:</strong><ul style="margin:4px 0">${partHtml}</ul></div>`);
-        }
-
-        // Gemini evidence & sources
-        if (info.gemini_evidence && info.gemini_evidence.length > 0) {
-            const evHtml = info.gemini_evidence.map(e => `<li>${e}</li>`).join('');
-            detailParts.push(`<div><strong>\u05e8\u05d0\u05d9\u05d5\u05ea (Gemini):</strong><ul style="margin:4px 0">${evHtml}</ul></div>`);
-        }
-        if (info.gemini_sources && info.gemini_sources.length > 0) {
-            const srcHtml = info.gemini_sources.map(s =>
-                s.url ? `<li><a href="${s.url}" target="_blank" rel="noopener" style="color:#2a5a8a">${s.title || s.url}</a></li>`
-                       : `<li>${s.title}</li>`
-            ).join('');
-            detailParts.push(`<div><strong>\u05de\u05e7\u05d5\u05e8\u05d5\u05ea (Gemini):</strong><ul style="margin:4px 0">${srcHtml}</ul></div>`);
-        }
-
-        // Source links row — use website_url instead of dead Gefen link
+        // ── 6. Source links ──
         let sourceLinks = [];
-        if (info.website_url) sourceLinks.push(`<a href="${info.website_url}" target="_blank" rel="noopener" style="color:#2a5a8a">\u05d0\u05ea\u05e8 \u05d4\u05ea\u05db\u05e0\u05d9\u05ea</a>`);
+        if (info.website_url) sourceLinks.push(`<a href="${info.website_url}" target="_blank" rel="noopener" style="color:#2a5a8a">אתר התכנית</a>`);
         if (orgName) sourceLinks.push(`<a href="https://www.guidestar.org.il/search?q=${encodeURIComponent(orgName)}" target="_blank" rel="noopener" style="color:#2a5a8a">חיפוש GuideStar</a>`);
         if (orgReportUrl) sourceLinks.push(`<a href="${orgReportUrl}" target="_blank" rel="noopener" style="color:#c0392b;font-weight:bold">דוח מחקר מעמיק</a>`);
         if (sourceLinks.length) detailParts.push(`<div style="margin-top:8px;padding-top:8px;border-top:1px solid #eee;font-size:0.85em;"><strong>מקורות:</strong> ${sourceLinks.join(' | ')}</div>`);
 
-        // Add research panel if cluster exists
-        if (cluster) {
+        // ── 7. DEPTH CHAIN — "Go Deeper" section ──
+        if (depthData && depthData.depth_chain && depthData.depth_chain.length > 0) {
+            let depthHtml = `<div class="depth-section">
+                <h5>רד לעומק הדירוג</h5>`;
+
+            depthData.depth_chain.forEach((level, idx) => {
+                depthHtml += `<div class="depth-level" id="depth-${prog.id}-${level.id}">
+                    <div class="depth-header" onclick="toggleDepthLevel(this)">
+                        <span class="depth-icon">${level.icon || '📌'}</span>
+                        <div class="depth-header-text">
+                            <div class="depth-title">${level.title_he}</div>
+                            <div class="depth-subtitle">${level.subtitle_he}</div>
+                        </div>
+                        <span class="depth-arrow">▼</span>
+                    </div>
+                    <div class="depth-body">
+                        <div class="depth-summary">${level.summary_he}</div>
+                        ${level.content_he}
+                        ${level.next_prompt ? `<div class="depth-next-prompt">${level.next_prompt} ↓</div>` : ''}
+                    </div>
+                </div>`;
+            });
+
+            // Related links
+            if (depthData.related_links && depthData.related_links.length > 0) {
+                depthHtml += `<div class="depth-related"><h6>קישורים למחקר נוסף:</h6>`;
+                depthData.related_links.forEach(link => {
+                    depthHtml += `<a class="depth-link" href="${link.url}" target="_blank" rel="noopener" onclick="event.stopPropagation()">
+                        <span class="depth-link-icon">${link.icon || '🔗'}</span>
+                        <div class="depth-link-text">
+                            <div class="depth-link-title">${link.title_he}</div>
+                            ${link.description_he ? `<div class="depth-link-desc">${link.description_he}</div>` : ''}
+                        </div>
+                    </a>`;
+                });
+                depthHtml += `</div>`;
+            }
+
+            depthHtml += `</div>`;
+            detailParts.push(depthHtml);
+        }
+
+        // ── 8. Research panel (cluster) — keep for non-depth programs ──
+        if (cluster && !depthData) {
             detailParts.push(buildResearchPanel(cluster));
         }
 
-        const hasResearch = rDesc || rNotes;
+        // ── 9. Gemini data — only show for programs WITHOUT depth chain ──
+        if (!depthData) {
+            if (info.gemini_risk_score !== undefined) {
+                const riskColor = info.gemini_risk_score >= 7 ? '#c0392b' : info.gemini_risk_score >= 4 ? '#e67e22' : '#27ae60';
+                detailParts.push(`<div style="opacity:0.6"><strong>ציון סיכון (Gemini):</strong> <span style="color:${riskColor};font-weight:700">${info.gemini_risk_score}/10</span>${info.gemini_risk_justification ? ' \u2014 ' + info.gemini_risk_justification : ''}</div>`);
+            }
+            if (info.ideology_markers && info.ideology_markers.length > 0) {
+                const markerHtml = info.ideology_markers.map(m => {
+                    const mColor = m.level === 'high' ? '#c0392b' : m.level === 'medium' ? '#e67e22' : '#888';
+                    return `<span style="display:inline-block;background:${mColor};color:#fff;padding:1px 6px;border-radius:3px;font-size:0.78em;margin:2px">${m.text}</span>`;
+                }).join('');
+                detailParts.push(`<div style="opacity:0.6"><strong>סמנים אידיאולוגיים (Gemini):</strong><div style="margin-top:4px">${markerHtml}</div></div>`);
+            }
+            if (info.funding_signals && info.funding_signals.length > 0) {
+                const fundHtml = info.funding_signals.map(f => `<li>${f}</li>`).join('');
+                detailParts.push(`<div><strong>איתותי מימון:</strong><ul style="margin:4px 0">${fundHtml}</ul></div>`);
+            }
+            if (info.partnerships && info.partnerships.length > 0) {
+                const partHtml = info.partnerships.map(p => `<li>${p}</li>`).join('');
+                detailParts.push(`<div><strong>שיתופי פעולה:</strong><ul style="margin:4px 0">${partHtml}</ul></div>`);
+            }
+            if (info.gemini_evidence && info.gemini_evidence.length > 0) {
+                const evHtml = info.gemini_evidence.map(e => `<li>${e}</li>`).join('');
+                detailParts.push(`<div style="opacity:0.6"><strong>ראיות (Gemini):</strong><ul style="margin:4px 0">${evHtml}</ul></div>`);
+            }
+            if (info.gemini_sources && info.gemini_sources.length > 0) {
+                const srcHtml = info.gemini_sources.map(s =>
+                    s.url ? `<li><a href="${s.url}" target="_blank" rel="noopener" style="color:#2a5a8a">${s.title || s.url}</a></li>`
+                           : `<li>${s.title}</li>`
+                ).join('');
+                detailParts.push(`<div style="opacity:0.6"><strong>מקורות (Gemini):</strong><ul style="margin:4px 0">${srcHtml}</ul></div>`);
+            }
+        }
+
+        const hasResearch = rDesc || rNotes || depthData;
         const researchBadge = hasResearch ? '<span class="research-badge">מחקר</span>' : '';
         const clusterBadge = cluster ? `<span class="cluster-badge">${cluster.name_he}</span>` : '';
+        const depthBadge = depthData ? '<span class="cluster-badge" style="background:#cc0000">ראיות מעמיקות</span>' : '';
 
         // Concept detection
         const concepts = detectConcepts(prog, info);
@@ -2012,7 +2139,7 @@
 
         return `<div class="program-card" onclick="toggleProg('pc-${uid}')">
             <div class="prog-header">
-                <span class="prog-name">${prog.name} ${clusterBadge} ${researchBadge} ${conceptBadges}</span>
+                <span class="prog-name">${prog.name} ${clusterBadge} ${depthBadge} ${researchBadge} ${conceptBadges}</span>
                 <span class="prog-rating ${ratingClass(prog.rating)}">${prog.rating}</span>
             </div>
             <div class="prog-meta">
@@ -2352,10 +2479,24 @@
 
     function toggleProg(id) {
         const el = document.getElementById(id);
-        if (el) {
-            el.classList.toggle('visible');
-            el.closest('.program-card').classList.toggle('expanded');
+        if (!el) return;
+        // Only open — don't toggle close. Use X button to close.
+        if (!el.classList.contains('visible')) {
+            el.classList.add('visible');
+            el.closest('.program-card').classList.add('expanded');
         }
+    }
+    function closeProg(id, event) {
+        if (event) event.stopPropagation();
+        const el = document.getElementById(id);
+        if (el) {
+            el.classList.remove('visible');
+            el.closest('.program-card').classList.remove('expanded');
+        }
+    }
+    function toggleDepthLevel(el) {
+        event.stopPropagation();
+        el.closest('.depth-level').classList.toggle('open');
     }
 
     // ── News article loader (on-demand per city) — v3 action-based ──
