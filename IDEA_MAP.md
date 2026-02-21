@@ -582,3 +582,98 @@ Background        methodology + quotes    Archive has 50+ usable quotes
 
 7. **Link the Buckingham papers** (authority blending, gnostocracy)
    - These are the theoretical backbone currently invisible to site visitors
+
+
+## 15. SITE TECHNOLOGY MAP (updated 2026-02-21)
+
+### The "Go Deeper" Model (SafeSchool = prototype for all orgs)
+
+```
+USER JOURNEY:                    TECH IMPLEMENTATION:
+─────────────                    ────────────────────
+City ranking table               index.html (Rankings tab)
+  ↓ click city
+Education programs list          index.html (Education tab, buildProgramCard())
+  ↓ click program card
+Panel opens (OPEN ONLY)          toggleProg() — never closes on re-click
+  │                              closeProg() via X button only
+  ├── Deep description           depth_data.js → DEPTH_CHAINS[progId].deep_description
+  ├── Source links               findOrgReport() → research/deep_*.html
+  └── "רד לעומק" chain           depth_data.js → DEPTH_CHAINS[progId].depth_chain[]
+      ├── Level 1 (click)        toggleDepthLevel() — expand/collapse
+      ├── Level 2 (click)        each level: title_he, summary_he, content_he
+      └── Level 3 (click)        next_prompt links levels narratively
+      └── Related links          depth_data.js → DEPTH_CHAINS[progId].related_links[]
+          ├── Dashboard           research/safeschool_dashboard.html
+          ├── Full report         research/deep_SafeSchool.html
+          ├── Cluster page        research/Child_protection_with_ideological_overlay.html
+          └── External sites      SEL research, Rosetta Stone, etc.
+```
+
+### Data Files & What They Control
+
+```
+FILE                    WHAT IT CONTROLS                           ENTRIES
+────                    ──────────────                             ───────
+data.js                 City scores, program_info, pole_b          18 cities, 2856 programs
+depth_data.js           "Go deeper" chains per program             1 program (SafeSchool 5974)
+research_data.js        Research cluster definitions                7 clusters
+protocols_data.js       Protocol text for browser                  537 protocols
+protocol_findings.js    Real council decisions (structured)        23 findings
+```
+
+### Interactive Features Built
+
+| Feature | File | Status | Notes |
+|---------|------|--------|-------|
+| Program card open-only | index.html:2480 | LIVE | toggleProg() only opens |
+| Close via X button | index.html:2489 | LIVE | closeProg() + stopPropagation |
+| Depth chain expand | index.html:2497 | LIVE | toggleDepthLevel() |
+| Gemini suppression | index.html:2004 | LIVE | skips gefen_description for depth programs |
+| Dashboard radar chart | safeschool_dashboard.html | LIVE | Chart.js, risk vs official |
+| Dashboard doughnut | safeschool_dashboard.html | LIVE | Funding breakdown |
+| Dashboard bar chart | safeschool_dashboard.html | LIVE | School growth 2020-2024 |
+| Dashboard flip cards | safeschool_dashboard.html | LIVE | CSS 3D transform, term dictionary |
+| Dashboard evidence chain | safeschool_dashboard.html | LIVE | 3 expandable layers |
+| Protocol findings filter | index.html | LIVE | Category badges + highlighted quotes |
+
+### Dashboard Template Features NOT YET INTEGRATED
+
+From `reference_hameorer_dashboard.html` (saved in projects/דירוג_ערים/):
+
+| Feature | What it does | Priority for SafeSchool |
+|---------|-------------|------------------------|
+| **Value Lens Toggle** | Switch: official text ↔ interpreted meaning | HIGH — perfect for "safety" vs actual content |
+| **Research Checklist** | Clickable items + progress bar | MEDIUM — open questions from deep report |
+| **Influence Map** | Funding → org → targets flow diagram | HIGH — revolving door visualization |
+| **Click-to-reveal funding** | Doughnut segment → detail panel | Already partially in dashboard |
+
+### Style System
+
+```
+LIVE SITE (custom CSS, NO frameworks):
+  Nav:        #1a1a2e (dark) + #ff8800 (orange accent)
+  Background: #f5f5f8
+  Sections:   #fff, border-radius 8px, box-shadow
+  Headings:   #1a1a2e, border-bottom #667eea
+  Links:      #2a5a8a, hover #ff8800
+  Fonts:      system ('Segoe UI', Tahoma, Arial)
+  Direction:  RTL Hebrew
+
+TEMPLATES (Tailwind + Google Fonts — NOT for live site):
+  reference_methodology_template.html
+  reference_matzmichim_dashboard.html
+  reference_hameorer_dashboard.html
+  → Extract IDEAS and DATA, rebuild in site style
+```
+
+### Deployment
+
+```
+Repo: C:\Users\User\derug-arim-site
+Remote: github.com/aosshalem-dev/derug-arim-site
+Branch: main
+Deploy: git push origin main → GitHub Pages auto-builds (~30s)
+Live: https://aosshalem-dev.github.io/derug-arim-site/
+Cache: Users may see old version → Ctrl+Shift+R to fix
+```
