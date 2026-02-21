@@ -1279,7 +1279,7 @@
                     <li>• תוכניות מוכחות כבעייתיות (דירוג אנושי + ארגונים בסיכון גבוה) <span class="weight">50%</span></li>
                     <li>• החלטות מועצה מאומתות (23 ממצאים מ-537 פרוטוקולים) <span class="weight">35%</span></li>
                     <li>• פעולות עירוניות מתועדות בחדשות (עירייה+פועל בלבד) <span class="weight">15%</span></li>
-                    <li class="dim" style="margin-top:8px">ציון מילות מפתח ישן מוצג להשוואה בלבד — לא נכלל בדירוג</li>
+                    <li class="dim" style="margin-top:8px">ציון מילות מפתח מוצג ברקע להשוואה בלבד — לא נכלל בדירוג</li>
                     <li class="dim">181 סקירות אנושיות, 12 חקירות מעמיקות, מיפוי ארגונים, ניתוח פרוטוקולים</li>
                 </ul>
                 <div style="margin-top:10px;font-size:0.82em;color:#666">
@@ -1311,7 +1311,7 @@
                     <th data-col="verified_decisions" data-type="num">החלטות מאומתות <span class="sort-arrow">&#9660;</span></th>
                     <th data-col="strong_news_actions" data-type="num">פעולות בחדשות <span class="sort-arrow">&#9660;</span></th>
                     <th data-col="high_risk_orgs" data-type="num">ארגונים בסיכון <span class="sort-arrow">&#9660;</span></th>
-                    <th data-col="keyword_proxy" data-type="num" style="color:#888" title="ציון מילות מפתח — לא נכלל בדירוג, מוצג להשוואה בלבד">מילות מפתח* <span class="sort-arrow">&#9660;</span></th>
+                    <th data-col="keyword_proxy" data-type="num" style="color:#888" title="ציון מילות מפתח — לא נכלל בדירוג, מוצג להשוואה בלבד">מילות מפתח <span class="sort-arrow">&#9660;</span></th>
                 </tr>
             </thead>
             <tbody id="table-body"></tbody>
@@ -1373,9 +1373,8 @@
 
         <div id="proto-details-list"></div>
 
-        <!-- Protocol Browser (legacy keyword view) -->
         <div class="proto-browser-header">
-            <h2>רשימת פרוטוקולים — טקסט מלא עם הדגשת מילות מפתח (מתודולוגיה ישנה)</h2>
+            <h2>רשימת פרוטוקולים — טקסט מלא עם הדגשת מילות מפתח</h2>
             <p class="subtitle" style="text-align:right">53 פרוטוקולים שנבחרו מ-5 ערים עם האותות החזקים ביותר | לחצו לפתיחת הטקסט</p>
             <p style="font-size:0.82em;color:#bf360c;text-align:right;max-width:1000px;margin:4px auto 0">
                 &#9888; שימו לב: ההדגשה מבוססת על ספירה מכנית ללא ניתוח הקשר. חלק מהמילים המודגשות הן חיוביים כוזבים (&#171;קיימות&#187; = existing, שמות פרטיים כ&#171;שולי&#187;). ראו
@@ -2090,14 +2089,14 @@
         if (!depthData) {
             if (info.gemini_risk_score !== undefined) {
                 const riskColor = info.gemini_risk_score >= 7 ? '#c0392b' : info.gemini_risk_score >= 4 ? '#e67e22' : '#27ae60';
-                detailParts.push(`<div style="opacity:0.6"><strong>ציון סיכון (Gemini):</strong> <span style="color:${riskColor};font-weight:700">${info.gemini_risk_score}/10</span>${info.gemini_risk_justification ? ' \u2014 ' + info.gemini_risk_justification : ''}</div>`);
+                detailParts.push(`<div style="opacity:0.6"><strong>ציון סיכון:</strong> <span style="color:${riskColor};font-weight:700">${info.gemini_risk_score}/10</span>${info.gemini_risk_justification ? ' \u2014 ' + info.gemini_risk_justification : ''}</div>`);
             }
             if (info.ideology_markers && info.ideology_markers.length > 0) {
                 const markerHtml = info.ideology_markers.map(m => {
                     const mColor = m.level === 'high' ? '#c0392b' : m.level === 'medium' ? '#e67e22' : '#888';
                     return `<span style="display:inline-block;background:${mColor};color:#fff;padding:1px 6px;border-radius:3px;font-size:0.78em;margin:2px">${m.text}</span>`;
                 }).join('');
-                detailParts.push(`<div style="opacity:0.6"><strong>סמנים אידיאולוגיים (Gemini):</strong><div style="margin-top:4px">${markerHtml}</div></div>`);
+                detailParts.push(`<div style="opacity:0.6"><strong>סמנים אידיאולוגיים:</strong><div style="margin-top:4px">${markerHtml}</div></div>`);
             }
             if (info.funding_signals && info.funding_signals.length > 0) {
                 const fundHtml = info.funding_signals.map(f => `<li>${f}</li>`).join('');
@@ -2109,14 +2108,14 @@
             }
             if (info.gemini_evidence && info.gemini_evidence.length > 0) {
                 const evHtml = info.gemini_evidence.map(e => `<li>${e}</li>`).join('');
-                detailParts.push(`<div style="opacity:0.6"><strong>ראיות (Gemini):</strong><ul style="margin:4px 0">${evHtml}</ul></div>`);
+                detailParts.push(`<div style="opacity:0.6"><strong>ראיות:</strong><ul style="margin:4px 0">${evHtml}</ul></div>`);
             }
             if (info.gemini_sources && info.gemini_sources.length > 0) {
                 const srcHtml = info.gemini_sources.map(s =>
                     s.url ? `<li><a href="${s.url}" target="_blank" rel="noopener" style="color:#2a5a8a">${s.title || s.url}</a></li>`
                            : `<li>${s.title}</li>`
                 ).join('');
-                detailParts.push(`<div style="opacity:0.6"><strong>מקורות (Gemini):</strong><ul style="margin:4px 0">${srcHtml}</ul></div>`);
+                detailParts.push(`<div style="opacity:0.6"><strong>מקורות:</strong><ul style="margin:4px 0">${srcHtml}</ul></div>`);
             }
         }
 
@@ -2520,19 +2519,19 @@
                     </div>`;
             }
         }
-        // Fallback to legacy org panel if RESEARCH_ORGS not loaded
+        // Fallback org panel if RESEARCH_ORGS not loaded
         if (!orgsPanel) {
             orgsPanel = buildOrgPanel(entry.city);
         }
 
-        // === Legacy keyword panel (collapsed) ===
+        // === Keyword panel (supplementary, collapsed) ===
         let legacyPanel = '';
         if (entry.keyword_proxy != null) {
             legacyPanel = `
                 <div class="detail-section" style="opacity:0.6">
-                    <h4 style="color:#888">ציון מילות מפתח ישן: ${entry.keyword_proxy} <span class="dim" style="font-weight:normal">(לא נכלל בדירוג)</span></h4>
+                    <h4 style="color:#888">ציון מילות מפתח: ${entry.keyword_proxy} <span class="dim" style="font-weight:normal">(לא נכלל בדירוג)</span></h4>
                     <div style="font-size:0.8em;color:#888">
-                        Pole A: ${entry.pole_a ?? '\u2014'} | Pole B: ${entry.pole_b ?? '\u2014'} | חשיפה חינוכית: ${entry.exposure_score ?? '\u2014'}%
+                        קוטב א: ${entry.pole_a ?? '\u2014'} | קוטב ב: ${entry.pole_b ?? '\u2014'} | חשיפה חינוכית: ${entry.exposure_score ?? '\u2014'}%
                     </div>
                 </div>`;
         }
