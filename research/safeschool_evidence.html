@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>סייף סקול — תיק ראיות</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', Tahoma, Arial, sans-serif; background: #f5f5f8; color: #1a1a2e; direction: rtl; line-height: 1.7; font-size: 16px; }
+
+nav { position: sticky; top: 0; z-index: 100; background: #1a1a2e; color: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.25); }
+.nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; }
+.nav-brand { font-weight: 700; font-size: 1.05em; padding: 12px 0; display: flex; align-items: center; gap: 10px; }
+.nav-brand a { color: #aab; text-decoration: none; font-size: 0.82em; font-weight: 400; }
+.nav-brand a:hover { color: #ff8800; }
+.nav-tabs { display: flex; gap: 0; }
+.nav-tab { padding: 14px 14px; cursor: pointer; font-size: 0.82em; border-bottom: 3px solid transparent; transition: all 0.2s; color: #aab; white-space: nowrap; background: none; border-top: none; border-left: none; border-right: none; font-family: inherit; }
+.nav-tab:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.nav-tab.active { color: #fff; border-bottom-color: #cc0000; font-weight: 600; }
+
+.hero { background: linear-gradient(135deg, #1a1a2e 0%, #3a1a1a 50%, #1a1a2e 100%); color: #fff; padding: 40px 20px 30px; text-align: center; }
+.hero h1 { font-size: 1.7em; font-weight: 700; margin-bottom: 8px; }
+.hero .subtitle { color: #d4b896; font-size: 1em; }
+.hero .meta { color: #cc0000; font-size: 0.88em; margin-top: 8px; font-weight: 600; }
+.hero .stats-row { display: flex; justify-content: center; gap: 30px; margin-top: 16px; flex-wrap: wrap; }
+.hero .stat { text-align: center; }
+.hero .stat .num { font-size: 1.8em; font-weight: 800; color: #cc0000; }
+.hero .stat .lbl { font-size: 0.75em; color: #b0b0b0; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 24px 20px 60px; }
+.view { display: none; }
+.view.active { display: block; }
+
+.section { background: #fff; border-radius: 8px; padding: 26px; margin-bottom: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+.section h2 { font-size: 1.3em; color: #1a1a2e; margin-bottom: 14px; padding-bottom: 6px; border-bottom: 2px solid #cc0000; }
+.section h3 { font-size: 1.05em; color: #8b0000; margin: 16px 0 8px; }
+.section p { margin-bottom: 10px; }
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 24px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 20px; }
+@media (max-width: 900px) { .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; } .nav-tabs { overflow-x: auto; } }
+
+.metric { background: #f8f9fa; padding: 16px; border-radius: 8px; text-align: center; border: 1px solid #e8e8e8; }
+.metric .label { font-size: 0.82em; color: #666; margin-bottom: 4px; }
+.metric .value { font-size: 1.8em; font-weight: 800; color: #2a5a8a; }
+.metric .note { font-size: 0.75em; color: #999; margin-top: 2px; }
+.metric.alert { border-right: 4px solid #cc0000; }
+.metric.alert .value { color: #cc0000; }
+
+.quote-box { background: #fff5f5; border-right: 4px solid #cc0000; padding: 14px 18px; border-radius: 0 6px 6px 0; margin: 14px 0; font-style: italic; }
+.quote-box .q-source { font-style: normal; font-size: 0.82em; color: #999; margin-top: 6px; }
+.quote-box.blue { background: #f0f4fa; border-right-color: #667eea; }
+
+table { width: 100%; border-collapse: collapse; font-size: 0.88em; margin: 14px 0; }
+th { background: #8b0000; color: #fff; padding: 8px 12px; text-align: right; }
+td { padding: 8px 12px; border-bottom: 1px solid #eee; }
+tr:hover { background: #f8f9fa; }
+tr.highlight { background: #fff5f5; }
+td a { color: #2a5a8a; }
+
+.badge { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 0.72em; font-weight: 600; }
+.badge.red { background: #fde8e8; color: #c0392b; }
+.badge.blue { background: #e8edf8; color: #2a5a8a; }
+.badge.orange { background: #fef3e0; color: #e67e22; }
+
+.video-section { text-align: center; margin: 20px 0; }
+.video-section video { max-width: 100%; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+
+.transcript { background: #1a1a2e; color: #e0e0e0; padding: 20px; border-radius: 8px; margin: 16px 0; max-height: 500px; overflow-y: auto; font-size: 0.9em; line-height: 1.8; direction: rtl; }
+.transcript .ts { color: #667eea; font-size: 0.75em; margin-left: 8px; }
+.transcript .critical { background: #cc0000; color: #fff; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-style: normal; }
+.transcript .activist { background: #ff8800; color: #fff; padding: 2px 8px; border-radius: 4px; font-weight: 700; }
+
+.pipeline { display: flex; align-items: center; justify-content: center; gap: 0; flex-wrap: wrap; margin: 20px 0; }
+.pipeline-step { background: #fff; border: 2px solid #cc0000; border-radius: 8px; padding: 12px 16px; text-align: center; min-width: 140px; }
+.pipeline-step .ps-title { font-weight: 700; color: #8b0000; font-size: 0.9em; }
+.pipeline-step .ps-year { font-size: 0.72em; color: #999; }
+.pipeline-step .ps-desc { font-size: 0.78em; color: #555; margin-top: 4px; }
+.pipeline-arrow { font-size: 1.5em; color: #cc0000; padding: 0 8px; }
+
+.person-card { background: #f8f9fa; border-radius: 8px; padding: 14px; border: 1px solid #e8e8e8; }
+.person-card .pc-name { font-weight: 700; color: #8b0000; font-size: 1em; }
+.person-card .pc-before { font-size: 0.82em; color: #666; }
+.person-card .pc-after { font-size: 0.82em; color: #cc0000; font-weight: 600; }
+.person-card .pc-note { font-size: 0.78em; color: #999; margin-top: 4px; }
+
+.link-card { display: flex; gap: 10px; padding: 10px 14px; background: #f8f9fa; border-radius: 6px; border: 1px solid #e8e8e8; text-decoration: none; color: inherit; transition: all 0.2s; margin-bottom: 8px; }
+.link-card:hover { border-color: #cc0000; background: #fff5f5; }
+.link-card .lc-title { font-weight: 600; color: #8b0000; font-size: 0.9em; }
+.link-card .lc-desc { font-size: 0.78em; color: #666; }
+
+.layer-label { display: inline-block; padding: 3px 10px; border-radius: 4px; font-size: 0.72em; font-weight: 700; margin-bottom: 8px; }
+.layer-label.gemini { background: #e8edf8; color: #2a5a8a; }
+.layer-label.evidence { background: #fde8e8; color: #c0392b; }
+.layer-label.depth { background: #f0e8fd; color: #6a0dad; }
+
+footer { text-align: center; padding: 30px 20px; color: #999; font-size: 0.82em; border-top: 1px solid #e8e8e8; margin-top: 40px; }
+footer a { color: #cc0000; }
+</style>
+</head>
+<body>
+
+<nav>
+<div class="nav-inner">
+    <div class="nav-brand">
+        סייף סקול — תיק ראיות
+        <a href="../index.html">דירוג ערים</a>
+    </div>
+    <div class="nav-tabs">
+        <button class="nav-tab active" onclick="showTab('video')">🎬 הסרטון</button>
+        <button class="nav-tab" onclick="showTab('corporate')">🏢 המבנה</button>
+        <button class="nav-tab" onclick="showTab('door')">🚪 דלת מסתובבת</button>
+        <button class="nav-tab" onclick="showTab('pipeline')">📚 הצינור האידיאולוגי</button>
+        <button class="nav-tab" onclick="showTab('synthesis')">⚡ סינתזה</button>
+        <button class="nav-tab" onclick="showTab('sources')">📎 מקורות</button>
+    </div>
+</div>
+</nav>
+
+<div class="hero">
+    <h1>סייף סקול אנליטיקס — תיק ראיות</h1>
+    <div class="subtitle">תוכן אידיאולוגי מאחורי חומת תשלום ב-1,200+ בתי ספר ישראליים</div>
+    <div class="meta">שלוש שכבות ראיות: מחקר עובדתי + ראיה ישירה + עומק אידיאולוגי</div>
+    <div class="stats-row">
+        <div class="stat"><div class="num">1,200+</div><div class="lbl">בתי ספר</div></div>
+        <div class="stat"><div class="num">4</div><div class="lbl">בכירי משרד חינוך לשעבר</div></div>
+        <div class="stat"><div class="num">5</div><div class="lbl">זהויות מגדריות לילדים</div></div>
+        <div class="stat"><div class="num">$2.5M+</div><div class="lbl">גיוס הון</div></div>
+    </div>
+</div>
+
+<div class="container">
+
+<!-- ═══ TAB 1: THE VIDEO ═══ -->
+<div id="tab-video" class="view active">
+
+<div class="section">
+    <span class="layer-label evidence">ראיה ישירה</span>
+    <h2>מה התלמידים רואים בפועל</h2>
+    <p>הסרטון הבא הוא חלק מפלטפורמת SafeSchool, שנמצאת מאחורי <strong>חומת תשלום</strong>. הורים אינם יכולים לצפות בתוכן ללא גישה לפלטפורמה. הסרטון מלמד תלמידי בית ספר חמש זהויות מגדריות כ"מגוון יפהפה ומרגש".</p>
+
+    <div class="video-section">
+        <video controls preload="metadata" style="max-width:720px;width:100%">
+            <source src="../../downloads/VID-20260220-WA0014.mp4" type="video/mp4">
+            <p>הדפדפן שלך אינו תומך בנגן וידאו. <a href="https://youtu.be/226U6rJnPLc" target="_blank">צפה ביוטיוב</a></p>
+        </video>
+        <p style="font-size:0.82em;color:#999;margin-top:8px;">מקור: <a href="https://youtu.be/226U6rJnPLc" target="_blank">YouTube</a> | התוכן נמצא מאחורי חומת תשלום באתר SafeSchool</p>
+    </div>
+</div>
+
+<div class="section">
+    <h2>תמלול מלא — עם סימון ציטוטים קריטיים</h2>
+    <div class="transcript">
+        <p><span class="ts">[00:00]</span> ולעשות את עצמם יותר טוב, אם ניתן להם גם בובה עם עגלה וגם משחק לגרות.</p>
+        <p><span class="ts">[00:04]</span> אולי אתם צופים עכשיו בהרצאה וחושבים — אוקיי, עשינו סדר, נפלו קצת הסימונים, נפתח לנו הראש, והבנו שאין מה להיכנע לציפיות החברתיות בנוגע למגדר.</p>
+        <p><span class="ts">[00:18]</span> כי זה לא משפר אותנו כבני ובנות אדם.</p>
+        <p><span class="ts">[00:21]</span> אבל אולי חלקכם מרגישים שעדיין משהו חסר — וזה נכון. גבריות ונשיות אלה רק שתי זהויות מגדריות, אבל האמת היא שהעולם לא בנוי לפי קצוות שלא נפגשים ביניהן, אלא יש עוד <strong>מגוון יפהפה ומרגש</strong> של עוד זהויות, שאולי נתחבר עליהן יותר.</p>
+        <p><span class="ts">[00:45]</span> <strong>סיסג'נדר</strong> — מי שזהותו המגדרית תואמת את המגדר שניתן לו בלידתו על ידי החברה.</p>
+        <p><span class="ts">[01:00]</span> <strong>טראנסג'נדר</strong> — אנשים שמרגישים שאין התאמה בין המין שבו נולדו למגדר שהוצמד להם על ידי החברה.</p>
+        <p><span class="ts">[01:27]</span> <strong>בי-ג'נדר</strong> — מי שמרגיש כמו לשתי הזהויות המגדריות, בזמנים שונים או במקביל.</p>
+        <p><span class="ts">[01:45]</span> <strong>פאן-ג'נדר</strong> — אנשים שמקבלים את העובדה שיש הגדרות שונות למגדר, אבל בחיי היומיום שלהם מורדים בקצוות.</p>
+        <p><span class="ts">[02:03]</span> <strong>אי-ג'נדר</strong> — יש אנשים שמגדירים את עצמם כחסרי זהות מגדרית.</p>
+        <p><span class="ts">[02:20]</span> <span class="critical">כמו שיש יותר ממינים של זכר ונקבה, כך גם יש יותר מגדרים מגבר ואישה.</span></p>
+        <p><span class="ts">[02:26]</span> המגוון הזה הוא מפתיע ומרתק, ואם נפתח את הראש ונקבל מגדרים נוספים, יהיו סביבנו בני ובנות אדם שחיים כפי שבא להם ולהן.</p>
+        <p><span class="ts">[02:42]</span> <span class="activist">יש לנו כוח ליצור את החברה הזו.</span></p>
+        <p><span class="ts">[04:35]</span> תנועת הנוער IGY מציעה גם לבני ובנות נוער בזהויות מגדריות שונות להצטרף אליה.</p>
+        <p><span class="ts">[04:41]</span> ויש יותר דמויות מפורסמות, כמו <strong>ספיר ברמן</strong>, שופטת הכדורגל — טרנסג'נדרית. עוד דמות — <strong>דמי לוואטו</strong> — אי-ג'נדר.</p>
+        <p><span class="ts">[05:09]</span> המין והמגדר לא קובעים איך אנחנו אמורים להיראות, להתנהג או להרגיש.</p>
+        <p><span class="ts">[05:31]</span> <span class="critical">עדיין חשוב להכיר איך החברה שלנו פוגעת, ושמגדר הוא לא דבר טבעי, אלא נלמד.</span></p>
+        <p><span class="ts">[05:48]</span> חברים וחברות, צוות בית הספר וגם ההורים — <span class="activist">אל תישארו לבד.</span></p>
+        <p><span class="ts">[05:56]</span> <span class="activist">יש לנו כוח לשנות. יש לנו כוח להשפיע.</span></p>
+        <p><span class="ts">[06:00]</span> אם נרחיב את האפשרויות, החיים של כולנו יהיו קלים ומאושרים יותר.</p>
+    </div>
+</div>
+
+<div class="section">
+    <h2>ניתוח הסרטון — מה מועבר כאן</h2>
+    <div class="grid-2">
+        <div>
+            <h3>תוכן גלוי</h3>
+            <ul>
+                <li>5 זהויות מגדריות מוצגות כעובדה</li>
+                <li>דמויות לחיקוי: ספיר ברמן, דמי לוואטו, IGY</li>
+                <li>"המגוון הזה הוא מפתיע ומרתק"</li>
+                <li>סטריאוטיפים מגדריים → "חוסמים אפשרויות"</li>
+            </ul>
+        </div>
+        <div>
+            <h3>מסרים סמויים</h3>
+            <ul>
+                <li><strong>"מגדר הוא לא טבעי, אלא נלמד"</strong> — תיאוריית הקוויר כעובדה מדעית</li>
+                <li><strong>"יש לנו כוח ליצור את החברה הזו"</strong> — הנחיה אקטיביסטית, לא חינוכית</li>
+                <li><strong>"אל תישארו לבד"</strong> — אם ההורים לא מקבלים, יש סמכות חלופית (בית הספר)</li>
+                <li><strong>חומת תשלום</strong> — ההורים לא יכולים לראות את זה</li>
+            </ul>
+        </div>
+    </div>
+    <div class="quote-box">
+        <p>המבנה של הסרטון עוקב אחר מודל הקונסיינטיזציה של פאולו פריירה: <strong>חשוף את ה"דיכוי"</strong> (סטריאוטיפים מגדריים) → <strong>ספק כלים חדשים</strong> (5 זהויות) → <strong>הפעל לפעולה</strong> ("יש לנו כוח לשנות"). זה לא חינוך מיני — זו פדגוגיה ביקורתית.</p>
+    </div>
+</div>
+
+</div>
+
+<!-- ═══ TAB 2: CORPORATE STRUCTURE ═══ -->
+<div id="tab-corporate" class="view">
+
+<div class="section">
+    <span class="layer-label gemini">מחקר עובדתי</span>
+    <h2>מבנה ארגוני — חברת רווח, לא עמותה</h2>
+    <table>
+        <tr><th>שדה</th><th>סייף סקול אנליטיקס בע"מ</th><th>איי סקול (ע"ר)</th></tr>
+        <tr><td>מספר זיהוי</td><td>516296886</td><td>580709160</td></tr>
+        <tr><td>ייסוד</td><td>דצמבר 2020</td><td>ספטמבר 2020</td></tr>
+        <tr><td>מבנה</td><td><span class="badge red">חברה פרטית למטרות רווח</span></td><td>עמותה</td></tr>
+        <tr><td>כתובת</td><td>בורוכוב 54, גבעתיים</td><td>ישראליס 20, ת"א</td></tr>
+        <tr><td>מחזור</td><td>~$2.5M גיוס</td><td>~588K ₪ (2024)</td></tr>
+        <tr><td>שקיפות</td><td><span class="badge red">אינה חייבת לפרסם דוחות</span></td><td>חובת דיווח</td></tr>
+    </table>
+    <p><strong>המבנה ההיברידי</strong>: חברה עסקית (מוכרת מנויים לבתי ספר) + עמותה (מגייסת מתנדבים, יוצרת לגיטימציה). שני הערוצים חודרים למערכת בו-זמנית. כחברה פרטית, אין חובת שקיפות — בניגוד לעמותות במרחב הזה.</p>
+</div>
+
+<div class="section">
+    <h2>משקיעים — סלבריטאים כ"כיפת ברזל" יח"צנית</h2>
+    <div class="grid-3">
+        <div class="metric"><div class="label">גל גדות וירון ורסנו</div><div class="value" style="font-size:1.2em">מאות אלפי $</div><div class="note">מאי 2022</div></div>
+        <div class="metric"><div class="label">ניר זהר (נשיא WIX)</div><div class="value" style="font-size:1.2em">הוביל Seed</div><div class="note">שותף-מייסד</div></div>
+        <div class="metric"><div class="label">עמית אדרי</div><div class="value" style="font-size:1.2em;color:#cc0000">מנכ"ל משרד חינוך לשעבר</div><div class="note">משקיע + יו"ר ועדה</div></div>
+    </div>
+    <p>משקיעים נוספים: אבישי אברהמי (CEO של WIX), מיכה קאופמן (CEO של Fiverr), מיכאל אייזנברג (Aleph VC), רותם סלע ואריאל רוטר.</p>
+    <div class="quote-box blue">
+        <p>נוכחותה של גל גדות מנטרלת ביקורת. עבור מנהלי בתי ספר והורים, ה"אישור" של וונדר וומן מחליף בדיקה מעמיקה של התכנים. זהו שימוש מודע בהון תרבותי כמגן מפני בחינה ערכית.</p>
+    </div>
+</div>
+
+<div class="section">
+    <h2>מודל ההכנסה — עקיפת פיקוח דרך מערכת גפ"ן</h2>
+    <div class="grid-2">
+        <div>
+            <h3>העברות ישירות ממשלתיות</h3>
+            <div class="metric"><div class="label">סה"כ מתקציב המדינה</div><div class="value">83,119 ₪</div><div class="note">נמוך מפליא</div></div>
+            <p style="margin-top:10px">הסכום הנמוך מסווה את ההכנסה האמיתית. בגפ"ן, כל בית ספר קונה בנפרד — ההכנסה מפוזרת ב-1,200 רכישות נפרדות. אין התקשרות מרכזית גדולה שתעלה דגל.</p>
+        </div>
+        <div>
+            <h3>עקיפת פיקוח</h3>
+            <ul>
+                <li>סייף סקול = "סביבת תוכן", <strong>לא תוכנית לימודים</strong></li>
+                <li>לא עוברת אישור מפמ"ר (מפקח מרכזי)</li>
+                <li>מנהלים קונים באוטונומיה מתקציב גפ"ן</li>
+                <li>קיבלה פטור ממכרז כ"ספק יחיד"</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<!-- ═══ TAB 3: REVOLVING DOOR ═══ -->
+<div id="tab-door" class="view">
+
+<div class="section">
+    <span class="layer-label evidence">ראיה ישירה</span>
+    <h2>דלת מסתובבת — 4 בכירי משרד החינוך בחברה</h2>
+    <p>ארבעה אנשים שעיצבו את מדיניות משרד החינוך עברו לעבוד בחברה הפרטית שנהנית מאותה מדיניות. זו לכידה רגולטורית (regulatory capture) קלאסית.</p>
+    <div class="grid-2">
+        <div class="person-card">
+            <div class="pc-name">עמית אדרי</div>
+            <div class="pc-before">🏛️ לפני: מנכ"ל משרד החינוך (תקופת גלנט)</div>
+            <div class="pc-after">🏢 אחרי: משקיע + יו"ר הוועדה המייעצת</div>
+            <div class="pc-note">מביא הבנה עמוקה של צינורות התקצוב. הצהיר שהמטרה: "פלטפורמת בסיס בכל בית ספר".</div>
+        </div>
+        <div class="person-card">
+            <div class="pc-name">חנה שדמי</div>
+            <div class="pc-before">🏛️ לפני: מנהלת אגף שפ"י (שירות פסיכולוגי-ייעוצי)</div>
+            <div class="pc-after">🏢 אחרי: יועצת בכירה ומרצה מרכזית</div>
+            <div class="pc-note">פיתחה את תוכנית "כישורי חיים" הממלכתית. עכשיו מוכרת גרסה פרטית של אותה תוכנית. מקדמת SEL "לרוחב ולעומק".</div>
+        </div>
+        <div class="person-card">
+            <div class="pc-name">ליאת דותן</div>
+            <div class="pc-before">🏛️ לפני: רכזת ארצית למניעת אלימות במשרד החינוך</div>
+            <div class="pc-after">🏢 אחרי: צוות סייף סקול</div>
+            <div class="pc-note">התחום שהיא ניהלה = התחום שסייף סקול מוכרת בו פתרונות.</div>
+        </div>
+        <div class="person-card">
+            <div class="pc-name">גילי סטנסקו</div>
+            <div class="pc-before">🏛️ לפני: מנהלת למידה מרחוק במשרד החינוך</div>
+            <div class="pc-after">🏢 אחרי: צוות סייף סקול</div>
+            <div class="pc-note">הביאה את הידע על תשתיות דיגיטליות בבתי ספר — בדיוק התשתית שסייף סקול צריכה לפעול.</div>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <h2>הדפוס — לא צירוף מקרים</h2>
+    <div class="quote-box">
+        <p>ארבעה אנשים שישבו <strong>בתוך המערכת</strong> יצאו ממנה ונכנסו <strong>לחברה פרטית שמוכרת שירותים לאותה מערכת</strong>. כל אחד מהם הביא יתרון ספציפי:</p>
+    </div>
+    <table>
+        <tr><th>שם</th><th>מה הביא/ה</th><th>מה סייף סקול קיבלה</th></tr>
+        <tr class="highlight"><td>אדרי</td><td>קשרים פוליטיים + הבנת תקצוב</td><td>גישה לקובעי מדיניות + אסטרטגיה</td></tr>
+        <tr class="highlight"><td>שדמי</td><td>אמון של יועצות חינוכיות + "שפת המשרד"</td><td>לגיטימציה מקצועית + חדירה לשטח</td></tr>
+        <tr><td>דותן</td><td>רשת קשרים בתחום מניעת אלימות</td><td>כניסה ישירה לשוק של "בטיחות"</td></tr>
+        <tr><td>סטנסקו</td><td>ידע תשתיות דיגיטליות בבתי ספר</td><td>התאמה טכנולוגית מדויקת</td></tr>
+    </table>
+</div>
+
+</div>
+
+<!-- ═══ TAB 4: IDEOLOGICAL PIPELINE ═══ -->
+<div id="tab-pipeline" class="view">
+
+<div class="section">
+    <span class="layer-label depth">עומק אידיאולוגי</span>
+    <h2>הצינור: מבאטלר לכיתה</h2>
+    <p>התוכן בסרטון לא נפל מהשמיים. הוא תוצאה של שרשרת אינטלקטואלית בת 35 שנה שמתורגמת לחומרי לימוד:</p>
+    <div class="pipeline">
+        <div class="pipeline-step">
+            <div class="ps-title">ג'ודית באטלר</div>
+            <div class="ps-year">1990</div>
+            <div class="ps-desc">Gender Trouble — מגדר כ"ביצוע", לא כטבע</div>
+        </div>
+        <span class="pipeline-arrow">←</span>
+        <div class="pipeline-step">
+            <div class="ps-title">פאולו פריירה</div>
+            <div class="ps-year">1968</div>
+            <div class="ps-desc">פדגוגיה של המדוכאים — חינוך כאקטיביזם</div>
+        </div>
+        <span class="pipeline-arrow">←</span>
+        <div class="pipeline-step">
+            <div class="ps-title">SEL</div>
+            <div class="ps-year">1994→</div>
+            <div class="ps-desc">למידה רגשית-חברתית — כלי ההובלה</div>
+        </div>
+        <span class="pipeline-arrow">←</span>
+        <div class="pipeline-step" style="border-color:#cc0000;background:#fff5f5">
+            <div class="ps-title" style="color:#cc0000">SafeSchool</div>
+            <div class="ps-year">2020→</div>
+            <div class="ps-desc">1,200 בתי ספר, חומת תשלום, 5 זהויות</div>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <h2>באטלר — המטרה המוצהרת</h2>
+    <div class="quote-box">
+        <p>"The limitless proliferation of sexes [...] logically entails the negation of sex as such."</p>
+        <div class="q-source">Judith Butler, Gender Trouble (1990)</div>
+    </div>
+    <p>באטלר לא דוגלת ב"הכלה" של זהויות נוספות. היא אומרת במפורש: <strong>ריבוי קטגוריות מגדריות ישלול את המין כקטגוריה משמעותית בכלל</strong>. זו לא טעות בניסוח. זו המטרה.</p>
+    <p>כשהסרטון של SafeSchool מלמד ילדים 5 זהויות מגדריות — הוא מיישם את האסטרטגיה של באטלר: ריבוי → ביטול הקטגוריה.</p>
+</div>
+
+<div class="section">
+    <h2>פריירה → SEL → "כישורי חיים"</h2>
+    <div class="grid-2">
+        <div>
+            <h3>המודל המקורי</h3>
+            <p>פאולו פריירה (Pedagogy of the Oppressed, 1968) טען שחינוך חייב להיות אקטיביסטי — לא להעביר ידע, אלא <strong>לעורר תודעה ביקורתית</strong> שתוביל לשינוי חברתי.</p>
+            <p>ה"אויב" אצל פריירה: המשפחה, המסורת, המוסדות הקיימים — כולם מבנים של דיכוי שיש לפרק.</p>
+        </div>
+        <div>
+            <h3>התרגום לכיתה</h3>
+            <p><strong>SEL</strong> (למידה רגשית-חברתית) הוא כלי ההובלה. תחת מעטפת של "מודעות עצמית" ו"אמפתיה", מועברים מסרים של:</p>
+            <ul>
+                <li>"בחינת הטיות סמויות" = הוריך טועים</li>
+                <li>"צדק חברתי" = המערכת הקיימת מדכאת</li>
+                <li>"זהות אישית" = אתה בוחר מי אתה, לא ההורים</li>
+            </ul>
+            <p>חנה שדמי, שפיתחה את "כישורי חיים" <strong>בתוך</strong> המשרד, עכשיו מוכרת את הגרסה הפרטית <strong>מחוץ</strong> למשרד — דרך SafeSchool.</p>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <h2>מסמך קטקו-איילי — ההוכחה שהשפה כפולה</h2>
+    <p>אותה חוקרת. אותו מודל פדגוגי. שני מסמכים:</p>
+    <div class="grid-2">
+        <div style="background:#fde8e8;padding:14px;border-radius:8px">
+            <h3 style="color:#c0392b">2020 — לקהל אקדמי</h3>
+            <p>"<strong>פדגוגיה אקטיביסטית</strong>" — הוראה שמטרתה שינוי חברתי. המורה כסוכן פוליטי.</p>
+        </div>
+        <div style="background:#e8fde8;padding:14px;border-radius:8px">
+            <h3 style="color:#27ae60">2024 — לקהל ממשלתי</h3>
+            <p>"<strong>חשיבה ביקורתית</strong>" — הוראה שמטרתה פיתוח כישורי חשיבה. מורה כמנחה ניטרלי.</p>
+        </div>
+    </div>
+    <p style="margin-top:12px">זו לא תקשורת רשלנית. זו <strong>שפה כפולה מודעת</strong> — exactly what the content in SafeSchool does: presents activist pedagogy as neutral education.</p>
+    <p><a href="https://aosshalem-dev.github.io/progressive-rosetta-stone/" target="_blank">ניתוח מלא: אבן הרוזטה →</a></p>
+</div>
+
+<div class="section">
+    <h2>איגוד הפסיכיאטרים מתנגד — ומודח</h2>
+    <p>איגוד הפסיכיאטרים לילד ולמתבגר (הסתדרות הרפואית) התנגד לטיוטת נוהל של משרד הבריאות בנושא התערבויות בזהות מגדרית. הם מצאו:</p>
+    <ul>
+        <li>הסתמכות על ראיות שאינן רלוונטיות</li>
+        <li>אי-עמידה בפרוטוקולים רפואיים מקובלים</li>
+        <li>הורדת גיל ההתערבות הכירורגית ל-16</li>
+    </ul>
+    <p><strong>התוצאה: הפסיכיאטרים הודחו מתהליך כתיבת הנוהל.</strong></p>
+    <p>האתוס ה"מטפל" דחק את המדע שאמר "רגע, זה לא עובד ככה".</p>
+</div>
+
+</div>
+
+<!-- ═══ TAB 5: SYNTHESIS ═══ -->
+<div id="tab-synthesis" class="view">
+
+<div class="section">
+    <h2>סינתזה — שלוש שכבות ראיות</h2>
+    <p>כל שכבה לבדה אינה מספיקה. יחד, הן מציירות תמונה מלאה:</p>
+
+    <div style="margin:20px 0">
+        <div style="background:#e8edf8;padding:16px;border-radius:8px 8px 0 0;border:1px solid #bbc">
+            <span class="layer-label gemini">שכבה 1: מחקר עובדתי (Gemini)</span>
+            <p style="margin-top:8px"><strong>מה אנחנו יודעים:</strong> חברת רווח, $2.5M+ גיוס, 1,200 בתי ספר, פטור ממכרז, מבנה היברידי עם עמותה, מודל גפ"ן מפוזר.</p>
+            <p><strong>מה חסר:</strong> זו שכבה ניטרלית. אפשר לטעון שזה פשוט EdTech מצליח. צריך לראות מה בפנים.</p>
+        </div>
+        <div style="background:#fde8e8;padding:16px;border:1px solid #e6c3c3">
+            <span class="layer-label evidence">שכבה 2: ראיות ישירות</span>
+            <p style="margin-top:8px"><strong>מה אנחנו רואים:</strong> הסרטון. 5 זהויות מגדריות לילדים. "מגדר הוא לא טבעי, אלא נלמד." חומת תשלום — ההורים לא יכולים לצפות. 4 בכירי משרד חינוך בחברה.</p>
+            <p><strong>מה חסר:</strong> אפשר לטעון שזה לגיטימי, "מדעי", חלק מהקונצנזוס המקצועי. צריך להבין את השורשים.</p>
+        </div>
+        <div style="background:#f0e8fd;padding:16px;border-radius:0 0 8px 8px;border:1px solid #d4c3e6">
+            <span class="layer-label depth">שכבה 3: עומק אידיאולוגי</span>
+            <p style="margin-top:8px"><strong>מה אנחנו מבינים:</strong> באטלר → ריבוי מגדרים = ביטול המין כקטגוריה. פריירה → חינוך כאקטיביזם, התלמיד כסוכן שינוי נגד המשפחה. קטקו-איילי → שפה כפולה מודעת. הפסיכיאטרים הודחו כשהתנגדו.</p>
+            <p><strong>התמונה המלאה:</strong> זה לא EdTech ניטרלי. זו מערכת שמחדירה תיאוריית קוויר לילדים דרך מסווה של "בטיחות", ממומנת בכסף ציבורי, מוגנת ע"י סלבריטאים, ומנוהלת ע"י אנשים שבנו את המערכת שעכשיו הם מוכרים לה.</p>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <h2>מודל התבנית — כך ינותח כל ארגון</h2>
+    <table>
+        <tr><th>שכבה</th><th>מקור</th><th>מה היא נותנת</th><th>מה היא לא נותנת</th></tr>
+        <tr><td><span class="badge blue">1. עובדתי</span></td><td>Gemini + רשומות ציבוריות</td><td>מבנה, כספים, קשרים, פריסה</td><td>לא חודר לתוכן, לא מבין אידיאולוגיה</td></tr>
+        <tr><td><span class="badge red">2. ראיות</span></td><td>סרטונים, מסמכים, עדויות</td><td>תוכן בפועל, "אקדח מעשן"</td><td>לא מסביר למה, לא מקשר לתנועה רחבה</td></tr>
+        <tr><td><span class="badge orange">3. עומק</span></td><td>אלכסון, מחקר אקדמי, אבן הרוזטה</td><td>שורשים, אסטרטגיה, מסגרת מחשבה</td><td>לא מספיק בלי ראיות ספציפיות</td></tr>
+    </table>
+    <p style="margin-top:12px"><strong>הכלל:</strong> שלוש השכבות ביחד = תיק ראיות שלם. כל שכבה לבדה ניתנת לדחייה.</p>
+</div>
+
+</div>
+
+<!-- ═══ TAB 6: SOURCES ═══ -->
+<div id="tab-sources" class="view">
+
+<div class="section">
+    <h2>מקורות ראשוניים</h2>
+    <table>
+        <tr><th>ראיה</th><th>סוג</th><th>קישור</th></tr>
+        <tr class="highlight"><td>סרטון הרצאת מגדר לתלמידים</td><td>וידאו</td><td><a href="https://youtu.be/226U6rJnPLc" target="_blank">YouTube</a></td></tr>
+        <tr><td>רישום חברה — סייף סקול אנליטיקס</td><td>רשומות ציבוריות</td><td><a href="https://webinfo.co.il/details/619558/" target="_blank">webinfo.co.il</a></td></tr>
+        <tr><td>העברות תקציביות</td><td>obudget</td><td><a href="https://next.obudget.org/i/org/company/516296886" target="_blank">obudget.org</a></td></tr>
+        <tr><td>גיוס הון + גל גדות</td><td>עיתונות</td><td><a href="https://www.globes.co.il/news/article.aspx?did=1001420102" target="_blank">גלובס</a></td></tr>
+        <tr><td>עמדת איגוד הפסיכיאטרים</td><td>מסמך רפואי</td><td><a href="https://www.ima.org.il/MainSiteNew/EditClinic.aspx?ClinicId=252" target="_blank">הר"י</a></td></tr>
+    </table>
+</div>
+
+<div class="section">
+    <h2>מחקר מעמיק</h2>
+    <a class="link-card" href="safeschool_dashboard.html"><div><div class="lc-title">דשבורד SafeSchool אינטראקטיבי</div><div class="lc-desc">5 טאבים: סקירה, מימון, ראיות, דלת מסתובבת, מסקנות</div></div></a>
+    <a class="link-card" href="deep_SafeSchool.html"><div><div class="lc-title">דוח מחקר עומק — SafeSchool</div><div class="lc-desc">ניתוח מלא: רישום, כספים, כוח אדם, תוכן, GEFEN</div></div></a>
+    <a class="link-card" href="Child_protection_with_ideological_overlay.html"><div><div class="lc-title">מימון — אקו-סיסטם של "הגנת ילד"</div><div class="lc-desc">SafeSchool כחלק ממערכת ארגונים עם שכבה אידיאולוגית</div></div></a>
+    <a class="link-card" href="https://aosshalem-dev.github.io/progressive-rosetta-stone/" target="_blank"><div><div class="lc-title">אבן הרוזטה — מילון ההסוואה</div><div class="lc-desc">מסמך קטקו-איילי: אותו מודל, שתי שפות</div></div></a>
+    <a class="link-card" href="https://aosshalem-dev.github.io/sel-research/" target="_blank"><div><div class="lc-title">מחקר SEL</div><div class="lc-desc">כיצד "למידה רגשית-חברתית" הפכה לכלי להסטת זהות</div></div></a>
+    <a class="link-card" href="https://aosshalem-dev.github.io/shefi-research/" target="_blank"><div><div class="lc-title">מחקר שפ"י</div><div class="lc-desc">שירות פסיכולוגי-ייעוצי — זרוע היישום של משרד החינוך</div></div></a>
+</div>
+
+</div>
+
+</div>
+
+<footer>
+    <p>תיק ראיות מבוסס על מחקר עובדתי, ראיות ישירות ומחקר אידיאולוגי | <a href="../index.html">דירוג ערים</a></p>
+    <p style="margin-top:8px;">פברואר 2026</p>
+</footer>
+
+<script>
+function showTab(id) {
+    document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    const tabs = document.querySelectorAll('.nav-tab');
+    const map = {video:0, corporate:1, door:2, pipeline:3, synthesis:4, sources:5};
+    if (map[id] !== undefined) tabs[map[id]].classList.add('active');
+    window.scrollTo(0, 0);
+}
+</script>
+
+</body>
+</html>
